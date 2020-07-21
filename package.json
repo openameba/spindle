@@ -2,7 +2,7 @@
   "name": "spindle",
   "private": true,
   "scripts": {
-    "test": "yarn lint:yaml",
+    "test": "run-p lint:*",
     "lint:script": "eslint .",
     "lint:yaml": "yamllint .github/workflows/*.yml",
     "format": "eslint . --fix",
