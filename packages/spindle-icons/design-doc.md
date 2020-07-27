@@ -2,7 +2,7 @@
 Amebaのデザインシステムである「Spindle」では、「Amebaらしさ」をあらわす要素の一つとして、アイコンを作成しています。アイコンは、Amebaブランドで使用されているAmeba Sansに着想を得て設計されています。
 
 ## 目指すこと / Goals
-このリポジトリでは、様々な形式でアイコンを利用する前提として、SVGファイルとして配信することを目指します。
+このリポジトリでは、様々な形式でアイコンを利用する前提として、SVGファイルを配信します。
 
 ## 目指さないこと / Non-goals
 このリポジトリでは、SVGファイルを生成・配信することを目的としているため、以下のことを目指していません。
@@ -13,18 +13,18 @@ Amebaのデザインシステムである「Spindle」では、「Amebaらしさ
 ## 概要 / Overview
 Figmaで管理されているアイコンを取得し、SVGファイルとして書き出します。大まかな処理の流れは以下のとおりです。
 
-1. FigmaのAPIを利用して、アイコンリストを取得する
+1. Figma APIを利用して、アイコンリストを取得する
 2. アイコンリストからそれぞれのアイコンのIDを取得する
-3. FigmaのAPIとアイコンIDを利用して、それぞれのアイコンをSVGとして取得する
+3. Figma APIとアイコンIDを利用して、それぞれのアイコンをSVGとして取得する
 4. 取得してきたSVGファイルに対して最適化処理をかける
-5. 最適化したSVGを利用してSVG Sprite用のSVGを生成する
+5. 最適化したSVGを利用して、SVG Sprite用のSVGを生成する
 
 ## どのようにやっていくか / Approach, Detailed design
 
 ### 事前準備
 事前準備として、FigmaのURLからFile KeyとNode ID、[パーソナルアクセストークンを取得](https://www.figma.com/developers/api#access-tokens)します。
 
-File KeyとNode IDはFigma上で対象要素を選択した時に以下の形式で表示されます。
+File KeyとNode IDはFigma上で対象要素を選択した時に、以下の形式でブラウザのURLバーに表示されます。
 
 ```
 https://www.figma.com/file/${FILE_ID}/icon?node-id=${NODE_ID}
@@ -32,13 +32,13 @@ https://www.figma.com/file/${FILE_ID}/icon?node-id=${NODE_ID}
 
 なお、セキュリティ上の問題から、Figmaファイルの閲覧権限が適切か確認してください。また、パーソナルアクセストークンは他人に漏らさないように扱ってください。
 
-取得したFile KeyとNode IDは、`figma.json`という名前でファイルを作成し、保存します。`dest`にはSVGを出力するディレクトリを指定します。`figma.json`は、間違ってFigmaファイルが公開されないように、git管理されないようになっています。
+取得したFile KeyとNode IDは、`figma.json`という名前でファイルを作成し、保存します。Node IDが「0%3A1」のようにURLエンコードされている場合は、デコードした値を指定します。`dest`にはSVGを出力するディレクトリを指定します。`figma.json`は、間違ってFigmaファイルが公開されないように、git管理されていません。
 
 ```json
 {
   "fileKey": "${FILE_ID}",
   "nodeId": "${NODE_ID}",
-  "dest": "${PATH_TO_OUTPUT}"
+  "dest": "dist"
 }
 ```
 
@@ -53,7 +53,7 @@ FIGMA_TOKEN=${FIGMA_PERSONAL_ACCESS_TOKEN} yarn build
 `yarn build`内部では、以下の処理をしており、それぞれ個別に実行できます。
 
 #### アイコンの取得
-Figmaからアイコンを取得し、SVGファイルとして保存します。
+Figmaからアイコンを取得し、SVGファイルとして保存します。Figma APIへのリクエストが多くなりすぎないように1アイコンずつゆっくりと取得するため、時間がかかります。
 ```
 FIGMA_TOKEN=${FIGMA_PERSONAL_ACCESS_TOKEN} yarn icon:get
 ```
