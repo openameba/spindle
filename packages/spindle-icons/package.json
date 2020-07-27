@@ -1,0 +1,29 @@
+{
+  "name": "@openameba/spindle-icons",
+  "version": "0.0.1",
+  "scripts": {
+    "clean": "npx rimraf dist",
+    "mkdir": "npx mkdirp dist",
+    "prebuild": "run-s clean mkdir",
+    "build": "run-s icon:get icon:optimize icon:sprite",
+    "postbuild": "ts-node scripts/icon-doc.ts",
+    "icon:get": "ts-node scripts/get-icons.ts",
+    "icon:optimize": "svgo --config .svgo.yaml dist/*.svg",
+    "icon:sprite": "svg-sprite --config sprite.json --shape-transform-svgo sprite.svgo.json dist/*.svg",
+    "serve": "npx serve"
+  },
+  "private": true,
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@types/cli-progress": "^3.7.0",
+    "axios": "^0.19.2",
+    "cli-progress": "^3.8.2",
+    "figma-api": "^1.5.5",
+    "npm-run-all": "^4.1.5",
+    "svg-sprite": "^1.5.0",
+    "svgo": "^1.3.2",
+    "ts-node": "^8.10.2"
+  }
+}
