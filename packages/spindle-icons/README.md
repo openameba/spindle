@@ -112,3 +112,9 @@ function SvgClock({
 
 export default SvgClock;
 ```
+
+## ライセンス
+Spindle Iconsは以下2つのライセンスで公開されています。
+
+- SVGファイルは、Creative Commons BY-NC-ND 4.0
+- ソースコードは、MIT License

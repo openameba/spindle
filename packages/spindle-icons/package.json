@@ -13,6 +13,7 @@
     "serve": "npx serve"
   },
   "private": true,
+  "license": "SEE LICENSE IN README.md",
   "files": [
     "dist"
   ],
