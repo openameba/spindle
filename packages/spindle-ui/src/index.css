@@ -1,0 +1,3 @@
+/* stylelint-disable plugin/selector-bem-pattern */
+@import 'ameba-color-palette.css';
+@import './Button/Button.css';

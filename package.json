@@ -2,10 +2,15 @@
   "name": "spindle",
   "private": true,
   "scripts": {
-    "test": "run-p lint:*",
+    "test": "run-p lint test:packages",
+    "test:packages": "lerna run test",
+    "lint": "run-p lint:*",
     "lint:script": "eslint .",
     "lint:yaml": "yamllint .github/workflows/*.yml",
-    "format": "eslint . --fix",
+    "lint:packages": "lerna run lint",
+    "format": "run-p format:*",
+    "format:script": "eslint . --fix",
+    "format:packages": "lerna run format",
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build"
   },

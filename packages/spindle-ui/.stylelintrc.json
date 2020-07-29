@@ -1,0 +1,22 @@
+{
+  "extends": "stylelint-config-prettier",
+  "plugins": [
+    "stylelint-prettier",
+    "stylelint-order",
+    "stylelint-selector-bem-pattern"
+  ],
+  "rules": {
+    "prettier/prettier": true,
+    "order/properties-alphabetical-order": true,
+    "plugin/selector-bem-pattern": {
+      "implicitComponents": "src/**/*.css",
+      "preset": "suit",
+      "presetOptions": {
+        "namespace": "spui"
+      }
+    },
+    "value-keyword-case": ["lower", {
+      "ignoreKeywords": ["/^--/"]
+    }]
+  }
+}
