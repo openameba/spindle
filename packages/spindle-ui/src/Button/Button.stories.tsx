@@ -64,7 +64,7 @@ export const disabled = (): React.ReactNode => (
     <Button disabled size="medium" variant="contained" {...eventsFromNames}>
       Contained
     </Button>
-    <Button disabled size="medium" variant="contained" {...eventsFromNames}>
+    <Button disabled size="medium" variant="outlined" {...eventsFromNames}>
       Outlined
     </Button>
     <Button disabled size="medium" variant="neutral" {...eventsFromNames}>
