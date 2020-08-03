@@ -1,6 +1,6 @@
 {
   "name": "@openameba/spindle-icons",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "scripts": {
     "clean": "npx rimraf dist",
     "mkdir": "npx mkdirp dist",
@@ -12,7 +12,6 @@
     "icon:sprite": "svg-sprite --config sprite.json --shape-transform-svgo sprite.svgo.json dist/*.svg",
     "serve": "npx serve"
   },
-  "private": true,
   "license": "SEE LICENSE IN README.md",
   "files": [
     "dist"
