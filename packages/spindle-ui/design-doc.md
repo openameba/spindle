@@ -43,11 +43,13 @@ export const WakuwakuForm = () => {
 ```
 
 #### 他の手段 / Alternative approach
-より多くのプロジェクトで利用するために、Vue.jsやWeb Componentsで作成する必要があるかもしれませんが、初期段階では最も利用されているReactで作成しています。
+より多くのプロジェクトで利用するために、Vue.jsやWeb Componentsで作成する必要があるかもしれませんが、2020年8月現在では最も利用されているReactで作成しています。Web ComponentsはSpindleで提供するコンポーネントの粒度ではちょうどよさそうですが、Amebaで使い慣れていないのと、Server-side Renderingに強くないため後回しします([lit-ssr](https://github.com/PolymerLabs/lit-ssr)期待か)。
 
-また、スタイルの記述方法はより代替手段が考えられます。[CSS-in-JS](https://speakerdeck.com/vjeux/react-css-in-js)は、コンポーネント作成により適したテクニックかもしれません。
+また、スタイルの記述方法はより代替手段が考えられます。[CSS-in-JS](https://speakerdeck.com/vjeux/react-css-in-js)は、コンポーネント作成により適したテクニックかもしれません。本プロジェクトでは以下の条件を満たすため、CSSで記述しています。
 
-本プロジェクトでは、後述する「スタイルが定義されたCSSの提供」を満たすため、CSSセレクタ名が機械的に生成されない仕組みが好ましいしょう。
+- HTMLで使うため、セレクタ名が機械的に生成される前提でなく、そのままCSSファイルに出力できる
+- Spindle自体と取り込むプロジェクト両方で、ビルドシステムにできるだけ干渉しない
+- [ameba-color-palette.css](https://github.com/openameba/ameba-color-palette.css)を利用する可能性が高いため、CSS Custom propertiesが使いやすい
 
 ### スタイルが定義されたCSSの提供
 UIライブラリを使用しないLPなどのプロジェクトでも、「Amebaらしさ」を表現した見た目・振る舞いをするために、独立したCSSファイルを提供します。ただし、現時点ではJavaScriptを利用した動的な動作は提供されていないため、自作する必要があります。
