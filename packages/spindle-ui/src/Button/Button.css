@@ -1,0 +1,130 @@
+/*
+ * Button
+ *
+ * NOTE: Button styles can be overwrite with "--Button-*" variables
+ * as it is sometimes different from app's color set.
+*/
+.spui-Button {
+  box-sizing: border-box;
+  outline: none;
+  text-align: center;
+  transition: background-color var(--Button-transitionDuration, 0.3s);
+}
+
+.spui-Button:disabled {
+  opacity: var(--Button-onDisabled-opacity, 0.3);
+}
+
+.spui-Button:focus {
+  box-shadow: var(
+    --Button-onFocus-boxShadow,
+    0 0 0 1px var(--color-surface-primary),
+    0 0 0 3px var(--color-focus-clarity)
+  );
+}
+
+/*
+ * Button sizes
+*/
+.spui-Button--large {
+  border-radius: 24px;
+  font-size: 18px; /* TODO: Replace relative value (em or rem) */
+  /* To use em value; this equals (48px / $font-size)em  */
+  height: calc(48em / 18);
+  padding: 0 16px;
+  width: 100%;
+}
+
+.spui-Button--medium {
+  border-radius: 20px;
+  font-size: 18px; /* TODO: Replace relative value (em or rem) */
+  /* To use em value; this equals (40px / $font-size)em  */
+  height: calc(40em / 18);
+  max-width: 240px;
+  min-width: 88px;
+  padding: 0 16px;
+}
+
+.spui-Button--small {
+  border-radius: 16px;
+  font-size: 14px; /* TODO: Replace relative value (em or rem) */
+  /* To use em value; this equals (32px / $font-size)em  */
+  height: calc(32em / 14);
+  min-width: 60px;
+  padding: 0 10px;
+}
+
+/*
+ * Button variants
+*/
+/* contained */
+.spui-Button--contained {
+  background-color: var(
+    --Button--contained-backgroundColor,
+    var(--color-surface-accent-primary)
+  );
+  border: none;
+  color: var(
+    --Button--contained-color,
+    var(--color-text-high-emphasis-inverse)
+  );
+}
+
+.spui-Button--contained:not([disabled]):hover {
+  background-color: var(
+    --Button--contained-onHover-backgroundColor,
+    var(--primary-green-100)
+  );
+}
+
+/* outlined */
+.spui-Button--outlined {
+  background-color: var(
+    --Button--outlined-backgroundColor,
+    var(--color-text-high-emphasis-inverse)
+  );
+  border: 2px solid
+    var(--Button--outlined-borderColor, var(--color-surface-accent-primary));
+  color: var(--Button--outlined-color, var(--color-surface-accent-primary));
+}
+
+.spui-Button--outlined:not([disabled]):hover {
+  background-color: var(
+    --Button--outlined-onHover-backgroundColor,
+    var(--primary-green-5)
+  );
+}
+
+/* neutral */
+.spui-Button--neutral {
+  background-color: var(
+    --Button--neutral-backgroundColor,
+    var(--color-surface-tertiary)
+  );
+  border: none;
+  color: var(--Button--neutral-backgroundColor, var(--color-text-mid-emphasis));
+}
+
+.spui-Button--neutral:not([disabled]):hover {
+  background-color: var(
+    --Button--neutral-onHover-backgroundColor,
+    var(--gray-20-alpha)
+  );
+}
+
+/* danger */
+.spui-Button--danger {
+  background-color: var(
+    --Button--danger-backgroundColor,
+    var(--color-text-high-emphasis-inverse)
+  );
+  border: 2px solid var(--Button--danger-borderColor, var(--color-text-caution));
+  color: var(--Button--danger-color, var(--color-text-caution));
+}
+
+.spui-Button--danger:not([disabled]):hover {
+  background-color: var(
+    --Button--danger-onHover-backgroundColor,
+    var(--caution-red-5-alpha)
+  );
+}
