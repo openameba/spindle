@@ -1,0 +1,50 @@
+/*
+ * Radio
+*/
+.spui-Radio-label {
+  border-radius: 2px;
+  color: var(--color-text-low-emphasis);
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0.1em 0;
+  position: relative;
+}
+
+.spui-Radio-input {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin-top: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+}
+
+.spui-Radio-icon {
+  border: solid 1px var(--color-border-mid-emphasis);
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: -0.25em;
+  width: 20px;
+}
+
+.spui-Radio-input:checked + .spui-Radio-icon {
+  background-color: var(--color-object-accent-primary);
+  border: solid 1px var(--color-object-accent-primary);
+}
+
+.spui-Radio-outline {
+  border-radius: 2px;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.spui-Radio-input:focus ~ .spui-Radio-outline {
+  /* TODO: set module background color instead of white */
+  box-shadow: 0 0 0 2px white, 0 0 0 4px var(--color-focus-clarity);
+}
