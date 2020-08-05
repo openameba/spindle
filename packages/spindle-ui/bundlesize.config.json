@@ -1,7 +1,15 @@
 {
   "files": [
     {
-      "path": "./dist/**/*.js",
+      "path": "./dist/Icon/index.js",
+      "maxSize": "2 kB"
+    },
+    {
+      "path": "./dist/Icon/!(index).js",
+      "maxSize": "1.5 kB"
+    },
+    {
+      "path": "./dist/!(Icon)/*.js",
       "maxSize": "1 kB"
     },
     {
