@@ -1,0 +1,36 @@
+name: versioning
+
+on:
+  push:
+    branches:
+      - version/major
+      - version/minor
+      - version/patch
+      - version/premajor
+      - version/preminor
+      - version/prepatch
+      - version/prerelease
+
+jobs:
+  version:
+    name: versioning
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: 14
+      - name: Set git user
+        run: |
+          # TODO: replace this with system user
+          git config user.email "${{ secrets.GIT_EMAIL }}"
+          git config user.name "${{ secrets.GIT_NAME }}"
+      - name: Extract version from branch name
+        shell: bash
+        run: echo "##[set-output name=version;]$(echo ${GITHUB_REF##*/})"
+        id: extract_version
+      - name: Versioning with lerna
+        # also see some options in lerna.json
+        run: npx lerna version ${{ steps.extract_version.outputs.version }} --conventional-commits --create-release github --yes --no-private
+        env:
+          GH_TOKEN: ${{ github.token }}
