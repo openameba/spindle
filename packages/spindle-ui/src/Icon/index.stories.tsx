@@ -5,18 +5,16 @@ export default {
   title: 'Icon',
 };
 
-export const Normal = (): React.ReactNode => (
-  <Clock aria-label="Clock" role="img"></Clock>
-);
+export const Normal = (): React.ReactNode => <Clock aria-label="Clock"></Clock>;
 
 export const WithColor = (): React.ReactNode => (
   <div style={{ color: 'green' }}>
-    <Clock aria-label="Clock" role="img"></Clock>
+    <Clock aria-label="Clock"></Clock>
   </div>
 );
 
 export const WithSize = (): React.ReactNode => (
   <div>
-    <Clock aria-label="Clock" height="200" role="img" width="200"></Clock>
+    <Clock aria-label="Clock" height="200" width="200"></Clock>
   </div>
 );

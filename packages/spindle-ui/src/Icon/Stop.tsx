@@ -7,6 +7,7 @@ function SvgStop(props: React.SVGProps<SVGSVGElement>) {
       height="1em"
       viewBox="0 0 24 24"
       fill="currentColor"
+      role="img"
       {...props}
     >
       <path
