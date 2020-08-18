@@ -35,16 +35,17 @@
   border: solid 1px var(--color-object-accent-primary);
 }
 
+/* To add 2px space for outline */
 .spui-Radio-outline {
   border-radius: 2px;
-  height: 100%;
-  left: 0;
+  bottom: -2px;
+  left: -2px;
   position: absolute;
-  top: 0;
-  width: 100%;
+  right: -2px;
+  top: -2px;
 }
 
+/* box-shadow is used to apply border-radius as outline */
 .spui-Radio-input:focus ~ .spui-Radio-outline {
-  /* TODO: set module background color instead of white */
-  box-shadow: 0 0 0 2px white, 0 0 0 4px var(--color-focus-clarity);
+  box-shadow: 0 0 0 2px var(--color-focus-clarity);
 }
