@@ -22,9 +22,8 @@ jobs:
           node-version: 14
       - name: Set git user
         run: |
-          # TODO: replace this with system user
-          git config user.email "${{ secrets.GIT_EMAIL }}"
-          git config user.name "${{ secrets.GIT_NAME }}"
+          git config --global user.email "<>"
+          git config --global user.name "openameba"
       - name: Extract version from branch name
         run: echo "::set-output name=version::$(echo ${GITHUB_REF##*/})"
         id: extract_version
