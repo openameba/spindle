@@ -26,8 +26,7 @@ jobs:
           git config user.email "${{ secrets.GIT_EMAIL }}"
           git config user.name "${{ secrets.GIT_NAME }}"
       - name: Extract version from branch name
-        shell: bash
-        run: echo "##[set-output name=version;]$(echo ${GITHUB_REF##*/})"
+        run: echo "::set-output name=version::$(echo ${GITHUB_REF##*/})"
         id: extract_version
       - name: Versioning with lerna
         # also see some options in lerna.json
