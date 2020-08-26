@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function SvgRankingUp(props: React.SVGProps<SVGSVGElement>) {
+function SvgBookmarkFill(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width="1em"
@@ -13,10 +13,10 @@ function SvgRankingUp(props: React.SVGProps<SVGSVGElement>) {
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M17.78 5.22h-6.29c-.89 0-1.34 1.08-.71 1.71l2.08 2.08-7.2 7.2a1.49 1.49 0 000 2.12c.59.58 1.54.59 2.12 0l7.2-7.2 2.08 2.08c.63.63 1.71.18 1.71-.71V6.22c.01-.55-.44-1-.99-1z"
+        d="M17.5 20.14l-5.25-3.01a.497.497 0 00-.5 0L6.5 20.14c-.67.38-1.5-.1-1.5-.87V6c0-1.66 1.34-3 3-3h8c1.66 0 3 1.34 3 3v13.27c0 .77-.83 1.25-1.5.87z"
       />
     </svg>
   );
 }
 
-export default SvgRankingUp;
+export default SvgBookmarkFill;

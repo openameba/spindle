@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function SvgRankingDown(props: React.SVGProps<SVGSVGElement>) {
+function SvgTrianglearrowDownright(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width="1em"
@@ -19,4 +19,4 @@ function SvgRankingDown(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default SvgRankingDown;
+export default SvgTrianglearrowDownright;

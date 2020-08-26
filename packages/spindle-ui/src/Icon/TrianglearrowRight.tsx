@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function SvgRankingStay(props: React.SVGProps<SVGSVGElement>) {
+function SvgTrianglearrowRight(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width="1em"
@@ -19,4 +19,4 @@ function SvgRankingStay(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default SvgRankingStay;
+export default SvgTrianglearrowRight;

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function SvgCaution(props: React.SVGProps<SVGSVGElement>) {
+function SvgCautionFill(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width="1em"
@@ -15,4 +15,4 @@ function SvgCaution(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default SvgCaution;
+export default SvgCautionFill;

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function SvgC(props: React.SVGProps<SVGSVGElement>) {
+function SvgTriangleendLeft(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width="1em"
@@ -19,4 +19,4 @@ function SvgC(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default SvgC;
+export default SvgTriangleendLeft;
