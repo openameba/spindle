@@ -1,0 +1,8 @@
+{
+  "typescript": true,
+  "icon": true,
+  "ignoreExisting": true,
+  "svgProps": {
+    "role": "img"
+  }
+}

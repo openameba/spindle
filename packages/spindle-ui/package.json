@@ -18,7 +18,10 @@
     "prebuild": "yarn clean",
     "build": "run-p build:*",
     "build:script": "tsc",
-    "build:style": "postcss src/**/*.css src/*.css --base src -d dist/"
+    "build:style": "postcss src/**/*.css src/*.css --base src -d dist/",
+    "preicon": "npx rimraf 'src/Icon/!(*.stories).tsx' && npx cpx '../spindle-icons/dist/!(sprite).svg' icon-tmp",
+    "icon": "svgr --out-dir src/Icon icon-tmp",
+    "posticon": "npx rimraf icon-tmp"
   },
   "license": "MIT",
   "private": true,
@@ -34,6 +37,7 @@
     "@storybook/addon-a11y": "^5.3.19",
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/react": "^5.3.19",
+    "@svgr/cli": "^5.4.0",
     "@types/chai": "^4.2.12",
     "@types/enzyme": "^3.10.5",
     "@types/enzyme-adapter-react-16": "^1.0.6",
