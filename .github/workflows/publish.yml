@@ -20,3 +20,9 @@ jobs:
           npm whoami
       - name: Publishing with lerna
         run: npx lerna publish from-git
+      - name: Hosting UI catalog when Spindle UI has been updated
+        run: |
+          if npx lerna changed | grep @openameba/spindle-ui; then
+            npx lerna run --scope @openameba/spindle-ui storybook:build
+            npx lerna run --scope @openameba/spindle-ui storybook:deploy -- --token $FIREBASE_TOKEN
+          fi
