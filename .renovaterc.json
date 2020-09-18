@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "config:base",
+    ":label(renovate)",
+    ":preserveSemverRanges",
+    ":timezone(Asia/Tokyo)",
+    "group:definitelyTyped",
+    "group:linters",
+    "group:postcss",
+    "group:typescript-eslintMonorepo"
+  ],
+  "assignees": [
+    "herablog",
+    "sasaplus1",
+    "hiloki"
+  ]
+}
