@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "config:base",
+    ":label(renovate)",
+    ":preserveSemverRanges",
+    ":timezone(Asia/Tokyo)"
+  ],
+  "assignees": [
+    "herablog",
+    "sasaplus1",
+    "hiloki"
+  ]
+}
