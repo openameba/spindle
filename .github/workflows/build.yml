@@ -1,0 +1,35 @@
+name: build
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  build:
+    name: build
+    strategy:
+      matrix:
+        node:
+          - 12
+          - 14
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: ${{ matrix.node }}
+      - name: restore lerna
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+      - run: yarn install
+      - run: yarn bootstrap
+      # Build application to check if the system works or not
+      # TODO: Build script for spindle-icon should be added
+      - name: build application
+        run: |
+          npx lerna run --scope @openameba/spindle-ui storybook:build
+          npx lerna run --scope @openameba/spindle-ui build
