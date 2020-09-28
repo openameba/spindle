@@ -1,0 +1,14 @@
+/*
+ * InputLabel
+*/
+.spui-InputLabel {
+  color: var(--color-text-mid-emphasis);
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.spui-InputLabel:empty {
+  display: none;
+}
