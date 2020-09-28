@@ -16,6 +16,15 @@ jobs:
       - uses: actions/setup-node@v2-beta
         with:
           node-version: 14
+      - name: restore lerna
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+      - run: yarn install
+      - run: yarn bootstrap
       - name: Update UI catalog
         run: |
           npx lerna run --scope @openameba/spindle-ui storybook:build
