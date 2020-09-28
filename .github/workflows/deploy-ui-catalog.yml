@@ -26,6 +26,8 @@ jobs:
       - run: yarn install
       - run: yarn bootstrap
       - name: Update UI catalog
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         run: |
           npx lerna run --scope @openameba/spindle-ui storybook:build
           npx lerna run --scope @openameba/spindle-ui storybook:deploy -- --token $FIREBASE_TOKEN
