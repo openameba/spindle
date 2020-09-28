@@ -1,0 +1,11 @@
+{
+  "core": {
+    "actualDir": ".reg-suit/actual_images"
+  },
+  "plugins": {
+    "reg-keygen-git-hash-plugin": {},
+    "reg-publish-gcs-plugin": {
+      "bucketName": "$GCS_BUCKET_NAME_REG_SUIT"
+    }
+  }
+}

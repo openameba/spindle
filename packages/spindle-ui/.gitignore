@@ -67,3 +67,9 @@ node_modules/
 
 # Output for Firebase hosting
 public
+
+# reg-suit working directory
+.reg
+
+# storing directory for reg-suit and storycap
+.reg-suit

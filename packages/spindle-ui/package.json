@@ -16,6 +16,7 @@
     "storybook:start": "start-storybook -p 6006 -c .storybook",
     "storybook:build": "build-storybook -o public -c .storybook",
     "storybook:deploy": "firebase deploy --only hosting",
+    "test:regression": "reg-suit run",
     "serve": "firebase serve",
     "clean": "npx rimraf dist",
     "prebuild": "yarn clean",
