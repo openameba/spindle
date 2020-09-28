@@ -56,6 +56,7 @@
     "jest": "^26.1.0",
     "postcss-cli": "^8.0.0",
     "postcss-import": "^12.0.1",
+    "reg-suit": "^0.10.7",
     "sinon": "^9.0.2",
     "stylelint": "^13.6.1",
     "stylelint-config-prettier": "^8.0.2",
