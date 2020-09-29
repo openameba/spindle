@@ -31,6 +31,9 @@ jobs:
           --outDir packages/spindle-ui/.reg-suit/actual_images/
           --serverCmd 'npx lerna run --scope @openameba/spindle-ui storybook:start'
           http://localhost:6006
+      - name: workaround for detached HEAD
+        run: |
+          git checkout ${GITHUB_REF#refs/heads/} || git checkout -b ${GITHUB_REF#refs/heads/} && git pull
       - env:
           GCS_BUCKET_NAME_REG_SUIT: ${{ secrets.GCS_BUCKET_NAME_REG_SUIT }}
         run: npx lerna run --scope @openameba/spindle-ui test:regression
