@@ -5,7 +5,7 @@
   "types": "./dist/index.d.ts",
   "style": "./dist/index.css",
   "scripts": {
-    "test": "run-p bundlesize lint test:*",
+    "test": "run-p bundlesize lint test:interaction",
     "lint": "yarn lint:style",
     "lint:style": "stylelint '**/*.css'",
     "format": "yarn lint:style --fix",
