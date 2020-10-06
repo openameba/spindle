@@ -22,6 +22,7 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
       - run: yarn install --frozen-lockfile
       - run: yarn bootstrap
+      - run: npx lerna run --scope @openameba/spindle-ui storybook:build
       - run: |
           npx lerna add --scope @openameba/spindle-ui --dev reg-keygen-git-hash-plugin
           npx lerna add --scope @openameba/spindle-ui --dev reg-publish-gcs-plugin
@@ -29,8 +30,8 @@ jobs:
         run: >
           npx storycap
           --outDir packages/spindle-ui/.reg-suit/actual_images/
-          --serverCmd 'npx lerna run --scope @openameba/spindle-ui storybook:start'
-          http://localhost:6006
+          --serverCmd 'npx serve packages/spindle-ui/public'
+          http://localhost:5000
       - name: workaround for detached HEAD
         run: |
           git checkout ${GITHUB_REF#refs/heads/} || git checkout -b ${GITHUB_REF#refs/heads/} && git pull
