@@ -25,7 +25,7 @@ jobs:
             node_modules
             */*/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
-      - run: yarn install
+      - run: yarn install --frozen-lockfile
       - run: yarn bootstrap
       # Build application to check if the system works or not
       # TODO: Build script for spindle-icon should be added
