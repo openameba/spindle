@@ -27,6 +27,7 @@ jobs:
       - run: npx lerna run --scope @openameba/spindle-ui storybook:build
       - run: |
           npx lerna add --scope @openameba/spindle-ui --dev reg-keygen-git-hash-plugin
+          npx lerna add --scope @openameba/spindle-ui --dev reg-notify-github-plugin
           npx lerna add --scope @openameba/spindle-ui --dev reg-publish-gcs-plugin
       - name: capture stories
         run: >
@@ -47,6 +48,7 @@ jobs:
       - env:
           GCS_BUCKET_NAME_REG_SUIT: ${{ secrets.GCS_BUCKET_NAME_REG_SUIT }}
           GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}
+          REG_SUIT_NOTIFY_CLIENT_ID: ${{ secrets.REG_SUIT_NOTIFY_CLIENT_ID }}
         run: |
           printf -- '%s' "$GOOGLE_APPLICATION_CREDENTIALS_JSON" | base64 --decode > "${PWD}/storage-key.json"
           export GOOGLE_APPLICATION_CREDENTIALS="${PWD}/storage-key.json"
