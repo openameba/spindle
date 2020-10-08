@@ -35,8 +35,15 @@ jobs:
           --serverCmd 'npx serve packages/spindle-ui/public'
           http://localhost:5000
       - name: workaround for detached HEAD
+        if: github.event_name == 'push'
         run: |
-          git checkout ${GITHUB_REF#refs/heads/} || git checkout -b ${GITHUB_REF#refs/heads/} && git pull
+          git fetch && git checkout "${GITHUB_REF#refs/heads/}"
+      - name: workaround for detached HEAD
+        if: github.event_name == 'pull_request'
+        env:
+          REF: ${{ github.head_ref }}
+        run: |
+          git fetch && git checkout "${REF}"
       - env:
           GCS_BUCKET_NAME_REG_SUIT: ${{ secrets.GCS_BUCKET_NAME_REG_SUIT }}
           GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}
