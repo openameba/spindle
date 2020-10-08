@@ -1,0 +1,55 @@
+name: regression-test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  regression-test:
+    name: regression test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: 14
+      - name: restore lerna
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+      - run: yarn install --frozen-lockfile
+      - run: yarn bootstrap
+      - run: npx lerna run --scope @openameba/spindle-ui storybook:build
+      - run: |
+          npx lerna add --scope @openameba/spindle-ui --dev reg-keygen-git-hash-plugin
+          npx lerna add --scope @openameba/spindle-ui --dev reg-notify-github-plugin
+          npx lerna add --scope @openameba/spindle-ui --dev reg-publish-gcs-plugin
+      - name: capture stories
+        run: >
+          npx storycap
+          --outDir packages/spindle-ui/.reg-suit/actual_images/
+          --serverCmd 'npx serve packages/spindle-ui/public'
+          http://localhost:5000
+      - name: checkout main branch
+        if: github.event_name == 'push'
+        run: |
+          git fetch && git checkout "${GITHUB_REF#refs/heads/}"
+      - name: checkout Pull-request branch
+        if: github.event_name == 'pull_request'
+        env:
+          REF: ${{ github.head_ref }}
+        run: |
+          git fetch && git checkout "${REF}"
+      - env:
+          GCS_BUCKET_NAME_REG_SUIT: ${{ secrets.GCS_BUCKET_NAME_REG_SUIT }}
+          GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}
+          REG_SUIT_NOTIFY_CLIENT_ID: ${{ secrets.REG_SUIT_NOTIFY_CLIENT_ID }}
+        run: |
+          printf -- '%s' "$GOOGLE_APPLICATION_CREDENTIALS_JSON" | base64 --decode > "${PWD}/storage-key.json"
+          export GOOGLE_APPLICATION_CREDENTIALS="${PWD}/storage-key.json"
+          npx lerna run --scope @openameba/spindle-ui test:regression
