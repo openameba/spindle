@@ -3,7 +3,7 @@ name: regression-test
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
 
 jobs:
@@ -34,11 +34,11 @@ jobs:
           --outDir packages/spindle-ui/.reg-suit/actual_images/
           --serverCmd 'npx serve packages/spindle-ui/public'
           http://localhost:5000
-      - name: workaround for detached HEAD
+      - name: checkout main branch
         if: github.event_name == 'push'
         run: |
           git fetch && git checkout "${GITHUB_REF#refs/heads/}"
-      - name: workaround for detached HEAD
+      - name: checkout Pull-request branch
         if: github.event_name == 'pull_request'
         env:
           REF: ${{ github.head_ref }}
