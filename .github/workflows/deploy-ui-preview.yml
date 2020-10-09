@@ -1,0 +1,27 @@
+name: deploy UI preview
+
+on:
+  pull_request:
+    paths:
+      - 'packages/spindle-ui/**'
+
+jobs:
+  build_and_preview:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./packages/spindle-ui/
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: 14
+      - run: yarn install --frozen-lockfile
+      - run: yarn storybook:build
+      - name: deploy to preview channel
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
+          expires: 30d
+          entryPoint: ./packages/spindle-ui/
