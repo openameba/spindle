@@ -38,9 +38,9 @@
     "react": "^16.13.1"
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "^5.3.19",
-    "@storybook/addon-actions": "^5.3.19",
-    "@storybook/react": "^5.3.19",
+    "@storybook/addon-a11y": "^6.0.0",
+    "@storybook/addon-actions": "^6.0.0",
+    "@storybook/react": "^6.0.0",
     "@svgr/cli": "^5.4.0",
     "@types/chai": "^4.2.12",
     "@types/enzyme": "^3.10.5",
