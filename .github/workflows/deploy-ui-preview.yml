@@ -8,22 +8,15 @@ on:
 jobs:
   build_and_preview:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./packages/spindle-ui/
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2-beta
         with:
           node-version: 14
-      - name: restore lerna
-        uses: actions/cache@v2
-        with:
-          path: |
-            node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
       - run: yarn install --frozen-lockfile
-      - run: yarn bootstrap
-      # Change directory to execute deploy command in "FirebaseExtended/action-hosting-deploy" action
-      - run: cd packages/spindle-ui/
       - run: yarn storybook:build
       - name: deploy to preview channel
         uses: FirebaseExtended/action-hosting-deploy@v0
@@ -31,3 +24,4 @@ jobs:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
           expires: 30d
+          entryPoint: ./packages/spindle-ui/
