@@ -28,4 +28,4 @@ jobs:
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
           npm whoami
       - name: Publishing with lerna
-        run: npx lerna publish from-git
+        run: npx lerna publish from-git --yes
