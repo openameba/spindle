@@ -29,7 +29,6 @@
     "prepublishOnly": "yarn build"
   },
   "license": "MIT",
-  "private": true,
   "files": [
     "dist"
   ],
