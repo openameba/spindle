@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function SvgMessagecommentFill(props: React.SVGProps<SVGSVGElement>) {
+function SvgCommentFill(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width="1em"
@@ -15,4 +15,4 @@ function SvgMessagecommentFill(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default SvgMessagecommentFill;
+export default SvgCommentFill;
