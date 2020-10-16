@@ -2,10 +2,14 @@
   "files": [
     {
       "path": "./dist/Icon/index.js",
-      "maxSize": "5 kB"
+      "maxSize": "5.5 kB"
     },
     {
-      "path": "./dist/Icon/!(index).js",
+      "path": "./dist/Icon/@(Onedari|Peta).js",
+      "maxSize": "2.1 kB"
+    },
+    {
+      "path": "./dist/Icon/!(index|Onedari|Peta).js",
       "maxSize": "1.5 kB"
     },
     {
