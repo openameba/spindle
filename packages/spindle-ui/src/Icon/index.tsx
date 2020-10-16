@@ -133,7 +133,7 @@ export { default as ReplyCircleFill } from './ReplyCircleFill';
 export { default as Sad } from './Sad';
 export { default as ScreenFull } from './ScreenFull';
 export { default as ScreenInline } from './ScreenInline';
-export { default as Seach } from './Seach';
+export { default as Search } from './Search';
 export { default as Setting } from './Setting';
 export { default as Snsconnect } from './Snsconnect';
 export { default as Sort } from './Sort';

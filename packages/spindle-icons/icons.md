@@ -227,7 +227,7 @@
 | saveblog | ![](dist/saveblog.svg) |
 | screen_full | ![](dist/screen_full.svg) |
 | screen_inline | ![](dist/screen_inline.svg) |
-| seach | ![](dist/seach.svg) |
+| search | ![](dist/search.svg) |
 | service | ![](dist/service.svg) |
 | setting | ![](dist/setting.svg) |
 | share | ![](dist/share.svg) |
