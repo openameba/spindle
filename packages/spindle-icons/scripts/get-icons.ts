@@ -3,10 +3,13 @@ import { promises as fs } from 'fs';
 import { download } from '../lib/download';
 import { figma } from '../lib/figma';
 
+const ALIAS_ALL_ICON = 'ALL';
+
 type FigmaConfig = {
   fileKey: string;
   nodeId: string;
   dest: string;
+  iconNames: string[] | typeof ALIAS_ALL_ICON;
 };
 
 const FIGMA_CONFIG = 'figma.json';
@@ -34,13 +37,26 @@ const sleep = (delayMS: number): Promise<void> =>
 
 const getIcons = async (): Promise<void> => {
   try {
-    const { fileKey, nodeId, dest } = await readConfig();
+    const { fileKey, nodeId, dest, iconNames } = await readConfig();
+
+    if (!iconNames) {
+      throw Error(
+        'No icon name specified. You can set "ALL" to get all icons.',
+      );
+    }
 
     const result = await figma.getFileNodes(fileKey, [nodeId]);
     const components = result.nodes[nodeId]?.components ?? {};
-    const iconNodePromises = Object.keys(components).map((key) =>
-      Promise.resolve([key, components[key].name]),
-    );
+    const icons = Object.keys(components).map((key) => [
+      key,
+      components[key].name,
+    ]);
+    const iconNodePromises =
+      iconNames === ALIAS_ALL_ICON
+        ? icons.map((icon) => Promise.resolve(icon))
+        : icons
+            .filter(([, name]) => iconNames.includes(name))
+            .map((icon) => Promise.resolve(icon));
 
     progress.start(iconNodePromises.length, 0, { name: '-' });
 

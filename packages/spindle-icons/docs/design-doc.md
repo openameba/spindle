@@ -32,13 +32,14 @@ https://www.figma.com/file/${FILE_ID}/icon?node-id=${NODE_ID}
 
 なお、セキュリティ上の問題から、Figmaファイルの閲覧権限が適切か確認してください。また、パーソナルアクセストークンは他人に漏らさないように扱ってください。
 
-取得したFile KeyとNode IDは、`figma.json`という名前でファイルを作成し、保存します。Node IDが「0%3A1」のようにURLエンコードされている場合は、デコードした値を指定します。`dest`にはSVGを出力するディレクトリを指定します。`figma.json`は、間違ってFigmaファイルが公開されないように、git管理されていません。
+取得したFile KeyとNode IDは、`figma.json`という名前でファイルを作成し、保存します。Node IDが「0%3A1」のようにURLエンコードされている場合は、デコードした値を指定します。`dest`にはSVGを出力するディレクトリを指定します。特定のアイコンのみ取得したい場合には、`iconNames`に配列形式でアイコン名を指定します。`ALL`を指定するとすべてのアイコンを取得しますが、ファイル数が多い場合にはダウンロードに時間がかかります。なお、`figma.json`は、間違ってFigmaファイルが公開されないように、git管理されていません。
 
 ```json
 {
   "fileKey": "${FILE_ID}",
   "nodeId": "${NODE_ID}",
-  "dest": "dist"
+  "dest": "dist",
+  "iconNames": ["clock"]
 }
 ```
 
