@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs';
 
-const SVG_DIR = 'dist';
+const SVG_DIR = 'dist/svg';
 
 const markdown = (files: string[]): string => {
   const icons = files.map((file) => {
