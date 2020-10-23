@@ -23,7 +23,7 @@
     "build": "run-p build:*",
     "build:script": "tsc",
     "build:style": "postcss src/**/*.css src/*.css --base src -d dist/",
-    "preicon": "npx rimraf 'src/Icon/!(*.stories).tsx' && npx cpx '../spindle-icons/dist/!(sprite).svg' icon-tmp",
+    "preicon": "npx rimraf 'src/Icon/!(*.stories).tsx' && npx cpx '../spindle-icons/dist/svg/!(sprite).svg' icon-tmp",
     "icon": "svgr --out-dir src/Icon icon-tmp",
     "posticon": "npx rimraf icon-tmp",
     "prepublishOnly": "yarn build"

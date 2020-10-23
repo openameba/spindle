@@ -52,19 +52,29 @@ const getIcons = async (): Promise<void> => {
       // Sleeping time depends on the number of icons to download
       await sleep(3000);
 
-      const imageNode = await figma.getImage(fileKey, {
+      const svgNode = await figma.getImage(fileKey, {
         ids: nodeId,
         scale: 1,
         format: 'svg',
         svg_simplify_stroke: true,
       });
-      const imageUrl = imageNode.images[nodeId];
+      const svgUrl = svgNode.images[nodeId];
 
-      if (!imageUrl) {
-        throw new Error(`Icon SVG URL is not found. node ID: ${nodeId}`);
+      const pdfNode = await figma.getImage(fileKey, {
+        ids: nodeId,
+        scale: 1,
+        format: 'pdf',
+      });
+      const pdfUrl = pdfNode.images[nodeId];
+
+      if (!svgUrl || !pdfUrl) {
+        throw new Error(`Icon URL is not found. node ID: ${nodeId}`);
       }
 
-      await download({ destination: `${dest}/${name}.svg`, url: imageUrl });
+      await Promise.all([
+        download({ destination: `${dest}/svg/${name}.svg`, url: svgUrl }),
+        download({ destination: `${dest}/pdf/${name}.pdf`, url: pdfUrl }),
+      ]);
 
       progress.increment(undefined, { name });
     }
