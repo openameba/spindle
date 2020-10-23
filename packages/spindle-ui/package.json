@@ -65,7 +65,6 @@
     "stylelint-order": "^4.1.0",
     "stylelint-prettier": "^1.1.2",
     "stylelint-selector-bem-pattern": "^2.1.0",
-    "ts-jest": "^26.1.4",
-    "ts-loader": "^8.0.1"
+    "ts-jest": "^26.1.4"
   }
 }
