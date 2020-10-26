@@ -5,5 +5,10 @@ module.exports = {
    * - for IE11
    */
   // TODO: minify css for production
-  plugins: [require('autoprefixer'), require('postcss-import')],
+  /* eslint-disable @typescript-eslint/no-var-requires */
+  plugins: [
+    require('autoprefixer'),
+    require('postcss-import'),
+    require('postcss-pxtorem')({ useEM: true }),
+  ],
 };
