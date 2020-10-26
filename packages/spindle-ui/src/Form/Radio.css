@@ -4,7 +4,7 @@
 .spui-Radio-label {
   border-radius: 2px;
   color: var(--color-text-low-emphasis);
-  font-size: 16px;
+  font-size: 1em;
   font-weight: bold;
   padding: 0.1em 0;
   position: relative;
