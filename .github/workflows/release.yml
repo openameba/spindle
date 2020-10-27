@@ -41,7 +41,7 @@ jobs:
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
           npm whoami
       - name: Extract version from branch name
-        run: echo "::set-output name=version::$(echo ${GITHUB_REF##*/})"
+        run: echo "::set-output name=version::${GITHUB_REF##*/}"
         id: extract_version
       - name: Releaseing with lerna
         # also see some options in lerna.json
