@@ -2,8 +2,6 @@ name: regression-test
 
 on:
   push:
-    paths:
-      - 'packages/spindle-ui/**'
   pull_request:
     paths:
       - 'packages/spindle-ui/**'
