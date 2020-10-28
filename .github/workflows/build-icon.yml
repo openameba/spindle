@@ -1,0 +1,48 @@
+name: build icon via webhook
+
+on:
+  workflow_dispatch:
+    inputs:
+      modified_components:
+        description: 'JSON array for modified components'
+        required: true
+        default: '["ALL"]'
+
+jobs:
+  build_icons:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: 14
+      - name: restore lerna
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+      - run: yarn install --frozen-lockfile
+      - run: yarn bootstrap
+      - name: Update UI catalog
+        env:
+          FILE_KEY: ${{ secrets.FIGMA_ICON_FILE_KEY }}
+          NODE_ID: ${{ secrets.FIGMA_ICON_NODE_ID }}
+          ICON_NAMES: ${{ github.event.inputs.modified_components }}
+        run: |
+          echo '{ "fileKey": "$FILE_KEY", "nodeId": "$NODE_ID", "dest": "dist", "iconNames": "$ICON_NAMES" }' > packages/spindle-icons/figma.json
+          npx lerna run --scope @openameba/spindle-icons build
+          npx lerna run --scope @openameba/spindle-ui icon
+          yarn format
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: 'feat(spindle-icons): update icons'
+          branch: feat/build-icon-via-webhook
+          delete-branch: true
+          title: 'feat(spindle-icons): update icons'
+          body: ${{ github.event.inputs.modified_components }}
+          labels: |
+            spindle-icons
+            spindle-ui
