@@ -1,0 +1,17 @@
+src
+dist
+.storybook
+.reg-suit
+.firebaserc
+.gitignore
+.stylelintignore
+.stylelintrc.json
+jest.config.js
+postcss.config.js
+.svgrrc.json
+bundlesize.config.json
+firebase.json
+regconfig.json
+tsconfig.json
+design-doc.md
+setup-tests.ts
