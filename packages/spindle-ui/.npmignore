@@ -1,5 +1,6 @@
 src
 dist
+public
 .storybook
 .reg-suit
 .firebaserc
