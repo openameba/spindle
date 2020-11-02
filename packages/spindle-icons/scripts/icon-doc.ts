@@ -8,7 +8,7 @@ const markdown = (files: string[]): string => {
   const svgPath = relative(DOC_DIR, SVG_DIR);
   const icons = files.map((file) => {
     const name = file.replace('.svg', '');
-    return [`| ${name} | ![](${svgPath}/${file}) |`].join('');
+    return `| ${name} | ![](${svgPath}/${file}) |`;
   });
   const iconMarkdown = [
     '## Icon List',
