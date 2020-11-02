@@ -25,7 +25,7 @@ const createIconList = async (): Promise<void> => {
     const icons = files
       .filter((file) => file.endsWith('.svg'))
       .filter((file) => !file.startsWith('sprite'));
-    fs.writeFile(`${DOC_DIR}/icons.md`, markdown(icons));
+    await fs.writeFile(`${DOC_DIR}/icons.md`, markdown(icons));
     return Promise.resolve();
   } catch (err) {
     return Promise.reject(err);
