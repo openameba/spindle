@@ -1,10 +1,9 @@
 name: regression-test
 
 on:
-  push:
-  pull_request:
-    paths:
-      - 'packages/spindle-ui/**'
+  - push
+  - pull_request_target
+  - workflow_dispatch
 
 jobs:
   regression-test:
@@ -12,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v2-beta
         with:
           node-version: 14
@@ -35,17 +36,21 @@ jobs:
           --outDir packages/spindle-ui/.reg-suit/actual_images/
           --serverCmd 'npx serve packages/spindle-ui/public'
           http://localhost:5000
-      - name: checkout main branch
+      - name: checkout branch when push
         if: github.event_name == 'push'
         run: |
-          git fetch && git checkout "${GITHUB_REF#refs/heads/}"
-      - name: checkout Pull-request branch
+          git checkout "${GITHUB_REF#refs/heads/}"
+      - name: checkout branch when create Pull-request
         if: github.event_name == 'pull_request'
         env:
           REF: ${{ github.head_ref }}
         run: |
-          git fetch && git checkout "${REF}"
-      - env:
+          git checkout "${REF}"
+      - run: git symbolic-ref --short HEAD
+      # NOTE: Don't execute if sent Pull-request from openameba/spindle
+      - if: |
+          !(github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == 'openameba/spindle')
+        env:
           GCS_BUCKET_NAME_REG_SUIT: ${{ secrets.GCS_BUCKET_NAME_REG_SUIT }}
           GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}
           REG_SUIT_NOTIFY_CLIENT_ID: ${{ secrets.REG_SUIT_NOTIFY_CLIENT_ID }}
