@@ -31,7 +31,7 @@ jobs:
           NODE_ID: ${{ secrets.FIGMA_ICON_NODE_ID }}
           ICON_NAMES: ${{ github.event.inputs.modified_components }}
         run: |
-          echo '{ "fileKey": "$FILE_KEY", "nodeId": "$NODE_ID", "dest": "dist", "iconNames": "$ICON_NAMES" }' > packages/spindle-icons/figma.json
+          node -p "JSON.stringify({ fileKey: '$FILE_KEY', nodeId: '$NODE_ID', dest: 'dist', iconNames: '$ICON_NAMES' })" > packages/spindle-icons/figma.json
           npx lerna run --scope @openameba/spindle-icons build
           npx lerna run --scope @openameba/spindle-ui icon
           yarn format
