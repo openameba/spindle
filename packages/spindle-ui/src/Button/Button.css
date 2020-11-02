@@ -6,6 +6,7 @@
 */
 .spui-Button {
   box-sizing: border-box;
+  line-height: 1.3;
   outline: none;
   text-align: center;
   transition: background-color var(--Button-transitionDuration, 0.3s);
