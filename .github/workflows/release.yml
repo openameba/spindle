@@ -1,0 +1,50 @@
+name: releaseing
+
+on:
+  push:
+    branches:
+      - release/major
+      - release/minor
+      - release/patch
+      - release/premajor
+      - release/preminor
+      - release/prepatch
+      - release/prerelease
+
+jobs:
+  releaseing:
+    name: releaseing
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: 14
+      # Bootstrap lerna for building app before publishing
+      - name: restore lerna
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+      - run: yarn install --frozen-lockfile
+      - run: yarn bootstrap
+      - name: Set git user
+        run: |
+          git config --global user.email "<>"
+          git config --global user.name "openameba"
+      - name: Log in to npm
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+          npm whoami
+      - name: Extract version from branch name
+        run: echo "::set-output name=version::${GITHUB_REF##*/}"
+        id: extract_version
+      - name: Releaseing with lerna
+        # also see some options in lerna.json
+        run: npx lerna release ${{ steps.extract_version.outputs.version }} --conventional-commits --create-release github --yes --no-private
+        env:
+          GH_TOKEN: ${{ github.token }}
