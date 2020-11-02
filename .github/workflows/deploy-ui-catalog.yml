@@ -3,9 +3,9 @@ name: deploy UI catalog
 on:
   push:
     branches:
-      - deploy/ui-catalog
-    tags:
-      - '@openameba/*'
+      - main
+    paths:
+      - 'packages/spindle-ui/**'
 
 jobs:
   deploy_ui_catalog:
