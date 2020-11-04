@@ -1,0 +1,144 @@
+import { Meta, Story, Source } from '@storybook/addon-docs/blocks';
+import { actions } from '@storybook/addon-actions';
+import { Button } from './Button';
+
+# Button
+
+<Meta title="Button" component={Button} />
+
+## Installation
+
+<Source
+  language='javascript'
+  code={`import { Button } from '@openameba/spindle-ui'`}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/Button/Button.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Button/Button.css">`}
+/>
+
+## Large
+
+<Preview withSource="open">
+  <Story name="Large">
+    <Button size="large" variant="contained" {...actions('onClick', 'onMouseOver')}>Contained</Button>
+    <Button size="large" variant="outlined" {...actions('onClick', 'onMouseOver')}>Outlined</Button>
+    <Button size="large" variant="neutral" {...actions('onClick', 'onMouseOver')}>Neutral</Button>
+    <Button size="large" variant="danger" {...actions('onClick', 'onMouseOver')}>Danger</Button>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<Button size="large" variant="contained">Contained</Button>
+<Button size="large" variant="outlined">Outlined</Button>
+<Button size="large" variant="neutral">Neutral</Button>
+<Button size="large" variant="danger">Danger</Button>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-Button spui-Button--large spui-Button--contained">Contained</button>
+<button class="spui-Button spui-Button--large spui-Button--outlined">Outlined</button>
+<button class="spui-Button spui-Button--large spui-Button--neutral">Neutral</button>
+<button class="spui-Button spui-Button--large spui-Button--danger">Danger</button>
+  `}
+/>
+
+## Medium
+
+<Preview withSource="open">
+  <Story name="Medium">
+    <Button size="medium" variant="contained" {...actions('onClick', 'onMouseOver')}>Contained</Button>
+    <Button size="medium" variant="outlined" {...actions('onClick', 'onMouseOver')}>Outlined</Button>
+    <Button size="medium" variant="neutral" {...actions('onClick', 'onMouseOver')}>Neutral</Button>
+    <Button size="medium" variant="danger" {...actions('onClick', 'onMouseOver')}>Danger</Button>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<Button size="medium" variant="contained">Contained</Button>
+<Button size="medium" variant="outlined">Outlined</Button>
+<Button size="medium" variant="neutral">Neutral</Button>
+<Button size="medium" variant="danger">Danger</Button>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-Button spui-Button--medium spui-Button--contained">Contained</button>
+<button class="spui-Button spui-Button--medium spui-Button--outlined">Outlined</button>
+<button class="spui-Button spui-Button--medium spui-Button--neutral">Neutral</button>
+<button class="spui-Button spui-Button--medium spui-Button--danger">Danger</button>
+  `}
+/>
+
+## Small
+
+<Preview withSource="open">
+  <Story name="Small">
+    <Button size="small" variant="contained" {...actions('onClick', 'onMouseOver')}>Contained</Button>
+    <Button size="small" variant="outlined" {...actions('onClick', 'onMouseOver')}>Outlined</Button>
+    <Button size="small" variant="neutral" {...actions('onClick', 'onMouseOver')}>Neutral</Button>
+    <Button size="small" variant="danger" {...actions('onClick', 'onMouseOver')}>Danger</Button>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<Button size="small" variant="contained">Contained</Button>
+<Button size="small" variant="outlined">Outlined</Button>
+<Button size="small" variant="neutral">Neutral</Button>
+<Button size="small" variant="danger">Danger</Button>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-Button spui-Button--small spui-Button--contained">Contained</button>
+<button class="spui-Button spui-Button--small spui-Button--outlined">Outlined</button>
+<button class="spui-Button spui-Button--small spui-Button--neutral">Neutral</button>
+<button class="spui-Button spui-Button--small spui-Button--danger">Danger</button>
+  `}
+/>
+
+## Disabled
+
+<Preview withSource="open">
+  <Story name="Disabled">
+    <Button disabled size="medium" variant="contained" {...actions('onClick', 'onMouseOver')}>Contained</Button>
+    <Button disabled size="medium" variant="outlined" {...actions('onClick', 'onMouseOver')}>Outlined</Button>
+    <Button disabled size="medium" variant="neutral" {...actions('onClick', 'onMouseOver')}>Neutral</Button>
+    <Button disabled size="medium" variant="danger" {...actions('onClick', 'onMouseOver')}>Danger</Button>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<Button disabled size="medium" variant="contained">Contained</Button>
+<Button disabled size="medium" variant="outlined">Outlined</Button>
+<Button disabled size="medium" variant="neutral">Neutral</Button>
+<Button disabled size="medium" variant="danger">Danger</Button>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-Button spui-Button--medium spui-Button--contained" disabled>Contained</button>
+<button class="spui-Button spui-Button--medium spui-Button--outlined" disabled>Outlined</button>
+<button class="spui-Button spui-Button--medium spui-Button--neutral" disabled>Neutral</button>
+<button class="spui-Button spui-Button--medium spui-Button--danger" disabled>Danger</button>
+  `}
+/>

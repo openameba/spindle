@@ -43,6 +43,7 @@
   "devDependencies": {
     "@storybook/addon-a11y": "^6.0.0",
     "@storybook/addon-actions": "^6.0.0",
+    "@storybook/addon-docs": "^6.0.28",
     "@storybook/react": "^6.0.0",
     "@svgr/cli": "^5.4.0",
     "@types/chai": "^4.2.12",
