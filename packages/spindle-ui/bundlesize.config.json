@@ -18,7 +18,7 @@
     },
     {
       "path": "./dist/index.css",
-      "maxSize": "3 kB"
+      "maxSize": "10 kB"
     }
   ]
 }
