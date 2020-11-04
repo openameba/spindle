@@ -45,6 +45,6 @@ jobs:
         id: extract_version
       - name: Releaseing with lerna
         # also see some options in lerna.json
-        run: npx lerna release ${{ steps.extract_version.outputs.version }} --conventional-commits --create-release github --yes --no-private
+        run: npx lerna publish ${{ steps.extract_version.outputs.version }} --conventional-commits --create-release github --yes --no-private
         env:
           GH_TOKEN: ${{ github.token }}
