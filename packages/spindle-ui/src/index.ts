@@ -1,3 +1,3 @@
 export { Button } from './Button';
 export * as Form from './Form';
-export * from './Icon';
+export * as Icon from './Icon';
