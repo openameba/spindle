@@ -48,3 +48,17 @@ jobs:
         run: npx lerna publish ${{ steps.extract_version.outputs.version }} --conventional-commits --create-release github --yes --no-private
         env:
           GH_TOKEN: ${{ github.token }}
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v3
+        with:
+          branch: release/chores-into-default-branch
+          delete-branch: true
+          title: 'chore(release): publish'
+          body: 'This is an automated pull request to merge some chores into the default branch.'
+          labels: |
+            automated pr
+      - name: Check Pull Request
+        run: |
+          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
+          echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
