@@ -1,6 +1,6 @@
 import React from 'react';
 
-type Layout = 'intrinsic' | 'fillWidth';
+type Layout = 'intrinsic' | 'fixed';
 
 type Size = 'large' | 'medium' | 'small';
 

@@ -61,7 +61,7 @@
 /*
  * Layout
 */
-.spui-Button--fillWidth {
+.spui-Button--fixed {
   width: 100%;
 }
 
