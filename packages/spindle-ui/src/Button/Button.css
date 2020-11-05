@@ -28,31 +28,33 @@
  * Button sizes
 */
 .spui-Button--large {
-  border-radius: 24px;
+  /* To be relative value with font size; this means base height / base font size  */
+  border-radius: calc(48em / 18);
   font-size: 18px; /* TODO: Replace relative value (em or rem) */
-  /* To use em value; this equals (48px / $font-size)em  */
-  height: calc(48em / 18);
-  padding: 0 16px;
+  min-height: 48px;
+  padding-left: 16px;
+  padding-right: 16px;
   width: 100%;
 }
 
 .spui-Button--medium {
-  border-radius: 20px;
+  border-radius: calc(40em / 18);
   font-size: 18px; /* TODO: Replace relative value (em or rem) */
-  /* To use em value; this equals (40px / $font-size)em  */
-  height: calc(40em / 18);
   max-width: 240px;
+  min-height: 40px;
   min-width: 88px;
-  padding: 0 16px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .spui-Button--small {
-  border-radius: 16px;
-  font-size: 14px; /* TODO: Replace relative value (em or rem) */
-  /* To use em value; this equals (32px / $font-size)em  */
-  height: calc(32em / 14);
+  border-radius: calc(32em / 13);
+  font-size: 13px; /* TODO: Replace relative value (em or rem) */
+  max-width: 160px;
+  min-height: 32px;
   min-width: 60px;
-  padding: 0 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 /*
@@ -69,6 +71,9 @@
     --Button--contained-color,
     var(--color-text-high-emphasis-inverse)
   );
+  /* Button variants have different vertical padding to normalize height */
+  padding-bottom: 8px;
+  padding-top: 8px;
 }
 
 .spui-Button--contained:not([disabled]):hover {
@@ -87,6 +92,8 @@
   border: 2px solid
     var(--Button--outlined-borderColor, var(--color-surface-accent-primary));
   color: var(--Button--outlined-color, var(--color-surface-accent-primary));
+  padding-bottom: 6px;
+  padding-top: 6px;
 }
 
 .spui-Button--outlined:not([disabled]):hover {
@@ -104,6 +111,8 @@
   );
   border: none;
   color: var(--Button--neutral-backgroundColor, var(--color-text-mid-emphasis));
+  padding-bottom: 8px;
+  padding-top: 8px;
 }
 
 .spui-Button--neutral:not([disabled]):hover {
@@ -121,6 +130,8 @@
   );
   border: 2px solid var(--Button--danger-borderColor, var(--color-text-caution));
   color: var(--Button--danger-color, var(--color-text-caution));
+  padding-bottom: 6px;
+  padding-top: 6px;
 }
 
 .spui-Button--danger:not([disabled]):hover {
