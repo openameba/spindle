@@ -142,3 +142,33 @@ import { Button } from './Button';
 <button class="spui-Button spui-Button--medium spui-Button--danger" disabled>Danger</button>
   `}
 />
+
+## Medium With Layout Fill Width
+
+<Preview withSource="open">
+  <Story name="Medium With Layout Fill Width">
+    <Button layout="fillWidth" size="medium" variant="contained" {...actions('onClick', 'onMouseOver')}>Contained</Button>
+    <Button layout="fillWidth" size="medium" variant="outlined" {...actions('onClick', 'onMouseOver')}>Outlined</Button>
+    <Button layout="fillWidth" size="medium" variant="neutral" {...actions('onClick', 'onMouseOver')}>Neutral</Button>
+    <Button layout="fillWidth" size="medium" variant="danger" {...actions('onClick', 'onMouseOver')}>Danger</Button>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<Button layout="fillWidth" size="medium" variant="contained">Contained</Button>
+<Button layout="fillWidth" size="medium" variant="outlined">Outlined</Button>
+<Button layout="fillWidth" size="medium" variant="neutral">Neutral</Button>
+<Button layout="fillWidth" size="medium" variant="danger">Danger</Button>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-Button spui-Button--fillWidth spui-Button--medium spui-Button--contained">Contained</button>
+<button class="spui-Button spui-Button--fillWidth spui-Button--medium spui-Button--outlined">Outlined</button>
+<button class="spui-Button spui-Button--fillWidth spui-Button--medium spui-Button--neutral">Neutral</button>
+<button class="spui-Button spui-Button--fillWidth spui-Button--medium spui-Button--danger">Danger</button>
+  `}
+/>

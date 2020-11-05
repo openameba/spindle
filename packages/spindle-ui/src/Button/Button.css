@@ -59,6 +59,13 @@
 }
 
 /*
+ * Layout
+*/
+.spui-Button--fillWidth {
+  width: 100%;
+}
+
+/*
  * Button variants
 */
 /* contained */
