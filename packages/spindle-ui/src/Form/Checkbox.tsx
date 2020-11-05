@@ -1,28 +1,20 @@
 import React from 'react';
 
-type Props = {
-  id: string;
-} & React.InputHTMLAttributes<HTMLInputElement>;
+import { CheckBold } from '../Icon';
+
+type Props = React.InputHTMLAttributes<HTMLInputElement>;
 
 const BLOCK_NAME = 'spui-Checkbox';
 
-export const Checkbox: React.FC<Props> = ({
-  children,
-  id = '',
-  ...rest
-}: Props) => {
+export const Checkbox: React.FC<Props> = ({ children, ...rest }: Props) => {
   return (
-    <label className={`${BLOCK_NAME}-label`} htmlFor={id}>
-      <input
-        className={`${BLOCK_NAME}-input`}
-        id={id}
-        type="checkbox"
-        {...rest}
-      />
-      {/* TODO: insert check icon */}
-      <span className={`${BLOCK_NAME}-icon`}></span>
+    <label className={`${BLOCK_NAME}-label`}>
+      <input className={`${BLOCK_NAME}-input`} type="checkbox" {...rest} />
+      <span className={`${BLOCK_NAME}-icon`}>
+        <CheckBold aria-hidden="true" />
+      </span>
       <span className={`${BLOCK_NAME}-outline`}></span>
-      {children}
+      {children && <span className={`${BLOCK_NAME}-text`}>{children}</span>}
     </label>
   );
 };

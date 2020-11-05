@@ -2,11 +2,13 @@
  * Radio
 */
 .spui-Radio-label {
+  align-items: center;
   border-radius: 2px;
   color: var(--color-text-low-emphasis);
+  display: inline-flex;
   font-size: 1em;
   font-weight: bold;
-  padding: 0.1em 0;
+  line-height: 1;
   position: relative;
 }
 
@@ -20,32 +22,54 @@
 }
 
 .spui-Radio-icon {
+  align-items: center;
   border: solid 1px var(--color-border-medium-emphasis);
   border-radius: 50%;
   box-sizing: border-box;
-  display: inline-block;
+  color: transparent;
+  display: inline-flex;
+  font-size: 0.875em;
   height: 20px;
-  margin-right: 8px;
-  vertical-align: -0.25em;
+  justify-content: center;
+  vertical-align: top;
   width: 20px;
 }
 
 .spui-Radio-input:checked + .spui-Radio-icon {
   background-color: var(--color-object-accent-primary);
   border: solid 1px var(--color-object-accent-primary);
+  color: var(--color-text-high-emphasis-inverse);
+}
+
+.spui-Radio-input:disabled + .spui-Radio-icon {
+  opacity: 0.3;
 }
 
 /* To add 2px space for outline */
 .spui-Radio-outline {
-  border-radius: 2px;
+  border-radius: 50%;
   bottom: -2px;
+  height: 24px;
   left: -2px;
   position: absolute;
   right: -2px;
   top: -2px;
+  width: 24px;
 }
 
 /* box-shadow is used to apply border-radius as outline */
 .spui-Radio-input:focus ~ .spui-Radio-outline {
   box-shadow: 0 0 0 2px var(--color-focus-clarity);
+}
+
+.spui-Radio-text:not(:empty) {
+  margin-left: 8px;
+}
+
+.spui-Radio-input:checked ~ .spui-Radio-text {
+  color: var(--color-object-accent-primary);
+}
+
+.spui-Radio-input:disabled ~ .spui-Radio-text {
+  color: var(--color-text-disabled);
 }
