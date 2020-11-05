@@ -1,6 +1,7 @@
 /* stylelint-disable plugin/selector-bem-pattern */
 @import 'ameba-color-palette.css';
 @import './Button/Button.css';
+@import './ButtonGroup/ButtonGroup.css';
 @import './Form/index.css';
 @import './IconButton/IconButton.css';
 @import './LinkButton/LinkButton.css';
