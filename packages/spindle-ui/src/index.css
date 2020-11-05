@@ -2,4 +2,5 @@
 @import 'ameba-color-palette.css';
 @import './Button/Button.css';
 @import './Form/index.css';
+@import './IconButton/IconButton.css';
 @import './LinkButton/LinkButton.css';

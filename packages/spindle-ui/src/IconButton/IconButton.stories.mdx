@@ -1,0 +1,158 @@
+import { Meta, Story, Source } from '@storybook/addon-docs/blocks';
+import { actions } from '@storybook/addon-actions';
+import { IconButton } from './IconButton';
+import { PlusBold } from '../Icon';
+
+# Icon Button
+
+<Meta title="IconButton" component={IconButton} />
+
+<Source
+  language='javascript'
+  code={`import { IconButton } from '@openameba/spindle-ui'`}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/IconButton/IconButton.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/IconButton/IconButton.css">`}
+/>
+
+## Large
+
+<Preview withSource="open">
+  <Story name="Large">
+    <IconButton size="large" variant="contained" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
+    <IconButton size="large" variant="outlined" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
+    <IconButton size="large" variant="neutral" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<IconButton size="large" variant="contained">+</IconButton>
+<IconButton size="large" variant="outlined">+</IconButton>
+<IconButton size="large" variant="neutral">+</IconButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-IconButton spui-IconButton--large spui-IconButton--contained">+</button>
+<button class="spui-IconButton spui-IconButton--large spui-IconButton--outlined">+</button>
+<button class="spui-IconButton spui-IconButton--large spui-IconButton--neutral">+</button>
+  `}
+/>
+
+## Medium
+
+<Preview withSource="open">
+  <Story name="Medium">
+    <IconButton size="medium" variant="contained" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
+    <IconButton size="medium" variant="outlined" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
+    <IconButton size="medium" variant="neutral" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<IconButton size="medium" variant="contained">+</IconButton>
+<IconButton size="medium" variant="outlined">+</IconButton>
+<IconButton size="medium" variant="neutral">+</IconButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-IconButton spui-IconButton--medium spui-IconButton--contained">+</button>
+<button class="spui-IconButton spui-IconButton--medium spui-IconButton--outlined">+</button>
+<button class="spui-IconButton spui-IconButton--medium spui-IconButton--neutral">+</button>
+  `}
+/>
+
+## Small
+
+<Preview withSource="open">
+  <Story name="Small">
+    <IconButton size="small" variant="contained" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
+    <IconButton size="small" variant="outlined" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
+    <IconButton size="small" variant="neutral" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<IconButton size="small" variant="contained">+</IconButton>
+<IconButton size="small" variant="outlined">+</IconButton>
+<IconButton size="small" variant="neutral">+</IconButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-IconButton spui-IconButton--small spui-IconButton--contained">+</button>
+<button class="spui-IconButton spui-IconButton--small spui-IconButton--outlined">+</button>
+<button class="spui-IconButton spui-IconButton--small spui-IconButton--neutral">+</button>
+  `}
+/>
+
+## Ex Small
+
+<Preview withSource="open">
+  <Story name="ExSmall">
+    <IconButton size="exSmall" variant="contained" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
+    <IconButton size="exSmall" variant="outlined" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
+    <IconButton size="exSmall" variant="neutral" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<IconButton size="exSmall" variant="contained">+</IconButton>
+<IconButton size="exSmall" variant="outlined">+</IconButton>
+<IconButton size="exSmall" variant="neutral">+</IconButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-IconButton spui-IconButton--exSmall spui-IconButton--contained">+</button>
+<button class="spui-IconButton spui-IconButton--exSmall spui-IconButton--outlined">+</button>
+<button class="spui-IconButton spui-IconButton--exSmall spui-IconButton--neutral">+</button>
+  `}
+/>
+
+## Disabled
+
+<Preview withSource="open">
+  <Story name="Disabled">
+    <IconButton disabled size="medium" variant="contained" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
+    <IconButton disabled size="medium" variant="outlined" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
+    <IconButton disabled size="medium" variant="neutral" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<IconButton disabled size="medium" variant="contained">+</IconButton>
+<IconButton disabled size="medium" variant="outlined">+</IconButton>
+<IconButton disabled size="medium" variant="neutral">+</IconButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-IconButton spui-IconButton--medium spui-IconButton--contained" disabled>+</button>
+<button class="spui-IconButton spui-IconButton--medium spui-IconButton--outlined" disabled>+</button>
+<button class="spui-IconButton spui-IconButton--medium spui-IconButton--neutral" disabled>+</button>
+  `}
+/>
