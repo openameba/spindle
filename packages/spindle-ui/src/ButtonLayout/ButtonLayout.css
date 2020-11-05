@@ -1,0 +1,68 @@
+/*
+ * Button Layout
+*/
+.spui-ButtonLayout {
+  display: flex;
+}
+
+/* Direction */
+.spui-ButtonLayout--row {
+  flex-direction: row;
+}
+
+.spui-ButtonLayout--column {
+  flex-direction: column;
+}
+
+/* Size */
+
+/* NOTE: gap property should be used in the near future */
+
+/* stylelint-disable plugin/selector-bem-pattern */
+.spui-ButtonLayout--large.spui-ButtonLayout--row > * {
+  margin-right: 1em;
+}
+
+.spui-ButtonLayout--large.spui-ButtonLayout--row > *:last-child {
+  margin-right: 0;
+}
+
+.spui-ButtonLayout--large.spui-ButtonLayout--column > * {
+  margin-bottom: 1em;
+}
+
+.spui-ButtonLayout--large.spui-ButtonLayout--column > *:last-child {
+  margin-bottom: 0;
+}
+
+.spui-ButtonLayout--medium.spui-ButtonLayout--row > * {
+  margin-right: 0.75em;
+}
+
+.spui-ButtonLayout--medium.spui-ButtonLayout--row > *:last-child {
+  margin-right: 0;
+}
+
+.spui-ButtonLayout--medium.spui-ButtonLayout--column > * {
+  margin-bottom: 0.75em;
+}
+
+.spui-ButtonLayout--medium.spui-ButtonLayout--column > *:last-child {
+  margin-bottom: 0;
+}
+
+.spui-ButtonLayout--small.spui-ButtonLayout--row > * {
+  margin-right: 0.5em;
+}
+
+.spui-ButtonLayout--small.spui-ButtonLayout--row > *:last-child {
+  margin-right: 0;
+}
+
+.spui-ButtonLayout--small.spui-ButtonLayout--column > * {
+  margin-bottom: 0.75em;
+}
+
+.spui-ButtonLayout--small.spui-ButtonLayout--column > *:last-child {
+  margin-bottom: 0;
+}
