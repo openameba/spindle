@@ -8,6 +8,7 @@
   box-sizing: border-box;
   line-height: 1.3;
   outline: none;
+  -webkit-tap-highlight-color: var(--Button-tapHighlightColor, --gray-5-alpha);
   text-align: center;
   transition: background-color var(--Button-transitionDuration, 0.3s);
 }
@@ -76,11 +77,20 @@
   padding-top: 8px;
 }
 
-.spui-Button--contained:not([disabled]):hover {
+.spui-Button--contained:active {
   background-color: var(
-    --Button--contained-onHover-backgroundColor,
+    --Button--contained-onActive-backgroundColor,
     var(--primary-green-100)
   );
+}
+
+@media (hover: hover) {
+  .spui-Button--contained:not([disabled]):hover {
+    background-color: var(
+      --Button--contained-onHover-backgroundColor,
+      var(--primary-green-100)
+    );
+  }
 }
 
 /* outlined */
@@ -96,11 +106,20 @@
   padding-top: 6px;
 }
 
-.spui-Button--outlined:not([disabled]):hover {
+.spui-Button--outlined:active {
   background-color: var(
-    --Button--outlined-onHover-backgroundColor,
+    --Button--outlined-onActive-backgroundColor,
     var(--primary-green-5)
   );
+}
+
+@media (hover: hover) {
+  .spui-Button--outlined:not([disabled]):hover {
+    background-color: var(
+      --Button--outlined-onHover-backgroundColor,
+      var(--primary-green-5)
+    );
+  }
 }
 
 /* neutral */
@@ -115,11 +134,20 @@
   padding-top: 8px;
 }
 
-.spui-Button--neutral:not([disabled]):hover {
+.spui-Button--neutral:active {
   background-color: var(
-    --Button--neutral-onHover-backgroundColor,
+    --Button--neutral-onActive-backgroundColor,
     var(--gray-20-alpha)
   );
+}
+
+@media (hover: hover) {
+  .spui-Button--neutral:not([disabled]):hover {
+    background-color: var(
+      --Button--neutral-onHover-backgroundColor,
+      var(--gray-20-alpha)
+    );
+  }
 }
 
 /* danger */
@@ -134,9 +162,18 @@
   padding-top: 6px;
 }
 
-.spui-Button--danger:not([disabled]):hover {
+.spui-Button--danger:active {
   background-color: var(
-    --Button--danger-onHover-backgroundColor,
+    --Button--danger-onActive-backgroundColor,
     var(--caution-red-5-alpha)
   );
+}
+
+@media (hover: hover) {
+  .spui-Button--danger:not([disabled]):hover {
+    background-color: var(
+      --Button--danger-onHover-backgroundColor,
+      var(--caution-red-5-alpha)
+    );
+  }
 }
