@@ -5,7 +5,7 @@
     "test": "run-p lint test:packages",
     "test:packages": "lerna run test",
     "lint": "run-p lint:*",
-    "lint:script": "eslint .",
+    "lint:script": "eslint --cache .",
     "lint:yaml": "yamllint .github/workflows/*.yml",
     "lint:packages": "lerna run lint",
     "format": "run-p format:*",
