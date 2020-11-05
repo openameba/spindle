@@ -2,7 +2,9 @@
  * Button Layout
 */
 .spui-ButtonLayout {
+  align-items: center;
   display: flex;
+  justify-content: center;
 }
 
 /* Direction */
