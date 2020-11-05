@@ -21,6 +21,33 @@ import { Button } from '../Button';
   code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/ButtonLayout/ButtonLayout.css">`}
 />
 
+## Single Medium Button With Layout Fill Width
+
+<Preview withSource="open">
+  <Story name="Single Medium Button With Layout Fill Width">
+    <ButtonLayout>
+      <Button layout="fillWidth" size="medium" variant="contained">Contained</Button>
+    </ButtonLayout>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<ButtonLayout>
+  <Button layout="fillWidth" size="large" variant="contained">Contained</Button>
+</ButtonLayout>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<div class="spui-ButtonLayout">
+  <button class="spui-Button spui-Button--fillWidth spui-Button--large spui-Button--contained">Contained</button>
+</div>
+  `}
+/>
+
 ## Row Direction with Large Buttons
 
 <Preview withSource="open">
@@ -86,8 +113,8 @@ import { Button } from '../Button';
 <Preview withSource="open">
   <Story name="Row Direction with Medium Buttons">
     <ButtonLayout direction="row" size="medium">
-      <Button size="medium" variant="contained">Contained</Button>
-      <Button size="medium" variant="outlined">Outlined</Button>
+      <Button layout="fillWidth" size="medium" variant="contained">Contained</Button>
+      <Button layout="fillWidth" size="medium" variant="outlined">Outlined</Button>
     </ButtonLayout>
   </Story>
 </Preview>
@@ -95,8 +122,8 @@ import { Button } from '../Button';
 <Source
   code={`
 <ButtonLayout direction="row" size="medium">
-  <Button size="medium" variant="contained">Contained</Button>
-  <Button size="medium" variant="outlined">Outlined</Button>
+  <Button layout="fillWidth" size="medium" variant="contained">Contained</Button>
+  <Button layout="fillWidth" size="medium" variant="outlined">Outlined</Button>
 </ButtonLayout>
   `}
 />
@@ -105,8 +132,8 @@ import { Button } from '../Button';
   language='html'
   code={`
 <div class="spui-ButtonLayout spui-ButtonLayout--row spui-ButtonLayout--medium">
-  <button class="spui-Button spui-Button--medium spui-Button--contained">Contained</button>
-  <button class="spui-Button spui-Button--medium spui-Button--outlined">Outlined</button>
+  <button class="spui-Button spui-Button--fillWidth spui-Button--medium spui-Button--contained">Contained</button>
+  <button class="spui-Button spui-Button--fillWidth spui-Button--medium spui-Button--outlined">Outlined</button>
 </div>
   `}
 />
@@ -116,8 +143,8 @@ import { Button } from '../Button';
 <Preview withSource="open">
   <Story name="Column Direction with Medium Buttons">
     <ButtonLayout direction="column" size="medium">
-      <Button size="medium" variant="contained">Contained</Button>
-      <Button size="medium" variant="outlined">Outlined</Button>
+      <Button layout="fillWidth" size="medium" variant="contained">Contained</Button>
+      <Button layout="fillWidth" size="medium" variant="outlined">Outlined</Button>
     </ButtonLayout>
   </Story>
 </Preview>
@@ -125,8 +152,8 @@ import { Button } from '../Button';
 <Source
   code={`
 <ButtonLayout direction="column" size="medium">
-  <Button size="medium" variant="contained">Contained</Button>
-  <Button size="medium" variant="outlined">Outlined</Button>
+  <Button layout="fillWidth" size="medium" variant="contained">Contained</Button>
+  <Button layout="fillWidth" size="medium" variant="outlined">Outlined</Button>
 </ButtonLayout>
   `}
 />
@@ -135,8 +162,8 @@ import { Button } from '../Button';
   language='html'
   code={`
 <div class="spui-ButtonLayout spui-ButtonLayout--column spui-ButtonLayout--medium">
-  <button class="spui-Button spui-Button--medium spui-Button--contained">Contained</button>
-  <button class="spui-Button spui-Button--medium spui-Button--outlined">Outlined</button>
+  <button class="spui-Button spui-Button--fillWidth spui-Button--medium spui-Button--contained">Contained</button>
+  <button class="spui-Button spui-Button--fillWidth spui-Button--medium spui-Button--outlined">Outlined</button>
 </div>
   `}
 />
@@ -146,8 +173,8 @@ import { Button } from '../Button';
 <Preview withSource="open">
   <Story name="Row Direction with Small Buttons">
     <ButtonLayout direction="row" size="small">
-      <Button size="small" variant="contained">Contained</Button>
-      <Button size="small" variant="outlined">Outlined</Button>
+      <Button layout="fillWidth" size="small" variant="contained">Contained</Button>
+      <Button layout="fillWidth" size="small" variant="outlined">Outlined</Button>
     </ButtonLayout>
   </Story>
 </Preview>
@@ -155,8 +182,8 @@ import { Button } from '../Button';
 <Source
   code={`
 <ButtonLayout direction="row" size="small">
-  <Button size="small" variant="contained">Contained</Button>
-  <Button size="small" variant="outlined">Outlined</Button>
+  <Button layout="fillWidth" size="small" variant="contained">Contained</Button>
+  <Button layout="fillWidth" size="small" variant="outlined">Outlined</Button>
 </ButtonLayout>
   `}
 />
@@ -165,8 +192,8 @@ import { Button } from '../Button';
   language='html'
   code={`
 <div class="spui-ButtonLayout spui-ButtonLayout--row spui-ButtonLayout--small">
-  <button class="spui-Button spui-Button--small spui-Button--contained">Contained</button>
-  <button class="spui-Button spui-Button--small spui-Button--outlined">Outlined</button>
+  <button class="spui-Button spui-Button--fillWidth spui-Button--small spui-Button--contained">Contained</button>
+  <button class="spui-Button spui-Button--fillWidth spui-Button--small spui-Button--outlined">Outlined</button>
 </div>
   `}
 />
@@ -176,8 +203,8 @@ import { Button } from '../Button';
 <Preview withSource="open">
   <Story name="Column Direction with Small Buttons">
     <ButtonLayout direction="column" size="small">
-      <Button size="small" variant="contained">Contained</Button>
-      <Button size="small" variant="outlined">Outlined</Button>
+      <Button layout="fillWidth" size="small" variant="contained">Contained</Button>
+      <Button layout="fillWidth" size="small" variant="outlined">Outlined</Button>
     </ButtonLayout>
   </Story>
 </Preview>
@@ -185,8 +212,8 @@ import { Button } from '../Button';
 <Source
   code={`
 <ButtonLayout direction="column" size="small">
-  <Button size="small" variant="contained">Contained</Button>
-  <Button size="small" variant="outlined">Outlined</Button>
+  <Button layout="fillWidth" size="small" variant="contained">Contained</Button>
+  <Button layout="fillWidth" size="small" variant="outlined">Outlined</Button>
 </ButtonLayout>
   `}
 />
@@ -195,8 +222,8 @@ import { Button } from '../Button';
   language='html'
   code={`
 <div class="spui-ButtonLayout spui-ButtonLayout--column spui-ButtonLayout--small">
-  <button class="spui-Button spui-Button--small spui-Button--contained">Contained</button>
-  <button class="spui-Button spui-Button--small spui-Button--outlined">Outlined</button>
+  <button class="spui-Button spui-Button--fillWidth spui-Button--small spui-Button--contained">Contained</button>
+  <button class="spui-Button spui-Button--fillWidth spui-Button--small spui-Button--outlined">Outlined</button>
 </div>
   `}
 />
