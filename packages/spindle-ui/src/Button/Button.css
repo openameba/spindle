@@ -26,6 +26,13 @@
 }
 
 /*
+ * Button layout
+*/
+.spui-Button--fullWidth {
+  width: 100%;
+}
+
+/*
  * Button sizes
 */
 .spui-Button--large {
@@ -35,13 +42,11 @@
   min-height: 48px;
   padding-left: 16px;
   padding-right: 16px;
-  width: 100%;
 }
 
 .spui-Button--medium {
   border-radius: calc(40em / 18);
   font-size: 18px; /* TODO: Replace relative value (em or rem) */
-  max-width: 240px;
   min-height: 40px;
   min-width: 88px;
   padding-left: 16px;
@@ -51,7 +56,6 @@
 .spui-Button--small {
   border-radius: calc(32em / 13);
   font-size: 13px; /* TODO: Replace relative value (em or rem) */
-  max-width: 160px;
   min-height: 32px;
   min-width: 60px;
   padding-left: 10px;
