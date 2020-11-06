@@ -27,6 +27,7 @@ jobs:
       - run: yarn bootstrap
       - name: Update UI catalog
         env:
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
           FILE_KEY: ${{ secrets.FIGMA_ICON_FILE_KEY }}
           NODE_ID: ${{ secrets.FIGMA_ICON_NODE_ID }}
           ICON_NAMES: ${{ github.event.inputs.modified_components }}
