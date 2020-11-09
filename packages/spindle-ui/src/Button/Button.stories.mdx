@@ -1,6 +1,7 @@
 import { Meta, Story, Source } from '@storybook/addon-docs/blocks';
 import { actions } from '@storybook/addon-actions';
 import { Button } from './Button';
+import { PlusBold, ArrowRightBold, OpenblankFill } from '../Icon';
 
 # Button
 
@@ -260,5 +261,59 @@ import { Button } from './Button';
 <button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--outlined" disabled>Outlined</button>
 <button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--neutral" disabled>Neutral</button>
 <button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--danger" disabled>Danger</button>
+  `}
+/>
+
+## With Icon
+
+<Preview withSource="open">
+  <Story name="With Icon">
+    <Button icon={<PlusBold/>} size="large" variant="contained" {...actions('onClick', 'onMouseOver')}>Contained</Button>
+    <Button icon={<ArrowRightBold/>} size="medium" variant="outlined" {...actions('onClick', 'onMouseOver')}>Outlined</Button>
+    <Button icon={<OpenblankFill/>} size="small" variant="neutral" {...actions('onClick', 'onMouseOver')}>Neutral</Button>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<Button icon={<PlusBold/>} size="large" variant="contained">Contained</Button>
+<Button icon={<ArrowRightBold/>} size="medium" variant="outlined">Outlined</Button>
+<Button icon={<OpenblankFill/>} size="small" variant="neutral">Neutral</Button>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-Button spui-Button--intrinsic spui-Button--large spui-Button--contained"><span class="spui-Button-icon spui-Button-icon--large"><svg /></span>Contained</button>
+<button class="spui-Button spui-Button--intrinsic spui-Button--medium spui-Button--outlined"><span class="spui-Button-icon spui-Button-icon--medium"><svg /></span>Outlined</button>
+<button class="spui-Button spui-Button--intrinsic spui-Button--small spui-Button--neutral"><span class="spui-Button-icon spui-Button-icon--small"><svg /></span>Neutral</button>
+  `}
+/>
+
+## Full Width With Icon
+
+<Preview withSource="open">
+  <Story name="Full Width With Icon">
+    <Button layout="fullWidth" icon={<PlusBold/>} size="large" variant="contained" {...actions('onClick', 'onMouseOver')}>Contained</Button>
+    <Button layout="fullWidth" icon={<ArrowRightBold/>} size="medium" variant="outlined" {...actions('onClick', 'onMouseOver')}>Outlined</Button>
+    <Button layout="fullWidth" icon={<OpenblankFill/>} size="small" variant="neutral" {...actions('onClick', 'onMouseOver')}>Neutral</Button>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<Button layout="fullWidth" icon={<PlusBold/>} size="large" variant="contained">Contained</Button>
+<Button layout="fullWidth" icon={<ArrowRightBold/>} size="medium" variant="outlined">Outlined</Button>
+<Button layout="fullWidth" icon={<OpenblankFill/>} size="small" variant="neutral">Neutral</Button>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-Button spui-Button--fullWidth spui-Button--large spui-Button--contained"><span class="spui-Button-icon spui-Button-icon--large"><svg /></span>Contained</button>
+<button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--outlined"><span class="spui-Button-icon spui-Button-icon--medium"><svg /></span>Outlined</button>
+<button class="spui-Button spui-Button--fullWidth spui-Button--small spui-Button--neutral"><span class="spui-Button-icon spui-Button-icon--small"><svg /></span>Neutral</button>
   `}
 />
