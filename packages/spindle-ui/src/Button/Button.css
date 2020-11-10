@@ -138,7 +138,10 @@
     var(--color-surface-tertiary)
   );
   border: none;
-  color: var(--Button--neutral-backgroundColor, var(--color-text-mid-emphasis));
+  color: var(
+    --Button--neutral-backgroundColor,
+    var(--color-text-medium-emphasis)
+  );
   padding-bottom: 8px;
   padding-top: 8px;
 }
