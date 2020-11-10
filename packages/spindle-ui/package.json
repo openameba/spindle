@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@types/react": "^16.9.43",
-    "ameba-color-palette.css": "openameba/ameba-color-palette.css#v3.0.0-beta.0",
+    "ameba-color-palette.css": "^4.2.0",
     "react": "^16.13.1"
   },
   "devDependencies": {

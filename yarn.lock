@@ -4911,9 +4911,10 @@ alphanum-sort@^1.0.0:
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
   integrity sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
 
-ameba-color-palette.css@openameba/ameba-color-palette.css#v3.0.0-beta.0:
-  version "3.0.0-beta.0"
-  resolved "https://codeload.github.com/openameba/ameba-color-palette.css/tar.gz/36726138140c4f3f1cb2fa24ea5243ce6611de21"
+ameba-color-palette.css@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/ameba-color-palette.css/-/ameba-color-palette.css-4.2.0.tgz#e61fb906eb1210368f646b7745f79d1c384c18b4"
+  integrity sha512-5aYbuMY0aXSZjR+ot55SYyLX6cXib5J11AuAiMaMKY+87UawT6515JvPJ3LQxlivxK7/rA14+qnFuLTnLmDFNQ==
 
 analyze-desumasu-dearu@^4.0.0:
   version "4.0.0"
