@@ -4,7 +4,7 @@
 .spui-Checkbox-label {
   border-radius: 2px;
   color: var(--color-text-low-emphasis);
-  font-size: 13px;
+  font-size: 0.8125em;
   line-height: 1.4;
   padding: 0.1em 0.1em 0;
   position: relative;

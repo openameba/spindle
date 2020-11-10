@@ -4,7 +4,7 @@
 .spui-InvalidMessage {
   color: var(--color-text-caution);
   display: block;
-  font-size: 12px;
+  font-size: 0.75em;
   font-weight: bold;
   line-height: 1.4;
   margin: 8px 0 0;
