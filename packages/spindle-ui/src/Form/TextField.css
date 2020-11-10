@@ -3,7 +3,7 @@
 */
 .spui-TextField {
   background-color: var(--color-surface-primary);
-  border: solid 1px var(--color-border-mid-emphasis);
+  border: solid 1px var(--color-border-medium-emphasis);
   border-radius: 8px;
   box-sizing: border-box;
   color: var(--color-text-high-emphasis);

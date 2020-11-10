@@ -20,7 +20,7 @@
 }
 
 .spui-Radio-icon {
-  border: solid 1px var(--color-border-mid-emphasis);
+  border: solid 1px var(--color-border-medium-emphasis);
   border-radius: 50%;
   box-sizing: border-box;
   display: inline-block;
