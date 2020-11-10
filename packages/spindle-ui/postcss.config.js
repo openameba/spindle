@@ -4,6 +4,9 @@ module.exports = {
    * - for modern browsers
    * - for IE11
    */
-  // TODO: minify css for production
-  plugins: [require('autoprefixer'), require('postcss-import')],
+  plugins: [
+    require('autoprefixer'),
+    require('postcss-import'),
+    require('cssnano'),
+  ],
 };
