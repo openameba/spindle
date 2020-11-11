@@ -1,0 +1,21 @@
+{
+  "name": "PostCSS",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "postcss src --dir dist",
+    "serve": "npx serve",
+    "test": "echo ok"
+  },
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "postcss": "^8.1.7",
+    "postcss-cli": "^8.2.0",
+    "postcss-import": "^13.0.0"
+  },
+  "dependencies": {
+    "@openameba/spindle-ui": "^0.5.0",
+    "ameba-color-palette.css": "^4.2.0"
+  }
+}
