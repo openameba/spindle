@@ -1,0 +1,11 @@
+{
+  "name": "html",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "serve": "npx serve",
+    "test": "echo ok"
+  },
+  "license": "MIT",
+  "private": true
+}
