@@ -73,3 +73,13 @@ public
 
 # storing directory for reg-suit and storycap
 .reg-suit
+
+# components for npm
+*/*.css
+*/*.js
+*/*.d.ts
+*/*.map
+index.css
+index.js
+index.d.ts
+index*.map
