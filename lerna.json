@@ -5,6 +5,7 @@
   "packages": [
     "packages/*"
   ],
+  "includeMergedTags": true,
   "command": {
     "version": {
       "message": "chore(release): publish",
