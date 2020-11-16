@@ -1,0 +1,74 @@
+import { Meta, Story, Source } from '@storybook/addon-docs/blocks';
+import { Clock } from './index';
+
+# Icon
+
+<Meta title="Icon" component={Clock} />
+
+![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)
+
+<Source
+  language='javascript'
+  code={`import Icon from '@openameba/spindle-ui'`}
+/>
+
+## Clock Icon
+
+<Source
+  language='javascript'
+  code={`import { Clock } from '@openameba/spindle-ui/Icon'`}
+/>
+
+<Preview withSource="open">
+  <Story name="Clock Icon">
+    <Clock aria-label="Clock" />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<Clock aria-label="Clock" />
+  `}
+/>
+
+## Clock Icon Overriding Color
+
+<Source
+  language='javascript'
+  code={`import { Clock } from '@openameba/spindle-ui/Icon'`}
+/>
+
+<Preview withSource="open">
+  <Story name="Clock Icon Overriding Color">
+    <p style={{ color: 'green' }}>
+      <Clock aria-label="Clock" />
+    </p>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<p style={{ color: 'green' }}>
+  <Clock aria-label="Clock" />
+</p>
+  `}
+/>
+
+## Clock Icon With Size
+
+<Source
+  language='javascript'
+  code={`import { Clock } from '@openameba/spindle-ui/Icon'`}
+/>
+
+<Preview withSource="open">
+  <Story name="Clock Icon Overriding Size">
+    <Clock aria-label="Clock" height="200" width="200" />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<Clock aria-label="Clock" height="200" width="200" />
+  `}
+/>

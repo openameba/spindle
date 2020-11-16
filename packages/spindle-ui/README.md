@@ -24,7 +24,13 @@ export function SomeButton() {
 }
 ```
 
-利用できるコンポーネントは、[Storybook](https://ameba-spindle.web.app/)で確認できます。
+利用できるコンポーネントは、[Storybook](https://ameba-spindle.web.app/)で確認できます。各コンポーネントの開発状況は[Stoybook Doc](https://ameba-spindle.web.app/?path=/docs/button--large)のStability Budgeで以下のように表されています。
+
+- ![stability-stable](https://img.shields.io/badge/stability-stable-green.svg) 想定された機能が実装、テストされており本番環境で利用できます
+- ![stability-unstable](https://img.shields.io/badge/stability-unstable-yellow.svg) 足りていない機能や不安定な動作があり、まだ完全ではないですが、本番環境で利用できます
+- ![stability-wip](https://img.shields.io/badge/stability-work_in_progress-lightgrey.svg) 開発中のため、本番環境での利用はしない方がよいでしょう
+- ![stability-experimental](https://img.shields.io/badge/stability-experimental-orange.svg) 実験的な機能で大きな変更や削除される可能性があります
+- ![stability-deprecated](https://img.shields.io/badge/stability-deprecated-red.svg) 廃止される予定のため、できるだけはやく利用を停止してください
 
 また、Spindle UIのスタイルはCSSファイルとして提供されています。スタイルを適用するには、HTMLからCSSを読み込むか、各ファイルからCSSを読み込みビルドする必要があります。詳細は[Design Doc](docs/design-doc.md)に記載されています。なお、スタイルの提供方法は実際の利用パターンに応じて変更される可能性があります。
 
