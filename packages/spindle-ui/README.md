@@ -44,6 +44,9 @@ export function SomeButton() {
 @import 'node_modules/@openameba/spindle-ui/Form/Checkbox.css';
 ```
 
+## ブラウザサポート
+Spindle UIはFirefox、Google Chrome、Microsoft Edge、Safariの最新版とInternet Explorer 11で動作確認しています。ただし、CSS custom propertiesを使用しているため、Internet Explorer 11での利用時には[ie11-custom-properties](https://www.npmjs.com/package/ie11-custom-properties)や[css-vars-ponyfill](https://github.com/jhildenbiddle/css-vars-ponyfill)などpolyfillとの併用が必要です。
+
 ## 開発方法
 
 ```
