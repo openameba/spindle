@@ -13,7 +13,10 @@
   justify-content: center;
   line-height: 1.3;
   outline: none;
-  -webkit-tap-highlight-color: var(--Button-tapHighlightColor, --gray-5-alpha);
+  -webkit-tap-highlight-color: var(
+    --Button-tapHighlightColor,
+    var(--gray-5-alpha)
+  );
   text-align: center;
   transition: background-color var(--Button-transitionDuration, 0.3s);
 }
