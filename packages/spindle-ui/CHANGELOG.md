@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.5.0...@openameba/spindle-ui@0.5.1) (2020-11-19)
+
+
+### Bug Fixes
+
+* **spindle-ui:** apply fallback -webkit-tap-highlight-color in Button ([97a080e](https://github.com/openameba/spindle/commit/97a080eca0c5b59406ef0b74791ab3884bfe4878))
+* **spindle-ui:** remove unnecessary nested CSS custom properties ([626df03](https://github.com/openameba/spindle/commit/626df0399376da872f620c62ab9a434c1c8093ae))
+
+
+
+
+
 # [0.5.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.4.0...@openameba/spindle-ui@0.5.0) (2020-11-10)
 
 
