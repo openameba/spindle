@@ -52,6 +52,7 @@ jobs:
         id: cpr
         uses: peter-evans/create-pull-request@v3
         with:
+          base: ${{ github.event.push.repository.default_branch }}
           branch: release/chores-into-default-branch
           delete-branch: true
           title: 'chore(release): publish'
