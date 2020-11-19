@@ -1,8 +1,5 @@
 /*
  * Button
- *
- * NOTE: Button styles can be overwrite with "--Button-*" variables
- * as it is sometimes different from app's color set.
 */
 .spui-Button {
   align-items: center;
@@ -13,24 +10,18 @@
   justify-content: center;
   line-height: 1.3;
   outline: none;
-  -webkit-tap-highlight-color: var(
-    --Button-tapHighlightColor,
-    var(--gray-5-alpha)
-  );
+  -webkit-tap-highlight-color: var(--gray-5-alpha);
   text-align: center;
-  transition: background-color var(--Button-transitionDuration, 0.3s);
+  transition: background-color 0.3s;
 }
 
 .spui-Button:disabled {
-  opacity: var(--Button-onDisabled-opacity, 0.3);
+  opacity: 0.3;
 }
 
 .spui-Button:focus {
-  box-shadow: var(
-    --Button-onFocus-boxShadow,
-    0 0 0 1px var(--color-surface-primary),
-    0 0 0 3px var(--color-focus-clarity)
-  );
+  box-shadow: 0 0 0 1px var(--color-surface-primary),
+    0 0 0 3px var(--color-focus-clarity);
 }
 
 /*
@@ -75,121 +66,79 @@
 */
 /* contained */
 .spui-Button--contained {
-  background-color: var(
-    --Button--contained-backgroundColor,
-    var(--color-surface-accent-primary)
-  );
+  background-color: var(--color-surface-accent-primary);
   border: none;
-  color: var(
-    --Button--contained-color,
-    var(--color-text-high-emphasis-inverse)
-  );
+  color: var(--color-text-high-emphasis-inverse);
   /* Button variants have different vertical padding to normalize height */
   padding-bottom: 8px;
   padding-top: 8px;
 }
 
 .spui-Button--contained:active {
-  background-color: var(
-    --Button--contained-onActive-backgroundColor,
-    var(--primary-green-100)
-  );
+  background-color: var(--primary-green-100);
 }
 
 @media (hover: hover) {
   .spui-Button--contained:not([disabled]):hover {
-    background-color: var(
-      --Button--contained-onHover-backgroundColor,
-      var(--primary-green-100)
-    );
+    background-color: var(--primary-green-100);
   }
 }
 
 /* outlined */
 .spui-Button--outlined {
-  background-color: var(
-    --Button--outlined-backgroundColor,
-    var(--color-text-high-emphasis-inverse)
-  );
-  border: 2px solid
-    var(--Button--outlined-borderColor, var(--color-surface-accent-primary));
-  color: var(--Button--outlined-color, var(--color-surface-accent-primary));
+  background-color: var(--color-text-high-emphasis-inverse);
+  border: 2px solid var(--color-surface-accent-primary);
+  color: var(--color-surface-accent-primary);
   padding-bottom: 6px;
   padding-top: 6px;
 }
 
 .spui-Button--outlined:active {
-  background-color: var(
-    --Button--outlined-onActive-backgroundColor,
-    var(--primary-green-5)
-  );
+  background-color: var(--primary-green-5);
 }
 
 @media (hover: hover) {
   .spui-Button--outlined:not([disabled]):hover {
-    background-color: var(
-      --Button--outlined-onHover-backgroundColor,
-      var(--primary-green-5)
-    );
+    background-color: var(--primary-green-5);
   }
 }
 
 /* neutral */
 .spui-Button--neutral {
-  background-color: var(
-    --Button--neutral-backgroundColor,
-    var(--color-surface-tertiary)
-  );
+  background-color: var(--color-surface-tertiary);
   border: none;
-  color: var(
-    --Button--neutral-backgroundColor,
-    var(--color-text-medium-emphasis)
-  );
+  color: var(--color-text-medium-emphasis);
   padding-bottom: 8px;
   padding-top: 8px;
 }
 
 .spui-Button--neutral:active {
-  background-color: var(
-    --Button--neutral-onActive-backgroundColor,
-    var(--gray-20-alpha)
-  );
+  background-color: var(--gray-20-alpha);
 }
 
 @media (hover: hover) {
   .spui-Button--neutral:not([disabled]):hover {
-    background-color: var(
-      --Button--neutral-onHover-backgroundColor,
-      var(--gray-20-alpha)
-    );
+    background-color: var(--gray-20-alpha);
   }
 }
 
 /* danger */
 .spui-Button--danger {
-  background-color: var(
-    --Button--danger-backgroundColor,
-    var(--color-text-high-emphasis-inverse)
-  );
-  border: 2px solid var(--Button--danger-borderColor, var(--color-text-caution));
-  color: var(--Button--danger-color, var(--color-text-caution));
+  background-color: var(--color-text-high-emphasis-inverse);
+
+  border: 2px solid var(--color-text-caution);
+  color: var(--color-text-caution);
   padding-bottom: 6px;
   padding-top: 6px;
 }
 
 .spui-Button--danger:active {
-  background-color: var(
-    --Button--danger-onActive-backgroundColor,
-    var(--caution-red-5-alpha)
-  );
+  background-color: var(--caution-red-5-alpha);
 }
 
 @media (hover: hover) {
   .spui-Button--danger:not([disabled]):hover {
-    background-color: var(
-      --Button--danger-onHover-backgroundColor,
-      var(--caution-red-5-alpha)
-    );
+    background-color: var(--caution-red-5-alpha);
   }
 }
 
