@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.2](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.5.1...@openameba/spindle-ui@0.5.2) (2020-11-20)
+
+
+### Bug Fixes
+
+* **spindle-ui:** apply button align-items: center in IE11 ([6fc6a13](https://github.com/openameba/spindle/commit/6fc6a1380cface288f80d23b4f6e60f17c196b6a))
+
+
+
+
+
 ## [0.5.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.5.0...@openameba/spindle-ui@0.5.1) (2020-11-19)
 
 
