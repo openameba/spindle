@@ -62,6 +62,18 @@
 }
 
 /*
+ * Setting height to a value less then min-height fixes the align-items: center issue in IE11
+ * @see https://github.com/philipwalton/flexbugs/issues/231#issue-245848315
+*/
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .spui-Button--large,
+  .spui-Button--medium,
+  .spui-Button--small {
+    height: 1px;
+  }
+}
+
+/*
  * Button variants
 */
 /* contained */
