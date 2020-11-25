@@ -1,0 +1,74 @@
+import { Meta, Story, Source } from '@storybook/addon-docs/blocks';
+import { actions } from '@storybook/addon-actions';
+import { ToggleSwitch } from './ToggleSwitch';
+
+# ToggleSwitch
+
+<Meta title="Form/ToggleSwitch" component={ToggleSwitch} />
+
+![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)
+
+<Source
+  language='javascript'
+  code={`import { ToggleSwitch } from '@openameba/spindle-ui/Form'`}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/Form/ToggleSwitch.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Form/ToggleSwitch.css">`}
+/>
+
+## Toggle Switch
+
+<Preview withSource="open">
+  <Story name="Toggle Switch">
+    <ToggleSwitch aria-label="Toggle switch" id="toggle" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')} />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<ToggleSwitch aria-label="Toggle switch" id="toggle" />
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<label class="spui-ToggleSwitch">
+  <input aria-label="Toggle switch" class="spui-ToggleSwitch-input" id="toddle" type="checkbox">
+  <span class="spui-ToggleSwitch-visual"></span>
+  <span class="spui-ToggleSwitch-outline"></span>
+</label>
+  `}
+/>
+
+## Toggle Switch Disabled
+
+<Preview withSource="open">
+  <Story name="Toggle Switch Disabled">
+    <ToggleSwitch aria-label="Toggle switch" disabled id="toggleDisabled" />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<ToggleSwitch aria-label="Toggle switch" disabled id="toggleDisabled" />
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<label class="spui-ToggleSwitch">
+  <input class="spui-ToggleSwitch-input" disabled id="toddle" type="checkbox">
+  <span class="spui-ToggleSwitch-visual"></span>
+  <span class="spui-ToggleSwitch-outline"></span>
+</label>
+  `}
+/>

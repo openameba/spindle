@@ -1,0 +1,78 @@
+/*
+ * Toggle Switch
+*/
+.spui-ToggleSwitch {
+  display: inline-block;
+  height: 32px;
+  position: relative;
+  width: 52px;
+}
+
+/*
+ * Toggle Switch Input
+ * "-webkit-appearance: none;" causes checkbox feature disabled in WebKit
+ * so we implement this with the following techniques:
+ * - wrap <input> with <label> to apply selection via user's interaction
+ * - make <input> transparent: this means hide checkbox but keep its state
+ * - add <span> for displaying switch visual button
+ * - add <span> for displaying customized outline
+*/
+.spui-ToggleSwitch-input {
+  opacity: 0;
+  outline: none;
+}
+
+.spui-ToggleSwitch-input:disabled ~ .spui-ToggleSwitch-visual {
+  opacity: 0.3;
+}
+
+.spui-ToggleSwitch-visual {
+  background-color: var(--color-surface-quaternary);
+  border-radius: 16px;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.spui-ToggleSwitch-input:checked ~ .spui-ToggleSwitch-visual {
+  background-color: var(--color-surface-accent-primary);
+}
+
+.spui-ToggleSwitch-visual::before {
+  background-color: var(--color-object-high-emphasis-inverse);
+  border: solid 1px var(--color-border-low-emphasis);
+  border-radius: 100%;
+  box-sizing: border-box;
+  content: '';
+  display: inline-block;
+  height: 24px;
+  left: 4px;
+  position: absolute;
+  top: 4px;
+  transition: transform ease-out 0.3s;
+  width: 24px;
+}
+
+.spui-ToggleSwitch-input:checked ~ .spui-ToggleSwitch-visual::before {
+  transform: translate(20px, 0);
+}
+
+/* To add 2px space for outline */
+.spui-ToggleSwitch-outline {
+  border-radius: 16px;
+  bottom: -2px;
+  left: -2px;
+  position: absolute;
+  right: -2px;
+  top: -2px;
+  z-index: -1;
+}
+
+/* box-shadow is used to apply border-radius as outline */
+.spui-ToggleSwitch-input:focus ~ .spui-ToggleSwitch-outline {
+  box-shadow: 0 0 0 2px var(--color-focus-clarity);
+}

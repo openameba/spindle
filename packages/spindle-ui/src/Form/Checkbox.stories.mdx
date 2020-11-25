@@ -1,0 +1,100 @@
+import { Meta, Story, Source } from '@storybook/addon-docs/blocks';
+import { actions } from '@storybook/addon-actions';
+import { Checkbox } from './Checkbox';
+
+# Checkbox
+
+<Meta title="Form/Checkbox" component={Checkbox} />
+
+![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)
+
+<Source
+  language='javascript'
+  code={`import { Checkbox } from '@openameba/spindle-ui/Form'`}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/Form/Checkbox.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Form/Checkbox.css">`}
+/>
+
+## Checkbox
+
+<Preview withSource="open">
+  <Story name="Checkbox">
+    <Checkbox aria-label="Japanese" name="language" value="japanese" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')} />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<Checkbox aria-label="Japanese" name="language" value="japanese" />
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<label class="spui-Checkbox-label">
+  <input aria-label="Japanese" class="spui-Checkbox-input" type="checkbox" name="language" value="japanese">
+  <span class="spui-Checkbox-icon"></span>
+  <span class="spui-Checkbox-outline"></span>
+</label>
+  `}
+/>
+
+## Checkbox Disabled
+
+<Preview withSource="open">
+  <Story name="Checkbox Disabled">
+    <Checkbox aria-label="Japanese" disabled name="language" value="japanese" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')} />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<Checkbox aria-label="Japanese" disabled name="language" value="japanese" />
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<label class="spui-Checkbox-label">
+  <input aria-label="Japanese" class="spui-Checkbox-input" disabled type="checkbox" name="language" value="japanese">
+  <span class="spui-Checkbox-icon"></span>
+  <span class="spui-Checkbox-outline"></span>
+</label>
+  `}
+/>
+
+## Checkbox With Text
+
+<Preview withSource="open">
+  <Story name="Checkbox With Text">
+    <Checkbox name="language" value="japanese" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')}>Japanese</Checkbox>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<Checkbox name="language" value="japanese">Japanese</Checkbox>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<label class="spui-Checkbox-label">
+  <input class="spui-Checkbox-input" type="checkbox" name="language" value="japanese">
+  <span class="spui-Checkbox-icon"></span>
+  <span class="spui-Checkbox-outline"></span>
+  <span class="spui-Checkbox-text">Japanese</span>
+</label>
+  `}
+/>

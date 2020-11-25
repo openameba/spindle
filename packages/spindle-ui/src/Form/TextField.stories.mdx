@@ -1,0 +1,108 @@
+import { Meta, Story, Source } from '@storybook/addon-docs/blocks';
+import { actions } from '@storybook/addon-actions';
+import { TextField } from './TextField';
+
+# TextField
+
+<Meta title="Form/TextField" component={TextField} />
+
+![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)
+
+<Source
+  language='javascript'
+  code={`import { TextField } from '@openameba/spindle-ui/Form'`}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/Form/TextField.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Form/TextField.css">`}
+/>
+
+## Large (default)
+
+<Preview withSource="open">
+  <Story name="Large">
+    <TextField aria-label="Text field" id="TextField" placeholder="How are you feeling?" variant="large" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')} />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<TextField aria-label="Text field" id="TextField" variant="large" />
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<input aria-label="Text field" class="spui-TextField spui-TextField--large" id="TextField" />
+  `}
+/>
+
+## Large With Error
+
+<Preview withSource="open">
+  <Story name="Large With Error">
+    <TextField aria-label="Text field" hasError id="TextFieldWithError" variant="large" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')} />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<TextField aria-label="Text field" hasError id="TextFieldWithError" variant="large" />
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<input aria-label="Text field" class="spui-TextField spui-TextField--large is-error" id="TextFieldWithError" />
+  `}
+/>
+
+## Medium
+
+<Preview withSource="open">
+  <Story name="Medium">
+    <TextField aria-label="Text field" id="TextField" placeholder="How are you feeling?" variant="medium" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')} />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<TextField aria-label="Text field" id="TextField" variant="medium" />
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<input aria-label="Text field" class="spui-TextField spui-TextField--medium" id="TextField" />
+  `}
+/>
+
+## Medium With Error
+
+<Preview withSource="open">
+  <Story name="Medium With Error">
+    <TextField aria-label="Text field" hasError id="TextFieldWithError" variant="medium" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')} />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<TextField aria-label="Text field" hasError id="TextFieldWithError" variant="medium" />
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<input aria-label="Text field" class="spui-TextField spui-TextField--medium is-error" id="TextFieldWithError" />
+  `}
+/>

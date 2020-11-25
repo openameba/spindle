@@ -1,8 +1,0 @@
-/* stylelint-disable plugin/selector-bem-pattern */
-
-/*
- * Form
-*/
-.spui-InputLabel:not(:empty) ~ .spui-TextField {
-  margin-top: 12px;
-}

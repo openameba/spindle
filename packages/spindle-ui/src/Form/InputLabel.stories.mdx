@@ -1,0 +1,44 @@
+import { Meta, Story, Source } from '@storybook/addon-docs/blocks';
+import { InputLabel } from './InputLabel';
+
+# InputLabel
+
+<Meta title="Form/InputLabel" component={InputLabel} />
+
+![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)
+
+<Source
+  language='javascript'
+  code={`import { InputLabel } from '@openameba/spindle-ui/Form'`}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/Form/InputLabel.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Form/InputLabel.css">`}
+/>
+
+## Input Label
+
+<Preview withSource="open">
+  <Story name="Input Label">
+    <InputLabel id="interest">Your Interest</InputLabel>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<InputLabel id="interest">Your Interest</InputLabel>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<label class="spui-InputLabel" for="interest">Your Interest</label>
+  `}
+/>

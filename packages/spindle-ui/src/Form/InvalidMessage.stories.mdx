@@ -1,0 +1,57 @@
+import { Description, Meta, Story, Source } from '@storybook/addon-docs/blocks';
+import { InvalidMessage } from './InvalidMessage';
+
+# InvalidMessage
+
+<Meta title="Form/InvalidMessage" component={InvalidMessage} />
+
+![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)
+
+<Source
+  language='javascript'
+  code={`import { InvalidMessage } from '@openameba/spindle-ui/Form'`}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/Form/InvalidMessage.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Form/InvalidMessage.css">`}
+/>
+
+## Invalid Message
+
+<Preview withSource="open">
+  <Story name="Invalid Message">
+    <InvalidMessage visible>Please input your mail address</InvalidMessage>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<InvalidMessage visible>Please input your mail address</InvalidMessage>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<p class="spui-InvalidMessage">
+  <span class="spui-InvalidMessage-icon"><svg>...</svg></span>
+  Please input your mail address
+</p>
+  `}
+/>
+
+## Accessibility
+
+<Description>コンポーネントからはアプリケーション内での使われ方や重要度がわからないため、アラートに関する属性は付与していません。そのため、コンポーネント利用時には[alert role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_alert_role)や[ARIA live regions](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions)を用いて支援技術に通知してください。</Description>
+
+<Source
+  code={`
+<InvalidMessage role="alert" visible>Please input your mail address</InvalidMessage>
+  `}
+/>

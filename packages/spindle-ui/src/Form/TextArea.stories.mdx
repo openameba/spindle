@@ -1,0 +1,66 @@
+import { Meta, Story, Source } from '@storybook/addon-docs/blocks';
+import { actions } from '@storybook/addon-actions';
+import { TextArea } from './TextArea';
+
+# TextArea
+
+<Meta title="Form/TextArea" component={TextArea} />
+
+![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)
+
+<Source
+  language='javascript'
+  code={`import { TextArea } from '@openameba/spindle-ui/Form'`}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/Form/TextArea.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Form/TextArea.css">`}
+/>
+
+## Text Area
+
+<Preview withSource="open">
+  <Story name="Text Area">
+    <TextArea aria-label="Text area" id="TextArea" placeholder="How are you feeling?" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')}></TextArea>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<TextArea aria-label="Text area" id="TextArea"></TextArea>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<textarea aria-label="Text area" class="spui-TextArea" id="TextArea"></textarea>
+  `}
+/>
+
+## Text Area With Error
+
+<Preview withSource="open">
+  <Story name="Text Area With Error">
+    <TextArea aria-label="Text area" hasError id="TextAreaWithError" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')}></TextArea>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<TextArea aria-label="Text area" hasError id="TextAreaWithError"></TextArea>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<textarea aria-label="Text area" class="spui-TextArea is-error" id="TextAreaWithError"></textarea>
+  `}
+/>

@@ -1,0 +1,100 @@
+import { Meta, Story, Source } from '@storybook/addon-docs/blocks';
+import { actions } from '@storybook/addon-actions';
+import { Radio } from './Radio';
+
+# Radio
+
+<Meta title="Form/Radio" component={Radio} />
+
+![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)
+
+<Source
+  language='javascript'
+  code={`import { Radio } from '@openameba/spindle-ui/Form'`}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/Form/Radio.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Form/Radio.css">`}
+/>
+
+## Radio
+
+<Preview withSource="open">
+  <Story name="Radio">
+    <Radio aria-label="asia" id="asia" name="area" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')} />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<Radio aria-label="asia" id="asia" name="area" />
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<label class="spui-Radio-label" for="asia">
+  <input aria-label="asia" class="spui-Radio-input" id="asia" type="radio" name="area">
+  <span class="spui-Radio-icon"></span>
+  <span class="spui-Radio-outline"></span>
+</label>
+  `}
+/>
+
+## Radio Disabled
+
+<Preview withSource="open">
+  <Story name="Radio Disabled">
+    <Radio  aria-label="asia" disabled id="asiaDisabled" name="asia" />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<Radio  aria-label="asia" disabled id="asia" name="area" />
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<label class="spui-Radio-label" for="asia">
+  <input aria-label="asia" class="spui-Radio-input" disabled id="asia" type="radio" name="area">
+  <span class="spui-Radio-icon"></span>
+  <span class="spui-Radio-outline"></span>
+</label>
+  `}
+/>
+
+## Radio With Text
+
+<Preview withSource="open">
+  <Story name="Radio With Text">
+    <Radio id="asiaWithText" name="area" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')}>Asia</Radio>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<Radio id="asiaWithText" name="area">Asia</Radio>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<label class="spui-Radio-label" for="asia">
+  <input class="spui-Radio-input" id="asiaWithText" type="radio" name="area">
+  <span class="spui-Radio-icon"></span>
+  <span class="spui-Radio-outline"></span>
+  <span class="spui-Radio-text">Asia</span>
+</label>
+  `}
+/>

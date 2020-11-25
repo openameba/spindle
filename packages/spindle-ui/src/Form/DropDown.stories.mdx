@@ -1,0 +1,169 @@
+import { Meta, Story, Source, Description } from '@storybook/addon-docs/blocks';
+import { actions } from '@storybook/addon-actions';
+import { DropDown } from './DropDown';
+
+# DropDown
+
+<Meta title="Form/DropDown" component={DropDown} />
+
+![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)
+
+<Source
+  language='javascript'
+  code={`import { DropDown } from '@openameba/spindle-ui/Form'`}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/Form/DropDown.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Form/DropDown.css">`}
+/>
+
+<Description>このコンポーネントの利用にはJavaScriptでの処理が必要なため、HTMLのみでは正常に動作しません。[React版](https://github.com/openameba/spindle/tree/main/packages/spindle-ui/src/Form/DropDown.tsx)を参考に実装してください。</Description>
+
+## DropDown
+
+<Preview withSource="open">
+  <Story name="DropDown">
+    <DropDown aria-label="Fruits" name="fruits" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')}>
+      <option value="apple">Apple</option>
+      <option value="orange">Orange</option>
+      <option value="melon">Melon</option>
+    </DropDown>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<DropDown aria-label="Fruits" name="fruits">
+  <option value="apple">Apple</option>
+  <option value="orange">Orange</option>
+  <option value="melon">Melon</option>
+</DropDown>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<label class="spui-DropDown-label is-active">
+  <span class="spui-DropDown-visual">Orange</span>
+  <span class="spui-DropDown-icon"><svg>...</svg></span>
+  <select aria-label="Fruits" class="spui-DropDown-select" name="fruits">
+    <option value="apple">Apple</option>
+    <option value="orange">Orange</option>
+    <option value="melon">Melon</option>
+  </select>
+  <span class="spui-DropDown-outline"></span>
+</label>
+  `}
+/>
+
+## DropDown With Selected And Disabled
+
+<Description>select要素と同様に、selectedやdisabled属性を付与したoption要素にも対応しています。</Description>
+
+<Preview withSource="open">
+  <Story name="DropDown With Selected And Disabled">
+    <DropDown aria-label="Fruits" name="fruits" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')}>
+      <option value="apple">Apple</option>
+      <option value="orange" selected disabled>Orange</option>
+      <option value="melon">Melon</option>
+    </DropDown>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<DropDown aria-label="Fruits" name="fruits">
+  <option value="apple">Apple</option>
+  <option value="orange" selected disabled>Orange</option>
+  <option value="melon">Melon</option>
+</DropDown>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<label class="spui-DropDown-label">
+  <span class="spui-DropDown-visual">Orange</span>
+  <span class="spui-DropDown-icon"><svg>...</svg></span>
+  <select aria-label="Fruits" class="spui-DropDown-select" name="fruits">
+    <option value="apple">Apple</option>
+    <option value="orange" selected disabled>Orange</option>
+    <option value="melon">Melon</option>
+  </select>
+  <span class="spui-DropDown-outline"></span>
+</label>
+  `}
+/>
+
+## DropDown With Error
+
+<Preview withSource="open">
+  <Story name="DropDown With Error">
+    <DropDown aria-label="Fruits" hasError name="fruitsWithError" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')}>
+      <option value="apple">Apple</option>
+      <option value="orange">Orange</option>
+      <option value="melon">Melon</option>
+    </DropDown>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<DropDown aria-label="Fruits" hasError name="fruits">
+  <option value="apple">Apple</option>
+  <option value="orange">Orange</option>
+  <option value="melon">Melon</option>
+</DropDown>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<label class="spui-DropDown-label is-active is-error">
+  <span class="spui-DropDown-visual">Orange</span>
+  <span class="spui-DropDown-icon"><svg>...</svg></span>
+  <select aria-label="Fruits" class="spui-DropDown-select" name="fruits">
+    <option value="apple">Apple</option>
+    <option value="orange">Orange</option>
+    <option value="melon">Melon</option>
+  </select>
+  <span class="spui-DropDown-outline"></span>
+</label>
+  `}
+/>
+
+## Accessibility
+
+<Description>aria-label属性やlabel要素で適切なラベリングをしてください。</Description>
+
+<Source
+  code={`
+<DropDown aria-label="Fruits" id="fruits-selection" name="fruits" placeholder="Fruits">
+  <option value="apple">Apple</option>
+  <option value="orange">Orange</option>
+  <option value="melon">Melon</option>
+</DropDown>
+  `}
+/>
+
+<Source
+  code={`
+<>
+  <InputLabel id="fruits-selection">Fruits</InputLabel>
+  <DropDown id="fruits-selection" name="fruits" placeholder="Fruits">
+    <option value="apple">Apple</option>
+    <option value="orange">Orange</option>
+    <option value="melon">Melon</option>
+  </DropDown>
+</>
+  `}
+/>
