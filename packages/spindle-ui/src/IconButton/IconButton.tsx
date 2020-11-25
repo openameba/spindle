@@ -1,28 +1,31 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 type Size = 'large' | 'medium' | 'small' | 'exSmall';
 
 type Variant = 'contained' | 'outlined' | 'neutral';
 
-type Props = {
+interface Props
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'className'> {
+  children?: React.ReactNode;
   size?: Size;
   variant?: Variant;
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+}
 
 const BLOCK_NAME = 'spui-IconButton';
 
-export const IconButton: React.FC<Props> = ({
-  children,
-  size = 'large',
-  variant = 'contained',
-  ...rest
-}: Props) => {
-  return (
-    <button
-      className={`${BLOCK_NAME} ${BLOCK_NAME}--${size} ${BLOCK_NAME}--${variant}`}
-      {...rest}
-    >
-      {children}
-    </button>
-  );
-};
+export const IconButton = forwardRef<HTMLButtonElement, Props>(
+  function IconButton(
+    { children, size = 'large', variant = 'contained', ...rest }: Props,
+    ref,
+  ) {
+    return (
+      <button
+        className={`${BLOCK_NAME} ${BLOCK_NAME}--${size} ${BLOCK_NAME}--${variant}`}
+        ref={ref}
+        {...rest}
+      >
+        {children}
+      </button>
+    );
+  },
+);

@@ -1,4 +1,4 @@
-import { Meta, Story, Source } from '@storybook/addon-docs/blocks';
+import { Description, Meta, Story, Source } from '@storybook/addon-docs/blocks';
 import { actions } from '@storybook/addon-actions';
 import { IconButton } from './IconButton';
 import { PlusBold } from '../Icon';
@@ -6,6 +6,8 @@ import { PlusBold } from '../Icon';
 # Icon Button
 
 <Meta title="IconButton" component={IconButton} />
+
+![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)
 
 <Source
   language='javascript'
@@ -156,3 +158,33 @@ import { PlusBold } from '../Icon';
 <button class="spui-IconButton spui-IconButton--medium spui-IconButton--neutral" disabled>+</button>
   `}
 />
+
+## Lighted
+
+![stability-experiment](https://img.shields.io/badge/stability-experiment-red.svg)
+
+<Description>
+  Neutralからの状態変化先のスタイルとして定義しており、単独での利用は推奨していません。Lightedは試験的なVarientであるため、今後に破壊的な変更や削除がおこなわれる可能性があることに注意して利用してください。
+</Description>
+
+<Preview withSource="open">
+  <Story name="Lighted">
+    <IconButton size="large" variant="lighted" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<IconButton size="large" variant="lighted">+</IconButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-IconButton spui-IconButton--large spui-IconButton--lighted">+</button>
+  `}
+/>
+
+## Browser Compatibility
+<Description>active時やhover時など各stateのスタイルは、ブラウザごとに異なります。詳しくは[ButtonのStateパターン変更](https://github.com/openameba/spindle/issues/13)を参照してください。</Description>
