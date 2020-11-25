@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.5.2...@openameba/spindle-ui@0.6.0) (2020-11-25)
+
+
+### Features
+
+* **spindle-ui:** add Form related components ([4910b4e](https://github.com/openameba/spindle/commit/4910b4e80ec231044603ab9a6b7fd113927e6228))
+
+
+
+
+
 ## [0.5.2](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.5.1...@openameba/spindle-ui@0.5.2) (2020-11-20)
 
 
