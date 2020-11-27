@@ -57,8 +57,13 @@
 }
 
 /* box-shadow is used to apply border-radius as outline */
-.spui-Checkbox-input:focus ~ .spui-Checkbox-outline {
+.spui-Checkbox-input:focus ~ .spui-Checkbox-outline,
+.spui-Checkbox-input:focus-visible ~ .spui-Checkbox-outline {
   box-shadow: 0 0 0 2px var(--color-focus-clarity);
+}
+
+.spui-Checkbox-input:focus:not(:focus-visible) ~ .spui-Checkbox-outline {
+  box-shadow: none;
 }
 
 .spui-Checkbox-text:not(:empty) {

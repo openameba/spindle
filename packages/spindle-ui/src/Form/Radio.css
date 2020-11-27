@@ -58,8 +58,13 @@
 }
 
 /* box-shadow is used to apply border-radius as outline */
-.spui-Radio-input:focus ~ .spui-Radio-outline {
+.spui-Radio-input:focus ~ .spui-Radio-outline,
+.spui-Radio-input:focus-visible ~ .spui-Radio-outline {
   box-shadow: 0 0 0 2px var(--color-focus-clarity);
+}
+
+.spui-Radio-input:focus:not(:focus-visible) ~ .spui-Radio-outline {
+  box-shadow: none;
 }
 
 .spui-Radio-text:not(:empty) {

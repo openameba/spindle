@@ -73,6 +73,12 @@
 }
 
 /* box-shadow is used to apply border-radius as outline */
-.spui-ToggleSwitch-input:focus ~ .spui-ToggleSwitch-outline {
+.spui-ToggleSwitch-input:focus ~ .spui-ToggleSwitch-outline,
+.spui-ToggleSwitch-input:focus-visible ~ .spui-ToggleSwitch-outline {
   box-shadow: 0 0 0 2px var(--color-focus-clarity);
+}
+
+.spui-ToggleSwitch-input:focus:not(:focus-visible)
+  ~ .spui-ToggleSwitch-outline {
+  box-shadow: none;
 }
