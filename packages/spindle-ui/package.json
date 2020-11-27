@@ -33,10 +33,12 @@
   "publishConfig": {
     "access": "public"
   },
+  "peerDependencies": {
+    "@types/react": "^16.8.6 || ^17.0.0",
+    "react": "^16.8.0 || ^17.0.0"
+  },
   "dependencies": {
-    "@types/react": "^16.9.43",
-    "ameba-color-palette.css": "^4.2.0",
-    "react": "^16.13.1"
+    "ameba-color-palette.css": "^4.2.0"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^6.0.0",
