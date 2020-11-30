@@ -1,0 +1,180 @@
+/*
+ * LinkButton
+*/
+.spui-LinkButton {
+  align-items: center;
+  box-sizing: border-box;
+  display: inline-flex;
+  font-family: inherit;
+  font-weight: bold;
+  justify-content: center;
+  line-height: 1.3;
+  outline: none;
+  -webkit-tap-highlight-color: var(--gray-5-alpha);
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.spui-LinkButton:focus,
+.spui-LinkButton:focus-visible {
+  box-shadow: 0 0 0 1px var(--color-surface-primary),
+    0 0 0 3px var(--color-focus-clarity);
+}
+
+.spui-LinkButton:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+/*
+ * Layout
+*/
+.spui-LinkButton--fullWidth {
+  width: 100%;
+}
+
+/*
+ * Sizes
+*/
+.spui-LinkButton--large {
+  /* To be relative value with font size; this means base height / base font size  */
+  border-radius: calc(48em / 16);
+  font-size: 1em;
+  min-height: 48px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.spui-LinkButton--medium {
+  border-radius: calc(40em / 14);
+  font-size: 0.875em;
+  min-height: 40px;
+  min-width: 88px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.spui-LinkButton--small {
+  border-radius: calc(32em / 13);
+  font-size: 0.8125em;
+  min-height: 32px;
+  min-width: 60px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/*
+ * Setting height to a value less then min-height fixes the align-items: center issue in IE11
+ * @see https://github.com/philipwalton/flexbugs/issues/231#issue-245848315
+*/
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .spui-LinkButton--large,
+  .spui-LinkButton--medium,
+  .spui-LinkButton--small {
+    height: 1px;
+  }
+}
+
+/*
+ * Variants
+*/
+/* contained */
+.spui-LinkButton--contained {
+  background-color: var(--color-surface-accent-primary);
+  border: none;
+  color: var(--color-text-high-emphasis-inverse);
+  /* Button variants have different vertical padding to normalize height */
+  padding-bottom: 8px;
+  padding-top: 8px;
+}
+
+.spui-LinkButton--contained:active {
+  background-color: var(--primary-green-100);
+}
+
+@media (hover: hover) {
+  .spui-LinkButton--contained:hover {
+    background-color: var(--primary-green-100);
+  }
+}
+
+/* outlined */
+.spui-LinkButton--outlined {
+  background-color: var(--color-text-high-emphasis-inverse);
+  border: 2px solid var(--color-surface-accent-primary);
+  color: var(--color-surface-accent-primary);
+  padding-bottom: 6px;
+  padding-top: 6px;
+}
+
+.spui-LinkButton--outlined:active {
+  background-color: var(--primary-green-5);
+}
+
+@media (hover: hover) {
+  .spui-LinkButton--outlined:hover {
+    background-color: var(--primary-green-5);
+  }
+}
+
+/* neutral */
+.spui-LinkButton--neutral {
+  background-color: var(--color-surface-tertiary);
+  border: none;
+  color: var(--color-text-medium-emphasis);
+  padding-bottom: 8px;
+  padding-top: 8px;
+}
+
+.spui-LinkButton--neutral:active {
+  background-color: var(--gray-20-alpha);
+}
+
+@media (hover: hover) {
+  .spui-LinkButton--neutral:hover {
+    background-color: var(--gray-20-alpha);
+  }
+}
+
+/* danger */
+.spui-LinkButton--danger {
+  background-color: var(--color-text-high-emphasis-inverse);
+
+  border: 2px solid var(--color-text-caution);
+  color: var(--color-text-caution);
+  padding-bottom: 6px;
+  padding-top: 6px;
+}
+
+.spui-LinkButton--danger:active {
+  background-color: var(--caution-red-5-alpha);
+}
+
+@media (hover: hover) {
+  .spui-LinkButton--danger:hover {
+    background-color: var(--caution-red-5-alpha);
+  }
+}
+
+/*
+ * with Icon
+*/
+
+.spui-LinkButton-icon {
+  line-height: 0; /* Fix Icon position align */
+}
+
+.spui-LinkButton-icon--large {
+  font-size: 1.375em; /* Icon 22px / Text 16px = 1.375 */
+  margin-right: 6px;
+}
+
+.spui-LinkButton-icon--medium {
+  font-size: 1.429em; /* Icon 20px / Text 14px =  1.42857142857 */
+  margin-right: 4px;
+}
+
+.spui-LinkButton-icon--small {
+  font-size: 1.23em; /* Icon 16px / Text 13px = 1.23076923077 */
+  margin-right: 2px;
+}
