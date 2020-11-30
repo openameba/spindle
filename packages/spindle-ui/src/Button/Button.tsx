@@ -11,7 +11,7 @@ type Props = {
   size?: Size;
   variant?: Variant;
   icon?: React.ReactNode;
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+} & Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'className'>; // Layout styles should be added at containers
 
 const BLOCK_NAME = 'spui-Button';
 

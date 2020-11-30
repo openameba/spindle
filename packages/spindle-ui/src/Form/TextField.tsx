@@ -6,7 +6,7 @@ type Props = {
   hasError?: boolean;
   id: string;
   variant?: Variant; // to avoid duplication; <input> has size attribute
-} & React.InputHTMLAttributes<HTMLInputElement>;
+} & Omit<React.InputHTMLAttributes<HTMLInputElement>, 'className'>; // Layout styles should be added at containers
 
 const BLOCK_NAME = 'spui-TextField';
 

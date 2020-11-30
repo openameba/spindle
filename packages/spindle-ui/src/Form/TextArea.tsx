@@ -3,7 +3,7 @@ import React from 'react';
 type Props = {
   hasError?: boolean;
   id: string;
-} & React.TextareaHTMLAttributes<HTMLTextAreaElement>;
+} & Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, 'className'>; // Layout styles should be added at containers
 
 const BLOCK_NAME = 'spui-TextArea';
 
