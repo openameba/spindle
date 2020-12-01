@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.7.0...@openameba/spindle-ui@0.8.0) (2020-12-01)
+
+
+### Features
+
+* **spindle-ui:** add LinkButton ([ca92769](https://github.com/openameba/spindle/commit/ca927697a14f0987e5810031c88c2673d7e60e75))
+
+
+
+
+
 # [0.7.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.6.0...@openameba/spindle-ui@0.7.0) (2020-12-01)
 
 **Note:** Version bump only for package @openameba/spindle-ui
