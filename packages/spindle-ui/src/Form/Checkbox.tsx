@@ -2,7 +2,7 @@ import React from 'react';
 
 import { CheckBold } from '../Icon';
 
-type Props = React.InputHTMLAttributes<HTMLInputElement>;
+type Props = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'className'>; // Layout styles should be added at containers
 
 const BLOCK_NAME = 'spui-Checkbox';
 

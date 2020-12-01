@@ -4,7 +4,7 @@ import { ChevronDownBold } from '../Icon';
 
 type Props = {
   hasError?: boolean;
-} & React.SelectHTMLAttributes<HTMLSelectElement>;
+} & Omit<React.SelectHTMLAttributes<HTMLSelectElement>, 'className'>; // Layout styles should be added at containers
 
 const BLOCK_NAME = 'spui-DropDown';
 

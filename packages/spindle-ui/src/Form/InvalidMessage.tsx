@@ -4,7 +4,7 @@ import { ExclamationmarkCircleFill } from '../Icon';
 
 type Props = {
   visible?: boolean;
-} & React.HTMLAttributes<HTMLParagraphElement>;
+} & Omit<React.HTMLAttributes<HTMLParagraphElement>, 'className'>; // Layout styles should be added at containers
 
 const BLOCK_NAME = 'spui-InvalidMessage';
 

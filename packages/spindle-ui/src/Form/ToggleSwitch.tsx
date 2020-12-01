@@ -2,7 +2,7 @@ import React from 'react';
 
 type Props = {
   id: string;
-} & React.InputHTMLAttributes<HTMLInputElement>;
+} & Omit<React.InputHTMLAttributes<HTMLInputElement>, 'className'>; // Layout styles should be added at containers
 
 const BLOCK_NAME = 'spui-ToggleSwitch';
 
