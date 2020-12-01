@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 type Props = {
   hasError?: boolean;
@@ -7,19 +7,20 @@ type Props = {
 
 const BLOCK_NAME = 'spui-TextArea';
 
-export const TextArea: React.FC<Props> = ({
-  children,
-  hasError = false,
-  id = '',
-  ...rest
-}: Props) => {
-  return (
-    <textarea
-      className={[`${BLOCK_NAME}`, hasError ? 'is-error' : ''].join(' ')}
-      id={id}
-      {...rest}
-    >
-      {children}
-    </textarea>
-  );
-};
+export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
+  function TextArea(
+    { children, hasError = false, id = '', ...rest }: Props,
+    ref,
+  ) {
+    return (
+      <textarea
+        className={[`${BLOCK_NAME}`, hasError ? 'is-error' : ''].join(' ')}
+        id={id}
+        ref={ref}
+        {...rest}
+      >
+        {children}
+      </textarea>
+    );
+  },
+);

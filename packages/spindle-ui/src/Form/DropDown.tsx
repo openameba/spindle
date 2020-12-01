@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { forwardRef, useEffect, useRef, useState } from 'react';
+import mergeRefs from 'react-merge-refs';
 
 import { ChevronDownBold } from '../Icon';
 
@@ -8,12 +9,10 @@ type Props = {
 
 const BLOCK_NAME = 'spui-DropDown';
 
-export const DropDown: React.FC<Props> = ({
-  children,
-  hasError = false,
-  onChange,
-  ...rest
-}: Props) => {
+export const DropDown = forwardRef<HTMLSelectElement, Props>(function DropDown(
+  { children, hasError = false, onChange, ...rest }: Props,
+  ref,
+) {
   const selectEl = useRef<HTMLSelectElement>(null);
 
   const [text, setText] = useState('');
@@ -56,7 +55,7 @@ export const DropDown: React.FC<Props> = ({
       </span>
       <select
         className={`${BLOCK_NAME}-select`}
-        ref={selectEl}
+        ref={mergeRefs([selectEl, ref])}
         onChange={handleChange}
         {...rest}
       >
@@ -65,4 +64,4 @@ export const DropDown: React.FC<Props> = ({
       <span className={`${BLOCK_NAME}-outline`}></span>
     </label>
   );
-};
+});

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 type Variant = 'large' | 'medium';
 
@@ -10,12 +10,10 @@ type Props = {
 
 const BLOCK_NAME = 'spui-TextField';
 
-export const TextField: React.FC<Props> = ({
-  hasError = false,
-  id = '',
-  variant = 'medium',
-  ...rest
-}: Props) => {
+export const TextField = forwardRef<HTMLInputElement, Props>(function TextField(
+  { hasError = false, id = '', variant = 'medium', ...rest }: Props,
+  ref,
+) {
   return (
     <input
       className={[
@@ -24,7 +22,8 @@ export const TextField: React.FC<Props> = ({
         hasError ? 'is-error' : '',
       ].join(' ')}
       id={id}
+      ref={ref}
       {...rest}
     />
   );
-};
+});
