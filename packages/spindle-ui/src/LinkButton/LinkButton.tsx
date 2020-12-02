@@ -6,12 +6,14 @@ type Size = 'large' | 'medium' | 'small';
 
 type Variant = 'contained' | 'outlined' | 'neutral' | 'danger';
 
-type Props = {
+interface Props
+  extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'className'> {
+  children?: React.ReactNode;
   layout?: Layout;
   size?: Size;
   variant?: Variant;
   icon?: React.ReactNode;
-} & Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'className'>;
+}
 
 const BLOCK_NAME = 'spui-LinkButton';
 
