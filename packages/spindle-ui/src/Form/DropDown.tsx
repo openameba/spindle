@@ -3,9 +3,12 @@ import mergeRefs from 'react-merge-refs';
 
 import { ChevronDownBold } from '../Icon';
 
-type Props = {
+interface Props
+  extends Omit<React.SelectHTMLAttributes<HTMLSelectElement>, 'className'> {
+  children?: React.ReactNode;
   hasError?: boolean;
-} & Omit<React.SelectHTMLAttributes<HTMLSelectElement>, 'className'>; // Layout styles should be added at containers
+  onChange?: React.ChangeEventHandler<HTMLSelectElement>;
+}
 
 const BLOCK_NAME = 'spui-DropDown';
 

@@ -1,9 +1,11 @@
 import React, { forwardRef } from 'react';
 
-type Props = {
+interface Props
+  extends Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, 'className'> {
+  children?: React.ReactNode;
   hasError?: boolean;
   id: string;
-} & Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, 'className'>; // Layout styles should be added at containers
+}
 
 const BLOCK_NAME = 'spui-TextArea';
 

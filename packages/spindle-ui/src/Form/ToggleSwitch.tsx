@@ -1,8 +1,9 @@
 import React, { forwardRef } from 'react';
 
-type Props = {
+interface Props
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'className'> {
   id: string;
-} & Omit<React.InputHTMLAttributes<HTMLInputElement>, 'className'>; // Layout styles should be added at containers
+}
 
 const BLOCK_NAME = 'spui-ToggleSwitch';
 
