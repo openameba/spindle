@@ -4,7 +4,7 @@ type Layout = 'intrinsic' | 'fullWidth';
 
 type Size = 'large' | 'medium' | 'small';
 
-type Variant = 'contained' | 'outlined' | 'neutral' | 'danger';
+type Variant = 'contained' | 'outlined' | 'lighted' | 'neutral' | 'danger';
 
 type Props = {
   layout?: Layout;
