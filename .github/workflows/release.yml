@@ -40,26 +40,21 @@ jobs:
         run: |
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
           npm whoami
-      - name: Extract version from branch name
-        run: echo "::set-output name=version::${GITHUB_REF##*/}"
-        id: extract_version
+      - name: Extract branch from git ref
+        run: |
+          echo "::set-output name=name::${GITHUB_REF#refs/*/}"
+          echo "::set-output name=version::${GITHUB_REF##*/}"
+        id: extract_branch
       - name: Releaseing with lerna
         # also see some options in lerna.json
-        run: npx lerna publish ${{ steps.extract_version.outputs.version }} --conventional-commits --create-release github --yes --no-private
+        run: npx lerna publish ${{ steps.extract_branch.outputs.version }} --conventional-commits --create-release github --yes --no-private
         env:
           GH_TOKEN: ${{ github.token }}
       - name: Create Pull Request
-        id: cpr
-        uses: peter-evans/create-pull-request@v3
-        with:
-          base: ${{ github.event.push.repository.default_branch }}
-          branch: release/chores-into-default-branch
-          delete-branch: true
-          title: 'chore(release): publish'
-          body: 'This is an automated pull request to merge some chores into the default branch.'
-          labels: |
-            automated pr
-      - name: Check Pull Request
         run: |
-          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
-          echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
+          curl \
+            -X POST \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: token ${{ github.token }}" \
+            https://api.github.com/repos/${{ github.event.repository.owner.name }}/${{ github.event.repository.name }}/pulls \
+            -d '{"head":"${{ steps.extract_branch.outputs.name }}","base":"${{ github.event.repository.default_branch }}","title":"${{ github.event.head_commit.message }}"}'
