@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.8.0...@openameba/spindle-ui@0.8.1) (2020-12-02)
+
+
+### Bug Fixes
+
+* **spindle-ui:** change outlined Button background color ([65fc929](https://github.com/openameba/spindle/commit/65fc9296d96d990e0f5270f12fdbe74e564fa9e3))
+
+
+
+
+
 # [0.8.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.7.0...@openameba/spindle-ui@0.8.0) (2020-12-01)
 
 
