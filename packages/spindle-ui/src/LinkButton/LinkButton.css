@@ -100,7 +100,7 @@
 
 /* outlined */
 .spui-LinkButton--outlined {
-  background-color: var(--color-text-high-emphasis-inverse);
+  background-color: transparent;
   border: 2px solid var(--color-surface-accent-primary);
   color: var(--color-surface-accent-primary);
   padding-bottom: 6px;
@@ -138,8 +138,7 @@
 
 /* danger */
 .spui-LinkButton--danger {
-  background-color: var(--color-text-high-emphasis-inverse);
-
+  background-color: transparent;
   border: 2px solid var(--color-text-caution);
   color: var(--color-text-caution);
   padding-bottom: 6px;
