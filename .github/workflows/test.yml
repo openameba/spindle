@@ -26,5 +26,5 @@ jobs:
             */*/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
       - run: yarn install --frozen-lockfile
-      - run: yarn bootstrap
+      - run: npx lerna bootstrap -- --frozen-lockfile
       - run: yarn test
