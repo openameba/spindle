@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.2](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.8.1...@openameba/spindle-ui@0.8.2) (2020-12-03)
+
+
+### Bug Fixes
+
+* **spindle-ui:** avoid inaccurate type in LinkButton ([a548c93](https://github.com/openameba/spindle/commit/a548c9382d065118198899114ba099cd762daac6))
+
+
+### Features
+
+* **spindle-ui:** add Lighted Button ([6440b1a](https://github.com/openameba/spindle/commit/6440b1adf3ff352fd7a0567aedd7b29a2709c76e))
+
+
+
+
+
 ## [0.8.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.8.0...@openameba/spindle-ui@0.8.1) (2020-12-02)
 
 
