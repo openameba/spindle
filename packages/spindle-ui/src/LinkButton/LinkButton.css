@@ -117,6 +117,25 @@
   }
 }
 
+/* lighted */
+.spui-LinkButton--lighted {
+  background-color: var(--color-surface-accent-primary-light);
+  border: none;
+  color: var(--color-text-accent-primary);
+  padding-bottom: 8px;
+  padding-top: 8px;
+}
+
+.spui-LinkButton--lighted:active {
+  background-color: var(--primary-green-10);
+}
+
+@media (hover: hover) {
+  .spui-LinkButton--lighted:hover {
+    background-color: var(--primary-green-10);
+  }
+}
+
 /* neutral */
 .spui-LinkButton--neutral {
   background-color: var(--color-surface-tertiary);

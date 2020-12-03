@@ -318,5 +318,32 @@ import { PlusBold, ArrowRightBold, OpenblankFill } from '../Icon';
   `}
 />
 
+## Lighted
+
+![stability-experiment](https://img.shields.io/badge/stability-experiment-red.svg)
+
+<Description>
+  Neutralからの状態変化先のスタイルとして定義しており、単独での利用は推奨していません。Lightedは試験的なVarientであるため、今後に破壊的な変更や削除がおこなわれる可能性があることに注意して利用してください。
+</Description>
+
+<Preview withSource="open">
+  <Story name="Lighted">
+    <Button size="large" variant="lighted" {...actions('onClick', 'onMouseOver')}>Lighted</Button>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<Button size="large" variant="lighted">Lighted</Button>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-Button spui-Button--large spui-Button--lighted">Lighted</button>
+  `}
+/>
+
 ## Browser Compatibility
 <Description>active時やhover時など各stateのスタイルは、ブラウザごとに異なります。詳しくは[ButtonのStateパターン変更](https://github.com/openameba/spindle/issues/13)を参照してください。</Description>

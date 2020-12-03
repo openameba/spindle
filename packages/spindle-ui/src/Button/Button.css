@@ -115,6 +115,25 @@
   }
 }
 
+/* lighted */
+.spui-Button--lighted {
+  background-color: var(--color-surface-accent-primary-light);
+  border: none;
+  color: var(--color-text-accent-primary);
+  padding-bottom: 8px;
+  padding-top: 8px;
+}
+
+.spui-Button--lighted:active {
+  background-color: var(--primary-green-10);
+}
+
+@media (hover: hover) {
+  .spui-Button--lighted:not([disabled]):hover {
+    background-color: var(--primary-green-10);
+  }
+}
+
 /* neutral */
 .spui-Button--neutral {
   background-color: var(--color-surface-tertiary);
