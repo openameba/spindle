@@ -1,5 +1,42 @@
 /*
  * Button
+ * NOTE: Styles can be overridden with "--Button-*" variables
+*/
+:root {
+  --Button-tapHighlightColor: var(--gray-5-alpha);
+  --Button-transitionDuration: 0.3s;
+  --Button-onDisabled-opacity: 0.3;
+  --Button-onFocus-boxShadow: 0 0 0 1px var(--color-surface-primary),
+    0 0 0 3px var(--color-focus-clarity);
+
+  --Button--contained-backgroundColor: var(--color-surface-accent-primary);
+  --Button--contained-color: var(--color-text-high-emphasis-inverse);
+  --Button--contained-onActive-backgroundColor: var(--primary-green-100);
+  --Button--contained-onHover-backgroundColor: var(--primary-green-100);
+
+  --Button--outlined-borderColor: var(--color-surface-accent-primary);
+  --Button--outlined-color: var(--color-surface-accent-primary);
+  --Button--outlined-onActive-backgroundColor: var(--primary-green-5);
+  --Button--outlined-onHover-backgroundColor: var(--primary-green-5);
+
+  --Button--lighted-backgroundColor: var(--color-surface-accent-primary-light);
+  --Button--lighted-color: var(--color-text-accent-primary);
+  --Button--lighted-onActive-backgroundColor: var(--primary-green-10);
+  --Button--lighted-onHover-backgroundColor: var(--primary-green-10);
+
+  --Button--neutral-backgroundColor: var(--color-surface-tertiary);
+  --Button--neutral-color: var(--color-text-medium-emphasis);
+  --Button--neutral-onActive-backgroundColor: var(--gray-20-alpha);
+  --Button--neutral-onHover-backgroundColor: var(--gray-20-alpha);
+
+  --Button--danger-borderColor: var(--color-text-caution);
+  --Button--danger-color: var(--color-text-caution);
+  --Button--danger-onActive-backgroundColor: var(--caution-red-5-alpha);
+  --Button--danger-onHover-backgroundColor: var(--caution-red-5-alpha);
+}
+
+/*
+ * Button base
 */
 .spui-Button {
   align-items: center;
@@ -11,19 +48,18 @@
   line-height: 1.3;
   margin: 0;
   outline: none;
-  -webkit-tap-highlight-color: var(--gray-5-alpha);
+  -webkit-tap-highlight-color: var(--Button-tapHighlightColor);
   text-align: center;
-  transition: background-color 0.3s;
+  transition: background-color var(--Button-transitionDuration);
 }
 
 .spui-Button:disabled {
-  opacity: 0.3;
+  opacity: var(--Button-onDisabled-opacity);
 }
 
 .spui-Button:focus,
 .spui-Button:focus-visible {
-  box-shadow: 0 0 0 1px var(--color-surface-primary),
-    0 0 0 3px var(--color-focus-clarity);
+  box-shadow: var(--Button-onFocus-boxShadow);
 }
 
 .spui-Button:focus:not(:focus-visible) {
@@ -84,104 +120,103 @@
 */
 /* contained */
 .spui-Button--contained {
-  background-color: var(--color-surface-accent-primary);
+  background-color: var(--Button--contained-backgroundColor);
   border: none;
-  color: var(--color-text-high-emphasis-inverse);
+  color: var(--Button--contained-color);
   /* Button variants have different vertical padding to normalize height */
   padding-bottom: 8px;
   padding-top: 8px;
 }
 
 .spui-Button--contained:active {
-  background-color: var(--primary-green-100);
+  background-color: var(--Button--contained-onActive-backgroundColor);
 }
 
 @media (hover: hover) {
   .spui-Button--contained:not([disabled]):hover {
-    background-color: var(--primary-green-100);
+    background-color: var(--Button--contained-onHover-backgroundColor);
   }
 }
 
 /* outlined */
 .spui-Button--outlined {
   background-color: transparent;
-  border: 2px solid var(--color-surface-accent-primary);
-  color: var(--color-surface-accent-primary);
+  border: 2px solid var(--Button--outlined-borderColor);
+  color: var(--Button--outlined-color);
   padding-bottom: 6px;
   padding-top: 6px;
 }
 
 .spui-Button--outlined:active {
-  background-color: var(--primary-green-5);
+  background-color: var(--Button--outlined-onActive-backgroundColor);
 }
 
 @media (hover: hover) {
   .spui-Button--outlined:not([disabled]):hover {
-    background-color: var(--primary-green-5);
+    background-color: var(--Button--outlined-onHover-backgroundColor);
   }
 }
 
 /* lighted */
 .spui-Button--lighted {
-  background-color: var(--color-surface-accent-primary-light);
+  background-color: var(--Button--lighted-backgroundColor);
   border: none;
-  color: var(--color-text-accent-primary);
+  color: var(--Button--lighted-color);
   padding-bottom: 8px;
   padding-top: 8px;
 }
 
 .spui-Button--lighted:active {
-  background-color: var(--primary-green-10);
+  background-color: var(--Button--lighted-onActive-backgroundColor);
 }
 
 @media (hover: hover) {
   .spui-Button--lighted:not([disabled]):hover {
-    background-color: var(--primary-green-10);
+    background-color: var(--Button--lighted-onHover-backgroundColor);
   }
 }
 
 /* neutral */
 .spui-Button--neutral {
-  background-color: var(--color-surface-tertiary);
+  background-color: var(--Button--neutral-backgroundColor);
   border: none;
-  color: var(--color-text-medium-emphasis);
+  color: var(--Button--neutral-color);
   padding-bottom: 8px;
   padding-top: 8px;
 }
 
 .spui-Button--neutral:active {
-  background-color: var(--gray-20-alpha);
+  background-color: var(--Button--neutral-onActive-backgroundColor);
 }
 
 @media (hover: hover) {
   .spui-Button--neutral:not([disabled]):hover {
-    background-color: var(--gray-20-alpha);
+    background-color: var(--Button--neutral-onHover-backgroundColor);
   }
 }
 
 /* danger */
 .spui-Button--danger {
   background-color: transparent;
-  border: 2px solid var(--color-text-caution);
-  color: var(--color-text-caution);
+  border: 2px solid var(--Button--danger-borderColor);
+  color: var(--Button--danger-color);
   padding-bottom: 6px;
   padding-top: 6px;
 }
 
 .spui-Button--danger:active {
-  background-color: var(--caution-red-5-alpha);
+  background-color: var(--Button--danger-onActive-backgroundColor);
 }
 
 @media (hover: hover) {
   .spui-Button--danger:not([disabled]):hover {
-    background-color: var(--caution-red-5-alpha);
+    background-color: var(--Button--danger-onHover-backgroundColor);
   }
 }
 
 /*
  * with Icon
 */
-
 .spui-Button-icon {
   line-height: 0; /* Fix Icon position align */
 }
