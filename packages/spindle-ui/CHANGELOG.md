@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.8.2...@openameba/spindle-ui@0.9.0) (2020-12-07)
+
+
+### Features
+
+* **spindle-ui:** add ButtonLayout component ([dade8b7](https://github.com/openameba/spindle/commit/dade8b7b58f208c059fd45c06a129e03eddc36b4))
+* **spindle-ui:** add IconButton component ([d911868](https://github.com/openameba/spindle/commit/d91186899b239597d2e57e83e772aa914ac07b30))
+* **spindle-ui:** set focus style with focus-visible ([f47f8c3](https://github.com/openameba/spindle/commit/f47f8c37e78c1fba042dca5d42c591db597927a8))
+
+
+
+
+
 ## [0.8.2](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.8.1...@openameba/spindle-ui@0.8.2) (2020-12-03)
 
 
