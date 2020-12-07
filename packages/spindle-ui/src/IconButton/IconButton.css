@@ -1,0 +1,109 @@
+/*
+ * IconButton
+*/
+.spui-IconButton {
+  align-items: center;
+  border-radius: 100%;
+  box-sizing: border-box;
+  display: inline-flex;
+  justify-content: center;
+  outline: none;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.spui-IconButton:disabled {
+  opacity: 0.3;
+}
+
+.spui-IconButton:focus,
+.spui-IconButton:focus-visible {
+  box-shadow: 0 0 0 1px var(--color-surface-primary),
+    0 0 0 3px var(--color-focus-clarity);
+}
+
+.spui-IconButton:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+/*
+ * IconButton sizes
+*/
+.spui-IconButton--large {
+  font-size: 1.375em;
+  height: 48px;
+  width: 48px;
+}
+
+.spui-IconButton--medium {
+  font-size: 1.25em;
+  height: 40px;
+  width: 40px;
+}
+
+.spui-IconButton--small {
+  font-size: 1em;
+  height: 32px;
+  width: 32px;
+}
+
+.spui-IconButton--exSmall {
+  font-size: 1em;
+  height: 24px;
+  width: 24px;
+}
+
+/*
+ * IconButton variants
+*/
+/* contained */
+.spui-IconButton--contained {
+  background-color: var(--color-surface-accent-primary);
+  border: none;
+  color: var(--color-text-high-emphasis-inverse);
+}
+
+.spui-IconButton--contained:not([disabled]):hover {
+  background-color: var(--primary-green-100);
+}
+
+/* outlined */
+.spui-IconButton--outlined {
+  background-color: var(--color-text-high-emphasis-inverse);
+  border: 2px solid var(--color-surface-accent-primary);
+  color: var(--color-surface-accent-primary);
+}
+
+.spui-IconButton--outlined:not([disabled]):hover {
+  background-color: var(--primary-green-5);
+}
+
+/* lighted */
+.spui-IconButton--lighted {
+  background-color: var(--color-surface-accent-primary-light);
+  border: none;
+  color: var(--color-text-accent-primary);
+  padding-bottom: 8px;
+  padding-top: 8px;
+}
+
+.spui-IconButton--lighted:active {
+  background-color: var(--primary-green-10);
+}
+
+@media (hover: hover) {
+  .spui-IconButton--lighted:not([disabled]):hover {
+    background-color: var(--primary-green-10);
+  }
+}
+
+/* neutral */
+.spui-IconButton--neutral {
+  background-color: var(--color-surface-tertiary);
+  border: none;
+  color: var(--color-text-mid-emphasis);
+}
+
+.spui-IconButton--neutral:not([disabled]):hover {
+  background-color: var(--gray-20-alpha);
+}
