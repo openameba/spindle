@@ -19,9 +19,15 @@
   color: var(--color-text-disabled);
 }
 
-.spui-TextField:focus {
+.spui-TextField:focus,
+.spui-TextField:focus-visible {
   border-color: var(--color-border-high-emphasis);
   box-shadow: 0 0 0 3px var(--color-focus-ambiguous);
+}
+
+.spui-TextField:focus:not(:focus-visible) {
+  border-color: var(--color-border-medium-emphasis);
+  box-shadow: none;
 }
 
 .spui-TextField.is-error {

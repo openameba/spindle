@@ -19,9 +19,14 @@
   opacity: 0.3;
 }
 
-.spui-Button:focus {
+.spui-Button:focus,
+.spui-Button:focus-visible {
   box-shadow: 0 0 0 1px var(--color-surface-primary),
     0 0 0 3px var(--color-focus-clarity);
+}
+
+.spui-Button:focus:not(:focus-visible) {
+  box-shadow: none;
 }
 
 /*
