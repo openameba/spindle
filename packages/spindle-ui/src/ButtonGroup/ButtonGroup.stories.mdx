@@ -1,0 +1,204 @@
+import { Meta, Story, Source } from '@storybook/addon-docs/blocks';
+import { ButtonGroup } from './ButtonGroup';
+import { Button } from '../Button';
+
+# Button Group
+
+<Meta title="ButtonGroup" component={ButtonGroup} />
+
+![stability-unstable](https://img.shields.io/badge/stability-unstable-yellow.svg)
+
+<Source
+  language='javascript'
+  code={`import { ButtonGroup } from '@openameba/spindle-ui'`}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/ButtonGroup/ButtonGroup.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/ButtonGroup/ButtonGroup.css">`}
+/>
+
+## Row Direction with Large Buttons
+
+<Preview withSource="open">
+  <Story name="Row Direction with Large Buttons">
+    <ButtonGroup direction="row" size="large">
+      <Button size="large" variant="contained">Contained</Button>
+      <Button size="large" variant="outlined">Outlined</Button>
+    </ButtonGroup>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<ButtonGroup direction="row" size="large">
+  <Button size="large" variant="contained">Contained</Button>
+  <Button size="large" variant="outlined">Outlined</Button>
+</ButtonGroup>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<div class="spui-ButtonGroup spui-ButtonGroup--row spui-ButtonGroup--large">
+  <button class="spui-Button spui-Button--large spui-Button--contained">Contained</button>
+  <button class="spui-Button spui-Button--large spui-Button--outlined">Outlined</button>
+</div>
+  `}
+/>
+
+## Column Direction with Large Buttons
+
+<Preview withSource="open">
+  <Story name="Column Direction with Large Buttons">
+    <ButtonGroup direction="column" size="large">
+      <Button variant="contained">Contained</Button>
+      <Button variant="outlined">Outlined</Button>
+    </ButtonGroup>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<ButtonGroup direction="column" size="large">
+  <Button size="large" variant="contained">Contained</Button>
+  <Button size="large" variant="outlined">Outlined</Button>
+</ButtonGroup>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<div class="spui-ButtonGroup spui-ButtonGroup--column spui-ButtonGroup--large">
+  <button class="spui-Button spui-Button--large spui-Button--contained">Contained</button>
+  <button class="spui-Button spui-Button--large spui-Button--outlined">Outlined</button>
+</div>
+  `}
+/>
+
+## Row Direction with Medium Buttons
+
+<Preview withSource="open">
+  <Story name="Row Direction with Medium Buttons">
+    <ButtonGroup direction="row" size="medium">
+      <Button size="medium" variant="contained">Contained</Button>
+      <Button size="medium" variant="outlined">Outlined</Button>
+    </ButtonGroup>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<ButtonGroup direction="row" size="medium">
+  <Button size="medium" variant="contained">Contained</Button>
+  <Button size="medium" variant="outlined">Outlined</Button>
+</ButtonGroup>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<div class="spui-ButtonGroup spui-ButtonGroup--row spui-ButtonGroup--medium">
+  <button class="spui-Button spui-Button--medium spui-Button--contained">Contained</button>
+  <button class="spui-Button spui-Button--medium spui-Button--outlined">Outlined</button>
+</div>
+  `}
+/>
+
+## Column Direction with Medium Buttons
+
+<Preview withSource="open">
+  <Story name="Column Direction with Medium Buttons">
+    <ButtonGroup direction="column" size="medium">
+      <Button size="medium" variant="contained">Contained</Button>
+      <Button size="medium" variant="outlined">Outlined</Button>
+    </ButtonGroup>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<ButtonGroup direction="column" size="medium">
+  <Button size="medium" variant="contained">Contained</Button>
+  <Button size="medium" variant="outlined">Outlined</Button>
+</ButtonGroup>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<div class="spui-ButtonGroup spui-ButtonGroup--column spui-ButtonGroup--medium">
+  <button class="spui-Button spui-Button--medium spui-Button--contained">Contained</button>
+  <button class="spui-Button spui-Button--medium spui-Button--outlined">Outlined</button>
+</div>
+  `}
+/>
+
+## Row Direction with Small Buttons
+
+<Preview withSource="open">
+  <Story name="Row Direction with Small Buttons">
+    <ButtonGroup direction="row" size="small">
+      <Button size="small" variant="contained">Contained</Button>
+      <Button size="small" variant="outlined">Outlined</Button>
+    </ButtonGroup>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<ButtonGroup direction="row" size="small">
+  <Button size="small" variant="contained">Contained</Button>
+  <Button size="small" variant="outlined">Outlined</Button>
+</ButtonGroup>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<div class="spui-ButtonGroup spui-ButtonGroup--row spui-ButtonGroup--small">
+  <button class="spui-Button spui-Button--small spui-Button--contained">Contained</button>
+  <button class="spui-Button spui-Button--small spui-Button--outlined">Outlined</button>
+</div>
+  `}
+/>
+
+## Column Direction with Small Buttons
+
+<Preview withSource="open">
+  <Story name="Column Direction with Small Buttons">
+    <ButtonGroup direction="column" size="small">
+      <Button size="small" variant="contained">Contained</Button>
+      <Button size="small" variant="outlined">Outlined</Button>
+    </ButtonGroup>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<ButtonGroup direction="column" size="small">
+  <Button size="small" variant="contained">Contained</Button>
+  <Button size="small" variant="outlined">Outlined</Button>
+</ButtonGroup>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<div class="spui-ButtonGroup spui-ButtonGroup--column spui-ButtonGroup--small">
+  <button class="spui-Button spui-Button--small spui-Button--contained">Contained</button>
+  <button class="spui-Button spui-Button--small spui-Button--outlined">Outlined</button>
+</div>
+  `}
+/>
