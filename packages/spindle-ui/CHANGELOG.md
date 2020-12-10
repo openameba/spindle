@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.9.0...@openameba/spindle-ui@0.9.1) (2020-12-10)
+
+
+### Bug Fixes
+
+* **spindle-ui:** apply IconButton state styles ([9910f44](https://github.com/openameba/spindle/commit/9910f449866beae64d2c0ad87714721c5e2c86c4))
+
+
+
+
+
 # [0.9.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.8.2...@openameba/spindle-ui@0.9.0) (2020-12-07)
 
 
