@@ -25,7 +25,7 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
       - run: yarn install --frozen-lockfile
       - run: npx lerna bootstrap -- --frozen-lockfile
-      - name: Update UI catalog
+      - name: Update Icons
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
           FILE_KEY: ${{ secrets.FIGMA_ICON_FILE_KEY }}
