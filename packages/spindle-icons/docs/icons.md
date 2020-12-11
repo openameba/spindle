@@ -10,7 +10,9 @@
 | addressbook_fill | ![](../dist/svg/addressbook_fill.svg) |
 | album_add_fill | ![](../dist/svg/album_add_fill.svg) |
 | album_fill | ![](../dist/svg/album_fill.svg) |
+| align_center | ![](../dist/svg/align_center.svg) |
 | align_left | ![](../dist/svg/align_left.svg) |
+| align_right | ![](../dist/svg/align_right.svg) |
 | all_fill | ![](../dist/svg/all_fill.svg) |
 | amegold | ![](../dist/svg/amegold.svg) |
 | amember | ![](../dist/svg/amember.svg) |
@@ -42,10 +44,12 @@
 | bell_fill_slash | ![](../dist/svg/bell_fill_slash.svg) |
 | bell_slash | ![](../dist/svg/bell_slash.svg) |
 | blog | ![](../dist/svg/blog.svg) |
+| bold | ![](../dist/svg/bold.svg) |
 | book | ![](../dist/svg/book.svg) |
 | book_fill | ![](../dist/svg/book_fill.svg) |
 | bookmark | ![](../dist/svg/bookmark.svg) |
 | bookmark_fill | ![](../dist/svg/bookmark_fill.svg) |
+| border | ![](../dist/svg/border.svg) |
 | bottomnav_followfeed_active | ![](../dist/svg/bottomnav_followfeed_active.svg) |
 | bottomnav_followfeed_inactive | ![](../dist/svg/bottomnav_followfeed_inactive.svg) |
 | bottomnav_home_active | ![](../dist/svg/bottomnav_home_active.svg) |
@@ -136,11 +140,13 @@
 | home_fill | ![](../dist/svg/home_fill.svg) |
 | hot | ![](../dist/svg/hot.svg) |
 | htmltag | ![](../dist/svg/htmltag.svg) |
+| image_add_fill | ![](../dist/svg/image_add_fill.svg) |
 | image_ban_fill | ![](../dist/svg/image_ban_fill.svg) |
 | image_fill | ![](../dist/svg/image_fill.svg) |
 | image_question_fill | ![](../dist/svg/image_question_fill.svg) |
 | information | ![](../dist/svg/information.svg) |
 | instagram | ![](../dist/svg/instagram.svg) |
+| italic | ![](../dist/svg/italic.svg) |
 | kaomoji | ![](../dist/svg/kaomoji.svg) |
 | keyboard | ![](../dist/svg/keyboard.svg) |
 | keyboard_fill | ![](../dist/svg/keyboard_fill.svg) |
@@ -148,6 +154,8 @@
 | line_circle | ![](../dist/svg/line_circle.svg) |
 | line_square | ![](../dist/svg/line_square.svg) |
 | link | ![](../dist/svg/link.svg) |
+| list_bulleted | ![](../dist/svg/list_bulleted.svg) |
+| list_numbered | ![](../dist/svg/list_numbered.svg) |
 | loading | ![](../dist/svg/loading.svg) |
 | lock_fill | ![](../dist/svg/lock_fill.svg) |
 | magicwand | ![](../dist/svg/magicwand.svg) |
@@ -214,6 +222,8 @@
 | ranking_platform_fill | ![](../dist/svg/ranking_platform_fill.svg) |
 | reblog | ![](../dist/svg/reblog.svg) |
 | reblog_slash | ![](../dist/svg/reblog_slash.svg) |
+| redo | ![](../dist/svg/redo.svg) |
+| redo_bold | ![](../dist/svg/redo_bold.svg) |
 | refresh | ![](../dist/svg/refresh.svg) |
 | reply_circle_fill | ![](../dist/svg/reply_circle_fill.svg) |
 | reply_fill | ![](../dist/svg/reply_fill.svg) |
@@ -243,10 +253,12 @@
 | star_face_fill | ![](../dist/svg/star_face_fill.svg) |
 | star_fill | ![](../dist/svg/star_fill.svg) |
 | stop_fill | ![](../dist/svg/stop_fill.svg) |
+| strikethrough | ![](../dist/svg/strikethrough.svg) |
 | switching | ![](../dist/svg/switching.svg) |
 | switching_camera | ![](../dist/svg/switching_camera.svg) |
 | tag_fill | ![](../dist/svg/tag_fill.svg) |
 | tag_official_fill | ![](../dist/svg/tag_official_fill.svg) |
+| title | ![](../dist/svg/title.svg) |
 | topblogger_ribbon | ![](../dist/svg/topblogger_ribbon.svg) |
 | transcript_off | ![](../dist/svg/transcript_off.svg) |
 | transcript_on | ![](../dist/svg/transcript_on.svg) |
@@ -268,5 +280,8 @@
 | trophy_fill | ![](../dist/svg/trophy_fill.svg) |
 | tv_fill | ![](../dist/svg/tv_fill.svg) |
 | twitter | ![](../dist/svg/twitter.svg) |
+| underline | ![](../dist/svg/underline.svg) |
+| undo | ![](../dist/svg/undo.svg) |
+| undo_bold | ![](../dist/svg/undo_bold.svg) |
 | webview | ![](../dist/svg/webview.svg) |
 | youtube | ![](../dist/svg/youtube.svg) |
