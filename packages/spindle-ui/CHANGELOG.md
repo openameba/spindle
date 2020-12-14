@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.11.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.10.0...@openameba/spindle-ui@0.11.0) (2020-12-14)
+
+
+### Features
+
+* **spindle-ui:** forward ref to interactive components ([b07c1f9](https://github.com/openameba/spindle/commit/b07c1f9b3713e40b7db7e75a0c8ee14083b103bb))
+
+
+### BREAKING CHANGES
+
+* **spindle-ui:** Components have different behavior after using React.forwardRef
+https://reactjs.org/docs/forwarding-refs.html
+
+
+
+
+
 # [0.10.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.9.1...@openameba/spindle-ui@0.10.0) (2020-12-11)
 
 
