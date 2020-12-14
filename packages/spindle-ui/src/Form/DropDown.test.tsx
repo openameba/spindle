@@ -32,4 +32,18 @@ describe('<DropDown />', () => {
     userEvent.selectOptions(screen.getByRole('combobox'), 'c');
     expect(onChange).toBeCalled();
   });
+
+  test('forward ref', () => {
+    const ref = React.createRef<HTMLSelectElement>();
+
+    render(
+      <DropDown ref={ref}>
+        <option value="a">A</option>
+        <option value="b">B</option>
+        <option value="c">C</option>
+      </DropDown>,
+    );
+
+    expect(screen.getByRole('combobox')).toEqual(ref.current);
+  });
 });

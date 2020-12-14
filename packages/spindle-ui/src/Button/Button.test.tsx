@@ -13,4 +13,12 @@ describe('<Button />', () => {
     userEvent.click(screen.getByRole('button'));
     expect(onButtonClick).toBeCalled();
   });
+
+  test('forward ref', () => {
+    const ref = React.createRef<HTMLButtonElement>();
+
+    render(<Button ref={ref} />);
+
+    expect(screen.getByRole('button')).toEqual(ref.current);
+  });
 });

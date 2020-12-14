@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 type Layout = 'intrinsic' | 'fullWidth';
 
@@ -6,26 +6,32 @@ type Size = 'large' | 'medium' | 'small';
 
 type Variant = 'contained' | 'outlined' | 'lighted' | 'neutral' | 'danger';
 
-type Props = {
+interface Props
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'className'> {
+  children?: React.ReactNode;
   layout?: Layout;
   size?: Size;
   variant?: Variant;
   icon?: React.ReactNode;
-} & Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'className'>; // Layout styles should be added at containers
+}
 
 const BLOCK_NAME = 'spui-Button';
 
-export const Button: React.FC<Props> = ({
-  children,
-  layout = 'intrinsic',
-  size = 'large',
-  variant = 'contained',
-  icon,
-  ...rest
-}: Props) => {
+export const Button = forwardRef<HTMLButtonElement, Props>(function Button(
+  {
+    children,
+    layout = 'intrinsic',
+    size = 'large',
+    variant = 'contained',
+    icon,
+    ...rest
+  }: Props,
+  ref,
+) {
   return (
     <button
       className={`${BLOCK_NAME} ${BLOCK_NAME}--${layout} ${BLOCK_NAME}--${size} ${BLOCK_NAME}--${variant}`}
+      ref={ref}
       {...rest}
     >
       {icon ? (
@@ -40,4 +46,4 @@ export const Button: React.FC<Props> = ({
       )}
     </button>
   );
-};
+});

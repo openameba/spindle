@@ -1,21 +1,28 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 import { CheckBold } from '../Icon';
 
-type Props = {
+interface Props
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'className'> {
+  children?: React.ReactNode;
   id: string;
-} & Omit<React.InputHTMLAttributes<HTMLInputElement>, 'className'>; // Layout styles should be added at containers
+}
 
 const BLOCK_NAME = 'spui-Radio';
 
-export const Radio: React.FC<Props> = ({
-  children,
-  id = '',
-  ...rest
-}: Props) => {
+export const Radio = forwardRef<HTMLInputElement, Props>(function Radio(
+  { children, id = '', ...rest }: Props,
+  ref,
+) {
   return (
     <label className={`${BLOCK_NAME}-label`} htmlFor={id}>
-      <input className={`${BLOCK_NAME}-input`} id={id} type="radio" {...rest} />
+      <input
+        className={`${BLOCK_NAME}-input`}
+        id={id}
+        ref={ref}
+        type="radio"
+        {...rest}
+      />
       <span className={`${BLOCK_NAME}-icon`}>
         <CheckBold aria-hidden="true" />
       </span>
@@ -23,4 +30,4 @@ export const Radio: React.FC<Props> = ({
       {children && <span className={`${BLOCK_NAME}-text`}>{children}</span>}
     </label>
   );
-};
+});

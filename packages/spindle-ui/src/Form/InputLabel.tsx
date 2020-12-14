@@ -1,8 +1,10 @@
 import React from 'react';
 
-type Props = {
+interface Props
+  extends Omit<React.LabelHTMLAttributes<HTMLLabelElement>, 'className'> {
+  children?: React.ReactNode;
   id: string;
-} & Omit<React.LabelHTMLAttributes<HTMLLabelElement>, 'className'>; // Layout styles should be added at containers
+}
 
 const BLOCK_NAME = 'spui-InputLabel';
 
