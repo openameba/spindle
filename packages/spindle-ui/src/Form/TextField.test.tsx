@@ -11,4 +11,12 @@ describe('<TextField />', () => {
     userEvent.type(screen.getByRole('textbox'), 'Hello, World!');
     expect(screen.getByRole('textbox')).toHaveValue('Hello, World!');
   });
+
+  test('forward ref', () => {
+    const ref = React.createRef<HTMLInputElement>();
+
+    render(<TextField id="text" ref={ref} />);
+
+    expect(screen.getByRole('textbox')).toEqual(ref.current);
+  });
 });

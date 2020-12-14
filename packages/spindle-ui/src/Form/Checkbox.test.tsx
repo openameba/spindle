@@ -18,4 +18,12 @@ describe('<Checkbox />', () => {
     userEvent.click(screen.getByRole('checkbox'));
     expect(screen.getByRole('checkbox')).toBeChecked();
   });
+
+  test('forward ref', () => {
+    const ref = React.createRef<HTMLInputElement>();
+
+    render(<Checkbox ref={ref} />);
+
+    expect(screen.getByRole('checkbox')).toEqual(ref.current);
+  });
 });

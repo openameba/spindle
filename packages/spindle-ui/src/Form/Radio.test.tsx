@@ -18,4 +18,12 @@ describe('<Radio />', () => {
     userEvent.click(screen.getByRole('radio'));
     expect(screen.getByRole('radio')).toBeChecked();
   });
+
+  test('forward ref', () => {
+    const ref = React.createRef<HTMLInputElement>();
+
+    render(<Radio id="test" ref={ref} />);
+
+    expect(screen.getByRole('radio')).toEqual(ref.current);
+  });
 });
