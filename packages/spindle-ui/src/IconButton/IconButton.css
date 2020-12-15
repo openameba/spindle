@@ -76,7 +76,7 @@
 
 /* outlined */
 .spui-IconButton--outlined {
-  background-color: var(--color-text-high-emphasis-inverse);
+  background-color: transparent;
   border: 2px solid var(--color-surface-accent-primary);
   color: var(--color-surface-accent-primary);
 }
