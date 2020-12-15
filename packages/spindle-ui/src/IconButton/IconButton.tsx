@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 
 type Size = 'large' | 'medium' | 'small' | 'exSmall';
 
-type Variant = 'contained' | 'outlined' | 'neutral';
+type Variant = 'contained' | 'outlined' | 'lighted' | 'neutral' | 'danger';
 
 interface Props
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'className'> {
