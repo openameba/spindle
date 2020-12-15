@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.11.0...@openameba/spindle-ui@0.11.1) (2020-12-15)
+
+
+### Bug Fixes
+
+* **spindle-ui:** set background transparent to outlined icon button ([98c46a9](https://github.com/openameba/spindle/commit/98c46a9eea3ab82d7d5c4d1595d92643e085e4b6))
+
+
+### Features
+
+* **spindle-ui:** add lighetd, danger types to IconButton ([2428f63](https://github.com/openameba/spindle/commit/2428f63f46e9d2db27ac8862ec5d719e38c59211))
+
+
+
+
+
 # [0.11.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.10.0...@openameba/spindle-ui@0.11.0) (2020-12-14)
 
 
