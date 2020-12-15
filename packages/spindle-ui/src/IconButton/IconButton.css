@@ -126,3 +126,20 @@
     background-color: var(--gray-20-alpha);
   }
 }
+
+/* danger */
+.spui-IconButton--danger {
+  background-color: transparent;
+  border: 2px solid var(--color-text-caution);
+  color: var(--color-text-caution);
+}
+
+.spui-IconButton--danger:active {
+  background-color: var(--caution-red-5-alpha);
+}
+
+@media (hover: hover) {
+  .spui-IconButton--danger:hover {
+    background-color: var(--caution-red-5-alpha);
+  }
+}
