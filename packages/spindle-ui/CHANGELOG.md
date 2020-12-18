@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.2](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.11.1...@openameba/spindle-ui@0.11.2) (2020-12-18)
+
+
+### Bug Fixes
+
+* **spindle-ui:** remove the margin in Firefox and Safari ([723ba28](https://github.com/openameba/spindle/commit/723ba28acb0a410fd946888dd6880507a34d3a90))
+
+
+
+
+
 ## [0.11.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.11.0...@openameba/spindle-ui@0.11.1) (2020-12-15)
 
 
