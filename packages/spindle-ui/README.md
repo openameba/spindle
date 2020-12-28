@@ -13,15 +13,6 @@ Spindle (Ameba Design System) UI Components
 
 Spindle UIは、Amebaのデザインシステム「Spindle」で定義されたコンポーネントを配布するライブラリです。様々なタイプのプロジェクトに導入できるように設計されています。
 
-## コンポーネント一覧
-利用可能なコンポーネントは、[Storybook](https://ameba-spindle.web.app/)で公開されています。各コンポーネントの開発状況は[Stoybook Doc](https://ameba-spindle.web.app/?path=/docs/button--large)のStability Budgeで以下のように表されています。
-
-- ![stability-stable](https://img.shields.io/badge/stability-stable-green.svg) 想定された機能が実装、テストされており本番環境で利用できます
-- ![stability-unstable](https://img.shields.io/badge/stability-unstable-yellow.svg) 足りていない機能や不安定な動作があり、まだ完全ではないですが、本番環境で利用できます
-- ![stability-wip](https://img.shields.io/badge/stability-work_in_progress-lightgrey.svg) 開発中のため、本番環境での利用はしない方がよいでしょう
-- ![stability-experimental](https://img.shields.io/badge/stability-experimental-orange.svg) 実験的な機能で大きな変更や削除される可能性があります
-- ![stability-deprecated](https://img.shields.io/badge/stability-deprecated-red.svg) 廃止される予定のため、できるだけはやく利用を停止してください
-
 ## インストール
 ```
 npm install @openameba/spindle-ui
@@ -31,14 +22,72 @@ yarn add @openameba/spindle-ui
 ```
 
 ## 利用方法
+
+Spindle UIは以下のように利用できます。
+
+```JavaScript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Button } from '@openameba/spindle-ui';
+
+function App() {
+  return <Button size="large" variant="contained">Spindle</Button>;
+}
+
+ReactDOM.render(<App />, document.querySelector('#app'));
+```
+
+詳細は[コンポーネント一覧](#コンポーネント一覧)、[サンプルアプリケーション](#サンプルアプリケーション)を参照してください。
+
+## コンポーネント一覧
+利用可能なコンポーネントは、[Storybook](https://ameba-spindle.web.app/)で公開されています。各コンポーネントの開発状況は[Stoybook Doc](https://ameba-spindle.web.app/?path=/docs/button--large)のStability Budgeで以下のように表されています。
+
+- ![stability-stable](https://img.shields.io/badge/stability-stable-green.svg) 想定された機能が実装、テストされており本番環境で利用できます
+- ![stability-unstable](https://img.shields.io/badge/stability-unstable-yellow.svg) 足りていない機能や不安定な動作があり、まだ完全ではないですが、本番環境で利用できます
+- ![stability-wip](https://img.shields.io/badge/stability-work_in_progress-lightgrey.svg) 開発中のため、本番環境での利用はしない方がよいでしょう
+- ![stability-experimental](https://img.shields.io/badge/stability-experimental-orange.svg) 実験的な機能で大きな変更や削除される可能性があります
+- ![stability-deprecated](https://img.shields.io/badge/stability-deprecated-red.svg) 廃止される予定のため、できるだけはやく利用を停止してください
+
+## サンプルアプリケーション
 Spindle UIは様々なパターンのアプリケーションで利用できます。詳細は各サンプルコードを閲覧してください。
 
 - [React with CSS Modules](/examples/css-modules/)
-- [React with PostCSS](/examples/postcss)
+- [React with PostCSS](/examples/postcss/)
 - [React with Sass](/examples/sass/)
 - [React with styled-components](/examples/styled-components/)
 - [Preact](/examples/preact/)
 - [HTML](/examples/html/)
+
+## スタイリング
+Spindle UIのスタイルは、名前空間(`spui`)をもったCSSとして定義されています。これはスタイルを利用時に再定義する必要がないほか、コンポーネント志向のアプリケーションだけでなく、HTMLを中心としたWebページでも利用可能にするためです。
+
+スタイルは以下の方法で利用できます。
+
+### 必要なスタイルのみをビルド (推奨)
+[webpack](https://webpack.js.org/)や[PostCSS](https://postcss.org/)、[Sass](https://sass-lang.com/)などを利用してアプリケーションに必要なスタイルのみをビルドします。生成したファイルは各アプリケーションで利用しているサーバから配信します。
+
+この方法ではCSSファイルのサイズが最小限になり、配信サーバの品質も管理可能なため、できる限りこの方法での利用を推奨します。
+
+導入の際には、サンプルアプリケーション([CSS Modules](/examples/css-modules/)、[PostCSS](/examples/postcss/)、[Sass](/examples/sass/)、[styled-components](/examples/styled-components/))を参考にしてください。
+
+### CDNから読み込み
+簡易的にSpindle UIのスタイルを試す場合には、CDNから読み込むと便利です。Webページの読み込み速度がそこまで重要でない場合、例えば開発環境や一部のランディングページなどで利用できます。
+
+```HTML
+<!-- Spindle UIで用意されている全てのスタイルを読み込む場合 -->
+<!-- 常に最新のスタイルを読み込む場合。ただしリダイレクトされるため遅延します -->
+<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/index.css">
+<!-- バージョンを指定して読み込む場合。リダイレクトされないのでレスポンスが少し早いです -->
+<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui@0.11.2/index.css">
+
+<!-- コンポーネント毎にスタイルを読み込む場合 -->
+<!-- 常に最新のスタイルを読み込む場合。ただしリダイレクトされるため遅延します -->
+<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Button/Button.css">
+<!-- バージョンを指定して読み込む場合。リダイレクトされないのでレスポンスが少し早いです -->
+<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui@0.11.2/Button/Button.css">
+```
+
+ただし、CSSファイルサイズやファイル数が不必要に大きくなり、CDNサーバが遅延の原因になる可能性があるため**本番Webアプリケーションでの利用は推奨していません**。
 
 ## ブラウザサポート
 Spindle UIはFirefox、Google Chrome、Microsoft Edge、Safariの最新版とInternet Explorer 11で動作確認しています。ただし、CSS custom propertiesを使用しているため、Internet Explorer 11での利用時には[ie11-custom-properties](https://www.npmjs.com/package/ie11-custom-properties)や[css-vars-ponyfill](https://github.com/jhildenbiddle/css-vars-ponyfill)などpolyfillとの併用が必要です。
@@ -51,7 +100,7 @@ yarn dev # storybookが起動します
 ```
 
 ## ライセンス
-Spindle IconsはMITライセンスで公開されています。ただし、アイコンは[Spindle Icons](../spindle-icons/)に準じて、Creative Commons BY-NC-ND 4.0ライセンスで公開されています。
+Spindle UIはMITライセンスで公開されています。ただし、アイコンは[Spindle Icons](../spindle-icons/)に準じて、Creative Commons BY-NC-ND 4.0ライセンスで公開されています。
 
 ## 関連ドキュメント
 - [Design Doc](docs/design-doc.md)
