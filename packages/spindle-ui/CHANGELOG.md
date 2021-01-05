@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.11.2...@openameba/spindle-ui@0.12.0) (2021-01-05)
+
+
+### Features
+
+* **spindle-ui:** expose CSS custom property for Button components ([01d6dc8](https://github.com/openameba/spindle/commit/01d6dc81a9b3a080be850af06fcf81d3a4d22d8e))
+
+
+
+
+
 ## [0.11.2](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.11.1...@openameba/spindle-ui@0.11.2) (2020-12-18)
 
 
