@@ -4,8 +4,6 @@
 */
 :root {
   --LinkButton-tapHighlightColor: var(--gray-5-alpha);
-  --LinkButton-transitionDuration: 0.3s;
-  --LinkButton-onDisabled-opacity: 0.3;
   --LinkButton-onFocus-boxShadow: 0 0 0 1px var(--color-surface-primary),
     0 0 0 3px var(--color-focus-clarity);
 
@@ -52,7 +50,7 @@
   -webkit-tap-highlight-color: var(--LinkButton-tapHighlightColor);
   text-align: center;
   text-decoration: none;
-  transition: background-color var(--LinkButton-transitionDuration);
+  transition: background-color 0.3s;
 }
 
 .spui-LinkButton:focus,

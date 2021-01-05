@@ -4,8 +4,6 @@
 */
 :root {
   --Button-tapHighlightColor: var(--gray-5-alpha);
-  --Button-transitionDuration: 0.3s;
-  --Button-onDisabled-opacity: 0.3;
   --Button-onFocus-boxShadow: 0 0 0 1px var(--color-surface-primary),
     0 0 0 3px var(--color-focus-clarity);
 
@@ -50,11 +48,11 @@
   outline: none;
   -webkit-tap-highlight-color: var(--Button-tapHighlightColor);
   text-align: center;
-  transition: background-color var(--Button-transitionDuration);
+  transition: background-color 0.3s;
 }
 
 .spui-Button:disabled {
-  opacity: var(--Button-onDisabled-opacity);
+  opacity: 0.3;
 }
 
 .spui-Button:focus,
