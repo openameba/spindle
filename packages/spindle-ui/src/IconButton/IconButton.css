@@ -45,7 +45,6 @@
   display: inline-flex;
   justify-content: center;
   margin: 0;
-  outline: none;
   -webkit-tap-highlight-color: var(--IconButton-tapHighlightColor);
   text-align: center;
   transition: background-color 0.3s;
@@ -55,9 +54,9 @@
   opacity: 0.3;
 }
 
-.spui-IconButton:focus,
-.spui-IconButton:focus-visible {
+.spui-IconButton:focus {
   box-shadow: var(--IconButton-onFocus-boxShadow);
+  outline: none;
 }
 
 .spui-IconButton:focus:not(:focus-visible) {

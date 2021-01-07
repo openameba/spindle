@@ -70,8 +70,7 @@
   width: 100%;
 }
 
-.spui-DropDown-select:focus ~ .spui-DropDown-outline,
-.spui-DropDown-select:focus-visible ~ .spui-DropDown-outline {
+.spui-DropDown-select:focus ~ .spui-DropDown-outline {
   border-color: var(--color-border-high-emphasis);
   box-shadow: 0 0 0 3px var(--color-focus-ambiguous);
 }
