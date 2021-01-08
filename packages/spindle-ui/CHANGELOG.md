@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.12.0...@openameba/spindle-ui@0.12.1) (2021-01-08)
+
+
+### Bug Fixes
+
+* **spindle-ui:** hidden focus indicator by not support focus-visible browser ([6600b0d](https://github.com/openameba/spindle/commit/6600b0dbcc45e543b1720e8930535e00b4781c76))
+
+
+
+
+
 # [0.12.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.11.2...@openameba/spindle-ui@0.12.0) (2021-01-05)
 
 
