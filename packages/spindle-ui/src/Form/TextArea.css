@@ -21,8 +21,7 @@
   color: var(--color-text-disabled);
 }
 
-.spui-TextArea:focus,
-.spui-TextArea:focus-visible {
+.spui-TextArea:focus {
   border-color: var(--color-border-high-emphasis);
   box-shadow: 0 0 0 3px var(--color-focus-ambiguous);
 }

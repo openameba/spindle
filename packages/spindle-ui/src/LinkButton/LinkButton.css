@@ -46,16 +46,15 @@
   font-weight: bold;
   justify-content: center;
   line-height: 1.3;
-  outline: none;
   -webkit-tap-highlight-color: var(--LinkButton-tapHighlightColor);
   text-align: center;
   text-decoration: none;
   transition: background-color 0.3s;
 }
 
-.spui-LinkButton:focus,
-.spui-LinkButton:focus-visible {
+.spui-LinkButton:focus {
   box-shadow: var(--LinkButton-onFocus-boxShadow);
+  outline: none;
 }
 
 .spui-LinkButton:focus:not(:focus-visible) {
