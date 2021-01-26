@@ -258,6 +258,8 @@
 | switching_camera | ![](../dist/svg/switching_camera.svg) |
 | tag_fill | ![](../dist/svg/tag_fill.svg) |
 | tag_official_fill | ![](../dist/svg/tag_official_fill.svg) |
+| thumbsup | ![](../dist/svg/thumbsup.svg) |
+| thumbsup_fill | ![](../dist/svg/thumbsup_fill.svg) |
 | title | ![](../dist/svg/title.svg) |
 | topblogger_ribbon | ![](../dist/svg/topblogger_ribbon.svg) |
 | transcript_off | ![](../dist/svg/transcript_off.svg) |
