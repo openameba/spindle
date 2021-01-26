@@ -255,6 +255,8 @@ export { default as Switching } from './Switching';
 export { default as SwitchingCamera } from './SwitchingCamera';
 export { default as TagFill } from './TagFill';
 export { default as TagOfficialFill } from './TagOfficialFill';
+export { default as Thumbsup } from './Thumbsup';
+export { default as ThumbsupFill } from './ThumbsupFill';
 export { default as Title } from './Title';
 export { default as TopbloggerRibbon } from './TopbloggerRibbon';
 export { default as TranscriptOff } from './TranscriptOff';
