@@ -52,6 +52,11 @@
   transition: background-color 0.3s;
 }
 
+.spui-LinkButton:not([href]) {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
 .spui-LinkButton:focus {
   box-shadow: var(--LinkButton-onFocus-boxShadow);
   outline: none;
@@ -128,7 +133,7 @@
 }
 
 @media (hover: hover) {
-  .spui-LinkButton--contained:hover {
+  .spui-LinkButton--contained[href]:hover {
     background-color: var(--LinkButton--contained-onHover-backgroundColor);
   }
 }
@@ -147,7 +152,7 @@
 }
 
 @media (hover: hover) {
-  .spui-LinkButton--outlined:hover {
+  .spui-LinkButton--outlined[href]:hover {
     background-color: var(--LinkButton--outlined-onHover-backgroundColor);
   }
 }
@@ -166,7 +171,7 @@
 }
 
 @media (hover: hover) {
-  .spui-LinkButton--lighted:hover {
+  .spui-LinkButton--lighted[href]:hover {
     background-color: var(--LinkButton--lighted-onHover-backgroundColor0);
   }
 }
@@ -185,7 +190,7 @@
 }
 
 @media (hover: hover) {
-  .spui-LinkButton--neutral:hover {
+  .spui-LinkButton--neutral[href]:hover {
     background-color: var(--LinkButton--neutral-onHover-backgroundColor);
   }
 }
@@ -204,7 +209,7 @@
 }
 
 @media (hover: hover) {
-  .spui-LinkButton--danger:hover {
+  .spui-LinkButton--danger[href]:hover {
     background-color: var(--LinkButton--danger-onHover-backgroundColor);
   }
 }

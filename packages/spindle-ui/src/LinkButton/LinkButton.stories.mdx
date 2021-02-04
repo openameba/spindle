@@ -204,6 +204,66 @@ import { PlusBold, ArrowRightBold, OpenblankFill } from '../Icon';
   `}
 />
 
+## Disabled
+
+<Preview withSource="open">
+  <Story name="Disabled">
+    <LinkButton size="medium" variant="contained" {...actions('onMouseOver')}>Contained</LinkButton>
+    <LinkButton size="medium" variant="outlined" {...actions('onMouseOver')}>Outlined</LinkButton>
+    <LinkButton size="medium" variant="neutral" {...actions('onMouseOver')}>Neutral</LinkButton>
+    <LinkButton size="medium" variant="danger" {...actions('onMouseOver')}>Danger</LinkButton>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<LinkButton size="medium" variant="contained">Contained</LinkButton>
+<LinkButton size="medium" variant="outlined">Outlined</LinkButton>
+<LinkButton size="medium" variant="neutral">Neutral</LinkButton>
+<LinkButton size="medium" variant="danger">Danger</LinkButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<a class="spui-LinkButton spui-LinkButton--medium spui-LinkButton--contained">Contained</a>
+<a class="spui-LinkButton spui-LinkButton--medium spui-LinkButton--outlined">Outlined</a>
+<a class="spui-LinkButton spui-LinkButton--medium spui-LinkButton--neutral">Neutral</a>
+<a class="spui-LinkButton spui-LinkButton--medium spui-LinkButton--danger">Danger</a>
+  `}
+/>
+
+## Disabled Full Width
+
+<Preview withSource="open">
+  <Story name="Disabled Full Width">
+    <LinkButton layout="fullWidth" size="medium" variant="contained" {...actions('onMouseOver')}>Contained</LinkButton>
+    <LinkButton layout="fullWidth" size="medium" variant="outlined" {...actions('onMouseOver')}>Outlined</LinkButton>
+    <LinkButton layout="fullWidth" size="medium" variant="neutral" {...actions('onMouseOver')}>Neutral</LinkButton>
+    <LinkButton layout="fullWidth" size="medium" variant="danger" {...actions('onMouseOver')}>Danger</LinkButton>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<LinkButton layout="fullWidth" size="medium" variant="contained">Contained</LinkButton>
+<LinkButton layout="fullWidth" size="medium" variant="outlined">Outlined</LinkButton>
+<LinkButton layout="fullWidth" size="medium" variant="neutral">Neutral</LinkButton>
+<LinkButton layout="fullWidth" size="medium" variant="danger">Danger</LinkButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--medium spui-LinkButton--contained">Contained</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--medium spui-LinkButton--outlined">Outlined</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--medium spui-LinkButton--neutral">Neutral</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--medium spui-LinkButton--danger">Danger</a>
+  `}
+/>
+
 ## With Icon
 
 <Preview withSource="open">
