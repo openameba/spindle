@@ -11,6 +11,7 @@ export { default as AlignCenter } from './AlignCenter';
 export { default as AlignLeft } from './AlignLeft';
 export { default as AlignRight } from './AlignRight';
 export { default as AllFill } from './AllFill';
+export { default as Amebacoin } from './Amebacoin';
 export { default as Amegold } from './Amegold';
 export { default as Amember } from './Amember';
 export { default as ArrowDown } from './ArrowDown';

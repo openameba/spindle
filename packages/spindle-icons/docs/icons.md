@@ -14,6 +14,7 @@
 | align_left | ![](../dist/svg/align_left.svg) |
 | align_right | ![](../dist/svg/align_right.svg) |
 | all_fill | ![](../dist/svg/all_fill.svg) |
+| amebacoin | ![](../dist/svg/amebacoin.svg) |
 | amegold | ![](../dist/svg/amegold.svg) |
 | amember | ![](../dist/svg/amember.svg) |
 | arrow_down | ![](../dist/svg/arrow_down.svg) |
