@@ -127,7 +127,8 @@ export function SomeButton() {
 }
 ```
 
-
+### Android App
+Androidでは、最適されたSVGを利用するとエラーになる場合があります。その際は、[dist/svg-unoptimized](dist/svg-unoptimized)内のファイルを利用してください。
 
 ## ライセンス
 Spindle Iconsは以下2つのライセンスで公開されています。

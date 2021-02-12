@@ -4,9 +4,10 @@
   "scripts": {
     "clean": "npx rimraf dist",
     "mkdir": "npx mkdirp dist",
-    "build": "run-s icon:get icon:optimize icon:sprite",
+    "build": "run-s icon:get icon:copy icon:optimize icon:sprite",
     "postbuild": "ts-node scripts/icon-doc.ts",
     "icon:get": "ts-node scripts/get-icons.ts",
+    "icon:copy": "npx cpx 'dist/svg/!(sprite).svg' dist/svg-unoptimized",
     "icon:optimize": "svgo --config .svgo.yaml dist/svg/*.svg",
     "icon:sprite": "svg-sprite --config sprite.json --shape-transform-svgo sprite.svgo.json dist/svg/*.svg",
     "serve": "npx serve"
