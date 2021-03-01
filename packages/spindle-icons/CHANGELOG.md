@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.1](https://github.com/openameba/spindle/compare/@openameba/spindle-icons@0.9.0...@openameba/spindle-icons@0.9.1) (2021-03-01)
+
+
+### Bug Fixes
+
+* **spindle-icons:** remove unused npm task ([f878952](https://github.com/openameba/spindle/commit/f878952123573ff4ef170ee73bf1ba8796c2938e))
+
+
+
+
+
 # [0.9.0](https://github.com/openameba/spindle/compare/@openameba/spindle-icons@0.8.0...@openameba/spindle-icons@0.9.0) (2021-02-10)
 
 
