@@ -4,7 +4,6 @@
   "scripts": {
     "clean": "npx rimraf dist",
     "mkdir": "npx mkdirp dist",
-    "prepare": "run-s clean mkdir",
     "build": "run-s icon:get icon:optimize icon:sprite",
     "postbuild": "ts-node scripts/icon-doc.ts",
     "icon:get": "ts-node scripts/get-icons.ts",
