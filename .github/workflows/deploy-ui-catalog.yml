@@ -22,7 +22,7 @@ jobs:
           path: |
             node_modules
             */*/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-v2
       - run: yarn install --frozen-lockfile
       - run: npx lerna bootstrap -- --frozen-lockfile
       - name: Update UI catalog
