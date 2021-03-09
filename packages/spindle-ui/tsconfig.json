@@ -1,15 +1,10 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "target": "es5",
     "lib": [
       "DOM"
     ],
-    "jsx": "react",
-    "outDir": "dist",
-    "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true
+    "jsx": "react"
   },
   "include": [
     "src"
