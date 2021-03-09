@@ -2,8 +2,10 @@
   "name": "@openameba/spindle-ui",
   "version": "0.14.0",
   "main": "./index.js",
+  "module": "./index.mjs",
   "types": "./index.d.ts",
   "style": "./index.css",
+  "sideEffects": false,
   "scripts": {
     "test": "run-p bundlesize lint test:interaction",
     "lint": "yarn lint:style",
@@ -22,12 +24,16 @@
     "cp": "npx cpx 'dist/**/*' .",
     "prebuild": "yarn clean",
     "build": "run-p build:*",
-    "build:script": "tsc",
+    "build:script": "run-s build:script:esm build:script:cjs",
+    "build:script:cjs": "tsc -p tsconfig.cjs.json",
+    "build:script:esm": "run-s build:script:esm:*",
+    "build:script:esm:js": "tsc -p tsconfig.esm.json",
+    "build:script:esm:rename": "npx renamer --find js --replace mjs 'dist/**'",
     "build:style": "postcss src/**/*.css src/*.css --base src -d dist/",
     "preicon": "npx rimraf 'src/Icon/!(*.stories).tsx' && npx cpx '../spindle-icons/dist/svg/!(sprite).svg' icon-tmp",
     "icon": "svgr --out-dir src/Icon icon-tmp",
     "posticon": "npx rimraf icon-tmp",
-    "prepublishOnly": "yarn build && yarn cp"
+    "prepublishOnly": "run-s build cp"
   },
   "license": "MIT",
   "publishConfig": {
