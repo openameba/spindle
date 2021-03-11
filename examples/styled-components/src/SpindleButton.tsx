@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button } from '@openameba/spindle-ui';
+import { Button } from '@herablog/spindle-ui';
 
 import '../node_modules/@openameba/spindle-ui/Button/Button.css';
 

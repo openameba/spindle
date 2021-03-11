@@ -129,6 +129,14 @@
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
   integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
 
+"@herablog/spindle-ui@0.15.0-1":
+  version "0.15.0-1"
+  resolved "https://registry.yarnpkg.com/@herablog/spindle-ui/-/spindle-ui-0.15.0-1.tgz#fe5296ed4ab54afbb54fbd53330f7add771485ab"
+  integrity sha512-dU/8KAFFoDf36P8IEkjBEeutYnh+IFGLHfqGTZwSS6CBsTdTLodIpq5px4wrNGNDvW7RQy/K7ncyNogj87HDaQ==
+  dependencies:
+    ameba-color-palette.css "^4.2.0"
+    react-merge-refs "^1.1.0"
+
 "@openameba/spindle-ui@^0.5.0":
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/@openameba/spindle-ui/-/spindle-ui-0.5.0.tgz#ddc483c7ba35827781fa24f038ba78a02688afce"
@@ -1202,6 +1210,11 @@ react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+
+react-merge-refs@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-merge-refs/-/react-merge-refs-1.1.0.tgz#73d88b892c6c68cbb7a66e0800faa374f4c38b06"
+  integrity sha512-alTKsjEL0dKH/ru1Iyn7vliS2QRcBp9zZPGoWxUOvRGWPUYgjo+V01is7p04It6KhgrzhJGnIj9GgX8W4bZoCQ==
 
 react@^16.13.1:
   version "16.14.0"
