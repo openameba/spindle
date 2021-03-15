@@ -33,7 +33,7 @@
     "preicon": "npx rimraf 'src/Icon/!(*.stories).tsx' && npx cpx '../spindle-icons/dist/svg/!(sprite).svg' icon-tmp",
     "icon": "svgr --out-dir src/Icon icon-tmp",
     "posticon": "npx rimraf icon-tmp",
-    "prepublishOnly": "run-s build cp"
+    "prepublishOnly": "yarn build && yarn cp"
   },
   "license": "MIT",
   "publishConfig": {
