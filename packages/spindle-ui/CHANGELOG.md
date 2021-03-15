@@ -111,6 +111,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Bug Fixes
 
 * **spindle-ui:** fix CSS variable name ([f76d2ee](https://github.com/openameba/spindle/commit/f76d2ee1840574a1247a20ea1ee212b85d99708e))
+# [0.15.0-alpha.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.14.0...@openameba/spindle-ui@0.15.0-alpha.0) (2021-03-15)
+
+**Note:** Version bump only for package @openameba/spindle-ui
 
 
 
