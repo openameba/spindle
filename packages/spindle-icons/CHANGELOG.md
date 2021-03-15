@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/openameba/spindle/compare/@openameba/spindle-icons@0.9.1...@openameba/spindle-icons@0.10.0) (2021-03-15)
+
+
+### Features
+
+* **spindle-icons:** distribute unoptimized SVG icons ([0fa0389](https://github.com/openameba/spindle/commit/0fa0389daf059706ed85e55ce4643c1ec9a87c02))
+
+
+
+
+
 ## [0.9.1](https://github.com/openameba/spindle/compare/@openameba/spindle-icons@0.9.0...@openameba/spindle-icons@0.9.1) (2021-03-01)
 
 
