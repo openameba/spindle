@@ -88,7 +88,10 @@ const getIcons = async (): Promise<void> => {
       }
 
       await Promise.all([
-        download({ destination: `${dest}/svg/${name}.svg`, url: svgUrl }),
+        download({
+          destination: `${dest}/svg-unoptimized/${name}.svg`,
+          url: svgUrl,
+        }),
         download({ destination: `${dest}/pdf/${name}.pdf`, url: pdfUrl }),
       ]);
 
