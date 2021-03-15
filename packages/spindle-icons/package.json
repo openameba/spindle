@@ -7,7 +7,7 @@
     "build": "run-s icon:get icon:optimize icon:sprite",
     "postbuild": "ts-node scripts/icon-doc.ts",
     "icon:get": "ts-node scripts/get-icons.ts",
-    "icon:optimize": "svgo --config .svgo.yaml -f dist/svg-unoptimized -o dist/svg",
+    "icon:optimize": "svgo -f dist/svg-unoptimized -o dist/svg",
     "icon:sprite": "svg-sprite --config sprite.json --shape-transform-svgo sprite.svgo.json dist/svg/*.svg",
     "serve": "npx serve"
   },
