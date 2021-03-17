@@ -167,7 +167,7 @@
 
 @media (hover: hover) {
   .spui-LinkButton--lighted:hover {
-    background-color: var(--LinkButton--lighted-onHover-backgroundColor0);
+    background-color: var(--LinkButton--lighted-onHover-backgroundColor);
   }
 }
 
