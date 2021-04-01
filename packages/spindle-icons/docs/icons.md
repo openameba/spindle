@@ -38,6 +38,7 @@
 | article | ![](../dist/svg/article.svg) |
 | astrogy | ![](../dist/svg/astrogy.svg) |
 | astrogy_fill | ![](../dist/svg/astrogy_fill.svg) |
+| baby | ![](../dist/svg/baby.svg) |
 | bbs | ![](../dist/svg/bbs.svg) |
 | beginner | ![](../dist/svg/beginner.svg) |
 | bell | ![](../dist/svg/bell.svg) |
@@ -86,6 +87,7 @@
 | comment_two_fill | ![](../dist/svg/comment_two_fill.svg) |
 | comment_two_slash_fill | ![](../dist/svg/comment_two_slash_fill.svg) |
 | community | ![](../dist/svg/community.svg) |
+| compass | ![](../dist/svg/compass.svg) |
 | coupon | ![](../dist/svg/coupon.svg) |
 | crop_din | ![](../dist/svg/crop_din.svg) |
 | crop_landscape | ![](../dist/svg/crop_landscape.svg) |
@@ -93,6 +95,8 @@
 | cross_bold | ![](../dist/svg/cross_bold.svg) |
 | cross_circle | ![](../dist/svg/cross_circle.svg) |
 | cross_circle_fill | ![](../dist/svg/cross_circle_fill.svg) |
+| cutlery | ![](../dist/svg/cutlery.svg) |
+| dice | ![](../dist/svg/dice.svg) |
 | dot | ![](../dist/svg/dot.svg) |
 | dotmoney | ![](../dist/svg/dotmoney.svg) |
 | embed | ![](../dist/svg/embed.svg) |
@@ -119,6 +123,7 @@
 | flash | ![](../dist/svg/flash.svg) |
 | flash_auto | ![](../dist/svg/flash_auto.svg) |
 | flash_off | ![](../dist/svg/flash_off.svg) |
+| flowervase | ![](../dist/svg/flowervase.svg) |
 | folder | ![](../dist/svg/folder.svg) |
 | folder_fill | ![](../dist/svg/folder_fill.svg) |
 | folder_two | ![](../dist/svg/folder_two.svg) |
@@ -144,6 +149,7 @@
 | image_add_fill | ![](../dist/svg/image_add_fill.svg) |
 | image_ban_fill | ![](../dist/svg/image_ban_fill.svg) |
 | image_fill | ![](../dist/svg/image_fill.svg) |
+| image_fill_slash | ![](../dist/svg/image_fill_slash.svg) |
 | image_question_fill | ![](../dist/svg/image_question_fill.svg) |
 | information | ![](../dist/svg/information.svg) |
 | instagram | ![](../dist/svg/instagram.svg) |
@@ -193,6 +199,7 @@
 | ownd | ![](../dist/svg/ownd.svg) |
 | palette_fill | ![](../dist/svg/palette_fill.svg) |
 | pause_bold | ![](../dist/svg/pause_bold.svg) |
+| pawprint | ![](../dist/svg/pawprint.svg) |
 | pencil | ![](../dist/svg/pencil.svg) |
 | pencil_add | ![](../dist/svg/pencil_add.svg) |
 | pencil_bold | ![](../dist/svg/pencil_bold.svg) |
@@ -238,6 +245,7 @@
 | setting | ![](../dist/svg/setting.svg) |
 | share | ![](../dist/svg/share.svg) |
 | shine_fill | ![](../dist/svg/shine_fill.svg) |
+| shirt | ![](../dist/svg/shirt.svg) |
 | sideface_close | ![](../dist/svg/sideface_close.svg) |
 | sideface_open | ![](../dist/svg/sideface_open.svg) |
 | smartphone | ![](../dist/svg/smartphone.svg) |
@@ -286,5 +294,6 @@
 | underline | ![](../dist/svg/underline.svg) |
 | undo | ![](../dist/svg/undo.svg) |
 | undo_bold | ![](../dist/svg/undo_bold.svg) |
+| wallet | ![](../dist/svg/wallet.svg) |
 | webview | ![](../dist/svg/webview.svg) |
 | youtube | ![](../dist/svg/youtube.svg) |

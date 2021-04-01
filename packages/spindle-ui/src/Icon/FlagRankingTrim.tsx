@@ -10,7 +10,7 @@ function SvgFlagRankingTrim(props: React.SVGProps<SVGSVGElement>) {
       role="img"
       {...props}
     >
-      <g clipPath="url(#flag_ranking_trim_svg__clip0)">
+      <g clipPath="url(#flag_ranking_trim_svg__a)">
         <path
           fillRule="evenodd"
           clipRule="evenodd"
@@ -18,7 +18,7 @@ function SvgFlagRankingTrim(props: React.SVGProps<SVGSVGElement>) {
         />
       </g>
       <defs>
-        <clipPath id="flag_ranking_trim_svg__clip0">
+        <clipPath id="flag_ranking_trim_svg__a">
           <path d="M0 0h18v13H0z" />
         </clipPath>
       </defs>
