@@ -3627,12 +3627,12 @@
     "@babel/runtime" "^7.12.1"
     "@testing-library/dom" "^7.26.6"
 
-"@testing-library/user-event@^12.2.2":
-  version "12.2.2"
-  resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-12.2.2.tgz#22d0047da745289335240f523dfe74c889ec96cb"
-  integrity sha512-mTYL9LrwiSeyorStUOMuRGQDn1ca40tIhuv//o/K3lY8wBEp+9Im90MFVx5i3u7zCPmavn3uWZs/10chsbI8Tg==
+"@testing-library/user-event@^13.0.0":
+  version "13.0.0"
+  resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-13.0.0.tgz#c39451b9c11ec2ef7ae0743dfda96decba1f3c56"
+  integrity sha512-At8SFGsb6kLgXU6NYU/IJGiKWULTklu8FlqTtaxvR9emnGDYlVhQ1xxjchpOifh1Ao6SjKu5vgDc7ioiUfw5oQ==
   dependencies:
-    "@babel/runtime" "^7.10.2"
+    "@babel/runtime" "^7.12.5"
 
 "@textlint-ja/textlint-rule-no-dropping-i@^1.0.0":
   version "1.0.0"

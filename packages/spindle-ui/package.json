@@ -51,7 +51,7 @@
     "@svgr/cli": "^5.4.0",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.1.2",
-    "@testing-library/user-event": "^12.2.2",
+    "@testing-library/user-event": "^13.0.0",
     "@types/jest": "^26.0.7",
     "autoprefixer": "^9.8.5",
     "babel-loader": "^8.1.0",
