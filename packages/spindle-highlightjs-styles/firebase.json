@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "ameba-spindle-highlightjs",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
