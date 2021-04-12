@@ -1,0 +1,95 @@
+/**
+ * spindle-light theme
+ * Based on A11y light theme: https://github.com/highlightjs/highlight.js/blob/main/src/styles/a11y-light.css
+ * @author: ericwbailey
+*/
+
+.hljs-comment,
+.hljs-quote {
+  color: rgba(8, 18, 26, 0.61);
+}
+
+.hljs-deletion,
+.hljs-name,
+.hljs-regexp,
+.hljs-selector-class,
+.hljs-selector-id,
+.hljs-tag,
+.hljs-template-variable,
+.hljs-variable {
+  color: #d91c0b;
+}
+
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-link,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-params,
+.hljs-type {
+  color: #831443;
+}
+
+.hljs-attr,
+.hljs-attribute {
+  color: #831443;
+}
+
+.hljs-addition,
+.hljs-bullet,
+.hljs-string,
+.hljs-symbol {
+  color: #237b31;
+}
+
+.hljs-section,
+.hljs-title {
+  color: #3a71a0;
+}
+
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #9d00cf;
+}
+
+.hljs {
+  background-color: #f5f6f6;
+  color: rgba(8, 18, 26, 0.74);
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: 700;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .hljs-addition,
+  .hljs-attribute,
+  .hljs-built_in,
+  .hljs-builtin-name,
+  .hljs-bullet,
+  .hljs-comment,
+  .hljs-link,
+  .hljs-literal,
+  .hljs-meta,
+  .hljs-number,
+  .hljs-params,
+  .hljs-quote,
+  .hljs-string,
+  .hljs-symbol,
+  .hljs-type {
+    color: highlight;
+  }
+
+  .hljs-keyword,
+  .hljs-selector-tag {
+    font-weight: 700;
+  }
+}

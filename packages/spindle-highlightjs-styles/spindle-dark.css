@@ -1,0 +1,96 @@
+/**
+ * spindle-dark theme
+ * Based on A11y dark theme: https://github.com/highlightjs/highlight.js/blob/main/src/styles/a11y-dark.css
+ * @author: ericwbailey
+*/
+
+.hljs-comment,
+.hljs-quote {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.hljs-deletion,
+.hljs-name,
+.hljs-regexp,
+.hljs-selector-class,
+.hljs-selector-id,
+.hljs-tag,
+.hljs-template-variable,
+.hljs-variable {
+  color: #ff6a59;
+}
+
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-link,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-params,
+.hljs-type {
+  color: #e19c40;
+}
+
+.hljs-attr,
+.hljs-attribute {
+  color: #e19c40;
+}
+
+.hljs-addition,
+.hljs-bullet,
+.hljs-string,
+.hljs-symbol {
+  color: #82be28;
+}
+
+.hljs-section,
+.hljs-title {
+  color: #8dcfec;
+}
+
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #da8eed;
+}
+
+.hljs {
+  background: #08121a;
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%), linear-gradient(90deg, #08121a 0%, #08121a 100%);
+  color: rgba(255, 255, 255, 0.8);
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: 700;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .hljs-addition,
+  .hljs-attribute,
+  .hljs-built_in,
+  .hljs-builtin-name,
+  .hljs-bullet,
+  .hljs-comment,
+  .hljs-link,
+  .hljs-literal,
+  .hljs-meta,
+  .hljs-number,
+  .hljs-params,
+  .hljs-quote,
+  .hljs-string,
+  .hljs-symbol,
+  .hljs-type {
+    color: highlight;
+  }
+
+  .hljs-keyword,
+  .hljs-selector-tag {
+    font-weight: 700;
+  }
+}
