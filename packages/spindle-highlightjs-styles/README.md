@@ -44,3 +44,7 @@ yarn add @openameba/spindle-highlightjs-styles
 ```
 
 HTMLからCDNを経由して直接読み込みます。CDNの配信のため、サイトの表示速度に影響を及ぼす可能性があります。
+
+## バージョニング
+### 0.x
+Highlight.jsのバージョン10と互換性があります。それ以外のバージョンでも利用できる可能性はありますが、動作確認していません。
