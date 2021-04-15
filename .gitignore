@@ -122,3 +122,6 @@ dist
 
 # A file that stores custom attributes of its containing folder in Apple macOS
 .DS_Store
+
+# acot test result
+.acot/

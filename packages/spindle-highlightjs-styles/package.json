@@ -13,7 +13,9 @@
     "access": "public"
   },
   "scripts": {
-    "test": "stylelint *.css",
+    "test": "yarn lint && yarn test:a11y",
+    "test:a11y": "acot run",
+    "lint": "stylelint *.css",
     "minify": "csso spindle-light.css --output spindle-light.min.css && csso spindle-dark.css --output spindle-dark.min.css",
     "prepublishOnly": "yarn minify",
     "build:example": "npx rimraf public && npx cpx '*.{html,css,ico}' public",
@@ -22,8 +24,11 @@
     "serve": "npx serve"
   },
   "devDependencies": {
+    "@acot/acot-config": "^0.0.11",
+    "@acot/cli": "^0.0.11",
     "csso-cli": "^3.0.0",
     "firebase-tools": "^9.9.0",
+    "puppeteer": "^8.0.0",
     "stylelint": "^13.12.0",
     "stylelint-config-standard": "^21.0.0"
   }
