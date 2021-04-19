@@ -30,7 +30,7 @@
     "prettier": "^2.0.5",
     "textlint": "^11.6.3",
     "textlint-rule-preset-ameba": "openameba/textlint-rule-preset-ameba",
-    "typescript": "^4.0.0",
+    "typescript": "^4.0.2",
     "yaml-lint": "^1.2.4"
   },
   "workspaces": [
