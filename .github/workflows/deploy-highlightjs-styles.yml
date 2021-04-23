@@ -1,18 +1,18 @@
-name: deploy Highlight.js styles preview
+name: deploy Highlight.js themes preview
 
 on:
   push:
     branches:
       - main
     paths:
-      - 'packages/spindle-highlightjs-styles/**'
+      - 'packages/spindle-highlightjs-themes/**'
 
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./packages/spindle-highlightjs-styles/
+        working-directory: ./packages/spindle-highlightjs-themes/
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2-beta
