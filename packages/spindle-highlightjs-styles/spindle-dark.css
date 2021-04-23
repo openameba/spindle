@@ -4,9 +4,11 @@
  * @author: ericwbailey
 */
 
+/* NOTE: This CSS requires ameba-color-palette.css https://github.com/openameba/ameba-color-palette.css */
+
 .hljs-comment,
 .hljs-quote {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--white-60-alpha);
 }
 
 .hljs-deletion,
@@ -17,7 +19,7 @@
 .hljs-tag,
 .hljs-template-variable,
 .hljs-variable {
-  color: #ff6a59;
+  color: var(--caution-red-vivid-100);
 }
 
 .hljs-built_in,
@@ -40,7 +42,7 @@
 .hljs-bullet,
 .hljs-string,
 .hljs-symbol {
-  color: #82be28;
+  color: var(--secondary-green-50);
 }
 
 .hljs-section,
@@ -55,8 +57,8 @@
 
 .hljs {
   /* This layer structure is defined in Spindle */
-  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%), linear-gradient(90deg, #141e25 0%, #141e25 100%);
-  color: rgba(255, 255, 255, 0.8);
+  background-image: linear-gradient(90deg, var(--white-5-alpha) 0%, var(--white-5-alpha) 100%), linear-gradient(90deg, var(--gray-90) 0%, var(--gray-90) 100%);
+  color: var(--white-80-alpha);
   display: block;
   overflow-x: auto;
   padding: 0.5em;
