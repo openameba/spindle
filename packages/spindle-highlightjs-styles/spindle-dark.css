@@ -56,8 +56,8 @@
 }
 
 .hljs {
-  /* This layer structure is defined in Spindle */
-  background-image: linear-gradient(90deg, var(--white-5-alpha) 0%, var(--white-5-alpha) 100%), linear-gradient(90deg, var(--gray-90) 0%, var(--gray-90) 100%);
+  /* Set background color (foreground --white-5-alpha / background --gray-90) directly to check the contrast ratio with acot. */
+  background: rgb(30, 41, 48);
   color: var(--white-80-alpha);
   display: block;
   overflow-x: auto;
