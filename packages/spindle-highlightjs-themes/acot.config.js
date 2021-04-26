@@ -5,4 +5,7 @@ module.exports = {
   },
   origin: 'http://localhost:5000',
   paths: ['/', '/?theme=dark'],
+  rules: {
+    '@acot/wcag/focusable-has-indicator': 'warn',
+  },
 };
