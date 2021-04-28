@@ -1,0 +1,20 @@
+{
+  "name": "@openameba/spindle-tokens",
+  "version": "0.0.1",
+  "description": "Spindle design tokens.",
+  "homepage": "https://github.com/openameba/spindle#readme",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openameba/spindle.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/openameba/spindle/issues"
+  }
+}

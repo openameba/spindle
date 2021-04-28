@@ -1,0 +1,133 @@
+{
+  "color": {
+    "background": {
+      "value": "{color.swatch.gray.100.value}"
+    },
+    "surface": {
+      "primary": {
+        "value": "{color.swatch.gray.90.value}"
+      },
+      "secondary": {
+        "value": "{color.swatch.white.5 alpha.value}"
+      },
+      "tertiary": {
+        "value": "{color.swatch.white.10 alpha.value}"
+      },
+      "quaternary": {
+        "value": "{color.swatch.white.20 alpha.value}"
+      },
+      "accent primary": {
+        "value": "{color.swatch.primary green.70.value}"
+      },
+      "accent primary light": {
+        "value": "{color.swatch.white.5 alpha.value}"
+      },
+      "accent secondary": {
+        "value": "{color.swatch.secondary green.70.value}"
+      },
+      "accent secondary light": {
+        "value": "{color.swatch.white.5 alpha.value}"
+      },
+      "caution": {
+        "value": "{color.swatch.caution.red.vivid.100.value}"
+      },
+      "caution light": {
+        "value": "{color.swatch.white.5 alpha.value}"
+      }
+    },
+    "text": {
+      "high emphasis": {
+        "value": "{color.swatch.white.100.value}"
+      },
+      "medium emphasis": {
+        "value": "{color.swatch.white.80 alpha.value}"
+      },
+      "low emphasis": {
+        "value": "{color.swatch.white.60 alpha.value}"
+      },
+      "disabled": {
+        "value": "{color.swatch.white.20 alpha.value}"
+      },
+      "high emphasis inverse": {
+        "value": "{color.swatch.white.100.value}"
+      },
+      "accent primary": {
+        "value": "{color.swatch.primary green.50.value}"
+      },
+      "accent secondary": {
+        "value": "{color.swatch.secondary green.50.value}"
+      },
+      "caution": {
+        "value": "{color.swatch.caution.red.vivid.100.value}"
+      }
+    },
+    "highlight": {
+      "error": {
+        "value": "{color.swatch.caution.red.vivid.20 alpha.value}"
+      },
+      "hover": {
+        "value": "{color.swatch.white.30 alpha.value}"
+      },
+      "yellow": {
+        "value": "{color.swatch.highlight.yellow.30 alpha.value}"
+      }
+    },
+    "object": {
+      "high emphasis": {
+        "value": "{color.swatch.white.100.value}"
+      },
+      "medium emphasis": {
+        "value": "{color.swatch.white.80 alpha.value}"
+      },
+      "low emphasis": {
+        "value": "{color.swatch.white.60 alpha.value}"
+      },
+      "disabled": {
+        "value": "{color.swatch.white.20 alpha.value}"
+      },
+      "accent primary": {
+        "value": "{color.swatch.primary green.50.value}"
+      },
+      "accent secondary": {
+        "value": "{color.swatch.secondary green.50.value}"
+      },
+      "caution": {
+        "value": "{color.swatch.caution.red.vivid.100.value}"
+      },
+      "high emphasis inverse": {
+        "value": "{color.swatch.white.100.value}"
+      },
+      "expressive pink": {
+        "value": "{color.swatch.expressive.pink.40.value}"
+      }
+    },
+    "focus": {
+      "clarity": {
+        "value": "{color.swatch.focus.blue 100.value}"
+      },
+      "ambiguous": {
+        "value": "{color.swatch.focus.blue 30 alpha.value}"
+      }
+    },
+    "border": {
+      "high emphasis": {
+        "value": "{color.swatch.white.60 alpha.value}"
+      },
+      "medium emphasis": {
+        "value": "{color.swatch.white.30 alpha.value}"
+      },
+      "low emphasis": {
+        "value": "{color.swatch.white.20 alpha.value}"
+      },
+      "accent primary": {
+        "value": "{color.swatch.primary green.50.value}"
+      },
+      "caution": {
+        "value": "{color.swatch.caution.red.vivid.100.value}"
+      },
+      "high emphasis inverse": {
+        "value": "{color.swatch.white.100.value}"
+      }
+    }
+  }
+}
