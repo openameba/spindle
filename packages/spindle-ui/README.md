@@ -39,6 +39,8 @@ ReactDOM.render(<App />, document.querySelector('#app'));
 
 詳細は[コンポーネント一覧](#コンポーネント一覧)、[サンプルアプリケーション](#サンプルアプリケーション)を参照してください。
 
+> **_NOTE:_**  アイコン利用時は[Spindle IconsのReactコンポーネント](/packages/spindle-icons#react)を読み、注意点を確認してください。
+
 ## コンポーネント一覧
 利用可能なコンポーネントは、[Storybook](https://ameba-spindle.web.app/)で公開されています。各コンポーネントの開発状況は[Stoybook Doc](https://ameba-spindle.web.app/?path=/docs/button--large)のStability Budgeで以下のように表されています。
 
