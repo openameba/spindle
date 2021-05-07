@@ -1,13 +1,13 @@
 {
-  "name": "@openameba/spindle-highlightjs-themes",
+  "name": "@openameba/spindle-syntax-themes",
   "version": "0.0.1",
-  "description": "Spindle theme for Highlight.js",
+  "description": "Spindle syntax themes",
   "license": "MIT",
   "files": [
-    "spindle-light.css",
-    "spindle-dark.css",
-    "spindle-light.min.css",
-    "spindle-dark.min.css"
+    "highlightjs-light.css",
+    "highlightjs-dark.css",
+    "highlightjs-light.min.css",
+    "highlightjs-dark.min.css"
   ],
   "publishConfig": {
     "access": "public"
@@ -16,7 +16,7 @@
     "test": "yarn lint && yarn test:a11y",
     "test:a11y": "acot run",
     "lint": "stylelint *.css",
-    "minify": "csso spindle-light.css --output spindle-light.min.css && csso spindle-dark.css --output spindle-dark.min.css",
+    "minify": "csso highlightjs-light.css --output highlightjs-light.min.css && csso highlightjs-dark.css --output highlightjs-dark.min.css",
     "prepublishOnly": "yarn minify",
     "build:example": "npx rimraf public && npx cpx '*.{html,css,ico}' public",
     "predeploy": "yarn build:example",

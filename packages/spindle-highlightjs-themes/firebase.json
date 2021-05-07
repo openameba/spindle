@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "ameba-spindle-highlightjs",
+    "site": "ameba-spindle-syntax",
     "public": "public",
     "ignore": [
       "firebase.json",
