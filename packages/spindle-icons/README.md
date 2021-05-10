@@ -16,7 +16,7 @@ yarn add @openameba/spindle-icons
 ```
 
 ## 利用方法
-Spindle Iconsで生成されたSVGアイコンは、以下の方法で利用できます。利用できるアイコンは[アイコンリスト](docs/icons.md)を参照してください。
+Spindle Iconsで生成されたSVGアイコンは、以下の方法で利用できます。利用できるアイコンは[アイコンリスト](docs/icons.md)を参照してください。img要素、Inline SVG、SVG Spriteでの利用法は[サンプルページ](example/index.html)を参考にしてください。
 
 ### img要素
 最も簡単な利用方法は、img要素としてSVGファイルを読み込むことです。いくつかのスクリーンリーダーでは、SVG読み込みするimg要素の`alt`属性のテキストを省略するため、`role="img"`を付与します。
