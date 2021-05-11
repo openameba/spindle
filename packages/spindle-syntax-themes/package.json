@@ -1,0 +1,35 @@
+{
+  "name": "@openameba/spindle-syntax-themes",
+  "version": "0.0.1",
+  "description": "Spindle syntax themes",
+  "license": "MIT",
+  "files": [
+    "highlightjs-light.css",
+    "highlightjs-dark.css",
+    "highlightjs-light.min.css",
+    "highlightjs-dark.min.css"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "yarn lint && yarn test:a11y",
+    "test:a11y": "acot run",
+    "lint": "stylelint *.css",
+    "minify": "csso highlightjs-light.css --output highlightjs-light.min.css && csso highlightjs-dark.css --output highlightjs-dark.min.css",
+    "prepublishOnly": "yarn minify",
+    "build:example": "npx rimraf public && npx cpx '*.{html,css,ico}' public",
+    "predeploy": "yarn build:example",
+    "deploy": "firebase deploy --only hosting",
+    "serve": "npx serve"
+  },
+  "devDependencies": {
+    "@acot/acot-config": "^0.0.11",
+    "@acot/cli": "^0.0.11",
+    "csso-cli": "^3.0.0",
+    "firebase-tools": "^9.9.0",
+    "puppeteer": "^8.0.0",
+    "stylelint": "^13.12.0",
+    "stylelint-config-standard": "^21.0.0"
+  }
+}

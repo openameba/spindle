@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Spindle syntax themes</title>
+  <meta name="viewport" content="width=device-width">
+  <meta charset="utf-8">
+  <meta name="description" content="Check the Spindle code syntax with some languages.">
+  <link rel="stylesheet" href="https://unpkg.com/ameba-color-palette.css">
+  <link rel="stylesheet" href="./highlightjs-light.css">
+  <link rel="stylesheet" href="./highlightjs-dark.css" disabled>
+  <link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Form/DropDown.css">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <style>
+    body {
+      background: var(--color-surface-primary);
+      color: var(--color-text-medium-emphasis);
+      font-family: sans-serif;
+      margin: 0;
+    }
+
+    h1,
+    section {
+      margin: 2rem;
+    }
+
+    .select-theme {
+      background: var(--color-surface-primary);
+      padding: 2rem;
+      position: sticky;
+      top: 0;
+    }
+
+    .spui-DropDown-visual {
+      text-transform: capitalize;
+    }
+  </style>
+</head>
+<body>
+<h1>Spindle syntax themes for highlight.js</h1>
+<div class="select-theme">
+  <label class="spui-DropDown-label is-active">
+    <span class="spui-DropDown-visual" id="js-select-visual">Light</span>
+    <span class="spui-DropDown-icon">
+      <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor" role="img" aria-hidden="true"><path d="M2.55 9.45c0-.38.15-.77.44-1.06a1.49 1.49 0 012.12 0l6.94 6.94 6.94-6.94a1.49 1.49 0 012.12 0c.58.59.59 1.54 0 2.12l-7.29 7.29c-.97.97-2.56.97-3.54 0l-7.29-7.29c-.29-.29-.44-.67-.44-1.06z"></path></svg>
+    </span>
+    <select aria-label="Theme" class="spui-DropDown-select" name="theme">
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </select>
+    <span class="spui-DropDown-outline"></span>
+  </label>
+</div>
+<section>
+  <h2>HTML, XML</h2>
+  <pre>
+    <code class="language-html">
+      &lt;!DOCTYPE html&gt;
+      &lt;title&gt;Title&lt;/title&gt;
+
+      &lt;style&gt;body {width: 500px;}&lt;/style&gt;
+
+      &lt;script type=&quot;application/javascript&quot;&gt;
+        function $init() {return true;}
+      &lt;/script&gt;
+
+      &lt;body&gt;
+        &lt;p checked class=&quot;title&quot; id=&#39;title&#39;&gt;Title&lt;/p&gt;
+        &lt;!-- here goes the rest of the page --&gt;
+      &lt;/body&gt;
+    </code>
+  </pre>
+</section>
+<section>
+  <h2>CSS</h2>
+  <pre>
+    <code class="language-css">
+      @font-face {
+        font-family: Chunkfive; src: url('Chunkfive.otf');
+      }
+
+      body, .usertext {
+        color: #F0F0F0; background: #600;
+        font-family: Chunkfive, sans;
+        --heading-1: 30px/32px Helvetica, sans-serif;
+      }
+
+      @import url(print.css);
+      @media print {
+        a[href^=http]::after {
+          content: attr(href)
+        }
+      }
+    </code>
+  </pre>
+</section>
+<section>
+  <h2>JavaScript</h2>
+  <pre>
+    <code class="language-javascript">
+      function $initHighlight(block, cls) {
+        try {
+          if (cls.search(/\bno\-highlight\b/) != -1)
+            return process(block, true, 0x0F) +
+                   ` class="${cls}"`;
+        } catch (e) {
+          /* handle exception */
+        }
+        for (var i = 0 / 2; i < classes.length; i++) {
+          if (checkCondition(classes[i]) === undefined)
+            console.log('undefined');
+        }
+
+        return (
+          &lt;div&gt;
+            &lt;web-component&gt;{block}&lt;/web-component&gt;
+          &lt;/div&gt;
+        )
+      }
+
+      export  $initHighlight;
+    </code>
+  </pre>
+</section>
+<section>
+  <h2>TypeScript</h2>
+  <pre>
+    <code class="language-typescript">
+      class MyClass {
+        public static myValue: string;
+        constructor(init: string) {
+          this.myValue = init;
+        }
+      }
+      import fs = require("fs");
+      module MyModule {
+        export interface MyInterface extends Other {
+          myProperty: any;
+        }
+      }
+      declare magicNumber number;
+    </code>
+  </pre>
+</section>
+<section>
+  <h2>JSON</h2>
+  <pre>
+    <code class="language-json">
+      [
+        {
+          "title": "apples",
+          "count": [12000, 20000],
+          "description": {"text": "...", "sensitive": false}
+        },
+        {
+          "title": "oranges",
+          "count": [17500, null],
+          "description": {"text": "...", "sensitive": false}
+        }
+      ]
+    </code>
+  </pre>
+</section>
+<section>
+  <h2>Kotlin</h2>
+  <pre>
+    <code class="language-kotlin">
+      import kotlin.lang.test
+
+      interface A {
+          fun x()
+      }
+
+      fun xxx(): Int {
+          return 888
+      }
+
+      public fun main(args: Array<String>) {
+      }
+    </code>
+  </pre>
+</section>
+<section>
+  <h2>Java</h2>
+  <pre>
+    <code class="language-java">
+      /**
+      * @author John Smith <john.smith@example.com>
+      */
+      package l2f.gameserver.model;
+
+      public abstract strictfp class L2Char extends L2Object {
+        public static final Short ERROR = 0x0001;
+
+        public void moveTo(int x, int y, int z) {
+          _ai = null;
+          log("Should not be called");
+          if (1 > 5) { // wtf!?
+            return;
+          }
+        }
+      }
+    </code>
+  </pre>
+</section>
+<section>
+  <h2>Swift</h2>
+  <pre>
+    <code class="language-swift">
+      import Foundation
+
+      @objc class Person: Entity {
+        var name: String!
+        var age:  Int!
+
+        init(name: String, age: Int) {
+          /* /* ... */ */
+        }
+
+        // Return a descriptive string for this person
+        func description(offset: Int = 0) -> String {
+          return "\(name) is \(age + offset) years old"
+        }
+      }
+    </code>
+  </pre>
+</section>
+<section>
+  <h2>Objective-C</h2>
+  <pre>
+    <code class="language-objectivec">
+      #import <UIKit/UIKit.h>
+      #import "Dependency.h"
+
+      @protocol WorldDataSource
+      @optional
+      - (NSString*)worldName;
+      @required
+      - (BOOL)allowsToLive;
+      @end
+
+      @property (nonatomic, readonly) NSString *title;
+      - (IBAction) show;
+      @end
+    </code>
+  </pre>
+</section>
+<section>
+  <h2>YAML</h2>
+  <pre>
+    <code class="language-yaml">
+      ---
+      # comment
+      string_1: "Bar"
+      string_2: 'bar'
+      string_3: bar
+      inline_keys_ignored: sompath/name/file.jpg
+      keywords_in_yaml:
+        - true
+        - false
+        - TRUE
+        - FALSE
+        - 21
+        - 21.0
+        - !!str 123
+      "quoted_key": &foobar
+        bar: foo
+        foo:
+        "foo": bar
+
+      reference: *foobar
+
+      multiline_1: |
+        Multiline
+        String
+      multiline_2: >
+        Multiline
+        String
+      multiline_3: "
+        Multiline string
+        "
+
+      ansible_variables: "foo {{variable}}"
+
+      array_nested:
+      - a
+      - b: 1
+        c: 2
+      - b
+      - comment
+    </code>
+  </pre>
+</section>
+<script src="https://unpkg.com/@highlightjs/cdn-assets@10.7.2/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<script type="module">
+  const lightCss = document.querySelector('link[href*="highlightjs-light.css"]');
+  const darkCss = document.querySelector('link[href*="highlightjs-dark.css"]');
+  const selectEl = document.querySelector('select[name="theme"]');
+  const selectVisualEl = document.querySelector('#js-select-visual');
+
+  function applyTheme(theme) {
+    selectVisualEl.innerText = theme;
+    if (theme === 'dark') {
+      lightCss.disabled = true;
+      darkCss.disabled = false;
+    } else {
+      lightCss.disabled = false;
+      darkCss.disabled = true;
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const url = new URL(location.href);
+    const theme = url.searchParams.get('theme') === 'dark' ? 'dark' : 'light';
+    selectEl.value = theme;
+    applyTheme(theme);
+  });
+
+  selectEl.addEventListener('change', (event) => {
+    const { value } = event.target;
+    applyTheme(value);
+  }, false);
+</script>
+</body>
+</html>

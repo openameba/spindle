@@ -1,0 +1,25 @@
+name: deploy Highlight.js themes preview
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'packages/spindle-highlightjs-themes/**'
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./packages/spindle-highlightjs-themes/
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: 14
+      - run: yarn install --frozen-lockfile
+      - name: Update example
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        run: yarn deploy -- --token $FIREBASE_TOKEN
