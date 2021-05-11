@@ -28,27 +28,6 @@
     "@acot/core" "0.0.12"
     language-tags "^1.0.5"
 
-"@acot/acot-reporter-pretty@0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@acot/acot-reporter-pretty/-/acot-reporter-pretty-0.0.11.tgz#d67e9ddeacd5247a12c79bfb015f14091d7c3604"
-  integrity sha512-uQAnF4JOP0d1ADPMutGDFAoodHnvX0Lzz1rY6pjJ2sSF/NmWSwpx68MibzGBxevfPYPEtGuTytJ/3z5YwXwzEA==
-  dependencies:
-    "@acot/html-pickup" "0.0.11"
-    "@acot/module-loader" "0.0.11"
-    "@acot/reporter" "0.0.11"
-    boxen "^5.0.0"
-    chalk "^4.0.0"
-    cli-table "^0.3.4"
-    figures "^3.2.0"
-    indent-string "^4.0.0"
-    log-symbols "^4.0.0"
-    log-update "^4.0.0"
-    ora "^5.1.0"
-    plur "^4.0.0"
-    pretty-ms "^7.0.1"
-    strip-ansi "^6.0.0"
-    text-table "^0.2.0"
-
 "@acot/acot-reporter-pretty@0.0.12":
   version "0.0.12"
   resolved "https://registry.yarnpkg.com/@acot/acot-reporter-pretty/-/acot-reporter-pretty-0.0.12.tgz#695d34f1306eaa38cb974661f0505cbb6d0f0f3d"
@@ -70,17 +49,6 @@
     strip-ansi "^6.0.0"
     text-table "^0.2.0"
 
-"@acot/acot-runner@0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@acot/acot-runner/-/acot-runner-0.0.11.tgz#49909177fce5de4f0ab795440ac3b2dc46b2a8cb"
-  integrity sha512-+sT8I2a991b07AhR8i9+F3Mbj37w386bHfjpMIKC213BtoojX+dhNvg9U0BPfPXfttJ+BQrcoWiXbTQBItzTkw==
-  dependencies:
-    "@acot/config" "0.0.11"
-    "@acot/connection" "0.0.11"
-    "@acot/runner" "0.0.11"
-    debug "^4.3.1"
-    emittery "^0.7.1"
-
 "@acot/acot-runner@0.0.12":
   version "0.0.12"
   resolved "https://registry.yarnpkg.com/@acot/acot-runner/-/acot-runner-0.0.12.tgz#6d9597ab377561c03259541df0f1507a614c8759"
@@ -92,7 +60,7 @@
     debug "^4.3.1"
     emittery "^0.7.1"
 
-"@acot/cli@0.0.12":
+"@acot/cli@0.0.12", "@acot/cli@^0.0.12":
   version "0.0.12"
   resolved "https://registry.yarnpkg.com/@acot/cli/-/cli-0.0.12.tgz#9f2b563c9c737fbef51746919f4e20c5e689b069"
   integrity sha512-73ZYyR60XDZ1RrxN4WbdVevkVIMPkqz1xryY6wV9mmwBMa3oRO0USBSIgYS4lb0rtl8CYAvaNItcMX3+IuC/Eg==
@@ -129,63 +97,6 @@
     validator "^13.1.17"
     yargs "^16.1.1"
 
-"@acot/cli@^0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@acot/cli/-/cli-0.0.11.tgz#2ca92a6ea4120d9a030fd6ed55f6db9ea3922824"
-  integrity sha512-m5J7kv23pp4hObXi06ZIwF45iVuguj0gC9MI9eLIs1uQFU8edVX4HjFxD5D4+X2BuWLOsShoSmt44ofrQfN5Qw==
-  dependencies:
-    "@acot/acot-reporter-pretty" "0.0.11"
-    "@acot/acot-runner" "0.0.11"
-    "@acot/config" "0.0.11"
-    "@acot/core" "0.0.11"
-    "@acot/document" "0.0.11"
-    "@acot/find-chrome" "0.0.11"
-    "@acot/logger" "0.0.11"
-    "@acot/reporter" "0.0.11"
-    "@acot/runner" "0.0.11"
-    "@acot/schema-validator" "0.0.11"
-    "@acot/utils" "0.0.11"
-    boxen "^5.0.0"
-    chalk "^4.0.0"
-    chokidar "^3.4.1"
-    debug "^4.3.1"
-    enquirer "^2.3.6"
-    execa "^5.0.0"
-    fast-glob "^3.2.2"
-    is-ci "^2.0.0"
-    listr "^0.14.3"
-    markdown-table "^2.0.0"
-    node-emoji "^1.10.0"
-    opener "^1.5.2"
-    pkg-up "^3.1.0"
-    portfinder "^1.0.27"
-    prettier "^2.2.0"
-    strip-ansi "^6.0.0"
-    type-fest "^0.20.2"
-    update-notifier "^5.0.1"
-    validator "^13.1.17"
-    yargs "^16.1.1"
-
-"@acot/config@0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@acot/config/-/config-0.0.11.tgz#4136c41b858515a531b6a1e2554ab8b082cd3ddb"
-  integrity sha512-fqdeerGGgzHWNNtXfQ8ANIVLlPhffAgArjhwd4Phu7fN/HAWf8sLqsf7z1X8A/E4Cfx1j8Obh8m+hcpNFAfkjA==
-  dependencies:
-    "@acot/core" "0.0.11"
-    "@acot/module-loader" "0.0.11"
-    "@acot/reporter" "0.0.11"
-    "@acot/runner" "0.0.11"
-    "@acot/types" "0.0.11"
-    "@acot/utils" "0.0.11"
-    ajv "^6.12.3"
-    cosmiconfig "^7.0.0"
-    debug "^4.3.1"
-    deepmerge "^4.2.2"
-    is-plain-object "^5.0.0"
-    micromatch "^4.0.2"
-    path-type "^4.0.0"
-    resolve-from "^5.0.0"
-
 "@acot/config@0.0.12":
   version "0.0.12"
   resolved "https://registry.yarnpkg.com/@acot/config/-/config-0.0.12.tgz#a2ad50d6caea86922a36218b8759837c2c18db1a"
@@ -206,15 +117,6 @@
     path-type "^4.0.0"
     resolve-from "^5.0.0"
 
-"@acot/connection@0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@acot/connection/-/connection-0.0.11.tgz#986d319ed409db39097504e44692669a86b1e459"
-  integrity sha512-AeFpsbHZi4pisowO/ympT+WWPfjGypefxzFDv1HVoCgRu0QLLtdV0n3XXw9jkqd4CScqZmbxogOnB14lcf2iYQ==
-  dependencies:
-    debug "^4.3.1"
-    execa "^5.0.0"
-    wait-on "^5.2.0"
-
 "@acot/connection@0.0.12":
   version "0.0.12"
   resolved "https://registry.yarnpkg.com/@acot/connection/-/connection-0.0.12.tgz#37911ba1aa552478f617836a6c0b2d0aa0c9db3f"
@@ -223,27 +125,6 @@
     debug "^4.3.1"
     execa "^5.0.0"
     wait-on "^5.2.0"
-
-"@acot/core@0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@acot/core/-/core-0.0.11.tgz#5be0657fd7a2e56612a84c852b7313b238536931"
-  integrity sha512-1dFSxP0gaT6GfctrH/Yklc3d4u0bUBvjiBVsJV2GWlmrfuO3OZpB1ON6nIqxpvS+J3yZyONeQ+R2MxxalySv3Q==
-  dependencies:
-    "@acot/factory" "0.0.11"
-    "@acot/find-chrome" "0.0.11"
-    "@acot/html-pickup" "0.0.11"
-    "@acot/logger" "0.0.11"
-    "@acot/module-loader" "0.0.11"
-    "@acot/schema-validator" "0.0.11"
-    "@acot/types" "0.0.11"
-    "@acot/utils" "0.0.11"
-    debug "^4.3.1"
-    emittery "^0.7.1"
-    filenamify "^4.1.0"
-    lodash "^4.17.19"
-    p-series "^2.1.0"
-    puppeteer-core "^8.0.0"
-    puppeteer-element2selector "^0.0.3"
 
 "@acot/core@0.0.12":
   version "0.0.12"
@@ -265,37 +146,6 @@
     p-series "^2.1.0"
     puppeteer-core "^8.0.0"
     puppeteer-element2selector "^0.0.3"
-
-"@acot/document@0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@acot/document/-/document-0.0.11.tgz#b0ba38f7d5516b8b2c6952944bd2d4d0d7b4f413"
-  integrity sha512-wXcDm/mkbVu2/zAMuiN/CUTLU9UwdXBqUdHXxGLbJBliEteaj1BtiIWnjXYRFnpQg66xxW2rBwL3XGwtK6iF6w==
-  dependencies:
-    "@acot/core" "0.0.11"
-    "@acot/factory" "0.0.11"
-    "@acot/find-chrome" "0.0.11"
-    "@acot/html-pickup" "0.0.11"
-    "@acot/logger" "0.0.11"
-    debug "^4.3.1"
-    deepmerge "^4.2.2"
-    fast-glob "^3.2.2"
-    fastify "^3.8.0"
-    fastify-static "^4.0.0"
-    indent-string "^4.0.0"
-    is-plain-object "^5.0.0"
-    log-symbols "^4.0.0"
-    mdast-util-to-string "^2.0.0"
-    micromatch "^4.0.2"
-    mustache "^4.0.1"
-    plur "^4.0.0"
-    puppeteer-core "^8.0.0"
-    remark-parse "^9.0.0"
-    remark-stringify "^9.0.0"
-    strip-ansi "^6.0.0"
-    type-fest "^0.20.2"
-    unified "^9.0.0"
-    unist-util-select "^3.0.2"
-    unist-util-visit-parents "^3.1.0"
 
 "@acot/document@0.0.12":
   version "0.0.12"
@@ -328,16 +178,6 @@
     unist-util-select "^3.0.2"
     unist-util-visit-parents "^3.1.0"
 
-"@acot/factory@0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@acot/factory/-/factory-0.0.11.tgz#f0c92c3663f4d798b42c81ea107f7d63989271e0"
-  integrity sha512-nijVFMOYdthJyqcF1jUbDNgFE/4G4PFSGFKXrYcahbAe4UnWdFvfNHQEbCNghTLXh+/waIl3AUgwADUXY/Teuw==
-  dependencies:
-    "@acot/types" "0.0.11"
-    deepmerge "^4.2.2"
-    is-plain-object "^5.0.0"
-    type-fest "^0.20.2"
-
 "@acot/factory@0.0.12":
   version "0.0.12"
   resolved "https://registry.yarnpkg.com/@acot/factory/-/factory-0.0.12.tgz#812257169924d4f12276606c226559372da22df9"
@@ -348,27 +188,10 @@
     is-plain-object "^5.0.0"
     type-fest "^0.20.2"
 
-"@acot/find-chrome@0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@acot/find-chrome/-/find-chrome-0.0.11.tgz#8bc4aadd739292244169734c649562d51b73dfcc"
-  integrity sha512-5kZGro169UchXWvaby4ZPMdSfHj5l+bZSQZC96Kj13ndLxfxC4Hg27nvhne0UxFVaEAbywqV07v7ds8O0OjSuA==
-
 "@acot/find-chrome@0.0.12":
   version "0.0.12"
   resolved "https://registry.yarnpkg.com/@acot/find-chrome/-/find-chrome-0.0.12.tgz#b3c01e9622764cd9cd8f627b286b9f2077fc99e7"
   integrity sha512-bSh8jw7mwGhWDDYAWcxG2deem3v7iXIyO12ZXTD27Sz4FEAHvbkJksDypjRkQQXoaNzYQ5eaH0UHhHwcBTTsRw==
-
-"@acot/html-pickup@0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@acot/html-pickup/-/html-pickup-0.0.11.tgz#4f984ae52fe5cecd0d2c5b9a2916411620194db4"
-  integrity sha512-SsoSN5AwPqP/vb5kLsIMQXHH/UBpv/2njh4ctMB3i1on8d/K95EWW55fufBGDYSkng9vuzaP4fdag9ja8jan9A==
-  dependencies:
-    chalk "^4.1.0"
-    cli-truncate "^2.1.0"
-    css-select "^2.1.0"
-    css-select-parse5-adapter "^1.0.0-pre.1"
-    parse5 "^6.0.0"
-    strip-ansi "^6.0.0"
 
 "@acot/html-pickup@0.0.12":
   version "0.0.12"
@@ -382,17 +205,6 @@
     parse5 "^6.0.0"
     strip-ansi "^6.0.0"
 
-"@acot/logger@0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@acot/logger/-/logger-0.0.11.tgz#a6027d6ddcb314575c7626e60e40c4b8329c2426"
-  integrity sha512-VF5rlkAqvviOky1vBpHXCSThq9giVEHc5pk17WJAuksXNzBbvNeP5ytX84IMAkiDZnO6VNFA7tno96cRtpWjxA==
-  dependencies:
-    chalk "^4.0.0"
-    figures "^3.2.0"
-    indent-string "^4.0.0"
-    string-width "^4.2.0"
-    strip-ansi "^6.0.0"
-
 "@acot/logger@0.0.12":
   version "0.0.12"
   resolved "https://registry.yarnpkg.com/@acot/logger/-/logger-0.0.12.tgz#5f01a4cd47b979ba044c128a7bb20a9437196040"
@@ -404,14 +216,6 @@
     string-width "^4.2.0"
     strip-ansi "^6.0.0"
 
-"@acot/module-loader@0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@acot/module-loader/-/module-loader-0.0.11.tgz#4726243876ecaa74bfaddbadd696c4271a532cd0"
-  integrity sha512-/TevdTaSE/PIVGPL6WjctcTCzv5ZRlErSzEI4GthHMCiGR1kU4pD9Ioneug4SvlOS/51JPgE+wEedml7t1EmTg==
-  dependencies:
-    "@acot/utils" "0.0.11"
-    debug "^4.3.1"
-
 "@acot/module-loader@0.0.12":
   version "0.0.12"
   resolved "https://registry.yarnpkg.com/@acot/module-loader/-/module-loader-0.0.12.tgz#02bbaeb32accc5fa12fd40042b6389347ef324ec"
@@ -419,26 +223,6 @@
   dependencies:
     "@acot/utils" "0.0.12"
     debug "^4.3.1"
-
-"@acot/reporter@0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@acot/reporter/-/reporter-0.0.11.tgz#3fdc07a101689a14d483a4311c3dbc8cc6b658e2"
-  integrity sha512-t5g1+BRqx116HSqElxQuo2C7ObLUp13IhGEbSIxIjkPGdAGnGXRmvYILwmVxGe5mmFLlip0n9Vaya8P5NyQvVg==
-  dependencies:
-    "@acot/html-pickup" "0.0.11"
-    "@acot/module-loader" "0.0.11"
-    boxen "^5.0.0"
-    chalk "^4.0.0"
-    cli-table "^0.3.4"
-    figures "^3.2.0"
-    indent-string "^4.0.0"
-    log-symbols "^4.0.0"
-    log-update "^4.0.0"
-    ora "^5.1.0"
-    plur "^4.0.0"
-    pretty-ms "^7.0.1"
-    strip-ansi "^6.0.0"
-    text-table "^0.2.0"
 
 "@acot/reporter@0.0.12":
   version "0.0.12"
@@ -460,15 +244,6 @@
     strip-ansi "^6.0.0"
     text-table "^0.2.0"
 
-"@acot/runner@0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@acot/runner/-/runner-0.0.11.tgz#312d531318a6949979c901db5291f0d8d7cbc724"
-  integrity sha512-A9NWDWbRYtTL5hAsWzI6PKR3TP7WDsnLumPOq6NMmVxoF+cn6Ks+RQdZ3kiIdckIHV6ISrrcDwB1dQKv1mPCkw==
-  dependencies:
-    "@acot/module-loader" "0.0.11"
-    debug "^4.3.1"
-    emittery "^0.7.1"
-
 "@acot/runner@0.0.12":
   version "0.0.12"
   resolved "https://registry.yarnpkg.com/@acot/runner/-/runner-0.0.12.tgz#9a154f438a9bc8920d34a46a6ae19b411948a454"
@@ -478,14 +253,6 @@
     debug "^4.3.1"
     emittery "^0.7.1"
 
-"@acot/schema-validator@0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@acot/schema-validator/-/schema-validator-0.0.11.tgz#ad6119f3767e7eafa3110480b6e6bf9ffe7a54c5"
-  integrity sha512-IYA2weNy+pbGS/j5MSBKI+RwZVPehzgY10bdwYA6CrBZZC7TM5rR4gZ+dBkbMKm6XpLrh23tnqIGMfIMEnAXWQ==
-  dependencies:
-    "@types/json-schema" "^7.0.5"
-    schema-utils "^3.0.0"
-
 "@acot/schema-validator@0.0.12":
   version "0.0.12"
   resolved "https://registry.yarnpkg.com/@acot/schema-validator/-/schema-validator-0.0.12.tgz#80f4a8e8759a1891c7d0105a2987a437797ddc02"
@@ -493,16 +260,6 @@
   dependencies:
     "@types/json-schema" "^7.0.5"
     schema-utils "^3.0.0"
-
-"@acot/types@0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@acot/types/-/types-0.0.11.tgz#c7485618b3348374e7b3e51a5c00f5f265e10472"
-  integrity sha512-VAtDZX35GXSgQ/ikjXVo9FGPzlkTSAcl84qy38Ll0b3Nwc2OwE+HNF6gGb3yk1i3enlBR5dKGqMau3TYjvDnlw==
-  dependencies:
-    "@acot/find-chrome" "0.0.11"
-    "@acot/schema-validator" "0.0.11"
-    puppeteer-core "^8.0.0"
-    type-fest "^0.20.2"
 
 "@acot/types@0.0.12":
   version "0.0.12"
@@ -513,14 +270,6 @@
     "@acot/schema-validator" "0.0.12"
     puppeteer-core "^8.0.0"
     type-fest "^0.20.2"
-
-"@acot/utils@0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@acot/utils/-/utils-0.0.11.tgz#c74de6e22bd6767bfeb70042217d2c4de96e7c56"
-  integrity sha512-c8Af/pbF4Nu1vVvaqoPwhd25/9LCoaS9CaESxk9dLsjkfeywiOKEGEJUJGUHRQBngxczafTGjcBgFKvCLyLDAw==
-  dependencies:
-    puppeteer-core "^8.0.0"
-    resolve-from "^5.0.0"
 
 "@acot/utils@0.0.12":
   version "0.0.12"
