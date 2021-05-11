@@ -24,7 +24,7 @@
     "serve": "npx serve"
   },
   "devDependencies": {
-    "@acot/acot-config": "^0.0.11",
+    "@acot/acot-config": "^0.0.12",
     "@acot/cli": "^0.0.11",
     "csso-cli": "^3.0.0",
     "firebase-tools": "^9.9.0",
