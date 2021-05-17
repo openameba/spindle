@@ -198,6 +198,7 @@
 | openblank_fill | ![](../dist/svg/openblank_fill.svg) |
 | ownd | ![](../dist/svg/ownd.svg) |
 | palette_fill | ![](../dist/svg/palette_fill.svg) |
+| pause | ![](../dist/svg/pause.svg) |
 | pause_bold | ![](../dist/svg/pause_bold.svg) |
 | pawprint | ![](../dist/svg/pawprint.svg) |
 | pencil | ![](../dist/svg/pencil.svg) |

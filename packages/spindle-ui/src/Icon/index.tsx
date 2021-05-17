@@ -195,6 +195,7 @@ export { default as Openblank } from './Openblank';
 export { default as OpenblankFill } from './OpenblankFill';
 export { default as Ownd } from './Ownd';
 export { default as PaletteFill } from './PaletteFill';
+export { default as Pause } from './Pause';
 export { default as PauseBold } from './PauseBold';
 export { default as Pawprint } from './Pawprint';
 export { default as Pencil } from './Pencil';
