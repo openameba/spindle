@@ -12,9 +12,13 @@
     "url": "git+https://github.com/openameba/spindle.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "style-dictionary build"
   },
   "bugs": {
     "url": "https://github.com/openameba/spindle/issues"
+  },
+  "devDependencies": {
+    "style-dictionary": "^2.10.3"
   }
 }
