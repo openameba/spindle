@@ -77,6 +77,8 @@
 | chevron_right_bold | ![](../dist/svg/chevron_right_bold.svg) |
 | chevron_up | ![](../dist/svg/chevron_up.svg) |
 | chevron_up_bold | ![](../dist/svg/chevron_up_bold.svg) |
+| circle | ![](../dist/svg/circle.svg) |
+| circle_bold | ![](../dist/svg/circle_bold.svg) |
 | circle_fill | ![](../dist/svg/circle_fill.svg) |
 | clock | ![](../dist/svg/clock.svg) |
 | clock_fill | ![](../dist/svg/clock_fill.svg) |
@@ -179,6 +181,10 @@
 | messageboard | ![](../dist/svg/messageboard.svg) |
 | microphone | ![](../dist/svg/microphone.svg) |
 | microphone_fill | ![](../dist/svg/microphone_fill.svg) |
+| minus | ![](../dist/svg/minus.svg) |
+| minus_bold | ![](../dist/svg/minus_bold.svg) |
+| moon | ![](../dist/svg/moon.svg) |
+| moon_fill | ![](../dist/svg/moon_fill.svg) |
 | movie_camera_fill | ![](../dist/svg/movie_camera_fill.svg) |
 | movie_play | ![](../dist/svg/movie_play.svg) |
 | movie_play_fill | ![](../dist/svg/movie_play_fill.svg) |
@@ -264,6 +270,8 @@
 | star_fill | ![](../dist/svg/star_fill.svg) |
 | stop_fill | ![](../dist/svg/stop_fill.svg) |
 | strikethrough | ![](../dist/svg/strikethrough.svg) |
+| sun | ![](../dist/svg/sun.svg) |
+| sun_fill | ![](../dist/svg/sun_fill.svg) |
 | switching | ![](../dist/svg/switching.svg) |
 | switching_camera | ![](../dist/svg/switching_camera.svg) |
 | tag_fill | ![](../dist/svg/tag_fill.svg) |
