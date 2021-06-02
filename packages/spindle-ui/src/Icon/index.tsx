@@ -164,6 +164,7 @@ export { default as ListBulleted } from './ListBulleted';
 export { default as ListNumbered } from './ListNumbered';
 export { default as Loading } from './Loading';
 export { default as LockFill } from './LockFill';
+export { default as LockOpenFill } from './LockOpenFill';
 export { default as Magicwand } from './Magicwand';
 export { default as Mail } from './Mail';
 export { default as MailCheck } from './MailCheck';
