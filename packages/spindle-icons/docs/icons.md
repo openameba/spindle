@@ -167,6 +167,7 @@
 | list_numbered | ![](../dist/svg/list_numbered.svg) |
 | loading | ![](../dist/svg/loading.svg) |
 | lock_fill | ![](../dist/svg/lock_fill.svg) |
+| lock_open_fill | ![](../dist/svg/lock_open_fill.svg) |
 | magicwand | ![](../dist/svg/magicwand.svg) |
 | mail | ![](../dist/svg/mail.svg) |
 | mail_check | ![](../dist/svg/mail_check.svg) |
