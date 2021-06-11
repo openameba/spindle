@@ -7,17 +7,13 @@ on:
 jobs:
   build:
     name: build
-    strategy:
-      matrix:
-        node:
-          - 12
           - 14
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2-beta
         with:
-          node-version: ${{ matrix.node }}
+          node-version: 14
       - name: restore lerna
         uses: actions/cache@v2
         with:
