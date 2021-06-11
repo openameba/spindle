@@ -207,6 +207,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Features
 
 * **spindle-icons:** update icons ([ae07c8e](https://github.com/openameba/spindle/commit/ae07c8eca4f33789c45b3c3d6a2e7f8f17c11e81))
+## [0.18.1-alpha.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.18.0...@openameba/spindle-ui@0.18.1-alpha.0) (2021-06-11)
+
+**Note:** Version bump only for package @openameba/spindle-ui
 
 
 
