@@ -1,0 +1,109 @@
+/*
+ * InlineDropDown
+*/
+.spui-InlineDropDown-label {
+  display: inline-block;
+  position: relative;
+}
+
+.spui-InlineDropDown-select {
+  /**
+   * Layout should be set to have appropriate width with longest option text.
+   * Browsers automatically get the width from select element
+  */
+  -webkit-appearance: listitem; /* To apply layout (font size, padding etc) to <select> in WebKit */
+  box-sizing: border-box;
+  font-size: 1em;
+  margin: 0;
+  opacity: 0;
+  outline: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.spui-InlineDropDown-select--medium {
+  min-height: 40px;
+}
+
+.spui-InlineDropDown-select--small {
+  min-height: 32px;
+}
+
+.spui-InlineDropDown-visual {
+  border-radius: 8px;
+  display: flex;
+}
+
+.spui-InlineDropDown-text {
+  align-items: center;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: var(--color-text-disabled);
+  display: flex;
+  height: 100%;
+  justify-content: flex-end;
+  left: 0;
+  padding: 0.5em 0;
+}
+
+.spui-InlineDropDown-text--medium {
+  font-size: 1em;
+  min-height: 40px;
+}
+
+.spui-InlineDropDown-text--small {
+  font-size: 0.8125em;
+  min-height: 32px;
+}
+
+.spui-InlineDropDown-label.is-active .spui-InlineDropDown-text {
+  color: var(--color-text-high-emphasis);
+}
+
+.spui-InlineDropDown-icon {
+  align-items: center;
+  background-color: transparent;
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
+  box-sizing: border-box;
+  color: var(--color-object-low-emphasis);
+  display: flex;
+  justify-content: center;
+}
+
+.spui-InlineDropDown-icon--medium {
+  font-size: 1em;
+  margin-left: 4px;
+}
+
+.spui-InlineDropDown-icon--small {
+  font-size: 0.8125em;
+  margin-left: 2px;
+}
+
+.spui-InlineDropDown-outline {
+  border-radius: 8px;
+  display: inline-block;
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.spui-InlineDropDown-select:focus ~ .spui-InlineDropDown-outline {
+  border-color: var(--color-border-high-emphasis);
+  box-shadow: 0 0 0 3px var(--color-focus-ambiguous);
+}
+
+.spui-InlineDropDown-select:focus:not(:focus-visible)
+  ~ .spui-InlineDropDown-outline {
+  border-color: var(--color-border-medium-emphasis);
+  box-shadow: none;
+}
+
+.spui-InlineDropDown-label:not(.is-active) .spui-InlineDropDown-icon {
+  opacity: 0.3;
+}
