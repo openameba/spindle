@@ -1,0 +1,112 @@
+import { useState } from 'react';
+import { Description, Meta, Story, Source } from '@storybook/addon-docs/blocks';
+import { actions } from '@storybook/addon-actions';
+import { Toast } from './Toast';
+import { Button } from '../Button';
+
+export const ActivateButton = ({ hasError }) => {
+  const [active, setActive] = useState();
+  return (
+    <div>
+      <Button
+        size="medium"
+        variant={hasError ? 'danger' : 'outlined'}
+        onClick={() => setActive((prev) => !prev)}
+      >
+        Activate
+      </Button>
+      <Toast
+        active={active}
+        hasError={hasError}
+        onHide={() => setActive(false)}
+      >
+        Toast Content
+      </Toast>
+    </div>
+  );
+};
+
+# Toast
+
+<Meta title="Toast" component={Toast} />
+
+![stability-experiment](https://img.shields.io/badge/stability-experiment-red.svg)
+
+<Description>
+  Toastコンポーネントは、利用者に一時的なお知らせをする際に利用します。画面上には常に一つしか表示できません。Toastは自動で消えてしまうため、見落とされても影響のない「重要ではないお知らせ」に用います。利用する際には、その他により適切な手段がないか必ず確認してください。
+</Description>
+<Description>
+  「重要なお知らせ」とは何か、他のnotification系のコンポーネントとの違いは別途まとめる予定です。
+</Description>
+
+<Source
+  language="javascript"
+  code={`import { Toast } from '@openameba/spindle-ui'`}
+/>
+
+<Source
+  language="css"
+  code={`@import './node_modules/@openameba/spindle-ui/Toast/Toast.css'`}
+/>
+
+<Source
+  language="html"
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Toast/Toast.css">`}
+/>
+
+## Normal
+
+<Preview withSource="open">
+  <Story name="Normal">
+    <ActivateButton />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<Toast active={true}>Success Content</Toast>
+  `}
+/>
+
+## Error
+
+<Preview withSource="open">
+  <Story name="Error">
+    <ActivateButton hasError />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<Toast active={true} hasError>Error Content</Toast>
+  `}
+/>
+
+## このコンポーネントでやっていること
+
+<Description>
+  - reduced motionが指定された時に、トランジッションを短くします
+</Description>
+<Description>
+  -
+  hover、focusされている時には、時間制限を停止します。フォーカスが離れたのち、再度0秒から計測します
+</Description>
+<Description>- モードを奪うことになるため、自動的にfocusはしません</Description>
+<Description>
+  - デバイスのorientationに追従して表示位置・サイズを変更します
+</Description>
+
+## 利用時に注意してほしいこと
+
+<Description>
+  -
+  Toastは自動で消えてしまうため、見落とされても影響のない、「重要ではないお知らせ」に用います
+</Description>
+<Description>
+  -
+  もし「重要なお知らせ」に用いる場合、時間制限を外し、閉じるボタンを設置します（**※未実装**）
+</Description>
+<Description>
+  -
+  このコンポーネントでは関与しませんが、ライブリージョンをアプリケーションで実装してください
+</Description>
