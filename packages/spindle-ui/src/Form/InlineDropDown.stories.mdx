@@ -121,58 +121,6 @@ InlineDropDownは試験的なコンポーネントであるため、今後に破
   `}
 />
 
-## Selected And Disabled
-
-<Description>
-  select要素と同様に、selectedやdisabled属性を付与したoption要素にも対応しています。
-</Description>
-
-<Preview withSource="open">
-  <Story name="Selected And Disabled">
-    <InlineDropDown
-      aria-label="Fruits"
-      name="fruits"
-      {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')}
-    >
-      <option value="apple">Apple</option>
-      <option value="orange" selected disabled>
-        Orange
-      </option>
-      <option value="melon">Melon</option>
-    </InlineDropDown>
-  </Story>
-</Preview>
-
-<Source
-  code={`
-<InlineDropDown aria-label="Fruits" name="fruits">
-  <option value="apple">Apple</option>
-  <option value="orange" selected disabled>Orange</option>
-  <option value="melon">Melon</option>
-</InlineDropDown>
-  `}
-/>
-
-<Source
-  language="html"
-  code={`
-<label class="spui-InlineDropDown-label">
-  <span class="spui-InlineDropDown-visual">
-    <span class="spui-InlineDropDown-text">Apple</span>
-    <span class="spui-InlineDropDown-icon">
-      <svg>...</svg>
-    </span>
-  </span>
-  <select class="spui-InlineDropDown-select" aria-label="Fruits" name="fruits">
-    <option value="apple">Apple</option>
-    <option value="green-apple" disabled>Green Apple</option>
-    <option value="melon">Melon</option>
-  </select>
-  <span class="spui-InlineDropDown-outline"></span>
-</label>
-  `}
-/>
-
 ## Accessibility
 
 <Description>

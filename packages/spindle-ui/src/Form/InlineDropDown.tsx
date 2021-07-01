@@ -22,16 +22,13 @@ export const InlineDropDown = forwardRef<HTMLSelectElement, Props>(
     const selectEl = useRef<HTMLSelectElement>(null);
 
     const [text, setText] = useState('');
-    const [disabled, setDisabled] = useState(false);
 
     const update = () => {
       if (selectEl && selectEl.current) {
         const selectedEl =
           selectEl.current.options[selectEl.current.selectedIndex];
         const value = selectedEl.text;
-        const disabled = selectedEl.disabled;
         setText(value);
-        setDisabled(disabled);
       }
     };
 
@@ -46,11 +43,7 @@ export const InlineDropDown = forwardRef<HTMLSelectElement, Props>(
     useEffect(update, []);
 
     return (
-      <label
-        className={[`${BLOCK_NAME}-label`, !disabled ? 'is-active' : '']
-          .filter(Boolean)
-          .join(' ')}
-      >
+      <label className={[`${BLOCK_NAME}-label`].filter(Boolean).join(' ')}>
         <span className={`${BLOCK_NAME}-visual`}>
           <span
             className={`${BLOCK_NAME}-text ${BLOCK_NAME}-text--${visualSize}`}

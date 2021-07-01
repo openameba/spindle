@@ -39,16 +39,16 @@
   align-items: center;
   border-radius: 8px;
   box-sizing: border-box;
-  color: var(--color-text-disabled);
+  color: var(--color-text-medium-emphasis);
   display: flex;
+  font-weight: bold;
   height: 100%;
-  justify-content: flex-end;
   left: 0;
   padding: 0.5em 0;
 }
 
 .spui-InlineDropDown-text--medium {
-  font-size: 1em;
+  font-size: 0.875em;
   min-height: 40px;
 }
 
@@ -57,29 +57,24 @@
   min-height: 32px;
 }
 
-.spui-InlineDropDown-label.is-active .spui-InlineDropDown-text {
-  color: var(--color-text-high-emphasis);
-}
-
 .spui-InlineDropDown-icon {
   align-items: center;
   background-color: transparent;
   border-bottom-right-radius: 8px;
   border-top-right-radius: 8px;
   box-sizing: border-box;
-  color: var(--color-object-low-emphasis);
+  color: var(--color-object-medium-emphasis);
   display: flex;
   justify-content: center;
+  margin-left: 4px;
 }
 
 .spui-InlineDropDown-icon--medium {
-  font-size: 1em;
-  margin-left: 4px;
+  font-size: 0.875em;
 }
 
 .spui-InlineDropDown-icon--small {
   font-size: 0.8125em;
-  margin-left: 2px;
 }
 
 .spui-InlineDropDown-outline {
@@ -94,7 +89,7 @@
 }
 
 .spui-InlineDropDown-select:focus ~ .spui-InlineDropDown-outline {
-  border-color: var(--color-border-high-emphasis);
+  border-color: var(--color-border-medium-emphasis);
   box-shadow: 0 0 0 3px var(--color-focus-ambiguous);
 }
 
@@ -102,8 +97,4 @@
   ~ .spui-InlineDropDown-outline {
   border-color: var(--color-border-medium-emphasis);
   box-shadow: none;
-}
-
-.spui-InlineDropDown-label:not(.is-active) .spui-InlineDropDown-icon {
-  opacity: 0.3;
 }
