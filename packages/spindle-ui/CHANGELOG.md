@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.20.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.19.0...@openameba/spindle-ui@0.20.0) (2021-07-01)
+
+
+### Features
+
+* **spindle-ui:** add Toast component to notify feedback for user ([5d1bf71](https://github.com/openameba/spindle/commit/5d1bf71c756f93b5e491c652ea144295753ddf9f))
+
+
+
+
+
 # [0.19.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.18.0...@openameba/spindle-ui@0.19.0) (2021-07-01)
 
 
