@@ -88,6 +88,7 @@ export { default as CommentTwoSlashFill } from './CommentTwoSlashFill';
 export { default as Community } from './Community';
 export { default as Compass } from './Compass';
 export { default as Coupon } from './Coupon';
+export { default as Crop } from './Crop';
 export { default as CropDin } from './CropDin';
 export { default as CropLandscape } from './CropLandscape';
 export { default as Cross } from './Cross';

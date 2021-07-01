@@ -91,6 +91,7 @@
 | community | ![](../dist/svg/community.svg) |
 | compass | ![](../dist/svg/compass.svg) |
 | coupon | ![](../dist/svg/coupon.svg) |
+| crop | ![](../dist/svg/crop.svg) |
 | crop_din | ![](../dist/svg/crop_din.svg) |
 | crop_landscape | ![](../dist/svg/crop_landscape.svg) |
 | cross | ![](../dist/svg/cross.svg) |
