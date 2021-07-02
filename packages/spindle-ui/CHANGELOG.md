@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.21.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.20.0...@openameba/spindle-ui@0.21.0) (2021-07-02)
+
+
+### Bug Fixes
+
+* **spindle-ui:** minor styles ([30c4d13](https://github.com/openameba/spindle/commit/30c4d13da03c32cbdb84fb94cde7d607dd71957d))
+
+
+### Features
+
+* **spindle-ui:** add InlineDropdown ([cc603d6](https://github.com/openameba/spindle/commit/cc603d628367067278229012648c30e508d50cae))
+
+
+
+
+
 # [0.20.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.19.0...@openameba/spindle-ui@0.20.0) (2021-07-01)
 
 
