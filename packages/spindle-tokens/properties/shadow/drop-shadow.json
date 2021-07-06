@@ -1,0 +1,96 @@
+{
+  "shadow": {
+    "drop shadow": {
+      "color": {
+        "value": "rgba(8, 18, 26, 0.12)"
+      },
+      "offset x": {
+        "value": "0"
+      },
+      "lv1": {
+        "offset x": {
+          "value": "{shadow.drop shadow.offset x}"
+        },
+        "offset y": {
+          "value": "1px"
+        },
+        "blur radius": {
+          "value": "1.75px"
+        },
+        "color": {
+          "value": "{shadow.drop shadow.color}"
+        }
+      },
+      "lv2": {
+        "offset x": {
+          "value": "{shadow.drop shadow.offset x}"
+        },
+        "offset y": {
+          "value": "3.25px"
+        },
+        "blur radius": {
+          "value": "3.875px"
+        },
+        "color": {
+          "value": "{shadow.drop shadow.color}"
+        }
+      },
+      "lv3": {
+        "offset x": {
+          "value": "{shadow.drop shadow.offset x}"
+        },
+        "offset y": {
+          "value": "3.5px"
+        },
+        "blur radius": {
+          "value": "5.25px"
+        },
+        "color": {
+          "value": "{shadow.drop shadow.color}"
+        }
+      },
+      "lv4": {
+        "offset x": {
+          "value": "{shadow.drop shadow.offset x}"
+        },
+        "offset y": {
+          "value": "4.75px"
+        },
+        "blur radius": {
+          "value": "7.125px"
+        },
+        "color": {
+          "value": "{shadow.drop shadow.color}"
+        }
+      },
+      "lv5": {
+        "offset x": {
+          "value": "{shadow.drop shadow.offset x}"
+        },
+        "offset y": {
+          "value": "9px"
+        },
+        "blur radius": {
+          "value": "10.75px"
+        },
+        "color": {
+          "value": "{shadow.drop shadow.color}"
+        }
+      },
+      "lv6": {
+        "offset x": {
+          "value": "{shadow.drop shadow.offset x}"
+        },
+        "offset y": {
+          "value": "11px"
+        },
+        "blur radius": {
+          "value": "14px"
+        },
+        "color": {
+          "value": "{shadow.drop shadow.color}"
+        }
+      }
+    }
+  }
+}
