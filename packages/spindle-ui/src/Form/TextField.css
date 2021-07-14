@@ -15,6 +15,12 @@
   width: 100%;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .spui-TextField {
+    transition: box-shadow 0.1ms;
+  }
+}
+
 .spui-TextField::placeholder {
   color: var(--color-text-disabled);
 }

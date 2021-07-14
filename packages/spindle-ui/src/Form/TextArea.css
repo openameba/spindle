@@ -17,6 +17,12 @@
   width: 100%;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .spui-TextArea {
+    transition: box-shadow 0.1ms;
+  }
+}
+
 .spui-TextArea::placeholder {
   color: var(--color-text-disabled);
 }
