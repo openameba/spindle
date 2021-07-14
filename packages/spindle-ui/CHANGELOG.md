@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.21.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.21.0...@openameba/spindle-ui@0.21.1) (2021-07-14)
+
+
+### Bug Fixes
+
+* **spindle-ui:** fix to use `prefers-reduced-motion` in `<TextArea />` ([7f16b26](https://github.com/openameba/spindle/commit/7f16b26af02e9a7137d3995256f695a04eac7a41))
+* **spindle-ui:** fix to use `prefers-reduced-motion` in `<TextField />` ([8fd124c](https://github.com/openameba/spindle/commit/8fd124cb31e986206ad38c1f895da7c91010594f))
+* **spindle-ui:** remove `min-width` from `<Button />` ([7a7fa78](https://github.com/openameba/spindle/commit/7a7fa78a27bf7785d5b7f4bbbbc8d59fa803a0d7))
+* **spindle-ui:** remove `min-width` from `<LinkButton />` ([86c0647](https://github.com/openameba/spindle/commit/86c06476aa9c322cd5a0ac300a6cf3494e1d7d50))
+
+
+### BREAKING CHANGES
+
+* **spindle-ui:** width is shrinked without limitation in `<LinkButton />`
+* **spindle-ui:** width is shrinked without limitation in `<Button />`
+
+
+
+
+
 # [0.21.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.20.0...@openameba/spindle-ui@0.21.0) (2021-07-02)
 
 
