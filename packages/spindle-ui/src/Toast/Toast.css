@@ -60,7 +60,7 @@
   transform: translateY(0);
 }
 
-@media (prefers-reduced-motion) {
+@media (prefers-reduced-motion: reduce) {
   .spui-Toast--slide {
     transition-duration: 0.1ms;
   }
