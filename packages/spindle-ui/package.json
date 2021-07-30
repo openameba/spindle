@@ -5,7 +5,9 @@
   "module": "./index.mjs",
   "types": "./index.d.ts",
   "style": "./index.css",
-  "sideEffects": false,
+  "sideEffects": [
+    "*.css"
+  ],
   "scripts": {
     "test": "run-p bundlesize lint test:interaction",
     "lint": "yarn lint:style",
