@@ -263,6 +263,36 @@
         "comment": "\nDo : テキストを強調する時、テキストの背面に使用\n\nDon't : 文字色、テキストの上に乗せる",
         "value": "rgba(245, 225, 0, 1)",
         "type": "color"
+      },
+      "contained button": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(15, 92, 31, 1)",
+        "type": "color"
+      },
+      "outlined button": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(231, 245, 233, 1)",
+        "type": "color"
+      },
+      "neutral button": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(8, 18, 26, 0.16)",
+        "type": "color"
+      },
+      "lighted button": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(198, 229, 201, 1)",
+        "type": "color"
+      },
+      "caution button": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(217, 28, 11, 0.05)",
+        "type": "color"
       }
     },
     "focus color": {
@@ -416,38 +446,6 @@
       }
     },
     "active color": {
-      "contained button": {
-        "category": "color",
-        "exportKey": "color",
-        "value": "rgba(15, 92, 31, 1)",
-        "type": "color"
-      },
-      "outlined button": {
-        "category": "color",
-        "exportKey": "color",
-        "value": "rgba(231, 245, 233, 1)",
-        "type": "color"
-      },
-      "neutral button": {
-        "category": "color",
-        "exportKey": "color",
-        "value": "rgba(8, 18, 26, 0.16)",
-        "type": "color"
-      },
-      "lighted button": {
-        "category": "color",
-        "exportKey": "color",
-        "value": "rgba(198, 229, 201, 1)",
-        "type": "color"
-      },
-      "caution button": {
-        "category": "color",
-        "exportKey": "color",
-        "value": "rgba(217, 28, 11, 0.05)",
-        "type": "color"
-      }
-    },
-    "hilighted color": {
       "contained button": {
         "category": "color",
         "exportKey": "color",
