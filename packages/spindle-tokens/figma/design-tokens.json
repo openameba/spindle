@@ -1,0 +1,515 @@
+{
+  "color": {
+    "background color": {
+      "gray": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "\nDo : Background , Divider\n\nDon't : Object , Button , Stroke , Text\n",
+        "value": "rgba(245, 246, 246, 1)",
+        "type": "color"
+      }
+    },
+    "surface color": {
+      "primary": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "\nDo : 白い背景、反転したボタン\n\nDon't : 文字、アイコン",
+        "value": "rgba(255, 255, 255, 1)",
+        "type": "color"
+      },
+      "secondary": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "\nDo : グレーの色面\n\nDon't : 下地、文字、アイコン",
+        "value": "rgba(8, 18, 26, 0.04)",
+        "type": "color"
+      },
+      "tertiary": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "\nDo : グレーの色面、ボタン\n\nDon't : 文字、アイコン",
+        "value": "rgba(8, 18, 26, 0.08)",
+        "type": "color"
+      },
+      "quaternary": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "\nDo : グレーの色面\n\nDon't : 文字、アイコン",
+        "value": "rgba(8, 18, 26, 0.16)",
+        "type": "color"
+      },
+      "accent primary": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "\nDo : Amebaの中でも特に強調したいもの\n\nDon't : 文字、アイコン、優先度がそこまで高くない要素",
+        "value": "rgba(41, 135, 55, 1)",
+        "type": "color"
+      },
+      "accent primary light": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "\nDo : 最重要項目ではないが強調したい要素、タグ、バナー\n\nDon't : 文字、アイコン",
+        "value": "rgba(231, 245, 233, 1)",
+        "type": "color"
+      },
+      "accent secondary": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "\nDo : Accent Primaryが使えない面で\n\nDon't : 文字、アイコン",
+        "value": "rgba(130, 190, 40, 1)",
+        "type": "color"
+      },
+      "accent secondary light": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "\nDo : Accent Secondaryに対して相対的に利用\n\nDon't : 文字、アイコン",
+        "value": "rgba(240, 247, 230, 1)",
+        "type": "color"
+      },
+      "caution": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "\nDo : 警告、注意喚起の要素の表層\n\nDon't : 文字、アイコン、訴求",
+        "value": "rgba(217, 28, 11, 1)",
+        "type": "color"
+      },
+      "caution light": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "\nDo : 軽度の注意喚起を行う時の表層\n\nDon't : 文字、アイコン、重度の警告",
+        "value": "rgba(217, 28, 11, 0.05)",
+        "type": "color"
+      }
+    },
+    "text color": {
+      "high emphasis": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(8, 18, 26, 1)",
+        "type": "color"
+      },
+      "medium emphasis": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(8, 18, 26, 0.74)",
+        "type": "color"
+      },
+      "low emphasis": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(8, 18, 26, 0.61)",
+        "type": "color"
+      },
+      "disable": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(8, 18, 26, 0.3)",
+        "type": "color"
+      },
+      "accent primary": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(35, 123, 49, 1)",
+        "type": "color"
+      },
+      "accent secondary": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "\nDo : Surface / Accent Secondaryに合わせて\n\nDon't : 単独での利用",
+        "value": "rgba(71, 125, 0, 1)",
+        "type": "color"
+      },
+      "high emphasis inverse": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "\nDo : 背景が濃い色に対しての強調色から本文まで\n\nDon't : 背景が薄い色",
+        "value": "rgba(255, 255, 255, 1)",
+        "type": "color"
+      },
+      "caution": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "\nDo : 警告文、注意喚起\n\nDon't : 訴求",
+        "value": "rgba(217, 28, 11, 1)",
+        "type": "color"
+      }
+    },
+    "object color": {
+      "high emphasis": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "\nDo : 強調アイコン\n\nDon't : 非強調アイコン、上にテキストが乗る要素、テキスト",
+        "value": "rgba(8, 18, 26, 1)",
+        "type": "color"
+      },
+      "medium emphasis": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "\nDo : 准強調アイコン\n\nDon't : 非強調アイコン、上にテキストが乗る要素、テキスト",
+        "value": "rgba(8, 18, 26, 0.74)",
+        "type": "color"
+      },
+      "low emphasis": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "\nDo : 非強調アイコン\n\nDon't : 非活性アイコン、上にテキストが乗る要素、テキスト",
+        "value": "rgba(8, 18, 26, 0.61)",
+        "type": "color"
+      },
+      "disable": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "\nDo : 非活性アイコン\n\nDon't : 押せるアイコン、上にテキストが乗る要素、テキスト",
+        "value": "rgba(8, 18, 26, 0.3)",
+        "type": "color"
+      },
+      "accent primary": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "\nDo : 大強調アイコン\n\nDon't : 非強調アイコン、上にテキストが乗る要素、テキスト",
+        "value": "rgba(41, 135, 55, 1)",
+        "type": "color"
+      },
+      "accent secondary": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "\nDo : 准強調アイコン\n\nDon't : 非強調アイコン、上にテキストが乗る要素、テキスト",
+        "value": "rgba(94, 155, 21, 1)",
+        "type": "color"
+      },
+      "caution": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "\nDo : 警告を示唆するアイコン\n\nDon't : 通常アイコン、上にテキストが乗る要素、テキスト",
+        "value": "rgba(217, 28, 11, 1)",
+        "type": "color"
+      },
+      "high emphasis inverse": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "\nDo : 背景が濃い色の時の強調アイコン\n\nDon't : 非強調アイコン、上にテキストが乗る要素、テキスト",
+        "value": "rgba(255, 255, 255, 1)",
+        "type": "color"
+      },
+      "expressive pink": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "\nDo : 緑や赤以外で装飾を付けたい時\n\nDon't : 非強調アイコン、上にテキストが乗る要素、テキスト",
+        "value": "rgba(230, 69, 106, 1)",
+        "type": "color"
+      }
+    },
+    "border color": {
+      "high emphasis": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "\nDo : 特に輪郭を強調させたい時\n\nDon't : 罫線",
+        "value": "rgba(8, 18, 26, 0.61)",
+        "type": "color"
+      },
+      "medium emphasis": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "\nDo : Text Fieldの輪郭\n\nDon't : 罫線",
+        "value": "rgba(8, 18, 26, 0.3)",
+        "type": "color"
+      },
+      "low emphasis": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "罫線に使用",
+        "value": "rgba(8, 18, 26, 0.08)",
+        "type": "color"
+      },
+      "accent primary": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "\nDo : 装飾的な罫線として\n\nDon't : ",
+        "value": "rgba(41, 135, 55, 1)",
+        "type": "color"
+      },
+      "caution": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "\nDo : エラーが発生した時の罫線\n\nDon't : エラー以外の罫線",
+        "value": "rgba(217, 28, 11, 1)",
+        "type": "color"
+      },
+      "high emphasis inverse": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "\nDo : 背景が濃い時の罫線\n\nDon't : 背景色が薄い時の罫線",
+        "value": "rgba(255, 255, 255, 1)",
+        "type": "color"
+      }
+    },
+    "highlight color": {
+      "highlight error": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "\nDo : テキストフィールドで文字数がオーバーエラー時\n\nDon't : 文字色、表層色",
+        "value": "rgba(217, 28, 11, 0.2)",
+        "type": "color"
+      },
+      "highlight hover": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(0, 0, 0, 0.3)",
+        "type": "color"
+      },
+      "highlight yellow": {
+        "category": "color",
+        "exportKey": "color",
+        "comment": "\nDo : テキストを強調する時、テキストの背面に使用\n\nDon't : 文字色、テキストの上に乗せる",
+        "value": "rgba(245, 225, 0, 1)",
+        "type": "color"
+      }
+    },
+    "focus color": {
+      "clarity": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(0, 145, 255, 1)",
+        "type": "color"
+      },
+      "ambiguous": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(0, 145, 255, 0.3)",
+        "type": "color"
+      }
+    },
+    "third party color": {
+      "facebook": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(24, 119, 242, 1)",
+        "type": "color"
+      },
+      "twitter": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(29, 161, 242, 1)",
+        "type": "color"
+      },
+      "instagram": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(242, 0, 118, 1)",
+        "type": "color"
+      },
+      "apple": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(0, 0, 0, 1)",
+        "type": "color"
+      },
+      "youtube": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(255, 0, 0, 1)",
+        "type": "color"
+      }
+    },
+    "brand color": {
+      "ameba green": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(45, 140, 60, 1)",
+        "type": "color"
+      },
+      "black": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(0, 0, 0, 1)",
+        "type": "color"
+      },
+      "white": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(255, 255, 255, 1)",
+        "type": "color"
+      },
+      "yellow green": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(130, 190, 40, 1)",
+        "type": "color"
+      },
+      "yellow": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(245, 225, 0, 1)",
+        "type": "color"
+      },
+      "neutral gray": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(246, 246, 246, 1)",
+        "type": "color"
+      }
+    },
+    "system color": {
+      "system black": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(0, 0, 0, 1)",
+        "type": "color"
+      },
+      "focus blue": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(0, 145, 255, 1)",
+        "type": "color"
+      },
+      "system pink": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(228, 0, 127, 1)",
+        "type": "color"
+      },
+      "system white": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(255, 255, 255, 1)",
+        "type": "color"
+      }
+    },
+    "tap highlight color": {
+      "tap highlight": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(8, 18, 26, 0.04)",
+        "type": "color"
+      }
+    },
+    "hover color": {
+      "contained button": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(15, 92, 31, 1)",
+        "type": "color"
+      },
+      "outlined button": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(231, 245, 233, 1)",
+        "type": "color"
+      },
+      "neutral button": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(8, 18, 26, 0.16)",
+        "type": "color"
+      },
+      "lighted button": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(198, 229, 201, 1)",
+        "type": "color"
+      },
+      "caution button": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(217, 28, 11, 0.05)",
+        "type": "color"
+      }
+    },
+    "active color": {
+      "contained button": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(15, 92, 31, 1)",
+        "type": "color"
+      },
+      "outlined button": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(231, 245, 233, 1)",
+        "type": "color"
+      },
+      "neutral button": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(8, 18, 26, 0.16)",
+        "type": "color"
+      },
+      "lighted button": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(198, 229, 201, 1)",
+        "type": "color"
+      },
+      "caution button": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(217, 28, 11, 0.05)",
+        "type": "color"
+      }
+    },
+    "hilighted color": {
+      "contained button": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(15, 92, 31, 1)",
+        "type": "color"
+      },
+      "outlined button": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(231, 245, 233, 1)",
+        "type": "color"
+      },
+      "neutral button": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(8, 18, 26, 0.16)",
+        "type": "color"
+      },
+      "lighted button": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(198, 229, 201, 1)",
+        "type": "color"
+      },
+      "caution button": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(217, 28, 11, 0.05)",
+        "type": "color"
+      }
+    },
+    "ripple color": {
+      "contained button": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(8, 18, 26, 0.16)",
+        "type": "color"
+      },
+      "outlined button": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(231, 245, 233, 1)",
+        "type": "color"
+      },
+      "neutral button": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(8, 18, 26, 0.08)",
+        "type": "color"
+      },
+      "lighted button": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(198, 229, 201, 1)",
+        "type": "color"
+      },
+      "caution button": {
+        "category": "color",
+        "exportKey": "color",
+        "value": "rgba(217, 28, 11, 0.05)",
+        "type": "color"
+      }
+    }
+  }
+}
