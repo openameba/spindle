@@ -4,7 +4,7 @@
     "css": {
       "transformGroup": "css",
       "files": [{
-        "destination": "variables.css",
+        "destination": "dist/spindle-tokens.css",
         "format": "css/variables",
         "options": {
           "outputReferences": true
