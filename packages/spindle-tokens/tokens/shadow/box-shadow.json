@@ -3,86 +3,86 @@
     "box shadow": {
       "lv1": {
         "offset x": {
-          "value": "{shadow.drop shadow.offset x}"
+          "value": "{shadow.drop shadow.offset x.value}"
         },
         "offset y": {
-          "value": "{shadow.drop shadow.lv1.offset y}"
+          "value": "{shadow.drop shadow.lv1.offset y.value}"
         },
         "blur radius": {
-          "value": "calc({shadow.drop shadow.lv1.blur radius} * 2)"
+          "value": "calc({shadow.drop shadow.lv1.blur radius.value} * 2)"
         },
         "color": {
-          "value": "{shadow.drop shadow.color}"
+          "value": "{shadow.drop shadow.color.value}"
         }
       },
       "lv2": {
         "offset x": {
-          "value": "{shadow.drop shadow.offset x}"
+          "value": "{shadow.drop shadow.offset x.value}"
         },
         "offset y": {
-          "value": "{shadow.drop shadow.lv2.offset y}"
+          "value": "{shadow.drop shadow.lv2.offset y.value}"
         },
         "blur radius": {
-          "value": "calc({shadow.drop shadow.lv2.blur radius} * 2)"
+          "value": "calc({shadow.drop shadow.lv2.blur radius.value} * 2)"
         },
         "color": {
-          "value": "{shadow.drop shadow.color}"
+          "value": "{shadow.drop shadow.color.value}"
         }
       },
       "lv3": {
         "offset x": {
-          "value": "{shadow.drop shadow.offset x}"
+          "value": "{shadow.drop shadow.offset x.value}"
         },
         "offset y": {
-          "value": "{shadow.drop shadow.lv3.offset y}"
+          "value": "{shadow.drop shadow.lv3.offset y.value}"
         },
         "blur radius": {
-          "value": "calc({shadow.drop shadow.lv3.blur radius} * 2)"
+          "value": "calc({shadow.drop shadow.lv3.blur radius.value} * 2)"
         },
         "color": {
-          "value": "{shadow.drop shadow.color}"
+          "value": "{shadow.drop shadow.color.value}"
         }
       },
       "lv4": {
         "offset x": {
-          "value": "{shadow.drop shadow.offset x}"
+          "value": "{shadow.drop shadow.offset x.value}"
         },
         "offset y": {
-          "value": "{shadow.drop shadow.lv4.offset y}"
+          "value": "{shadow.drop shadow.lv4.offset y.value}"
         },
         "blur radius": {
-          "value": "calc({shadow.drop shadow.lv4.blur radius} * 2)"
+          "value": "calc({shadow.drop shadow.lv4.blur radius.value} * 2)"
         },
         "color": {
-          "value": "{shadow.drop shadow.color}"
+          "value": "{shadow.drop shadow.color.value}"
         }
       },
       "lv5": {
         "offset x": {
-          "value": "{shadow.drop shadow.offset x}"
+          "value": "{shadow.drop shadow.offset x.value}"
         },
         "offset y": {
-          "value": "{shadow.drop shadow.lv5.offset y}"
+          "value": "{shadow.drop shadow.lv5.offset y.value}"
         },
         "blur radius": {
-          "value": "calc({shadow.drop shadow.lv5.blur radius} * 2)"
+          "value": "calc({shadow.drop shadow.lv5.blur radius.value} * 2)"
         },
         "color": {
-          "value": "{shadow.drop shadow.color}"
+          "value": "{shadow.drop shadow.color.value}"
         }
       },
       "lv6": {
         "offset x": {
-          "value": "{shadow.drop shadow.offset x}"
+          "value": "{shadow.drop shadow.offset x.value}"
         },
         "offset y": {
-          "value": "{shadow.drop shadow.lv6.offset y}"
+          "value": "{shadow.drop shadow.lv6.offset y.value}"
         },
         "blur radius": {
-          "value": "calc({shadow.drop shadow.lv6.blur radius} * 2)"
+          "value": "calc({shadow.drop shadow.lv6.blur radius.value} * 2)"
         },
         "color": {
-          "value": "{shadow.drop shadow.color}"
+          "value": "{shadow.drop shadow.color.value}"
         }
       }
     }

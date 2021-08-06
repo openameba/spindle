@@ -9,7 +9,7 @@
       },
       "lv1": {
         "offset x": {
-          "value": "{shadow.drop shadow.offset x}"
+          "value": "{shadow.drop shadow.offset x.value}"
         },
         "offset y": {
           "value": "1px"
@@ -18,12 +18,12 @@
           "value": "1.75px"
         },
         "color": {
-          "value": "{shadow.drop shadow.color}"
+          "value": "{shadow.drop shadow.color.value}"
         }
       },
       "lv2": {
         "offset x": {
-          "value": "{shadow.drop shadow.offset x}"
+          "value": "{shadow.drop shadow.offset x.value}"
         },
         "offset y": {
           "value": "3.25px"
@@ -32,12 +32,12 @@
           "value": "3.875px"
         },
         "color": {
-          "value": "{shadow.drop shadow.color}"
+          "value": "{shadow.drop shadow.color.value}"
         }
       },
       "lv3": {
         "offset x": {
-          "value": "{shadow.drop shadow.offset x}"
+          "value": "{shadow.drop shadow.offset x.value}"
         },
         "offset y": {
           "value": "3.5px"
@@ -46,12 +46,12 @@
           "value": "5.25px"
         },
         "color": {
-          "value": "{shadow.drop shadow.color}"
+          "value": "{shadow.drop shadow.color.value}"
         }
       },
       "lv4": {
         "offset x": {
-          "value": "{shadow.drop shadow.offset x}"
+          "value": "{shadow.drop shadow.offset x.value}"
         },
         "offset y": {
           "value": "4.75px"
@@ -60,12 +60,12 @@
           "value": "7.125px"
         },
         "color": {
-          "value": "{shadow.drop shadow.color}"
+          "value": "{shadow.drop shadow.color.value}"
         }
       },
       "lv5": {
         "offset x": {
-          "value": "{shadow.drop shadow.offset x}"
+          "value": "{shadow.drop shadow.offset x.value}"
         },
         "offset y": {
           "value": "9px"
@@ -74,12 +74,12 @@
           "value": "10.75px"
         },
         "color": {
-          "value": "{shadow.drop shadow.color}"
+          "value": "{shadow.drop shadow.color.value}"
         }
       },
       "lv6": {
         "offset x": {
-          "value": "{shadow.drop shadow.offset x}"
+          "value": "{shadow.drop shadow.offset x.value}"
         },
         "offset y": {
           "value": "11px"
@@ -88,7 +88,7 @@
           "value": "14px"
         },
         "color": {
-          "value": "{shadow.drop shadow.color}"
+          "value": "{shadow.drop shadow.color.value}"
         }
       }
     }
