@@ -1,12 +1,14 @@
 {
-  "source": ["properties/**/*.json"],
+  "source": ["tokens/**/*.json"],
   "platforms": {
-    "scss": {
-      "transformGroup": "scss",
-      "buildPath": "dist/",
+    "css": {
+      "transformGroup": "css",
       "files": [{
-        "destination": "scss/_variables.scss",
-        "format": "scss/variables"
+        "destination": "variables.css",
+        "format": "css/variables",
+        "options": {
+          "outputReferences": true
+        }
       }]
     }
   }
