@@ -19,6 +19,6 @@
     "url": "https://github.com/openameba/spindle/issues"
   },
   "devDependencies": {
-    "style-dictionary": "^2.10.3"
+    "style-dictionary": "^3.0.1"
   }
 }
