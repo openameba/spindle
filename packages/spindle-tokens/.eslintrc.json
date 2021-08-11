@@ -1,0 +1,10 @@
+{
+  "overrides": [
+    {
+      "files": ["lib/**/*.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ]
+}
