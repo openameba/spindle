@@ -12,7 +12,6 @@
     "url": "git+https://github.com/openameba/spindle.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1",
     "build": "style-dictionary build",
     "export": "npx @figma-export/cli use-config"
   },
