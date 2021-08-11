@@ -1,4 +1,4 @@
-const { exporter } = require('./lib/output-styles-as-json');
+const { exporter } = require('./lib/output-styles-as-style-dictionary');
 
 module.exports = {
     commands: [

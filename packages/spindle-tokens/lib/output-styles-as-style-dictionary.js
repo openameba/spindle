@@ -24,7 +24,7 @@ function defaultReplacer(obj) {
  */
 function exporter({
   output,
-  fileName = '_variables.json',
+  fileName = 'design-tokens.json',
   replacer = defaultReplacer,
 }) {
   function customizer(obj) {
@@ -49,12 +49,19 @@ function exporter({
                 .split('/')
                 .map((s) => s.trim())
                 .join('.');
-              const objectValue = {
-                value,
-              };
+
+              const objectValue = {};
+              let aliasValue;
+
               if (style.comment) {
+                const aliasValueMatch = style.comment.match(/{.+}/);
+                aliasValue = aliasValueMatch ? aliasValueMatch[0] : null;
+
                 objectValue.comment = style.comment;
               }
+
+              objectValue.value = aliasValue || value;
+
               set(result, propArray, objectValue, customizer);
             }
 
