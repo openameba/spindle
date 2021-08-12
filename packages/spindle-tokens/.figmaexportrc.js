@@ -7,7 +7,7 @@ module.exports = {
             outputters: [
                 exporter({
                     output: './tokens/color',
-                    replacer: result => JSON.stringify({ Color: result }, null, 2),
+                    replacer: result => JSON.stringify({ Color: { Primitive: result } }, null, 2),
                     fileName: 'primitive.json'
                 })
             ]
