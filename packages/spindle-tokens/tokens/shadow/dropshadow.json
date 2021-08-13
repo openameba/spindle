@@ -1,0 +1,141 @@
+{
+  "Shadow": {
+    "Drop Shadow": {
+      "【予備】Lv1": {
+        "color": {
+          "value": "rgba(8, 18, 26, 0.12)"
+        },
+        "inset": {
+          "value": false
+        },
+        "offset": {
+          "x": {
+            "value": 0
+          },
+          "y": {
+            "value": 1
+          }
+        },
+        "blurRadius": {
+          "value": 1.75
+        },
+        "spreadRadius": {
+          "value": 0
+        },
+        "comment": "予備として用意してあります。"
+      },
+      "Lv2": {
+        "color": {
+          "value": "rgba(8, 18, 26, 0.12)"
+        },
+        "inset": {
+          "value": false
+        },
+        "offset": {
+          "x": {
+            "value": 0
+          },
+          "y": {
+            "value": 3.25
+          }
+        },
+        "blurRadius": {
+          "value": 3.875
+        },
+        "spreadRadius": {
+          "value": 0
+        }
+      },
+      "【予備】Lv3": {
+        "color": {
+          "value": "rgba(8, 18, 26, 0.12)"
+        },
+        "inset": {
+          "value": false
+        },
+        "offset": {
+          "x": {
+            "value": 0
+          },
+          "y": {
+            "value": 3.5
+          }
+        },
+        "blurRadius": {
+          "value": 5.25
+        },
+        "spreadRadius": {
+          "value": 0
+        },
+        "comment": "予備として用意してあります。"
+      },
+      "Lv4": {
+        "color": {
+          "value": "rgba(8, 18, 26, 0.12)"
+        },
+        "inset": {
+          "value": false
+        },
+        "offset": {
+          "x": {
+            "value": 0
+          },
+          "y": {
+            "value": 4.75
+          }
+        },
+        "blurRadius": {
+          "value": 7.125
+        },
+        "spreadRadius": {
+          "value": 0
+        }
+      },
+      "【予備】Lv5": {
+        "color": {
+          "value": "rgba(8, 18, 26, 0.12)"
+        },
+        "inset": {
+          "value": false
+        },
+        "offset": {
+          "x": {
+            "value": 0
+          },
+          "y": {
+            "value": 9
+          }
+        },
+        "blurRadius": {
+          "value": 10.75
+        },
+        "spreadRadius": {
+          "value": 0
+        },
+        "comment": "予備として用意してあります。"
+      },
+      "Lv6": {
+        "color": {
+          "value": "rgba(8, 18, 26, 0.12)"
+        },
+        "inset": {
+          "value": false
+        },
+        "offset": {
+          "x": {
+            "value": 0
+          },
+          "y": {
+            "value": 11
+          }
+        },
+        "blurRadius": {
+          "value": 14
+        },
+        "spreadRadius": {
+          "value": 0
+        }
+      }
+    }
+  }
+}
