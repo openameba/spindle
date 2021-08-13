@@ -39,41 +39,81 @@ function exporter({
       .forEach((style) => {
         switch (style.styleType) {
           case 'FILL': {
-            const value = style.fills
-              .filter((fill) => fill.visible)
-              .map((fill) => fill.value)
-              .join(', ');
+            const visibleFills = style.fills.filter((fill) => fill.visible);
 
-            if (value) {
-              const propArray = style.name
-                .split('/')
-                .map((s) => s.trim())
-                .join('.');
+            if (visibleFills.length > 0) {
+              visibleFills.forEach((fill, i) => {
+                const propArray = style.name
+                  .replace(/\./g, '')
+                  .split('/')
+                  .map((s) => s.trim())
+                  .join('.');
+                const name = i === 0 ? propArray : `${propArray}.${i}`;
 
-              const objectValue = {};
-              let aliasValue;
+                const objectValue = {};
+                let aliasValue;
 
-              if (style.comment) {
-                // extract style dictionary style alias value from comment
-                const aliasReg = /{.+}/;
-                const aliasValueMatch = style.comment.match(aliasReg);
-                aliasValue = aliasValueMatch ? aliasValueMatch[0] : null;
+                if (style.comment) {
+                  // extract style dictionary style alias value from comment
+                  const aliasReg = /{.+}/;
+                  const aliasValueMatch = style.comment.match(aliasReg);
+                  aliasValue = aliasValueMatch ? aliasValueMatch[0] : null;
 
-                const finalComment = style.comment.replace(aliasReg, '');
+                  const finalComment = style.comment.replace(aliasReg, '');
 
-                if (finalComment) {
-                  objectValue.comment = finalComment;
+                  if (finalComment) {
+                    objectValue.comment = finalComment;
+                  }
                 }
-              }
 
-              objectValue.value = aliasValue || value;
+                objectValue.value = aliasValue || fill.value;
 
-              set(result, propArray, objectValue, customizer);
+                set(result, name, objectValue, customizer);
+              });
             }
 
             break;
           }
 
+          case 'EFFECT': {
+            const visibleEffects = style.effects.filter(
+              (effect) => effect.visible,
+            );
+
+            const dropShadowValues = visibleEffects.filter(
+              (effect) =>
+                effect.type === 'INNER_SHADOW' || effect.type === 'DROP_SHADOW',
+            );
+
+            dropShadowValues.forEach((effect, i) => {
+              const propArray = style.name
+                .replace(/\./g, '')
+                .split('/')
+                .map((s) => s.trim())
+                .join('.');
+              const name = i === 0 ? propArray : `${propArray}.${i}`;
+              const objectValue = {
+                color: { value: effect.color.rgba },
+                inset: { value: effect.inset },
+                offset: {
+                  x: { value: effect.offset.x },
+                  y: { value: effect.offset.y },
+                },
+                blurRadius: { value: effect.blurRadius / 2 },
+                spreadRadius: { value: effect.spreadRadius },
+              };
+
+              if (style.comment) {
+                objectValue.comment = style.comment;
+              }
+
+              set(result, name, objectValue, customizer);
+            });
+
+            // TODO: add LAYER_BLUR
+
+            break;
+          }
           // TODO: add EFFECT, TEXT cases
         }
       });
