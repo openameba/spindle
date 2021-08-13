@@ -54,10 +54,16 @@ function exporter({
               let aliasValue;
 
               if (style.comment) {
-                const aliasValueMatch = style.comment.match(/{.+}/);
+                // extract style dictionary style alias value from comment
+                const aliasReg = /{.+}/;
+                const aliasValueMatch = style.comment.match(aliasReg);
                 aliasValue = aliasValueMatch ? aliasValueMatch[0] : null;
 
-                objectValue.comment = style.comment;
+                const finalComment = style.comment.replace(aliasReg, '');
+
+                if (finalComment) {
+                  objectValue.comment = finalComment;
+                }
               }
 
               objectValue.value = aliasValue || value;
