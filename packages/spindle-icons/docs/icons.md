@@ -260,7 +260,6 @@
 | screen_inline | ![](../dist/svg/screen_inline.svg) |
 | search | ![](../dist/svg/search.svg) |
 | service | ![](../dist/svg/service.svg) |
-| setting | ![](../dist/svg/setting.svg) |
 | share | ![](../dist/svg/share.svg) |
 | shine_fill | ![](../dist/svg/shine_fill.svg) |
 | shirt | ![](../dist/svg/shirt.svg) |

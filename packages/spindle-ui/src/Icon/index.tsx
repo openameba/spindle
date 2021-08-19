@@ -257,7 +257,6 @@ export { default as ScreenFull } from './ScreenFull';
 export { default as ScreenInline } from './ScreenInline';
 export { default as Search } from './Search';
 export { default as Service } from './Service';
-export { default as Setting } from './Setting';
 export { default as Share } from './Share';
 export { default as ShineFill } from './ShineFill';
 export { default as Shirt } from './Shirt';
