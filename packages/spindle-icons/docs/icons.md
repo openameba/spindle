@@ -258,7 +258,6 @@
 | screen_inline | ![](../dist/svg/screen_inline.svg) |
 | search | ![](../dist/svg/search.svg) |
 | service | ![](../dist/svg/service.svg) |
-| setting | ![](../dist/svg/setting.svg) |
 | share | ![](../dist/svg/share.svg) |
 | shelf | ![](../dist/svg/shelf.svg) |
 | shelf_fill | ![](../dist/svg/shelf_fill.svg) |
