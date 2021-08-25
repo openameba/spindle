@@ -138,6 +138,7 @@
   color: var(--LinkButton--outlined-color);
   padding-bottom: 6px;
   padding-top: 6px;
+  transition: none;
 }
 
 .spui-LinkButton--outlined:active {
