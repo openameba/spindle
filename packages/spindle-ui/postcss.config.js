@@ -1,6 +1,6 @@
 module.exports = {
   /**
-   * TODO: cerate .browserslistrc
+   * TODO: create .browserslistrc
    * - for modern browsers
    * - for IE11
    */
