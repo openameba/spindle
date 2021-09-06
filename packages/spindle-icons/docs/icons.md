@@ -71,6 +71,7 @@
 | check_bold | ![](../dist/svg/check_bold.svg) |
 | check_circle | ![](../dist/svg/check_circle.svg) |
 | check_circle_fill | ![](../dist/svg/check_circle_fill.svg) |
+| check_rectangle | ![](../dist/svg/check_rectangle.svg) |
 | checklist | ![](../dist/svg/checklist.svg) |
 | chevron_down | ![](../dist/svg/chevron_down.svg) |
 | chevron_down_bold | ![](../dist/svg/chevron_down_bold.svg) |
@@ -101,6 +102,7 @@
 | cross_bold | ![](../dist/svg/cross_bold.svg) |
 | cross_circle | ![](../dist/svg/cross_circle.svg) |
 | cross_circle_fill | ![](../dist/svg/cross_circle_fill.svg) |
+| cross_rectangle | ![](../dist/svg/cross_rectangle.svg) |
 | cutlery | ![](../dist/svg/cutlery.svg) |
 | dice | ![](../dist/svg/dice.svg) |
 | dot | ![](../dist/svg/dot.svg) |
