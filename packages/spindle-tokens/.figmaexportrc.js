@@ -2,25 +2,35 @@ const { exporter } = require('./lib/output-styles-as-style-dictionary');
 
 module.exports = {
     commands: [
-        ['styles', {
-            fileId: process.env.FIGMA_COLOR_PRIMITIVE_FILE_ID,
-            outputters: [
-                exporter({
-                    output: './tokens/color',
-                    replacer: result => JSON.stringify({ Color: { Primitive: result } }, null, 2),
-                    fileName: 'primitive.json'
-                })
-            ]
+      ['styles', {
+        fileId: process.env.FIGMA_COLOR_PRIMITIVE_FILE_ID,
+          outputters: [
+            exporter({
+              output: './tokens/color',
+                replacer: result => JSON.stringify({ Color: { Primitive: result } }, null, 2),
+                  fileName: 'primitive.json'
+            })
+          ]
         }],
         ['styles', {
-          fileId: process.env.FIGMA_COLOR_THEME_DARK_FILE_ID,
+          fileId: process.env.FIGMA_COLOR_THEME_FILE_ID,
           outputters: [
-              exporter({
-                  output: './tokens/color',
-                  replacer: result => JSON.stringify({ Color: { Theme: result } }, null, 2),
-                  fileName: 'themedark.json' // TODO: change filename
-              })
+            exporter({
+              output: './tokens/color',
+              replacer: result => JSON.stringify({ Color: { Theme: result } }, null, 2),
+              fileName: 'theme.json'
+            })
           ]
+        }],
+      ['styles', {
+        fileId: process.env.FIGMA_COLOR_THEME_DARK_FILE_ID,
+        outputters: [
+          exporter({
+            output: './tokens/color',
+            replacer: result => JSON.stringify({ Color: { Theme: result } }, null, 2),
+            fileName: 'theme-dark.json'
+          })
+        ]
       }],
       ['styles', {
         fileId: process.env.FIGMA_DROP_SHADOW_FILE_ID,
