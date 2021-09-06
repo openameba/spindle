@@ -36,6 +36,7 @@
 | arrowpaging_up | ![](../dist/svg/arrowpaging_up.svg) |
 | arrowpaging_up_circle | ![](../dist/svg/arrowpaging_up_circle.svg) |
 | article | ![](../dist/svg/article.svg) |
+| article_slash | ![](../dist/svg/article_slash.svg) |
 | astrogy | ![](../dist/svg/astrogy.svg) |
 | astrogy_fill | ![](../dist/svg/astrogy_fill.svg) |
 | baby | ![](../dist/svg/baby.svg) |
@@ -51,6 +52,8 @@
 | book_fill | ![](../dist/svg/book_fill.svg) |
 | bookmark | ![](../dist/svg/bookmark.svg) |
 | bookmark_fill | ![](../dist/svg/bookmark_fill.svg) |
+| bookshelf | ![](../dist/svg/bookshelf.svg) |
+| bookshelf_fill | ![](../dist/svg/bookshelf_fill.svg) |
 | border | ![](../dist/svg/border.svg) |
 | bottomnav_followfeed_active | ![](../dist/svg/bottomnav_followfeed_active.svg) |
 | bottomnav_followfeed_inactive | ![](../dist/svg/bottomnav_followfeed_inactive.svg) |
@@ -102,6 +105,7 @@
 | dice | ![](../dist/svg/dice.svg) |
 | dot | ![](../dist/svg/dot.svg) |
 | dotmoney | ![](../dist/svg/dotmoney.svg) |
+| download | ![](../dist/svg/download.svg) |
 | embed | ![](../dist/svg/embed.svg) |
 | emotion_fill | ![](../dist/svg/emotion_fill.svg) |
 | entry_lost | ![](../dist/svg/entry_lost.svg) |
@@ -119,6 +123,7 @@
 | file_circle_fill | ![](../dist/svg/file_circle_fill.svg) |
 | file_fill | ![](../dist/svg/file_fill.svg) |
 | filter | ![](../dist/svg/filter.svg) |
+| filter_check | ![](../dist/svg/filter_check.svg) |
 | fit | ![](../dist/svg/fit.svg) |
 | flag_fill | ![](../dist/svg/flag_fill.svg) |
 | flag_ranking | ![](../dist/svg/flag_ranking.svg) |
@@ -136,6 +141,8 @@
 | game | ![](../dist/svg/game.svg) |
 | game_fill | ![](../dist/svg/game_fill.svg) |
 | game_kantan | ![](../dist/svg/game_kantan.svg) |
+| gear | ![](../dist/svg/gear.svg) |
+| gear_fill | ![](../dist/svg/gear_fill.svg) |
 | genre | ![](../dist/svg/genre.svg) |
 | genre_add | ![](../dist/svg/genre_add.svg) |
 | genre_done | ![](../dist/svg/genre_done.svg) |
@@ -193,6 +200,8 @@
 | movie_stop | ![](../dist/svg/movie_stop.svg) |
 | music_fill | ![](../dist/svg/music_fill.svg) |
 | new | ![](../dist/svg/new.svg) |
+| newbook | ![](../dist/svg/newbook.svg) |
+| newbook_fill | ![](../dist/svg/newbook_fill.svg) |
 | news | ![](../dist/svg/news.svg) |
 | nice | ![](../dist/svg/nice.svg) |
 | nice_done | ![](../dist/svg/nice_done.svg) |
@@ -251,7 +260,6 @@
 | screen_inline | ![](../dist/svg/screen_inline.svg) |
 | search | ![](../dist/svg/search.svg) |
 | service | ![](../dist/svg/service.svg) |
-| setting | ![](../dist/svg/setting.svg) |
 | share | ![](../dist/svg/share.svg) |
 | shine_fill | ![](../dist/svg/shine_fill.svg) |
 | shirt | ![](../dist/svg/shirt.svg) |
