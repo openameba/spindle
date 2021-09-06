@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.22.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.21.2...@openameba/spindle-ui@0.22.0) (2021-09-06)
+
+
+### Bug Fixes
+
+* **spindle-ui:** typo in postcss.config.js ([0d3b9e9](https://github.com/openameba/spindle/commit/0d3b9e99a6a1b271f7d5abcf9b9b996d219a85d4))
+
+
+### chore
+
+* **spindle-icons,spindle-ui:** delete setting icon ([3aef4d4](https://github.com/openameba/spindle/commit/3aef4d41ab326335c4692388d5be84f533471192))
+
+
+### Features
+
+* **spindle-icons:** update icons ([7c6c774](https://github.com/openameba/spindle/commit/7c6c774ff813bfe7bb0c7f087e146b7a58f3b658))
+* **spindle-icons:** update icons ([ddbfec2](https://github.com/openameba/spindle/commit/ddbfec2a80e64c52fdc0bb2994eb0b827e56b60e))
+
+
+### BREAKING CHANGES
+
+* **spindle-icons,spindle-ui:** setting icon was renamed to gear
+
+
+
+
+
 ## [0.21.2](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.21.1...@openameba/spindle-ui@0.21.2) (2021-07-30)
 
 **Note:** Version bump only for package @openameba/spindle-ui
