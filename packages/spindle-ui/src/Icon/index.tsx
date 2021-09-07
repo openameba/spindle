@@ -231,6 +231,7 @@ export { default as PersonTwoDoneFill } from './PersonTwoDoneFill';
 export { default as PersonTwoFill } from './PersonTwoFill';
 export { default as Peta } from './Peta';
 export { default as Pigg } from './Pigg';
+export { default as PinFill } from './PinFill';
 export { default as PlayCircle } from './PlayCircle';
 export { default as PlayFill } from './PlayFill';
 export { default as Plus } from './Plus';
