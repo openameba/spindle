@@ -234,6 +234,7 @@
 | person_two_fill | ![](../dist/svg/person_two_fill.svg) |
 | peta | ![](../dist/svg/peta.svg) |
 | pigg | ![](../dist/svg/pigg.svg) |
+| pin_fill | ![](../dist/svg/pin_fill.svg) |
 | play_circle | ![](../dist/svg/play_circle.svg) |
 | play_fill | ![](../dist/svg/play_fill.svg) |
 | plus | ![](../dist/svg/plus.svg) |
