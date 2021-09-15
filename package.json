@@ -12,7 +12,8 @@
     "format:script": "eslint . --fix",
     "format:packages": "lerna run format",
     "bootstrap": "lerna bootstrap",
-    "build": "lerna run build"
+    "build": "lerna run build",
+    "prepare": "is-ci || husky install"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.0.0",
