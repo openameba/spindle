@@ -39,6 +39,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           commit-message: 'feat(spindle-icons): update icons'
           branch: feat/build-icon-via-webhook
           delete-branch: true
