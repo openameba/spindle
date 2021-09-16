@@ -58,7 +58,7 @@
     "bundlesize": "^0.18.0",
     "cssnano": "^4.1.10",
     "firebase-tools": "^9.0.0",
-    "jest": "^26.1.0",
+    "jest": "^27.0.0",
     "postcss-cli": "^8.0.0",
     "postcss-import": "^12.0.1",
     "react": "^17.0.1",
@@ -70,6 +70,6 @@
     "stylelint-order": "^4.1.0",
     "stylelint-prettier": "^1.1.2",
     "stylelint-selector-bem-pattern": "^2.1.0",
-    "ts-jest": "^26.1.4"
+    "ts-jest": "^27.0.0"
   }
 }
