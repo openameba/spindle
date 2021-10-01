@@ -1,6 +1,9 @@
 name: build icon via webhook
 
 on:
+  schedule:
+    # Check updates everyday at 14:30 JST
+    - cron:  '30 23 * * *'
   workflow_dispatch:
     inputs:
       modified_components:
@@ -30,8 +33,9 @@ jobs:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
           FILE_KEY: ${{ secrets.FIGMA_ICON_FILE_KEY }}
           NODE_ID: ${{ secrets.FIGMA_ICON_NODE_ID }}
-          ICON_NAMES: ${{ github.event.inputs.modified_components }}
+          ICON_NAMES_INPUT: ${{ github.event.inputs.modified_components }}
         run: |
+          ICON_NAMES="${ICON_NAMES_INPUT:-["ALL"]}"
           node -p "JSON.stringify({ fileKey: '$FILE_KEY', nodeId: '$NODE_ID', dest: 'dist', iconNames: '$ICON_NAMES' })" > packages/spindle-icons/figma.json
           npx lerna run --scope @openameba/spindle-icons build
           npx lerna run --scope @openameba/spindle-ui icon
