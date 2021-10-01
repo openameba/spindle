@@ -13,7 +13,7 @@ function SvgPlayFill(props: React.SVGProps<SVGSVGElement>) {
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M20.54 11.15L7.71 3.17c-.66-.41-1.53.07-1.53.85v15.96c0 .78.86 1.26 1.53.85l12.82-7.98c.63-.39.63-1.31.01-1.7z"
+        d="M18.76 10.73L7.38 3.65c-1-.62-2.29.1-2.29 1.27v14.16c0 1.18 1.29 1.9 2.29 1.27l11.38-7.08c.94-.58.94-1.96 0-2.54z"
       />
     </svg>
   );

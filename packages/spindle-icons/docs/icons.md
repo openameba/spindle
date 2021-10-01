@@ -42,6 +42,7 @@
 | baby | ![](../dist/svg/baby.svg) |
 | bbs | ![](../dist/svg/bbs.svg) |
 | beginner | ![](../dist/svg/beginner.svg) |
+| beginnermark | ![](../dist/svg/beginnermark.svg) |
 | bell | ![](../dist/svg/bell.svg) |
 | bell_fill | ![](../dist/svg/bell_fill.svg) |
 | bell_fill_slash | ![](../dist/svg/bell_fill_slash.svg) |
@@ -65,6 +66,7 @@
 | bottomnvav_mypage_inactive | ![](../dist/svg/bottomnvav_mypage_inactive.svg) |
 | bullets | ![](../dist/svg/bullets.svg) |
 | calendar | ![](../dist/svg/calendar.svg) |
+| calendardaily | ![](../dist/svg/calendardaily.svg) |
 | camera_fill | ![](../dist/svg/camera_fill.svg) |
 | caution_fill | ![](../dist/svg/caution_fill.svg) |
 | check | ![](../dist/svg/check.svg) |
@@ -88,6 +90,7 @@
 | clock_fill | ![](../dist/svg/clock_fill.svg) |
 | coin | ![](../dist/svg/coin.svg) |
 | comment | ![](../dist/svg/comment.svg) |
+| comment_ban | ![](../dist/svg/comment_ban.svg) |
 | comment_fill | ![](../dist/svg/comment_fill.svg) |
 | comment_pen | ![](../dist/svg/comment_pen.svg) |
 | comment_two_fill | ![](../dist/svg/comment_two_fill.svg) |
@@ -142,6 +145,7 @@
 | folder_two_fill | ![](../dist/svg/folder_two_fill.svg) |
 | font | ![](../dist/svg/font.svg) |
 | fontstyle | ![](../dist/svg/fontstyle.svg) |
+| free_circle | ![](../dist/svg/free_circle.svg) |
 | game | ![](../dist/svg/game.svg) |
 | game_fill | ![](../dist/svg/game_fill.svg) |
 | game_kantan | ![](../dist/svg/game_kantan.svg) |
