@@ -1,6 +1,7 @@
 name: build icon via webhook
 
 on:
+  push:
   schedule:
     # Check updates everyday at 14:30 JST
     - cron:  '30 23 * * *'
