@@ -1,192 +1,21 @@
 {
   "Color": {
     "Theme": {
-      "Highlight": {
-        "Error": {
-          "value": "{Color.Primitive.Caution.Red Vivid 20 alpha.value}"
-        },
-        "Hover": {
-          "value": "{Color.Primitive.White.30 alpha.value}"
-        },
-        "Yellow": {
-          "value": "{Color.Primitive.Highlight.Yellow 100.value}"
-        },
-        "Yellow 100": {
-          "value": "rgba(245, 225, 0, 1)"
-        },
-        "Yellow 30 alpha": {
-          "value": "rgba(245, 225, 0, 0.3)"
-        }
-      },
-      "Focus": {
-        "Clarity": {
-          "value": "{Color.Primitive.Focus.Blue 100.value}"
-        },
-        "Ambiguous": {
-          "value": "{Color.Primitive.Focus.Blue 30 alpha.value}"
-        },
-        "Blue 100": {
-          "value": "rgba(0, 145, 255, 1)"
-        },
-        "Blue 30 alpha": {
-          "value": "rgba(0, 145, 255, 0.3)"
-        }
-      },
-      "Third Party": {
-        "Facebook": {
-          "value": "{Color.Primitive.Third Party.Facebook Blue.value}"
-        },
-        "Twitter": {
-          "value": "{Color.Primitive.Third Party.Twitter Blue.value}"
-        },
-        "Instagram": {
-          "value": "{Color.Primitive.Third Party.Instagram Pink.value}"
-        },
-        "Apple": {
-          "value": "{Color.Primitive.White.100.value}"
-        },
-        "Youtube": {
-          "value": "{Color.Primitive.Third Party.Youtube Red.value}"
-        },
-        "Facebook Blue": {
-          "value": "rgba(24, 119, 242, 1)"
-        },
-        "Twitter Blue": {
-          "value": "rgba(29, 161, 242, 1)"
-        },
-        "Instagram Pink": {
-          "value": "rgba(242, 0, 118, 1)"
-        },
-        "Apple Black": {
-          "value": "rgba(0, 0, 0, 1)"
-        },
-        "Apple White": {
-          "value": "rgba(255, 255, 255, 1)"
-        },
-        "Youtube Red": {
-          "value": "rgba(255, 0, 0, 1)"
-        }
-      },
-      "Brand": {
-        "Ameba Green": {
-          "value": "rgba(45, 140, 60, 1)"
-        },
-        "Neutral Gray": {
-          "value": "rgba(246, 246, 246, 1)"
-        },
-        "Yellow Green": {
-          "value": "rgba(130, 190, 40, 1)"
-        },
-        "Yellow": {
-          "value": "rgba(245, 225, 0, 1)"
-        },
-        "White": {
-          "value": "rgba(255, 255, 255, 1)"
-        },
-        "Black": {
-          "value": "rgba(0, 0, 0, 1)"
-        },
-        "White-stroke": {
-          "value": "rgba(8, 18, 26, 0.05)"
-        }
-      },
-      "Tap Highlight": {
-        "Base": {
-          "value": "{Color.Primitive.White.5 alpha.value}"
-        }
-      },
-      "Text": {
-        "High Emphasis": {
-          "value": "{Color.Primitive.White.100.value}"
-        },
-        "Medium Emphasis": {
-          "value": "{Color.Primitive.White.80 alpha.value}"
-        },
-        "Low Emphasis": {
-          "value": "{Color.Primitive.White.60 alpha.value}"
-        },
-        "Disable": {
-          "value": "{Color.Primitive.White.20 alpha.value}"
-        },
-        "Accent Primary": {
-          "value": "{Color.Primitive.Primary Green.50.value}"
-        },
-        "Accent Secondary": {
-          "value": "{Color.Primitive.Secondary Green.50.value}"
-        },
-        "Caution": {
-          "value": "{Color.Primitive.Caution.Red Vivid 100.value}"
-        },
-        "High Emphasis Inverse": {
-          "value": "{Color.Primitive.Gray.100.value}"
-        }
-      },
-      "Hover": {
-        "Contained Button": {
-          "value": "{Color.Primitive.Primary Green.100.value}"
-        },
-        "Outlined Button": {
-          "value": "{Color.Primitive.White.5 alpha.value}"
-        },
-        "Neutral Button": {
-          "value": "{Color.Primitive.White.5 alpha.value}"
-        },
-        "Lighted Button": {
-          "value": "{Color.Primitive.White.10 alpha.value}"
-        },
-        "Caution Button": {
-          "value": "{Color.Primitive.White.5 alpha.value}"
-        }
-      },
       "Active": {
+        "Caution Button": {
+          "value": "{Color.Primitive.White.5 alpha.value}"
+        },
         "Contained Button": {
           "value": "{Color.Primitive.Primary Green.100.value}"
         },
-        "Outlined Button": {
-          "value": "{Color.Primitive.White.5 alpha.value}"
-        },
-        "Neutral Button": {
-          "value": "{Color.Primitive.White.5 alpha.value}"
-        },
         "Lighted Button": {
-          "value": "{Color.Primitive.White.10 alpha.value}"
-        },
-        "Caution Button": {
-          "value": "{Color.Primitive.White.5 alpha.value}"
-        }
-      },
-      "Highlighted": {
-        "Contained Button": {
-          "value": "{Color.Primitive.Primary Green.100.value}"
-        },
-        "Outlined Button": {
-          "value": "{Color.Primitive.White.5 alpha.value}"
-        },
-        "Neutral Button": {
-          "value": "{Color.Primitive.White.5 alpha.value}"
-        },
-        "Lighted Button": {
-          "value": "{Color.Primitive.White.10 alpha.value}"
-        },
-        "Caution Button": {
-          "value": "{Color.Primitive.White.5 alpha.value}"
-        }
-      },
-      "Ripple": {
-        "Contained Button": {
-          "value": "{Color.Primitive.White.20 alpha.value}"
-        },
-        "Outlined Button": {
           "value": "{Color.Primitive.White.10 alpha.value}"
         },
         "Neutral Button": {
           "value": "{Color.Primitive.White.5 alpha.value}"
         },
-        "Lighted Button": {
-          "value": "{Color.Primitive.White.10 alpha.value}"
-        },
-        "Caution Button": {
-          "value": "{Color.Primitive.White.10 alpha.value}"
+        "Outlined Button": {
+          "value": "{Color.Primitive.White.5 alpha.value}"
         }
       },
       "Background": {
@@ -194,102 +23,99 @@
           "value": "{Color.Primitive.Gray.100.value}"
         }
       },
-      "Surface": {
-        "Primary": {
-          "value": "{Color.Primitive.Gray.90.value}"
+      "Black": {
+        "100": {
+          "value": "rgba(0, 0, 0, 1)"
         },
-        "Tertiary": {
-          "value": "{Color.Primitive.White.10 alpha.value}"
+        "10 alpha": {
+          "value": "rgba(0, 0, 0, 0.1)"
         },
-        "Accent Primary": {
-          "value": "{Color.Primitive.Primary Green.70.value}"
+        "20 alpha": {
+          "value": "rgba(0, 0, 0, 0.2)"
         },
-        "Accent Secondary": {
-          "value": "{Color.Primitive.Secondary Green.50.value}"
+        "30 alpha": {
+          "value": "rgba(0, 0, 0, 0.3)"
         },
-        "Caution": {
-          "value": "{Color.Primitive.Caution.Red Vivid 100.value}"
+        "40 alpha": {
+          "value": "rgba(0, 0, 0, 0.4)"
         },
-        "Secondary": {
-          "value": "{Color.Primitive.White.5 alpha.value}"
+        "50 alpha": {
+          "value": "rgba(0, 0, 0, 0.5)"
         },
-        "Quaternary": {
-          "value": "{Color.Primitive.White.20 alpha.value}"
+        "60 alpha": {
+          "value": "rgba(0, 0, 0, 0.6)"
         },
-        "Accent Primary Light": {
-          "value": "{Color.Primitive.White.5 alpha.value}"
+        "70 alpha": {
+          "value": "rgba(0, 0, 0, 0.7)"
         },
-        "Accent Secondary Light": {
-          "value": "{Color.Primitive.White.5 alpha.value}"
+        "80 alpha": {
+          "value": "rgba(0, 0, 0, 0.8)"
         },
-        "Caution Light": {
-          "value": "{Color.Primitive.White.5 alpha.value}"
-        }
-      },
-      "Object": {
-        "High Emphasis": {
-          "value": "{Color.Primitive.White.100.value}"
+        "90 alpha": {
+          "value": "rgba(0, 0, 0, 0.9)"
         },
-        "Disable": {
-          "value": "{Color.Primitive.White.20 alpha.value}"
-        },
-        "Caution": {
-          "value": "{Color.Primitive.Caution.Red Vivid 100.value}"
-        },
-        "Accent Primary": {
-          "value": "{Color.Primitive.Primary Green.50.value}"
-        },
-        "Accent Secondary": {
-          "value": "{Color.Primitive.Secondary Green.40.value}"
-        },
-        "Low Emphasis": {
-          "value": "{Color.Primitive.White.60 alpha.value}"
-        },
-        "Medium Emphasis": {
-          "value": "{Color.Primitive.White.80 alpha.value}"
-        },
-        "High Emphasis Inverse": {
-          "value": "{Color.Primitive.Gray.100.value}"
-        },
-        "Expressive Pink": {
-          "value": "{Color.Primitive.Expressive Pink.40.value}"
+        "５ alpha": {
+          "value": "rgba(0, 0, 0, 0.05)"
         }
       },
       "Border": {
-        "Low Emphasis": {
-          "value": "{Color.Primitive.White.20 alpha.value}"
-        },
-        "Caution": {
-          "value": "{Color.Primitive.Caution.Red Vivid 100.value}"
-        },
         "Accent Primary": {
           "value": "{Color.Primitive.Primary Green.50.value}"
         },
-        "Medium Emphasis": {
-          "value": "{Color.Primitive.White.30 alpha.value}"
+        "Caution": {
+          "value": "{Color.Primitive.Caution.Red Vivid 100.value}"
         },
         "High Emphasis": {
           "value": "{Color.Primitive.White.50 alpha.value}"
         },
         "High Emphasis Inverse": {
           "value": "{Color.Primitive.Gray.100.value}"
+        },
+        "Low Emphasis": {
+          "value": "{Color.Primitive.White.20 alpha.value}"
+        },
+        "Medium Emphasis": {
+          "value": "{Color.Primitive.White.30 alpha.value}"
+        }
+      },
+      "Brand": {
+        "Ameba Green": {
+          "value": "rgba(45, 140, 60, 1)"
+        },
+        "Black": {
+          "value": "rgba(0, 0, 0, 1)"
+        },
+        "Neutral Gray": {
+          "value": "rgba(246, 246, 246, 1)"
+        },
+        "White": {
+          "value": "rgba(255, 255, 255, 1)"
+        },
+        "White-stroke": {
+          "value": "rgba(8, 18, 26, 0.05)"
+        },
+        "Yellow": {
+          "value": "rgba(245, 225, 0, 1)"
+        },
+        "Yellow Green": {
+          "value": "rgba(130, 190, 40, 1)"
         }
       },
       "Caution": {
         "Red 100": {
           "value": "rgba(217, 28, 11, 1)"
         },
-        "Red Vivid 100": {
-          "value": "rgba(255, 106, 89, 1)"
-        },
         "Red 20 alpha": {
           "value": "rgba(217, 28, 11, 0.2)"
         },
-        "Red Vivid 20 alpha": {
-          "value": "rgba(255, 106, 89, 0.2)"
-        },
         "Red 5 alpha": {
           "value": "rgba(217, 28, 11, 0.05)"
+        },
+        "Red Vivid 100": {
+          "value": "rgba(255, 106, 89, 1)"
+        },
+        "Red Vivid 20 alpha": {
+          "value": "rgba(255, 106, 89, 0.2)"
         },
         "Red Vivid 5 alpha": {
           "value": "rgba(255, 106, 89, 0.05)"
@@ -365,41 +191,6 @@
           "value": "rgba(0, 61, 44, 1)"
         }
       },
-      "Expressive Purple": {
-        "5": {
-          "value": "rgba(246, 228, 250, 1)"
-        },
-        "10": {
-          "value": "rgba(233, 188, 243, 1)"
-        },
-        "20": {
-          "value": "rgba(218, 142, 237, 1)"
-        },
-        "30": {
-          "value": "rgba(202, 92, 230, 1)"
-        },
-        "40": {
-          "value": "rgba(190, 44, 224, 1)"
-        },
-        "50": {
-          "value": "rgba(174, 0, 212, 1)"
-        },
-        "60": {
-          "value": "rgba(157, 0, 207, 1)"
-        },
-        "70": {
-          "value": "rgba(134, 0, 200, 1)"
-        },
-        "80": {
-          "value": "rgba(113, 0, 193, 1)"
-        },
-        "90": {
-          "value": "rgba(69, 0, 180, 1)"
-        },
-        "100": {
-          "value": "rgba(36, 0, 153, 1)"
-        }
-      },
       "Expressive Lavender": {
         "5": {
           "value": "rgba(237, 232, 251, 1)"
@@ -470,6 +261,76 @@
           "value": "rgba(138, 39, 1, 1)"
         }
       },
+      "Expressive Pink": {
+        "5": {
+          "value": "rgba(252, 228, 233, 1)"
+        },
+        "10": {
+          "value": "rgba(248, 187, 201, 1)"
+        },
+        "20": {
+          "value": "rgba(242, 143, 166, 1)"
+        },
+        "30": {
+          "value": "rgba(236, 99, 132, 1)"
+        },
+        "40": {
+          "value": "rgba(230, 69, 106, 1)"
+        },
+        "50": {
+          "value": "rgba(224, 44, 83, 1)"
+        },
+        "60": {
+          "value": "rgba(208, 40, 81, 1)"
+        },
+        "70": {
+          "value": "rgba(187, 35, 77, 1)"
+        },
+        "80": {
+          "value": "rgba(167, 30, 74, 1)"
+        },
+        "90": {
+          "value": "rgba(131, 20, 67, 1)"
+        },
+        "100": {
+          "value": "rgba(99, 15, 51, 1)"
+        }
+      },
+      "Expressive Purple": {
+        "5": {
+          "value": "rgba(246, 228, 250, 1)"
+        },
+        "10": {
+          "value": "rgba(233, 188, 243, 1)"
+        },
+        "20": {
+          "value": "rgba(218, 142, 237, 1)"
+        },
+        "30": {
+          "value": "rgba(202, 92, 230, 1)"
+        },
+        "40": {
+          "value": "rgba(190, 44, 224, 1)"
+        },
+        "50": {
+          "value": "rgba(174, 0, 212, 1)"
+        },
+        "60": {
+          "value": "rgba(157, 0, 207, 1)"
+        },
+        "70": {
+          "value": "rgba(134, 0, 200, 1)"
+        },
+        "80": {
+          "value": "rgba(113, 0, 193, 1)"
+        },
+        "90": {
+          "value": "rgba(69, 0, 180, 1)"
+        },
+        "100": {
+          "value": "rgba(36, 0, 153, 1)"
+        }
+      },
       "Expressive Yellow": {
         "5": {
           "value": "rgba(250, 241, 226, 1)"
@@ -505,39 +366,160 @@
           "value": "rgba(178, 65, 9, 1)"
         }
       },
-      "Expressive Pink": {
+      "Focus": {
+        "Ambiguous": {
+          "value": "{Color.Primitive.Focus.Blue 30 alpha.value}"
+        },
+        "Blue 100": {
+          "value": "rgba(0, 145, 255, 1)"
+        },
+        "Blue 30 alpha": {
+          "value": "rgba(0, 145, 255, 0.3)"
+        },
+        "Clarity": {
+          "value": "{Color.Primitive.Focus.Blue 100.value}"
+        }
+      },
+      "Gray": {
         "5": {
-          "value": "rgba(252, 228, 233, 1)"
+          "value": "rgba(245, 246, 246, 1)"
         },
         "10": {
-          "value": "rgba(248, 187, 201, 1)"
+          "value": "rgba(235, 236, 237, 1)"
         },
         "20": {
-          "value": "rgba(242, 143, 166, 1)"
+          "value": "rgba(216, 217, 218, 1)"
         },
         "30": {
-          "value": "rgba(236, 99, 132, 1)"
+          "value": "rgba(181, 184, 186, 1)"
         },
         "40": {
-          "value": "rgba(230, 69, 106, 1)"
+          "value": "rgba(156, 160, 163, 1)"
         },
         "50": {
-          "value": "rgba(224, 44, 83, 1)"
+          "value": "rgba(139, 144, 147, 1)"
         },
         "60": {
-          "value": "rgba(208, 40, 81, 1)"
+          "value": "rgba(104, 110, 115, 1)"
         },
         "70": {
-          "value": "rgba(187, 35, 77, 1)"
+          "value": "rgba(70, 77, 83, 1)"
         },
         "80": {
-          "value": "rgba(167, 30, 74, 1)"
+          "value": "rgba(57, 65, 72, 1)"
         },
         "90": {
-          "value": "rgba(131, 20, 67, 1)"
+          "value": "rgba(20, 30, 37, 1)"
         },
         "100": {
-          "value": "rgba(99, 15, 51, 1)"
+          "value": "rgba(8, 18, 26, 1)"
+        },
+        "10 alpha": {
+          "value": "rgba(8, 18, 26, 0.08)"
+        },
+        "20 alpha": {
+          "value": "rgba(8, 18, 26, 0.16)"
+        },
+        "30 alpha": {
+          "value": "rgba(8, 18, 26, 0.3)"
+        },
+        "40 alpha": {
+          "value": "rgba(8, 18, 26, 0.4)"
+        },
+        "5 alpha": {
+          "value": "rgba(8, 18, 26, 0.04)"
+        },
+        "50 alpha": {
+          "value": "rgba(8, 18, 26, 0.47)"
+        },
+        "60 alpha": {
+          "value": "rgba(8, 18, 26, 0.61)"
+        },
+        "80 alpha": {
+          "value": "rgba(8, 18, 26, 0.8)"
+        },
+        "90 alpha": {
+          "value": "rgba(8, 18, 26, 0.95)"
+        }
+      },
+      "Highlight": {
+        "Error": {
+          "value": "{Color.Primitive.Caution.Red Vivid 20 alpha.value}"
+        },
+        "Hover": {
+          "value": "{Color.Primitive.White.30 alpha.value}"
+        },
+        "Yellow": {
+          "value": "{Color.Primitive.Highlight.Yellow 100.value}"
+        },
+        "Yellow 100": {
+          "value": "rgba(245, 225, 0, 1)"
+        },
+        "Yellow 30 alpha": {
+          "value": "rgba(245, 225, 0, 0.3)"
+        }
+      },
+      "Highlighted": {
+        "Caution Button": {
+          "value": "{Color.Primitive.White.5 alpha.value}"
+        },
+        "Contained Button": {
+          "value": "{Color.Primitive.Primary Green.100.value}"
+        },
+        "Lighted Button": {
+          "value": "{Color.Primitive.White.10 alpha.value}"
+        },
+        "Neutral Button": {
+          "value": "{Color.Primitive.White.5 alpha.value}"
+        },
+        "Outlined Button": {
+          "value": "{Color.Primitive.White.5 alpha.value}"
+        }
+      },
+      "Hover": {
+        "Caution Button": {
+          "value": "{Color.Primitive.White.5 alpha.value}"
+        },
+        "Contained Button": {
+          "value": "{Color.Primitive.Primary Green.100.value}"
+        },
+        "Lighted Button": {
+          "value": "{Color.Primitive.White.10 alpha.value}"
+        },
+        "Neutral Button": {
+          "value": "{Color.Primitive.White.5 alpha.value}"
+        },
+        "Outlined Button": {
+          "value": "{Color.Primitive.White.5 alpha.value}"
+        }
+      },
+      "Object": {
+        "Accent Primary": {
+          "value": "{Color.Primitive.Primary Green.50.value}"
+        },
+        "Accent Secondary": {
+          "value": "{Color.Primitive.Secondary Green.40.value}"
+        },
+        "Caution": {
+          "value": "{Color.Primitive.Caution.Red Vivid 100.value}"
+        },
+        "Disable": {
+          "value": "{Color.Primitive.White.20 alpha.value}"
+        },
+        "Expressive Pink": {
+          "value": "{Color.Primitive.Expressive Pink.40.value}"
+        },
+        "High Emphasis": {
+          "value": "{Color.Primitive.White.100.value}"
+        },
+        "High Emphasis Inverse": {
+          "value": "{Color.Primitive.Gray.100.value}"
+        },
+        "Low Emphasis": {
+          "value": "{Color.Primitive.White.60 alpha.value}"
+        },
+        "Medium Emphasis": {
+          "value": "{Color.Primitive.White.80 alpha.value}"
         }
       },
       "Primary Green": {
@@ -575,173 +557,6 @@
           "value": "rgba(15, 92, 31, 1)"
         }
       },
-      "Secondary Green": {
-        "5": {
-          "value": "rgba(240, 247, 230, 1)"
-        },
-        "10": {
-          "value": "rgba(218, 235, 193, 1)"
-        },
-        "20": {
-          "value": "rgba(194, 222, 153, 1)"
-        },
-        "30": {
-          "value": "rgba(169, 209, 111, 1)"
-        },
-        "40": {
-          "value": "rgba(149, 200, 77, 1)"
-        },
-        "50": {
-          "value": "rgba(130, 190, 40, 1)"
-        },
-        "60": {
-          "value": "rgba(115, 174, 32, 1)"
-        },
-        "70": {
-          "value": "rgba(94, 155, 21, 1)"
-        },
-        "80": {
-          "value": "rgba(71, 125, 0, 1)"
-        },
-        "90": {
-          "value": "rgba(66, 117, 4, 1)"
-        },
-        "100": {
-          "value": "rgba(54, 102, 0, 1)"
-        }
-      },
-      "Gray": {
-        "5": {
-          "value": "rgba(245, 246, 246, 1)"
-        },
-        "10": {
-          "value": "rgba(235, 236, 237, 1)"
-        },
-        "20": {
-          "value": "rgba(216, 217, 218, 1)"
-        },
-        "30": {
-          "value": "rgba(181, 184, 186, 1)"
-        },
-        "40": {
-          "value": "rgba(156, 160, 163, 1)"
-        },
-        "50": {
-          "value": "rgba(139, 144, 147, 1)"
-        },
-        "60": {
-          "value": "rgba(104, 110, 115, 1)"
-        },
-        "70": {
-          "value": "rgba(70, 77, 83, 1)"
-        },
-        "80": {
-          "value": "rgba(57, 65, 72, 1)"
-        },
-        "90": {
-          "value": "rgba(20, 30, 37, 1)"
-        },
-        "100": {
-          "value": "rgba(8, 18, 26, 1)"
-        },
-        "90 alpha": {
-          "value": "rgba(8, 18, 26, 0.95)"
-        },
-        "80 alpha": {
-          "value": "rgba(8, 18, 26, 0.8)"
-        },
-        "60 alpha": {
-          "value": "rgba(8, 18, 26, 0.61)"
-        },
-        "50 alpha": {
-          "value": "rgba(8, 18, 26, 0.47)"
-        },
-        "40 alpha": {
-          "value": "rgba(8, 18, 26, 0.4)"
-        },
-        "30 alpha": {
-          "value": "rgba(8, 18, 26, 0.3)"
-        },
-        "20 alpha": {
-          "value": "rgba(8, 18, 26, 0.16)"
-        },
-        "10 alpha": {
-          "value": "rgba(8, 18, 26, 0.08)"
-        },
-        "5 alpha": {
-          "value": "rgba(8, 18, 26, 0.04)"
-        }
-      },
-      "Black": {
-        "100": {
-          "value": "rgba(0, 0, 0, 1)"
-        },
-        "10 alpha": {
-          "value": "rgba(0, 0, 0, 0.1)"
-        },
-        "90 alpha": {
-          "value": "rgba(0, 0, 0, 0.9)"
-        },
-        "80 alpha": {
-          "value": "rgba(0, 0, 0, 0.8)"
-        },
-        "70 alpha": {
-          "value": "rgba(0, 0, 0, 0.7)"
-        },
-        "60 alpha": {
-          "value": "rgba(0, 0, 0, 0.6)"
-        },
-        "50 alpha": {
-          "value": "rgba(0, 0, 0, 0.5)"
-        },
-        "40 alpha": {
-          "value": "rgba(0, 0, 0, 0.4)"
-        },
-        "30 alpha": {
-          "value": "rgba(0, 0, 0, 0.3)"
-        },
-        "20 alpha": {
-          "value": "rgba(0, 0, 0, 0.2)"
-        },
-        "５ alpha": {
-          "value": "rgba(0, 0, 0, 0.05)"
-        }
-      },
-      "White": {
-        "100": {
-          "value": "rgba(255, 255, 255, 1)"
-        },
-        "90 alpha": {
-          "value": "rgba(255, 255, 255, 0.9)"
-        },
-        "80 alpha": {
-          "value": "rgba(255, 255, 255, 0.8)"
-        },
-        "70 alpha": {
-          "value": "rgba(255, 255, 255, 0.7)"
-        },
-        "60 alpha": {
-          "value": "rgba(255, 255, 255, 0.6)"
-        },
-        "50 alpha": {
-          "value": "rgba(255, 255, 255, 0.5)"
-        },
-        "40 alpha": {
-          "value": "rgba(255, 255, 255, 0.43)"
-        },
-        "30 alpha": {
-          "value": "rgba(255, 255, 255, 0.3)"
-        },
-        "20 alpha": {
-          "value": "rgba(255, 255, 255, 0.16)"
-        },
-        "10 alpha": {
-          "value": "rgba(255, 255, 255, 0.1)"
-        },
-        "5 alpha": {
-          "value": "rgba(255, 255, 255, 0.05)"
-        }
-      },
       "Primary Purple": {
         "5": {
           "value": "rgba(238, 232, 244, 1)"
@@ -777,6 +592,156 @@
           "value": "rgba(57, 30, 102, 1)"
         }
       },
+      "Ripple": {
+        "Caution Button": {
+          "value": "{Color.Primitive.White.10 alpha.value}"
+        },
+        "Contained Button": {
+          "value": "{Color.Primitive.White.20 alpha.value}"
+        },
+        "Lighted Button": {
+          "value": "{Color.Primitive.White.10 alpha.value}"
+        },
+        "Neutral Button": {
+          "value": "{Color.Primitive.White.5 alpha.value}"
+        },
+        "Outlined Button": {
+          "value": "{Color.Primitive.White.10 alpha.value}"
+        }
+      },
+      "Secondary Green": {
+        "5": {
+          "value": "rgba(240, 247, 230, 1)"
+        },
+        "10": {
+          "value": "rgba(218, 235, 193, 1)"
+        },
+        "20": {
+          "value": "rgba(194, 222, 153, 1)"
+        },
+        "30": {
+          "value": "rgba(169, 209, 111, 1)"
+        },
+        "40": {
+          "value": "rgba(149, 200, 77, 1)"
+        },
+        "50": {
+          "value": "rgba(130, 190, 40, 1)"
+        },
+        "60": {
+          "value": "rgba(115, 174, 32, 1)"
+        },
+        "70": {
+          "value": "rgba(94, 155, 21, 1)"
+        },
+        "80": {
+          "value": "rgba(71, 125, 0, 1)"
+        },
+        "90": {
+          "value": "rgba(66, 117, 4, 1)"
+        },
+        "100": {
+          "value": "rgba(54, 102, 0, 1)"
+        }
+      },
+      "Surface": {
+        "Accent Primary": {
+          "value": "{Color.Primitive.Primary Green.70.value}"
+        },
+        "Accent Primary Light": {
+          "value": "{Color.Primitive.White.5 alpha.value}"
+        },
+        "Accent Secondary": {
+          "value": "{Color.Primitive.Secondary Green.50.value}"
+        },
+        "Accent Secondary Light": {
+          "value": "{Color.Primitive.White.5 alpha.value}"
+        },
+        "Caution": {
+          "value": "{Color.Primitive.Caution.Red Vivid 100.value}"
+        },
+        "Caution Light": {
+          "value": "{Color.Primitive.White.5 alpha.value}"
+        },
+        "Primary": {
+          "value": "{Color.Primitive.Gray.90.value}"
+        },
+        "Quaternary": {
+          "value": "{Color.Primitive.White.20 alpha.value}"
+        },
+        "Secondary": {
+          "value": "{Color.Primitive.White.5 alpha.value}"
+        },
+        "Tertiary": {
+          "value": "{Color.Primitive.White.10 alpha.value}"
+        }
+      },
+      "Tap Highlight": {
+        "Base": {
+          "value": "{Color.Primitive.White.5 alpha.value}"
+        }
+      },
+      "Text": {
+        "Accent Primary": {
+          "value": "{Color.Primitive.Primary Green.50.value}"
+        },
+        "Accent Secondary": {
+          "value": "{Color.Primitive.Secondary Green.50.value}"
+        },
+        "Caution": {
+          "value": "{Color.Primitive.Caution.Red Vivid 100.value}"
+        },
+        "Disable": {
+          "value": "{Color.Primitive.White.20 alpha.value}"
+        },
+        "High Emphasis": {
+          "value": "{Color.Primitive.White.100.value}"
+        },
+        "High Emphasis Inverse": {
+          "value": "{Color.Primitive.Gray.100.value}"
+        },
+        "Low Emphasis": {
+          "value": "{Color.Primitive.White.60 alpha.value}"
+        },
+        "Medium Emphasis": {
+          "value": "{Color.Primitive.White.80 alpha.value}"
+        }
+      },
+      "Third Party": {
+        "Apple": {
+          "value": "{Color.Primitive.White.100.value}"
+        },
+        "Apple Black": {
+          "value": "rgba(0, 0, 0, 1)"
+        },
+        "Apple White": {
+          "value": "rgba(255, 255, 255, 1)"
+        },
+        "Facebook": {
+          "value": "{Color.Primitive.Third Party.Facebook Blue.value}"
+        },
+        "Facebook Blue": {
+          "value": "rgba(24, 119, 242, 1)"
+        },
+        "Instagram": {
+          "value": "{Color.Primitive.Third Party.Instagram Pink.value}"
+        },
+        "Instagram Pink": {
+          "value": "rgba(242, 0, 118, 1)"
+        },
+        "Twitter": {
+          "value": "{Color.Primitive.Third Party.Twitter Blue.value}"
+        },
+        "Twitter Blue": {
+          "value": "rgba(29, 161, 242, 1)"
+        },
+        "Youtube": {
+          "value": "{Color.Primitive.Third Party.Youtube Red.value}"
+        },
+        "Youtube Red": {
+          "value": "rgba(255, 0, 0, 1)"
+        }
+      },
       "Uranai Brand": {
         "Ameba Purple": {
           "value": "rgba(117, 63, 170, 1)"
@@ -784,11 +749,46 @@
         "Cream": {
           "value": "rgba(251, 248, 244, 1)"
         },
-        "White": {
-          "value": "rgba(255, 255, 255, 1)"
-        },
         "Navy Blue": {
           "value": "rgba(57, 30, 102, 1)"
+        },
+        "White": {
+          "value": "rgba(255, 255, 255, 1)"
+        }
+      },
+      "White": {
+        "100": {
+          "value": "rgba(255, 255, 255, 1)"
+        },
+        "10 alpha": {
+          "value": "rgba(255, 255, 255, 0.1)"
+        },
+        "20 alpha": {
+          "value": "rgba(255, 255, 255, 0.16)"
+        },
+        "30 alpha": {
+          "value": "rgba(255, 255, 255, 0.3)"
+        },
+        "40 alpha": {
+          "value": "rgba(255, 255, 255, 0.43)"
+        },
+        "5 alpha": {
+          "value": "rgba(255, 255, 255, 0.05)"
+        },
+        "50 alpha": {
+          "value": "rgba(255, 255, 255, 0.5)"
+        },
+        "60 alpha": {
+          "value": "rgba(255, 255, 255, 0.6)"
+        },
+        "70 alpha": {
+          "value": "rgba(255, 255, 255, 0.7)"
+        },
+        "80 alpha": {
+          "value": "rgba(255, 255, 255, 0.8)"
+        },
+        "90 alpha": {
+          "value": "rgba(255, 255, 255, 0.9)"
         }
       }
     }

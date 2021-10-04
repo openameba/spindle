@@ -20,6 +20,7 @@
     "url": "https://github.com/openameba/spindle/issues"
   },
   "devDependencies": {
+    "jsonabc": "^2.3.1",
     "lodash.setwith": "^4.3.2",
     "make-dir": "^3.1.0",
     "style-dictionary": "^3.0.1"

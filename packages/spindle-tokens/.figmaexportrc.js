@@ -1,4 +1,5 @@
 const { exporter } = require('./lib/output-styles-as-style-dictionary');
+const { sortObj } = require('jsonabc');
 
 module.exports = {
     commands: [
@@ -7,7 +8,7 @@ module.exports = {
           outputters: [
             exporter({
               output: './tokens/color',
-                replacer: result => JSON.stringify({ Color: { Primitive: result } }, null, 2),
+                replacer: result => JSON.stringify({ Color: { Primitive: sortObj(result) } }, null, 2),
                   fileName: 'primitive.json'
             })
           ]
@@ -17,7 +18,7 @@ module.exports = {
           outputters: [
             exporter({
               output: './tokens/color',
-              replacer: result => JSON.stringify({ Color: { Theme: result } }, null, 2),
+              replacer: result => JSON.stringify({ Color: { Theme: sortObj(result) } }, null, 2),
               fileName: 'theme.json'
             })
           ]
@@ -27,7 +28,7 @@ module.exports = {
         outputters: [
           exporter({
             output: './tokens/color',
-            replacer: result => JSON.stringify({ Color: { Theme: result } }, null, 2),
+            replacer: result => JSON.stringify({ Color: { Theme: sortObj(result) } }, null, 2),
             fileName: 'theme-dark.json'
           })
         ]
@@ -37,7 +38,7 @@ module.exports = {
         outputters: [
             exporter({
                 output: './tokens/shadow',
-                replacer: result => JSON.stringify({ Shadow: { ['Drop Shadow']: result } }, null, 2),
+                replacer: result => JSON.stringify({ Shadow: { ['Drop Shadow']: sortObj(result) } }, null, 2),
                 fileName: 'drop-shadow.json'
             })
         ]

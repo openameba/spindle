@@ -2,6 +2,9 @@
   "Shadow": {
     "Drop Shadow": {
       "Lv2": {
+        "blurRadius": {
+          "value": 3.875
+        },
         "color": {
           "value": "rgba(8, 18, 26, 0.12)"
         },
@@ -16,14 +19,14 @@
             "value": 3.25
           }
         },
-        "blurRadius": {
-          "value": 3.875
-        },
         "spreadRadius": {
           "value": 0
         }
       },
       "Lv4": {
+        "blurRadius": {
+          "value": 7.125
+        },
         "color": {
           "value": "rgba(8, 18, 26, 0.12)"
         },
@@ -38,14 +41,14 @@
             "value": 4.75
           }
         },
-        "blurRadius": {
-          "value": 7.125
-        },
         "spreadRadius": {
           "value": 0
         }
       },
       "Lv6": {
+        "blurRadius": {
+          "value": 14
+        },
         "color": {
           "value": "rgba(8, 18, 26, 0.12)"
         },
@@ -59,9 +62,6 @@
           "y": {
             "value": 11
           }
-        },
-        "blurRadius": {
-          "value": 14
         },
         "spreadRadius": {
           "value": 0
