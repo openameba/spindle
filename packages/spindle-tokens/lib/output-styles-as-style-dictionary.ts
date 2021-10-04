@@ -1,37 +1,51 @@
-const fs = require('fs');
-const path = require('path');
-const makeDir = require('make-dir');
+import * as FigmaExport from '@figma-export/types';
 
-const set = require('lodash.setwith');
+import fs from 'fs';
+import path from 'path';
+import makeDir from 'make-dir';
 
-/**
- * @typedef {function} DefaultReplacer
- * @function
- * @param {object}
- * @returns {string}
- */
-function defaultReplacer(obj) {
+import set from 'lodash.setwith';
+
+type ReplacerArgument = Record<string, unknown>;
+type Replacer = (arg: ReplacerArgument) => string;
+
+type Options = {
+  output: string;
+  fileName?: string;
+  replacer?: Replacer;
+};
+
+type ColorToken = {
+  comment?: string;
+  value?: string;
+};
+
+type DropShadowToken = {
+  color: { value: string };
+  inset: { value: boolean };
+  blurRadius: { value: number };
+  spreadRadius: { value: number };
+  offset: {
+    x: { value: number };
+    y: { value: number };
+  };
+  comment?: string;
+};
+
+function defaultReplacer(obj: ReplacerArgument): string {
   return JSON.stringify(obj, null, 2);
 }
 
-/**
- * exporter
- * @param {object} params
- * @param {string} params.output - path
- * @param {string} [params.fileName]
- * @param {DefaultReplacer} [params.replacer]
- * @returns {void}
- */
-function exporter({
+export function exporter({
   output,
   fileName = 'design-tokens.json',
   replacer = defaultReplacer,
-}) {
-  function customizer(obj) {
+}: Options): FigmaExport.StyleOutputter {
+  function customizer(obj: Record<string, unknown>) {
     return obj || {};
   }
 
-  return (styles) => {
+  return async (styles) => {
     const result = {};
 
     styles
@@ -50,7 +64,7 @@ function exporter({
                   .join('.');
                 const name = i === 0 ? propArray : `${propArray}.${i}`;
 
-                const objectValue = {};
+                const objectValue: ColorToken = {};
                 let aliasValue;
 
                 if (style.comment) {
@@ -92,15 +106,16 @@ function exporter({
                 .map((s) => s.trim())
                 .join('.');
               const name = i === 0 ? propArray : `${propArray}.${i}`;
-              const objectValue = {
-                color: { value: effect.color.rgba },
-                inset: { value: effect.inset },
+              const shadowEffect = effect as FigmaExport.EffectStyleShadow;
+              const objectValue: DropShadowToken = {
+                color: { value: shadowEffect.color.rgba },
+                inset: { value: shadowEffect.inset },
                 offset: {
-                  x: { value: effect.offset.x },
-                  y: { value: effect.offset.y },
+                  x: { value: shadowEffect.offset.x },
+                  y: { value: shadowEffect.offset.y },
                 },
-                blurRadius: { value: effect.blurRadius / 2 },
-                spreadRadius: { value: effect.spreadRadius },
+                blurRadius: { value: shadowEffect.blurRadius / 2 },
+                spreadRadius: { value: shadowEffect.spreadRadius },
               };
 
               if (style.comment) {
@@ -122,7 +137,3 @@ function exporter({
     fs.writeFileSync(path.resolve(filePath, fileName), replacer(result));
   };
 }
-
-module.exports = {
-  exporter,
-};
