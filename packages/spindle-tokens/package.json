@@ -7,6 +7,10 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "tokens/**",
+    "spindle-tokens.png"
+  ],
   "private": true,
   "repository": {
     "type": "git",
