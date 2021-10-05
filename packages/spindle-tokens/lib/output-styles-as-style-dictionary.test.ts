@@ -145,7 +145,7 @@ describe('style output as style dictionary JSON', () => {
         path.resolve(output, fileName),
         '{\n' +
           '  "variable-name": {\n' +
-          '    "comment": "Alias\\n",\n' +
+          '    "comment": "Alias",\n' +
           '    "value": "{Color.Primitive.Green}"\n' +
           '  }\n' +
           '}',
