@@ -20,29 +20,29 @@
       },
       "Background": {
         "Base": {
-          "comment": "Do : Background , Divider\nDon't : Object , Button , Stroke , Text\n\n",
+          "comment": "Do : Background , Divider\nDon't : Object , Button , Stroke , Text",
           "value": "{Color.Primitive.Gray.5.value}"
         }
       },
       "Border": {
         "Accent Primary": {
-          "comment": "Do : 装飾的な罫線として\nDon't : \n\n\n",
+          "comment": "Do : 装飾的な罫線として\nDon't :",
           "value": "{Color.Primitive.Primary Green.70.value}"
         },
         "Caution": {
-          "comment": "Do : エラーが発生した時の罫線\nDon't : エラー以外の罫線\n\n\n",
+          "comment": "Do : エラーが発生した時の罫線\nDon't : エラー以外の罫線",
           "value": "{Color.Primitive.Caution.Red 100.value}"
         },
         "High Emphasis": {
-          "comment": "Do : 特に輪郭を強調させたい時\nDon't : 罫線\n\n\n",
+          "comment": "Do : 特に輪郭を強調させたい時\nDon't : 罫線",
           "value": "{Color.Primitive.Gray.60 alpha.value}"
         },
         "High Emphasis Inverse": {
-          "comment": "Do : 背景が濃い時の罫線\nDon't : 背景色が薄い時の罫線\n\n\n",
+          "comment": "Do : 背景が濃い時の罫線\nDon't : 背景色が薄い時の罫線",
           "value": "{Color.Primitive.White.100.value}"
         },
         "Medium Emphasis": {
-          "comment": "Do : Text Fieldの輪郭\nDon't : 罫線\n\n\n",
+          "comment": "Do : Text Fieldの輪郭\nDon't : 罫線",
           "value": "{Color.Primitive.Gray.30 alpha.value}"
         }
       },
@@ -76,14 +76,14 @@
       },
       "Highlight": {
         "Error": {
-          "comment": "Do : テキストフィールドで文字数がオーバーエラー時\nDon't : 文字色、表層色\n\n\n",
+          "comment": "Do : テキストフィールドで文字数がオーバーエラー時\nDon't : 文字色、表層色",
           "value": "{Color.Primitive.Caution.Red 20 alpha.value}"
         },
         "Hover": {
           "value": "{Color.Primitive.Black.30 alpha.value}"
         },
         "Yellow": {
-          "comment": "Do : テキストを強調する時、テキストの背面に使用\nDon't : 文字色、テキストの上に乗せる\n\n\n",
+          "comment": "Do : テキストを強調する時、テキストの背面に使用\nDon't : 文字色、テキストの上に乗せる",
           "value": "{Color.Primitive.Highlight.Yellow 100.value}"
         }
       },
@@ -123,39 +123,39 @@
       },
       "Object": {
         "Accent Primary": {
-          "comment": "Do : 大強調アイコン\nDon't : 非強調アイコン、上にテキストが乗る要素、テキスト\n\n\n",
+          "comment": "Do : 大強調アイコン\nDon't : 非強調アイコン、上にテキストが乗る要素、テキスト",
           "value": "{Color.Primitive.Primary Green.70.value}"
         },
         "Accent Secondary": {
-          "comment": "Do : 准強調アイコン\nDon't : 非強調アイコン、上にテキストが乗る要素、テキスト\n\n\n",
+          "comment": "Do : 准強調アイコン\nDon't : 非強調アイコン、上にテキストが乗る要素、テキスト",
           "value": "{Color.Primitive.Secondary Green.70.value}"
         },
         "Caution": {
-          "comment": "Do : 警告を示唆するアイコン\nDon't : 通常アイコン、上にテキストが乗る要素、テキスト\n\n\n",
+          "comment": "Do : 警告を示唆するアイコン\nDon't : 通常アイコン、上にテキストが乗る要素、テキスト",
           "value": "{Color.Primitive.Caution.Red 100.value}"
         },
         "Disable": {
-          "comment": "Do : 非活性アイコン\nDon't : 押せるアイコン、上にテキストが乗る要素、テキスト\n\n\n",
+          "comment": "Do : 非活性アイコン\nDon't : 押せるアイコン、上にテキストが乗る要素、テキスト",
           "value": "{Color.Primitive.Gray.30 alpha.value}"
         },
         "Expressive Pink": {
-          "comment": "Do : 緑や赤以外で装飾を付けたい時\nDon't : 非強調アイコン、上にテキストが乗る要素、テキスト\n\n\n",
+          "comment": "Do : 緑や赤以外で装飾を付けたい時\nDon't : 非強調アイコン、上にテキストが乗る要素、テキスト",
           "value": "{Color.Primitive.Expressive Pink.40.value}"
         },
         "High Emphasis": {
-          "comment": "Do : 強調アイコン\nDon't : 非強調アイコン、上にテキストが乗る要素、テキスト\n\n\n",
+          "comment": "Do : 強調アイコン\nDon't : 非強調アイコン、上にテキストが乗る要素、テキスト",
           "value": "{Color.Primitive.Gray.100.value}"
         },
         "High Emphasis Inverse": {
-          "comment": "Do : 背景が濃い色の時の強調アイコン\nDon't : 非強調アイコン、上にテキストが乗る要素、テキスト\n\n\n",
+          "comment": "Do : 背景が濃い色の時の強調アイコン\nDon't : 非強調アイコン、上にテキストが乗る要素、テキスト",
           "value": "{Color.Primitive.White.100.value}"
         },
         "Low Emphasis": {
-          "comment": "Do : 非強調アイコン\nDon't : 非活性アイコン、上にテキストが乗る要素、テキスト\n\n\n",
+          "comment": "Do : 非強調アイコン\nDon't : 非活性アイコン、上にテキストが乗る要素、テキスト",
           "value": "{Color.Primitive.Gray.60 alpha.value}"
         },
         "Medium Emphasis": {
-          "comment": "Do : 准強調アイコン\nDon't : 非強調アイコン、上にテキストが乗る要素、テキスト\n\n\n",
+          "comment": "Do : 准強調アイコン\nDon't : 非強調アイコン、上にテキストが乗る要素、テキスト",
           "value": "{Color.Primitive.Gray.70 alpha.value}"
         }
       },
@@ -178,43 +178,43 @@
       },
       "Surface": {
         "Accent Primary": {
-          "comment": "Do : Amebaの中でも特に強調したいもの\nDon't : 文字、アイコン、優先度がそこまで高くない要素\n\n",
+          "comment": "Do : Amebaの中でも特に強調したいもの\nDon't : 文字、アイコン、優先度がそこまで高くない要素",
           "value": "{Color.Primitive.Primary Green.70.value}"
         },
         "Accent Primary Light": {
-          "comment": "Do : 最重要項目ではないが強調したい要素、タグ、バナー\nDon't : 文字、アイコン\n\n",
+          "comment": "Do : 最重要項目ではないが強調したい要素、タグ、バナー\nDon't : 文字、アイコン",
           "value": "{Color.Primitive.Primary Green.5.value}"
         },
         "Accent Secondary": {
-          "comment": "Do : Accent Primaryが使えない面で\nDon't : 文字、アイコン\n\n",
+          "comment": "Do : Accent Primaryが使えない面で\nDon't : 文字、アイコン",
           "value": "{Color.Primitive.Secondary Green.50.value}"
         },
         "Accent Secondary Light": {
-          "comment": "Do : Accent Secondaryに対して相対的に利用\nDon't : 文字、アイコン\n\n",
+          "comment": "Do : Accent Secondaryに対して相対的に利用\nDon't : 文字、アイコン",
           "value": "{Color.Primitive.Secondary Green.5.value}"
         },
         "Caution": {
-          "comment": "Do : 警告、注意喚起の要素の表層\nDon't : 文字、アイコン、訴求\n\n",
+          "comment": "Do : 警告、注意喚起の要素の表層\nDon't : 文字、アイコン、訴求",
           "value": "{Color.Primitive.Caution.Red 100.value}"
         },
         "Caution Light": {
-          "comment": "Do : 軽度の注意喚起を行う時の表層\nDon't : 文字、アイコン、重度の警告\n\n",
+          "comment": "Do : 軽度の注意喚起を行う時の表層\nDon't : 文字、アイコン、重度の警告",
           "value": "{Color.Primitive.Caution.Red 5 alpha.value}"
         },
         "Primary": {
-          "comment": "Do : 白い背景、反転したボタン\nDon't : 文字、アイコン\n\n",
+          "comment": "Do : 白い背景、反転したボタン\nDon't : 文字、アイコン",
           "value": "{Color.Primitive.White.100.value}"
         },
         "Quaternary": {
-          "comment": "Do : グレーの色面\nDon't : 文字、アイコン\n\n",
+          "comment": "Do : グレーの色面\nDon't : 文字、アイコン",
           "value": "{Color.Primitive.Gray.20 alpha.value}"
         },
         "Secondary": {
-          "comment": "Do : グレーの色面\nDon't : 下地、文字、アイコン\n\n",
+          "comment": "Do : グレーの色面\nDon't : 下地、文字、アイコン",
           "value": "{Color.Primitive.Gray.5 alpha.value}"
         },
         "Tertiary": {
-          "comment": "Do : グレーの色面、ボタン\nDon't : 文字、アイコン\n\n",
+          "comment": "Do : グレーの色面、ボタン\nDon't : 文字、アイコン",
           "value": "{Color.Primitive.Gray.10 alpha.value}"
         }
       },
@@ -239,15 +239,15 @@
       },
       "Text": {
         "Accent Secondary": {
-          "comment": "Do : Surface / Accent Secondaryに合わせて\nDon't : 単独での利用\n\n\n",
+          "comment": "Do : Surface / Accent Secondaryに合わせて\nDon't : 単独での利用",
           "value": "{Color.Primitive.Secondary Green.80.value}"
         },
         "Caution": {
-          "comment": "Do : 警告文、注意喚起\nDon't : 訴求\n\n\n",
+          "comment": "Do : 警告文、注意喚起\nDon't : 訴求",
           "value": "{Color.Primitive.Caution.Red 100.value}"
         },
         "High Emphasis Inverse": {
-          "comment": "Do : 背景が濃い色に対しての強調色から本文まで\n\nDon't : 背景が薄い色\n\n\n",
+          "comment": "Do : 背景が濃い色に対しての強調色から本文まで\n\nDon't : 背景が薄い色",
           "value": "{Color.Primitive.White.100.value}"
         }
       },
