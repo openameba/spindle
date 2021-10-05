@@ -17,6 +17,8 @@
     "url": "git+https://github.com/openameba/spindle.git"
   },
   "scripts": {
+    "test": "tsc --noEmit && yarn jest",
+    "jest": "jest",
     "build": "style-dictionary build",
     "preexport": "tsc",
     "export": "npx @figma-export/cli use-config"
@@ -27,9 +29,11 @@
   "devDependencies": {
     "@figma-export/types": "^3.4.0",
     "@types/lodash.setwith": "^4.3.6",
+    "jest": "^27.2.4",
     "jsonabc": "^2.3.1",
     "lodash.setwith": "^4.3.2",
     "make-dir": "^3.1.0",
-    "style-dictionary": "^3.0.1"
+    "style-dictionary": "^3.0.1",
+    "ts-jest": "^27.0.5"
   }
 }

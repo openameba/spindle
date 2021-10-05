@@ -128,3 +128,4 @@ dist
 
 # Files in packages
 packages/spindle-tokens/lib/*.js
+packages/spindle-tokens/output-folder/
