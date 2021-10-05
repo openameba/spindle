@@ -73,7 +73,9 @@ export function exporter({
                   const aliasValueMatch = style.comment.match(aliasReg);
                   aliasValue = aliasValueMatch ? aliasValueMatch[0] : null;
 
-                  const finalComment = style.comment.replace(aliasReg, '').trim();
+                  const finalComment = style.comment
+                    .replace(aliasReg, '')
+                    .trim();
 
                   if (finalComment) {
                     objectValue.comment = finalComment;
