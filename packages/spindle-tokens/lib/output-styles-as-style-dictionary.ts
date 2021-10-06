@@ -75,7 +75,8 @@ export function exporter({
 
                   const finalComment = style.comment
                     .replace(aliasReg, '')
-                    .trim();
+                    .trim()
+                    .replace(/\n/g, ', ');
 
                   if (finalComment) {
                     objectValue.comment = finalComment;

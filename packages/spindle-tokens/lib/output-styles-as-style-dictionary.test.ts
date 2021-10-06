@@ -151,6 +151,29 @@ describe('style output as style dictionary JSON', () => {
           '}',
       );
     });
+
+    it('should be able to trim comment', async () => {
+      await exporter({
+        output,
+      })([
+        mockFill(
+          [mockSolid('rgba(0, 0, 0, 1)', true)],
+          true,
+          'DO: !!\nDO NOT: !!!\n{Color.Primitive.Green}\n\n\n',
+        ),
+      ]);
+
+      expect(writeFileSync).toHaveBeenCalledTimes(1);
+      expect(writeFileSync).toBeCalledWith(
+        path.resolve(output, fileName),
+        '{\n' +
+          '  "variable-name": {\n' +
+          '    "comment": "DO: !!, DO NOT: !!!",\n' +
+          '    "value": "{Color.Primitive.Green}"\n' +
+          '  }\n' +
+          '}',
+      );
+    });
   });
 
   describe('effects', () => {
