@@ -41,6 +41,10 @@
         },
         "Medium Emphasis": {
           "value": "{Color.Primitive.White.30 alpha.value}"
+        },
+        "Strong Emphasis": {
+          "comment": "Do : 装飾的な強調罫線",
+          "value": "{Color.Primitive.White.100.value}"
         }
       },
       "Brand": {
@@ -143,6 +147,19 @@
         },
         "Medium Emphasis": {
           "value": "{Color.Primitive.White.80 alpha.value}"
+        }
+      },
+      "Overlay": {
+        "Dark": {
+          "comment": "Do : 80%モーダルの背景色,重要なダイアログの背景色",
+          "value": "{Color.Primitive.Black.80 alpha.value}"
+        },
+        "Light": {
+          "value": "{Color.Primitive.Black.20 alpha.value}"
+        },
+        "Medium": {
+          "comment": "Do : 50%モーダルの背景色,重要ではないダイアログの背景色",
+          "value": "{Color.Primitive.Black.60 alpha.value}"
         }
       },
       "Ripple": {
