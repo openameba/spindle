@@ -264,7 +264,7 @@
           "value": "{Color.Primitive.Caution.Red 100.value}"
         },
         "High Emphasis Inverse": {
-          "comment": "Do : 背景が濃い色に対しての強調色から本文まで, , Don't : 背景が薄い色",
+          "comment": "Do : 背景が濃い色に対しての強調色から本文まで, Don't : 背景が薄い色",
           "value": "{Color.Primitive.White.100.value}"
         }
       },
