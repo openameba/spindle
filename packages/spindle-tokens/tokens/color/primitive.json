@@ -17,6 +17,9 @@
         "40 alpha": {
           "value": "rgba(0, 0, 0, 0.4)"
         },
+        "5 alpha": {
+          "value": "rgba(0, 0, 0, 0.05)"
+        },
         "50 alpha": {
           "value": "rgba(0, 0, 0, 0.5)"
         },
@@ -31,9 +34,6 @@
         },
         "90 alpha": {
           "value": "rgba(0, 0, 0, 0.9)"
-        },
-        "５ alpha": {
-          "value": "rgba(0, 0, 0, 0.05)"
         }
       },
       "Brand": {
@@ -48,9 +48,6 @@
         },
         "White": {
           "value": "rgba(255, 255, 255, 1)"
-        },
-        "White-stroke": {
-          "value": "rgba(8, 18, 26, 0.05)"
         },
         "Yellow": {
           "value": "rgba(245, 225, 0, 1)"
