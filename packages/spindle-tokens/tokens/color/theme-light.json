@@ -1,6 +1,6 @@
 {
   "Color": {
-    "Theme": {
+    "ThemeLight": {
       "Active": {
         "Caution Button": {
           "value": "{Color.Primitive.Caution.Red 5 alpha.value}"
