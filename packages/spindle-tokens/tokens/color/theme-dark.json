@@ -1,0 +1,264 @@
+{
+  "Color": {
+    "Theme": {
+      "Active": {
+        "Caution Button": {
+          "value": "{Color.Primitive.White.5 alpha.value}"
+        },
+        "Contained Button": {
+          "value": "{Color.Primitive.Primary Green.100.value}"
+        },
+        "Lighted Button": {
+          "value": "{Color.Primitive.White.10 alpha.value}"
+        },
+        "Neutral Button": {
+          "value": "{Color.Primitive.White.5 alpha.value}"
+        },
+        "Outlined Button": {
+          "value": "{Color.Primitive.White.5 alpha.value}"
+        }
+      },
+      "Background": {
+        "Base": {
+          "value": "{Color.Primitive.Gray.100.value}"
+        }
+      },
+      "Border": {
+        "Accent Primary": {
+          "value": "{Color.Primitive.Primary Green.50.value}"
+        },
+        "Caution": {
+          "value": "{Color.Primitive.Caution.Red Vivid 100.value}"
+        },
+        "High Emphasis": {
+          "value": "{Color.Primitive.White.50 alpha.value}"
+        },
+        "High Emphasis Inverse": {
+          "value": "{Color.Primitive.Gray.100.value}"
+        },
+        "Low Emphasis": {
+          "value": "{Color.Primitive.White.20 alpha.value}"
+        },
+        "Medium Emphasis": {
+          "value": "{Color.Primitive.White.30 alpha.value}"
+        },
+        "Strong Emphasis": {
+          "comment": "Do : 装飾的な強調罫線",
+          "value": "{Color.Primitive.White.100.value}"
+        }
+      },
+      "Brand": {
+        "Ameba Green": {
+          "value": "{Color.Primitive.Brand.Ameba Green.value}"
+        },
+        "Black": {
+          "value": "{Color.Primitive.Black.100.value}"
+        },
+        "Neutral Gray": {
+          "value": "{Color.Primitive.Brand.Neutral Gray.value}"
+        },
+        "White": {
+          "value": "{Color.Primitive.White.100.value}"
+        },
+        "Yellow": {
+          "value": "{Color.Primitive.Highlight.Yellow 100.value}"
+        },
+        "Yellow Green": {
+          "value": "{Color.Primitive.Secondary Green.50.value}"
+        }
+      },
+      "Focus": {
+        "Ambiguous": {
+          "value": "{Color.Primitive.Focus.Blue 30 alpha.value}"
+        },
+        "Clarity": {
+          "value": "{Color.Primitive.Focus.Blue 100.value}"
+        }
+      },
+      "Highlight": {
+        "Error": {
+          "value": "{Color.Primitive.Caution.Red Vivid 20 alpha.value}"
+        },
+        "Hover": {
+          "value": "{Color.Primitive.White.30 alpha.value}"
+        },
+        "Yellow": {
+          "value": "{Color.Primitive.Highlight.Yellow 100.value}"
+        }
+      },
+      "Highlighted": {
+        "Caution Button": {
+          "value": "{Color.Primitive.White.5 alpha.value}"
+        },
+        "Contained Button": {
+          "value": "{Color.Primitive.Primary Green.100.value}"
+        },
+        "Lighted Button": {
+          "value": "{Color.Primitive.White.10 alpha.value}"
+        },
+        "Neutral Button": {
+          "value": "{Color.Primitive.White.5 alpha.value}"
+        },
+        "Outlined Button": {
+          "value": "{Color.Primitive.White.5 alpha.value}"
+        }
+      },
+      "Hover": {
+        "Caution Button": {
+          "value": "{Color.Primitive.White.5 alpha.value}"
+        },
+        "Contained Button": {
+          "value": "{Color.Primitive.Primary Green.100.value}"
+        },
+        "Lighted Button": {
+          "value": "{Color.Primitive.White.10 alpha.value}"
+        },
+        "Neutral Button": {
+          "value": "{Color.Primitive.White.5 alpha.value}"
+        },
+        "Outlined Button": {
+          "value": "{Color.Primitive.White.5 alpha.value}"
+        }
+      },
+      "Object": {
+        "Accent Primary": {
+          "value": "{Color.Primitive.Primary Green.50.value}"
+        },
+        "Accent Secondary": {
+          "value": "{Color.Primitive.Secondary Green.40.value}"
+        },
+        "Caution": {
+          "value": "{Color.Primitive.Caution.Red Vivid 100.value}"
+        },
+        "Disable": {
+          "value": "{Color.Primitive.White.20 alpha.value}"
+        },
+        "Expressive Pink": {
+          "value": "{Color.Primitive.Expressive Pink.40.value}"
+        },
+        "High Emphasis": {
+          "value": "{Color.Primitive.White.100.value}"
+        },
+        "High Emphasis Inverse": {
+          "value": "{Color.Primitive.Gray.100.value}"
+        },
+        "Low Emphasis": {
+          "value": "{Color.Primitive.White.60 alpha.value}"
+        },
+        "Medium Emphasis": {
+          "value": "{Color.Primitive.White.80 alpha.value}"
+        }
+      },
+      "Overlay": {
+        "Dark": {
+          "comment": "Do : 80%モーダルの背景色,重要なダイアログの背景色",
+          "value": "{Color.Primitive.Black.80 alpha.value}"
+        },
+        "Light": {
+          "value": "{Color.Primitive.Black.20 alpha.value}"
+        },
+        "Medium": {
+          "comment": "Do : 50%モーダルの背景色,重要ではないダイアログの背景色",
+          "value": "{Color.Primitive.Black.60 alpha.value}"
+        }
+      },
+      "Ripple": {
+        "Caution Button": {
+          "value": "{Color.Primitive.White.10 alpha.value}"
+        },
+        "Contained Button": {
+          "value": "{Color.Primitive.White.20 alpha.value}"
+        },
+        "Lighted Button": {
+          "value": "{Color.Primitive.White.10 alpha.value}"
+        },
+        "Neutral Button": {
+          "value": "{Color.Primitive.White.5 alpha.value}"
+        },
+        "Outlined Button": {
+          "value": "{Color.Primitive.White.10 alpha.value}"
+        }
+      },
+      "Surface": {
+        "Accent Primary": {
+          "value": "{Color.Primitive.Primary Green.70.value}"
+        },
+        "Accent Primary Light": {
+          "value": "{Color.Primitive.White.5 alpha.value}"
+        },
+        "Accent Secondary": {
+          "value": "{Color.Primitive.Secondary Green.50.value}"
+        },
+        "Accent Secondary Light": {
+          "value": "{Color.Primitive.White.5 alpha.value}"
+        },
+        "Caution": {
+          "value": "{Color.Primitive.Caution.Red Vivid 100.value}"
+        },
+        "Caution Light": {
+          "value": "{Color.Primitive.White.5 alpha.value}"
+        },
+        "Primary": {
+          "value": "{Color.Primitive.Gray.90.value}"
+        },
+        "Quaternary": {
+          "value": "{Color.Primitive.White.20 alpha.value}"
+        },
+        "Secondary": {
+          "value": "{Color.Primitive.White.5 alpha.value}"
+        },
+        "Tertiary": {
+          "value": "{Color.Primitive.White.10 alpha.value}"
+        }
+      },
+      "Tap Highlight": {
+        "Base": {
+          "value": "{Color.Primitive.White.5 alpha.value}"
+        }
+      },
+      "Text": {
+        "Accent Primary": {
+          "value": "{Color.Primitive.Primary Green.50.value}"
+        },
+        "Accent Secondary": {
+          "value": "{Color.Primitive.Secondary Green.50.value}"
+        },
+        "Caution": {
+          "value": "{Color.Primitive.Caution.Red Vivid 100.value}"
+        },
+        "Disable": {
+          "value": "{Color.Primitive.White.20 alpha.value}"
+        },
+        "High Emphasis": {
+          "value": "{Color.Primitive.White.100.value}"
+        },
+        "High Emphasis Inverse": {
+          "value": "{Color.Primitive.Gray.100.value}"
+        },
+        "Low Emphasis": {
+          "value": "{Color.Primitive.White.60 alpha.value}"
+        },
+        "Medium Emphasis": {
+          "value": "{Color.Primitive.White.80 alpha.value}"
+        }
+      },
+      "Third Party": {
+        "Apple": {
+          "value": "{Color.Primitive.White.100.value}"
+        },
+        "Facebook": {
+          "value": "{Color.Primitive.Third Party.Facebook Blue.value}"
+        },
+        "Instagram": {
+          "value": "{Color.Primitive.Third Party.Instagram Pink.value}"
+        },
+        "Twitter": {
+          "value": "{Color.Primitive.Third Party.Twitter Blue.value}"
+        },
+        "Youtube": {
+          "value": "{Color.Primitive.Third Party.Youtube Red.value}"
+        }
+      }
+    }
+  }
+}
