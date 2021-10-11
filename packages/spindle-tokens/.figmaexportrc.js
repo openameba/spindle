@@ -18,8 +18,8 @@ module.exports = {
           outputters: [
             exporter({
               output: './tokens/color',
-              replacer: result => JSON.stringify({ Color: { Theme: sortObj(result) } }, null, 2),
-              fileName: 'theme.json'
+              replacer: result => JSON.stringify({ Color: { ThemeLight: sortObj(result) } }, null, 2),
+              fileName: 'theme-light.json'
             })
           ]
         }],
@@ -28,7 +28,7 @@ module.exports = {
         outputters: [
           exporter({
             output: './tokens/color',
-            replacer: result => JSON.stringify({ Color: { Theme: sortObj(result) } }, null, 2),
+            replacer: result => JSON.stringify({ Color: { ThemeDark: sortObj(result) } }, null, 2),
             fileName: 'theme-dark.json'
           })
         ]

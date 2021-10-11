@@ -1,0 +1,26 @@
+{
+  "Shadow": {
+    "Box": {
+      "Lv2": {
+        "value": "var(--shadow-drop-shadow-lv2-offset-x) var(--shadow-drop-shadow-lv2-offset-y) calc(var(--shadow-drop-shadow-lv2-blur-radius) * 2) var(--shadow-drop-shadow-lv2-color)"
+      },
+      "Lv4": {
+        "value": "var(--shadow-drop-shadow-lv4-offset-x) var(--shadow-drop-shadow-lv4-offset-y) calc(var(--shadow-drop-shadow-lv4-blur-radius) * 2) var(--shadow-drop-shadow-lv4-color)"
+      },
+      "Lv6": {
+        "value": "var(--shadow-drop-shadow-lv6-offset-x) var(--shadow-drop-shadow-lv6-offset-y) calc(var(--shadow-drop-shadow-lv6-blur-radius) * 2) var(--shadow-drop-shadow-lv6-color)"
+      }
+    },
+    "Drop": {
+      "Lv2": {
+        "value": "var(--shadow-drop-shadow-lv2-offset-x) var(--shadow-drop-shadow-lv2-offset-y) var(--shadow-drop-shadow-lv2-blur-radius) var(--shadow-drop-shadow-lv2-color)"
+      },
+      "Lv4": {
+        "value": "var(--shadow-drop-shadow-lv4-offset-x) var(--shadow-drop-shadow-lv4-offset-y) var(--shadow-drop-shadow-lv4-blur-radius) var(--shadow-drop-shadow-lv4-color)"
+      },
+      "Lv6": {
+        "value": "var(--shadow-drop-shadow-lv6-offset-x) var(--shadow-drop-shadow-lv6-offset-y) var(--shadow-drop-shadow-lv6-blur-radius) var(--shadow-drop-shadow-lv6-color)"
+      }
+    }
+  }
+}

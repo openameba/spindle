@@ -7,11 +7,11 @@
   "publishConfig": {
     "access": "public"
   },
+  "style": "dist/css/spindle-tokens.css",
   "files": [
-    "tokens/**",
+    "dist/**",
     "spindle-tokens.png"
   ],
-  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/openameba/spindle.git"
@@ -19,14 +19,18 @@
   "scripts": {
     "test": "tsc --noEmit && yarn jest",
     "jest": "jest",
-    "build": "style-dictionary build",
+    "build": "run-p build:*",
+    "build:tokens": "style-dictionary build",
+    "build:css": "style-dictionary build --config ./config-css.json",
     "preexport": "tsc",
-    "export": "npx @figma-export/cli use-config"
+    "export": "./node_modules/.bin/figma-export use-config",
+    "prepublishOnly": "yarn build"
   },
   "bugs": {
     "url": "https://github.com/openameba/spindle/issues"
   },
   "devDependencies": {
+    "@figma-export/cli": "^3.4.0",
     "@figma-export/types": "^3.4.0",
     "@types/lodash.setwith": "^4.3.6",
     "jest": "^27.2.4",

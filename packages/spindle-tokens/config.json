@@ -1,14 +1,10 @@
 {
-  "source": ["tokens/**/*.json"],
+  "source": ["tokens/**/!(*.css).json"],
   "platforms": {
-    "css": {
-      "transformGroup": "css",
+    "json": {
       "files": [{
-        "destination": "dist/spindle-tokens.css",
-        "format": "css/variables",
-        "options": {
-          "outputReferences": true
-        }
+        "destination": "dist/json/spindle-tokens.json",
+        "format": "json"
       }]
     }
   }

@@ -1,6 +1,6 @@
 {
   "Color": {
-    "Theme": {
+    "ThemeDark": {
       "Active": {
         "Caution Button": {
           "value": "{Color.Primitive.White.5 alpha.value}"
