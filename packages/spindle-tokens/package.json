@@ -4,6 +4,7 @@
   "description": "Spindle design tokens.",
   "homepage": "https://github.com/openameba/spindle#readme",
   "license": "MIT",
+  "private": true,
   "publishConfig": {
     "access": "public"
   },
