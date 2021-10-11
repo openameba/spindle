@@ -7,11 +7,11 @@
   "publishConfig": {
     "access": "public"
   },
+  "style": "dist/css/spindle-tokens.css",
   "files": [
-    "tokens/**",
+    "dist/**",
     "spindle-tokens.png"
   ],
-  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/openameba/spindle.git"
@@ -19,7 +19,9 @@
   "scripts": {
     "test": "tsc --noEmit && yarn jest",
     "jest": "jest",
-    "build": "style-dictionary build",
+    "build": "run-p build:*",
+    "build:tokens": "style-dictionary build",
+    "build:css": "style-dictionary build --config ./config-css.json",
     "preexport": "tsc",
     "export": "npx @figma-export/cli use-config"
   },
