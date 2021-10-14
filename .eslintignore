@@ -1,3 +1,4 @@
 dist/
 public/
 packages/spindle-tokens/lib/*.js
+packages/spindle-text-linter/functions/lib/*.js
