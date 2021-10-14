@@ -8,6 +8,74 @@ Spindle (Ameba Design System) Design Tokens
 
 Spindle TokensはAmebaのデザインシステム「Spindle」で定義されたデザイントークンを管理します。デザイントークンは[Style Dictionary](https://github.com/amzn/style-dictionary)で使えるJSON形式で管理され、各アプリケーション向けの形式に変換されます。
 
+## 配布されるファイル
+
+### JSON
+
+デザイントークンのデータをJSON(オブジェクト)形式で表現した形式です。
+
+`dist/json/spindle-tokens.json`
+
+```json
+{
+  "Color": {
+    "Primitive": {
+      "Black": {
+        "100": {
+          "value": "rgba(0, 0, 0, 1)",
+          "filePath": "tokens/color/primitive.json",
+          "isSource": true,
+          "original": {
+            "value": "rgba(0, 0, 0, 1)"
+          },
+          "name": "100",
+          "attributes": {},
+          "path": [
+            "Color",
+            "Primitive",
+            "Black",
+            "100"
+          ]
+        }
+      }
+    }
+  }
+}
+```
+
+### JSON Flat
+
+デザイントークンのデータをJSON(配列)形式で表現した形式です。データをソートしたりフィルタリングする際に役立つかもしれません。以下の点がJSON形式と異なっていますので、注意して利用してください。
+
+- プロパティ`value`は`string`に統一されます
+- プロパティ`original.value`は元データ型を保持します
+- `path`を`.`で連結した`pathString`プロパティが付与されます
+
+`dist/json/spindle-tokens-flat.json`
+
+```json
+[
+  {
+    "value": "rgba(0, 0, 0, 1)",
+    "filePath": "tokens/color/primitive.json",
+    "isSource": true,
+    "original": {
+      "value": "rgba(0, 0, 0, 1)"
+    },
+    "name": "100",
+    "attributes": {},
+    "path": [
+      "Color",
+      "Primitive",
+      "Black",
+      "100"
+    ],
+    "pathString": "Color.Primitive.Black.100"
+  }
+]
+```
+
+
 ## 開発方法
 
 ```sh
