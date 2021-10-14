@@ -37,7 +37,9 @@ function App() {
 ReactDOM.render(<App />, document.querySelector('#app'));
 ```
 
-詳細は[コンポーネント一覧](#コンポーネント一覧)、[サンプルアプリケーション](#サンプルアプリケーション)を参照してください。
+Spindle UIはmodule版の配信もしています。利用する際には、[導入ガイド](https://github.com/openameba/spindle/pull/175)を参考にしてください。
+
+さらなる詳細は[コンポーネント一覧](#コンポーネント一覧)、[サンプルアプリケーション](#サンプルアプリケーション)を参照してください。
 
 > **_NOTE:_**  アイコン利用時は[Spindle IconsのReactコンポーネント](/packages/spindle-icons#react)を読み、注意点を確認してください。
 
