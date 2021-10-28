@@ -18,6 +18,9 @@ type Options = {
 type ColorToken = {
   comment?: string;
   value?: string;
+  attributes: {
+    category: 'color';
+  };
 };
 
 type DropShadowToken = {
@@ -64,7 +67,9 @@ export function exporter({
                   .join('.');
                 const name = i === 0 ? propArray : `${propArray}.${i}`;
 
-                const objectValue: ColorToken = {};
+                const objectValue: ColorToken = {
+                  attributes: { category: 'color' },
+                };
                 let aliasValue;
 
                 if (style.comment) {
