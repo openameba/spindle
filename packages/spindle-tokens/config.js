@@ -25,5 +25,35 @@ module.exports = {
         },
       ],
     },
+    xml: {
+      transforms: ['name/cti/snake', 'color/hex8android'],
+      files: [
+        {
+          destination: 'dist/xml/spindle-tokens.xml',
+          format: 'android/resources',
+          filter: {
+            attributes: { category: 'color' },
+          },
+          options: {
+            outputReferences: true,
+          },
+        },
+      ],
+    },
+    swift: {
+      transforms: ['name/cti/camel', 'color/UIColorSwift'],
+      files: [
+        {
+          destination: 'dist/swift/spindle-tokens.swift',
+          format: 'ios-swift/class.swift',
+          filter: {
+            attributes: { category: 'color' },
+          },
+          options: {
+            outputReferences: true,
+          },
+        },
+      ],
+    },
   },
 };
