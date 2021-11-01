@@ -122,6 +122,9 @@ describe('style output as style dictionary JSON', () => {
         path.resolve(output, fileName),
         '{\n' +
           '  "variable-name": {\n' +
+          '    "attributes": {\n' +
+          '      "category": "color"\n' +
+          '    },\n' +
           '    "comment": "lorem ipsum",\n' +
           '    "value": "rgba(0, 0, 0, 1)"\n' +
           '  }\n' +
@@ -145,6 +148,9 @@ describe('style output as style dictionary JSON', () => {
         path.resolve(output, fileName),
         '{\n' +
           '  "variable-name": {\n' +
+          '    "attributes": {\n' +
+          '      "category": "color"\n' +
+          '    },\n' +
           '    "comment": "Alias",\n' +
           '    "value": "{Color.Primitive.Green}"\n' +
           '  }\n' +
@@ -168,6 +174,9 @@ describe('style output as style dictionary JSON', () => {
         path.resolve(output, fileName),
         '{\n' +
           '  "variable-name": {\n' +
+          '    "attributes": {\n' +
+          '      "category": "color"\n' +
+          '    },\n' +
           '    "comment": "DO: !!, DO NOT: !!!",\n' +
           '    "value": "{Color.Primitive.Green}"\n' +
           '  }\n' +
