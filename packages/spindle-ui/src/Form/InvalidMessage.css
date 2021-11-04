@@ -18,8 +18,11 @@
 
 .spui-InvalidMessage-icon {
   font-size: 1.33em;
-  height: 1.1em;
+  line-height: 1;
   margin-right: 0.25em;
+}
+
+.spui-InvalidMessage-body {
   position: relative;
-  top: -2px;
+  top: 1px;
 }
