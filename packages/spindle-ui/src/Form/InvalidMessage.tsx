@@ -20,7 +20,7 @@ export const InvalidMessage: React.FC<Props> = ({
       <span className={`${BLOCK_NAME}-icon`}>
         <ExclamationmarkCircleFill aria-hidden="true" />
       </span>
-      {children}
+      <span className={`${BLOCK_NAME}-body`}>{children}</span>
     </p>
   );
 };

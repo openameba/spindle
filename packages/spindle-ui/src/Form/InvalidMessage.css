@@ -3,7 +3,7 @@
 */
 .spui-InvalidMessage {
   color: var(--color-text-caution);
-  display: block;
+  display: flex;
   font-size: 0.75em;
   font-weight: bold;
   line-height: 1.4;
@@ -18,6 +18,11 @@
 
 .spui-InvalidMessage-icon {
   font-size: 1.33em;
+  line-height: 1;
   margin-right: 0.25em;
-  vertical-align: middle;
+}
+
+.spui-InvalidMessage-body {
+  position: relative;
+  top: 1px;
 }
