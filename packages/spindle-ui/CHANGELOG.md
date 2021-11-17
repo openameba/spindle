@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.23.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.23.0...@openameba/spindle-ui@0.23.1) (2021-11-17)
+
+
+### Bug Fixes
+
+* **spindle-ui:** adjust style of InvalidMessage ([ce72a26](https://github.com/openameba/spindle/commit/ce72a26058f69020c08dc1c92c720ad899ec1696))
+* **spindle-ui:** tweak styles ([15aba9e](https://github.com/openameba/spindle/commit/15aba9e35f6817f11f83f124fa6936ddb17af46e))
+
+
+### Features
+
+* **spindle-ui:** Lightedから試験中ステータスを削除 ([9a630d3](https://github.com/openameba/spindle/commit/9a630d3aa8b1b1be0c9cfef5cf67e75c673fa463))
+
+
+
+
+
 # [0.23.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.22.0...@openameba/spindle-ui@0.23.0) (2021-10-11)
 
 

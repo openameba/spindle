@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@0.1.0...@openameba/spindle-tokens@0.1.1) (2021-11-17)
+
+
+### Features
+
+* **spindle-tokens:** add category to color tokens ([4cec462](https://github.com/openameba/spindle/commit/4cec462ccab82cf7c34f7e0f27cabd0bd4f9796c))
+
+
+
+
+
 # 0.1.0 (2021-10-14)
 
 
