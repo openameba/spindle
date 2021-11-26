@@ -38,7 +38,7 @@ jobs:
         run: >
           npx storycap
           --outDir packages/spindle-ui/.reg-suit/actual_images/
-          --serverCmd 'npx serve packages/spindle-ui/public'
+          --serverCmd 'npx serve -p 5000 packages/spindle-ui/public'
           http://localhost:5000
       - name: checkout branch when push
         if: github.event_name == 'push'
