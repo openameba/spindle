@@ -104,6 +104,7 @@
 | cross_circle_fill | ![](../dist/svg/cross_circle_fill.svg) |
 | cross_rectangle | ![](../dist/svg/cross_rectangle.svg) |
 | cutlery | ![](../dist/svg/cutlery.svg) |
+| diamond_two | ![](../dist/svg/diamond_two.svg) |
 | dice | ![](../dist/svg/dice.svg) |
 | dot | ![](../dist/svg/dot.svg) |
 | dotmoney | ![](../dist/svg/dotmoney.svg) |
