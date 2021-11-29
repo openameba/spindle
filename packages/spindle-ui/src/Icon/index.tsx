@@ -101,6 +101,7 @@ export { default as CrossCircle } from './CrossCircle';
 export { default as CrossCircleFill } from './CrossCircleFill';
 export { default as CrossRectangle } from './CrossRectangle';
 export { default as Cutlery } from './Cutlery';
+export { default as DiamondTwo } from './DiamondTwo';
 export { default as Dice } from './Dice';
 export { default as Dot } from './Dot';
 export { default as Dotmoney } from './Dotmoney';
