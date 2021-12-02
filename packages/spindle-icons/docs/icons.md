@@ -15,6 +15,7 @@
 | align_right | ![](../dist/svg/align_right.svg) |
 | all_fill | ![](../dist/svg/all_fill.svg) |
 | amebacoin | ![](../dist/svg/amebacoin.svg) |
+| amebapick | ![](../dist/svg/amebapick.svg) |
 | amegold | ![](../dist/svg/amegold.svg) |
 | amember | ![](../dist/svg/amember.svg) |
 | arrow_down | ![](../dist/svg/arrow_down.svg) |
@@ -37,6 +38,7 @@
 | arrowpaging_up_circle | ![](../dist/svg/arrowpaging_up_circle.svg) |
 | article | ![](../dist/svg/article.svg) |
 | article_slash | ![](../dist/svg/article_slash.svg) |
+| articledesign | ![](../dist/svg/articledesign.svg) |
 | astrogy | ![](../dist/svg/astrogy.svg) |
 | astrogy_fill | ![](../dist/svg/astrogy_fill.svg) |
 | baby | ![](../dist/svg/baby.svg) |
@@ -171,6 +173,7 @@
 | italic | ![](../dist/svg/italic.svg) |
 | kaomoji | ![](../dist/svg/kaomoji.svg) |
 | keyboard | ![](../dist/svg/keyboard.svg) |
+| keyboard_down_fill | ![](../dist/svg/keyboard_down_fill.svg) |
 | keyboard_fill | ![](../dist/svg/keyboard_fill.svg) |
 | koeblog | ![](../dist/svg/koeblog.svg) |
 | line_circle | ![](../dist/svg/line_circle.svg) |
@@ -187,6 +190,7 @@
 | mail_circle | ![](../dist/svg/mail_circle.svg) |
 | mail_circle_fill | ![](../dist/svg/mail_circle_fill.svg) |
 | mail_fill | ![](../dist/svg/mail_fill.svg) |
+| megaphone | ![](../dist/svg/megaphone.svg) |
 | menu_hamburger | ![](../dist/svg/menu_hamburger.svg) |
 | menu_hamburger_bold | ![](../dist/svg/menu_hamburger_bold.svg) |
 | menu_hamburger_fourline | ![](../dist/svg/menu_hamburger_fourline.svg) |
