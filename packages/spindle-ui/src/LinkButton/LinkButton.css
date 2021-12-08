@@ -12,8 +12,8 @@
   --LinkButton--contained-onActive-backgroundColor: var(--primary-green-100);
   --LinkButton--contained-onHover-backgroundColor: var(--primary-green-100);
 
-  --LinkButton--outlined-borderColor: var(--color-surface-accent-primary);
-  --LinkButton--outlined-color: var(--color-surface-accent-primary);
+  --LinkButton--outlined-borderColor: var(--color-border-accent-primary);
+  --LinkButton--outlined-color: var(--color-text-accent-primary);
   --LinkButton--outlined-onActive-backgroundColor: var(--primary-green-5);
   --LinkButton--outlined-onHover-backgroundColor: var(--primary-green-5);
 
@@ -29,7 +29,7 @@
   --LinkButton--neutral-onActive-backgroundColor: var(--gray-20-alpha);
   --LinkButton--neutral-onHover-backgroundColor: var(--gray-20-alpha);
 
-  --LinkButton--danger-borderColor: var(--color-text-caution);
+  --LinkButton--danger-borderColor: var(--color-border-caution);
   --LinkButton--danger-color: var(--color-text-caution);
   --LinkButton--danger-onActive-backgroundColor: var(--caution-red-5-alpha);
   --LinkButton--danger-onHover-backgroundColor: var(--caution-red-5-alpha);

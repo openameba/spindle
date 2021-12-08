@@ -12,8 +12,8 @@
   --Button--contained-onActive-backgroundColor: var(--primary-green-100);
   --Button--contained-onHover-backgroundColor: var(--primary-green-100);
 
-  --Button--outlined-borderColor: var(--color-surface-accent-primary);
-  --Button--outlined-color: var(--color-surface-accent-primary);
+  --Button--outlined-borderColor: var(--color-border-accent-primary);
+  --Button--outlined-color: var(--color-text-accent-primary);
   --Button--outlined-onActive-backgroundColor: var(--primary-green-5);
   --Button--outlined-onHover-backgroundColor: var(--primary-green-5);
 
@@ -27,7 +27,7 @@
   --Button--neutral-onActive-backgroundColor: var(--gray-20-alpha);
   --Button--neutral-onHover-backgroundColor: var(--gray-20-alpha);
 
-  --Button--danger-borderColor: var(--color-text-caution);
+  --Button--danger-borderColor: var(--color-border-caution);
   --Button--danger-color: var(--color-text-caution);
   --Button--danger-onActive-backgroundColor: var(--caution-red-5-alpha);
   --Button--danger-onHover-backgroundColor: var(--caution-red-5-alpha);
