@@ -8,29 +8,29 @@
     0 0 0 3px var(--color-focus-clarity);
 
   --IconButton--contained-backgroundColor: var(--color-surface-accent-primary);
-  --IconButton--contained-color: var(--color-text-high-emphasis-inverse);
+  --IconButton--contained-color: var(--color-object-high-emphasis-inverse);
   --IconButton--contained-onActive-backgroundColor: var(--primary-green-100);
   --IconButton--contained-onHover-backgroundColor: var(--primary-green-100);
 
-  --IconButton--outlined-borderColor: var(--color-surface-accent-primary);
-  --IconButton--outlined-color: var(--color-surface-accent-primary);
+  --IconButton--outlined-borderColor: var(--color-border-accent-primary);
+  --IconButton--outlined-color: var(--color-object-accent-primary);
   --IconButton--outlined-onActive-backgroundColor: var(--primary-green-5);
   --IconButton--outlined-onHover-backgroundColor: var(--primary-green-5);
 
   --IconButton--lighted-backgroundColor: var(
     --color-surface-accent-primary-light
   );
-  --IconButton--lighted-color: var(--color-text-accent-primary);
+  --IconButton--lighted-color: var(--color-object-accent-primary);
   --IconButton--lighted-onActive-backgroundColor: var(--primary-green-10);
   --IconButton--lighted-onHover-backgroundColor: var(--primary-green-10);
 
   --IconButton--neutral-backgroundColor: var(--color-surface-tertiary);
-  --IconButton--neutral-color: var(--color-text-medium-emphasis);
+  --IconButton--neutral-color: var(--color-object-medium-emphasis);
   --IconButton--neutral-onActive-backgroundColor: var(--gray-20-alpha);
   --IconButton--neutral-onHover-backgroundColor: var(--gray-20-alpha);
 
-  --IconButton--danger-borderColor: var(--color-text-caution);
-  --IconButton--danger-color: var(--color-text-caution);
+  --IconButton--danger-borderColor: var(--color-border-caution);
+  --IconButton--danger-color: var(--color-object-caution);
   --IconButton--danger-onActive-backgroundColor: var(--caution-red-5-alpha);
   --IconButton--danger-onHover-backgroundColor: var(--caution-red-5-alpha);
 }
