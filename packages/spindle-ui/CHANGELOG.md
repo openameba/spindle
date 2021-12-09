@@ -76,6 +76,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 * **spindle-ui:** add HeroCarousel component ([d7e0a53](https://github.com/openameba/spindle/commit/d7e0a5302cfca4d7600188098ef4dd224998e2bb))
 
+## [0.25.2-alpha.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.25.1...@openameba/spindle-ui@0.25.2-alpha.0) (2021-12-09)
+
+
+### Bug Fixes
+
+* **spindle-ui:** set side effect for css ([bdf0c9f](https://github.com/openameba/spindle/commit/bdf0c9ff79a69ad9dd2706dcfe96bd29559b373e))
+
 
 
 
