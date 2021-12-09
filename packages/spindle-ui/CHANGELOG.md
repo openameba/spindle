@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.25.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.25.0...@openameba/spindle-ui@0.25.1) (2021-12-09)
+
+
+### Bug Fixes
+
+* **spindle-ui:** correct button tokens ([6b88a5f](https://github.com/openameba/spindle/commit/6b88a5fd5fd8677aec82add4fe3552674ace69cc))
+
+
+
+
+
 # [0.25.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.24.0...@openameba/spindle-ui@0.25.0) (2021-12-03)
 
 
