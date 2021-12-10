@@ -285,6 +285,33 @@ import { PlusBold, ArrowRightBold, OpenblankFill } from '../Icon';
   `}
 />
 
+## CSSの詳細度についての注意
+`<LinkButton>`のスタイルはクラス名で指定しているため、より高い詳細度の指定がある場合に意図せず上書きされてしいます。典型的な例は共通スタイルとして定義された`a { text-decoration: underline; }`のような指定が挙げられます。その対策として`<LinkButton>`内スタイルの詳細度をあげることも検討されましたが、別の解決方法があるため見送られました。本質的にはコンポーネント内で外部に影響しないスタイルを指定することですが、技術要件的に実現できない場合もあるので以下のような対策を検討してください。
+
+一つ目の例は`:where()`を利用して詳細度を落とし、個別で指定されたスタイルが適用されるようにすることです。
+
+```css
+:where(a) {
+  text-decaration: underline;
+}
+```
+
+`:where()`に対応していないブラウザを考慮する場合には、Spindle UIで付与されるクラス名`spui`を条件に加えても実現できますが、この対応はあまり推奨していません。もし適用する際には将来的に条件を削除し`:where()`で対応できるようにしてください。
+
+```css
+a:not(.spui-LinkButton) {
+  text-decaration: underline;
+}
+```
+
+または、`<LinkButton>`が特定の要素配下でのみ使用される場合には親となる要素を指定してデフォルをスタイルを打ち消すことも考えられます。
+
+```css
+.any-parent a {
+  text-decaration: none;
+}
+```
+
 ## Browser Compatibility
 <Description>active時やhover時など各stateのスタイルは、ブラウザごとに異なります。詳しくは[ButtonのStateパターン変更](https://github.com/openameba/spindle/issues/13)を参照してください。</Description>
 
