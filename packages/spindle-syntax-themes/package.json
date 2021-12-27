@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@acot/acot-config": "^0.0.13",
-    "@acot/cli": "^0.0.12",
+    "@acot/cli": "^0.0.13",
     "csso-cli": "^3.0.0",
     "firebase-tools": "^10.0.0",
     "puppeteer": "^13.0.0",
