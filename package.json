@@ -9,7 +9,7 @@
     "lint:yaml": "yamllint .github/workflows/*.yml",
     "lint:packages": "lerna run lint",
     "format": "prettier --check '**/*.{js,ts,tsx}'",
-    "fix": "run-p format:*",
+    "fix": "run-p fix:*",
     "fix:script": "eslint . --fix",
     "fix:packages": "lerna run format",
     "fix:format": "prettier --write '**/*.{js,ts,tsx}'",
