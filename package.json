@@ -2,15 +2,17 @@
   "name": "spindle",
   "private": true,
   "scripts": {
-    "test": "run-p lint test:packages",
+    "test": "run-p lint format test:packages",
     "test:packages": "lerna run test",
     "lint": "run-p lint:*",
     "lint:script": "eslint --cache .",
     "lint:yaml": "yamllint .github/workflows/*.yml",
     "lint:packages": "lerna run lint",
+    "format": "prettier --check '**/*.{js,ts,tsx}'",
     "fix": "run-p format:*",
     "fix:script": "eslint . --fix",
     "fix:packages": "lerna run format",
+    "fix:format": "prettier --write '**/*.{js,ts,tsx}'",
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "prepare": "is-ci || husky install"
