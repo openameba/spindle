@@ -16,8 +16,8 @@ export const parameters = {
       },
       {
         name: 'Background Color Dark',
-        value: '#08121A'
-      }
+        value: '#08121A',
+      },
     ],
   },
 };
