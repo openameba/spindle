@@ -6,5 +6,13 @@ module.exports = {
     '@storybook/addon-backgrounds',
     '@storybook/addon-docs',
     '@storybook/addon-viewport',
+    {
+      name: '@storybook/addon-postcss',
+      options: {
+        postcssLoaderOptions: {
+          implementation: require('postcss'),
+        },
+      },
+    },
   ]
 };
