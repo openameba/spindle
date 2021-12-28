@@ -8,9 +8,9 @@
     "lint:script": "eslint --cache .",
     "lint:yaml": "yamllint .github/workflows/*.yml",
     "lint:packages": "lerna run lint",
-    "format": "run-p format:*",
-    "format:script": "eslint . --fix",
-    "format:packages": "lerna run format",
+    "fix": "run-p format:*",
+    "fix:script": "eslint . --fix",
+    "fix:packages": "lerna run format",
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "prepare": "is-ci || husky install"
