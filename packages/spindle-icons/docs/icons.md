@@ -86,6 +86,7 @@
 | circle | ![](../dist/svg/circle.svg) |
 | circle_bold | ![](../dist/svg/circle_bold.svg) |
 | circle_fill | ![](../dist/svg/circle_fill.svg) |
+| circle_slash | ![](../dist/svg/circle_slash.svg) |
 | clock | ![](../dist/svg/clock.svg) |
 | clock_fill | ![](../dist/svg/clock_fill.svg) |
 | coin | ![](../dist/svg/coin.svg) |
@@ -122,6 +123,7 @@
 | exclamationmark_circle_fill | ![](../dist/svg/exclamationmark_circle_fill.svg) |
 | expand | ![](../dist/svg/expand.svg) |
 | expand_exit | ![](../dist/svg/expand_exit.svg) |
+| face_unhappy | ![](../dist/svg/face_unhappy.svg) |
 | facebook | ![](../dist/svg/facebook.svg) |
 | file | ![](../dist/svg/file.svg) |
 | file_add | ![](../dist/svg/file_add.svg) |
