@@ -2314,13 +2314,6 @@
     figma-js "~1.14.0"
     p-limit "^3.1.0"
 
-"@figma-export/types@^3.4.0":
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/@figma-export/types/-/types-3.4.0.tgz#ea60914390d0efab11e1a87c2d87ec828503930b"
-  integrity sha512-GoH/u2Oje5nwAxAWrBD9d/mCpitZJi6xj5BD2XSjMKYfE0eKTJkHoYviqpk36hIRrwUBnBv+1zd+vWqzBDX36g==
-  dependencies:
-    figma-js "~1.14.0"
-
 "@figma-export/types@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@figma-export/types/-/types-4.0.0.tgz#8c5b42b0f100ef247431b2b3029ecf60e896ef62"
