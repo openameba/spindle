@@ -9,7 +9,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "node-sass": "^5.0.0"
+    "node-sass": "^7.0.0"
   },
   "dependencies": {
     "@openameba/spindle-ui": "^0.5.0",
