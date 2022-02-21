@@ -1,0 +1,88 @@
+/*
+ * HeroCarouselItem
+ * NOTE: Styles can be overridden with "--HeroCarouselItem-*" variables
+*/
+:root {
+  --HeroCarouselItem-onFocus-boxShadow: 0 0 0 1px var(--color-surface-primary),
+    0 0 0 3px var(--color-focus-clarity);
+}
+.spui-HeroCarouselItem-listItem {
+  list-style: none;
+  padding: 0 0.44em;
+  width: 100%;
+}
+
+.spui-HeroCarouselItem-link {
+  border: 1px solid var(--color-border-low-emphasis);
+  border-radius: 12px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 12em;
+  text-decoration: none;
+}
+
+.spui-HeroCarouselItem-link:focus {
+  box-shadow: var(--HeroCarouselItem-onFocus-boxShadow);
+  outline: none;
+}
+
+.spui-HeroCarouselItem-link:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.spui-HeroCarouselItem-imageBlock {
+  align-items: center;
+  border-bottom: 1px solid var(--color-border-low-emphasis);
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  height: 9.5em;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.spui-HeroCarouselItem-image {
+  height: 100%;
+}
+
+.spui-HeroCarouselItem-titleContainer {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  height: 2.89em;
+  justify-content: center;
+  padding: 0 0.5em;
+}
+
+.spui-HeroCarouselItem-title {
+  color: var(--color-text-high-emphasis);
+  font-size: 0.9375em;
+  font-weight: bold;
+  margin: 0;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media screen and (min-width: 768px) {
+  .spui-HeroCarouselItem-listItem {
+    padding: 0 0.75em;
+  }
+
+  .spui-HeroCarouselItem-link {
+    height: 13.8em;
+  }
+
+  .spui-HeroCarouselItem-titleContainer {
+    height: 3.3em;
+  }
+
+  .spui-HeroCarouselItem-title {
+    font-size: 1em;
+  }
+
+  .spui-HeroCarouselItem-imageBlock {
+    height: 10.9em;
+  }
+}
