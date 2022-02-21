@@ -1,0 +1,109 @@
+/*
+ * HeroCarousel
+ * NOTE: Styles can be overridden with "--HeroCarousel-*" variables
+*/
+:root {
+  --HeroCarousel-onFocus-boxShadow: 0 0 0 1px var(--color-surface-primary),
+    0 0 0 3px var(--color-focus-clarity);
+}
+
+.spui-HeroCarousel-container {
+  align-items: center;
+  display: flex;
+  height: 11.6em;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0.6rem 0;
+}
+
+.spui-HeroCarousel-list {
+  display: flex;
+  margin-right: 0.88em;
+  padding: 0 0.44em;
+  transition: transform 0.5s;
+  width: 16.7em;
+}
+
+.spui-HeroCarousel-controls {
+  align-items: center;
+  border: 1px solid var(--color-border-low-emphasis);
+  border-radius: 100px;
+  display: flex;
+  margin: 0.88em auto 0;
+  width: fit-content;
+}
+
+.spui-HeroCarousel-control {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  height: 3em;
+  justify-content: center;
+  padding: 0;
+  width: 3em;
+}
+
+.spui-HeroCarousel-control:hover {
+  opacity: 0.7;
+}
+
+.spui-HeroCarousel-control:focus {
+  box-shadow: var(--HeroCarousel-onFocus-boxShadow);
+  outline: none;
+}
+
+.spui-HeroCarousel-control:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.spui-HeroCarousel-control--prev {
+  border-radius: 100px 0 0 100px;
+  border-right: 1px solid var(--color-border-low-emphasis);
+}
+
+.spui-HeroCarousel-control--next {
+  border-left: 1px solid var(--color-border-low-emphasis);
+  border-radius: 0 100px 100px 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spui-HeroCarousel-list {
+    transition: 1ms;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .spui-HeroCarousel-container {
+    height: 13em;
+  }
+
+  .spui-HeroCarousel-list {
+    margin-right: 1.5em;
+    padding: 0 0.75em;
+    width: 18.5em;
+  }
+
+  .spui-HeroCarousel-controls {
+    margin-top: 1.25em;
+  }
+
+  .spui-HeroCarousel-control {
+    height: 3.3em;
+    width: 3.3em;
+  }
+}
+
+/* stylelint-disable plugin/selector-bem-pattern */
+.spui-HeroCarousel-control > svg {
+  color: var(--color-text-low-emphasis);
+  height: 1.35em;
+  width: 1.35em;
+}
+
+@media screen and (min-width: 768px) {
+  .spui-HeroCarousel-control > svg {
+    height: 1.5em;
+    width: 1.5em;
+  }
+}
