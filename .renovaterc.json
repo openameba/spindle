@@ -9,6 +9,9 @@
     "group:postcss",
     "group:typescript-eslintMonorepo"
   ],
+  "lockFileMaintenance": {
+    "enabled": true
+  },
   "assignees": [
     "herablog",
     "sasaplus1",
