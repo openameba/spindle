@@ -14,3 +14,11 @@ Amebaとして提供される成果物は、それらに則って開発される
   - スコープは`spindle-icons`や`spindle-ui`など該当する[パッケージ名](https://github.com/openameba/spindle/tree/main/packages)があれば付与します
   - 破壊的変更がある場合は、`BREAKING CHANGE`を明記します
 - Pull Requestを作成します
+
+## リリースのやり方 (Ameba在籍メンバー向け)
+1. 作業が終わったら該当ブランチを`main`ブランチにマージします
+2. (省略化) リリースされる内容は`main`ブランチを選択し、`npx lerna diff`もしくは`npx lerna changed`で確認できます。依存モジュールの更新等で対象でないパッケージのバージョンも更新されることがありますが、内容が間違えでなければ問題ありません
+3. 変更内容に合わせてリリースブランチを作成します。選択できる名前は[release.yml](/.github/workflows/release.yml#L6-L12)を参照してください
+4. ブランチがプッシュされるとCHANGELOG作成・npmパブリッシュ・Pull Request作成が自動的に行われます
+5. 4で作成されたPull Requestの内容を確認し、`main`ブランチにマージします
+6. (省略化) 開発メンバーに周知します
