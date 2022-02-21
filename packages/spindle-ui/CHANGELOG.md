@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.26.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.25.1...@openameba/spindle-ui@0.26.0) (2022-02-21)
+
+
+### Features
+
+* **spindle-ui:** add HeroCarousel component ([d7e0a53](https://github.com/openameba/spindle/commit/d7e0a5302cfca4d7600188098ef4dd224998e2bb))
+
+
+
+
+
 ## [0.25.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.25.0...@openameba/spindle-ui@0.25.1) (2021-12-09)
 
 
