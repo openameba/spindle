@@ -20,6 +20,7 @@
   flex-direction: column;
   height: 12em;
   text-decoration: none;
+  width: 17.5em;
 }
 
 .spui-HeroCarouselItem-link:focus {
@@ -72,6 +73,7 @@
 
   .spui-HeroCarouselItem-link {
     height: 13.8em;
+    width: 20em;
   }
 
   .spui-HeroCarouselItem-titleContainer {
