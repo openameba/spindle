@@ -10,10 +10,9 @@
 .spui-HeroCarousel-container {
   align-items: center;
   display: flex;
-  height: 11.6em;
+  height: 12.5em;
   justify-content: center;
   overflow: hidden;
-  padding: 0.6rem 0;
 }
 
 .spui-HeroCarousel-list {
@@ -21,7 +20,7 @@
   margin-right: 0.88em;
   padding: 0 0.44em;
   transition: transform 0.5s;
-  width: 16.7em;
+  width: 17.5em;
 }
 
 .spui-HeroCarousel-controls {
@@ -29,8 +28,9 @@
   border: 1px solid var(--color-border-low-emphasis);
   border-radius: 100px;
   display: flex;
+  height: 2.5em;
   margin: 0.88em auto 0;
-  width: fit-content;
+  width: 7.63em;
 }
 
 .spui-HeroCarousel-control {
@@ -38,10 +38,11 @@
   background-color: transparent;
   border: none;
   display: flex;
-  height: 3em;
+  font-size: 1em;
+  height: 100%;
   justify-content: center;
   padding: 0;
-  width: 3em;
+  width: calc(100% / 3);
 }
 
 .spui-HeroCarousel-control:hover {
@@ -75,35 +76,32 @@
 
 @media screen and (min-width: 768px) {
   .spui-HeroCarousel-container {
-    height: 13em;
+    height: 14.3em;
   }
 
   .spui-HeroCarousel-list {
     margin-right: 1.5em;
     padding: 0 0.75em;
-    width: 18.5em;
+    width: 20em;
   }
 
   .spui-HeroCarousel-controls {
+    height: 2.75em;
     margin-top: 1.25em;
-  }
-
-  .spui-HeroCarousel-control {
-    height: 3.3em;
-    width: 3.3em;
+    width: 8.38em;
   }
 }
 
 /* stylelint-disable plugin/selector-bem-pattern */
 .spui-HeroCarousel-control > svg {
   color: var(--color-text-low-emphasis);
-  height: 1.35em;
-  width: 1.35em;
+  height: 1.13em;
+  width: 1.13em;
 }
 
 @media screen and (min-width: 768px) {
   .spui-HeroCarousel-control > svg {
-    height: 1.5em;
-    width: 1.5em;
+    height: 1.25em;
+    width: 1.25em;
   }
 }
