@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.26.2](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.26.1...@openameba/spindle-ui@0.26.2) (2022-02-25)
+
+
+### Bug Fixes
+
+* **spindle-ui:** do not use CSS import in component ([af07e81](https://github.com/openameba/spindle/commit/af07e8177a13bed7ef2c8b42981cc3e6189950b2))
+
+
+
+
+
 ## [0.26.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.26.0...@openameba/spindle-ui@0.26.1) (2022-02-24)
 
 
