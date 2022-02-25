@@ -1,5 +1,4 @@
 import React, { useCallback, FC } from 'react';
-import './HeroCarouselItem.css';
 
 export type CarouselItem = {
   imageUrl: string;
