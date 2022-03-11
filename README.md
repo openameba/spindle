@@ -9,4 +9,5 @@ Ameba Design System
 - [Spindle Tokens](packages/spindle-tokens) (Design tokens)
 - [Spindle Icons](packages/spindle-icons) (SVG and PDF icons)
 - [Spindle UI](packages/spindle-ui) (UI components)
+- [Spindle Hooks](packages/spindle-hooks) (React Hooks)
 - [Spindle Syntax Themes](packages/spindle-syntax-themes) (Syntax themes with Spindle color palette)
