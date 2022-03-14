@@ -1,13 +1,11 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "target": "es5",
+    "target": "esnext",
     "lib": ["DOM"],
     "jsx": "react",
     "outDir": "dist",
-    "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true
+    "moduleResolution": "node"
   },
   "include": ["src"],
   "exclude": ["src/**/*.test.*"]
