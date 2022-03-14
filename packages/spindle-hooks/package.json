@@ -1,18 +1,19 @@
 {
   "name": "@openameba/spindle-hooks",
   "version": "0.0.1",
-  "main": "./index.js",
-  "types": "./index.d.ts",
+  "main": "./dist/index.mjs",
+  "exports": "./dist/index.mjs",
   "scripts": {
     "test": "run-p bundlesize test:interaction",
     "test:interaction": "jest",
-    "prebundlesize": "yarn build",
+    "prebundlesize": "yarn build:script",
     "bundlesize": "npx bundlesize",
     "clean": "npx rimraf dist",
     "cp": "npx cpx 'dist/**/*' .",
     "prebuild": "yarn clean",
-    "build": "run-p build:*",
+    "build": "run-s build:script build:script:rename",
     "build:script": "tsc",
+    "build:script:rename": "npx renamer --find js --replace mjs 'dist/**'",
     "prepublishOnly": "yarn build && yarn cp"
   },
   "license": "MIT",
