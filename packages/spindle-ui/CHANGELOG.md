@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.26.3](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.26.2...@openameba/spindle-ui@0.26.3) (2022-03-14)
+
+
+### Bug Fixes
+
+* **spindle-ui:** fix HeroCarousel image size ([fa5cd3c](https://github.com/openameba/spindle/commit/fa5cd3c0e4383070e217364e0f19a0599d3ce6ae))
+
+
+
+
+
 ## [0.26.2](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.26.1...@openameba/spindle-ui@0.26.2) (2022-02-25)
 
 
