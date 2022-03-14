@@ -44,6 +44,8 @@
 
 .spui-HeroCarouselItem-image {
   height: 100%;
+  object-fit: cover;
+  width: 100%;
 }
 
 .spui-HeroCarouselItem-titleContainer {
