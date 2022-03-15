@@ -43,8 +43,8 @@
 .spui-Breadcrumb a[href]::before {
   border-radius: 4px;
   content: '';
-  height: 56px;
   left: 0;
+  min-height: 56px;
   position: absolute;
   top: -50%;
   width: 100%;
@@ -98,7 +98,7 @@
   }
 
   .spui-Breadcrumb a[href]::before {
-    height: 40px;
+    min-height: 40px;
   }
   /* stylelint-enable plugin/selector-bem-pattern */
 
