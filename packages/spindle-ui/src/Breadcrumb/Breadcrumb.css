@@ -26,21 +26,26 @@
 /* stylelint-disable plugin/selector-bem-pattern */
 .spui-Breadcrumb a {
   align-items: center;
+  border-radius: 4px;
   display: flex;
   letter-spacing: 0.1em;
   line-height: 1.3;
   padding: 4px 8px;
   position: relative;
-}
-
-.spui-Breadcrumb a[href] {
-  border-radius: 4px;
-  color: var(--color-text-accent-primary);
-  font-weight: bold;
   text-decoration: none;
 }
 
-.spui-Breadcrumb a[href]::before {
+.spui-Breadcrumb a:not([aria-current]) {
+  color: var(--color-text-accent-primary);
+  font-weight: bold;
+}
+
+.spui-Breadcrumb a[aria-current] {
+  color: var(--color-text-low-emphasis);
+  font-weight: normal;
+}
+
+.spui-Breadcrumb a::before {
   border-radius: 4px;
   content: '';
   left: 0;
@@ -50,13 +55,8 @@
   width: 100%;
 }
 
-.spui-Breadcrumb a[href]:hover {
+.spui-Breadcrumb a:hover {
   text-decoration: underline;
-}
-
-.spui-Breadcrumb a:not([href]) {
-  color: var(--color-text-low-emphasis);
-  font-weight: normal;
 }
 
 .spui-Breadcrumb a:focus {
@@ -97,7 +97,7 @@
     padding: 2px 6px;
   }
 
-  .spui-Breadcrumb a[href]::before {
+  .spui-Breadcrumb a:not([aria-current])::before {
     min-height: 40px;
   }
   /* stylelint-enable plugin/selector-bem-pattern */

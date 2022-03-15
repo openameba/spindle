@@ -31,19 +31,19 @@ import { BreadcrumbItem } from './BreadcrumbItem';
     <BreadcrumbList>
       <BreadcrumbItem href="#">Top</BreadcrumbItem>
       <BreadcrumbItem href="#">Team</BreadcrumbItem>
-      <BreadcrumbItem>Amebaとは</BreadcrumbItem>
+      <BreadcrumbItem href="#" current>Amebaとは</BreadcrumbItem>
     </BreadcrumbList>
   </Story>
 </Preview>
 
-通常は`<BreadcrumbItem>`と一緒に使います。`href`を指定しないリンクは現在地扱いになります。
+通常は`<BreadcrumbItem>`と一緒に使います。現在地のリンクには`current`を指定します。
 
 <Source
   code={`
 <BreadcrumbList>
   <BreadcrumbItem href="#">Top</BreadcrumbItem>
   <BreadcrumbItem href="#">Team</BreadcrumbItem>
-  <BreadcrumbItem>Amebaとは</BreadcrumbItem>
+  <BreadcrumbItem href="#" current>Amebaとは</BreadcrumbItem>
 </BreadcrumbList>
   `}
 />
@@ -55,7 +55,7 @@ import { BreadcrumbItem } from './BreadcrumbItem';
   <ol class="spui-Breadcrumb-list">
     <li class="spui-Breadcrumb-item"><a href="/top">Top</a><svg class="spui-Breadcrumb-chevron" role="img" aria-hidden="true"></svg></li>
     <li class="spui-Breadcrumb-item"><a href="/team">Team</a><svg class="spui-Breadcrumb-chevron" role="img" aria-hidden="true"></svg></li>
-    <li class="spui-Breadcrumb-item"><a aria-current="page">Amebaとは</a><svg class="spui-Breadcrumb-chevron" role="img" aria-hidden="true"></svg></li>
+    <li class="spui-Breadcrumb-item"><a href="#" aria-current="page">Amebaとは</a><svg class="spui-Breadcrumb-chevron" role="img" aria-hidden="true"></svg></li>
   </ol>
 </nav>
   `}
@@ -68,19 +68,19 @@ import { BreadcrumbItem } from './BreadcrumbItem';
     <BreadcrumbList>
       <a href="#">Top</a>
       <a href="#">Team</a>
-      <a aria-current="page">Amebaとは</a>
+      <a href="#" aria-current="page">Amebaとは</a>
     </BreadcrumbList>
   </Story>
 </Preview>
 
-`<BreadcrumbItem>`を使わず、直接`<a>`要素を指定することもできます。`<Link>`も同様に指定できます。
+`<BreadcrumbItem>`を使わず、直接`<a>`要素を指定することもできます。`<Link>`も同様に指定できます。その際には、現在地となるa要素にaria-current属性を付与してください。
 
 <Source
   code={`
 <BreadcrumbList>
   <a href="#">Top</a>
   <a href="#">Team</a>
-  <a>Amebaとは</a>
+  <a href="#" aria-current="page">Amebaとは</a>
 </BreadcrumbList>
   `}
 />
