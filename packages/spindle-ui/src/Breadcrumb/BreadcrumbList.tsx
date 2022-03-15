@@ -13,7 +13,6 @@ export const BreadcrumbList = (props: Props) => {
     <nav
       aria-label="パンくずリスト"
       className={[BLOCK_NAME, className].join(' ').trim()}
-      role="navigation"
       {...rest}
     >
       <ol className={`${BLOCK_NAME}-list`}>
