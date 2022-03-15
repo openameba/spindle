@@ -1,5 +1,12 @@
+import { renderHook, act } from '@testing-library/react-hooks';
 import { useSample } from './useSample';
 
 test('useSample', () => {
-  expect(useSample(1)).toBe(2);
+  const { result } = renderHook(() => useSample(5));
+
+  act(() => {
+    result.current[1]();
+  });
+
+  expect(result.current[0]).toBe(6);
 });
