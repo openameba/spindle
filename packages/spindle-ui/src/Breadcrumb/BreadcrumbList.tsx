@@ -23,7 +23,6 @@ export const BreadcrumbList = (props: Props) => {
               <ChevronRightBold
                 aria-hidden="true"
                 className={`${BLOCK_NAME}-chevron`}
-                role="img"
               />
             </li>
           ) : null;
