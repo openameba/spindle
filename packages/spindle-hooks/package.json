@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "main": "./dist/index.mjs",
   "exports": "./dist/index.mjs",
+  "engines": {
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+  },
   "scripts": {
     "test": "run-p bundlesize test:interaction",
     "test:interaction": "jest",
