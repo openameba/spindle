@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.27.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.26.3...@openameba/spindle-ui@0.27.0) (2022-03-18)
+
+
+### Features
+
+* **spindle-ui:** add Breadcrumb component ([3066aba](https://github.com/openameba/spindle/commit/3066abae0a56265437cb363315164d77ba3268a4))
+
+
+
+
+
 ## [0.26.3](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.26.2...@openameba/spindle-ui@0.26.3) (2022-03-14)
 
 
