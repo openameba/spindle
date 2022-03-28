@@ -8,12 +8,18 @@ import { useValueRef } from './useValueRef';
 type Payload<Item> = {
   items: Item[];
   itemLinkClassName: string;
+  shouldAutoPlaying?: boolean;
+  displayCount?: number;
 };
 
-const COPY_COUNT = 5;
 const SWIPE_THRESHOLD_X = 20;
 
-export function useCarousel<Item>({ items, itemLinkClassName }: Payload<Item>) {
+export function useCarousel<Item>({
+  items,
+  itemLinkClassName,
+  shouldAutoPlaying,
+  displayCount = 5,
+}: Payload<Item>) {
   const {
     diffXRef,
     diffYRef,
@@ -25,12 +31,13 @@ export function useCarousel<Item>({ items, itemLinkClassName }: Payload<Item>) {
   const [focusOffset, setFocusOffset] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
   const [isLinkClicked, setIsLinkClicked] = useState(false);
+  const [isFocus, setIsFocus] = useState(false);
   const isHoveringRef = useValueRef(isHovering);
   const slideToNextRef = useValueRef(() => slideToNext());
   const itemCount = useMemo(() => items.length, [items]);
   const getIsCopiedItem = useCallback(
     (index: number) => {
-      return index < COPY_COUNT || index >= itemCount + COPY_COUNT;
+      return index < displayCount || index >= itemCount + displayCount;
     },
     [itemCount],
   );
@@ -42,6 +49,7 @@ export function useCarousel<Item>({ items, itemLinkClassName }: Payload<Item>) {
     toggleAutoPlay,
   } = useAutoSlide({
     onTimeOut: slideToNextRef.current,
+    shouldAutoPlaying,
   });
   const { linkRefs, listRef } = useCarouselFocus({
     getIsCopiedItem,
@@ -50,24 +58,27 @@ export function useCarousel<Item>({ items, itemLinkClassName }: Payload<Item>) {
   const isAutoPlayingRef = useValueRef(isAutoPlaying);
   const {
     currentIndexRef,
+    currentIndex,
     handleTransitionEnd,
     listStyles,
+    disableTransition,
     setCurrentIndex,
     setDisableAutoFocus,
     setDisableTransition,
   } = useSliderTransition({
-    copyCount: COPY_COUNT,
+    copyCount: displayCount,
     itemCount,
     isAutoPlaying,
+    isFocus,
     linkRefs,
   });
 
   const itemsToRender = useMemo(
     // generate copy contents on both ends to make carousel look like looping
     () => [
-      ...items.slice(-COPY_COUNT),
+      ...items.slice(-displayCount),
       ...items,
-      ...items.slice(0, COPY_COUNT),
+      ...items.slice(0, displayCount),
     ],
     [items],
   );
@@ -78,6 +89,7 @@ export function useCarousel<Item>({ items, itemLinkClassName }: Payload<Item>) {
       currentIndexRef.current <= itemCount;
 
     if (shouldSlideToNext) {
+      setIsFocus(false);
       setDisableTransition(false);
       setCurrentIndex(currentIndexRef.current + 1);
     }
@@ -86,6 +98,7 @@ export function useCarousel<Item>({ items, itemLinkClassName }: Payload<Item>) {
 
   const slideToPrev = () => {
     if (currentIndexRef.current >= 0) {
+      setIsFocus(false);
       setDisableTransition(false);
       setCurrentIndex(currentIndexRef.current - 1);
     }
@@ -156,12 +169,14 @@ export function useCarousel<Item>({ items, itemLinkClassName }: Payload<Item>) {
 
   const handleFocus = (e: React.FocusEvent<HTMLDivElement>) => {
     setIsAutoPlaying(false);
+    setIsFocus(true);
 
     const { offsetLeft: newFocusOffset } = e.target;
 
     setFocusOffset(newFocusOffset);
 
-    if (focusOffset === 0) {
+    if (focusOffset === 0 || disableTransition) {
+      setDisableTransition(false);
       return;
     }
 
@@ -182,7 +197,10 @@ export function useCarousel<Item>({ items, itemLinkClassName }: Payload<Item>) {
   };
 
   const handleBlur = () => {
-    setIsAutoPlaying(true);
+    if (shouldAutoPlaying) {
+      setIsAutoPlaying(true);
+    }
+    setDisableAutoFocus(false);
   };
 
   useEffect(() => {
@@ -211,5 +229,6 @@ export function useCarousel<Item>({ items, itemLinkClassName }: Payload<Item>) {
     toggleAutoPlay,
     handleFocus,
     handleBlur,
+    currentIndex,
   };
 }

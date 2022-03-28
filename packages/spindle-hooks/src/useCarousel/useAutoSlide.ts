@@ -4,10 +4,11 @@ const AUTO_SLIDE_SPEED = 4000; // ms
 
 type Payload = {
   onTimeOut: () => void;
+  shouldAutoPlaying?: boolean;
 };
 
-export function useAutoSlide({ onTimeOut }: Payload) {
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+export function useAutoSlide({ onTimeOut, shouldAutoPlaying = true }: Payload) {
+  const [isAutoPlaying, setIsAutoPlaying] = useState(shouldAutoPlaying);
   const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
 
   const resetTimeOut = useCallback(() => {
@@ -42,7 +43,9 @@ export function useAutoSlide({ onTimeOut }: Payload) {
   };
 
   useEffect(() => {
-    activateAutoSlide();
+    if (shouldAutoPlaying) {
+      activateAutoSlide();
+    }
   }, []);
 
   return {
