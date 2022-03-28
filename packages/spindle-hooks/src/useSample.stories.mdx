@@ -1,0 +1,38 @@
+import { Description, Meta, Story, Source } from '@storybook/addon-docs/blocks';
+import { actions } from '@storybook/addon-actions';
+import { useSample } from './useSample';
+
+export const Sample = () => {
+  const num = useSample(3);
+  return <span>{num}</span>;
+};
+
+# useSample
+
+<Meta title="useSample" component={Sample} />
+
+![stability-experiment](https://img.shields.io/badge/stability-experiment-red.svg)
+
+<Description>useSampleのDescriptionを記述します。</Description>
+
+<Source
+  language="javascript"
+  code={`import { useSample } from '@openameba/spindle-hooks'`}
+/>
+
+## Normal
+
+<Preview withSource="open">
+  <Story name="Normal">
+    <Sample />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+const Sample = () => {
+  const num = useSample(3);
+  return <span>{num}</span>;
+}
+  `}
+/>
