@@ -1,11 +1,19 @@
 {
   "name": "@openameba/spindle-hooks",
   "version": "0.0.1",
-  "main": "./index.js",
-  "types": "./index.d.ts",
+  "main": "./dist/index.mjs",
+  "exports": "./dist/index.mjs",
+  "engines": {
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+  },
   "scripts": {
     "test": "run-p bundlesize test:interaction",
     "test:interaction": "jest",
+    "dev": "yarn storybook:start",
+    "storybook:start": "start-storybook -p 6006 -c .storybook",
+    "storybook:build": "build-storybook -o public -c .storybook",
+    "storybook:deploy": "firebase deploy --only hosting",
+    "serve": "firebase serve",
     "prebundlesize": "yarn build:script",
     "bundlesize": "npx bundlesize",
     "clean": "npx rimraf dist",
@@ -26,6 +34,12 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "@storybook/addon-a11y": "^6.1.10",
+    "@storybook/addon-actions": "^6.1.10",
+    "@storybook/addon-backgrounds": "^6.1.10",
+    "@storybook/addon-docs": "^6.1.10",
+    "@storybook/addon-viewport": "^6.1.10",
+    "@storybook/react": "^6.1.10",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.0.0",
