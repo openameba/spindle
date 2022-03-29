@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.27.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.27.0...@openameba/spindle-ui@0.27.1) (2022-03-28)
+
+
+### Bug Fixes
+
+* **spindle-ui:** fix breadcrumb breakpoint ([09c6de1](https://github.com/openameba/spindle/commit/09c6de19b923f1ee6ad0c7d5dae71b9fccabe55f))
+
+
+
+
+
 # [0.27.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.26.3...@openameba/spindle-ui@0.27.0) (2022-03-18)
 
 
