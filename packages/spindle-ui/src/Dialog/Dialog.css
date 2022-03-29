@@ -8,6 +8,13 @@
   width: calc(400px - 36px * 2);
 }
 
+@media screen and (max-width: 400px) {
+  .spui-Dialog {
+    /* 56px * 2 is the minimum margin for the small devices */
+    width: calc(400px - (36px * 2 + 56px * 2));
+  }
+}
+
 .spui-Dialog::backdrop {
   background: rgba(0, 0, 0, 0.8);
 }
