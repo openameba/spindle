@@ -1,0 +1,47 @@
+.spui-Dialog {
+  background: var(--color-surface-primary);
+  border: none;
+  border-radius: 20px;
+  color: var(--color-text-medium-emphasis);
+  padding: 36px;
+  width: 400px;
+}
+
+.spui-Dialog::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* stylelint-disable-next-line plugin/selector-bem-pattern */
+.spui-Dialog + .backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.spui-Dialog-title {
+  color: var(--color-text-high-emphasis);
+  font-size: 1.25em;
+  font-weight: bold;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.spui-Dialog-body {
+  color: var(--color-text-medium-emphasis);
+  font-size: 0.875em;
+  line-height: 1.6;
+  margin: 16px 0 0;
+  text-align: center;
+}
+
+.spui-Dialog-buttonGroup {
+  align-items: center;
+  justify-content: center;
+  margin: 32px 0 0;
+  text-align: center;
+}
+
+/* stylelint-disable-next-line plugin/selector-bem-pattern */
+.spui-Dialog-buttonGroup .spui-Button {
+  max-width: 240px;
+}
