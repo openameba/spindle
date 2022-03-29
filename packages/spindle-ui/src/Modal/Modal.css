@@ -1,0 +1,100 @@
+.spui-Modal {
+  background: var(--color-surface-primary);
+  border: none;
+  border-radius: 20px;
+  /* TODO: replace color with color palette */
+  box-shadow: 0 11px 28px rgba(8, 18, 26, 0.12);
+  color: var(--color-text-medium-emphasis);
+  min-height: 100px;
+  padding: 0;
+  position: relative;
+}
+
+.spui-Modal--small {
+  max-height: 400px;
+  width: 480px;
+}
+
+.spui-Modal--medium {
+  max-height: 700px;
+  width: 840px;
+}
+
+.spui-Modal--large {
+  max-height: 875px;
+  width: 1050px;
+}
+
+.spui-Modal::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* stylelint-disable-next-line plugin/selector-bem-pattern */
+.spui-Modal + .backdrop {
+  background: var(--color-overlay-medium);
+}
+
+.spui-Modal-header {
+  align-items: center;
+  background: var(--color-surface-primary);
+  display: flex;
+  left: 0;
+  min-height: 100px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+.spui-Modal-closeButton {
+  align-self: self-start;
+  color: var(--color-object-low-emphasis);
+  height: 48px;
+  margin: 12px 12px 0 0;
+  width: 48px;
+}
+
+/* stylelint-disable plugin/selector-bem-pattern */
+.spui-Modal-closeButton > .spui-IconButton {
+  --IconButton--neutral-backgroundColor: var(--color-surface-primary);
+}
+/* stylelint-enable plugin/selector-bem-pattern */
+
+.spui-Modal-title {
+  color: var(--color-text-high-emphasis);
+  font-size: 1.25em;
+  font-weight: bold;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0 36px;
+  width: 100%;
+}
+
+.spui-Modal-titleCaption {
+  color: var(--color-text-accent-primary);
+  font-size: 0.8em;
+  font-weight: bold;
+  line-height: 1.4;
+  margin: 0 0 0 16px;
+  vertical-align: baseline;
+}
+
+.spui-Modal-content {
+  padding: 0 0 0 36px;
+}
+
+.spui-Modal-buttonGroup {
+  padding: 24px 36px 36px;
+}
+
+.spui-Modal-buttonGroup--submit {
+  justify-content: flex-end;
+}
+
+.spui-Modal-buttonGroup--appeal {
+  justify-content: center;
+}
+
+/* stylelint-disable plugin/selector-bem-pattern */
+.spui-Modal-buttonGroup .spui-Button {
+  max-width: 240px;
+}
