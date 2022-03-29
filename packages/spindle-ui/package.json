@@ -38,7 +38,7 @@
     "react": "^16.8.0 || ^17.0.0"
   },
   "dependencies": {
-    "ameba-color-palette.css": "^4.2.0",
+    "ameba-color-palette.css": "^4.8.0",
     "react-merge-refs": "^1.1.0"
   },
   "devDependencies": {
