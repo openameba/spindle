@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.27.2-alpha.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.27.1...@openameba/spindle-ui@0.27.2-alpha.0) (2022-03-29)
+
+
+### Bug Fixes
+
+* **spindle-ui:** set side effect for css ([1527f43](https://github.com/openameba/spindle/commit/1527f4383f15515b9a106e8adf6190a87dc7624d))
+
+
+
+
+
 ## [0.27.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.27.0...@openameba/spindle-ui@0.27.1) (2022-03-28)
 
 
