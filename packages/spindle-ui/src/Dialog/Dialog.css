@@ -4,7 +4,8 @@
   border-radius: 20px;
   color: var(--color-text-medium-emphasis);
   padding: 36px;
-  width: 400px;
+  /* NOTE: box-sizing does not work well with dialog-polyfill */
+  width: calc(400px - 36px * 2);
 }
 
 .spui-Dialog::backdrop {
