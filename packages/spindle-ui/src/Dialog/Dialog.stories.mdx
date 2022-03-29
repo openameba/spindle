@@ -1,0 +1,200 @@
+import { useEffect, useRef } from 'react';
+import { Description, Meta, Story, Source } from '@storybook/addon-docs/blocks';
+import { DialogWithButtonEvent, DialogWithForm, StyleOnly, ButtonRow, ButtonColumn } from './DialogExample';
+
+# Dialog
+
+<Meta title="Dialog" />
+
+![stability-experimental](https://img.shields.io/badge/stability-experimental-orange.svg)
+
+<Source
+  language='javascript'
+  code={`import { Dialog } from '@openameba/spindle-ui'`}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/Dialog/Dialog.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Dialog/Dialog.css">`}
+/>
+
+## Dialog With Button Event
+
+<Preview withSource="open">
+  <Story name="DialogWithButtonEvent">
+    <DialogWithButtonEvent />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+function DialogExample() {
+  const [open, setOpen] = useState(false);
+  const dialogRef = useRef(null);
+  const handleOpenButtonClick = useCallback(() => {
+    setOpen(true);
+  }, []);
+  const handleDialogCancel = useCallback(() => {
+    setOpen(false);
+  }, []);
+  const handleButtonClick = useCallback(() => {
+    setOpen(false);
+  }, []);
+  useEffect(() => {
+    if (dialogRef.current) {
+      dialogPolyfill.registerDialog(dialogRef.current);
+    }
+  }, [dialogRef]);
+  return (
+    <>
+      <Button aria-haspopup="true" onClick={handleOpenButtonClick} size="medium">Open Dialog</Button>
+      <Dialog.Frame ref={dialogRef} open={open} onCancel={handleDialogCancel}>
+        <Dialog.Title>タイトルですよ</Dialog.Title>
+        <Dialog.Body>ここに本文が入りますよ</Dialog.Body>
+        <Dialog.ButtonGroup>
+          <Button layout="fullWidth" size="medium" onClick={handleButtonClick}>OK</Button>
+        </Dialog.ButtonGroup>
+      </Dialog.Frame>
+    </>
+  );
+}
+  `}
+/>
+
+## Dialog With Form
+
+<Preview withSource="open">
+  <Story name="DialogWithForm">
+    <DialogWithForm />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+function DialogExample() {
+  const [open, setOpen] = useState(false);
+  const dialogRef = useRef(null);
+  const handleOpenButtonClick = useCallback(() => {
+    setOpen(true);
+  }, []);
+  const handleDialogCancel = useCallback(() => {
+    setOpen(false);
+  }, []);
+  const handleFormSubmit = useCallback(() => {
+    setOpen(false);
+  }, []);
+  useEffect(() => {
+    if (dialogRef.current) {
+      dialogPolyfill.registerDialog(dialogRef.current);
+    }
+  }, [dialogRef]);
+  return (
+    <>
+      <Button aria-haspopup="true" onClick={handleOpenButtonClick} size="medium">Open Dialog</Button>
+      <Dialog.Frame ref={dialogRef} open={open} onCancel={handleDialogCancel}>
+        <form method="dialog" onSubmit={handleFormSubmit}>
+          <Dialog.Title>タイトルですよ</Dialog.Title>
+          <Dialog.Body>ここに本文が入りますよ</Dialog.Body>
+          <Dialog.ButtonGroup>
+            <Button layout="fullWidth" size="medium">OK</Button>
+          </Dialog.ButtonGroup>
+        </form>
+      </Dialog.Frame>
+    </>
+  );
+}
+  `}
+/>
+
+## StyleOnly
+
+[HTMLDialogElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement)を利用しない場合には、`<Dialog.StyleOnly>`を利用しSpindleで定義されたスタイルを流用できます。独自処理や他ライブラリの利用等でスタイルだけ使いたい場合を想定しています。
+
+<Preview withSource="open">
+  <Story name="StyleOnly">
+    <StyleOnly />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+function DialogExample() {
+  return (
+    <Dialog.StyleOnly>
+      <Dialog.Title>タイトルですよ</Dialog.Title>
+      <Dialog.Body>ここに本文が入りますよ</Dialog.Body>
+      <Dialog.ButtonGroup>
+        <Button layout="fullWidth" size="medium">OK</Button>
+      </Dialog.ButtonGroup>
+    </Dialog.StyleOnly>
+  );
+}
+  `}
+/>
+
+## ButtonGroup
+
+`<Dialog.ButtonGroup>`を利用して、ボタンの並ぶ方向を横・縦に指定できます。ボタンは`<Button>`のmediumサイズを利用してください。
+
+<Preview withSource="open">
+  <Story name="ButtonRow">
+    <ButtonRow />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+function DialogExample() {
+  return (
+    <Dialog.StyleOnly>
+      <Dialog.Title>タイトルですよ</Dialog.Title>
+      <Dialog.Body>ここに本文が入りますよ</Dialog.Body>
+      <Dialog.ButtonGroup>
+        <Button layout="fullWidth" size="medium" variant="neutral">
+          キャンセル
+        </Button>
+        <Button layout="fullWidth" size="medium" variant="danger">
+          削除する
+        </Button>
+      </Dialog.ButtonGroup>
+    </Dialog.StyleOnly>
+  );
+}
+  `}
+/>
+
+<Preview withSource="open">
+  <Story name="ButtonColumn">
+    <ButtonColumn />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+function DialogExample() {
+  return (
+    <Dialog.StyleOnly>
+      <Dialog.Title>タイトルですよ</Dialog.Title>
+      <Dialog.Body>ここに本文が入りますよ</Dialog.Body>
+      <Dialog.ButtonGroup direction="column">
+        <Button layout="fullWidth" size="medium">
+          Spindleをフォローする
+        </Button>
+        <Button layout="fullWidth" size="medium" variant="neutral">
+          キャンセル
+        </Button>
+      </Dialog.ButtonGroup>
+    </Dialog.StyleOnly>
+  );
+}
+  `}
+/>
+
+## ブラウザサポート
+
+`<Dialog>`は[HTMLDialogElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement)を利用して作られています。[非対応ブラウザ](https://caniuse.com/dialog)には[dialog polyfill](https://github.com/GoogleChrome/dialog-polyfill)と併用してください。
