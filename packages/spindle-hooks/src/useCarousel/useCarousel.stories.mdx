@@ -240,7 +240,6 @@ const HeroCarouselItem = ({
     </li>
   );
 };
-
 const HeroCarousel = () => {
   const {
     handleSlideToPrev,
@@ -264,11 +263,9 @@ const HeroCarousel = () => {
     shouldAutoPlaying: false,
     displayCount: 3,
   });
-
   if (carouselList.length === 0) {
     return null;
   }
-
   return (
     <div>
       <div
