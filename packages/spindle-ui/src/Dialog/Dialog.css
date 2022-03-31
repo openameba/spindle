@@ -2,6 +2,8 @@
   background: var(--color-surface-primary);
   border: none;
   border-radius: 20px;
+  /* TODO: replace color with color palette */
+  box-shadow: 0 11px 28px rgba(8, 18, 26, 0.12);
   color: var(--color-text-medium-emphasis);
   padding: 36px;
   /* NOTE: box-sizing does not work well with dialog-polyfill */
@@ -16,6 +18,7 @@
 }
 
 .spui-Dialog::backdrop {
+  /* TODO: replace color with color palette, backdrop does not accept variable */
   background: rgba(0, 0, 0, 0.8);
 }
 
