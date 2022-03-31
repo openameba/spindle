@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "ameba-spindle-hooks",
     "public": "public",
     "ignore": [
       "firebase.json",
