@@ -1,6 +1,6 @@
 {
   "name": "@openameba/spindle-hooks",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.1-alpha.1",
   "main": "./index.mjs",
   "exports": "./index.mjs",
   "engines": {
