@@ -6,6 +6,7 @@ type Payload = {
   itemCount: number;
   linkRefs: MutableRefObject<HTMLLinkElement[]>;
   isAutoPlaying: boolean;
+  isFocus: boolean;
 };
 
 export function useSliderTransition({
@@ -13,6 +14,7 @@ export function useSliderTransition({
   itemCount,
   linkRefs,
   isAutoPlaying,
+  isFocus,
 }: Payload) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const currentIndexRef = useValueRef(currentIndex);
@@ -20,8 +22,9 @@ export function useSliderTransition({
   const [disableAutoFocus, setDisableAutoFocus] = useState(false);
 
   const listStyles = useMemo(() => {
+    const transitionStyle = disableTransition ? { transition: 'none' } : {};
     return {
-      transition: disableTransition ? 'none' : '',
+      ...transitionStyle,
       transform: `translate3d(${
         -100 * (currentIndex + copyCount)
       }%, 0, 0) translateX(0)`,
@@ -29,20 +32,26 @@ export function useSliderTransition({
   }, [copyCount, currentIndex, disableTransition]);
 
   const handleTransitionEnd = () => {
-    if (!isAutoPlaying && !disableAutoFocus) {
-      linkRefs.current[currentIndex + copyCount].focus();
-    }
     // if reach contents end, rewind without transition to make it look like looping
-    setDisableTransition(true);
-    setCurrentIndex((prev) => (prev + itemCount) % itemCount);
+    if (!isFocus) {
+      setDisableTransition(true);
+      setCurrentIndex((prev) => (prev + itemCount) % itemCount);
+      if (!isAutoPlaying && !disableAutoFocus) {
+        linkRefs.current[
+          ((currentIndex + itemCount) % itemCount) + copyCount
+        ].focus();
+      }
+    }
   };
 
   return {
     currentIndexRef,
+    currentIndex,
     handleTransitionEnd,
     listStyles,
     setCurrentIndex,
     setDisableAutoFocus,
+    disableTransition,
     setDisableTransition,
   };
 }
