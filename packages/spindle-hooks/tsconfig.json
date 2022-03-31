@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": ["DOM"],
+    "jsx": "react",
+    "outDir": "dist",
+    "moduleResolution": "node"
+  },
+  "include": ["src"],
+  "exclude": ["src/**/*.test.*"]
+}
