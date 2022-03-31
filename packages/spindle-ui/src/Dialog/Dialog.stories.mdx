@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Description, Meta, Story, Source } from '@storybook/addon-docs/blocks';
-import { DialogWithButtonEvent, DialogWithForm, StyleOnly, ButtonRow, ButtonColumn } from './DialogExample';
+import { DialogExample, StyleOnly, ButtonRow, ButtonColumn } from './DialogExample';
 
 # Dialog
 
@@ -23,11 +23,18 @@ import { DialogWithButtonEvent, DialogWithForm, StyleOnly, ButtonRow, ButtonColu
   code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Dialog/Dialog.css">`}
 />
 
-## Dialog With Button Event
+## Dialog
+
+Spindle UIのDialogは`<dialog>`要素と`<form method="dialog">`要素を内包しているため以下の点に注意して利用してください。
+
+- `<Button>`は`type`属性を指定しない場合、ダイアログを閉じるボタンになります
+- `<Button>`に固有の処理を追加したい場合には`type="button"`や`type="reset"`などの属性を指定してください
+- `<Dialog>`は`open`プロパティの値を見て、開く・閉じるの動作が行われます。`onClose`や`onCancel`のタイミングで`false`を指定し、ダイアログを閉じます
+  - `onCancel`イベントはEscapeキーを押されたなどデバイスや支援技術から伝達されます。特にそれらの動作を無効にする必要がない場合、通常は`open`プロパティを`false`にしてダイアログを閉じる動作を指定してください
 
 <Preview withSource="open">
-  <Story name="DialogWithButtonEvent">
-    <DialogWithButtonEvent />
+  <Story name="Normal">
+    <DialogExample />
   </Story>
 </Preview>
 
@@ -36,15 +43,9 @@ import { DialogWithButtonEvent, DialogWithForm, StyleOnly, ButtonRow, ButtonColu
 function DialogExample() {
   const [open, setOpen] = useState(false);
   const dialogRef = useRef(null);
-  const handleOpenButtonClick = useCallback(() => {
-    setOpen(true);
-  }, []);
-  const handleDialogCancel = useCallback(() => {
-    setOpen(false);
-  }, []);
-  const handleButtonClick = useCallback(() => {
-    setOpen(false);
-  }, []);
+  const handleOpenButtonClick = () => setOpen(true);
+  const handleDialogCancel = () => setOpen(false);
+  const handleDialogClose = () => setOpen(false);
   useEffect(() => {
     if (dialogRef.current) {
       dialogPolyfill.registerDialog(dialogRef.current);
@@ -59,51 +60,6 @@ function DialogExample() {
         <Dialog.ButtonGroup>
           <Button layout="fullWidth" size="medium" onClick={handleButtonClick}>OK</Button>
         </Dialog.ButtonGroup>
-      </Dialog.Frame>
-    </>
-  );
-}
-  `}
-/>
-
-## Dialog With Form
-
-<Preview withSource="open">
-  <Story name="DialogWithForm">
-    <DialogWithForm />
-  </Story>
-</Preview>
-
-<Source
-  code={`
-function DialogExample() {
-  const [open, setOpen] = useState(false);
-  const dialogRef = useRef(null);
-  const handleOpenButtonClick = useCallback(() => {
-    setOpen(true);
-  }, []);
-  const handleDialogCancel = useCallback(() => {
-    setOpen(false);
-  }, []);
-  const handleFormSubmit = useCallback(() => {
-    setOpen(false);
-  }, []);
-  useEffect(() => {
-    if (dialogRef.current) {
-      dialogPolyfill.registerDialog(dialogRef.current);
-    }
-  }, [dialogRef]);
-  return (
-    <>
-      <Button aria-haspopup="true" onClick={handleOpenButtonClick} size="medium">Open Dialog</Button>
-      <Dialog.Frame ref={dialogRef} open={open} onCancel={handleDialogCancel}>
-        <form method="dialog" onSubmit={handleFormSubmit}>
-          <Dialog.Title>タイトルですよ</Dialog.Title>
-          <Dialog.Body>ここに本文が入りますよ</Dialog.Body>
-          <Dialog.ButtonGroup>
-            <Button layout="fullWidth" size="medium">OK</Button>
-          </Dialog.ButtonGroup>
-        </form>
       </Dialog.Frame>
     </>
   );

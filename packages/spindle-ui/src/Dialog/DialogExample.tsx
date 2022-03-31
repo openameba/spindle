@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import dialogPolyfill from 'dialog-polyfill';
 import { Button } from '../Button';
 import { Dialog } from './Dialog';
@@ -13,21 +13,15 @@ function useDialogpolyfill(ref: React.RefObject<HTMLDialogElement>) {
   }, [ref]);
 }
 
-export function DialogWithButtonEvent() {
+export function DialogExample() {
   const [open, setOpen] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
 
-  const handleOpenButtonClick = useCallback(() => {
-    setOpen(true);
-  }, []);
+  const handleOpenButtonClick = () => setOpen(true);
 
-  const handleDialogCancel = useCallback(() => {
-    setOpen(false);
-  }, []);
+  const handleDialogCancel = () => setOpen(false);
 
-  const handleButtonClick = useCallback(() => {
-    setOpen(false);
-  }, []);
+  const handleDialogClose = () => setOpen(false);
 
   useDialogpolyfill(dialogRef);
 
@@ -40,56 +34,19 @@ export function DialogWithButtonEvent() {
       >
         Open Dialog
       </Button>
-      <Dialog.Frame ref={dialogRef} open={open} onCancel={handleDialogCancel}>
+      <Dialog.Frame
+        ref={dialogRef}
+        open={open}
+        onCancel={handleDialogCancel}
+        onClose={handleDialogClose}
+      >
         <Dialog.Title>タイトルですよ</Dialog.Title>
         <Dialog.Body>ここに本文が入りますよ</Dialog.Body>
         <Dialog.ButtonGroup>
-          <Button layout="fullWidth" size="medium" onClick={handleButtonClick}>
+          <Button layout="fullWidth" size="medium">
             OK
           </Button>
         </Dialog.ButtonGroup>
-      </Dialog.Frame>
-    </>
-  );
-}
-
-export function DialogWithForm() {
-  const [open, setOpen] = useState(false);
-  const dialogRef = useRef<HTMLDialogElement>(null);
-
-  const handleOpenButtonClick = useCallback(() => {
-    setOpen(true);
-  }, []);
-
-  const handleDialogCancel = useCallback(() => {
-    setOpen(false);
-  }, []);
-
-  const handleFormSubmit = useCallback(() => {
-    setOpen(false);
-  }, []);
-
-  useDialogpolyfill(dialogRef);
-
-  return (
-    <>
-      <Button
-        aria-haspopup="true"
-        onClick={handleOpenButtonClick}
-        size="medium"
-      >
-        Open Dialog
-      </Button>
-      <Dialog.Frame ref={dialogRef} open={open} onCancel={handleDialogCancel}>
-        <form method="dialog" onSubmit={handleFormSubmit}>
-          <Dialog.Title>タイトルですよ</Dialog.Title>
-          <Dialog.Body>ここに本文が入りますよ</Dialog.Body>
-          <Dialog.ButtonGroup direction="column">
-            <Button layout="fullWidth" size="medium">
-              OK
-            </Button>
-          </Dialog.ButtonGroup>
-        </form>
       </Dialog.Frame>
     </>
   );
@@ -118,7 +75,7 @@ export function ButtonRow() {
         <Button layout="fullWidth" size="medium" variant="neutral">
           キャンセル
         </Button>
-        <Button layout="fullWidth" size="medium" variant="danger">
+        <Button layout="fullWidth" size="medium" variant="danger" type="button">
           削除する
         </Button>
       </Dialog.ButtonGroup>
@@ -132,7 +89,7 @@ export function ButtonColumn() {
       <Dialog.Title>タイトルですよ</Dialog.Title>
       <Dialog.Body>ここに本文が入りますよ</Dialog.Body>
       <Dialog.ButtonGroup direction="column">
-        <Button layout="fullWidth" size="medium">
+        <Button layout="fullWidth" size="medium" type="button">
           Spindleをフォローする
         </Button>
         <Button layout="fullWidth" size="medium" variant="neutral">

@@ -5,6 +5,7 @@ import { ButtonGroup as Group } from '../ButtonGroup';
 interface DialogProps extends React.DialogHTMLAttributes<HTMLElement> {
   children?: React.ReactNode;
   onCancel?: (event: React.BaseSyntheticEvent) => void;
+  onClose?: (event: React.BaseSyntheticEvent) => void;
 }
 
 export interface DialogHTMLElement extends HTMLElement {
@@ -21,10 +22,14 @@ interface PartsProps {
 const BLOCK_NAME = 'spui-Dialog';
 
 const Frame = forwardRef<DialogHTMLElement, DialogProps>(function Dialog(
-  { children, className, open, ...rest },
+  { children, className, open, onClose, ...rest },
   ref,
 ) {
   const dialogEl = useRef<DialogHTMLElement>(null);
+
+  const handleFormSubmit = (event: React.BaseSyntheticEvent) => {
+    typeof onClose === 'function' && onClose(event);
+  };
 
   useEffect(() => {
     if (!dialogEl.current) {
@@ -48,7 +53,9 @@ const Frame = forwardRef<DialogHTMLElement, DialogProps>(function Dialog(
       className={[BLOCK_NAME, className].filter(Boolean).join(' ').trim()}
       {...rest}
     >
-      {children}
+      <form method="dialog" onSubmit={handleFormSubmit}>
+        {children}
+      </form>
     </dialog>
   );
 });
