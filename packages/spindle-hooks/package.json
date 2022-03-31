@@ -1,0 +1,57 @@
+{
+  "name": "@openameba/spindle-hooks",
+  "version": "0.0.1-alpha.0",
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
+  "engines": {
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+  },
+  "scripts": {
+    "test": "run-p bundlesize test:interaction",
+    "test:interaction": "jest --passWithNoTests",
+    "dev": "yarn storybook:start",
+    "storybook:start": "start-storybook -p 6006 -c .storybook",
+    "storybook:build": "build-storybook -o public -c .storybook",
+    "storybook:deploy": "firebase deploy --only hosting",
+    "serve": "firebase serve",
+    "prebundlesize": "yarn build",
+    "bundlesize": "npx bundlesize",
+    "clean": "npx rimraf dist",
+    "cp": "npx cpx 'dist/**/*' .",
+    "prebuild": "yarn clean",
+    "build": "run-s build:esm build:cjs",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "run-s build:esm:js build:esm:rename",
+    "build:esm:js": "tsc -p tsconfig.esm.json",
+    "build:esm:rename": "npx renamer --find js --replace mjs 'dist/**'",
+    "prepublishOnly": "yarn build && yarn cp"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@types/react": "^16.8.6 || ^17.0.0",
+    "react": "^16.8.0 || ^17.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@storybook/addon-a11y": "^6.1.10",
+    "@storybook/addon-actions": "^6.1.10",
+    "@storybook/addon-backgrounds": "^6.1.10",
+    "@storybook/addon-docs": "^6.1.10",
+    "@storybook/addon-viewport": "^6.1.10",
+    "@storybook/react": "^6.1.10",
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/react-hooks": "^7.0.2",
+    "@testing-library/user-event": "^13.0.0",
+    "@types/jest": "^27.0.0",
+    "babel-loader": "^8.1.0",
+    "bundlesize": "^0.18.0",
+    "jest": "^27.0.0",
+    "react": "^17.0.1",
+    "ts-jest": "^27.0.0"
+  }
+}
