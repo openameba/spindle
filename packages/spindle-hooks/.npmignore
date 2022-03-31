@@ -1,0 +1,12 @@
+src
+dist
+public
+.storybook
+.firebaserc
+.gitignore
+jest.config.js
+bundlesize.config.json
+firebase.json
+tsconfig.json
+design-doc.md
+setup-tests.ts
