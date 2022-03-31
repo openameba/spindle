@@ -37,7 +37,9 @@ export function useSliderTransition({
       setDisableTransition(true);
       setCurrentIndex((prev) => (prev + itemCount) % itemCount);
       if (!isAutoPlaying && !disableAutoFocus) {
-        linkRefs.current[currentIndex + copyCount].focus();
+        linkRefs.current[
+          ((currentIndex + itemCount) % itemCount) + copyCount
+        ].focus();
       }
     }
   };
