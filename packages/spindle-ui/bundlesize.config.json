@@ -2,7 +2,7 @@
   "files": [
     {
       "path": "./dist/Icon/@(OnedariFill|Peta|Amebapick).js",
-      "maxSize": "2.1 kB"
+      "maxSize": "2.12 kB"
     },
     {
       "path": "./dist/Icon/!(index|OnedariFill|Peta|Amebapick).js",
