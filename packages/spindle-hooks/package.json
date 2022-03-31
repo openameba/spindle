@@ -1,6 +1,6 @@
 {
   "name": "@openameba/spindle-hooks",
-  "version": "0.0.0",
+  "version": "0.0.1-alpha.0",
   "main": "./dist/index.mjs",
   "exports": "./dist/index.mjs",
   "engines": {
@@ -32,7 +32,6 @@
     "@types/react": "^16.8.6 || ^17.0.0",
     "react": "^16.8.0 || ^17.0.0"
   },
-  "dependencies": {},
   "devDependencies": {
     "@storybook/addon-a11y": "^6.1.10",
     "@storybook/addon-actions": "^6.1.10",
