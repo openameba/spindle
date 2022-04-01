@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-alpha.2 (2022-04-01)
+
+
+### Features
+
+* **spindle-hooks:** add spindle-hooks pkg ([dee8e61](https://github.com/openameba/spindle/commit/dee8e6173aa7a6f05d6edb855503445fcee54154))
+* **spindle-hooks:** add useCarousel hooks ([d620ecb](https://github.com/openameba/spindle/commit/d620ecbc075f466273f545d666152f8aba879bfb))
+
+
+
+
+
 ## [0.0.1-alpha.1](https://github.com/openameba/spindle/compare/@openameba/spindle-hooks@0.0.1-alpha.0...@openameba/spindle-hooks@0.0.1-alpha.1) (2022-03-31)
 
 
