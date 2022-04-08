@@ -14,6 +14,7 @@ jobs:
     name: regression test
     runs-on: ubuntu-latest
     steps:
+      - run: sudo apt-get --yes install fonts-noto
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
