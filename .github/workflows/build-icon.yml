@@ -44,7 +44,10 @@ jobs:
           branch: feat/build-icon-via-webhook
           delete-branch: true
           title: 'feat(spindle-icons): update icons'
-          body: ${{ github.event.inputs.modified_components }}
+          body: |
+            Update report
+            - 指定されたアイコン: ${{ github.event.inputs.modified_components }}
+            - [アイコン一覧](../blob/feat/build-icon-via-webhook/packages/spindle-icons/docs/icons.md) 
           labels: |
             spindle-icons
             spindle-ui
