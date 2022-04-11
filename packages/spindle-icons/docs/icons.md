@@ -68,6 +68,9 @@
 | bullets | ![](../dist/svg/bullets.svg) |
 | calendar | ![](../dist/svg/calendar.svg) |
 | camera_fill | ![](../dist/svg/camera_fill.svg) |
+| cards | ![](../dist/svg/cards.svg) |
+| cart | ![](../dist/svg/cart.svg) |
+| cart_fill | ![](../dist/svg/cart_fill.svg) |
 | caution_fill | ![](../dist/svg/caution_fill.svg) |
 | check | ![](../dist/svg/check.svg) |
 | check_bold | ![](../dist/svg/check_bold.svg) |
@@ -83,6 +86,7 @@
 | chevron_right_bold | ![](../dist/svg/chevron_right_bold.svg) |
 | chevron_up | ![](../dist/svg/chevron_up.svg) |
 | chevron_up_bold | ![](../dist/svg/chevron_up_bold.svg) |
+| chevron_up_two_bold | ![](../dist/svg/chevron_up_two_bold.svg) |
 | circle | ![](../dist/svg/circle.svg) |
 | circle_bold | ![](../dist/svg/circle_bold.svg) |
 | circle_fill | ![](../dist/svg/circle_fill.svg) |
@@ -147,6 +151,8 @@
 | folder_two_fill | ![](../dist/svg/folder_two_fill.svg) |
 | font | ![](../dist/svg/font.svg) |
 | fontstyle | ![](../dist/svg/fontstyle.svg) |
+| free_circle | ![](../dist/svg/free_circle.svg) |
+| free_circle_fill | ![](../dist/svg/free_circle_fill.svg) |
 | game | ![](../dist/svg/game.svg) |
 | game_fill | ![](../dist/svg/game_fill.svg) |
 | game_kantan | ![](../dist/svg/game_kantan.svg) |
