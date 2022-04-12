@@ -93,6 +93,18 @@ function DialogExample() {
   `}
 />
 
+<Source
+  code={`
+<div class="spui-Dialog">
+  <p class="spui-Dialog-title">タイトルですよ</p>
+  <p class="spui-Dialog-body">ここに本文が入りますよ</p>
+  <div class="spui-ButtonGroup spui-ButtonGroup--row spui-ButtonGroup--medium spui-Dialog-buttonGroup">
+    <button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--contained">OK</button>
+  </div>
+</div>
+  `}
+/>
+
 ## ButtonGroup
 
 `<Dialog.ButtonGroup>`を利用して、ボタンの並ぶ方向を横・縦に指定できます。ボタンは`<Button>`のmediumサイズを利用してください。
@@ -124,6 +136,19 @@ function DialogExample() {
   `}
 />
 
+<Source
+  code={`
+<div class="spui-Dialog">
+  <p class="spui-Dialog-title">タイトルですよ</p>
+  <p class="spui-Dialog-body">ここに本文が入りますよ</p>
+  <div class="spui-ButtonGroup spui-ButtonGroup--row spui-ButtonGroup--medium spui-Dialog-buttonGroup">
+    <button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--neutral">キャンセル</button>
+    <button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--danger" type="button">削除する</button>
+  </div>
+</div>
+  `}
+/>
+
 <Preview withSource="open">
   <Story name="ButtonColumn">
     <ButtonColumn />
@@ -148,6 +173,19 @@ function DialogExample() {
     </Dialog.StyleOnly>
   );
 }
+  `}
+/>
+
+<Source
+  code={`
+<div class="spui-Dialog">
+  <p class="spui-Dialog-title">タイトルですよ</p>
+  <p class="spui-Dialog-body">ここに本文が入りますよ</p>
+  <div class="spui-ButtonGroup spui-ButtonGroup--column spui-ButtonGroup--medium spui-Dialog-buttonGroup">
+    <button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--contained" type="button">Spindleをフォローする</button>
+    <button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--neutral">キャンセル</button>
+  </div>
+</div>
   `}
 />
 
