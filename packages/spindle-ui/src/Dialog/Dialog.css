@@ -10,10 +10,10 @@
   width: calc(400px - 36px * 2);
 }
 
-@media screen and (max-width: 400px) {
+/* 56px is the minimum margin for the small devices, 512px is from 400px + 56px * 2 */
+@media screen and (max-width: 512px) {
   .spui-Dialog {
-    /* 56px * 2 is the minimum margin for the small devices */
-    width: calc(400px - (36px * 2 + 56px * 2));
+    width: calc(100% - (36px * 2 + 56px * 2));
   }
 }
 
