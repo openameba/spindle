@@ -4,8 +4,7 @@
 */
 :root {
   --LinkButton-tapHighlightColor: var(--gray-5-alpha);
-  --LinkButton-onFocus-boxShadow: 0 0 0 1px var(--color-surface-primary),
-    0 0 0 3px var(--color-focus-clarity);
+  --LinkButton-onFocus-outlineColor: var(--color-focus-clarity);
 
   --LinkButton--contained-backgroundColor: var(--color-surface-accent-primary);
   --LinkButton--contained-color: var(--color-text-high-emphasis-inverse);
@@ -53,12 +52,12 @@
 }
 
 .spui-LinkButton:focus {
-  box-shadow: var(--LinkButton-onFocus-boxShadow);
-  outline: none;
+  outline: 2px solid var(--LinkButton-onFocus-outlineColor);
+  outline-offset: 1px;
 }
 
 .spui-LinkButton:focus:not(:focus-visible) {
-  box-shadow: none;
+  outline: none;
 }
 
 /*
