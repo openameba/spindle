@@ -1,13 +1,7 @@
 @import './HeroCarouselItem.css';
 /*
  * HeroCarousel
- * NOTE: Styles can be overridden with "--HeroCarousel-*" variables
 */
-:root {
-  --HeroCarousel-onFocus-boxShadow: 0 0 0 1px var(--color-surface-primary),
-    0 0 0 3px var(--color-focus-clarity);
-}
-
 .spui-HeroCarousel-container {
   align-items: center;
   display: flex;
@@ -51,12 +45,12 @@
 }
 
 .spui-HeroCarousel-control:focus {
-  box-shadow: var(--HeroCarousel-onFocus-boxShadow);
-  outline: none;
+  outline: 2px solid var(--color-focus-clarity);
+  outline-offset: 1px;
 }
 
 .spui-HeroCarousel-control:focus:not(:focus-visible) {
-  box-shadow: none;
+  outline: none;
 }
 
 .spui-HeroCarousel-control--prev {

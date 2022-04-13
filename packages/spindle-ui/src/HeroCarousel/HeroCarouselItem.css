@@ -1,11 +1,6 @@
 /*
  * HeroCarouselItem
- * NOTE: Styles can be overridden with "--HeroCarouselItem-*" variables
 */
-:root {
-  --HeroCarouselItem-onFocus-boxShadow: 0 0 0 1px var(--color-surface-primary),
-    0 0 0 3px var(--color-focus-clarity);
-}
 .spui-HeroCarouselItem-listItem {
   list-style: none;
   padding: 0 0.44em;
@@ -24,12 +19,12 @@
 }
 
 .spui-HeroCarouselItem-link:focus {
-  box-shadow: var(--HeroCarouselItem-onFocus-boxShadow);
-  outline: none;
+  outline: 2px solid var(--color-focus-clarity);
+  outline-offset: 1px;
 }
 
 .spui-HeroCarouselItem-link:focus:not(:focus-visible) {
-  box-shadow: none;
+  outline: none;
 }
 
 .spui-HeroCarouselItem-imageBlock {
