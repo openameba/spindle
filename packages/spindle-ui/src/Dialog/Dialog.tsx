@@ -36,14 +36,24 @@ const Frame = forwardRef<DialogHTMLElement, DialogProps>(function Dialog(
       return;
     }
 
+    // Remove this when browsers support :has() pseudo-class
+    const classNameToStopScrollBehindDialog = `${BLOCK_NAME}--open`;
+
     if (open) {
-      !dialogEl.current.open &&
-        dialogEl.current.showModal &&
-        dialogEl.current.showModal();
+      // Check element state to work with dialog-polyfill
+      if (dialogEl.current.open) {
+        return;
+      }
+      dialogEl.current.showModal && dialogEl.current.showModal();
+      document.documentElement.classList.add(classNameToStopScrollBehindDialog);
     } else {
-      dialogEl.current.open &&
-        dialogEl.current.close &&
-        dialogEl.current.close();
+      if (!dialogEl.current.open) {
+        return;
+      }
+      dialogEl.current.close && dialogEl.current.close();
+      document.documentElement.classList.remove(
+        classNameToStopScrollBehindDialog,
+      );
     }
   }, [open, dialogEl]);
 
