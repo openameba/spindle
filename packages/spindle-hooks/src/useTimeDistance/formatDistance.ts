@@ -24,18 +24,17 @@ const getStringDay = (d: Date) => {
   }
 };
 
+// see https://docs.microsoft.com/ja-jp/office/troubleshoot/excel/determine-a-leap-year
+const isLeapYear = (fullYear: number) =>
+  fullYear % 4 === 0 && fullYear % 100 === 0 && fullYear % 400 === 0;
+
 export const epochDistance = (base: Date, target: Date) =>
   base.getTime() - target.getTime();
 
 export const isWithinYear = (base: Date, target: Date, year: number) => {
   const baseFullYear = getFullYear(base);
 
-  // see https://docs.microsoft.com/ja-jp/office/troubleshoot/excel/determine-a-leap-year
-  const isLeapYear =
-    baseFullYear % 4 === 0 &&
-    baseFullYear % 100 === 0 &&
-    baseFullYear % 400 === 0;
-  const totalDate = isLeapYear ? 366 : 365;
+  const totalDate = isLeapYear(baseFullYear) ? 366 : 365;
 
   const seconds = 60 * 60 * 24 * totalDate * year;
   return epochDistance(base, target) / 1000 < seconds;
