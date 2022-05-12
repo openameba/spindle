@@ -4,8 +4,7 @@ const getDate = (d: Date) => d.getDate();
 const getHours = (d: Date) => d.getHours();
 const getMinutes = (d: Date) => d.getMinutes();
 const getStringDay = (d: Date) => {
-  const idx = d.getDay();
-  switch (idx) {
+  switch (d.getDay()) {
     case 0:
       return '日曜日';
     case 1:
