@@ -67,7 +67,6 @@ export const formatDistance = (
 
   const targetDate = typeof date === 'string' ? new Date(date) : date;
   if (targetDate.toString() === 'Invalid Date') {
-    console.error('Invalid Date', date);
     return '';
   }
 
