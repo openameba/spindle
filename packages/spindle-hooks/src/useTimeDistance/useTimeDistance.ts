@@ -12,10 +12,11 @@ export const useTimeDistance = (
   options?: TimeDistanceOptions,
 ): [string, number] => {
   const value = useMemo((): [string, number] => {
-    const baseDate = options?.relativeDate || new Date();
     if (!date) {
       return ['', 0];
     }
+
+    const baseDate = options?.relativeDate || new Date();
 
     const targetDate = typeof date === 'string' ? new Date(date) : date;
 
