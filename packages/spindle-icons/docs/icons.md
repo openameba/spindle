@@ -22,12 +22,14 @@
 | arrow_down_bold | ![](../dist/svg/arrow_down_bold.svg) |
 | arrow_left | ![](../dist/svg/arrow_left.svg) |
 | arrow_left_bold | ![](../dist/svg/arrow_left_bold.svg) |
+| arrow_leftright | ![](../dist/svg/arrow_leftright.svg) |
 | arrow_right | ![](../dist/svg/arrow_right.svg) |
 | arrow_right_bold | ![](../dist/svg/arrow_right_bold.svg) |
 | arrow_right_circle | ![](../dist/svg/arrow_right_circle.svg) |
 | arrow_right_circle_fill | ![](../dist/svg/arrow_right_circle_fill.svg) |
 | arrow_up | ![](../dist/svg/arrow_up.svg) |
 | arrow_up_bold | ![](../dist/svg/arrow_up_bold.svg) |
+| arrow_updown | ![](../dist/svg/arrow_updown.svg) |
 | arrowpaging_down | ![](../dist/svg/arrowpaging_down.svg) |
 | arrowpaging_down_circle | ![](../dist/svg/arrowpaging_down_circle.svg) |
 | arrowpaging_left | ![](../dist/svg/arrowpaging_left.svg) |
@@ -187,6 +189,7 @@
 | line_circle | ![](../dist/svg/line_circle.svg) |
 | line_square | ![](../dist/svg/line_square.svg) |
 | link | ![](../dist/svg/link.svg) |
+| list_bookmark_fill | ![](../dist/svg/list_bookmark_fill.svg) |
 | list_bulleted | ![](../dist/svg/list_bulleted.svg) |
 | list_numbered | ![](../dist/svg/list_numbered.svg) |
 | loading | ![](../dist/svg/loading.svg) |
