@@ -1,6 +1,6 @@
 {
   "name": "@openameba/spindle-icons",
-  "version": "0.22.0",
+  "version": "0.23.0",
   "scripts": {
     "clean": "npx rimraf dist",
     "mkdir": "npx mkdirp dist",
