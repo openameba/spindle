@@ -242,6 +242,7 @@
 | pencil_add | ![](../dist/svg/pencil_add.svg) |
 | pencil_bold | ![](../dist/svg/pencil_bold.svg) |
 | person | ![](../dist/svg/person.svg) |
+| person_ban | ![](../dist/svg/person_ban.svg) |
 | person_fill | ![](../dist/svg/person_fill.svg) |
 | person_three_fill | ![](../dist/svg/person_three_fill.svg) |
 | person_two_add_fill | ![](../dist/svg/person_two_add_fill.svg) |
@@ -327,7 +328,9 @@
 | trianglearrow_up | ![](../dist/svg/trianglearrow_up.svg) |
 | trianglearrow_upright | ![](../dist/svg/trianglearrow_upright.svg) |
 | triangleend_left | ![](../dist/svg/triangleend_left.svg) |
+| triangleend_left_bold | ![](../dist/svg/triangleend_left_bold.svg) |
 | triangleend_right | ![](../dist/svg/triangleend_right.svg) |
+| triangleend_right_bold | ![](../dist/svg/triangleend_right_bold.svg) |
 | trophy_fill | ![](../dist/svg/trophy_fill.svg) |
 | tv_fill | ![](../dist/svg/tv_fill.svg) |
 | twitter | ![](../dist/svg/twitter.svg) |
