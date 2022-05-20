@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.32.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.31.0...@openameba/spindle-ui@0.32.0) (2022-05-20)
+
+
+### Features
+
+* **spindle-icons:** update icons ([a20e8a0](https://github.com/openameba/spindle/commit/a20e8a07075373587b0d1b8d6558cdbf94cca156))
+
+
+
+
+
 # [0.31.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.30.0...@openameba/spindle-ui@0.31.0) (2022-05-17)
 
 
