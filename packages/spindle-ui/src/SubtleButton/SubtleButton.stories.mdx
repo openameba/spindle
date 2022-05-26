@@ -1,0 +1,87 @@
+import { Description, Meta, Story, Source } from '@storybook/addon-docs/blocks';
+import { actions } from '@storybook/addon-actions';
+import { SubtleButton } from './SubtleButton';
+
+# SubtleButton
+
+<Meta title="SubtleButton" component={SubtleButton} />
+
+![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)
+
+<Source
+  language='javascript'
+  code={`import { SubtleButton } from '@openameba/spindle-ui'`}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/SubtleButton/SubtleButton.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/SubtleButton/SubtleButton.css">`}
+/>
+
+## Large
+
+<Preview withSource="open">
+  <Story name="Large">
+    <SubtleButton size="large" {...actions('onClick', 'onMouseOver')}>Subtle Button</SubtleButton>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<SubtleButton size="large">Subtle Button</SubtleButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-SubtleButton spui-SubtleButton--large">Subtle Button</button>
+  `}
+/>
+
+## Medium
+
+<Preview withSource="open">
+  <Story name="Medium">
+    <SubtleButton size="medium" {...actions('onClick', 'onMouseOver')}>Subtle Button</SubtleButton>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<SubtleButton size="medium">Subtle Button</SubtleButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-SubtleButton spui-SubtleButton--medium">Subtle Button</button>
+  `}
+/>
+
+## Small
+
+<Preview withSource="open">
+  <Story name="Small">
+    <SubtleButton size="Small" {...actions('onClick', 'onMouseOver')}>Subtle Button</SubtleButton>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<SubtleButton size="small">Subtle Button</SubtleButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-SubtleButton spui-SubtleButton--small">Subtle Button</button>
+  `}
+/>

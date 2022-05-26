@@ -1,0 +1,54 @@
+/*
+ * SubtleButton
+ * NOTE: Styles can be overridden with "--SubtleButton-*" variables
+*/
+:root {
+  --SubtleButton-tapHighlightColor: var(--white-60-alpha);
+  --SubtleButton-onFocus-outlineColor: var(--color-focus-clarity);
+  --SubtleButton-color: var(--color-text-medium-emphasis);
+}
+
+.spui-SubtleButton {
+  background: none;
+  border: none;
+  border-radius: 4px;
+  color: var(--SubtleButton-color);
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1.3;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: var(--SubtleButton-tapHighlightColor);
+  text-align: center;
+}
+
+.spui-SubtleButton:disabled {
+  opacity: 0.3;
+}
+
+.spui-SubtleButton:focus {
+  outline: 2px solid var(--SubtleButton-onFocus-outlineColor);
+  outline-offset: 1px;
+}
+
+.spui-SubtleButton:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media (hover: hover) {
+  .spui-SubtleButton:not([disabled]):hover {
+    text-decoration: underline;
+  }
+}
+
+/*
+ * Sizes
+*/
+.spui-SubtleButton--large,
+.spui-SubtleButton--medium {
+  font-size: 0.875em;
+}
+
+.spui-SubtleButton--small {
+  font-size: 0.8125em;
+}
