@@ -1,0 +1,72 @@
+/*
+ * TextLink
+ * NOTE: Styles can be overridden with "--TextLink-*" variables
+*/
+:root {
+  --TextLink-tapHighlightColor: var(--white-60-alpha);
+  --TextLink-onFocus-outlineColor: var(--color-focus-clarity);
+  --TextLink-color: var(--color-text-accent-primary);
+  --TextLink-icon-color: var(--color-object-accent-primary);
+  --TextLink-fontWeight: bold;
+
+  --TextLink--subtle-color: var(--color-text-low-emphasis);
+  --TextLink--subtle-icon-color: var(--color-object-low-emphasis);
+}
+
+.spui-TextLink {
+  border-radius: 4px;
+  color: var(--TextLink-color);
+  font-family: inherit;
+  font-weight: var(--TextLink-fontWeight);
+  -webkit-tap-highlight-color: var(--TextLink-tapHighlightColor);
+}
+
+.spui-TextLink--hasIcon {
+  text-decoration: none;
+}
+
+.spui-TextLink:focus {
+  outline: 2px solid var(--TextLink-onFocus-outlineColor);
+  outline-offset: 1px;
+}
+
+.spui-TextLink:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media (hover: hover) {
+  .spui-TextLink:hover {
+    text-decoration: underline;
+  }
+}
+
+/*
+ * Variant
+*/
+.spui-TextLink--subtle {
+  color: var(--TextLink--subtle-color);
+}
+
+/*
+ * Icon
+*/
+.spui-TextLink--hasIcon {
+  align-items: center;
+  display: inline-flex;
+}
+
+.spui-TextLink-icon {
+  line-height: 0;
+}
+
+.spui-TextLink--iconstart .spui-TextLink-icon {
+  margin-right: 4px;
+}
+
+.spui-TextLink--iconend {
+  flex-direction: row-reverse;
+}
+
+.spui-TextLink--iconend .spui-TextLink-icon {
+  margin-left: 4px;
+}
