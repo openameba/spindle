@@ -40,3 +40,9 @@
 .spui-ButtonGroup--small.spui-ButtonGroup--column > *:not(:first-child) {
   margin-top: 12px;
 }
+
+/* Override margin for Subtle button */
+:is(.spui-ButtonGroup--large, .spui-ButtonGroup--medium).spui-ButtonGroup--column
+  > .spui-SubtleButton:not(:first-child) {
+  margin-top: 14px;
+}

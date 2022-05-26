@@ -1,6 +1,7 @@
 import { Meta, Story, Source } from '@storybook/addon-docs/blocks';
 import { ButtonGroup } from './ButtonGroup';
 import { Button } from '../Button';
+import { SubtleButton } from '../SubtleButton';
 
 # Button Group
 
@@ -199,6 +200,66 @@ import { Button } from '../Button';
 <div class="spui-ButtonGroup spui-ButtonGroup--column spui-ButtonGroup--small">
   <button class="spui-Button spui-Button--small spui-Button--contained">Contained</button>
   <button class="spui-Button spui-Button--small spui-Button--outlined">Outlined</button>
+</div>
+  `}
+/>
+
+## Column Direction with Large Subtle Button
+
+<Preview withSource="open">
+  <Story name="Column Direction with Large Subtle Button">
+    <ButtonGroup direction="column" size="large">
+      <Button variant="contained">Contained</Button>
+      <SubtleButton size="large">Subtle Button</SubtleButton>
+    </ButtonGroup>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<ButtonGroup direction="column" size="large">
+  <Button size="large" variant="contained">Contained</Button>
+  <SubtleButton size="large">Subtle Button</SubtleButton>
+</ButtonGroup>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<div class="spui-ButtonGroup spui-ButtonGroup--column spui-ButtonGroup--large">
+  <button class="spui-Button spui-Button--large spui-Button--contained">Contained</button>
+  <button class="spui-SubtleButton spui-SubtleButton--large">Subtle Button</button>
+</div>
+  `}
+/>
+
+## Column Direction with Small Subtle Button
+
+<Preview withSource="open">
+  <Story name="Column Direction with Small Subtle Button">
+    <ButtonGroup direction="column" size="small">
+      <Button size="small" variant="contained">Contained</Button>
+      <SubtleButton size="small">Subtle Button</SubtleButton>
+    </ButtonGroup>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<ButtonGroup direction="column" size="small">
+  <Button size="small" variant="contained">Contained</Button>
+  <SubtleButton size="small">Subtle Button</SubtleButton>
+</ButtonGroup>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<div class="spui-ButtonGroup spui-ButtonGroup--column spui-ButtonGroup--small">
+  <button class="spui-Button spui-Button--small spui-Button--contained">Contained</button>
+  <button class="spui-SubtleButton spui-SubtleButton--small">Subtle Button</button>
 </div>
   `}
 />
