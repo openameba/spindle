@@ -234,6 +234,36 @@ import { SubtleButton } from '../SubtleButton';
   `}
 />
 
+## Column Direction with Medium Subtle Button
+
+<Preview withSource="open">
+  <Story name="Column Direction with Medium Subtle Button">
+    <ButtonGroup direction="column" size="medium">
+      <Button size="medium" variant="contained">Contained</Button>
+      <SubtleButton size="medium">Subtle Button</SubtleButton>
+    </ButtonGroup>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<ButtonGroup direction="column" size="medium">
+  <Button size="medium" variant="contained">Contained</Button>
+  <SubtleButton size="medium">Subtle Button</SubtleButton>
+</ButtonGroup>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<div class="spui-ButtonGroup spui-ButtonGroup--column spui-ButtonGroup--medium">
+  <button class="spui-Button spui-Button--medium spui-Button--contained">Contained</button>
+  <button class="spui-SubtleButton spui-SubtleButton--medium">Subtle Button</button>
+</div>
+  `}
+/>
+
 ## Column Direction with Small Subtle Button
 
 <Preview withSource="open">
