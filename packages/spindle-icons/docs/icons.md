@@ -27,6 +27,8 @@
 | arrow_right_bold | ![](../dist/svg/arrow_right_bold.svg) |
 | arrow_right_circle | ![](../dist/svg/arrow_right_circle.svg) |
 | arrow_right_circle_fill | ![](../dist/svg/arrow_right_circle_fill.svg) |
+| arrow_subdirectory | ![](../dist/svg/arrow_subdirectory.svg) |
+| arrow_subdirectory_bold | ![](../dist/svg/arrow_subdirectory_bold.svg) |
 | arrow_up | ![](../dist/svg/arrow_up.svg) |
 | arrow_up_bold | ![](../dist/svg/arrow_up_bold.svg) |
 | arrow_updown | ![](../dist/svg/arrow_updown.svg) |
