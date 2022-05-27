@@ -24,6 +24,8 @@ export { default as ArrowRight } from './ArrowRight';
 export { default as ArrowRightBold } from './ArrowRightBold';
 export { default as ArrowRightCircle } from './ArrowRightCircle';
 export { default as ArrowRightCircleFill } from './ArrowRightCircleFill';
+export { default as ArrowSubdirectory } from './ArrowSubdirectory';
+export { default as ArrowSubdirectoryBold } from './ArrowSubdirectoryBold';
 export { default as ArrowUp } from './ArrowUp';
 export { default as ArrowUpBold } from './ArrowUpBold';
 export { default as ArrowUpdown } from './ArrowUpdown';
