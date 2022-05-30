@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import dialogPolyfill from 'dialog-polyfill';
 import { Button } from '../Button';
+import { SubtleButton } from '../SubtleButton';
 import { Dialog } from './Dialog';
 
 import 'dialog-polyfill/dist/dialog-polyfill.css';
@@ -95,6 +96,21 @@ export function ButtonColumn() {
         <Button layout="fullWidth" size="medium" variant="neutral">
           キャンセル
         </Button>
+      </Dialog.ButtonGroup>
+    </Dialog.StyleOnly>
+  );
+}
+
+export function ButtonColumnWithSubtleButton() {
+  return (
+    <Dialog.StyleOnly>
+      <Dialog.Title>タイトルですよ</Dialog.Title>
+      <Dialog.Body>ここに本文が入りますよ</Dialog.Body>
+      <Dialog.ButtonGroup direction="column">
+        <Button layout="fullWidth" size="medium" type="button">
+          Spindleをフォローする
+        </Button>
+        <SubtleButton size="medium">閉じる</SubtleButton>
       </Dialog.ButtonGroup>
     </Dialog.StyleOnly>
   );

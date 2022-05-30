@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Description, Meta, Story, Source } from '@storybook/addon-docs/blocks';
-import { DialogExample, StyleOnly, ButtonRow, ButtonColumn } from './DialogExample';
+import { DialogExample, StyleOnly, ButtonRow, ButtonColumn, ButtonColumnWithSubtleButton } from './DialogExample';
 
 # Dialog
 
@@ -184,6 +184,46 @@ function DialogExample() {
   <div class="spui-ButtonGroup spui-ButtonGroup--column spui-ButtonGroup--medium spui-Dialog-buttonGroup">
     <button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--contained" type="button">Spindleをフォローする</button>
     <button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--neutral">キャンセル</button>
+  </div>
+</div>
+  `}
+/>
+
+<Preview withSource="open">
+  <Story name="ButtonColumnWithSubtleButton">
+    <ButtonColumnWithSubtleButton />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+function DialogExample() {
+  return (
+    <Dialog.StyleOnly>
+      <Dialog.Title>タイトルですよ</Dialog.Title>
+      <Dialog.Body>ここに本文が入りますよ</Dialog.Body>
+      <Dialog.ButtonGroup direction="column">
+        <Button layout="fullWidth" size="medium">
+          Spindleをフォローする
+        </Button>
+        <SubtleButton size="medium">
+          閉じる
+        </Button>
+      </Dialog.ButtonGroup>
+    </Dialog.StyleOnly>
+  );
+}
+  `}
+/>
+
+<Source
+  code={`
+<div class="spui-Dialog">
+  <p class="spui-Dialog-title">タイトルですよ</p>
+  <p class="spui-Dialog-body">ここに本文が入りますよ</p>
+  <div class="spui-ButtonGroup spui-ButtonGroup--column spui-ButtonGroup--medium spui-Dialog-buttonGroup">
+    <button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--contained" type="button">Spindleをフォローする</button>
+    <button class="spui-SubtleButton spui-SubtleButton--medium">閉じる</button>
   </div>
 </div>
   `}
