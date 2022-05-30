@@ -5,9 +5,10 @@
   /* TODO: replace color with color palette */
   box-shadow: 0 11px 28px rgba(8, 18, 26, 0.12);
   color: var(--color-text-medium-emphasis);
-  padding: 36px;
+  padding: 24px;
   /* NOTE: box-sizing does not work well with dialog-polyfill */
-  width: calc(400px - 36px * 2);
+  /* width property is calculated from dialog width - padding * 2 */
+  width: calc(400px - 24px * 2);
 }
 
 /* stylelint-disable plugin/selector-bem-pattern */
@@ -21,10 +22,12 @@ html.spui-Dialog--open {
 }
 /* stylelint-enable plugin/selector-bem-pattern */
 
-/* 56px is the minimum margin for the small devices, 512px is from 400px + 56px * 2 */
-@media screen and (max-width: 512px) {
+/* The minimum margin for the small devices */
+/* 472px is calculated from dialog width (400px) + minimum margin (36px * 2) */
+/* width property is calculated from 100% - (padding * 2 + minimum margin * 2) */
+@media screen and (max-width: 472px) {
   .spui-Dialog {
-    width: calc(100% - (36px * 2 + 56px * 2));
+    width: calc(100% - (24px * 2 + 36px * 2));
   }
 }
 
@@ -63,7 +66,13 @@ html.spui-Dialog--open {
   text-align: center;
 }
 
-/* stylelint-disable-next-line plugin/selector-bem-pattern */
-.spui-Dialog-buttonGroup .spui-Button {
-  max-width: 240px;
+@media screen and (min-width: 768px) {
+  .spui-Dialog {
+    padding: 36px;
+  }
+
+  /* stylelint-disable-next-line plugin/selector-bem-pattern */
+  .spui-Dialog-buttonGroup :is(.spui-Button, .spui-SubtleButton) {
+    max-width: 240px;
+  }
 }
