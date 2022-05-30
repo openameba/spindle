@@ -60,13 +60,12 @@
 }
 
 .spui-Breadcrumb a:focus {
-  box-shadow: 0 0 0 1px var(--color-surface-secondary),
-    0 0 0 3px var(--color-focus-clarity);
-  outline: none;
+  outline: 2px solid var(--color-focus-clarity);
+  outline-offset: 1px;
 }
 
 .spui-Breadcrumb a:focus:not(:focus-visible) {
-  box-shadow: none;
+  outline: none;
 }
 /* stylelint-enable plugin/selector-bem-pattern */
 
