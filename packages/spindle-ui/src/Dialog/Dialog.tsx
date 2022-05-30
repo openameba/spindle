@@ -47,10 +47,10 @@ const Frame = forwardRef<DialogHTMLElement, DialogProps>(function Dialog(
       dialogEl.current.showModal && dialogEl.current.showModal();
       document.documentElement.classList.add(classNameToStopScrollBehindDialog);
     } else {
-      if (!dialogEl.current.open) {
-        return;
-      }
-      dialogEl.current.close && dialogEl.current.close();
+      dialogEl.current.open &&
+        dialogEl.current.close &&
+        dialogEl.current.close();
+      // Always remove this class to avoid unexpected scroll stopping
       document.documentElement.classList.remove(
         classNameToStopScrollBehindDialog,
       );
