@@ -216,17 +216,29 @@ describe('style output as style dictionary JSON', () => {
           '    },\n' +
           '    "offset": {\n' +
           '      "x": {\n' +
-          '        "value": 10\n' +
+          '        "value": 10,\n' +
+          '        "attributes": {\n' +
+          '          "category": "size"\n' +
+          '        }\n' +
           '      },\n' +
           '      "y": {\n' +
-          '        "value": 10\n' +
+          '        "value": 10,\n' +
+          '        "attributes": {\n' +
+          '          "category": "size"\n' +
+          '        }\n' +
           '      }\n' +
           '    },\n' +
           '    "blurRadius": {\n' +
-          '      "value": 5\n' +
+          '      "value": 5,\n' +
+          '      "attributes": {\n' +
+          '        "category": "size"\n' +
+          '      }\n' +
           '    },\n' +
           '    "spreadRadius": {\n' +
-          '      "value": 10\n' +
+          '      "value": 10,\n' +
+          '      "attributes": {\n' +
+          '        "category": "size"\n' +
+          '      }\n' +
           '    },\n' +
           '    "comment": "lorem ipsum"\n' +
           '  }\n' +
