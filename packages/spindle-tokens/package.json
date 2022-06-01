@@ -21,7 +21,7 @@
     "jest": "jest",
     "build": "run-p build:*",
     "build:tokens": "style-dictionary build",
-    "build:css": "style-dictionary build --config ./config-css.json",
+    "build:css": "style-dictionary build --config ./config-css.js",
     "preexport": "tsc",
     "export": "./node_modules/.bin/figma-export use-config",
     "prepublishOnly": "yarn build"
