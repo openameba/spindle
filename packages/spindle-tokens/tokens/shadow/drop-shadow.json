@@ -3,6 +3,9 @@
     "Drop Shadow": {
       "Lv2": {
         "blurRadius": {
+          "attributes": {
+            "category": "size"
+          },
           "value": 3.875
         },
         "color": {
@@ -13,18 +16,30 @@
         },
         "offset": {
           "x": {
+            "attributes": {
+              "category": "size"
+            },
             "value": 0
           },
           "y": {
+            "attributes": {
+              "category": "size"
+            },
             "value": 3.25
           }
         },
         "spreadRadius": {
+          "attributes": {
+            "category": "size"
+          },
           "value": 0
         }
       },
       "Lv4": {
         "blurRadius": {
+          "attributes": {
+            "category": "size"
+          },
           "value": 7.125
         },
         "color": {
@@ -35,18 +50,30 @@
         },
         "offset": {
           "x": {
+            "attributes": {
+              "category": "size"
+            },
             "value": 0
           },
           "y": {
+            "attributes": {
+              "category": "size"
+            },
             "value": 4.75
           }
         },
         "spreadRadius": {
+          "attributes": {
+            "category": "size"
+          },
           "value": 0
         }
       },
       "Lv6": {
         "blurRadius": {
+          "attributes": {
+            "category": "size"
+          },
           "value": 14
         },
         "color": {
@@ -57,13 +84,22 @@
         },
         "offset": {
           "x": {
+            "attributes": {
+              "category": "size"
+            },
             "value": 0
           },
           "y": {
+            "attributes": {
+              "category": "size"
+            },
             "value": 11
           }
         },
         "spreadRadius": {
+          "attributes": {
+            "category": "size"
+          },
           "value": 0
         }
       }
