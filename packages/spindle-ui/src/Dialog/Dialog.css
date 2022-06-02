@@ -69,6 +69,7 @@ html.spui-Dialog--open {
 @media screen and (min-width: 768px) {
   .spui-Dialog {
     padding: 36px;
+    width: calc(400px - 36px * 2);
   }
 
   /* stylelint-disable-next-line plugin/selector-bem-pattern */
