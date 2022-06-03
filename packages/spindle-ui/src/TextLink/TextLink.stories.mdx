@@ -1,7 +1,7 @@
 import { Description, Meta, Story, Source } from '@storybook/addon-docs/blocks';
 import { actions } from '@storybook/addon-actions';
 import { TextLink } from './TextLink';
-import { ChevronRightBold, CheckCircleFill } from '../Icon';
+import { ChevronRightBold, CameraFill } from '../Icon';
 
 # TextLink
 
@@ -49,9 +49,22 @@ import { ChevronRightBold, CheckCircleFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="NormalWithIcon">
-    <TextLink href="#" icon={<CheckCircleFill aria-label="チェック" />} iconPosition="start" {...actions('onMouseOver')}>Text Link</TextLink>
+    <TextLink href="#" icon={<CameraFill aria-label="カメラ" />} iconPosition="start" {...actions('onMouseOver')}>Text Link</TextLink>
   </Story>
 </Preview>
+
+<Source
+  code={`
+<TextLink href="#" icon={<CameraFill aria-label="カメラ" />} iconPosition="start" />Text Link</TextLink>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<a class="spui-TextLink spui-TextLink--hasIcon spui-TextLink--iconstart" href="#"><span class="spui-TextLink-icon"><svg>...</svg></span>TextLink</a>
+  `}
+/>
 
 ## Subtle
 
@@ -61,6 +74,19 @@ import { ChevronRightBold, CheckCircleFill } from '../Icon';
   </Story>
 </Preview>
 
+<Source
+  code={`
+<TextLink href="#" variant="subtle" />}>Text Link</TextLink>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<a class="spui-TextLink spui-TextLink--subtle" href="#">TextLink</a>
+  `}
+/>
+
 ## Subtle With Icon
 
 <Preview withSource="open">
@@ -68,6 +94,19 @@ import { ChevronRightBold, CheckCircleFill } from '../Icon';
     <TextLink variant="subtle" icon={<ChevronRightBold aria-hidden="true" />} iconPosition="end" href="#" {...actions('onMouseOver')}>Text Link</TextLink>
   </Story>
 </Preview>
+
+<Source
+  code={`
+<TextLink href="#" icon={<ChevronRightBold aria-hidden="true" />} iconPosition="end">Text Link</TextLink>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<a class="spui-TextLink spui-TextLink--subtle spui-TextLink--hasIcon spui-TextLink--iconend" href="#"><span class="spui-TextLink-icon"><svg>...</svg></span>TextLink</a>
+  `}
+/>
 
 ## スタイルの上書き
 `TextLink`を利用する際には、ますデフォルト定義されているスタイルで要件を満たせないか検討してください。ただし、`TextLink`は様々な箇所での利用が想定されるため、以下のようにスタイルを上書きして利用できます。
