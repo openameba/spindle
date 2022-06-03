@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/openameba/spindle/compare/@openameba/spindle-hooks@0.1.0...@openameba/spindle-hooks@0.2.0) (2022-05-30)
+
+
+### Bug Fixes
+
+* remove console.error ([4c508f8](https://github.com/openameba/spindle/commit/4c508f8075c934839a50bd835c90e07f823f21d0))
+
+
+### Features
+
+* **spindle-hooks:** add useTimeDistance hooks ([2c6cf63](https://github.com/openameba/spindle/commit/2c6cf6310eb336a228ee6808517681037dbd1fbc))
+
+
+
+
+
 # [0.1.0](https://github.com/openameba/spindle/compare/@openameba/spindle-hooks@0.0.1-alpha.3...@openameba/spindle-hooks@0.1.0) (2022-04-26)
 
 **Note:** Version bump only for package @openameba/spindle-hooks

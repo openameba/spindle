@@ -14,55 +14,40 @@
   flex-direction: column;
 }
 
-/* Size */
-
 /* NOTE: gap property should be used in the near future */
 
 /* stylelint-disable plugin/selector-bem-pattern */
-.spui-ButtonGroup--large.spui-ButtonGroup--row > * {
-  margin-right: 16px;
+.spui-ButtonGroup--large.spui-ButtonGroup--row > *:not(:first-child) {
+  margin-left: 16px;
 }
 
-.spui-ButtonGroup--large.spui-ButtonGroup--row > *:last-child {
-  margin-right: 0;
+.spui-ButtonGroup--large.spui-ButtonGroup--column > *:not(:first-child) {
+  margin-top: 16px;
 }
 
-.spui-ButtonGroup--large.spui-ButtonGroup--column > * {
-  margin-bottom: 16px;
+.spui-ButtonGroup--medium.spui-ButtonGroup--row > *:not(:first-child) {
+  margin-left: 12px;
 }
 
-.spui-ButtonGroup--large.spui-ButtonGroup--column > *:last-child {
-  margin-bottom: 0;
+.spui-ButtonGroup--medium.spui-ButtonGroup--column > *:not(:first-child) {
+  margin-top: 12px;
 }
 
-.spui-ButtonGroup--medium.spui-ButtonGroup--row > * {
-  margin-right: 12px;
+.spui-ButtonGroup--small.spui-ButtonGroup--row > *:not(:first-child) {
+  margin-left: 8px;
 }
 
-.spui-ButtonGroup--medium.spui-ButtonGroup--row > *:last-child {
-  margin-right: 0;
+.spui-ButtonGroup--small.spui-ButtonGroup--column > *:not(:first-child) {
+  margin-top: 12px;
 }
 
-.spui-ButtonGroup--medium.spui-ButtonGroup--column > * {
-  margin-bottom: 12px;
+/* Override margin for Subtle button */
+.spui-ButtonGroup--large.spui-ButtonGroup--column
+  > .spui-SubtleButton:not(:first-child) {
+  margin-top: 20px;
 }
 
-.spui-ButtonGroup--medium.spui-ButtonGroup--column > *:last-child {
-  margin-bottom: 0;
-}
-
-.spui-ButtonGroup--small.spui-ButtonGroup--row > * {
-  margin-right: 8px;
-}
-
-.spui-ButtonGroup--small.spui-ButtonGroup--row > *:last-child {
-  margin-right: 0;
-}
-
-.spui-ButtonGroup--small.spui-ButtonGroup--column > * {
-  margin-bottom: 12px;
-}
-
-.spui-ButtonGroup--small.spui-ButtonGroup--column > *:last-child {
-  margin-bottom: 0;
+:is(.spui-ButtonGroup--medium, .spui-ButtonGroup--small).spui-ButtonGroup--column
+  > .spui-SubtleButton:not(:first-child) {
+  margin-top: 14px;
 }

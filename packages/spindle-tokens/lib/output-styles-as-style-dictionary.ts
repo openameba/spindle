@@ -23,14 +23,18 @@ type ColorToken = {
   };
 };
 
+type SizeCategory = {
+  category: 'size';
+};
+
 type DropShadowToken = {
   color: { value: string };
   inset: { value: boolean };
-  blurRadius: { value: number };
-  spreadRadius: { value: number };
+  blurRadius: { value: number; attributes: SizeCategory };
+  spreadRadius: { value: number; attributes: SizeCategory };
   offset: {
-    x: { value: number };
-    y: { value: number };
+    x: { value: number; attributes: SizeCategory };
+    y: { value: number; attributes: SizeCategory };
   };
   comment?: string;
 };
@@ -119,11 +123,23 @@ export function exporter({
                 color: { value: shadowEffect.color.rgba },
                 inset: { value: shadowEffect.inset },
                 offset: {
-                  x: { value: shadowEffect.offset.x },
-                  y: { value: shadowEffect.offset.y },
+                  x: {
+                    value: shadowEffect.offset.x,
+                    attributes: { category: 'size' },
+                  },
+                  y: {
+                    value: shadowEffect.offset.y,
+                    attributes: { category: 'size' },
+                  },
                 },
-                blurRadius: { value: shadowEffect.blurRadius / 2 },
-                spreadRadius: { value: shadowEffect.spreadRadius },
+                blurRadius: {
+                  value: shadowEffect.blurRadius / 2,
+                  attributes: { category: 'size' },
+                },
+                spreadRadius: {
+                  value: shadowEffect.spreadRadius,
+                  attributes: { category: 'size' },
+                },
               };
 
               if (style.comment) {

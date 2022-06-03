@@ -4,8 +4,7 @@
 */
 :root {
   --Button-tapHighlightColor: var(--gray-5-alpha);
-  --Button-onFocus-boxShadow: 0 0 0 1px var(--color-surface-primary),
-    0 0 0 3px var(--color-focus-clarity);
+  --Button-onFocus-outlineColor: var(--color-focus-clarity);
 
   --Button--contained-backgroundColor: var(--color-surface-accent-primary);
   --Button--contained-color: var(--color-text-high-emphasis-inverse);
@@ -55,12 +54,12 @@
 }
 
 .spui-Button:focus {
-  box-shadow: var(--Button-onFocus-boxShadow);
-  outline: none;
+  outline: 2px solid var(--Button-onFocus-outlineColor);
+  outline-offset: 1px;
 }
 
 .spui-Button:focus:not(:focus-visible) {
-  box-shadow: none;
+  outline: none;
 }
 
 /*

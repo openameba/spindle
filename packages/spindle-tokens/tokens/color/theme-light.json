@@ -3,285 +3,504 @@
     "ThemeLight": {
       "Active": {
         "Caution Button": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Caution.Red 5 alpha.value}"
         },
         "Contained Button": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Primary Green.100.value}"
         },
         "Lighted Button": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Primary Green.10.value}"
         },
         "Neutral Button": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Gray.20 alpha.value}"
         },
         "Outlined Button": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Primary Green.5.value}"
         }
       },
       "Background": {
         "Base": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : Background , Divider, Don't : Object , Button , Stroke , Text",
           "value": "{Color.Primitive.Gray.5.value}"
         }
       },
       "Border": {
         "Accent Primary": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : 装飾的な罫線として, Don't :",
           "value": "{Color.Primitive.Primary Green.70.value}"
         },
         "Caution": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : エラーが発生した時の罫線, Don't : エラー以外の罫線",
           "value": "{Color.Primitive.Caution.Red 100.value}"
         },
         "High Emphasis": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : 特に輪郭を強調させたい時, Don't : 罫線",
           "value": "{Color.Primitive.Gray.60 alpha.value}"
         },
         "High Emphasis Inverse": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : 背景が濃い時の罫線, Don't : 背景色が薄い時の罫線",
           "value": "{Color.Primitive.White.100.value}"
         },
         "Medium Emphasis": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : Text Fieldの輪郭, Don't : 罫線",
           "value": "{Color.Primitive.Gray.30 alpha.value}"
         },
         "Strong Emphasis": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : 装飾的な強調罫線",
           "value": "{Color.Primitive.Gray.100.value}"
         }
       },
       "Brand": {
         "Ameba Green": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Brand.Ameba Green.value}"
         },
         "Black": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Black.100.value}"
         },
         "Neutral Gray": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Brand.Neutral Gray.value}"
         },
         "White": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.White.100.value}"
         },
         "Yellow": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Highlight.Yellow 100.value}"
         },
         "Yellow Green": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Secondary Green.50.value}"
         }
       },
       "Focus": {
         "Ambiguous": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Focus.Blue 30 alpha.value}"
         },
         "Clarity": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Focus.Blue 100.value}"
         }
       },
       "Highlight": {
         "Error": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : テキストフィールドで文字数がオーバーエラー時, Don't : 文字色、表層色",
           "value": "{Color.Primitive.Caution.Red 20 alpha.value}"
         },
         "Hover": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Black.30 alpha.value}"
         },
         "Yellow": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : テキストを強調する時、テキストの背面に使用, Don't : 文字色、テキストの上に乗せる",
           "value": "{Color.Primitive.Highlight.Yellow 100.value}"
         }
       },
       "Highlighted": {
         "Caution Button": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Caution.Red 5 alpha.value}"
         },
         "Contained Button": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Primary Green.100.value}"
         },
         "Lighted Button": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Primary Green.10.value}"
         },
         "Neutral Button": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Gray.20 alpha.value}"
         },
         "Outlined Button": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Primary Green.5.value}"
         }
       },
       "Hover": {
         "Caution Button": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Caution.Red 5 alpha.value}"
         },
         "Contained Button": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Primary Green.100.value}"
         },
         "Lighted Button": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Primary Green.10.value}"
         },
         "Neutral Button": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Gray.20 alpha.value}"
         },
         "Outlined Button": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Primary Green.5.value}"
         }
       },
       "Object": {
         "Accent Primary": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : 大強調アイコン, Don't : 非強調アイコン、上にテキストが乗る要素、テキスト",
           "value": "{Color.Primitive.Primary Green.70.value}"
         },
         "Accent Secondary": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : 准強調アイコン, Don't : 非強調アイコン、上にテキストが乗る要素、テキスト",
           "value": "{Color.Primitive.Secondary Green.70.value}"
         },
         "Caution": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : 警告を示唆するアイコン, Don't : 通常アイコン、上にテキストが乗る要素、テキスト",
           "value": "{Color.Primitive.Caution.Red 100.value}"
         },
         "Disable": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : 非活性アイコン, Don't : 押せるアイコン、上にテキストが乗る要素、テキスト",
           "value": "{Color.Primitive.Gray.30 alpha.value}"
         },
         "Expressive Pink": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : 緑や赤以外で装飾を付けたい時, Don't : 非強調アイコン、上にテキストが乗る要素、テキスト",
           "value": "{Color.Primitive.Expressive Pink.40.value}"
         },
         "High Emphasis": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : 強調アイコン, Don't : 非強調アイコン、上にテキストが乗る要素、テキスト",
           "value": "{Color.Primitive.Gray.100.value}"
         },
         "High Emphasis Inverse": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : 背景が濃い色の時の強調アイコン, Don't : 非強調アイコン、上にテキストが乗る要素、テキスト",
           "value": "{Color.Primitive.White.100.value}"
         },
         "Low Emphasis": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : 非強調アイコン, Don't : 非活性アイコン、上にテキストが乗る要素、テキスト",
           "value": "{Color.Primitive.Gray.60 alpha.value}"
         },
         "Medium Emphasis": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : 准強調アイコン, Don't : 非強調アイコン、上にテキストが乗る要素、テキスト",
           "value": "{Color.Primitive.Gray.70 alpha.value}"
         }
       },
       "Overlay": {
         "Dark": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : 80%モーダルの背景色,重要なダイアログの背景色",
           "value": "{Color.Primitive.Black.80 alpha.value}"
         },
         "Light": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Black.20 alpha.value}"
         },
         "Medium": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : 50%モーダルの背景色,重要ではないダイアログの背景色",
           "value": "{Color.Primitive.Black.60 alpha.value}"
         }
       },
       "Ripple": {
         "Caution Button": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Caution.Red 5 alpha.value}"
         },
         "Contained Button": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Gray.20 alpha.value}"
         },
         "Lighted Button": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Primary Green.10.value}"
         },
         "Neutral Button": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Gray.10 alpha.value}"
         },
         "Outlined Button": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Primary Green.5.value}"
         }
       },
       "Surface": {
         "Accent Primary": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : Amebaの中でも特に強調したいもの, Don't : 文字、アイコン、優先度がそこまで高くない要素",
           "value": "{Color.Primitive.Primary Green.70.value}"
         },
         "Accent Primary Light": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : 最重要項目ではないが強調したい要素、タグ、バナー, Don't : 文字、アイコン",
           "value": "{Color.Primitive.Primary Green.5.value}"
         },
         "Accent Secondary": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : Accent Primaryが使えない面で, Don't : 文字、アイコン",
           "value": "{Color.Primitive.Secondary Green.50.value}"
         },
         "Accent Secondary Light": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : Accent Secondaryに対して相対的に利用, Don't : 文字、アイコン",
           "value": "{Color.Primitive.Secondary Green.5.value}"
         },
         "Caution": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : 警告、注意喚起の要素の表層, Don't : 文字、アイコン、訴求",
           "value": "{Color.Primitive.Caution.Red 100.value}"
         },
         "Caution Light": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : 軽度の注意喚起を行う時の表層, Don't : 文字、アイコン、重度の警告",
           "value": "{Color.Primitive.Caution.Red 5 alpha.value}"
         },
         "Primary": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : 白い背景、反転したボタン, Don't : 文字、アイコン",
           "value": "{Color.Primitive.White.100.value}"
         },
         "Quaternary": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : グレーの色面, Don't : 文字、アイコン",
           "value": "{Color.Primitive.Gray.20 alpha.value}"
         },
         "Secondary": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : グレーの色面, Don't : 下地、文字、アイコン",
           "value": "{Color.Primitive.Gray.5 alpha.value}"
         },
         "Tertiary": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : グレーの色面、ボタン, Don't : 文字、アイコン",
           "value": "{Color.Primitive.Gray.10 alpha.value}"
         }
       },
       "System": {
         "Black": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "rgba(0, 0, 0, 1)"
         },
         "Blue": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "rgba(0, 145, 255, 1)"
         },
         "Pink": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "rgba(228, 0, 127, 1)"
         },
         "White": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "rgba(255, 255, 255, 1)"
         }
       },
       "Tap Highlight": {
         "Base": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Gray.5 alpha.value}"
         }
       },
       "Text": {
         "Accent Secondary": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : Surface / Accent Secondaryに合わせて, Don't : 単独での利用",
           "value": "{Color.Primitive.Secondary Green.80.value}"
         },
         "Caution": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : 警告文、注意喚起, Don't : 訴求",
           "value": "{Color.Primitive.Caution.Red 100.value}"
         },
         "High Emphasis Inverse": {
+          "attributes": {
+            "category": "color"
+          },
           "comment": "Do : 背景が濃い色に対しての強調色から本文まで, Don't : 背景が薄い色",
           "value": "{Color.Primitive.White.100.value}"
         }
       },
       "Third Party": {
         "Apple": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Black.100.value}"
         },
         "Facebook": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Third Party.Facebook Blue.value}"
         },
         "Instagram": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Third Party.Instagram Pink.value}"
         },
         "Twitter": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Third Party.Twitter Blue.value}"
         },
         "Youtube": {
+          "attributes": {
+            "category": "color"
+          },
           "value": "{Color.Primitive.Third Party.Youtube Red.value}"
         }
       }

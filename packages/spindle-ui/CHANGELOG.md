@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.34.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.33.0...@openameba/spindle-ui@0.34.0) (2022-05-30)
+
+
+### Features
+
+* **spindle-ui:** add ButtonGropu margin for SubtleButton ([896c6e5](https://github.com/openameba/spindle/commit/896c6e5d8a52e0120d467f18421b9ba4b0502262))
+* **spindle-ui:** create SubtleButton ([df85af6](https://github.com/openameba/spindle/commit/df85af6ec1d02a64ab6bbbc2e7f5edcb656d3526))
+
+
+
+
+
+# [0.33.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.32.0...@openameba/spindle-ui@0.33.0) (2022-05-27)
+
+
+### Features
+
+* **spindle-icons:** update icons ([9c0e919](https://github.com/openameba/spindle/commit/9c0e919405c90105d2a95193df4f7a2ab747c892))
+
+
+
+
+
 # [0.32.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.31.0...@openameba/spindle-ui@0.32.0) (2022-05-20)
 
 
