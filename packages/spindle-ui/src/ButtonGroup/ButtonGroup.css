@@ -42,7 +42,12 @@
 }
 
 /* Override margin for Subtle button */
-:is(.spui-ButtonGroup--large, .spui-ButtonGroup--medium).spui-ButtonGroup--column
+.spui-ButtonGroup--large.spui-ButtonGroup--column
+  > .spui-SubtleButton:not(:first-child) {
+  margin-top: 20px;
+}
+
+:is(.spui-ButtonGroup--medium, .spui-ButtonGroup--small).spui-ButtonGroup--column
   > .spui-SubtleButton:not(:first-child) {
   margin-top: 14px;
 }
