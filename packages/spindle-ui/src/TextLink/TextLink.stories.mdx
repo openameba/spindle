@@ -62,7 +62,30 @@ import { ChevronRightBold, CameraFill } from '../Icon';
 <Source
   language='html'
   code={`
-<a class="spui-TextLink spui-TextLink--hasIcon spui-TextLink--iconstart" href="#"><span class="spui-TextLink-icon"><svg>...</svg></span>TextLink</a>
+<a href="#" class="spui-TextLink spui-TextLink--hasIcon spui-TextLink--iconstart"><span class="spui-TextLink-icon"><svg>...</svg></span>TextLink</a>
+  `}
+/>
+
+## Disable Underline
+
+リンクであることが慣習的に分かる場合にはアンダーラインを非表示にできます。ただし、hover時のアンダーラインは状態変化を明示するために常に表示されてる点に注意してください。
+
+<Preview withSource="open">
+  <Story name="DisableUnderline">
+    <TextLink href="#" disableUnderline {...actions('onMouseOver')}>Text Link</TextLink>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<TextLink href="#" disableUnderline>Text Link</TextLink>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<a href="#" class="spui-TextLink spui-TextLink--disableUnderline">TextLink</a>
   `}
 />
 
@@ -70,7 +93,7 @@ import { ChevronRightBold, CameraFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="Subtle">
-    <TextLink variant="subtle" href="#" {...actions('onMouseOver')}>Text Link</TextLink>
+    <TextLink href="#" variant="subtle" {...actions('onMouseOver')}>Text Link</TextLink>
   </Story>
 </Preview>
 
@@ -83,7 +106,7 @@ import { ChevronRightBold, CameraFill } from '../Icon';
 <Source
   language='html'
   code={`
-<a class="spui-TextLink spui-TextLink--subtle" href="#">TextLink</a>
+<a href="#" class="spui-TextLink spui-TextLink--subtle">TextLink</a>
   `}
 />
 
@@ -91,7 +114,7 @@ import { ChevronRightBold, CameraFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="SubtleWithIcon">
-    <TextLink variant="subtle" icon={<ChevronRightBold aria-hidden="true" />} iconPosition="end" href="#" {...actions('onMouseOver')}>Text Link</TextLink>
+    <TextLink href="#" variant="subtle" icon={<ChevronRightBold aria-hidden="true" />} iconPosition="end" {...actions('onMouseOver')}>Text Link</TextLink>
   </Story>
 </Preview>
 
@@ -104,7 +127,30 @@ import { ChevronRightBold, CameraFill } from '../Icon';
 <Source
   language='html'
   code={`
-<a class="spui-TextLink spui-TextLink--subtle spui-TextLink--hasIcon spui-TextLink--iconend" href="#"><span class="spui-TextLink-icon"><svg>...</svg></span>TextLink</a>
+<a href="#" class="spui-TextLink spui-TextLink--subtle spui-TextLink--hasIcon spui-TextLink--iconend"><span class="spui-TextLink-icon"><svg>...</svg></span>TextLink</a>
+  `}
+/>
+
+## Subtle With Disable Underline
+
+リンクであることが慣習的に分かる場合にはアンダーラインを非表示にできます。ただし、hover時のアンダーラインは状態変化を明示するために常に表示されてる点に注意してください。
+
+<Preview withSource="open">
+  <Story name="SubtleWithDisableUnderline">
+    <TextLink href="#" variant="subtle" disableUnderline {...actions('onMouseOver')}>Text Link</TextLink>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<TextLink href="#" variant="subtle" disableUnderline disableUnderline>Text Link</TextLink>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<a href="#" class="spui-TextLink spui-TextLink--subtle spui-TextLink--disableUnderline">TextLink</a>
   `}
 />
 
@@ -127,3 +173,5 @@ import { ChevronRightBold, CameraFill } from '../Icon';
 </div>
   `}
 />
+
+なおフォントサイズは他のSpindle UIコンポーネントと同様に親要素からのサイズを継承します。
