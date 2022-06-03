@@ -21,6 +21,7 @@
   -webkit-tap-highlight-color: var(--TextLink-tapHighlightColor);
 }
 
+.spui-TextLink--disableUnderline,
 .spui-TextLink--hasIcon {
   text-decoration: none;
 }

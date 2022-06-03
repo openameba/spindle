@@ -5,6 +5,7 @@ type Variant = 'subtle';
 interface Props
   extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'className'> {
   children?: React.ReactNode;
+  disableUnderline?: boolean;
   variant?: Variant;
   icon?: React.ReactNode;
   iconPosition?: 'start' | 'end';
@@ -13,7 +14,7 @@ interface Props
 const BLOCK_NAME = 'spui-TextLink';
 
 export const TextLink = forwardRef<HTMLAnchorElement, Props>(function TextLink(
-  { children, variant, icon, iconPosition, ...rest }: Props,
+  { children, disableUnderline, variant, icon, iconPosition, ...rest }: Props,
   ref,
 ) {
   return (
@@ -21,6 +22,7 @@ export const TextLink = forwardRef<HTMLAnchorElement, Props>(function TextLink(
       className={[
         BLOCK_NAME,
         variant && `${BLOCK_NAME}--${variant}`,
+        disableUnderline && `${BLOCK_NAME}--disableUnderline`,
         icon && `${BLOCK_NAME}--hasIcon`,
         icon && iconPosition && `${BLOCK_NAME}--icon${iconPosition}`,
       ]
