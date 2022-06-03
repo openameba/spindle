@@ -10,6 +10,23 @@ function makePrimitiveColorTokens(dictionary) {
     .map((token) => `  --${token.name}: ${token.value};`);
 }
 
+function makeUsedPrimitiveColors(dictionary) {
+  const filtered = dictionary.allTokens
+    .filter((token) => token.filePath.includes('light'))
+    .map((token) => {
+      if (dictionary.usesReference(token.original.value)) {
+        const [ref] = dictionary.getReferences(token.original.value);
+        return ref;
+      }
+      return null;
+    })
+    .filter(Boolean);
+  // eslint-disable-next-line no-undef
+  return Array.from(new Set(filtered)).map(
+    (token) => `  --${token.name}: ${token.value};`,
+  );
+}
+
 function makeThemeColorTokens(theme, dictionary) {
   return dictionary.allTokens
     .filter((token) => token.filePath.includes(theme))
@@ -31,8 +48,12 @@ module.exports = {
       const tokens = makeShadowTokens(dictionary);
       return [':root {', ...tokens, '}', ''].join('\n');
     },
-    cssPrimitiveColor: ({ dictionary }) => {
+    cssAllPrimitiveColor: ({ dictionary }) => {
       const tokens = makePrimitiveColorTokens(dictionary);
+      return [':root {', ...tokens, '}', ''].join('\n');
+    },
+    cssUsedPrimitiveColor: ({ dictionary }) => {
+      const tokens = makeUsedPrimitiveColors(dictionary);
       return [':root {', ...tokens, '}', ''].join('\n');
     },
     cssLightThemeColor: ({ dictionary }) => {
@@ -43,12 +64,55 @@ module.exports = {
       const tokens = makeThemeColorTokens('dark', dictionary);
       return [':root {', ...tokens, '}', ''].join('\n');
     },
+    cssColor: ({ dictionary }) => {
+      const darkThemeTokens = makeThemeColorTokens('dark', dictionary);
+      return [
+        ':root {',
+        ...makeUsedPrimitiveColors(dictionary),
+        ...makeThemeColorTokens('light', dictionary),
+        '}',
+        '',
+        ':root[data-theme="dark"] {',
+        ...darkThemeTokens,
+        '}',
+        '',
+        '@media (prefers-color-scheme: dark) {',
+        ':root:not([data-theme]),',
+        ':root[data-theme="dark"] {',
+        ...darkThemeTokens,
+        '}',
+        '}',
+        '',
+      ].join('\n');
+    },
     cssAllTokens: ({ dictionary }) => {
       const darkThemeTokens = makeThemeColorTokens('dark', dictionary);
       return [
         ':root {',
         ...makeShadowTokens(dictionary),
         ...makePrimitiveColorTokens(dictionary),
+        ...makeThemeColorTokens('light', dictionary),
+        '}',
+        '',
+        ':root[data-theme="dark"] {',
+        ...darkThemeTokens,
+        '}',
+        '',
+        '@media (prefers-color-scheme: dark) {',
+        ':root:not([data-theme]),',
+        ':root[data-theme="dark"] {',
+        ...darkThemeTokens,
+        '}',
+        '}',
+        '',
+      ].join('\n');
+    },
+    cssTokens: ({ dictionary }) => {
+      const darkThemeTokens = makeThemeColorTokens('dark', dictionary);
+      return [
+        ':root {',
+        ...makeShadowTokens(dictionary),
+        ...makeUsedPrimitiveColors(dictionary),
         ...makeThemeColorTokens('light', dictionary),
         '}',
         '',
@@ -75,20 +139,32 @@ module.exports = {
           format: 'cssShadow',
         },
         {
-          destination: 'dist/css/spindle-tokens-primitive-color.css',
-          format: 'cssPrimitiveColor',
+          destination: 'dist/css/spindle-tokens-primitive-color-all.css',
+          format: 'cssAllPrimitiveColor',
         },
         {
-          destination: 'dist/css/spindle-tokens-light-theme-color.css',
+          destination: 'dist/css/spindle-tokens-primitive-color.css',
+          format: 'cssUsedPrimitiveColor',
+        },
+        {
+          destination: 'dist/css/spindle-tokens-light-theme.css',
           format: 'cssLightThemeColor',
         },
         {
-          destination: 'dist/css/spindle-tokens-dark-theme-color.css',
+          destination: 'dist/css/spindle-tokens-dark-theme.css',
           format: 'cssDarkThemeColor',
         },
         {
-          destination: 'dist/css/spindle-tokens.css',
+          destination: 'dist/css/spindle-tokens-color.css',
+          format: 'cssColor',
+        },
+        {
+          destination: 'dist/css/spindle-tokens-all.css',
           format: 'cssAllTokens',
+        },
+        {
+          destination: 'dist/css/spindle-tokens.css',
+          format: 'cssTokens',
         },
       ],
     },
