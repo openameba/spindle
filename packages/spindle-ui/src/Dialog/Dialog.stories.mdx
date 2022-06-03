@@ -25,11 +25,13 @@ import { DialogExample, StyleOnly, ButtonRow, ButtonColumn, ButtonColumnWithSubt
 
 ## Dialog
 
-Spindle UIのDialogは`<dialog>`要素と`<form method="dialog">`要素を内包しているため以下の点に注意して利用してください。
+Dialogは、利用者に重要な意思決定を促す時に利用されます。Spindle UIのDialogは[HTMLDialogElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement)を利用して作られています。[非対応ブラウザ](https://caniuse.com/dialog)には[dialog polyfill](https://github.com/GoogleChrome/dialog-polyfill)と併用してください。
 
-- `<Button>`は`type`属性を指定しない場合、ダイアログを閉じるボタンになります
+また、`<dialog>`要素には`<form method="dialog">`要素が内包されているため、以下の動作が想定されています。
+
+- `type`属性を指定されていない`<Button>`は、ダイアログを閉じるボタンになります
 - `<Button>`に固有の処理を追加したい場合には`type="button"`や`type="reset"`などの属性を指定してください
-- `<Dialog>`は`open`プロパティの値を見て、開く・閉じるの動作が行われます。`onClose`や`onCancel`のタイミングで`false`を指定し、ダイアログを閉じます
+- `<Dialog>`は`open`プロパティの値を見て、開く・閉じるの動作を行います。`onClose`や`onCancel`のタイミングで`open`プロパティに`false`を指定し、ダイアログを閉じます
   - `onCancel`イベントはEscapeキーを押されたなどデバイスや支援技術から伝達されます。特にそれらの動作を無効にする必要がない場合、通常は`open`プロパティを`false`にしてダイアログを閉じる動作を指定してください
 
 <Preview withSource="open">
@@ -69,7 +71,7 @@ function DialogExample() {
 
 ## StyleOnly
 
-[HTMLDialogElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement)を利用しない場合には、`<Dialog.StyleOnly>`を利用しSpindleで定義されたスタイルを流用できます。独自処理や他ライブラリの利用等でスタイルだけ使いたい場合を想定しています。
+[HTMLDialogElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement)を利用しない場合には、`<Dialog.StyleOnly>`を利用しSpindleで定義されたスタイルを流用できます。ダイアログの動作を独自で定義したい場合や他ライブラリの利用等でスタイルだけ使いたい場合を想定しています。
 
 <Preview withSource="open">
   <Story name="StyleOnly">
@@ -228,7 +230,3 @@ function DialogExample() {
 </div>
   `}
 />
-
-## ブラウザサポート
-
-`<Dialog>`は[HTMLDialogElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement)を利用して作られています。[非対応ブラウザ](https://caniuse.com/dialog)には[dialog polyfill](https://github.com/GoogleChrome/dialog-polyfill)と併用してください。
