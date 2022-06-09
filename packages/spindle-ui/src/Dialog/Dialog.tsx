@@ -40,10 +40,6 @@ const Frame = forwardRef<DialogHTMLElement, DialogProps>(function Dialog(
     const classNameToStopScrollBehindDialog = `${BLOCK_NAME}--open`;
 
     if (open) {
-      // Check element state to work with dialog-polyfill
-      if (dialogEl.current.open) {
-        return;
-      }
       dialogEl.current.showModal && dialogEl.current.showModal();
       document.documentElement.classList.add(classNameToStopScrollBehindDialog);
     } else {
