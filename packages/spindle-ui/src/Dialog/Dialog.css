@@ -36,6 +36,7 @@ html.spui-Dialog--open {
   background: rgba(0, 0, 0, 0.8);
 }
 
+/* Dialog polyfill adds ".backdrop" instead of "::backdrop" */
 /* stylelint-disable-next-line plugin/selector-bem-pattern */
 .spui-Dialog + .backdrop {
   background: rgba(0, 0, 0, 0.8);
