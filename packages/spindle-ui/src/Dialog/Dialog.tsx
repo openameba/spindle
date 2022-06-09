@@ -27,7 +27,7 @@ const Frame = forwardRef<DialogHTMLElement, DialogProps>(function Dialog(
 ) {
   const dialogEl = useRef<DialogHTMLElement>(null);
 
-  const handleFormSubmit = (event: React.BaseSyntheticEvent) => {
+  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     typeof onClose === 'function' && onClose(event);
   };
 
