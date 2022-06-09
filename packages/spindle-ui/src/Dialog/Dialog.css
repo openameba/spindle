@@ -57,6 +57,7 @@ html.spui-Dialog--open {
   font-size: 0.875em;
   line-height: 1.6;
   margin: 16px 0 0;
+  overflow-wrap: break-word;
   text-align: center;
 }
 
