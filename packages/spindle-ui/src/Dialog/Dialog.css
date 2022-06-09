@@ -66,14 +66,14 @@ html.spui-Dialog--open {
   text-align: center;
 }
 
+/* stylelint-disable-next-line plugin/selector-bem-pattern */
+.spui-Dialog-buttonGroup :is(.spui-Button, .spui-SubtleButton) {
+  max-width: 240px;
+}
+
 @media screen and (min-width: 768px) {
   .spui-Dialog {
     padding: 36px;
     width: calc(400px - 36px * 2);
-  }
-
-  /* stylelint-disable-next-line plugin/selector-bem-pattern */
-  .spui-Dialog-buttonGroup :is(.spui-Button, .spui-SubtleButton) {
-    max-width: 240px;
   }
 }
