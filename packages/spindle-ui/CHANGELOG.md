@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.35.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.34.0...@openameba/spindle-ui@0.35.0) (2022-06-14)
+
+
+### Bug Fixes
+
+* **spindle-ui:** change ButtonGroup margin for SubtleButton ([bddde1a](https://github.com/openameba/spindle/commit/bddde1a119663f5552f2e963a9c2eaba8a90a84b))
+
+
+### Features
+
+* **spindle-ui:** add option to disable underline to TextLink ([7f6ded4](https://github.com/openameba/spindle/commit/7f6ded4251c2e411ca44056ed085f90ffd74c077))
+* **spindle-ui:** create TextLink ([a14b93d](https://github.com/openameba/spindle/commit/a14b93d969169527269b31424e59e9f36468df6c))
+* **spindle-ui:** underline management for TextLink ([9f3d305](https://github.com/openameba/spindle/commit/9f3d3050737c9b9609898143f9c64d319c3775df))
+
+
+
+
+
 # [0.34.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.33.0...@openameba/spindle-ui@0.34.0) (2022-05-30)
 
 

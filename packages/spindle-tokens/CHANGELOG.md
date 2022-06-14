@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@0.2.0...@openameba/spindle-tokens@0.3.0) (2022-06-14)
+
+
+### Features
+
+* **spindle-tokens:** add size category to shadow token ([d5a2e2b](https://github.com/openameba/spindle/commit/d5a2e2b9e87f9da350b67e9d6d521720724a4065))
+* **spindle-tokens:** update design tokens ([e77d2b8](https://github.com/openameba/spindle/commit/e77d2b897c6d07cecc6cdf926dfb0c2c4d3729ad))
+* **spindle-tokens:** update design tokens ([0c4c47d](https://github.com/openameba/spindle/commit/0c4c47de7c5f6650829e20d688a8845fe1aa0cf6))
+
+
+
+
+
 # [0.2.0](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@0.1.1...@openameba/spindle-tokens@0.2.0) (2022-02-21)
 
 **Note:** Version bump only for package @openameba/spindle-tokens
