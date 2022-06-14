@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.36.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.35.0...@openameba/spindle-ui@0.36.0) (2022-06-14)
+
+
+### Bug Fixes
+
+* **spindle-ui:** avoid unexpected scroll stopping ([96f5808](https://github.com/openameba/spindle/commit/96f580846f9f48ed2e4f062acc480daf24783bdc))
+* **spindle-ui:** set correct width on large screen ([be17174](https://github.com/openameba/spindle/commit/be171747654de9120f70528e002d3fe9a3777352))
+
+
+### Features
+
+* **spindle-ui:** implement exmerimental Dialog ([cd7fb94](https://github.com/openameba/spindle/commit/cd7fb94547f17a208c9b3249208555d7dacb772f))
+* **spindle-ui:** stop scroll behind dialog ([0786e15](https://github.com/openameba/spindle/commit/0786e1575c4f5e9566e156a11d143962e364cd9c))
+
+
+
+
+
 # [0.35.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.34.0...@openameba/spindle-ui@0.35.0) (2022-06-14)
 
 
