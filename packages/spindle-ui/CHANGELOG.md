@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.36.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.36.0...@openameba/spindle-ui@0.36.1) (2022-06-14)
+
+
+### Bug Fixes
+
+* **spindle-ui:** set default underline style to TextLink ([fda17ee](https://github.com/openameba/spindle/commit/fda17ee1507cf06028a356872ad75f3a4b48ffe5))
+
+
+
+
+
 # [0.36.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.35.0...@openameba/spindle-ui@0.36.0) (2022-06-14)
 
 
