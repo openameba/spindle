@@ -64,6 +64,10 @@
 /*
  * Underline management
 */
+.spui-TextLink {
+  text-decoration: underline;
+}
+
 .spui-TextLink--hasIcon,
 .spui-TextLink--underlinehover {
   text-decoration: none;
