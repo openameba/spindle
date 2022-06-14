@@ -21,11 +21,6 @@
   -webkit-tap-highlight-color: var(--TextLink-tapHighlightColor);
 }
 
-.spui-TextLink--disableUnderline,
-.spui-TextLink--hasIcon {
-  text-decoration: none;
-}
-
 .spui-TextLink:focus {
   outline: 2px solid var(--TextLink-onFocus-outlineColor);
   outline-offset: 1px;
@@ -33,12 +28,6 @@
 
 .spui-TextLink:focus:not(:focus-visible) {
   outline: none;
-}
-
-@media (hover: hover) {
-  .spui-TextLink:hover {
-    text-decoration: underline;
-  }
 }
 
 /*
@@ -70,4 +59,22 @@
 
 .spui-TextLink--iconend .spui-TextLink-icon {
   margin-left: 4px;
+}
+
+/*
+ * Underline management
+*/
+.spui-TextLink--hasIcon,
+.spui-TextLink--underlinehover {
+  text-decoration: none;
+}
+
+@media (hover: hover) {
+  .spui-TextLink:hover {
+    text-decoration: none;
+  }
+
+  :is(.spui-TextLink--hasIcon, .spui-TextLink--underlinehover):hover {
+    text-decoration: underline;
+  }
 }

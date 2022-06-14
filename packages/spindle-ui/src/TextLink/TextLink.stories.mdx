@@ -66,29 +66,6 @@ import { ChevronRightBold, CameraFill } from '../Icon';
   `}
 />
 
-## Disable Underline
-
-リンクであることが慣習的に分かる場合にはアンダーラインを非表示にできます。ただし、hover時のアンダーラインは状態変化を明示するために常に表示されてる点に注意してください。
-
-<Preview withSource="open">
-  <Story name="DisableUnderline">
-    <TextLink href="#" disableUnderline {...actions('onMouseOver')}>Text Link</TextLink>
-  </Story>
-</Preview>
-
-<Source
-  code={`
-<TextLink href="#" disableUnderline>Text Link</TextLink>
-  `}
-/>
-
-<Source
-  language='html'
-  code={`
-<a href="#" class="spui-TextLink spui-TextLink--disableUnderline">TextLink</a>
-  `}
-/>
-
 ## Subtle
 
 <Preview withSource="open">
@@ -131,26 +108,32 @@ import { ChevronRightBold, CameraFill } from '../Icon';
   `}
 />
 
-## Subtle With Disable Underline
+## Underline Patterns
 
-リンクであることが慣習的に分かる場合にはアンダーラインを非表示にできます。ただし、hover時のアンダーラインは状態変化を明示するために常に表示されてる点に注意してください。
+テキストのアンダーラインは以下のルールで表示されます。
+
+- 何も指定しない: 初期表示時にunderline表示、hover時にunderline非表示
+- アイコンあり: 初期表示時にunderline非表示、hover時にunderline表示
+- underline=hover: 初期表示時にunderline非表示、hover時にunderline表示
+
+## Underline Hover
 
 <Preview withSource="open">
-  <Story name="SubtleWithDisableUnderline">
-    <TextLink href="#" variant="subtle" disableUnderline {...actions('onMouseOver')}>Text Link</TextLink>
+  <Story name="UnderlineHover">
+    <TextLink href="#" underline="hover" {...actions('onMouseOver')}>Text Link</TextLink>
   </Story>
 </Preview>
 
 <Source
   code={`
-<TextLink href="#" variant="subtle" disableUnderline>Text Link</TextLink>
+<TextLink href="#" underline="hover">Text Link</TextLink>
   `}
 />
 
 <Source
   language='html'
   code={`
-<a href="#" class="spui-TextLink spui-TextLink--subtle spui-TextLink--disableUnderline">TextLink</a>
+<a href="#" class="spui-TextLink spui-TextLink--underlinehover">TextLink</a>
   `}
 />
 
