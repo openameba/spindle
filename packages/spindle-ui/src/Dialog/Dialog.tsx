@@ -17,6 +17,7 @@ export interface DialogHTMLElement extends HTMLElement {
 interface PartsProps {
   children?: React.ReactNode;
   className?: string;
+  id?: string;
 }
 
 const BLOCK_NAME = 'spui-Dialog';
@@ -74,12 +75,20 @@ const StyleOnly = ({ className, children }: PartsProps) => {
   );
 };
 
-const Title = ({ children }: PartsProps) => {
-  return <p className={`${BLOCK_NAME}-title`}>{children}</p>;
+const Title = ({ children, id }: PartsProps) => {
+  return (
+    <p className={`${BLOCK_NAME}-title`} {...(id ? { id } : {})}>
+      {children}
+    </p>
+  );
 };
 
-const Body = ({ children }: PartsProps) => {
-  return <p className={`${BLOCK_NAME}-body`}>{children}</p>;
+const Body = ({ children, id }: PartsProps) => {
+  return (
+    <p className={`${BLOCK_NAME}-body`} {...(id ? { id } : {})}>
+      {children}
+    </p>
+  );
 };
 
 const ButtonGroup: typeof Group = ({ children, ...rest }) => {

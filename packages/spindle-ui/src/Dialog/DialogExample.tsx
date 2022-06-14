@@ -36,13 +36,17 @@ export function DialogExample() {
         Open Dialog
       </Button>
       <Dialog.Frame
+        aria-describedby="dialog-description"
+        aria-labelledby="dialog-title"
         ref={dialogRef}
         open={open}
         onCancel={handleDialogCancel}
         onClose={handleDialogClose}
       >
-        <Dialog.Title>タイトルですよ</Dialog.Title>
-        <Dialog.Body>ここに本文が入りますよ</Dialog.Body>
+        <Dialog.Title id="dialog-title">タイトルですよ</Dialog.Title>
+        <Dialog.Body id="dialog-description">
+          ここに本文が入りますよ
+        </Dialog.Body>
         <Dialog.ButtonGroup>
           <Button layout="fullWidth" size="medium">
             OK

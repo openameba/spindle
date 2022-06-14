@@ -56,9 +56,15 @@ function DialogExample() {
   return (
     <>
       <Button aria-haspopup="true" onClick={handleOpenButtonClick} size="medium">Open Dialog</Button>
-      <Dialog.Frame ref={dialogRef} open={open} onCancel={handleDialogCancel}>
-        <Dialog.Title>タイトルですよ</Dialog.Title>
-        <Dialog.Body>ここに本文が入りますよ</Dialog.Body>
+      <Dialog.Frame
+        aria-describedby="dialog-description"
+        aria-labelledby="dialog-title"
+        ref={dialogRef}
+        open={open}
+        onCancel={handleDialogCancel}
+      >
+        <Dialog.Title id="dialog-title">タイトルですよ</Dialog.Title>
+        <Dialog.Body id="dialog-description">ここに本文が入りますよ</Dialog.Body>
         <Dialog.ButtonGroup>
           <Button layout="fullWidth" size="medium" onClick={handleButtonClick}>OK</Button>
         </Dialog.ButtonGroup>
