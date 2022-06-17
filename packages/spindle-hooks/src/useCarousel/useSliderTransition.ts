@@ -1,4 +1,5 @@
 import { useMemo, useState, MutableRefObject } from 'react';
+import { flushSync } from 'react-dom';
 import { useValueRef } from './useValueRef';
 
 type Payload = {
@@ -34,8 +35,12 @@ export function useSliderTransition({
   const handleTransitionEnd = () => {
     // if reach contents end, rewind without transition to make it look like looping
     if (!isFocus) {
-      setDisableTransition(true);
-      setCurrentIndex((prev) => (prev + itemCount) % itemCount);
+      flushSync(() => {
+        setDisableTransition(true);
+      });
+      flushSync(() => {
+        setCurrentIndex((prev) => (prev + itemCount) % itemCount);
+      });
       if (!isAutoPlaying && !disableAutoFocus) {
         linkRefs.current[
           ((currentIndex + itemCount) % itemCount) + copyCount
