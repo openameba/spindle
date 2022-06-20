@@ -1,0 +1,152 @@
+import { useEffect, useRef } from 'react';
+import { Description, Meta, Story, Source } from '@storybook/addon-docs/blocks';
+import { AppealModalExample, StyleOnly, StyleOnlyMedium, StyleOnlySmall, StyleOnlyCustomized } from './AppealModalExample';
+
+# AppealModal
+
+<Meta title="Modal/AppealModal" />
+
+![stability-experimental](https://img.shields.io/badge/stability-experimental-orange.svg)
+
+<Source
+  language='javascript'
+  code={`import { AppealModal } from '@openameba/spindle-ui/Modal'`}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/Modal/AppealModal.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Modal/AppealModal/AppealModal.css">`}
+/>
+
+## Appeal Modal
+
+Appeal Modalは、利用者に何かお知らせをする用途で利用されます。Appeal Modalは特定用途での利用を想定しているため、カスタマイズ性は低くなっています。以下の点に注意して利用してください。
+
+- タイトルや画像など各要素を指定する際には`<AppealModal.Title>`、`<AppealModal.Image>`など定義された要素を利用してください
+- レイアウトは画面サイズにより自動的に変更されます
+
+### 指定できる要素
+
+- `<AppealModal.Frame>` 大枠(dialog要素)です
+- `<AppealModal.StyleOnly>` [HTMLDialogElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement)を利用しない場合に、`<AppealModal.Frame>`の代わりに利用します
+- `<AppealModal.Title>` タイトルを指定します
+- `<AppealModal.Image>` 画像を指定します。内部にはimg要素単体もしくはpicture要素に囲われたimg要素を指定します。また、表示したい内容に応じたアスペクト比の指定、レスポンシブ対応を利用時にしてください
+- `<AppealModal.Body>` 本文を指定します
+- `<AppealModal.ButtonGroup>` ボタンを指定します。なお、閉じるボタンは自動的に表示されるため、指定する必要はありません
+
+利用方法は、各サンプルコードを参照してください。
+
+### Dialog実装
+
+Spindle UIのAppeal Modalは[HTMLDialogElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement)を利用して作られています。[非対応ブラウザ](https://caniuse.com/dialog)には[dialog polyfill](https://github.com/GoogleChrome/dialog-polyfill)と併用してください。また、Appeal Modal内の`<dialog>`要素には`<form method="dialog">`要素が内包されているため、以下の動作が想定されています。
+
+- `type`属性を指定されていない`<Button>`は、ダイアログを閉じるボタンになります
+- `<Button>`に固有の処理を追加したい場合には`type="button"`や`type="reset"`などの属性を指定してください
+- `<AppealModal>`は`open`プロパティの値を見て、開く・閉じるの動作を行います。`onClose`や`onCancel`のタイミングで`open`プロパティに`false`を指定し、ダイアログを閉じます
+  - `onCancel`イベントはEscapeキーを押されたなどデバイスや支援技術から伝達されます。特にそれらの動作を無効にする必要がない場合、通常は`open`プロパティを`false`にしてダイアログを閉じる動作を指定してください
+
+<Preview withSource="open">
+  <Story name="Normal">
+    <AppealModalExample />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+function AppealModalExample() {
+  const [open, setOpen] = useState(false);
+  const dialogRef = useRef(null);
+  const handleOpenButtonClick = () => setOpen(true);
+  const handleDialogCancel = () => setOpen(false);
+  const handleDialogClose = () => setOpen(false);
+  useEffect(() => {
+    if (dialogRef.current) {
+      dialogPolyfill.registerDialog(dialogRef.current);
+    }
+  }, [dialogRef]);
+  return (
+    <>
+      <Button aria-haspopup="true" onClick={handleOpenButtonClick}>
+        Open Appeal Modal
+      </Button>
+      <AppealModal.Frame
+        aria-describedby="dialog-description"
+        aria-labelledby="dialog-title"
+        ref={dialogRef}
+        open={open}
+        size="medium"
+        onCancel={handleDialogCancel}
+        onClose={handleDialogClose}
+      >
+        <AppealModal.Image>
+          <picture>
+            <source
+              srcSet="https://images.microcms-assets.io/assets/24995dc41d5c40808fe4a9e3f6fb2b20/4d28a6ed12194558a76ee4adfbab4e3b/ogp.png?w=1280&h=672&fm=webp&q=85"
+              media="(min-width: 768px)"
+            ></source>
+            <img
+              style={{ height: 'auto', width: '100%' }}
+              width="640"
+              height="336"
+              src="https://images.microcms-assets.io/assets/24995dc41d5c40808fe4a9e3f6fb2b20/e2526e7bfa494168a2e547cfe55ac89f/top_mv.jpg?w=640&h=336&fit=clamp&fm=webp&q=85"
+            />
+          </picture>
+        </AppealModal.Image>
+        <AppealModal.Title id="dialog-title">About Ameba</AppealModal.Title>
+        <AppealModal.Body id="dialog-description">
+          AmebaはAmebaブログをはじめ、最新の芸能人ニュースやマンガ・占いなど生きたコンテンツが集結した月間7,500万人が利用する国民的メディアサービスです。
+        </AppealModal.Body>
+        <AppealModal.ButtonGroup>
+          <LinkButton
+            href="https://about.ameba.jp/"
+            layout="fullWidth"
+            size="medium"
+          >
+            サイトを見る
+          </LinkButton>
+        </AppealModal.ButtonGroup>
+      </AppealModal.Frame>
+    </>
+  );
+}
+  `}
+/>
+
+## StyleOnly (Large)
+
+[HTMLDialogElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement)を利用しない場合には、`<AppealModal.StyleOnly>`を利用しSpindleで定義されたスタイルを流用できます。ダイアログの動作を独自で定義したい場合や他ライブラリの利用等でスタイルだけ使いたい場合を想定しています。
+
+<Preview withSource="open">
+  <Story name="StyleOnly (Large)">
+    <StyleOnly />
+  </Story>
+</Preview>
+
+## StyleOnly (Medium)
+
+<Preview withSource="open">
+  <Story name="StyleOnly (Medium)">
+    <StyleOnlyMedium />
+  </Story>
+</Preview>
+
+## StyleOnly (Small)
+
+<Preview withSource="open">
+  <Story name="StyleOnly (Small)">
+    <StyleOnlySmall />
+  </Story>
+</Preview>
+
+## StyleOnly (Medium & Customized)
+
+<Preview withSource="open">
+  <Story name="StyleOnly (Medium & Customized)">
+    <StyleOnlyCustomized />
+  </Story>
+</Preview>

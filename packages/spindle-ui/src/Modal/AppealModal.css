@@ -1,0 +1,212 @@
+/*
+ * AppealModal
+ * NOTE: Styles can be overridden with "--AppealModal-*" variables
+*/
+:root {
+  --AppealModal-image-border: 1px inset var(--color-border-low-emphasis);
+  --AppealModal-image-borderRadius: 8px;
+}
+
+.spui-AppealModal {
+  background: var(--color-surface-primary);
+  border: none;
+  border-radius: 20px;
+  /* TODO: replace color with color palette */
+  box-shadow: 0 11px 28px rgba(8, 18, 26, 0.12);
+  padding: 0;
+  width: 400px;
+}
+
+/* stylelint-disable plugin/selector-bem-pattern */
+html:has(.spui-AppealModal[open]) {
+  overflow: hidden;
+}
+
+/* Fallback for :has() */
+html.spui-AppealModal--open {
+  overflow: hidden;
+}
+/* stylelint-enable plugin/selector-bem-pattern */
+
+/* The minimum margin for the small devices */
+/* 440px is calculated from dialog width (400px) + minimum margin (20px * 2) */
+/* width property is calculated from 100% - (minimum margin * 2) */
+@media screen and (max-width: 440px) {
+  .spui-AppealModal {
+    width: calc(100% - (20px * 2));
+  }
+}
+
+.spui-AppealModal::backdrop {
+  /* TODO: replace color with color palette, backdrop does not accept variable */
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Dialog polyfill adds ".backdrop" instead of "::backdrop" */
+/* stylelint-disable-next-line plugin/selector-bem-pattern */
+.spui-AppealModal + .backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/*
+ * Override focus styles in Dialog. This can be removed when Safari supports the following styles.
+ * - Safari displays focus ring even when :focus-visible
+ * - Safari does not support radius outline
+*/
+.spui-AppealModal
+  :is(.spui-Button, .spui-LinkButton, .spui-IconButton, .spui-SubtleButton):focus {
+  box-shadow: 0 0 0 1px var(--color-surface-secondary),
+    0 0 0 3px var(--color-focus-clarity);
+  outline: none;
+}
+
+.spui-AppealModal
+  :is(.spui-Button, .spui-LinkButton, .spui-IconButton, .spui-SubtleButton):focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.spui-AppealModal-frame {
+  color: var(--color-text-medium-emphasis);
+  display: grid;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    'Image'
+    'Title'
+    'Body'
+    'ButtonGroup'
+    'CloseButton';
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  padding: 0 0 24px;
+  width: 100%;
+}
+
+.spui-AppealModal-image {
+  grid-area: Image;
+}
+
+/* stylelint-disable-next-line plugin/selector-bem-pattern */
+.spui-AppealModal-image img {
+  border-radius: 20px 20px 0 0; /* For Safari */
+}
+
+.spui-AppealModal-title {
+  color: var(--color-text-high-emphasis);
+  font-size: 1.25em;
+  font-weight: bold;
+  grid-area: Title;
+  line-height: 1.4;
+  margin: 24px 24px 0;
+  padding: 0;
+  text-align: center;
+}
+
+.spui-AppealModal-body {
+  color: var(--color-text-medium-emphasis);
+  font-size: 0.875em;
+  grid-area: Body;
+  line-height: 1.6;
+  margin: 8px 24px 0;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+
+.spui-AppealModal-buttonGroup {
+  align-items: center;
+  grid-area: ButtonGroup;
+  justify-content: center;
+  margin: 16px 24px 0;
+  text-align: center;
+}
+
+.spui-AppealModal-closeIconButton,
+.spui-AppealModal-closeTextButton {
+  grid-area: CloseButton;
+}
+
+.spui-AppealModal-closeIconButton {
+  display: none;
+}
+
+.spui-AppealModal-closeTextButton {
+  margin: 20px 24px 0;
+  text-align: center;
+}
+
+/* stylelint-disable-next-line plugin/selector-bem-pattern */
+.spui-AppealModal-buttonGroup :is(.spui-Button, .spui-LinkButton) {
+  max-width: 240px;
+}
+
+@media screen and (min-width: 768px) {
+  .spui-AppealModal {
+    min-height: 300px;
+    min-width: 500px;
+  }
+
+  .spui-AppealModal--large {
+    width: 1024px;
+  }
+
+  .spui-AppealModal--medium {
+    width: 840px;
+  }
+
+  .spui-AppealModal--small {
+    width: 480px;
+  }
+
+  .spui-AppealModal-frame {
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      'Title CloseButton'
+      'Body CloseButton'
+      'Image Image'
+      'ButtonGroup ButtonGroup';
+    grid-template-columns: 1fr 72px;
+    grid-template-rows: auto;
+  }
+
+  .spui-AppealModal-title {
+    margin: 32px 16px 0 36px;
+    text-align: left;
+  }
+
+  .spui-AppealModal-body {
+    margin: 12px 16px 0 36px;
+    text-align: left;
+  }
+
+  .spui-AppealModal-image {
+    margin: 32px 36px 0;
+  }
+
+  /* stylelint-disable-next-line plugin/selector-bem-pattern */
+  .spui-AppealModal-image img {
+    border: var(--AppealModal-image-border);
+    border-radius: var(--AppealModal-image-borderRadius);
+    box-sizing: border-box;
+  }
+
+  .spui-AppealModal-buttonGroup {
+    margin: 16px 36px 0;
+  }
+
+  .spui-AppealModal-closeIconButton {
+    /* stylelint-disable plugin/selector-bem-pattern */
+    --IconButton--neutral-backgroundColor: none;
+    --IconButton--neutral-onHover-backgroundColor: var(
+      --color-surface-tertiary
+    );
+    /* stylelint-enable plugin/selector-bem-pattern */
+
+    display: inline-flex;
+    margin: 36px 0 0 0;
+  }
+
+  .spui-AppealModal-closeTextButton {
+    display: none;
+  }
+}
