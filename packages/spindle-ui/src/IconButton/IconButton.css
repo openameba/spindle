@@ -44,6 +44,7 @@
   display: inline-flex;
   justify-content: center;
   margin: 0;
+  padding: 0;
   -webkit-tap-highlight-color: var(--IconButton-tapHighlightColor);
   text-align: center;
   transition: background-color 0.3s;
