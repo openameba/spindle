@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.36.2](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.36.1...@openameba/spindle-ui@0.36.2) (2022-06-22)
+
+
+### Bug Fixes
+
+* **spindle-ui:** svg icon disappears for ios ([ebdda25](https://github.com/openameba/spindle/commit/ebdda250b7d20fe7449319ee68e46a1735da2cc0))
+
+
+
+
+
 ## [0.36.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.36.0...@openameba/spindle-ui@0.36.1) (2022-06-14)
 
 
