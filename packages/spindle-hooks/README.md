@@ -8,7 +8,7 @@ Spindle (Ameba Design System) Hooks
 
 > Spindle Hooks は試験開発中のため、大幅に変更される可能性があります。安定版リリースまでの間はバージョン番号は 0 となり、バージョンに関わらず breaking change が行われることがありますので、利用時には注意してください。変更内容は、[CHANGELOG](CHANGELOG.md)に記載されています。
 
-![MIT licence](https://img.shields.io/npm/l/@openameba/spindle-ui) ![npm](https://img.shields.io/npm/v/@openameba/spindle-ui)
+![MIT license](https://img.shields.io/npm/l/@openameba/spindle-ui) ![npm](https://img.shields.io/npm/v/@openameba/spindle-ui)
 
 Spindle Hooks は、Ameba のデザインシステム「Spindle」で定義されたコンポーネントを配布するライブラリです。様々なタイプのプロジェクトに導入できるように設計されています。
 
