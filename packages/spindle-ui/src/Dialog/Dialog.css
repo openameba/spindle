@@ -42,6 +42,22 @@ html.spui-Dialog--open {
   background: rgba(0, 0, 0, 0.8);
 }
 
+/*
+ * Override focus styles in Dialog. This can be removed when Safari supports the following styles.
+ * - Safari displays focus ring even when :focus-visible
+ * - Safari does not support radius outline
+*/
+.spui-Dialog :is(.spui-Button, .spui-LinkButton, .spui-SubtleButton):focus {
+  box-shadow: 0 0 0 1px var(--color-surface-secondary),
+    0 0 0 3px var(--color-focus-clarity);
+  outline: none;
+}
+
+.spui-Dialog
+  :is(.spui-Button, .spui-LinkButton, .spui-SubtleButton):focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
 .spui-Dialog-title {
   color: var(--color-text-high-emphasis);
   font-size: 1.25em;
