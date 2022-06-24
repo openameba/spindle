@@ -1,33 +1,41 @@
-name: regression-test
+name: visual regression test
 
 on:
   push:
     paths:
       - 'packages/spindle-ui/**'
   pull_request_target:
+    types:
+      - labeled
     paths:
       - 'packages/spindle-ui/**'
   workflow_dispatch:
 
 jobs:
-  regression-test:
-    name: regression test
+  visual-regression-test:
     runs-on: ubuntu-latest
+    if: >
+      github.event_name == 'push' ||
+      github.event_name == 'workflow_dispatch' || (
+        # need specified label if Pull-request
+        github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'allow execute workflow')
+      )
     steps:
+      - run: sudo apt-get --yes update
       - run: sudo apt-get --yes install fonts-noto
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v2-beta
+      - uses: actions/setup-node@v3
         with:
           node-version: 14
       - name: restore lerna
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             node_modules
             */*/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-v2
+          key: ${{ runner.os }}-${{ github.event_name }}-${{ hashFiles('**/yarn.lock') }}-v2
       - run: yarn install --frozen-lockfile
       - run: npx lerna bootstrap -- --frozen-lockfile
       - run: npx lerna run --scope @openameba/spindle-ui storybook:build
@@ -41,25 +49,12 @@ jobs:
           --outDir packages/spindle-ui/.reg-suit/actual_images/
           --serverCmd 'npx serve -p 5000 packages/spindle-ui/public'
           http://localhost:5000
-      - name: checkout branch when push
-        if: github.event_name == 'push'
-        run: |
-          git checkout "${GITHUB_REF#refs/heads/}"
-      - name: checkout branch when create Pull-request
-        if: github.event_name == 'pull_request'
-        env:
-          REF: ${{ github.head_ref }}
-        run: |
-          git checkout "${REF}"
-      - run: git symbolic-ref --short HEAD
-      # NOTE: Don't execute if sent Pull-request from openameba/spindle
-      - if: |
-          !(github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == 'openameba/spindle')
+      - run: git checkout ${{ github.head_ref || github.ref_name }}
+      - run: |
+          printf -- '%s' "$GOOGLE_APPLICATION_CREDENTIALS_JSON" | base64 --decode > "${PWD}/storage-key.json"
+          export GOOGLE_APPLICATION_CREDENTIALS="${PWD}/storage-key.json"
+          npx lerna run --scope @openameba/spindle-ui test:regression
         env:
           GCS_BUCKET_NAME_REG_SUIT: ${{ secrets.GCS_BUCKET_NAME_REG_SUIT }}
           GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}
           REG_SUIT_NOTIFY_CLIENT_ID: ${{ secrets.REG_SUIT_NOTIFY_CLIENT_ID }}
-        run: |
-          printf -- '%s' "$GOOGLE_APPLICATION_CREDENTIALS_JSON" | base64 --decode > "${PWD}/storage-key.json"
-          export GOOGLE_APPLICATION_CREDENTIALS="${PWD}/storage-key.json"
-          npx lerna run --scope @openameba/spindle-ui test:regression
