@@ -1,0 +1,81 @@
+.spui-Dialog {
+  background: var(--color-surface-primary);
+  border: none;
+  border-radius: 20px;
+  /* TODO: replace color with color palette */
+  box-shadow: 0 11px 28px rgba(8, 18, 26, 0.12);
+  color: var(--color-text-medium-emphasis);
+  padding: 24px;
+  /* NOTE: box-sizing does not work well with dialog-polyfill */
+  /* width property is calculated from dialog width - padding * 2 */
+  width: calc(400px - 24px * 2);
+}
+
+/* stylelint-disable plugin/selector-bem-pattern */
+html:has(.spui-Dialog[open]) {
+  overflow: hidden;
+}
+
+/* Fallback for :has() */
+html.spui-Dialog--open {
+  overflow: hidden;
+}
+/* stylelint-enable plugin/selector-bem-pattern */
+
+/* The minimum margin for the small devices */
+/* 472px is calculated from dialog width (400px) + minimum margin (36px * 2) */
+/* width property is calculated from 100% - (padding * 2 + minimum margin * 2) */
+@media screen and (max-width: 472px) {
+  .spui-Dialog {
+    width: calc(100% - (24px * 2 + 36px * 2));
+  }
+}
+
+.spui-Dialog::backdrop {
+  /* TODO: replace color with color palette, backdrop does not accept variable */
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Dialog polyfill adds ".backdrop" instead of "::backdrop" */
+/* stylelint-disable-next-line plugin/selector-bem-pattern */
+.spui-Dialog + .backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.spui-Dialog-title {
+  color: var(--color-text-high-emphasis);
+  font-size: 1.25em;
+  font-weight: bold;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.spui-Dialog-body {
+  color: var(--color-text-medium-emphasis);
+  font-size: 0.875em;
+  line-height: 1.6;
+  margin: 16px 0 0;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+
+.spui-Dialog-buttonGroup {
+  align-items: center;
+  justify-content: center;
+  margin: 32px 0 0;
+  text-align: center;
+}
+
+/* stylelint-disable-next-line plugin/selector-bem-pattern */
+.spui-Dialog-buttonGroup :is(.spui-Button, .spui-SubtleButton) {
+  max-width: 240px;
+}
+
+@media screen and (min-width: 768px) {
+  .spui-Dialog {
+    padding: 36px;
+    width: calc(400px - 36px * 2);
+  }
+}

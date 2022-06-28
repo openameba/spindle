@@ -1,6 +1,6 @@
 {
   "name": "@openameba/spindle-syntax-themes",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Spindle syntax themes",
   "license": "MIT",
   "files": [
@@ -24,8 +24,8 @@
     "serve": "npx serve -p 5000"
   },
   "devDependencies": {
-    "@acot/acot-config": "^0.0.13",
-    "@acot/cli": "^0.0.13",
+    "@acot/acot-config": "^0.0.19",
+    "@acot/cli": "^0.0.19",
     "csso-cli": "^3.0.0",
     "firebase-tools": "^10.0.0",
     "puppeteer": "^13.0.0",

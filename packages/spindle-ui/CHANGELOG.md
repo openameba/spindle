@@ -3,6 +3,75 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.37.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.36.2...@openameba/spindle-ui@0.37.0) (2022-06-27)
+
+
+### Features
+
+* **spindle-ui:** create MoreLink ([7038086](https://github.com/openameba/spindle/commit/703808643b0ab309552afd0001d75d21b92f113a))
+
+
+
+
+
+## [0.36.2](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.36.1...@openameba/spindle-ui@0.36.2) (2022-06-22)
+
+
+### Bug Fixes
+
+* **spindle-ui:** svg icon disappears for ios ([ebdda25](https://github.com/openameba/spindle/commit/ebdda250b7d20fe7449319ee68e46a1735da2cc0))
+
+
+
+
+
+## [0.36.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.36.0...@openameba/spindle-ui@0.36.1) (2022-06-14)
+
+
+### Bug Fixes
+
+* **spindle-ui:** set default underline style to TextLink ([fda17ee](https://github.com/openameba/spindle/commit/fda17ee1507cf06028a356872ad75f3a4b48ffe5))
+
+
+
+
+
+# [0.36.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.35.0...@openameba/spindle-ui@0.36.0) (2022-06-14)
+
+
+### Bug Fixes
+
+* **spindle-ui:** avoid unexpected scroll stopping ([96f5808](https://github.com/openameba/spindle/commit/96f580846f9f48ed2e4f062acc480daf24783bdc))
+* **spindle-ui:** set correct width on large screen ([be17174](https://github.com/openameba/spindle/commit/be171747654de9120f70528e002d3fe9a3777352))
+
+
+### Features
+
+* **spindle-ui:** implement exmerimental Dialog ([cd7fb94](https://github.com/openameba/spindle/commit/cd7fb94547f17a208c9b3249208555d7dacb772f))
+* **spindle-ui:** stop scroll behind dialog ([0786e15](https://github.com/openameba/spindle/commit/0786e1575c4f5e9566e156a11d143962e364cd9c))
+
+
+
+
+
+# [0.35.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.34.0...@openameba/spindle-ui@0.35.0) (2022-06-14)
+
+
+### Bug Fixes
+
+* **spindle-ui:** change ButtonGroup margin for SubtleButton ([bddde1a](https://github.com/openameba/spindle/commit/bddde1a119663f5552f2e963a9c2eaba8a90a84b))
+
+
+### Features
+
+* **spindle-ui:** add option to disable underline to TextLink ([7f6ded4](https://github.com/openameba/spindle/commit/7f6ded4251c2e411ca44056ed085f90ffd74c077))
+* **spindle-ui:** create TextLink ([a14b93d](https://github.com/openameba/spindle/commit/a14b93d969169527269b31424e59e9f36468df6c))
+* **spindle-ui:** underline management for TextLink ([9f3d305](https://github.com/openameba/spindle/commit/9f3d3050737c9b9609898143f9c64d319c3775df))
+
+
+
+
+
 # [0.34.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.33.0...@openameba/spindle-ui@0.34.0) (2022-05-30)
 
 

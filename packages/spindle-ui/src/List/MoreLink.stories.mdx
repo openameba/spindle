@@ -1,0 +1,45 @@
+import { Meta, Story, Source } from '@storybook/addon-docs/blocks';
+import { actions } from '@storybook/addon-actions';
+import { MoreLink } from './MoreLink';
+
+# MoreLink
+
+<Meta title="List/MoreLink" component={MoreLink} />
+
+![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)
+
+<Source
+  language='javascript'
+  code={`import { MoreLink } from '@openameba/spindle-ui/List'`}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/List/MoreLink.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/List/MoreLink.css">`}
+/>
+
+## More Link
+
+<Preview withSource="open">
+  <Story name="More Link">
+    <MoreLink href="#" {...actions('onMouseOver')}>もっと見る</MoreLink>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<MoreLink href="#">もっと見る</MoreLink>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<a class="spui-MoreLink" href="#">もっと見る<span class="spui-MoreLink-icon"><svg>...</svg></span></a>
+  `}
+/>

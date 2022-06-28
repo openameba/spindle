@@ -1,6 +1,7 @@
 import { BreadcrumbItem, BreadcrumbList } from './Breadcrumb';
 import { Button } from './Button';
 import { ButtonGroup } from './ButtonGroup';
+import { Dialog } from './Dialog';
 import * as Form from './Form';
 import * as Icon from './Icon';
 import { HeroCarousel } from './HeroCarousel';
@@ -14,6 +15,7 @@ export {
   BreadcrumbList,
   Button,
   ButtonGroup,
+  Dialog,
   Form,
   HeroCarousel,
   Icon,
