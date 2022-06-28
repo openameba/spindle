@@ -41,6 +41,8 @@
     "@storybook/addon-backgrounds": "^6.5.9",
     "@storybook/addon-docs": "^6.5.9",
     "@storybook/addon-viewport": "^6.5.9",
+    "@storybook/builder-webpack5": "^6.5.9",
+    "@storybook/manager-webpack5": "^6.5.9",
     "@storybook/react": "^6.5.9",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -52,6 +54,7 @@
     "jest": "^27.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "ts-jest": "^27.0.0"
+    "ts-jest": "^27.0.0",
+    "webpack": "5"
   }
 }

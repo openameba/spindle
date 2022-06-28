@@ -6,5 +6,8 @@ module.exports = {
     '@storybook/addon-backgrounds',
     '@storybook/addon-docs',
     '@storybook/addon-viewport',
-  ]
+  ],
+  core: {
+    builder: 'webpack5',
+  },
 };
