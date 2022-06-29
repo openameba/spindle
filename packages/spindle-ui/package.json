@@ -45,6 +45,11 @@
     "@types/react": "^16.8.6 || ^17.0.0",
     "react": "^16.8.0 || ^17.0.0"
   },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    }
+  },
   "dependencies": {
     "ameba-color-palette.css": "^4.8.0",
     "react-merge-refs": "^1.1.0"
