@@ -1,5 +1,5 @@
 import { useMemo, useState, MutableRefObject } from 'react';
-import { flushSync } from 'react-dom';
+import { useFlushSync } from '../internal/useFlushSync';
 import { useValueRef } from './useValueRef';
 
 type Payload = {
@@ -21,6 +21,7 @@ export function useSliderTransition({
   const currentIndexRef = useValueRef(currentIndex);
   const [disableTransition, setDisableTransition] = useState(false);
   const [disableAutoFocus, setDisableAutoFocus] = useState(false);
+  const flushSync = useFlushSync();
 
   const listStyles = useMemo(() => {
     const transitionStyle = disableTransition ? { transition: 'none' } : {};
