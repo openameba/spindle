@@ -1,3 +1,5 @@
+@import '../ButtonGroup/ButtonGroup.css';
+
 .spui-Dialog {
   background: var(--color-surface-primary);
   border: none;
