@@ -1,16 +1,16 @@
 {
   "files": [
     {
-      "path": "./dist/Icon/@(OnedariFill|Peta|Amebapick).js",
-      "maxSize": "2.12 kB"
+      "path": "./dist/Icon/@(OnedariFill|Peta).mjs",
+      "maxSize": "2 kB"
     },
     {
-      "path": "./dist/Icon/!(index|OnedariFill|Peta|Amebapick).js",
-      "maxSize": "1.5 kB"
+      "path": "./dist/Icon/!(index|OnedariFill|Peta).mjs",
+      "maxSize": "1.1 kB"
     },
     {
-      "path": "./dist/!(Icon)/*.js",
-      "maxSize": "1.5 kB"
+      "path": "./dist/!(Icon)/*.mjs",
+      "maxSize": "1.1 kB"
     },
     {
       "path": "./dist/**/!(index).css",

@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+
+# [0.38.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.37.0...@openameba/spindle-ui@0.38.0) (2022-07-06)
+
+
+### Features
+
+* **spindle-icons:** update icons ([610381a](https://github.com/openameba/spindle/commit/610381a03926aeedda8d7408740128340f14faf5))
+
+
+
+
+
+## [0.37.1-alpha.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.37.0...@openameba/spindle-ui@0.37.1-alpha.0) (2022-07-01)
+
+
+### Bug Fixes
+
+* **spindle-ui:** import ButtonGroup style from Dialog ([abc69b8](https://github.com/openameba/spindle/commit/abc69b83d1a1b3ac3e4f5555cae942c38896b6db))
+
+
+
+
+
+# [0.37.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.36.2...@openameba/spindle-ui@0.37.0) (2022-06-27)
+
+
+### Features
+
+* **spindle-ui:** create MoreLink ([7038086](https://github.com/openameba/spindle/commit/703808643b0ab309552afd0001d75d21b92f113a))
+
+
+
+
+
 ## [0.36.2](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.36.1...@openameba/spindle-ui@0.36.2) (2022-06-22)
 
 

@@ -1,3 +1,5 @@
+@import '../ButtonGroup/ButtonGroup.css';
+
 .spui-Dialog {
   background: var(--color-surface-primary);
   border: none;
@@ -11,17 +13,6 @@
   width: calc(400px - 24px * 2);
 }
 
-/* stylelint-disable plugin/selector-bem-pattern */
-html:has(.spui-Dialog[open]) {
-  overflow: hidden;
-}
-
-/* Fallback for :has() */
-html.spui-Dialog--open {
-  overflow: hidden;
-}
-/* stylelint-enable plugin/selector-bem-pattern */
-
 /* The minimum margin for the small devices */
 /* 472px is calculated from dialog width (400px) + minimum margin (36px * 2) */
 /* width property is calculated from 100% - (padding * 2 + minimum margin * 2) */
@@ -31,16 +22,47 @@ html.spui-Dialog--open {
   }
 }
 
+/* stylelint-disable plugin/selector-bem-pattern */
 .spui-Dialog::backdrop {
   /* TODO: replace color with color palette, backdrop does not accept variable */
   background: rgba(0, 0, 0, 0.8);
 }
 
 /* Dialog polyfill adds ".backdrop" instead of "::backdrop" */
-/* stylelint-disable-next-line plugin/selector-bem-pattern */
 .spui-Dialog + .backdrop {
   background: rgba(0, 0, 0, 0.8);
 }
+
+/* NOTE: set no animations to the dialog-polyfill browsers for stability */
+.spui-Dialog[open]:not(.spui-Dialog--closing),
+.spui-Dialog[open]:not(.spui-Dialog--closing).spui-Dialog::backdrop {
+  animation: 0.35s cubic-bezier(0, 0, 0, 1) spui-Dialog-fade-in;
+}
+
+.spui-Dialog--closing,
+.spui-Dialog--closing.spui-Dialog::backdrop {
+  animation: 0.15s cubic-bezier(0, 0, 0, 1) spui-Dialog-fade-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spui-Dialog[open]:not(.spui-Dialog--closing),
+  .spui-Dialog[open]:not(.spui-Dialog--closing).spui-Dialog::backdrop,
+  .spui-Dialog--closing,
+  .spui-Dialog--closing.spui-Dialog::backdrop {
+    /* Do not remove this animation to detect animationend in JavaScript */
+    animation-duration: 0.01s;
+  }
+}
+
+html:has(.spui-Dialog[open]) {
+  overflow: hidden;
+}
+
+/* Fallback for :has() */
+html.spui-Dialog--open {
+  overflow: hidden;
+}
+/* stylelint-enable plugin/selector-bem-pattern */
 
 /*
  * Override focus styles in Dialog. This can be removed when Safari supports the following styles.
@@ -93,5 +115,23 @@ html.spui-Dialog--open {
   .spui-Dialog {
     padding: 36px;
     width: calc(400px - 36px * 2);
+  }
+}
+
+@keyframes spui-Dialog-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes spui-Dialog-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }

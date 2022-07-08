@@ -1,0 +1,54 @@
+/*
+ * MoreLink
+ * NOTE: Styles can be overridden with "--MoreLink-*" variables
+*/
+:root {
+  --MoreLink-tapHighlightColor: var(--gray-5-alpha);
+  --MoreLink-backGroundColor: var(--color-surface-primary);
+  --MoreLink-color: var(--color-text-accent-primary);
+  --MoreLink-onFocus-outlineColor: var(--color-focus-clarity);
+  --MoreLink-onHover-backgroundColor: var(--color-surface-accent-primary-light);
+  --MoreLink-icon-color: var(--color-object-accent-primary);
+}
+
+.spui-MoreLink {
+  align-items: center;
+  background-color: var(--MoreLink-backGroundColor);
+  box-sizing: border-box;
+  color: var(--MoreLink-color);
+  display: flex;
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: bold;
+  justify-content: space-between;
+  line-height: 1.4;
+  min-height: 56px;
+  padding: 16px;
+  -webkit-tap-highlight-color: var(--MoreLink-tapHighlightColor);
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.spui-MoreLink:focus {
+  outline: 2px solid var(--MoreLink-onFocus-outlineColor);
+  outline-offset: 1px;
+}
+
+.spui-MoreLink:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media (hover: hover) {
+  .spui-MoreLink:hover {
+    background: var(--MoreLink-onHover-backgroundColor);
+  }
+}
+
+.spui-MoreLink-icon {
+  line-height: 0;
+  margin-left: 12px;
+}
+
+.spui-MoreLink-chevron {
+  color: var(--MoreLink-icon-color);
+}
