@@ -1,4 +1,10 @@
-import React, { forwardRef, useEffect, useRef } from 'react';
+import React, {
+  forwardRef,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import mergeRefs from 'react-merge-refs';
 import { ButtonGroup as Group } from '../ButtonGroup';
 import { CrossBold } from '../Icon';
@@ -21,15 +27,18 @@ export interface DialogHTMLElement extends HTMLElement {
 }
 
 const BLOCK_NAME = 'spui-AppealModal';
+const FADE_OUT_ANIMATION = 'spui-AppealModal-fade-out';
 
 const Frame = forwardRef<DialogHTMLElement, AppealModalProps>(
   function AppealModal(
     { children, className, open, size = 'large', onClose, ...rest },
     ref,
   ) {
+    const [closing, setClosing] = useState(false);
     const dialogEl = useRef<DialogHTMLElement>(null);
 
     const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+      event.preventDefault(); // To be closed with the open prop
       onClose && onClose(event);
     };
 
@@ -39,6 +48,35 @@ const Frame = forwardRef<DialogHTMLElement, AppealModalProps>(
         onClose && onClose(event);
       }
     };
+
+    const handleAnimationEnd = useCallback(
+      (event: AnimationEvent) => {
+        if (
+          dialogEl.current &&
+          event.animationName === FADE_OUT_ANIMATION &&
+          !event.pseudoElement // To exclude ::backdrop
+        ) {
+          dialogEl.current.close && dialogEl.current.close();
+          setClosing(false);
+        }
+      },
+      [dialogEl],
+    );
+
+    useEffect(() => {
+      dialogEl.current?.addEventListener(
+        'animationend',
+        handleAnimationEnd,
+        false,
+      );
+
+      return () =>
+        dialogEl.current?.removeEventListener(
+          'animationend',
+          handleAnimationEnd,
+          false,
+        );
+    }, [dialogEl]);
 
     useEffect(() => {
       if (!dialogEl.current) {
@@ -54,9 +92,7 @@ const Frame = forwardRef<DialogHTMLElement, AppealModalProps>(
           classNameToStopScrollBehindDialog,
         );
       } else {
-        dialogEl.current.open &&
-          dialogEl.current.close &&
-          dialogEl.current.close();
+        dialogEl.current?.open && setClosing(true);
         // Always remove this class to avoid unexpected scroll stopping
         document.documentElement.classList.remove(
           classNameToStopScrollBehindDialog,
@@ -66,7 +102,12 @@ const Frame = forwardRef<DialogHTMLElement, AppealModalProps>(
 
     return (
       <dialog
-        className={[BLOCK_NAME, `${BLOCK_NAME}--${size}`, className]
+        className={[
+          BLOCK_NAME,
+          `${BLOCK_NAME}--${size}`,
+          closing && `${BLOCK_NAME}--closing`,
+          className,
+        ]
           .filter(Boolean)
           .join(' ')
           .trim()}

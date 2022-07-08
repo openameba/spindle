@@ -18,6 +18,27 @@
 }
 
 /* stylelint-disable plugin/selector-bem-pattern */
+/* NOTE: set no animations to the dialog-polyfill browsers for stability */
+.spui-AppealModal[open]:not(.spui-AppealModal--closing),
+.spui-AppealModal[open]:not(.spui-AppealModal--closing).spui-AppealModal::backdrop {
+  animation: 0.5s cubic-bezier(0, 0, 0, 1) spui-AppealModal-fade-in;
+}
+
+.spui-AppealModal--closing,
+.spui-AppealModal--closing.spui-AppealModal::backdrop {
+  animation: 0.3s cubic-bezier(0, 0, 0, 1) spui-AppealModal-fade-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spui-AppealModal[open]:not(.spui-AppealModal--closing),
+  .spui-AppealModal[open]:not(.spui-AppealModal--closing).spui-AppealModal::backdrop,
+  .spui-AppealModal--closing,
+  .spui-AppealModal--closing.spui-AppealModal::backdrop {
+    /* Do not remove this animation to detect animationend in JavaScript */
+    animation-duration: 0.01s;
+  }
+}
+
 html:has(.spui-AppealModal[open]) {
   overflow: hidden;
 }
@@ -208,5 +229,23 @@ html.spui-AppealModal--open {
 
   .spui-AppealModal-closeTextButton {
     display: none;
+  }
+}
+
+@keyframes spui-AppealModal-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes spui-AppealModal-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
