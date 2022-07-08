@@ -3,6 +3,46 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.39.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.38.0...@openameba/spindle-ui@0.39.0) (2022-07-08)
+
+
+### Bug Fixes
+
+* **spindle-ui:** import ButtonGroup style from Dialog ([abc69b8](https://github.com/openameba/spindle/commit/abc69b83d1a1b3ac3e4f5555cae942c38896b6db))
+* **spindle-ui:** override focus style in Dialog for Safari ([2317c19](https://github.com/openameba/spindle/commit/2317c19b096729d2ad31f06f33b340bcfaff2b0b))
+
+
+### Features
+
+* **spindle-ui:** add animation to Dialog ([43fdbe1](https://github.com/openameba/spindle/commit/43fdbe11363aa3cef5aca618f78bf914da470cbf))
+
+
+
+
+
+
+# [0.38.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.37.0...@openameba/spindle-ui@0.38.0) (2022-07-06)
+
+
+### Features
+
+* **spindle-icons:** update icons ([610381a](https://github.com/openameba/spindle/commit/610381a03926aeedda8d7408740128340f14faf5))
+
+
+
+
+
+## [0.37.1-alpha.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.37.0...@openameba/spindle-ui@0.37.1-alpha.0) (2022-07-01)
+
+
+### Bug Fixes
+
+* **spindle-ui:** import ButtonGroup style from Dialog ([abc69b8](https://github.com/openameba/spindle/commit/abc69b83d1a1b3ac3e4f5555cae942c38896b6db))
+
+
+
+
+
 # [0.37.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.36.2...@openameba/spindle-ui@0.37.0) (2022-06-27)
 
 
