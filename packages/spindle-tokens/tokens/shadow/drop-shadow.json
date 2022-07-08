@@ -1,106 +1,316 @@
 {
   "Shadow": {
     "Drop Shadow": {
-      "Lv2": {
-        "blurRadius": {
-          "attributes": {
-            "category": "size"
+      "Hard": {
+        "Lv2": {
+          "blurRadius": {
+            "attributes": {
+              "category": "size"
+            },
+            "value": 3.875
           },
-          "value": 3.875
-        },
-        "color": {
-          "value": "rgba(8, 18, 26, 0.12)"
-        },
-        "inset": {
-          "value": false
-        },
-        "offset": {
-          "x": {
+          "color": {
+            "value": "rgba(8, 18, 26, 0.24)"
+          },
+          "inset": {
+            "value": false
+          },
+          "offset": {
+            "x": {
+              "attributes": {
+                "category": "size"
+              },
+              "value": 0
+            },
+            "y": {
+              "attributes": {
+                "category": "size"
+              },
+              "value": 3.25
+            }
+          },
+          "spreadRadius": {
             "attributes": {
               "category": "size"
             },
             "value": 0
-          },
-          "y": {
+          }
+        },
+        "Lv4": {
+          "blurRadius": {
             "attributes": {
               "category": "size"
             },
-            "value": 3.25
+            "value": 7.125
+          },
+          "color": {
+            "value": "rgba(8, 18, 26, 0.24)"
+          },
+          "inset": {
+            "value": false
+          },
+          "offset": {
+            "x": {
+              "attributes": {
+                "category": "size"
+              },
+              "value": 0
+            },
+            "y": {
+              "attributes": {
+                "category": "size"
+              },
+              "value": 4.75
+            }
+          },
+          "spreadRadius": {
+            "attributes": {
+              "category": "size"
+            },
+            "value": 0
           }
         },
-        "spreadRadius": {
-          "attributes": {
-            "category": "size"
+        "Lv6": {
+          "blurRadius": {
+            "attributes": {
+              "category": "size"
+            },
+            "value": 14
           },
-          "value": 0
+          "color": {
+            "value": "rgba(8, 18, 26, 0.24)"
+          },
+          "inset": {
+            "value": false
+          },
+          "offset": {
+            "x": {
+              "attributes": {
+                "category": "size"
+              },
+              "value": 0
+            },
+            "y": {
+              "attributes": {
+                "category": "size"
+              },
+              "value": 11
+            }
+          },
+          "spreadRadius": {
+            "attributes": {
+              "category": "size"
+            },
+            "value": 0
+          }
         }
       },
-      "Lv4": {
-        "blurRadius": {
-          "attributes": {
-            "category": "size"
+      "Medium": {
+        "Lv2": {
+          "blurRadius": {
+            "attributes": {
+              "category": "size"
+            },
+            "value": 3.875
           },
-          "value": 7.125
-        },
-        "color": {
-          "value": "rgba(8, 18, 26, 0.12)"
-        },
-        "inset": {
-          "value": false
-        },
-        "offset": {
-          "x": {
+          "color": {
+            "value": "rgba(8, 18, 26, 0.12)"
+          },
+          "inset": {
+            "value": false
+          },
+          "offset": {
+            "x": {
+              "attributes": {
+                "category": "size"
+              },
+              "value": 0
+            },
+            "y": {
+              "attributes": {
+                "category": "size"
+              },
+              "value": 3.25
+            }
+          },
+          "spreadRadius": {
             "attributes": {
               "category": "size"
             },
             "value": 0
-          },
-          "y": {
+          }
+        },
+        "Lv4": {
+          "blurRadius": {
             "attributes": {
               "category": "size"
             },
-            "value": 4.75
+            "value": 7.125
+          },
+          "color": {
+            "value": "rgba(8, 18, 26, 0.12)"
+          },
+          "inset": {
+            "value": false
+          },
+          "offset": {
+            "x": {
+              "attributes": {
+                "category": "size"
+              },
+              "value": 0
+            },
+            "y": {
+              "attributes": {
+                "category": "size"
+              },
+              "value": 4.75
+            }
+          },
+          "spreadRadius": {
+            "attributes": {
+              "category": "size"
+            },
+            "value": 0
           }
         },
-        "spreadRadius": {
-          "attributes": {
-            "category": "size"
+        "Lv6": {
+          "blurRadius": {
+            "attributes": {
+              "category": "size"
+            },
+            "value": 14
           },
-          "value": 0
+          "color": {
+            "value": "rgba(8, 18, 26, 0.12)"
+          },
+          "inset": {
+            "value": false
+          },
+          "offset": {
+            "x": {
+              "attributes": {
+                "category": "size"
+              },
+              "value": 0
+            },
+            "y": {
+              "attributes": {
+                "category": "size"
+              },
+              "value": 11
+            }
+          },
+          "spreadRadius": {
+            "attributes": {
+              "category": "size"
+            },
+            "value": 0
+          }
         }
       },
-      "Lv6": {
-        "blurRadius": {
-          "attributes": {
-            "category": "size"
+      "Soft": {
+        "Lv2": {
+          "blurRadius": {
+            "attributes": {
+              "category": "size"
+            },
+            "value": 3.875
           },
-          "value": 14
-        },
-        "color": {
-          "value": "rgba(8, 18, 26, 0.12)"
-        },
-        "inset": {
-          "value": false
-        },
-        "offset": {
-          "x": {
+          "color": {
+            "value": "rgba(8, 18, 26, 0.06)"
+          },
+          "inset": {
+            "value": false
+          },
+          "offset": {
+            "x": {
+              "attributes": {
+                "category": "size"
+              },
+              "value": 0
+            },
+            "y": {
+              "attributes": {
+                "category": "size"
+              },
+              "value": 3.25
+            }
+          },
+          "spreadRadius": {
             "attributes": {
               "category": "size"
             },
             "value": 0
-          },
-          "y": {
+          }
+        },
+        "Lv4": {
+          "blurRadius": {
             "attributes": {
               "category": "size"
             },
-            "value": 11
+            "value": 7.125
+          },
+          "color": {
+            "value": "rgba(8, 18, 26, 0.06)"
+          },
+          "inset": {
+            "value": false
+          },
+          "offset": {
+            "x": {
+              "attributes": {
+                "category": "size"
+              },
+              "value": 0
+            },
+            "y": {
+              "attributes": {
+                "category": "size"
+              },
+              "value": 4.75
+            }
+          },
+          "spreadRadius": {
+            "attributes": {
+              "category": "size"
+            },
+            "value": 0
           }
         },
-        "spreadRadius": {
-          "attributes": {
-            "category": "size"
+        "Lv6": {
+          "blurRadius": {
+            "attributes": {
+              "category": "size"
+            },
+            "value": 14
           },
-          "value": 0
+          "color": {
+            "value": "rgba(8, 18, 26, 0.06)"
+          },
+          "inset": {
+            "value": false
+          },
+          "offset": {
+            "x": {
+              "attributes": {
+                "category": "size"
+              },
+              "value": 0
+            },
+            "y": {
+              "attributes": {
+                "category": "size"
+              },
+              "value": 11
+            }
+          },
+          "spreadRadius": {
+            "attributes": {
+              "category": "size"
+            },
+            "value": 0
+          }
         }
       }
     }
