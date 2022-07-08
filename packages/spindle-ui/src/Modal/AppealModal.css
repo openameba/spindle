@@ -93,7 +93,7 @@ html.spui-AppealModal--open {
 
 .spui-AppealModal-title {
   color: var(--color-text-high-emphasis);
-  font-size: 1.25em;
+  font-size: 1.125em;
   font-weight: bold;
   grid-area: Title;
   line-height: 1.4;
