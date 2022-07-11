@@ -8,7 +8,7 @@ export type TimeDistanceOptions = {
 };
 
 export const useTimeDistance = (
-  date: string,
+  date: string | Date,
   options?: TimeDistanceOptions,
 ): [string, number] => {
   const value = useMemo((): [string, number] => {

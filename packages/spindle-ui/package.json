@@ -45,6 +45,11 @@
     "@types/react": "^16.8.6 || ^17.0.0",
     "react": "^16.8.0 || ^17.0.0"
   },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    }
+  },
   "dependencies": {
     "ameba-color-palette.css": "^4.8.0",
     "react-merge-refs": "^1.1.0"
@@ -61,6 +66,7 @@
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.0.0",
     "@types/jest": "^27.0.0",
+    "@types/react": "^17.0.1",
     "autoprefixer": "^9.8.5",
     "babel-loader": "^8.1.0",
     "bundlesize": "^0.18.0",

@@ -4,6 +4,10 @@
     "lib": [
       "DOM"
     ],
+    "baseUrl": ".",
+    "paths": {
+      "react": ["./node_modules/@types/react"]
+    },
     "jsx": "react"
   },
   "include": [
