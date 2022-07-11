@@ -54,7 +54,7 @@ html.spui-AppealModal--open {
 /* width property is calculated from 100% - (minimum margin * 2) */
 @media screen and (max-width: 440px) {
   .spui-AppealModal {
-    width: calc(100% - (20px * 2));
+    width: calc(100% - (24px * 2));
   }
 }
 
