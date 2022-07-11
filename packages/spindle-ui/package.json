@@ -42,7 +42,7 @@
     "access": "public"
   },
   "peerDependencies": {
-    "@types/react": "^16.8.6 || ^17.0.0",
+    "@types/react": "^18.0.0",
     "react": "^16.8.0 || ^17.0.0"
   },
   "peerDependenciesMeta": {
@@ -65,8 +65,8 @@
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.0.0",
-    "@types/jest": "^27.0.0",
-    "@types/react": "^17.0.1",
+    "@types/jest": "^28.0.0",
+    "@types/react": "^18.0.0",
     "autoprefixer": "^9.8.5",
     "babel-loader": "^8.1.0",
     "bundlesize": "^0.18.0",
