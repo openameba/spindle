@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/openameba/spindle/compare/@openameba/spindle-hooks@0.5.0...@openameba/spindle-hooks@0.6.0) (2022-07-11)
+
+
+### Features
+
+* **spindle-hooks:** support react v18 (https://github.com/openameba/spindle/pull/428)
+
+
+
+
+
 # [0.5.0](https://github.com/openameba/spindle/compare/@openameba/spindle-hooks@0.4.0...@openameba/spindle-hooks@0.5.0) (2022-07-08)
 
 **Note:** Version bump only for package @openameba/spindle-hooks

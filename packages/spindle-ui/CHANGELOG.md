@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.40.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.39.0...@openameba/spindle-ui@0.40.0) (2022-07-11)
+
+
+### Bug Fixes
+
+* use peerDependenciesMeta ([e9ebb42](https://github.com/openameba/spindle/commit/e9ebb425945353c0d4da182776803e0e6f7213c2))
+
+
+
+
+
 # [0.39.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.38.0...@openameba/spindle-ui@0.39.0) (2022-07-08)
 
 
