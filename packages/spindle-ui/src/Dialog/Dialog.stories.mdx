@@ -29,10 +29,9 @@ Dialogは、利用者に重要な意思決定を促す時に利用されます�
 
 また、`<dialog>`要素には`<form method="dialog">`要素が内包されているため、以下の動作が想定されています。
 
-- `type`属性を指定されていない`<Button>`は、ダイアログを閉じるボタンになります
-- `<Button>`に固有の処理を追加したい場合には`type="button"`や`type="reset"`などの属性を指定してください
-- `<Dialog>`は`open`プロパティの値を見て、開く・閉じるの動作を行います。`onClose`や`onCancel`のタイミングで`open`プロパティに`false`を指定し、ダイアログを閉じます
-  - `onCancel`イベントはEscapeキーを押されたなどデバイスや支援技術から伝達されます。特にそれらの動作を無効にする必要がない場合、通常は`open`プロパティを`false`にしてダイアログを閉じる動作を指定してください
+- `<Button>`を挿入するとデフォルトでは`type=submit`が指定されるため、ダイアログを閉じるボタンになります
+- `<Dialog>`は`open`プロパティの値を見て、開く・閉じるの動作を行います。多くのケースでは`onClose`と`onCancel`両方のタイミングで`open`プロパティに`false`を指定し、ダイアログを閉じます
+  - `onCancel`イベントはEscapeキーを押されたなどデバイスや支援技術から伝達されます。キャンセル時にログ送信や特別な処理を行いたい場合は指定してください
 
 <Preview withSource="open">
   <Story name="Normal">
@@ -55,18 +54,29 @@ function DialogExample() {
   }, [dialogRef]);
   return (
     <>
-      <Button aria-haspopup="true" onClick={handleOpenButtonClick} size="medium">Open Dialog</Button>
+      <Button
+        aria-haspopup="true"
+        onClick={handleOpenButtonClick}
+        size="medium"
+      >
+        Open Dialog
+      </Button>
       <Dialog.Frame
         aria-describedby="dialog-description"
         aria-labelledby="dialog-title"
         ref={dialogRef}
         open={open}
         onCancel={handleDialogCancel}
+        onClose={handleDialogClose}
       >
         <Dialog.Title id="dialog-title">タイトルですよ</Dialog.Title>
-        <Dialog.Body id="dialog-description">ここに本文が入りますよ</Dialog.Body>
+        <Dialog.Body id="dialog-description">
+          ここに本文が入りますよ
+        </Dialog.Body>
         <Dialog.ButtonGroup>
-          <Button layout="fullWidth" size="medium" onClick={handleButtonClick}>OK</Button>
+          <Button layout="fullWidth" size="medium">
+            OK
+          </Button>
         </Dialog.ButtonGroup>
       </Dialog.Frame>
     </>
