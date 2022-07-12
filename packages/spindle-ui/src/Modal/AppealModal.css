@@ -187,6 +187,7 @@ html.spui-AppealModal--open {
       'ButtonGroup ButtonGroup';
     grid-template-columns: 1fr 72px;
     grid-template-rows: auto;
+    padding: 0 0 36px;
   }
 
   .spui-AppealModal-title {

@@ -121,13 +121,13 @@ const Frame = forwardRef<DialogHTMLElement, AppealModalProps>(
           onSubmit={handleFormSubmit}
         >
           <div className={`${BLOCK_NAME}-closeIconButton`}>
-            <IconButton aria-label="閉じる" variant="neutral">
+            <IconButton aria-label="とじる" variant="neutral">
               <CrossBold aria-hidden="true" />
             </IconButton>
           </div>
           {children}
           <div className={`${BLOCK_NAME}-closeTextButton`}>
-            <SubtleButton>閉じる</SubtleButton>
+            <SubtleButton>とじる</SubtleButton>
           </div>
         </form>
       </dialog>
