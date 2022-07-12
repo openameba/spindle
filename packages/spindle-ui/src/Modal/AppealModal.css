@@ -179,7 +179,6 @@ html.spui-AppealModal--open {
   }
 
   .spui-AppealModal-frame {
-    gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
       'Title CloseButton'
