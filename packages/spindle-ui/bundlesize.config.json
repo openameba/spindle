@@ -9,12 +9,12 @@
       "maxSize": "1.1 kB"
     },
     {
-      "path": "./dist/!(Icon)/*.mjs",
+      "path": "./dist/!(Icon|Modal)/*.mjs",
       "maxSize": "1.1 kB"
     },
     {
-      "path": "./dist/Modal/*.js",
-      "maxSize": "2 kB"
+      "path": "./dist/Modal/*.mjs",
+      "maxSize": "1.5 kB"
     },
     {
       "path": "./dist/**/!(index).css",
