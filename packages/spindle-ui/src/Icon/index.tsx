@@ -45,6 +45,7 @@ export { default as AstrogyFill } from './AstrogyFill';
 export { default as Baby } from './Baby';
 export { default as Bbs } from './Bbs';
 export { default as Beginner } from './Beginner';
+export { default as Beginnermark } from './Beginnermark';
 export { default as Bell } from './Bell';
 export { default as BellFill } from './BellFill';
 export { default as BellFillSlash } from './BellFillSlash';
