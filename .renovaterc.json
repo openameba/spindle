@@ -9,9 +9,6 @@
     "group:postcss",
     "group:typescript-eslintMonorepo"
   ],
-  "assignees": [
-    "herablog",
-    "sasaplus1",
-    "hiloki"
-  ]
+  "assignees": ["herablog", "sasaplus1"],
+  "prConcurrentLimit": 0
 }
