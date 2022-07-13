@@ -48,6 +48,7 @@
 | baby | ![](../dist/svg/baby.svg) |
 | bbs | ![](../dist/svg/bbs.svg) |
 | beginner | ![](../dist/svg/beginner.svg) |
+| beginnermark | ![](../dist/svg/beginnermark.svg) |
 | bell | ![](../dist/svg/bell.svg) |
 | bell_fill | ![](../dist/svg/bell_fill.svg) |
 | bell_fill_slash | ![](../dist/svg/bell_fill_slash.svg) |
