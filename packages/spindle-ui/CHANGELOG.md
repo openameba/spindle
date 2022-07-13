@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.41.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.39.0...@openameba/spindle-ui@0.41.0) (2022-07-13)
+
+
+### Bug Fixes
+
+* use peerDependenciesMeta ([e9ebb42](https://github.com/openameba/spindle/commit/e9ebb425945353c0d4da182776803e0e6f7213c2))
+
+
+### Features
+
+* **spindle-ui:** add animation to AppealModal ([e8f12ba](https://github.com/openameba/spindle/commit/e8f12ba2fe713deb62122d6f9006def0cba30686))
+* **spindle-ui:** implement Appeal Modal ([ebbb5cd](https://github.com/openameba/spindle/commit/ebbb5cd1845ae2246edacce56d845d4c2a29948f))
+
+
+
+
+
 # [0.40.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.39.0...@openameba/spindle-ui@0.40.0) (2022-07-11)
 
 

@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/openameba/spindle/compare/@openameba/spindle-hooks@0.5.0...@openameba/spindle-hooks@0.7.0) (2022-07-13)
+
+
+### Bug Fixes
+
+* use peerDependenciesMeta ([e9ebb42](https://github.com/openameba/spindle/commit/e9ebb425945353c0d4da182776803e0e6f7213c2))
+
+
+### Features
+
+* add useFlushSync for polyfill ([9035bd0](https://github.com/openameba/spindle/commit/9035bd0f0dd68f88753d1041fc2dec34d35b4749))
+* use webpack5 ([2040d31](https://github.com/openameba/spindle/commit/2040d310b255d40126729253922aa31c2626c991))
+* **spindle-hooks:** support react18 for useCarousel ([796845b](https://github.com/openameba/spindle/commit/796845bd5f5e355f0948207f58ab688932d8e65a))
+* **spindle-hooks:** update react to v18 ([1bcd265](https://github.com/openameba/spindle/commit/1bcd2657d5bceb853df4166a062f7f0174ee03d1))
+
+
+
+
+
 # [0.6.0](https://github.com/openameba/spindle/compare/@openameba/spindle-hooks@0.5.0...@openameba/spindle-hooks@0.6.0) (2022-07-11)
 
 
