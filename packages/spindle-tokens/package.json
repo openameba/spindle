@@ -1,6 +1,6 @@
 {
   "name": "@openameba/spindle-tokens",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Spindle design tokens.",
   "homepage": "https://github.com/openameba/spindle#readme",
   "license": "MIT",
@@ -32,8 +32,8 @@
   "devDependencies": {
     "@figma-export/cli": "^4.0.0",
     "@figma-export/types": "^4.0.0",
-    "@types/lodash.setwith": "^4.3.6",
     "@types/jest": "^27.0.0",
+    "@types/lodash.setwith": "^4.3.6",
     "jest": "^27.2.4",
     "jsonabc": "^2.3.1",
     "lodash.setwith": "^4.3.2",
