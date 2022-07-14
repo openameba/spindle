@@ -1,0 +1,60 @@
+name: build icon from Figma
+
+on:
+  workflow_dispatch:
+    inputs:
+      fileKey:
+        description: Figma file key
+        type: string
+        required: true
+      page:
+        description: Stringified selected page (id, name)
+        type: string
+        default: '{}'
+        required: true
+      selection:
+        description: Stringified array of the selected nodes (id, name)
+        type: string
+        default: '[]'
+        required: true
+
+jobs:
+  build_icons:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: 14
+      - name: restore lerna
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-v2
+      - run: yarn install --frozen-lockfile
+      - run: npx lerna bootstrap -- --frozen-lockfile
+      - name: Update Icons
+        env:
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+          FILE_KEY: ${{ secrets.FIGMA_ICON_FILE_KEY }}
+          NODE_ID: ${{ secrets.FIGMA_ICON_NODE_ID }}
+          ICONS: ${{ github.event.inputs.selection }}
+        run: |
+          node -p "JSON.stringify({ fileKey: '$FILE_KEY', nodeId: '$NODE_ID', dest: 'dist', iconNames: $ICONS.map(({name}) => name) })" > packages/spindle-icons/figma.json
+          npx lerna run --scope @openameba/spindle-icons build
+          npx lerna run --scope @openameba/spindle-ui icon
+          yarn format
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          commit-message: 'feat(spindle-icons): update icons'
+          branch: feat/build-icon-via-webhook
+          delete-branch: true
+          title: 'feat(spindle-icons): update icons'
+          body: ${{ github.event.inputs.modified_components }}
+          labels: |
+            spindle-icons
+            spindle-ui
