@@ -15596,10 +15596,10 @@ inquirer@7.0.4:
     strip-ansi "^5.1.0"
     through "^2.3.6"
 
-inquirer@8.1.5:
-  version "8.1.5"
-  resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-8.1.5.tgz#2dc5159203c826d654915b5fe6990fd17f54a150"
-  integrity sha512-G6/9xUqmt/r+UvufSyrPpt84NYwhKZ9jLsgMbQzlx804XErNupor8WQdBnBRrXmBfTPpuwf1sV+ss2ovjgdXIg==
+inquirer@8.2.1:
+  version "8.2.1"
+  resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-8.2.1.tgz#e00022e3e8930a92662f760f020686530a84671d"
+  integrity sha512-pxhBaw9cyTFMjwKtkjePWDhvwzvrNGAw7En4hottzlPvz80GZaMZthdDU35aA6/f5FRZf3uhE057q8w1DE3V2g==
   dependencies:
     ansi-escapes "^4.2.1"
     chalk "^4.1.1"
@@ -15611,7 +15611,7 @@ inquirer@8.1.5:
     mute-stream "0.0.8"
     ora "^5.4.1"
     run-async "^2.4.0"
-    rxjs "^7.2.0"
+    rxjs "^7.5.5"
     string-width "^4.1.0"
     strip-ansi "^6.0.0"
     through "^2.3.6"
@@ -22880,20 +22880,20 @@ reg-cli@^0.17.0:
     x-img-diff-js "0.3.5"
     yargs-parser "^20.2.9"
 
-reg-suit-core@^0.11.0:
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/reg-suit-core/-/reg-suit-core-0.11.0.tgz#84ec996004405fa4bf9cbf36f91440b395e24774"
-  integrity sha512-D8X4U6jCQNzlpMfUfb7+RQWERy21SZMpaR9um0gL+3XfmdeDgo+2UDI6m1O5mbAO5vIwmLZEOFKOZ85XJmjIeg==
+reg-suit-core@^0.12.1:
+  version "0.12.1"
+  resolved "https://registry.yarnpkg.com/reg-suit-core/-/reg-suit-core-0.12.1.tgz#511f63d2053a5bb76181d994074bbbb6ca432848"
+  integrity sha512-lc8MSax1CAZVJgps3EjhRIsHjfUFZun0FjC+FOwjKXohWOq+z0HfI8+IfCjhMHNbkG2kIa/YcnQF6Zd0/X/Usw==
   dependencies:
     cpx "^1.5.0"
     reg-cli "^0.17.0"
-    reg-suit-util "^0.11.0"
+    reg-suit-util "^0.12.1"
     rimraf "^3.0.2"
 
-reg-suit-util@^0.11.0:
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/reg-suit-util/-/reg-suit-util-0.11.0.tgz#dd4ce655c51a9b3e4d34f37aca17772b8f2eee9a"
-  integrity sha512-nd3XmRS96syselRhrfBhwMeGsp/a0tkWlcAi4ITgClRCXgiOe+rovfelZUJueMQwFiH3YU2TA7bH7ID4nuLeFg==
+reg-suit-util@^0.12.1:
+  version "0.12.1"
+  resolved "https://registry.yarnpkg.com/reg-suit-util/-/reg-suit-util-0.12.1.tgz#ceec40cf116ec4986d151b0af96d9fe49a60fb9e"
+  integrity sha512-w/cLYCBX8ULDsSZEJHArOuaWQms/YErFFhMsnKClvuf/mlvRQgok/zKcksaYoyAQVe/seY+/SRnHdPVtw5YViQ==
   dependencies:
     "@types/cli-progress" "^3.8.0"
     "@types/cli-spinner" "^0.2.0"
@@ -22909,16 +22909,16 @@ reg-suit-util@^0.11.0:
     mime-types "^2.1.27"
     mkdirp "^1.0.4"
 
-reg-suit@^0.11.0:
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/reg-suit/-/reg-suit-0.11.0.tgz#6f83269c95c0e9155641eba53d7dd8cac7660676"
-  integrity sha512-tZCb/Kd3Gyp2SePvAm/HKdeJQUxyKyAFmAdvNxi51EqE/E1UgSAv4hEMhBJFKiLOdtWcaPCTji5+QCvg/Z5aMg==
+reg-suit@^0.12.0:
+  version "0.12.1"
+  resolved "https://registry.yarnpkg.com/reg-suit/-/reg-suit-0.12.1.tgz#c6897c1e909d932673dc9ed93f0ce544b8c0262f"
+  integrity sha512-aXVcRK7fVE582F+iv3VEJEsnJ3g7CfF1pjeSS+WbObCYBN+FucO3eMMq8AvgYDwhH7oc0eTBofW7Nc0Ko2zumg==
   dependencies:
     cp-file "9.1.0"
     ignore "5.1.8"
-    inquirer "8.1.5"
-    reg-suit-core "^0.11.0"
-    reg-suit-util "^0.11.0"
+    inquirer "8.2.1"
+    reg-suit-core "^0.12.1"
+    reg-suit-util "^0.12.1"
     yargs "17.0.1"
 
 regenerate-unicode-properties@^10.0.1:
@@ -23581,13 +23581,6 @@ rxjs@^6.6.0:
   integrity sha512-3HMA8z/Oz61DUHe+SdOiQyzIf4tOx5oQHmMir7IZEu6TMqCLHT4LRcmNaUS0NwOz8VLvmmBduMsoaUvMaIiqzg==
   dependencies:
     tslib "^1.9.0"
-
-rxjs@^7.2.0:
-  version "7.4.0"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-7.4.0.tgz#a12a44d7eebf016f5ff2441b87f28c9a51cebc68"
-  integrity sha512-7SQDi7xeTMCJpqViXh8gL/lebcwlp3d831F05+9B44A4B0WfsEwUQHR64gsH1kvJ+Ep/J9K2+n1hVl1CsGN23w==
-  dependencies:
-    tslib "~2.1.0"
 
 rxjs@^7.5.5:
   version "7.5.6"
@@ -26174,11 +26167,6 @@ tslib@^2.1.0, tslib@^2.3.1:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.4.0.tgz#7cecaa7f073ce680a05847aa77be941098f36dc3"
   integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
-
-tslib@~2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.1.0.tgz#da60860f1c2ecaa5703ab7d39bc05b6bf988b97a"
-  integrity sha512-hcVC3wYEziELGGmEEXue7D75zbwIIVUMWAVbHItGPx0ziyXxrOMQx4rQEVEV45Ut/1IotuEvwqPopzIOkDMf0A==
 
 tsutils@^3.21.0:
   version "3.21.0"
