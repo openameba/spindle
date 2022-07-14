@@ -1,3 +1,6 @@
+@import '../ButtonGroup/ButtonGroup.css';
+@import '../IconButton/IconButton.css';
+@import '../SubtleButton/SubtleButton.css';
 /*
  * AppealModal
  * NOTE: Styles can be overridden with "--AppealModal-*" variables
