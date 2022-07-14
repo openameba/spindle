@@ -4,6 +4,7 @@ export { default as Abematv } from './Abematv';
 export { default as Accesslink } from './Accesslink';
 export { default as Accesspage } from './Accesspage';
 export { default as AccesspageFill } from './AccesspageFill';
+export { default as Ad } from './Ad';
 export { default as AddressbookFill } from './AddressbookFill';
 export { default as AlbumAddFill } from './AlbumAddFill';
 export { default as AlbumFill } from './AlbumFill';

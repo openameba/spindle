@@ -7,6 +7,7 @@
 | accesslink | ![](../dist/svg/accesslink.svg) |
 | accesspage | ![](../dist/svg/accesspage.svg) |
 | accesspage_fill | ![](../dist/svg/accesspage_fill.svg) |
+| ad | ![](../dist/svg/ad.svg) |
 | addressbook_fill | ![](../dist/svg/addressbook_fill.svg) |
 | album_add_fill | ![](../dist/svg/album_add_fill.svg) |
 | album_fill | ![](../dist/svg/album_fill.svg) |
