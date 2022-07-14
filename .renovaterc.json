@@ -9,9 +9,6 @@
     "group:postcss",
     "group:typescript-eslintMonorepo"
   ],
-  "assignees": [
-    "herablog",
-    "sasaplus1",
-    "hiloki"
-  ]
+  "reviewers": ["team:openameba/spindle-working-group"],
+  "prConcurrentLimit": 0
 }
