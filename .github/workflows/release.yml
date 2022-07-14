@@ -24,7 +24,7 @@ jobs:
           node-version: 14
       # Bootstrap lerna for building app before publishing
       - name: restore lerna
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             node_modules
