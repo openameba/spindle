@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.43.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.43.0...@openameba/spindle-ui@0.43.1) (2022-07-15)
+
+
+### Bug Fixes
+
+* **spindle-ui:** import style of UI components in AppealModal ([cb4d389](https://github.com/openameba/spindle/commit/cb4d3895dc9d3aeff62f1e2b2f5a6310321ed995))
+
+
+
+
+
 # [0.43.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.42.0...@openameba/spindle-ui@0.43.0) (2022-07-14)
 
 
