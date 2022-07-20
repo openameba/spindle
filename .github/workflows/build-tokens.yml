@@ -7,12 +7,12 @@ jobs:
   build_tokens:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v2-beta
         with:
           node-version: 14
       - name: restore lerna
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             node_modules
@@ -30,7 +30,7 @@ jobs:
         run: |
           npx lerna run --scope @openameba/spindle-tokens export
           # npx lerna run --scope @openameba/spindle-tokens build
-          yarn format
+          yarn fix
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:

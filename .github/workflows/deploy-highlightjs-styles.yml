@@ -14,7 +14,7 @@ jobs:
       run:
         working-directory: ./packages/spindle-highlightjs-themes/
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v2-beta
         with:
           node-version: 14

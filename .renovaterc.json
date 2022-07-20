@@ -9,6 +9,6 @@
     "group:postcss",
     "group:typescript-eslintMonorepo"
   ],
-  "reviewers": ["team:openameba/spindle-working-group"],
+  "reviewers": ["team:spindle-working-group"],
   "prConcurrentLimit": 0
 }
