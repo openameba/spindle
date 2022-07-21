@@ -5,7 +5,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import mergeRefs from 'react-merge-refs';
+import { mergeRefs } from 'react-merge-refs';
 import { ButtonGroup as Group } from '../ButtonGroup';
 
 interface DialogProps extends React.DialogHTMLAttributes<HTMLElement> {
