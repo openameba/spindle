@@ -61,6 +61,8 @@
     "@storybook/addon-backgrounds": "^6.5.9",
     "@storybook/addon-docs": "^6.5.9",
     "@storybook/addon-viewport": "^6.5.9",
+    "@storybook/builder-webpack5": "^6.5.9",
+    "@storybook/manager-webpack5": "^6.5.9",
     "@storybook/mdx2-csf": "^0.0.3",
     "@storybook/react": "^6.5.9",
     "@svgr/cli": "^6.0.0",
@@ -87,6 +89,7 @@
     "stylelint-order": "^4.1.0",
     "stylelint-prettier": "^1.1.2",
     "stylelint-selector-bem-pattern": "^2.1.0",
-    "ts-jest": "27.0.0"
+    "ts-jest": "27.0.0",
+    "webpack": "^5.73.0"
   }
 }
