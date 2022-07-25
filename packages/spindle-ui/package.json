@@ -55,12 +55,16 @@
     "react-merge-refs": "^1.1.0"
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "^6.1.10",
-    "@storybook/addon-actions": "^6.1.10",
-    "@storybook/addon-backgrounds": "^6.1.10",
-    "@storybook/addon-docs": "^6.1.10",
-    "@storybook/addon-viewport": "^6.1.10",
-    "@storybook/react": "^6.1.10",
+    "@mdx-js/react": "^2.1.2",
+    "@storybook/addon-a11y": "^6.5.9",
+    "@storybook/addon-actions": "^6.5.9",
+    "@storybook/addon-backgrounds": "^6.5.9",
+    "@storybook/addon-docs": "^6.5.9",
+    "@storybook/addon-viewport": "^6.5.9",
+    "@storybook/builder-webpack5": "^6.5.9",
+    "@storybook/manager-webpack5": "^6.5.9",
+    "@storybook/mdx2-csf": "^0.0.3",
+    "@storybook/react": "^6.5.9",
     "@svgr/cli": "^6.0.0",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^12.0.0",
@@ -68,7 +72,7 @@
     "@types/jest": "^27.0.0",
     "@types/react": "^17.0.1",
     "autoprefixer": "^9.8.5",
-    "babel-loader": "^8.1.0",
+    "babel-loader": "^8.2.5",
     "bundlesize": "^0.18.0",
     "cssnano": "^4.1.10",
     "dialog-polyfill": "^0.5.6",
@@ -85,6 +89,7 @@
     "stylelint-order": "^4.1.0",
     "stylelint-prettier": "^1.1.2",
     "stylelint-selector-bem-pattern": "^2.1.0",
-    "ts-jest": "27.0.0"
+    "ts-jest": "27.0.0",
+    "webpack": "^5.73.0"
   }
 }
