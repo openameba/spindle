@@ -17,8 +17,12 @@
       "maxSize": "1.5 kB"
     },
     {
-      "path": "./dist/**/!(index).css",
+      "path": "./dist/!(Modal)/!(index).css",
       "maxSize": "1.5 kB"
+    },
+    {
+      "path": "./dist/Modal/!(index).css",
+      "maxSize": "2.0 kB"
     },
     {
       "path": "./dist/index.css",
