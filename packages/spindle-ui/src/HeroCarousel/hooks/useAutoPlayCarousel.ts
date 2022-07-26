@@ -17,14 +17,8 @@ export function useAutoPlayCarousel<Item>({
   items,
   itemLinkClassName,
 }: Payload<Item>) {
-  const {
-    diffXRef,
-    diffYRef,
-    setDiffX,
-    setDiffY,
-    setStartX,
-    setStartY,
-  } = useSliderMoveEvent();
+  const { diffXRef, diffYRef, setDiffX, setDiffY, setStartX, setStartY } =
+    useSliderMoveEvent();
   const [focusOffset, setFocusOffset] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
   const [isLinkClicked, setIsLinkClicked] = useState(false);
