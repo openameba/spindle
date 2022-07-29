@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent, act } from '@testing-library/react';
+import { jest } from '@jest/globals';
 
 import { Toast, BLOCK_NAME, ANIMATION_DURATION } from './Toast';
 
