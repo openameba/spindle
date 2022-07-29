@@ -6,7 +6,7 @@ import { jest } from '@jest/globals';
 import { DropDown } from './DropDown';
 
 describe('<DropDown />', () => {
-  test('select', () => {
+  test('select', async () => {
     render(
       <DropDown>
         <option value="a">A</option>
@@ -15,11 +15,13 @@ describe('<DropDown />', () => {
       </DropDown>,
     );
 
-    userEvent.selectOptions(screen.getByRole('combobox'), 'c');
+    const user = userEvent.setup();
+
+    await user.selectOptions(screen.getByRole('combobox'), 'c');
     expect(screen.getByRole('combobox')).toHaveValue('c');
   });
 
-  test('change', () => {
+  test('change', async () => {
     const onChange = jest.fn();
 
     render(
@@ -30,7 +32,9 @@ describe('<DropDown />', () => {
       </DropDown>,
     );
 
-    userEvent.selectOptions(screen.getByRole('combobox'), 'c');
+    const user = userEvent.setup();
+
+    await user.selectOptions(screen.getByRole('combobox'), 'c');
     expect(onChange).toBeCalled();
   });
 

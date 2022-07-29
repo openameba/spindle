@@ -6,12 +6,13 @@ import { jest } from '@jest/globals';
 import { IconButton } from './IconButton';
 
 describe('<IconButton />', () => {
-  test('click', () => {
+  test('click', async () => {
     const onButtonClick = jest.fn();
+    const user = userEvent.setup();
 
     render(<IconButton onClick={onButtonClick} />);
 
-    userEvent.click(screen.getByRole('button'));
+    await user.click(screen.getByRole('button'));
     expect(onButtonClick).toBeCalled();
   });
 });

@@ -5,17 +5,21 @@ import userEvent from '@testing-library/user-event';
 import { Checkbox } from './Checkbox';
 
 describe('<Checkbox />', () => {
-  test('click label', () => {
+  test('click label', async () => {
+    const user = userEvent.setup();
+
     render(<Checkbox>test</Checkbox>);
 
-    userEvent.click(screen.getByLabelText('test'));
+    await user.click(screen.getByLabelText('test'));
     expect(screen.getByRole('checkbox')).toBeChecked();
   });
 
-  test('click checkbox', () => {
+  test('click checkbox', async () => {
+    const user = userEvent.setup();
+
     render(<Checkbox />);
 
-    userEvent.click(screen.getByRole('checkbox'));
+    await user.click(screen.getByRole('checkbox'));
     expect(screen.getByRole('checkbox')).toBeChecked();
   });
 

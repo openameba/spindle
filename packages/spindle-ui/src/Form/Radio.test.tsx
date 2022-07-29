@@ -5,17 +5,21 @@ import userEvent from '@testing-library/user-event';
 import { Radio } from './Radio';
 
 describe('<Radio />', () => {
-  test('click label', () => {
+  test('click label', async () => {
+    const user = userEvent.setup();
+
     render(<Radio id="test">test</Radio>);
 
-    userEvent.click(screen.getByLabelText('test'));
+    await user.click(screen.getByLabelText('test'));
     expect(screen.getByRole('radio')).toBeChecked();
   });
 
-  test('click checkbox', () => {
+  test('click checkbox', async () => {
+    const user = userEvent.setup();
+
     render(<Radio id="test">test</Radio>);
 
-    userEvent.click(screen.getByRole('radio'));
+    await user.click(screen.getByRole('radio'));
     expect(screen.getByRole('radio')).toBeChecked();
   });
 

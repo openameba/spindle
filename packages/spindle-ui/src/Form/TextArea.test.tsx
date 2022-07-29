@@ -5,10 +5,12 @@ import userEvent from '@testing-library/user-event';
 import { TextArea } from './TextArea';
 
 describe('<TextArea />', () => {
-  test('type', () => {
+  test('type', async () => {
+    const user = userEvent.setup();
+
     render(<TextArea id="text" />);
 
-    userEvent.type(screen.getByRole('textbox'), 'Hello,{enter}World!');
+    await user.type(screen.getByRole('textbox'), 'Hello,{enter}World!');
     expect(screen.getByRole('textbox')).toHaveValue('Hello,\nWorld!');
   });
 
