@@ -13,7 +13,7 @@
     "lint": "yarn lint:style",
     "lint:style": "stylelint '**/*.css'",
     "fix": "yarn lint:style --fix",
-    "test:interaction": "jest",
+    "test:interaction": "node --experimental-vm-modules node_modules/.bin/jest",
     "prebundlesize": "yarn build",
     "bundlesize": "npx bundlesize",
     "dev": "yarn storybook:start",
