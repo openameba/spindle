@@ -5,7 +5,9 @@ import userEvent from '@testing-library/user-event';
 import { InlineDropDown } from './InlineDropDown';
 
 describe('<InlineDropDown />', () => {
-  test('select', () => {
+  test('select', async () => {
+    const user = userEvent.setup();
+
     render(
       <InlineDropDown>
         <option value="a">A</option>
@@ -14,12 +16,13 @@ describe('<InlineDropDown />', () => {
       </InlineDropDown>,
     );
 
-    userEvent.selectOptions(screen.getByRole('combobox'), 'c');
+    await user.selectOptions(screen.getByRole('combobox'), 'c');
     expect(screen.getByRole('combobox')).toHaveValue('c');
   });
 
-  test('change', () => {
+  test('change', async () => {
     const onChange = jest.fn();
+    const user = userEvent.setup();
 
     render(
       <InlineDropDown onChange={onChange}>
@@ -29,7 +32,7 @@ describe('<InlineDropDown />', () => {
       </InlineDropDown>,
     );
 
-    userEvent.selectOptions(screen.getByRole('combobox'), 'c');
+    await user.selectOptions(screen.getByRole('combobox'), 'c');
     expect(onChange).toBeCalled();
   });
 

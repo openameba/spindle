@@ -5,7 +5,9 @@ import userEvent from '@testing-library/user-event';
 import { InputLabel } from './InputLabel';
 
 describe('<InputLabel />', () => {
-  test('click', () => {
+  test('click', async () => {
+    const user = userEvent.setup();
+
     render(
       <>
         <InputLabel id="test">test</InputLabel>
@@ -13,7 +15,7 @@ describe('<InputLabel />', () => {
       </>,
     );
 
-    userEvent.click(screen.getByLabelText('test'));
+    await user.click(screen.getByLabelText('test'));
     expect(screen.getByRole('checkbox')).toBeChecked();
   });
 });

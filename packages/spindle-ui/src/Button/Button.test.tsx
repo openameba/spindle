@@ -5,12 +5,14 @@ import userEvent from '@testing-library/user-event';
 import { Button } from './Button';
 
 describe('<Button />', () => {
-  test('click', () => {
+  test('click', async () => {
     const onButtonClick = jest.fn();
+
+    const user = userEvent.setup();
 
     render(<Button onClick={onButtonClick} />);
 
-    userEvent.click(screen.getByRole('button'));
+    await user.click(screen.getByRole('button'));
     expect(onButtonClick).toBeCalled();
   });
 
