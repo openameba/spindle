@@ -1,0 +1,160 @@
+import { Description, Meta, Story, Source } from '@storybook/addon-docs/blocks';
+import { actions } from '@storybook/addon-actions';
+import { TextButton } from './TextButton';
+import { ChevronRightBold, CameraFill } from '../Icon';
+
+# TextButton
+
+<Meta title="TextButton" component={TextButton} />
+
+![stability-unstable](https://img.shields.io/badge/stability-unstable-yellow.svg)
+
+<Source
+  language='javascript'
+  code={`import { TextButton } from '@openameba/spindle-ui'`}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/TextButton/TextButton.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/TextButton/TextButton.css">`}
+/>
+
+## Normal
+
+<Preview withSource="open">
+  <Story name="Normal">
+    <TextButton {...actions('onClick', 'onMouseOver')}>Text Button</TextButton>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<TextButton>Text Button</TextButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<a class="spui-TextButton">Text Button</a>
+  `}
+/>
+
+## Normal With Icon
+
+<Preview withSource="open">
+  <Story name="NormalWithIcon">
+    <TextButton icon={<CameraFill aria-label="カメラ" />} iconPosition="start" {...actions('onClick', 'onMouseOver')}>Text Button</TextButton>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<TextButton icon={<CameraFill aria-label="カメラ" />} iconPosition="start" />Text Button</TextButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-TextButton spui-TextButton--hasIcon spui-TextButton--iconstart"><span class="spui-TextButton-icon"><svg>...</svg></span>Text Button</button>
+  `}
+/>
+
+## Subtle
+
+<Preview withSource="open">
+  <Story name="Subtle">
+    <TextButton variant="subtle" {...actions('onClick', 'onMouseOver')}>Text Button</TextButton>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<TextButton variant="subtle" />}>Text Button</TextButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-TextButton spui-TextButton--subtle">Text Button</button>
+  `}
+/>
+
+## Subtle With Icon
+
+<Preview withSource="open">
+  <Story name="SubtleWithIcon">
+    <TextButton variant="subtle" icon={<ChevronRightBold aria-hidden="true" />} iconPosition="end" {...actions('onClick', 'onMouseOver')}>Text Button</TextButton>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<TextButton icon={<ChevronRightBold aria-hidden="true" />} iconPosition="end">Text Button</TextButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-TextButton spui-TextButton--subtle spui-TextButton--hasIcon spui-TextButton--iconend"><span class="spui-TextButton-icon"><svg>...</svg></span>Text Button</button>
+  `}
+/>
+
+## Underline Patterns
+
+テキストのアンダーラインは以下のルールで表示されます。
+
+- 何も指定しない: 初期表示時にunderline表示、hover時にunderline非表示
+- アイコンあり: 初期表示時にunderline非表示、hover時にunderline表示
+- underline=hover: 初期表示時にunderline非表示、hover時にunderline表示
+
+## Underline Hover
+
+<Preview withSource="open">
+  <Story name="UnderlineHover">
+    <TextButton underline="hover" {...actions('onClick', 'onMouseOver')}>Text Button</TextButton>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<TextButton underline="hover">Text Button</TextButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-TextButton spui-TextButton--underlinehover">Text Button</button>
+  `}
+/>
+
+## スタイルの上書き
+`TextButton`を利用する際には、ますデフォルト定義されているスタイルで要件を満たせないか検討してください。ただし、`TextButton`は様々な箇所での利用が想定されるため、以下のようにスタイルを上書きして利用できます。
+
+<Source
+  code={`
+<style>
+  .container {
+    --TextButton-color: var(--color-text-medium-emphasis);
+    --TextButton-icon-color: var(--color-object-medium-emphasis);
+    --TextButton-fontWeight: normal;
+  }
+</style>
+<div class="container">
+<ul>
+  <li><button class="spui-TextButton" href="#">Text Button</button></li>
+</ul>
+</div>
+  `}
+/>
+
+なおフォントサイズは他のSpindle UIコンポーネントと同様に親要素からのサイズを継承します。

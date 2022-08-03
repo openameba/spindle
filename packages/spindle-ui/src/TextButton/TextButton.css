@@ -1,0 +1,89 @@
+/*
+ * TextButton
+ * NOTE: Styles can be overridden with "--TextButton-*" variables
+*/
+:root {
+  --TextButton-tapHighlightColor: var(--white-60-alpha);
+  --TextButton-onFocus-outlineColor: var(--color-focus-clarity);
+  --TextButton-color: var(--color-text-accent-primary);
+  --TextButton-icon-color: var(--color-object-accent-primary);
+  --TextButton-fontWeight: bold;
+
+  --TextButton--subtle-color: var(--color-text-low-emphasis);
+  --TextButton--subtle-icon-color: var(--color-object-low-emphasis);
+}
+
+.spui-TextButton {
+  background: none;
+  border: none;
+  border-radius: 4px;
+  color: var(--TextButton-color);
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: var(--TextButton-fontWeight);
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: var(--TextButton-tapHighlightColor);
+}
+
+.spui-TextButton:focus {
+  outline: 2px solid var(--TextButton-onFocus-outlineColor);
+  outline-offset: 1px;
+}
+
+.spui-TextButton:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/*
+ * Variant
+*/
+.spui-TextButton--subtle {
+  color: var(--TextButton--subtle-color);
+}
+
+/*
+ * Icon
+*/
+.spui-TextButton--hasIcon {
+  align-items: center;
+  display: inline-flex;
+}
+
+.spui-TextButton-icon {
+  line-height: 0;
+}
+
+.spui-TextButton--iconstart .spui-TextButton-icon {
+  margin-right: 4px;
+}
+
+.spui-TextButton--iconend {
+  flex-direction: row-reverse;
+}
+
+.spui-TextButton--iconend .spui-TextButton-icon {
+  margin-left: 4px;
+}
+
+/*
+ * Underline management
+*/
+.spui-TextButton {
+  text-decoration: underline;
+}
+
+.spui-TextButton--hasIcon,
+.spui-TextButton--underlinehover {
+  text-decoration: none;
+}
+
+@media (hover: hover) {
+  .spui-TextButton:hover {
+    text-decoration: none;
+  }
+
+  :is(.spui-TextButton--hasIcon, .spui-TextButton--underlinehover):hover {
+    text-decoration: underline;
+  }
+}
