@@ -1,0 +1,285 @@
+/*
+ /*
+ * SemiModal
+ * NOTE: Styles can be overridden with "--SemiModal-*" variables
+*/
+
+.spui-SemiModal {
+  background: var(--color-surface-primary);
+  border: none;
+  border-radius: 20px;
+  /* TODO: replace color with color palette */
+  box-shadow: 0 11px 28px rgba(8, 18, 26, 0.12);
+  height: fit-content;
+  padding: 0;
+  position: fixed;
+  width: fit-content;
+}
+
+.spui-SemiModal[data-type='sheet'] {
+  border-radius: 20px 20px 0 0;
+  margin: auto auto 0;
+  transform: translateY(100%);
+  will-change: translate;
+}
+
+/* stylelint-disable plugin/selector-bem-pattern */
+/* NOTE: set no animations to the dialog-polyfill browsers for stability */
+.spui-SemiModal[data-type='popup'][open]:not(.spui-SemiModal--closing),
+.spui-SemiModal[data-type='popup'][open]:not(.spui-SemiModal--closing).spui-SemiModal::backdrop,
+.spui-SemiModal[data-type='sheet'][open]:not(.spui-SemiModal--closing).spui-SemiModal::backdrop {
+  animation: 0.5s cubic-bezier(0, 0, 0, 1) spui-SemiModal-fade-in;
+}
+
+.spui-SemiModal--closing.spui-SemiModal[data-type='popup'],
+.spui-SemiModal--closing[data-type='popup'].spui-SemiModal::backdrop,
+.spui-SemiModal--closing[data-type='sheet'].spui-SemiModal::backdrop {
+  animation: 0.3s cubic-bezier(0, 0, 0, 1) spui-SemiModal-fade-out;
+}
+
+.spui-SemiModal[data-type='sheet'][open]:not(.spui-SemiModal--closing, button) {
+  animation: both 0.5s cubic-bezier(0, 0, 0, 1) spui-SemiModal-slide-in;
+}
+
+.spui-SemiModal--closing.spui-SemiModal[data-type='sheet'] {
+  animation: both 0.3s cubic-bezier(0, 0, 0, 1) spui-SemiModal-slide-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spui-SemiModal[data-type='popup'][open]:not(.spui-SemiModal--closing),
+  .spui-SemiModal[data-type='popup'][open]:not(.spui-SemiModal--closing).spui-SemiModal::backdrop,
+  .spui-SemiModal[data-type='popup'].spui-SemiModal--closing,
+  .spui-SemiModal--closing.spui-SemiModal[data-type='popup']::backdrop,
+  .spui-SemiModal[data-type='sheet'][open]:not(.spui-SemiModal--closing),
+  .spui-SemiModal[data-type='sheet'][open]:not(.spui-SemiModal--closing).spui-SemiModal::backdrop,
+  .spui-SemiModal[data-type='sheet'].spui-SemiModal--closing,
+  .spui-SemiModal--closing.spui-SemiModal[data-type='sheet']::backdrop {
+    /* Do not remove this animation to detect animationend in JavaScript */
+    animation-duration: 0.01s;
+  }
+}
+
+html:has(.spui-SemiModal[open]) {
+  overflow: hidden;
+}
+
+/* Fallback for :has() */
+html.spui-SemiModal--open {
+  overflow: hidden;
+}
+/* stylelint-enable plugin/selector-bem-pattern */
+
+/* The minimum margin for the small devices */
+/* 440px is calculated from dialog width (400px) + minimum margin (20px * 2) */
+/* width property is calculated from 100% - (minimum margin * 2) */
+@media screen and (max-width: 440px) {
+  .spui-SemiModal {
+    width: calc(100% - (20px * 2));
+  }
+}
+
+.spui-SemiModal::backdrop {
+  /* TODO: replace color with color palette, backdrop does not accept variable */
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Dialog polyfill adds ".backdrop" instead of "::backdrop" */
+/* stylelint-disable-next-line plugin/selector-bem-pattern */
+.spui-SemiModal + .backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/*
+ * Override focus styles in Dialog. This can be removed when Safari supports the following styles.
+ * - Safari displays focus ring even when :focus-visible
+ * - Safari does not support radius outline
+*/
+.spui-SemiModal
+  :is(.spui-Button, .spui-LinkButton, .spui-IconButton, .spui-SubtleButton):focus {
+  box-shadow: 0 0 0 1px var(--color-surface-secondary),
+    0 0 0 2px var(--color-focus-clarity);
+  outline: none;
+}
+
+.spui-SemiModal
+  :is(.spui-Button, .spui-LinkButton, .spui-IconButton, .spui-SubtleButton):focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.spui-SemiModal-frame {
+  box-sizing: border-box;
+  color: var(--color-text-medium-emphasis);
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px 36px 36px;
+}
+
+.spui-SemiModal-header {
+  align-items: center;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr auto;
+  justify-content: space-between;
+  overflow-wrap: break-word;
+  padding: 32px 8px 32px 0;
+}
+
+.spui-SemiModal-closeIconButton {
+  height: 48px;
+  width: 48px;
+  /* stylelint-disable plugin/selector-bem-pattern */
+  --IconButton--neutral-backgroundColor: none;
+  --IconButton--neutral-onHover-backgroundColor: var(--color-surface-tertiary);
+}
+
+.spui-SemiModal-headerTitle {
+  -webkit-box-orient: vertical;
+  color: var(--color-text-high-emphasis);
+  display: -webkit-box;
+  font-size: 1.25em;
+  font-weight: 600;
+  height: fit-content;
+  -webkit-line-clamp: 3;
+  line-height: 1.4;
+  margin: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.spui-SemiModal-contents {
+  overflow: hidden scroll;
+}
+
+.spui-SemiModal-contents::-webkit-scrollbar {
+  border-radius: 4px;
+  width: 8px;
+}
+
+.spui-SemiModal-contents::-webkit-scrollbar-thumb {
+  background: var(--color-object-low-emphasis);
+  border-radius: 4px;
+}
+
+.spui-SemiModal-contents::-webkit-scrollbar-track:enabled {
+  background-color: var(--color-surface-secondary);
+  border-radius: 4px;
+}
+
+.spui-SemiModal-footer {
+  background-color: var(--color-surface-primary);
+  bottom: 0;
+  padding: 24px 20px 0 0;
+}
+
+.spui-SemiModal-footer:empty {
+  padding: 0 0 36px;
+}
+
+@media screen and (min-width: 768px) {
+  .spui-SemiModal[data-type='popup'][data-size='small'] .spui-SemiModal-frame {
+    max-height: 400px;
+    max-width: 480px;
+  }
+
+  .spui-SemiModal[data-type='popup'][data-size='medium'] .spui-SemiModal-frame {
+    max-height: 700px;
+    max-width: 840px;
+  }
+
+  .spui-SemiModal[data-type='popup'][data-size='large'] .spui-SemiModal-frame {
+    max-height: 840px;
+    max-width: 1024px;
+  }
+
+  .spui-SemiModal[data-type='sheet'] .spui-SemiModal-frame {
+    max-height: calc(100vh - 200px);
+  }
+
+  .spui-SemiModal[data-type='sheet'][data-size='small'] .spui-SemiModal-frame {
+    max-width: 480px;
+  }
+
+  .spui-SemiModal[data-type='sheet'][data-size='medium'] .spui-SemiModal-frame {
+    max-width: 840px;
+  }
+
+  .spui-SemiModal[data-type='sheet'][data-size='large'] .spui-SemiModal-frame {
+    max-width: 1024px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .spui-SemiModal[data-type='sheet'] {
+    margin: auto 0 0;
+    /* useragent stylesheetによるmax-width指定の上書き */
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .spui-SemiModal[data-type='popup'] .spui-SemiModal-frame,
+  .spui-SemiModal[data-type='sheet'] .spui-SemiModal-frame {
+    max-height: calc(100vh - (20px * 2));
+  }
+
+  .spui-SemiModal[data-type='popup'] {
+    margin: auto 20px;
+  }
+
+  .spui-SemiModal-contents {
+    max-height: 100%;
+  }
+
+  .spui-SemiModal-header {
+    padding: 24px 0;
+  }
+
+  .spui-SemiModal-closeIconButton {
+    height: 24px;
+    width: 24px;
+    --IconButton--neutral-onHover-backgroundColor: none;
+  }
+
+  .spui-SemiModal-frame {
+    padding: 0 20px 24px;
+  }
+
+  .spui-SemiModal-footer {
+    padding: 16px 0 0;
+  }
+}
+
+@keyframes spui-SemiModal-slide-in {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes spui-SemiModal-slide-out {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes spui-SemiModal-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes spui-SemiModal-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
