@@ -1,0 +1,28 @@
+{
+  "name": "@openameba/spindle-theme-switch",
+  "version": "0.1.0",
+  "description": "Spindle theme switch",
+  "license": "MIT",
+  "main": "dist/spindle-theme-switch.js",
+  "types": "dist/spindle-theme-switch.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc",
+    "cp": "npx cpx dist/spindle-theme-switch.js public",
+    "preserve": "yarn cp",
+    "serve": "npx serve",
+    "predeploy": "yarn cp",
+    "deploy": "firebase deploy --only hosting"
+  },
+  "dependencies": {
+    "dark-mode-toggle": "^0.13.0"
+  },
+  "devDependencies": {
+    "firebase-tools": "^11.3.0"
+  }
+}

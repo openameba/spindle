@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "outDir": "dist",
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "paths": {
+      "https://unpkg.com/dark-mode-toggle": [
+        "../../node_modules/dark-mode-toggle/src/dark-mode-toggle.d.ts"
+      ],
+    }
+  },
+  "include": [
+    "src"
+  ]
+}
