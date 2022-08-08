@@ -17,7 +17,8 @@
     "preserve": "yarn cp",
     "serve": "npx serve",
     "predeploy": "yarn cp",
-    "deploy": "firebase deploy --only hosting"
+    "deploy": "firebase deploy --only hosting",
+    "prepublishOnly": "yarn build && yarn cp"
   },
   "dependencies": {
     "dark-mode-toggle": "^0.14.0"
