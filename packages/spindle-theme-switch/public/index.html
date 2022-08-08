@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <title>Spindle Theme Switch</title>
+  <meta name="viewport" content="width=device-width">
+  <meta charset="utf-8">
+  <meta name="description" content="Change themes with the Spindle theme switch.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <style>
+    /* When you want to minimize layout shifts */
+    spindle-theme-switch {
+      display: block;
+      height: 34px;
+      width: 84px;
+    }
+  </style>
+  <link rel="stylesheet" href="./light.css" media="(prefers-color-scheme: light)">
+  <link rel="stylesheet" href="./dark.css" media="(prefers-color-scheme: dark)">
+  <script src="./spindle-theme-switch.js" type="module"></script>
+</head>
+<body>
+  <h1>Spindle Theme Switch</h1>
+  <spindle-theme-switch legend="テーマを切り替える" remember></spindle-theme-switch>
+</body>
+</html>
