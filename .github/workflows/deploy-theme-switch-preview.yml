@@ -1,0 +1,28 @@
+name: deploy theme switch preview
+
+on:
+  pull_request:
+    paths:
+      - 'packages/spindle-theme-switch/**'
+
+jobs:
+  build_and_preview:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./packages/spindle-theme-switch/
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: 14
+      - run: yarn install --frozen-lockfile
+      - run: yarn build
+      - run: yarn cp
+      - name: deploy to preview channel
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
+          expires: 30d
+          entryPoint: ./packages/spindle-theme-switch/
