@@ -41,7 +41,7 @@
 </head>
 
 <body>
-  <spindle-theme-switch legend="テーマを切り替える" remember></spindle-theme-switch>
+  <spindle-theme-switch legend="テーマを切り替える" permanent></spindle-theme-switch>
 </body>
 ```
 
@@ -50,9 +50,9 @@
 `<spindle-theme-switch>`利用時には主に以下の属性をしていします。
 
 - `legend`: ラジオボタンで構成されているテーマスイッチにタイトルを指定します。
-- `remember`: テーマの変更をLocal Storageに保存し、再表示時に保存されたテーマを適用します。なお、`<spindle-theme-switch>`では`remember`にテキストが指定された場合、非表示になります。
+- `permanent`: テーマの変更をLocal Storageに保存し、再表示時に保存されたテーマを適用します。なお、`remember`にテキストが指定されても非表示になります。
 
-その他に指定できる指定できる属性は https://github.com/GoogleChromeLabs/dark-mode-toggle#properties を参照してください。
+指定できる指定できる属性は https://github.com/GoogleChromeLabs/dark-mode-toggle#properties を参照してください。
 
 ## License
 Spindle Theme Switch is licensed under MIT License. This software includes [GoogleChromeLabs/dark-mode-toggle](https://github.com/GoogleChromeLabs/dark-mode-toggle) that is distributed in the Apache License 2.0.
