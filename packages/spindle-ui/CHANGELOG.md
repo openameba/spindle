@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.44.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.43.1...@openameba/spindle-ui@0.44.0) (2022-08-08)
+
+
+### Bug Fixes
+
+* change import statement for react-merge-refs v2 ([2fac0f8](https://github.com/openameba/spindle/commit/2fac0f836f72dfdaf380867f877dcd37a360bbd2))
+* **deps:** update dependency react-merge-refs to v2 ([1992c17](https://github.com/openameba/spindle/commit/1992c172e51f61f25edf8a1a1fccae6236b1f5fa))
+
+
+### Features
+
+* **spindle-ui:** create TextButton ([adbc0fa](https://github.com/openameba/spindle/commit/adbc0faf59f0c9af9944b06a49cb0349ed8a15c6))
+* upgrade babel-loader ([892d026](https://github.com/openameba/spindle/commit/892d02652dfd6024ad52a70cc9a29681b6c32a86))
+
+
+
+
+
 ## [0.43.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.43.0...@openameba/spindle-ui@0.43.1) (2022-07-15)
 
 
