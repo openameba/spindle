@@ -1,0 +1,4 @@
+body {
+  background-color: var(--color-surface-primary, #fff);
+  color: var(--color-text-medium-emphasis, rgba(8, 18, 26, 0.74));
+}
