@@ -3,10 +3,12 @@
   "version": "0.1.1-alpha.1",
   "description": "Spindle theme switch",
   "license": "MIT",
+  "type": "module",
   "main": "dist/spindle-theme-switch.js",
-  "types": "dist/spindle-theme-switch.d.ts",
+  "types": "src/types/spindle-theme-switch.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "src/types"
   ],
   "publishConfig": {
     "access": "public"
