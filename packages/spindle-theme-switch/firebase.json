@@ -6,13 +6,6 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ],
-    "headers": [{
-      "source": "**/*.@(js|css)",
-      "headers": [ {
-        "key": "Access-Control-Allow-Origin",
-        "value": "*"
-      } ]
-    }]
+    ]
   }
 }
