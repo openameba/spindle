@@ -49,31 +49,18 @@ export class SpindleThemeSwitch extends DarkModeToggle {
     this.shadowRoot
     ?.querySelector('[part=darkRadio]')
     ?.setAttribute('aria-label', 'ダークテーマ');
+
+    // ameba-color-palette.css gets mode from this dataset (data-color-scheme)
+    const html = document.documentElement;
+    html.dataset.colorScheme = this.mode;
+    document.addEventListener('colorschemechange', () => {
+      html.dataset.colorScheme = this.mode;
+    });
 	}
 }
 
 const ELEMENT_NAME = 'spindle-theme-switch';
 customElements.define(ELEMENT_NAME, SpindleThemeSwitch);
-
-// 非同期に要素が追加されるライブラリ用に好きなタイミングでも実行できるようにします
-// 例) Reactでは<spindle-theme-switch>が追加されるコンポーネントのuseEffect内で実行します
-export function setup() {
-  const toggle = document.querySelector<SpindleThemeSwitch>(ELEMENT_NAME);
-
-  // spindle-theme-switch is always switch
-  toggle?.setAttribute('appearance', 'switch');
-
-  // ameba-color-palette.css gets mode from this dataset (data-color-scheme)
-  const html = document.documentElement;
-  if (toggle?.mode) {
-    html.dataset.colorScheme = toggle.mode;
-  }
-  toggle?.addEventListener('colorschemechange', () => {
-    html.dataset.colorScheme = toggle.mode;
-  });
-}
-
-setup();
 ```
 
 実際にはdark-mode-toggleを経由し以下のマークアップが挿入されます。
@@ -124,8 +111,40 @@ setup();
 </head>
 
 <body>
-  <spindle-theme-switch legend="テーマを切り替える" remember></spindle-theme-switch>
+  <spindle-theme-switch appearance="switch" legend="テーマを切り替える" remember></spindle-theme-switch>
 </body>
+```
+
+### 型定義の配信
+
+基本的にはHTMLに要素とスクリプトの読み込みを挿入すれば動作しますが、拡張したい場合やJSXでの利用をふまえて型定義を配信したいと思います。
+
+設定内容は以下を想定しています。
+
+```typescript
+import { DarkModeToggle } from 'dark-mode-toggle';
+
+export declare class SpindleThemeSwitch extends DarkModeToggle {
+  constructor();
+}
+
+export type SpindleThemeToggleAttribute = {
+  appearance: 'switch';
+  legend?: string;
+  permanent?: boolean;
+};
+
+declare namespace JSX {
+  interface IntrinsicElements {
+    'spindle-theme-switch': SpindleThemeToggleAttribute;
+  }
+}
+```
+
+JSXでの利用時は以下のコメントを冒頭に挿入します。
+
+```typescript
+/// <reference types="@openameba/spindle-theme-switch" />
 ```
 
 ## 他の手段

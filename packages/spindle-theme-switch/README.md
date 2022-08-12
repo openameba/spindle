@@ -41,18 +41,41 @@
 </head>
 
 <body>
-  <spindle-theme-switch legend="テーマを切り替える" permanent></spindle-theme-switch>
+  <spindle-theme-switch appearance="switch" legend="テーマを切り替える" permanent></spindle-theme-switch>
 </body>
 ```
 
 ## 属性
 
-`<spindle-theme-switch>`利用時には主に以下の属性をしていします。
+`<spindle-theme-switch>`利用時には以下の属性を指定できます。
 
-- `legend`: ラジオボタンで構成されているテーマスイッチにタイトルを指定します。
-- `permanent`: テーマの変更をLocal Storageに保存し、再表示時に保存されたテーマを適用します。なお、`remember`にテキストが指定されても非表示になります。
+- `appearance` (Required): `switch`を指定します。
+- `legend` (Optional): ラジオボタンで構成されているテーマスイッチにタイトルを設定します。
+- `permanent` (Optional): テーマの変更をLocal Storageに保存し、再表示時に保存されたテーマを適用します。
 
-指定できる指定できる属性は https://github.com/GoogleChromeLabs/dark-mode-toggle#properties を参照してください。
+NOTE: 「スイッチなのになぜ`appearance=switch`を指定するの？」いい質問ですね。Custom Elements内で固定したいのですが、適切に指定できる場所がなく(constructorで属性を設定するとエラーになります)、Custom Elementsのデータフローに則って属性値として指定するのがよさそうなんです。
+
+## 型定義の利用
+`<spindle-theme-switch>`を拡張する場合には以下のようにして、定義された型を利用できます。
+
+```typescript
+import { SpindleThemeSwitch } from '@openameba/spindle-theme-switch';
+
+class CustomizedSwitch extends SpindleThemeSwitch {
+  constructor() {
+    super();
+  }
+}
+
+const switchEl = document.querySelector<SpindleThemeSwitch>('spindle-theme-switch');
+```
+
+また、ReactをTypeScriptで記述する場合には以下のようにファイルの冒頭で参照を指定すると、JSXで利用できます。
+
+```typescript
+/// <reference types="@openameba/spindle-theme-switch" />
+```
 
 ## License
+
 Spindle Theme Switch is licensed under MIT License. This software includes [GoogleChromeLabs/dark-mode-toggle](https://github.com/GoogleChromeLabs/dark-mode-toggle) that is distributed in the Apache License 2.0.
