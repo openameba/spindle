@@ -1,7 +1,7 @@
 type SpindleThemeToggleAttribute = {
+  appearance: 'switch';
   legend?: string;
   permanent?: boolean;
-  appearance?: 'switch' | 'toggle';
 };
 
 declare namespace JSX {
