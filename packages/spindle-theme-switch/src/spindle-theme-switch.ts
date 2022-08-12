@@ -152,28 +152,15 @@ export class SpindleThemeSwitch extends DarkModeToggle {
     this.shadowRoot
       ?.querySelector('[part=darkRadio]')
       ?.setAttribute('aria-label', 'ダークテーマ');
+
+    // ameba-color-palette.css gets mode from this dataset
+    const html = document.documentElement;
+    html.dataset.colorScheme = this.mode;
+    document.addEventListener('colorschemechange', () => {
+      html.dataset.colorScheme = this.mode;
+    });
   }
 }
 
 const ELEMENT_NAME = 'spindle-theme-switch';
 customElements.define(ELEMENT_NAME, SpindleThemeSwitch);
-
-// Export for libraries adding elements asynchronously
-// e.g this can be called in React useEffect
-export function setup() {
-  const toggle = document.querySelector<SpindleThemeSwitch>(ELEMENT_NAME);
-
-  // spindle-theme-switch is always switch
-  toggle?.setAttribute('appearance', 'switch');
-
-  // ameba-color-palette.css gets mode from this dataset (data-theme)
-  const html = document.documentElement;
-  if (toggle?.mode) {
-    html.dataset.colorScheme = toggle.mode;
-  }
-  toggle?.addEventListener('colorschemechange', () => {
-    html.dataset.colorScheme = toggle.mode;
-  });
-}
-
-setup();

@@ -6,4 +6,3 @@ import './jsx';
 export declare class SpindleThemeSwitch extends DarkModeToggle {
   constructor();
 }
-export declare function setup(): void;
