@@ -90,7 +90,7 @@
     "stylelint-order": "^4.1.0",
     "stylelint-prettier": "^1.1.2",
     "stylelint-selector-bem-pattern": "^2.1.0",
-    "ts-jest": "28.0.7",
+    "ts-jest": "28.0.8",
     "webpack": "^5.73.0"
   }
 }
