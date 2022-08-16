@@ -31,13 +31,13 @@ Amebaでダークテーマを提供していくにあたり、テーマを切り
 import { DarkModeToggle } from 'https://unpkg.com/dark-mode-toggle';
 
 export class SpindleThemeSwitch extends DarkModeToggle {
-	constructor() {
+  constructor() {
     super();
-		
-		// Spindle用のスタイルを設定します
+
+    // Spindle用のスタイルを設定します
     const styleEl = document.createElement('style');
     styleEl.textContent = ``;
-		this.shadowRoot?.appendChild(styleEl);
+    this.shadowRoot?.appendChild(styleEl);
 
     // 各テーマにラベルテキストを付与します
     // 本来は<label>内にテキストを追加したいですが、::beforeで表示されているアイコンを消すことなく
@@ -56,7 +56,7 @@ export class SpindleThemeSwitch extends DarkModeToggle {
     document.addEventListener('colorschemechange', () => {
       html.dataset.colorScheme = this.mode;
     });
-	}
+  }
 }
 
 const ELEMENT_NAME = 'spindle-theme-switch';
