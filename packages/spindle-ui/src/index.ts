@@ -9,6 +9,7 @@ import { IconButton } from './IconButton';
 import { LinkButton } from './LinkButton';
 import { TextButton } from './TextButton';
 import { Toast } from './Toast';
+import { SnackBar } from './SnackBar';
 
 // Components are currently exported after "import" for projects using TS lower v3.8 that does not support "export * as".
 export {
@@ -24,4 +25,5 @@ export {
   LinkButton,
   TextButton,
   Toast,
+  SnackBar,
 };
