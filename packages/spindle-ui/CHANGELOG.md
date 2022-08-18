@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.45.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.44.0...@openameba/spindle-ui@0.45.0) (2022-08-18)
+
+
+### Features
+
+* **spindle-ui:** add SnackBar ([1082a38](https://github.com/openameba/spindle/commit/1082a382dd1b75a7c795fbc085fd983cca8a4445))
+* **spindle-ui:** update Toast ([45727db](https://github.com/openameba/spindle/commit/45727dbc204ed3d2f583a6cece39e29d8b4c7b83))
+* add testing library react hooks ([6f844a7](https://github.com/openameba/spindle/commit/6f844a788c7311cb1210931a82576da01c94c721))
+
+
+### BREAKING CHANGES
+
+* **spindle-ui:** it changes some behaivior and adds new props
+
+
+
+
+
 # [0.44.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.43.1...@openameba/spindle-ui@0.44.0) (2022-08-08)
 
 
