@@ -9,11 +9,23 @@
       "maxSize": "1.1 kB"
     },
     {
-      "path": "./dist/!(Icon|Modal)/*.mjs",
+      "path": "./dist/!(Icon|Toast|Modal)/*.mjs",
       "maxSize": "1.1 kB"
     },
     {
       "path": "./dist/Modal/*.mjs",
+      "maxSize": "1.5 kB"
+    },
+    {
+      "path": "./dist/!(Modal)/!(index).css",
+      "maxSize": "1.5 kB"
+    },
+    {
+      "path": "./dist/Modal/!(index).css",
+      "maxSize": "2.0 kB"
+    },
+    {
+      "path": "./dist/Toast/*.mjs",
       "maxSize": "1.5 kB"
     },
     {

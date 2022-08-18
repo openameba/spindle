@@ -3,6 +3,7 @@ import { Description, Meta, Story, Source } from '@storybook/addon-docs/blocks';
 import { actions } from '@storybook/addon-actions';
 import { Toast } from './Toast';
 import { Button } from '../Button';
+import { Information, CheckCircleFill, ExclamationmarkCircleFill } from '../Icon';
 
 export const usePoliteAnnouncer = (message) => {
   const announcer = useRef(null);
@@ -18,31 +19,84 @@ export const usePoliteAnnouncer = (message) => {
       announcerContent.textContent = message;
     }
     return () => {
-      if(message) {
+      if (message) {
         announcerContent.textContent = '';
       }
     };
   }, [message]);
 };
 
-export const ActivateButton = ({ hasError }) => {
+export const ActivateButton = ({
+  message: _message,
+  variant,
+  hideInfoIcon,
+  order,
+  icon,
+  position,
+}) => {
   const [message, setMessage] = useState('');
   usePoliteAnnouncer(message);
   return (
     <div>
       <Button
         size="medium"
-        variant={hasError ? 'danger' : 'outlined'}
-        onClick={() => setMessage('Toast Content')}
+        variant={variant === "error" ? 'danger' : 'outlined'}
+        onClick={() => setMessage(_message || 'メッセージが届きました')}
+      >
+        Activate
+      </Button>
+      <div style={{ ["--Toast-z-index"]: 2 }}>
+        <Toast
+          active={!!message}
+          variant={variant}
+          hideInfoIcon={hideInfoIcon}
+          order={order}
+          icon={icon}
+          position={position}
+          onHide={() => setMessage('')}
+        >
+          {message}
+        </Toast>
+      </div>
+    </div>
+  );
+};
+
+export const MultiActivateButton = ({ offset, icon, position }) => {
+  const [message1, setMessage1] = useState('');
+  const [message2, setMessage2] = useState('');
+  usePoliteAnnouncer(message1);
+  return (
+    <div>
+      <Button
+        size="medium"
+        variant={'outlined'}
+        onClick={() => {
+          setMessage1('メッセージが届きました1');
+          setMessage2('メッセージが届きました2');
+        }}
       >
         Activate
       </Button>
       <Toast
-        active={!!message}
-        hasError={hasError}
-        onHide={() => setMessage('')}
+        active={!!message1}
+        offset={offset}
+        order={0}
+        icon={icon}
+        position={position}
+        onHide={() => setMessage1('')}
       >
-        {message}
+        {message1}
+      </Toast>
+      <Toast
+        active={!!message2}
+        offset={offset}
+        order={message1 ? 1 : 0}
+        icon={icon}
+        position={position}
+        onHide={() => setMessage2('')}
+      >
+        {message2}
       </Toast>
     </div>
   );
@@ -55,7 +109,7 @@ export const ActivateButton = ({ hasError }) => {
 ![stability-experiment](https://img.shields.io/badge/stability-experiment-red.svg)
 
 <Description>
-  Toastコンポーネントは、利用者に一時的なお知らせをする際に利用します。画面上には常に一つしか表示できません。Toastは自動で消えてしまうため、見落とされても影響のない「重要ではないお知らせ」に用います。利用する際には、その他により適切な手段がないか必ず確認してください。
+  Toastコンポーネントは、利用者に一時的なお知らせをする際に利用します。画面上に複数表示することができます。Toastは自動で消えてしまうため、見落とされても影響のない「重要ではないお知らせ」に用います。利用する際には、その他により適切な手段がないか必ず確認してください。
 </Description>
 <Description>
   「重要なお知らせ」とは何か、他のnotification系のコンポーネントとの違いは別途まとめる予定です。
@@ -76,17 +130,45 @@ export const ActivateButton = ({ hasError }) => {
   code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Toast/Toast.css">`}
 />
 
-## Normal
+## Information
 
 <Preview withSource="open">
-  <Story name="Normal">
-    <ActivateButton />
+  <Story name="Information">
+    <ActivateButton variant="information" icon={<Information />} />
   </Story>
 </Preview>
 
 <Source
   code={`
-<Toast active={true}>Success Content</Toast>
+<Toast active={true} variant="information" icon={<Information />}>メッセージが届きました</Toast>
+  `}
+/>
+
+## Information without info icon
+
+<Preview withSource="open">
+  <Story name="Information without info icon">
+    <ActivateButton variant="information" />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<Toast active={true} variant="information" hideInfoIcon>メッセージが届きました</Toast>
+  `}
+/>
+
+## Confirmation
+
+<Preview withSource="open">
+  <Story name="Confirmation">
+    <ActivateButton variant="confirmation" icon={<CheckCircleFill />} />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<Toast active={true} variant="confirmation" icon={<CheckCircleFill />}>メッセージが届きました</Toast>
   `}
 />
 
@@ -94,13 +176,74 @@ export const ActivateButton = ({ hasError }) => {
 
 <Preview withSource="open">
   <Story name="Error">
-    <ActivateButton hasError />
+    <ActivateButton variant="error" icon={<ExclamationmarkCircleFill />} />
   </Story>
 </Preview>
 
 <Source
   code={`
-<Toast active={true} hasError>Error Content</Toast>
+<Toast active={true} variant="error" icon={<ExclamationmarkCircleFill />}>メッセージが届きました</Toast>
+  `}
+/>
+
+## Position Bottom
+
+<Preview withSource="open">
+  <Story name="Position Bottom">
+    <ActivateButton icon={<Information />} position="bottom" />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<Toast active={true} position="bottom" icon={<Information />}>メッセージが届きました</Toast>
+  `}
+/>
+
+## Long Content
+
+<Preview withSource="open">
+  <Story name="Long Content">
+    <ActivateButton
+      message="長いコンテンツは1行で切られるので注意が必要です。"
+      icon={<Information />}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<Toast active={true} icon={<Information />}>長いコンテンツは1行で切られるので注意が必要です。</Toast>
+  `}
+/>
+
+## Multiple
+
+<Preview withSource="open">
+  <Story name="Multiple">
+    <MultiActivateButton offset={{ top: 30 }} icon={<Information />} />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<Toast active={true} order={0} offset={{ top: 30 }}>メッセージが届きました1</Toast>
+<Toast active={true} order={1} offset={{ top: 30 }}>メッセージが届きました2</Toast>
+  `}
+/>
+
+## Multiple bottom
+
+<Preview withSource="open">
+  <Story name="Multiple bottom">
+    <MultiActivateButton offset={{ bottom: 30 }} position="bottom" icon={<Information />} />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<Toast active={true} order={0} offset={{ bottom: 30 }} position="bottom">メッセージが届きました1</Toast>
+<Toast active={true} order={1} offset={{ bottom: 30 }} position="bottom">メッセージが届きました2</Toast>
   `}
 />
 
@@ -125,8 +268,10 @@ export const ActivateButton = ({ hasError }) => {
   Toastは自動で消えてしまうため、見落とされても影響のない、「重要ではないお知らせ」に用います
 </Description>
 <Description>
-  -
-  もし「重要なお知らせ」に用いる場合、時間制限を外し、閉じるボタンを設置します（**※未実装**）
+  - アイコンの設定は利用者に委ねられていますが、基本的には設定します。**`information`のみアイコンを外すことができます。**
+</Description>
+<Description>
+  - `z-index`はdefaultでは`1`になっていますが、必要に応じて`--Toast-z-index`を設定してください
 </Description>
 <Description>
   -

@@ -4,6 +4,8 @@ import { jest } from '@jest/globals';
 
 import { Toast, BLOCK_NAME, ANIMATION_DURATION } from './Toast';
 
+const DURATION = 4000;
+
 describe('<Toast />', () => {
   beforeEach(() => {
     jest.useFakeTimers();
@@ -18,20 +20,21 @@ describe('<Toast />', () => {
     const testAnimation = () => {
       onHide.mockReset();
 
-      expect(screen.getByText(/content/).parentElement).toHaveClass(
-        `${BLOCK_NAME}-slide--in`,
-      );
+      expect(
+        screen.getByText(/content/).parentElement?.parentElement,
+      ).toHaveClass(`${BLOCK_NAME}-slide--in`);
 
       act(() => {
-        jest.advanceTimersByTime(duration - ANIMATION_DURATION);
+        jest.advanceTimersByTime(DURATION - ANIMATION_DURATION);
       });
 
-      expect(screen.getByText(/content/).parentElement).not.toHaveClass(
-        `${BLOCK_NAME}-slide--in`,
-      );
+      expect(
+        screen.getByText(/content/).parentElement?.parentElement,
+      ).not.toHaveClass(`${BLOCK_NAME}-slide--in`);
 
       act(() => {
-        const parentElement = screen.getByText(/content/).parentElement;
+        const parentElement =
+          screen.getByText(/content/).parentElement?.parentElement;
         expect(parentElement).not.toBeNull();
         if (parentElement) {
           fireEvent.transitionEnd(parentElement);
@@ -42,9 +45,8 @@ describe('<Toast />', () => {
     };
 
     const onHide = jest.fn();
-    const duration = 5000;
     const { rerender } = render(
-      <Toast active onHide={onHide} duration={duration}>
+      <Toast active onHide={onHide}>
         content
       </Toast>,
     );
@@ -54,18 +56,18 @@ describe('<Toast />', () => {
     /* === The following code check if timeoutID is null === */
 
     rerender(
-      <Toast active={false} onHide={onHide} duration={duration}>
+      <Toast active={false} onHide={onHide}>
         content
       </Toast>,
     );
 
-    expect(screen.getByText(/content/).parentElement).not.toHaveClass(
-      `${BLOCK_NAME}-slide--in`,
-    );
+    expect(
+      screen.getByText(/content/).parentElement?.parentElement,
+    ).not.toHaveClass(`${BLOCK_NAME}-slide--in`);
 
     // If timeoutID is not null, Toast animation is not invoked again.
     rerender(
-      <Toast active onHide={onHide} duration={duration}>
+      <Toast active onHide={onHide}>
         content
       </Toast>,
     );
@@ -75,9 +77,8 @@ describe('<Toast />', () => {
 
   test('When it is hovered, duration should be reset', () => {
     const onHide = jest.fn();
-    const duration = 4000;
     render(
-      <Toast active onHide={onHide} duration={duration}>
+      <Toast active onHide={onHide}>
         content
       </Toast>,
     );
@@ -85,25 +86,26 @@ describe('<Toast />', () => {
     fireEvent.mouseOver(screen.getByText(/content/));
 
     act(() => {
-      jest.advanceTimersByTime(duration - ANIMATION_DURATION);
+      jest.advanceTimersByTime(DURATION - ANIMATION_DURATION);
     });
 
-    expect(screen.getByText(/content/).parentElement).toHaveClass(
-      `${BLOCK_NAME}-slide--in`,
-    );
+    expect(
+      screen.getByText(/content/).parentElement?.parentElement,
+    ).toHaveClass(`${BLOCK_NAME}-slide--in`);
 
     fireEvent.mouseOut(screen.getByText(/content/));
 
     act(() => {
-      jest.advanceTimersByTime(duration - ANIMATION_DURATION);
+      jest.advanceTimersByTime(DURATION - ANIMATION_DURATION);
     });
 
-    expect(screen.getByText(/content/).parentElement).not.toHaveClass(
-      `${BLOCK_NAME}-slide--in`,
-    );
+    expect(
+      screen.getByText(/content/).parentElement?.parentElement,
+    ).not.toHaveClass(`${BLOCK_NAME}-slide--in`);
 
     act(() => {
-      const parentElement = screen.getByText(/content/).parentElement;
+      const parentElement =
+        screen.getByText(/content/).parentElement?.parentElement;
       expect(parentElement).not.toBeNull();
       if (parentElement) {
         fireEvent.transitionEnd(parentElement);
@@ -114,36 +116,75 @@ describe('<Toast />', () => {
   });
 
   test('When it is focused, duration should be reset', () => {
+    const handleCloseButtonEvent = (evtName: 'focus' | 'blur') => {
+      const parentElement = screen.getByLabelText(/閉じる/).parentElement;
+      if (parentElement) {
+        fireEvent[evtName](parentElement);
+      }
+    };
     const onHide = jest.fn();
-    const duration = 4000;
     render(
-      <Toast active onHide={onHide} duration={duration}>
+      <Toast active onHide={onHide}>
         content
       </Toast>,
     );
 
-    fireEvent.focus(screen.getByText(/content/));
+    handleCloseButtonEvent('focus');
 
     act(() => {
-      jest.advanceTimersByTime(duration - ANIMATION_DURATION);
+      jest.advanceTimersByTime(DURATION - ANIMATION_DURATION);
     });
 
-    expect(screen.getByText(/content/).parentElement).toHaveClass(
-      `${BLOCK_NAME}-slide--in`,
-    );
+    expect(
+      screen.getByText(/content/).parentElement?.parentElement,
+    ).toHaveClass(`${BLOCK_NAME}-slide--in`);
 
-    fireEvent.blur(screen.getByText(/content/));
+    handleCloseButtonEvent('blur');
 
     act(() => {
-      jest.advanceTimersByTime(duration - ANIMATION_DURATION);
+      jest.advanceTimersByTime(DURATION - ANIMATION_DURATION);
     });
 
-    expect(screen.getByText(/content/).parentElement).not.toHaveClass(
-      `${BLOCK_NAME}-slide--in`,
+    expect(
+      screen.getByText(/content/).parentElement?.parentElement,
+    ).not.toHaveClass(`${BLOCK_NAME}-slide--in`);
+
+    act(() => {
+      const parentElement =
+        screen.getByText(/content/).parentElement?.parentElement;
+      expect(parentElement).not.toBeNull();
+      if (parentElement) {
+        fireEvent.transitionEnd(parentElement);
+      }
+    });
+
+    expect(onHide).toBeCalledTimes(1);
+  });
+
+  test('it should close when close button is clicked', () => {
+    const onHide = jest.fn();
+    render(
+      <Toast active onHide={onHide}>
+        content
+      </Toast>,
     );
 
     act(() => {
-      const parentElement = screen.getByText(/content/).parentElement;
+      // Get button element outer of 閉じる icon.
+      const parentElement = screen.getByLabelText(/閉じる/).parentElement;
+      expect(parentElement).not.toBeNull();
+      if (parentElement) {
+        fireEvent.click(parentElement);
+      }
+    });
+
+    expect(
+      screen.getByText(/content/).parentElement?.parentElement,
+    ).not.toHaveClass(`${BLOCK_NAME}-slide--in`);
+
+    act(() => {
+      const parentElement =
+        screen.getByText(/content/).parentElement?.parentElement;
       expect(parentElement).not.toBeNull();
       if (parentElement) {
         fireEvent.transitionEnd(parentElement);
