@@ -1,0 +1,534 @@
+import { useState, useEffect, useRef, forwardRef } from 'react';
+import { Description, Meta, Story, Source } from '@storybook/addon-docs/blocks';
+import { actions } from '@storybook/addon-actions';
+import { SnackBar } from './SnackBar';
+import { Button } from '../Button';
+import { Information, CheckCircleFill, Openblank, ExclamationmarkCircleFill } from '../Icon';
+
+export const usePoliteAnnouncer = (message) => {
+  const announcer = useRef(null);
+  useEffect(() => {
+    announcer.current = document.getElementById('polite-announcer');
+    return () => {
+      announcer.current = null;
+    };
+  }, []);
+  useEffect(() => {
+    const announcerContent = announcer.current;
+    if (announcerContent && message) {
+      announcerContent.textContent = message;
+    }
+    return () => {
+      if (message) {
+        announcerContent.textContent = '';
+      }
+    };
+  }, [message]);
+};
+
+export const ActivateButton = ({
+  message: _message,
+  label,
+  isLink,
+  variant,
+  hideInfoIcon,
+  order,
+  icon,
+  position,
+  buttonIcon,
+}) => {
+  const [message, setMessage] = useState('');
+  usePoliteAnnouncer(message);
+  return (
+    <div>
+      <Button
+        size="medium"
+        variant={variant === 'error' ? 'danger' : 'outlined'}
+        onClick={() => setMessage(_message || 'メッセージが届きました')}
+      >
+        Activate
+      </Button>
+      <SnackBar.Frame
+        active={!!message}
+        variant={variant}
+        hideInfoIcon={hideInfoIcon}
+        order={order}
+        position={position}
+        onHide={() => setMessage('')}
+      >
+        {icon && <SnackBar.Icon>{icon}</SnackBar.Icon>}
+        <SnackBar.Text>{message}</SnackBar.Text>
+        {label &&
+          (!isLink ? (
+            <SnackBar.TextButton icon={buttonIcon} {...actions("onClick")}>{label}</SnackBar.TextButton>
+          ) : (
+            <SnackBar.TextLink icon={buttonIcon} href="https://example.com/" {...actions("onClick")}>{label}</SnackBar.TextLink>
+          ))}
+      </SnackBar.Frame>
+    </div>
+  );
+};
+
+export const MultiActivateButton = ({ offset, icon, position }) => {
+  const [message1, setMessage1] = useState('');
+  const [message2, setMessage2] = useState('');
+  usePoliteAnnouncer(message1);
+  return (
+    <div>
+      <Button
+        size="medium"
+        variant={'outlined'}
+        onClick={() => {
+          setMessage1('メッセージが届きました1');
+          setMessage2('メッセージが届きました2');
+        }}
+      >
+        Activate
+      </Button>
+      <SnackBar.Frame
+        active={!!message1}
+        offset={offset}
+        order={0}
+        position={position}
+        onHide={() => setMessage1('')}
+      >
+        {icon && <SnackBar.Icon>{icon}</SnackBar.Icon>}
+        <SnackBar.Text>{message1}</SnackBar.Text>
+      </SnackBar.Frame>
+      <SnackBar.Frame
+        active={!!message2}
+        offset={offset}
+        order={message1 ? 1 : 0}
+        position={position}
+        onHide={() => setMessage2('')}
+      >
+        {icon && <SnackBar.Icon>{icon}</SnackBar.Icon>}
+        <SnackBar.Text>{message2}</SnackBar.Text>
+      </SnackBar.Frame>
+    </div>
+  );
+};
+
+# SnackBar
+
+<Meta title="SnackBar" component={SnackBar} />
+
+![stability-experiment](https://img.shields.io/badge/stability-experiment-red.svg)
+
+SnackBarコンポーネントは、利用者に一時的なお知らせをする際に利用します。画面上に複数表示できます。SnackBarは自動で消えてしまうため、見落とされても影響のない「重要ではないお知らせ」に用います。利用する際には、その他により適切な手段がないか必ず確認してください。
+
+「重要なお知らせ」とは何か、他のnotification系のコンポーネントとの違いは別途まとめる予定です。
+
+<Source
+  language="javascript"
+  code={`import { SnackBar } from '@openameba/spindle-ui'`}
+/>
+
+<Source
+  language="css"
+  code={`@import './node_modules/@openameba/spindle-ui/SnackBar/SnackBar.css'`}
+/>
+
+<Source
+  language="html"
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/SnackBar/SnackBar.css">`}
+/>
+
+## Information
+
+<Preview withSource="open">
+  <Story name="Information">
+    <ActivateButton variant="information" icon={<Information />} label="取り消し" />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<SnackBar.Frame active={true}>
+  <SnackBar.Icon><Information /></SnackBar.Icon>
+  <SnackBar.Text>メッセージが届きました</SnackBar.Text>
+  <SnackBar.TextButton>取り消し</SnackBar.TextButton>
+</SnackBar.Frame>
+  `}
+/>
+
+## Information without info icon
+
+<Preview withSource="open">
+  <Story name="Information without info icon">
+    <ActivateButton variant="information" />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<SnackBar.Frame active={true}>
+  <SnackBar.Text>メッセージが届きました</SnackBar.Text>
+</SnackBar.Frame>
+  `}
+/>
+
+## Confirmation
+
+<Preview withSource="open">
+  <Story name="Confirmation">
+    <ActivateButton variant="confirmation" icon={<CheckCircleFill />} label="取り消し" />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<SnackBar.Frame active={true} variant="confirmation">
+  <SnackBar.Icon><CheckCircleFill /></SnackBar.Icon>
+  <SnackBar.Text>メッセージが届きました</SnackBar.Text>
+  <SnackBar.TextButton>取り消し</SnackBar.TextButton>
+</SnackBar.Frame>
+  `}
+/>
+
+## Error
+
+<Preview withSource="open">
+  <Story name="Error">
+    <ActivateButton variant="error" icon={<ExclamationmarkCircleFill />} label="取り消し" />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<SnackBar.Frame active={true} variant="error">
+  <SnackBar.Icon><Information /></SnackBar.Icon>
+  <SnackBar.Text>メッセージが届きました</SnackBar.Text>
+  <SnackBar.TextButton>取り消し</SnackBar.TextButton>
+</SnackBar.Frame>
+  `}
+/>
+
+## Position Top Left
+
+<Preview withSource="open">
+  <Story name="Position Top Left">
+    <ActivateButton icon={<Information />} position="topLeft" />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<SnackBar.Frame active={true} position="topLeft">
+  <SnackBar.Icon><Information /></SnackBar.Icon>
+  <SnackBar.Text>メッセージが届きました</SnackBar.Text>
+</SnackBar.Frame>
+  `}
+/>
+
+## Position Top Right
+
+<Preview withSource="open">
+  <Story name="Position Top Right">
+    <ActivateButton icon={<Information />} position="topRight" />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<SnackBar.Frame active={true} position="topRight">
+  <SnackBar.Icon><Information /></SnackBar.Icon>
+  <SnackBar.Text>メッセージが届きました</SnackBar.Text>
+</SnackBar.Frame>
+  `}
+/>
+
+## Position Bottom Left
+
+<Preview withSource="open">
+  <Story name="Position Bottom Left">
+    <ActivateButton icon={<Information />} position="bottomLeft" />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<SnackBar.Frame active={true} position="bottomLeft">
+  <SnackBar.Icon><Information /></SnackBar.Icon>
+  <SnackBar.Text>メッセージが届きました</SnackBar.Text>
+</SnackBar.Frame>
+  `}
+/>
+
+## Position Bottom Right
+
+<Preview withSource="open">
+  <Story name="Position Bottom Right">
+    <ActivateButton icon={<Information />} position="bottomRight" />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<SnackBar.Frame active={true} position="bottomRight">
+  <SnackBar.Icon><Information /></SnackBar.Icon>
+  <SnackBar.Text>メッセージが届きました</SnackBar.Text>
+</SnackBar.Frame>
+  `}
+/>
+
+## Position Bottom Center
+
+<Preview withSource="open">
+  <Story name="Position Bottom Center">
+    <ActivateButton icon={<Information />} position="bottomCenter" />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<SnackBar.Frame active={true} position="bottomCenter">
+  <SnackBar.Icon><Information /></SnackBar.Icon>
+  <SnackBar.Text>メッセージが届きました</SnackBar.Text>
+</SnackBar.Frame>
+  `}
+/>
+
+## Long Content
+
+<Preview withSource="open">
+  <Story name="Long Content">
+    <ActivateButton
+      message="長いメッセージが入る長いメッセージが入る長いメッセージが入る長いメッセージが入る長いメッセージが入る長いメッセージが入る長いメッセージ"
+      icon={<Information />}
+      label="取り消し"
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<SnackBar.Frame active={true}>
+  <SnackBar.Icon><Information /></SnackBar.Icon>
+  <SnackBar.Text>長いメッセージが入る長いメッセージが入る長いメッセージが入る長いメッセージが入る長いメッセージが入る長いメッセージが入る長いメッセージ</SnackBar.Text>
+  <SnackBar.TextButton>取り消し</SnackBar.TextButton>
+</SnackBar.Frame>
+  `}
+/>
+
+## Multiple
+
+<Preview withSource="open">
+  <Story name="Multiple">
+    <MultiActivateButton offset={{ top: 30 }} icon={<Information />} />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<SnackBar.Frame active={true} order={0} offset={{ top: 30 }} position="bottomCenter">
+  <SnackBar.Icon><Information /></SnackBar.Icon>
+  <SnackBar.Text>メッセージが届きました1</SnackBar.Text>
+</SnackBar.Frame>
+<SnackBar.Frame active={true} order={1} offset={{ top: 30 }} position="bottomCenter">
+  <SnackBar.Icon><Information /></SnackBar.Icon>
+  <SnackBar.Text>メッセージが届きました2</SnackBar.Text>
+</SnackBar.Frame>
+  `}
+/>
+
+## Multiple bottom
+
+<Preview withSource="open">
+  <Story name="Multiple bottom">
+    <MultiActivateButton
+      offset={{ bottom: 30 }}
+      position="bottomCenter"
+      icon={<Information />}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<SnackBar.Frame active={true} order={0} offset={{ bottom: 30 }} position="bottomCenter">
+  <SnackBar.Icon><Information /></SnackBar.Icon>
+  <SnackBar.Text>メッセージが届きました1</SnackBar.Text>
+</SnackBar.Frame>
+<SnackBar.Frame active={true} order={1} offset={{ bottom: 30 }} position="bottomCenter">
+  <SnackBar.Icon><Information /></SnackBar.Icon>
+  <SnackBar.Text>メッセージが届きました2</SnackBar.Text>
+</SnackBar.Frame>
+  `}
+/>
+
+## Custom button with icon
+
+<Preview withSource="open">
+  <Story name="Custom button with icon">
+    <ActivateButton
+      icon={<Information />}
+      buttonIcon={<Openblank />}
+      message="メッセージが届きました"
+      label="取り消し"
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<SnackBar.Frame active={true}>
+  <SnackBar.Icon><Information /></SnackBar.Icon>
+  <SnackBar.Text>メッセージが届きました</SnackBar.Text>
+  <SnackBar.TextLink icon={<Openblank />}>詳細</SnackBar.TextLink>
+</SnackBar.Frame>
+  `}
+/>
+
+## Custom link with information
+
+<Preview withSource="open">
+  <Story name="Custom link with information">
+    <ActivateButton
+      icon={<Information />}
+      message="メッセージが届きました"
+      label="取り消し"
+      isLink
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<SnackBar.Frame active={true}>
+  <SnackBar.Icon><Information /></SnackBar.Icon>
+  <SnackBar.Text>メッセージが届きました</SnackBar.Text>
+  <SnackBar.TextLink>取り消し</SnackBar.TextLink>
+</SnackBar.Frame>
+  `}
+/>
+
+## Custom link with confirmation
+
+<Preview withSource="open">
+  <Story name="Custom link with confirmation">
+    <ActivateButton
+      icon={<CheckCircleFill />}
+      message="メッセージが届きました"
+      label="取り消し"
+      variant="confirmation"
+      isLink
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<SnackBar.Frame active={true} variant="confirmation">
+  <SnackBar.Icon><Information /></SnackBar.Icon>
+  <SnackBar.Text>メッセージが届きました</SnackBar.Text>
+  <SnackBar.TextLink>取り消し</SnackBar.TextLink>
+</SnackBar.Frame>
+  `}
+/>
+
+## Custom link with error
+
+<Preview withSource="open">
+  <Story name="Custom link with error">
+    <ActivateButton
+      icon={<ExclamationmarkCircleFill />}
+      message="メッセージが届きました"
+      label="取り消し"
+      variant="error"
+      isLink
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<SnackBar.Frame active={true} variant="error">
+  <SnackBar.Icon><Information /></SnackBar.Icon>
+  <SnackBar.Text>メッセージが届きました</SnackBar.Text>
+  <SnackBar.TextLink>取り消し</SnackBar.TextLink>
+</SnackBar.Frame>
+  `}
+/>
+
+## このコンポーネントでやっていること
+
+- reduced motionが指定された時に、トランジッションを短くします
+- hover、focusされている時には、時間制限を停止します。フォーカスが離れたのち、再度0秒から計測します
+- モードを奪うことになるため、自動的にfocusはしません
+- デバイスのorientationに追従して表示位置・サイズを変更します
+
+## Toastとの違い
+
+- Toastは1行しかメッセージをいれられないのに対して、Snack Barは複数行入れることができます。
+- Toastは4秒で消えるのに対して、Snack Barは10秒で消えます。
+- Toastは画面上下の中央にしか配置できなかったのに対し、Snack Barは画面上下の左・右・中央に配置できます。
+  - NOTE: SPはcenter-bottom固定
+- Snack Barには1つだけ任意のボタンを置くことができます
+  - NOTE: 5文字以上のボタンは設置できません
+- Toastよりは消えるタイミングが遅いため、Toastと比べるとやや優先度が高いです。またボタンやテキスト量など表示できる情報も多いです。
+
+## 利用時に注意してほしいこと
+
+- SnackBarは自動で消えてしまうため、見落とされても影響のない、「重要ではないお知らせ」に用います
+- アイコンの設定は利用者に委ねられていますが、基本的には設定します。**`information`のみアイコンを外すことができます。**
+- 任意のボタンを設定できます。システム上では制御しませんが、5文字以上設定してはいけません。またボタンは1つ以上追加しないでください。
+- SnackBarでは最大3行まで表示されます。320px以下の画面では4行まで表示されます。超える部分は切られます。
+- モバイル表示ではbottom-center固定になるので注意してください。
+- このコンポーネントでは関与しませんが、ライブリージョンをアプリケーションで実装してください（参考：[実装方法 - 4.1.3 コンテンツの変更をユーザーに知らせる - Ameba Accessibility Guidelines](https://a11y-guidelines.ameba.design/4/1/3/#%E5%AE%9F%E8%A3%85%E6%96%B9%E6%B3%95)）
+- ライブリージョンは次のように実装します。 `html` 側に `aria-live="polite"` 及び `role="status"` を持つ要素を予め埋め込んでおき、この要素にコンテンツを動的に挿入することで、スクリーンリーダーが自動でコンテンツを読み上げてくれます。
+
+<Source
+  code={`
+<html>
+  <body>
+    ...
+    <div
+      aria-live="polite"
+      id="polite-announcer"
+      role="status"
+      class="visually-hidden"
+    ></div>
+    ...
+  </body>
+</html>
+  `}
+/>
+
+<Source
+  code={`
+const usePoliteAnnouncer = (message) => {
+  const announcer = useRef(null);
+  useEffect(() => {
+    announcer.current = document.getElementById('polite-announcer');
+    return () => {
+      announcer.current = null;
+    };
+  }, []);
+  useEffect(() => {
+    const announcerContent = announcer.current;
+    if (announcerContent && message) {
+      announcerContent.textContent = message;
+    }
+    return () => {
+      if(message) {
+        announcerContent.textContent = '';
+      }
+    };
+  }, [message]);
+};
+  `}
+/>
+
+<Source
+  code={`
+  .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  clip: rect(1px, 1px, 1px, 1px);
+}
+  `}
+/>
