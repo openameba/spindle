@@ -1,67 +1,161 @@
+@import '../IconButton/IconButton.css';
+
 :root {
   --Toast-z-index: 1;
 }
 
 .spui-Toast {
+  box-sizing: border-box;
   left: 0;
+  padding: 0 12px;
   position: fixed;
   right: 0;
   text-align: center;
   z-index: var(--Toast-z-index);
 }
 
-.spui-Toast--content {
-  background-color: var(--color-surface-accent-primary-light);
-  border-radius: 40px;
-  box-shadow: 0px 4.75px 14.25px rgba(8, 18, 26, 0.12);
+.spui-Toast-content {
+  align-items: center;
+  border-radius: 52px;
+  box-shadow: 0px 11px 28px rgba(8, 18, 26, 0.24);
   box-sizing: border-box;
-  color: var(--color-text-accent-primary);
-  cursor: default;
-  display: inline-block;
-  font-family: inherit;
-  font-size: 16px;
-  font-weight: bold;
+  display: inline-flex;
   margin: 0;
-  padding: 11px 16px;
+  max-width: 360px;
+  min-height: 48px;
+  padding: 0 16px 0 20px;
 }
 
-.spui-Toast-content--error {
-  background-color: var(--color-surface-caution-light);
-  color: var(--color-text-caution);
-  position: relative;
+.spui-Toast-contentInfo {
+  flex-shrink: 0;
+  font-size: 1.375rem;
+  line-height: 0;
+  margin-right: 8px;
 }
 
-.spui-Toast-content--error:before {
-  background-color: var(--color-surface-primary);
-  border-radius: 40px;
-  content: '';
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: -1;
+.spui-Toast-contentText {
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 1.6;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .spui-Toast--top {
-  top: 16px;
+  top: 0;
+  transform: translateY(
+    calc(var(--Toast--initial-height) - var(--Toast--offset-top))
+  );
 }
 
 .spui-Toast--bottom {
   bottom: 0;
+  transform: translateY(
+    calc((var(--Toast--initial-height) - var(--Toast--offset-bottom)) * -1)
+  );
 }
 
 .spui-Toast--slide {
-  transform: translateY(-100px);
-  transition: transform 0.5s ease;
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.spui-Toast--hidden {
+  visibility: hidden;
 }
 
 .spui-Toast-slide--in {
-  transform: translateY(0);
+  opacity: 1;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.spui-Toast-slide--in.spui-Toast--top {
+  transform: translateY(var(--Toast--order-offset-top));
+}
+
+.spui-Toast-slide--in.spui-Toast--bottom {
+  transform: translateY(var(--Toast--order-offset-bottom));
+}
+
+.spui-Toast-iconButton {
+  /* stylelint-disable-next-line plugin/selector-bem-pattern */
+  --IconButton--neutral-backgroundColor: transparent;
+  margin-left: 12px;
+}
+
+/* === Information === */
+
+.spui-Toast-contentInfo--information {
+  color: var(--color-object-high-emphasis-inverse);
+}
+
+.spui-Toast-content--information {
+  /* TODO: use --color-surface-accent-neutral-high-emphasis */
+  background-color: var(--gray-80);
+  color: var(--color-text-high-emphasis-inverse);
+}
+
+.spui-Toast-iconButton--information {
+  /* stylelint-disable plugin/selector-bem-pattern */
+  --IconButton--neutral-onActive-backgroundColor: var(--white-20-alpha);
+  --IconButton--neutral-onHover-backgroundColor: var(--white-20-alpha);
+  --IconButton--neutral-color: var(--color-object-high-emphasis-inverse);
+  /* stylelint-enable plugin/selector-bem-pattern */
+}
+
+/* === Confirmation === */
+
+.spui-Toast-contentInfo--confirmation {
+  color: var(--color-object-accent-primary);
+}
+
+.spui-Toast-content--confirmation {
+  background-color: var(--color-surface-primary);
+  border: 2px solid var(--color-border-low-emphasis);
+  color: var(--color-text-accent-primary);
+}
+
+.spui-Toast-iconButton--confirmation {
+  /* stylelint-disable plugin/selector-bem-pattern */
+  --IconButton--neutral-onActive-backgroundColor: var(--gray-20-alpha);
+  --IconButton--neutral-onHover-backgroundColor: var(--gray-20-alpha);
+  --IconButton--neutral-color: var(--color-object-low-emphasis);
+  /* stylelint-enable plugin/selector-bem-pattern */
+}
+
+/* === Error === */
+
+.spui-Toast-contentInfo--error {
+  color: var(--color-object-high-emphasis-inverse);
+}
+
+.spui-Toast-content--error {
+  background-color: var(--color-surface-caution);
+  color: var(--color-text-high-emphasis-inverse);
+}
+
+.spui-Toast-iconButton--error {
+  /* stylelint-disable plugin/selector-bem-pattern */
+  --IconButton--neutral-onActive-backgroundColor: var(--white-20-alpha);
+  --IconButton--neutral-onHover-backgroundColor: var(--white-20-alpha);
+  --IconButton--neutral-color: var(--color-object-high-emphasis-inverse);
+  /* stylelint-enable plugin/selector-bem-pattern */
 }
 
 @media (prefers-reduced-motion: reduce) {
   .spui-Toast--slide {
     transition-duration: 0.1ms;
+  }
+
+  .spui-Toast-slide--in {
+    transition-duration: 0.1ms;
+  }
+}
+
+/* max-width equals to the sum of the content's max-width and horizontal padding */
+@media (max-width: 384px) {
+  .spui-Toast-content {
+    max-width: 100%;
   }
 }
