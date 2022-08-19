@@ -17,10 +17,6 @@ const ITEM_LINK_CLASS_NAME = 'js-auto-play-carousel-item-link';
 export const HeroCarousel: FC<Props> = React.memo(function HeroCarousel({
   carouselList,
 }) {
-  if (carouselList.length === 0) {
-    return null;
-  }
-
   const {
     handleSlideToPrev,
     handleSlideToNext,
@@ -41,6 +37,10 @@ export const HeroCarousel: FC<Props> = React.memo(function HeroCarousel({
     items: carouselList,
     itemLinkClassName: ITEM_LINK_CLASS_NAME,
   });
+
+  if (carouselList.length === 0) {
+    return null;
+  }
 
   return (
     <div>
