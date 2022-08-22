@@ -183,9 +183,11 @@ const Frame = ({
 };
 
 const getInternalChildProps = (
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   props: Record<string, any>,
 ): InternalChildProps => {
   const hasInternalChildProps = (
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     props: Record<string, any>,
   ): props is InternalChildProps =>
     ({}.hasOwnProperty.call(props, 'setIsShow') ||
