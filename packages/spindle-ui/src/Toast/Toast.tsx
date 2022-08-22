@@ -70,7 +70,7 @@ export const Toast = ({
       onHide();
       timeoutID.current = null;
     }
-  }, [isShow, setIsShow, onHide]);
+  }, [isShow, onHide]);
 
   const handleOnClickCloseButton = useCallback(() => {
     setIsShow(false);

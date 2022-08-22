@@ -97,7 +97,7 @@ const Frame = ({
       onHide();
       timeoutID.current = null;
     }
-  }, [isShow, setIsShow, onHide]);
+  }, [isShow, onHide]);
 
   const handleOnClickCloseButton = useCallback(() => {
     setIsShow(false);
@@ -209,7 +209,7 @@ const Text: FC<{ children: ReactNode }> = ({ children }) => (
 const TextButton: FC<
   { icon?: ReactNode; children: ReactNode } & HTMLAttributes<HTMLButtonElement>
 > = ({ icon, children, onClick, ...rest }) => {
-  const internalProps = useMemo(() => getInternalChildProps(rest), []);
+  const internalProps = useMemo(() => getInternalChildProps(rest), [rest]);
   const variant = internalProps.variant || DEFAULT_VARIANT;
   const setIsShow = internalProps.setIsShow;
   const handleOnClick: MouseEventHandler<HTMLButtonElement> = (e) => {
@@ -227,7 +227,7 @@ const TextButton: FC<
 const TextLink: FC<
   { icon?: ReactNode; children: ReactNode } & HTMLAttributes<HTMLAnchorElement>
 > = ({ icon, children, onClick, ...rest }) => {
-  const internalProps = useMemo(() => getInternalChildProps(rest), []);
+  const internalProps = useMemo(() => getInternalChildProps(rest), [rest]);
   const variant = internalProps.variant || DEFAULT_VARIANT;
   const setIsShow = internalProps.setIsShow;
   const handleOnClick: MouseEventHandler<HTMLAnchorElement> = (e) => {
