@@ -33,7 +33,7 @@ export function useCarousel<Item>({
     (index: number) => {
       return index < displayCount || index >= itemCount + displayCount;
     },
-    [itemCount],
+    [displayCount, itemCount],
   );
   const {
     isAutoPlaying,
@@ -74,7 +74,7 @@ export function useCarousel<Item>({
       ...items,
       ...items.slice(0, displayCount),
     ],
-    [items],
+    [displayCount, items],
   );
 
   const slideToNext = (ignoreHover = false) => {
@@ -205,6 +205,8 @@ export function useCarousel<Item>({
       document.body.removeEventListener('mouseup', onMouseUp);
       document.body.removeEventListener('touchend', onTouchEnd);
     };
+    // this effect should be called only once
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return {
