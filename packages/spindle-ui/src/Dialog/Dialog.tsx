@@ -56,19 +56,12 @@ const Frame = forwardRef<DialogHTMLElement, DialogProps>(function Dialog(
   );
 
   useEffect(() => {
-    dialogEl.current?.addEventListener(
-      'animationend',
-      handleAnimationEnd,
-      false,
-    );
+    const dialog = dialogEl.current;
+    dialog?.addEventListener('animationend', handleAnimationEnd, false);
 
     return () =>
-      dialogEl.current?.removeEventListener(
-        'animationend',
-        handleAnimationEnd,
-        false,
-      );
-  }, [dialogEl]);
+      dialog?.removeEventListener('animationend', handleAnimationEnd, false);
+  }, [dialogEl, handleAnimationEnd]);
 
   useEffect(() => {
     if (!dialogEl.current) {
