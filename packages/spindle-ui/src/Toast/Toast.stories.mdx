@@ -30,7 +30,6 @@ export const ActivateButton = ({
   message: _message,
   variant,
   hideInfoIcon,
-  order,
   icon,
   position,
 }) => {
@@ -50,7 +49,6 @@ export const ActivateButton = ({
           active={!!message}
           variant={variant}
           hideInfoIcon={hideInfoIcon}
-          order={order}
           icon={icon}
           position={position}
           onHide={() => setMessage('')}
@@ -65,6 +63,7 @@ export const ActivateButton = ({
 export const MultiActivateButton = ({ offset, icon, position }) => {
   const [message1, setMessage1] = useState('');
   const [message2, setMessage2] = useState('');
+  const [stackPosition, setStackPosition] = useState(0);
   usePoliteAnnouncer(message1);
   return (
     <div>
@@ -78,26 +77,30 @@ export const MultiActivateButton = ({ offset, icon, position }) => {
       >
         Activate
       </Button>
-      <Toast
-        active={!!message1}
-        offset={offset}
-        order={0}
-        icon={icon}
-        position={position}
-        onHide={() => setMessage1('')}
-      >
-        {message1}
-      </Toast>
-      <Toast
-        active={!!message2}
-        offset={offset}
-        order={message1 ? 1 : 0}
-        icon={icon}
-        position={position}
-        onHide={() => setMessage2('')}
-      >
-        {message2}
-      </Toast>
+      <div style={{ ["--Toast-z-index"]: 2 }}>
+        <Toast
+          active={!!message1}
+          offset={offset}
+          icon={icon}
+          setContentHeight={setStackPosition}
+          position={position}
+          onHide={() => setMessage1('')}
+        >
+          {message1}
+        </Toast>
+      </div>
+      <div style={{ ["--Toast-z-index"]: 2 }}>
+        <Toast
+          active={!!message2}
+          offset={offset}
+          icon={icon}
+          stackPosition={message1 ? stackPosition : 0}
+          position={position}
+          onHide={() => setMessage2('')}
+        >
+          {message2}
+        </Toast>
+      </div>
     </div>
   );
 };
@@ -190,13 +193,13 @@ export const MultiActivateButton = ({ offset, icon, position }) => {
 
 <Preview withSource="open">
   <Story name="Position Bottom">
-    <ActivateButton icon={<Information />} position="bottom" />
+    <ActivateButton icon={<Information />} position="bottomCenter" />
   </Story>
 </Preview>
 
 <Source
   code={`
-<Toast active={true} position="bottom" icon={<Information />}>メッセージが届きました</Toast>
+<Toast active={true} position="bottomCenter" icon={<Information />}>メッセージが届きました</Toast>
   `}
 />
 
@@ -227,8 +230,8 @@ export const MultiActivateButton = ({ offset, icon, position }) => {
 
 <Source
   code={`
-<Toast active={true} order={0} offset={{ top: 30 }}>メッセージが届きました1</Toast>
-<Toast active={true} order={1} offset={{ top: 30 }}>メッセージが届きました2</Toast>
+<Toast active={true} offset={{ top: 30 }}>メッセージが届きました1</Toast>
+<Toast active={true} offset={{ top: 30 }}>メッセージが届きました2</Toast>
   `}
 />
 
@@ -236,14 +239,14 @@ export const MultiActivateButton = ({ offset, icon, position }) => {
 
 <Preview withSource="open">
   <Story name="Multiple bottom">
-    <MultiActivateButton offset={{ bottom: 30 }} position="bottom" icon={<Information />} />
+    <MultiActivateButton offset={{ bottom: 30 }} position="bottomCenter" icon={<Information />} />
   </Story>
 </Preview>
 
 <Source
   code={`
-<Toast active={true} order={0} offset={{ bottom: 30 }} position="bottom">メッセージが届きました1</Toast>
-<Toast active={true} order={1} offset={{ bottom: 30 }} position="bottom">メッセージが届きました2</Toast>
+<Toast active={true} offset={{ bottom: 30 }} position="bottomCenter">メッセージが届きました1</Toast>
+<Toast active={true} offset={{ bottom: 30 }} position="bottomCenter">メッセージが届きました2</Toast>
   `}
 />
 
@@ -336,3 +339,8 @@ const usePoliteAnnouncer = (message) => {
 }
   `}
 />
+
+## スタック機能
+
+StackNotificationManager を使用することで Toast や SnackBar をスタックして複数表示することができます。
+詳しくは[StackNotificationManager のドキュメント](/docs/stacknotificationmanager--normal)を参照してください。

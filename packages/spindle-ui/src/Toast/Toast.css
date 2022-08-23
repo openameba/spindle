@@ -7,7 +7,9 @@
 .spui-Toast {
   box-sizing: border-box;
   left: 0;
+  opacity: 0;
   padding: 0 12px;
+  pointer-events: none;
   position: fixed;
   right: 0;
   text-align: center;
@@ -24,6 +26,7 @@
   max-width: 360px;
   min-height: 48px;
   padding: 0 16px 0 20px;
+  pointer-events: auto;
 }
 
 .spui-Toast-contentInfo {
@@ -57,7 +60,6 @@
 }
 
 .spui-Toast--slide {
-  opacity: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
