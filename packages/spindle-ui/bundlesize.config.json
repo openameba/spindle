@@ -9,7 +9,7 @@
       "maxSize": "1.1 kB"
     },
     {
-      "path": "./dist/!(Icon|Toast|Modal|SnackBar)/*.mjs",
+      "path": "./dist/!(Icon|Toast|Modal|SnackBar|StackNotificationManager)/*.mjs",
       "maxSize": "1.1 kB"
     },
     {
@@ -18,11 +18,15 @@
     },
     {
       "path": "./dist/SnackBar/*.mjs",
-      "maxSize": "1.74 kB"
+      "maxSize": "2 kB"
     },
     {
       "path": "./dist/Toast/*.mjs",
       "maxSize": "1.5 kB"
+    },
+    {
+      "path": "./dist/StackNotificationManager/*.mjs",
+      "maxSize": "1.8 kB"
     },
     {
       "path": "./dist/!(Modal|SnackBar)/!(index).css",
@@ -34,7 +38,7 @@
     },
     {
       "path": "./dist/SnackBar/!(index).css",
-      "maxSize": "2.0 kB"
+      "maxSize": "2.1 kB"
     },
     {
       "path": "./dist/index.css",
