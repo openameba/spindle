@@ -13,32 +13,28 @@ import React, {
   useRef,
   useState,
 } from 'react';
+import {
+  StackPosition,
+  StackPositionOffset,
+} from '../StackNotificationManager';
 import { CrossBold } from '../Icon';
 import { IconButton } from '../IconButton';
 import { TextLink as SpindleTextLink } from '../TextLink/TextLink';
 import { TextButton as SpindleTextButton } from '../TextButton/TextButton';
-
-type Position = `${'top' | 'bottom'}${'Left' | 'Center' | 'Right'}`;
-
-type PositionOffset = {
-  top: number;
-  right: number;
-  left: number;
-  bottom: number;
-};
 
 type Variant = 'information' | 'confirmation' | 'error';
 
 type Props = {
   children?: React.ReactElement;
   active?: boolean;
-  order?: number;
-  offset?: { [K in keyof PositionOffset]?: PositionOffset[K] };
+  offset?: { [K in keyof StackPositionOffset]?: StackPositionOffset[K] };
   // milliseconds to hide
   duration?: number;
   onHide?: () => void;
-  position?: Position;
+  position?: StackPosition;
   variant?: Variant;
+  setContentHeight?: (height: number) => void;
+  stackPosition?: number;
 };
 
 export const BLOCK_NAME = 'spui-SnackBar';
@@ -57,24 +53,27 @@ type InternalChildProps = {
 
 const Frame = ({
   children,
-  active = false,
+  active: _active,
   position = 'topCenter',
-  order = 0,
   offset: _offset = {},
   onHide,
   variant = DEFAULT_VARIANT,
+  stackPosition = 0,
+  setContentHeight,
 }: Props): React.ReactElement => {
   const [isShow, setIsShow] = useState(false);
-  const offset: PositionOffset = {
-    top: _offset.top || 24,
+  const offset: StackPositionOffset = {
+    top: _offset.top ?? 24,
     // If position is top or bottom, then horizontal offset is not needed.
-    left: position.endsWith('Left') ? _offset.left || 32 : 0,
-    right: position.endsWith('Right') ? _offset.right || 32 : 0,
-    bottom: _offset.bottom || 24,
+    left: position.endsWith('Left') ? _offset.left ?? 32 : 0,
+    right: position.endsWith('Right') ? _offset.right ?? 32 : 0,
+    bottom: _offset.bottom ?? 24,
   };
   const formattedDuration = MAX_DURATION - ANIMATION_DURATION;
   const timeoutID = useRef<number | null>(null);
   const [clientHeight, setClientHeight] = useState(0);
+  const [shouldAnimation, setShouldAnimation] = useState(false);
+  const [active, setActive] = useState(false);
 
   const setIsShowWithTimeout = useCallback(() => {
     // Out animation is executed after `formattedDuration` seconds.
@@ -95,6 +94,7 @@ const Frame = ({
   const handleTransitionEnd = useCallback(() => {
     if (onHide && !isShow) {
       onHide();
+      setActive(false);
       timeoutID.current = null;
     }
   }, [isShow, setIsShow, onHide]);
@@ -106,7 +106,13 @@ const Frame = ({
   useEffect(() => {
     // Animation is not stopped even if `active` props is changed while running animation.
     if (active && timeoutID.current === null) {
+      // Wait for applying transition until style is determined.
+      setShouldAnimation(true);
       setIsShow(true);
+    }
+
+    if (!active) {
+      setShouldAnimation(false);
     }
   }, [active]);
 
@@ -115,24 +121,35 @@ const Frame = ({
     return resetTimeout;
   }, [setIsShowWithTimeout, resetTimeout]);
 
-  const contentHeight = clientHeight;
+  useEffect(() => {
+    if (_active) {
+      setActive(true);
+    }
+    if (!_active && isShow) {
+      setIsShow(false);
+    }
+  }, [_active, isShow]);
+
+  useEffect(() => {
+    setContentHeight?.(clientHeight + VERTICAL_GAP);
+  }, [clientHeight]);
+
   const positionPrefix = position.startsWith('top') ? 'top' : 'bottom';
   const positionSuffix = position.slice(positionPrefix.length).toLowerCase() as
     | 'left'
     | 'center'
     | 'right';
-  const orderOffsetTop = order * (contentHeight + VERTICAL_GAP) + offset.top;
-  const orderOffsetBottom =
-    order * (contentHeight + VERTICAL_GAP) + offset.bottom;
+  const orderOffsetTop = stackPosition + offset.top;
+  const orderOffsetBottom = stackPosition + offset.bottom;
 
   return (
     <div
       style={{
         ['--SnackBar--initial-height-top' as string]: `${
-          orderOffsetTop - contentHeight + offset.top
+          orderOffsetTop - clientHeight + offset.top
         }px`,
         ['--SnackBar--initial-height-bottom' as string]: `${
-          orderOffsetBottom - contentHeight + offset.bottom
+          orderOffsetBottom - clientHeight + offset.bottom
         }px`,
         ['--SnackBar--order-offset-top' as string]: `${orderOffsetTop}px`,
         ['--SnackBar--order-offset-bottom' as string]: `${-orderOffsetBottom}px`,
@@ -145,7 +162,7 @@ const Frame = ({
       className={[
         BLOCK_NAME,
         `${BLOCK_NAME}--${positionPrefix}`,
-        `${BLOCK_NAME}--slide`,
+        shouldAnimation && `${BLOCK_NAME}--slide`,
         isShow && `${BLOCK_NAME}-slide--in`,
         !active && `${BLOCK_NAME}--hidden`,
       ]
@@ -182,22 +199,30 @@ const Frame = ({
   );
 };
 
-const getInternalChildProps = (
-  props: Record<string, any>,
-): InternalChildProps => {
+type OwnProps = Record<string, any>;
+
+const convertInternalChildProps = (
+  props: OwnProps,
+): [OwnProps, InternalChildProps] => {
   const hasInternalChildProps = (
-    props: Record<string, any>,
+    props: OwnProps,
   ): props is InternalChildProps =>
     ({}.hasOwnProperty.call(props, 'setIsShow') ||
     {}.hasOwnProperty.call(props, 'variant'));
 
   if (hasInternalChildProps(props)) {
-    return {
+    const result = {
       setIsShow: props.setIsShow,
       variant: props.variant,
     };
+
+    // Remove unnecessary props.
+    delete props.setIsShow;
+    delete props.variant;
+
+    return [props, result];
   }
-  return {};
+  return [props, {}];
 };
 
 const Icon: FC<{ children: ReactNode }> = ({ children }) => (
@@ -209,7 +234,10 @@ const Text: FC<{ children: ReactNode }> = ({ children }) => (
 const TextButton: FC<
   { icon?: ReactNode; children: ReactNode } & HTMLAttributes<HTMLButtonElement>
 > = ({ icon, children, onClick, ...rest }) => {
-  const internalProps = useMemo(() => getInternalChildProps(rest), []);
+  const [props, internalProps] = useMemo(
+    () => convertInternalChildProps(rest),
+    [],
+  );
   const variant = internalProps.variant || DEFAULT_VARIANT;
   const setIsShow = internalProps.setIsShow;
   const handleOnClick: MouseEventHandler<HTMLButtonElement> = (e) => {
@@ -218,7 +246,7 @@ const TextButton: FC<
   };
   return (
     <div className={`${BLOCK_NAME}-button ${BLOCK_NAME}-button--${variant}`}>
-      <SpindleTextButton icon={icon} onClick={handleOnClick} {...rest}>
+      <SpindleTextButton icon={icon} onClick={handleOnClick} {...props}>
         {children}
       </SpindleTextButton>
     </div>
@@ -227,7 +255,10 @@ const TextButton: FC<
 const TextLink: FC<
   { icon?: ReactNode; children: ReactNode } & HTMLAttributes<HTMLAnchorElement>
 > = ({ icon, children, onClick, ...rest }) => {
-  const internalProps = useMemo(() => getInternalChildProps(rest), []);
+  const [props, internalProps] = useMemo(
+    () => convertInternalChildProps(rest),
+    [],
+  );
   const variant = internalProps.variant || DEFAULT_VARIANT;
   const setIsShow = internalProps.setIsShow;
   const handleOnClick: MouseEventHandler<HTMLAnchorElement> = (e) => {
@@ -236,7 +267,7 @@ const TextLink: FC<
   };
   return (
     <div className={`${BLOCK_NAME}-button ${BLOCK_NAME}-button--${variant}`}>
-      <SpindleTextLink icon={icon} onClick={handleOnClick} {...rest}>
+      <SpindleTextLink icon={icon} onClick={handleOnClick} {...props}>
         {children}
       </SpindleTextLink>
     </div>

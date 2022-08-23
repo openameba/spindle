@@ -10,7 +10,9 @@
 .spui-SnackBar {
   box-sizing: border-box;
   left: 0;
+  opacity: 0;
   padding: 0 var(--SnackBar--offset-right) 0 var(--SnackBar--offset-left);
+  pointer-events: none;
   position: fixed;
   right: 0;
   text-align: var(--SnackBar--text-align);
@@ -28,6 +30,7 @@
   min-height: 52px;
   min-width: 360px;
   padding: 14px 16px 14px 20px;
+  pointer-events: auto;
 }
 
 .spui-SnackBar-icon {
@@ -87,7 +90,6 @@
 }
 
 .spui-SnackBar--slide {
-  opacity: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
