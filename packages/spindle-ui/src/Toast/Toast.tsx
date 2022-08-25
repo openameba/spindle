@@ -114,7 +114,7 @@ export const Toast: FC<Props> = ({
 
   useEffect(() => {
     setContentHeight?.(clientHeight + VERTICAL_GAP);
-  }, [clientHeight]);
+  }, [clientHeight, setContentHeight]);
 
   const positionPrefix = position.startsWith('top') ? 'top' : 'bottom';
   const offsetPosition = offset[positionPrefix] || 0;

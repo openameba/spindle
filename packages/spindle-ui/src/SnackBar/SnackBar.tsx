@@ -132,7 +132,7 @@ const Frame = ({
 
   useEffect(() => {
     setContentHeight?.(clientHeight + VERTICAL_GAP);
-  }, [clientHeight]);
+  }, [clientHeight, setContentHeight]);
 
   const positionPrefix = position.startsWith('top') ? 'top' : 'bottom';
   const positionSuffix = position.slice(positionPrefix.length).toLowerCase() as
