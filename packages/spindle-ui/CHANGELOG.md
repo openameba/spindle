@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.46.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.45.0...@openameba/spindle-ui@0.46.0) (2022-08-25)
+
+
+### Bug Fixes
+
+* **spindle-ui:** fix SnackBar component interface for stacking feature ([412930e](https://github.com/openameba/spindle/commit/412930e551e167b3f7673089f45c13b7be031621))
+* **spindle-ui:** fix Toast component interface for stacking feature ([1682a0b](https://github.com/openameba/spindle/commit/1682a0b1fcb06f26a92806d3b1b7112b1a009d85))
+* do hooks called by every render to resolve error of react-hooks/rules-of-hooks ([d1b3eea](https://github.com/openameba/spindle/commit/d1b3eea6a7bf3be8549e3b48020b2b5062228955))
+
+
+### Features
+
+* **spindle-ui:** add DropdownMenu component ([70f8a73](https://github.com/openameba/spindle/commit/70f8a730a044c528f85dd70223ed8f0e98345419))
+* **spindle-ui:** add StackNotificationManager for stacking notification components ([e3a6128](https://github.com/openameba/spindle/commit/e3a61284ba8c91285d1148a470e6ee5e0e911f12))
+* **spindle-ui:** update TextButton docs ([5bad71b](https://github.com/openameba/spindle/commit/5bad71bc10f8da467eda755a8f8bf724172a0d6d))
+
+
+
+
+
 # [0.45.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.44.0...@openameba/spindle-ui@0.45.0) (2022-08-18)
 
 
