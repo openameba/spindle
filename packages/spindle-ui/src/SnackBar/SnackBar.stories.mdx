@@ -32,7 +32,6 @@ export const ActivateButton = ({
   isLink,
   variant,
   hideInfoIcon,
-  order,
   icon,
   position,
   buttonIcon,
@@ -52,7 +51,6 @@ export const ActivateButton = ({
         active={!!message}
         variant={variant}
         hideInfoIcon={hideInfoIcon}
-        order={order}
         position={position}
         onHide={() => setMessage('')}
       >
@@ -72,6 +70,7 @@ export const ActivateButton = ({
 export const MultiActivateButton = ({ offset, icon, position }) => {
   const [message1, setMessage1] = useState('');
   const [message2, setMessage2] = useState('');
+  const [stackPosition, setStackPosition] = useState(0);
   usePoliteAnnouncer(message1);
   return (
     <div>
@@ -79,8 +78,8 @@ export const MultiActivateButton = ({ offset, icon, position }) => {
         size="medium"
         variant={'outlined'}
         onClick={() => {
-          setMessage1('メッセージが届きました1');
-          setMessage2('メッセージが届きました2');
+          setMessage1('メッセージが届きましたメッセージが届きましたメッセージが届きましたメッセージが届きましたメッセージが届きましたメッセージが届きました');
+          setMessage2('メッセージが届きました');
         }}
       >
         Activate
@@ -88,7 +87,7 @@ export const MultiActivateButton = ({ offset, icon, position }) => {
       <SnackBar.Frame
         active={!!message1}
         offset={offset}
-        order={0}
+        setContentHeight={setStackPosition}
         position={position}
         onHide={() => setMessage1('')}
       >
@@ -98,7 +97,7 @@ export const MultiActivateButton = ({ offset, icon, position }) => {
       <SnackBar.Frame
         active={!!message2}
         offset={offset}
-        order={message1 ? 1 : 0}
+        stackPosition={message1 ? stackPosition : 0}
         position={position}
         onHide={() => setMessage2('')}
       >
@@ -321,11 +320,11 @@ SnackBarコンポーネントは、利用者に一時的なお知らせをする
 
 <Source
   code={`
-<SnackBar.Frame active={true} order={0} offset={{ top: 30 }} position="bottomCenter">
+<SnackBar.Frame active={true} offset={{ top: 30 }} position="bottomCenter">
   <SnackBar.Icon><Information /></SnackBar.Icon>
   <SnackBar.Text>メッセージが届きました1</SnackBar.Text>
 </SnackBar.Frame>
-<SnackBar.Frame active={true} order={1} offset={{ top: 30 }} position="bottomCenter">
+<SnackBar.Frame active={true} offset={{ top: 30 }} position="bottomCenter">
   <SnackBar.Icon><Information /></SnackBar.Icon>
   <SnackBar.Text>メッセージが届きました2</SnackBar.Text>
 </SnackBar.Frame>
@@ -346,11 +345,11 @@ SnackBarコンポーネントは、利用者に一時的なお知らせをする
 
 <Source
   code={`
-<SnackBar.Frame active={true} order={0} offset={{ bottom: 30 }} position="bottomCenter">
+<SnackBar.Frame active={true} offset={{ bottom: 30 }} position="bottomCenter">
   <SnackBar.Icon><Information /></SnackBar.Icon>
   <SnackBar.Text>メッセージが届きました1</SnackBar.Text>
 </SnackBar.Frame>
-<SnackBar.Frame active={true} order={1} offset={{ bottom: 30 }} position="bottomCenter">
+<SnackBar.Frame active={true} offset={{ bottom: 30 }} position="bottomCenter">
   <SnackBar.Icon><Information /></SnackBar.Icon>
   <SnackBar.Text>メッセージが届きました2</SnackBar.Text>
 </SnackBar.Frame>
@@ -532,3 +531,8 @@ const usePoliteAnnouncer = (message) => {
 }
   `}
 />
+
+## スタック機能
+
+StackNotificationManager を使用することで Toast や SnackBar をスタックして複数表示することができます。
+詳しくは[StackNotificationManager のドキュメント](/docs/stacknotificationmanager--normal)を参照してください。
