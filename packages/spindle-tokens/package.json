@@ -34,7 +34,7 @@
     "@figma-export/types": "^4.0.0",
     "@types/jest": "^27.0.0",
     "@types/lodash.setwith": "^4.3.6",
-    "jest": "^28.0.0",
+    "jest": "^29.0.0",
     "jsonabc": "^2.3.1",
     "lodash.setwith": "^4.3.2",
     "make-dir": "^3.1.0",
