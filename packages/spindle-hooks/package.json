@@ -1,6 +1,6 @@
 {
   "name": "@openameba/spindle-hooks",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "main": "./index.js",
   "module": "./index.mjs",
   "types": "./index.d.ts",
