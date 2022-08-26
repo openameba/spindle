@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.46.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.46.0...@openameba/spindle-ui@0.46.1) (2022-08-26)
+
+
+### Bug Fixes
+
+* resolve eslint warning rules for DropdownMenu ([2c800f4](https://github.com/openameba/spindle/commit/2c800f4a8853598a49ae53d9671734d6ca446e73))
+* resolve eslint warning rules for StackNotificationManager ([6aafe42](https://github.com/openameba/spindle/commit/6aafe429eaf84c80af19adf5b36ba1ad0bb7d71a))
+* resolve eslint warning rules of explicit-any ([3f04927](https://github.com/openameba/spindle/commit/3f049270d5b643aa1a0095eadc571b57ef4c1111))
+* resolve eslint warning rules of hooks deps for carousel hooks ([7ec56bb](https://github.com/openameba/spindle/commit/7ec56bb492369032fcf52d5484c0abe668e4d31a))
+* resolve eslint warning rules of hooks deps for modals ([c7a7b17](https://github.com/openameba/spindle/commit/c7a7b17aad07b7fff57cf743633b045c9c92216d))
+* resolve eslint warning rules of hooks deps for notifier ([ff66910](https://github.com/openameba/spindle/commit/ff6691010c7bc37895ff8cc40862ec4001f9099f))
+
+
+
+
+
 # [0.46.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.45.0...@openameba/spindle-ui@0.46.0) (2022-08-25)
 
 

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.1](https://github.com/openameba/spindle/compare/@openameba/spindle-hooks@0.10.0...@openameba/spindle-hooks@0.10.1) (2022-08-26)
+
+
+### Bug Fixes
+
+* resolve eslint warning rules of explicit-any ([3f04927](https://github.com/openameba/spindle/commit/3f049270d5b643aa1a0095eadc571b57ef4c1111))
+* resolve eslint warning rules of hooks deps for carousel hooks ([7ec56bb](https://github.com/openameba/spindle/commit/7ec56bb492369032fcf52d5484c0abe668e4d31a))
+
+
+
+
+
 # [0.10.0](https://github.com/openameba/spindle/compare/@openameba/spindle-hooks@0.9.0...@openameba/spindle-hooks@0.10.0) (2022-08-08)
 
 **Note:** Version bump only for package @openameba/spindle-hooks
