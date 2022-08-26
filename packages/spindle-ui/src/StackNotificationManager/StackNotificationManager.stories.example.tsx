@@ -46,7 +46,7 @@ const SnackBarExample: React.FC<
 
   const handleOnHide = useCallback(() => {
     onHide(id);
-  }, [onHide]);
+  }, [id, onHide]);
 
   usePoliteAnnouncer(!!stackProps.active, text);
 

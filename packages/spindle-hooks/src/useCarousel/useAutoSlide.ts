@@ -17,7 +17,7 @@ export function useAutoSlide({ onTimeOut, shouldAutoPlaying = true }: Payload) {
     }
   }, [timeoutId]);
 
-  const activateAutoSlide = () => {
+  const activateAutoSlide = useCallback(() => {
     resetTimeOut();
 
     const newTimeoutId = setTimeout(() => {
@@ -25,7 +25,7 @@ export function useAutoSlide({ onTimeOut, shouldAutoPlaying = true }: Payload) {
     }, AUTO_SLIDE_SPEED);
 
     setTimeoutId(newTimeoutId);
-  };
+  }, [resetTimeOut, onTimeOut]);
 
   const resetAutoSlide = () => {
     if (isAutoPlaying) {
@@ -46,7 +46,7 @@ export function useAutoSlide({ onTimeOut, shouldAutoPlaying = true }: Payload) {
     if (shouldAutoPlaying) {
       activateAutoSlide();
     }
-  }, []);
+  }, [activateAutoSlide, shouldAutoPlaying]);
 
   return {
     isAutoPlaying,

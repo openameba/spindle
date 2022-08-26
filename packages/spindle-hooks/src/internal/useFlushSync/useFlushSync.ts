@@ -5,6 +5,7 @@
 
 import ReactDOM from 'react-dom';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const flushSync = (ReactDOM as any).flushSync;
 type FlushSyncCallback = () => void;
 

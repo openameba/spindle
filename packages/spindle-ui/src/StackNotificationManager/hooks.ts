@@ -64,7 +64,7 @@ const useBreakpoint = (breakpoint: string): boolean => {
         removeMQListener(current, handleSetMatches);
       }
     };
-  }, []);
+  }, [handleSetMatches]);
 
   return matches;
 };
@@ -158,45 +158,43 @@ export const useStackInteraction = <
         };
       });
     },
-    [],
+    [maxStackSize, setStack],
   );
 
-  const setOffset = ({
-    offset,
-    position,
-  }: {
-    offset: StackOffset<P>[keyof StackOffset<P>];
-    position: P;
-  }) => {
-    _setOffset((prev) => ({ ...prev, [position]: offset }));
-  };
+  const setOffset = useCallback(
+    ({
+      offset,
+      position,
+    }: {
+      offset: StackOffset<P>[keyof StackOffset<P>];
+      position: P;
+    }) => {
+      _setOffset((prev) => ({ ...prev, [position]: offset }));
+    },
+    [_setOffset],
+  );
 
-  const setContentHeight = ({
-    id,
-    height,
-    position,
-  }: {
-    id: string;
-    height: number;
-    position: P;
-  }) => {
-    setStack((prev) => {
-      const _stack: ManagedStack[keyof ManagedStack] = prev[position] || [];
-      const stack = [..._stack];
-      const specifiedItem = stack.find((item) => item.id === id);
-      if (!specifiedItem) {
-        return prev;
-      }
+  const setContentHeight = useCallback(
+    ({ id, height, position }: { id: string; height: number; position: P }) => {
+      setStack((prev) => {
+        const _stack: ManagedStack[keyof ManagedStack] = prev[position] || [];
+        const stack = [..._stack];
+        const specifiedItem = stack.find((item) => item.id === id);
+        if (!specifiedItem) {
+          return prev;
+        }
 
-      const next = { ...specifiedItem };
-      next.contentHeight = height;
+        const next = { ...specifiedItem };
+        next.contentHeight = height;
 
-      return {
-        ...prev,
-        [position]: stack.map((s) => (s.id === id ? next : s)),
-      };
-    });
-  };
+        return {
+          ...prev,
+          [position]: stack.map((s) => (s.id === id ? next : s)),
+        };
+      });
+    },
+    [setStack],
+  );
 
   return {
     setActive,
@@ -226,21 +224,21 @@ export const useStackNotificationManager = <
     (active: boolean) => {
       _setActive({ id, active, position });
     },
-    [id, position],
+    [id, position, _setActive],
   );
 
   const setOffset = useCallback(
     (offset: StackOffset[keyof StackOffset]) => {
       _setOffset({ position, offset });
     },
-    [position],
+    [position, _setOffset],
   );
 
   const setContentHeight = useCallback(
     (height: number) => {
       _setContentHeight({ id, position, height });
     },
-    [position],
+    [id, position, _setContentHeight],
   );
 
   useEffect(() => {
@@ -274,7 +272,7 @@ export const useStackNotificationManager = <
         };
       });
     };
-  }, []);
+  }, [id, position, setStack]);
 
   const item = useMemo(
     () => stack[position]?.find((s) => s.id === id),
@@ -294,7 +292,7 @@ export const useStackNotificationManager = <
             : res,
         0,
       );
-  }, [stack]);
+  }, [item?.order, position, stack]);
 
   return {
     stackProps: {
@@ -324,13 +322,13 @@ export const useRepeatedStackItem = <P extends StackPosition = StackPosition>({
     lastIndex.current += 1;
     setActive({ id: nextId, position, active: true });
     setIdList((prev) => [...prev, nextId]);
-  }, [id, position, idList]);
+  }, [id, position, setActive]);
   const onHide = useCallback(
     (id) => {
       setActive({ id, position, active: false });
       setIdList((prev) => prev.filter((item) => item !== id));
     },
-    [position],
+    [position, setActive],
   );
 
   return {

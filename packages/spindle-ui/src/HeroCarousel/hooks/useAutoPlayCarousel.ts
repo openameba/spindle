@@ -190,6 +190,8 @@ export function useAutoPlayCarousel<Item>({
       document.body.removeEventListener('mouseup', onMouseUp);
       document.body.removeEventListener('touchend', onTouchEnd);
     };
+    // this effect should be called only once
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return {

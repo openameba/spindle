@@ -97,7 +97,7 @@ const Frame = ({
       setActive(false);
       timeoutID.current = null;
     }
-  }, [isShow, setIsShow, onHide]);
+  }, [isShow, onHide]);
 
   const handleOnClickCloseButton = useCallback(() => {
     setIsShow(false);
@@ -132,7 +132,7 @@ const Frame = ({
 
   useEffect(() => {
     setContentHeight?.(clientHeight + VERTICAL_GAP);
-  }, [clientHeight]);
+  }, [clientHeight, setContentHeight]);
 
   const positionPrefix = position.startsWith('top') ? 'top' : 'bottom';
   const positionSuffix = position.slice(positionPrefix.length).toLowerCase() as
@@ -199,6 +199,7 @@ const Frame = ({
   );
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 type OwnProps = Record<string, any>;
 
 const convertInternalChildProps = (
@@ -236,7 +237,7 @@ const TextButton: FC<
 > = ({ icon, children, onClick, ...rest }) => {
   const [props, internalProps] = useMemo(
     () => convertInternalChildProps(rest),
-    [],
+    [rest],
   );
   const variant = internalProps.variant || DEFAULT_VARIANT;
   const setIsShow = internalProps.setIsShow;
@@ -257,7 +258,7 @@ const TextLink: FC<
 > = ({ icon, children, onClick, ...rest }) => {
   const [props, internalProps] = useMemo(
     () => convertInternalChildProps(rest),
-    [],
+    [rest],
   );
   const variant = internalProps.variant || DEFAULT_VARIANT;
   const setIsShow = internalProps.setIsShow;

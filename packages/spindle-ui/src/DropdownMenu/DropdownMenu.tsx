@@ -26,6 +26,7 @@ interface ListProps extends DefaultProps {
 
 export const BLOCK_NAME = 'spui-DropdownMenu';
 const FADE_IN_ANIMATION = 'spui-DropdownMenu-fade-in';
+const CLOSE_KEY_LIST = ['Escape', 'Esc'];
 
 const Caption = ({ children }: DefaultProps) => {
   return <p className={`${BLOCK_NAME}-caption`}>{children}</p>;
@@ -44,7 +45,6 @@ const List = ({
   triggerRef,
   variant = 'text',
 }: ListProps) => {
-  const CLOSE_KEY_LIST = ['Escape', 'Esc'];
   const menuEl = useRef<HTMLUListElement>(null);
   const [fadeOut, setFadeOut] = useState(false);
 
@@ -86,14 +86,11 @@ const List = ({
   );
 
   useEffect(() => {
-    menuEl.current?.addEventListener('animationend', handleAnimationEnd, false);
+    const menu = menuEl.current;
+    menu?.addEventListener('animationend', handleAnimationEnd, false);
 
     return () =>
-      menuEl.current?.removeEventListener(
-        'animationend',
-        handleAnimationEnd,
-        false,
-      );
+      menu?.removeEventListener('animationend', handleAnimationEnd, false);
   }, [menuEl, handleAnimationEnd]);
 
   useEffect(() => {

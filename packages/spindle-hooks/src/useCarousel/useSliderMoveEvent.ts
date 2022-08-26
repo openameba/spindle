@@ -45,6 +45,8 @@ export function useSliderMoveEvent() {
       document.body.removeEventListener('mousemove', onMouseMove);
       document.body.removeEventListener('touchmove', onTouchMove);
     };
+    // this effect should be called only once
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return {
