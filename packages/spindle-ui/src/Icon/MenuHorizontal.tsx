@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { SVGProps } from 'react';
 
-const SvgMenuHorizotal = (props: SVGProps<SVGSVGElement>) => (
+const SvgMenuHorizontal = (props: SVGProps<SVGSVGElement>) => (
   <svg
     width="1em"
     height="1em"
@@ -15,4 +15,4 @@ const SvgMenuHorizotal = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-export default SvgMenuHorizotal;
+export default SvgMenuHorizontal;

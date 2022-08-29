@@ -209,7 +209,7 @@
 | menu_hamburger | ![](../dist/svg/menu_hamburger.svg) |
 | menu_hamburger_bold | ![](../dist/svg/menu_hamburger_bold.svg) |
 | menu_hamburger_fourline | ![](../dist/svg/menu_hamburger_fourline.svg) |
-| menu_horizotal | ![](../dist/svg/menu_horizotal.svg) |
+| menu_horizontal | ![](../dist/svg/menu_horizontal.svg) |
 | menu_vertical | ![](../dist/svg/menu_vertical.svg) |
 | messageboard | ![](../dist/svg/messageboard.svg) |
 | microphone | ![](../dist/svg/microphone.svg) |
