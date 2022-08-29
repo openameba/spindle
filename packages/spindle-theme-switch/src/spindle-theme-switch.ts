@@ -137,6 +137,12 @@ export class SpindleThemeSwitch extends DarkModeToggle {
       [part=aside] {
         display: none;
       }
+      
+      @media (prefers-reduced-motion: reduce) {
+        [part=toggleLabel] {
+          transition-duration: 0.1ms;
+        }
+      }
     `;
     this.shadowRoot?.appendChild(styleEl);
 
