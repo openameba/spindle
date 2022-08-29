@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.1](https://github.com/openameba/spindle/compare/@openameba/spindle-icons@0.29.0...@openameba/spindle-icons@0.29.1) (2022-08-29)
+
+
+### Bug Fixes
+
+* **spindle-icons,spindle-ui:** delete menu_horizotal icon ([acf5504](https://github.com/openameba/spindle/commit/acf5504d17503e81e73b8620bc5e23e7eb6fe559))
+
+
+### Features
+
+* **spindle-icons:** update icons ([311d311](https://github.com/openameba/spindle/commit/311d3113ca614b05898578a00ed6f4da362ec559))
+
+
+### BREAKING CHANGES
+
+* **spindle-icons,spindle-ui:** icon menu_horizotal was renamed to menu_horizontal
+
+
+
+
+
 # [0.29.0](https://github.com/openameba/spindle/compare/@openameba/spindle-icons@0.28.0...@openameba/spindle-icons@0.29.0) (2022-07-14)
 
 
