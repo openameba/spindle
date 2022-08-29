@@ -17,6 +17,12 @@
       height: 34px;
       width: 84px;
     }
+    
+    @media (prefers-reduced-motion: reduce) {
+      body {
+        transition-duration: 0.1ms;
+      }
+    }
   </style>
   <link rel="stylesheet" href="./light.css" media="(prefers-color-scheme: light)">
   <link rel="stylesheet" href="./dark.css" media="(prefers-color-scheme: dark)">
