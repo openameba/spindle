@@ -206,6 +206,7 @@ export { default as Megaphone } from './Megaphone';
 export { default as MenuHamburger } from './MenuHamburger';
 export { default as MenuHamburgerBold } from './MenuHamburgerBold';
 export { default as MenuHamburgerFourline } from './MenuHamburgerFourline';
+export { default as MenuHorizontal } from './MenuHorizontal';
 export { default as MenuHorizotal } from './MenuHorizotal';
 export { default as MenuVertical } from './MenuVertical';
 export { default as Messageboard } from './Messageboard';
