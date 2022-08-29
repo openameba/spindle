@@ -77,7 +77,7 @@ customElements.define(ELEMENT_NAME, SpindleThemeSwitch);
 </form>
 ```
 
-これらにより、スクリーンリーダでも適切にテーマの選択機能として読み上げられます。
+これらにより、スクリーンリーダーでも適切にテーマの選択機能として読み上げられます。
 
 ![Voice Overでspindle-theme-switchを読み上げた例。以下のように読み上げられる。ダークテーマ, selected, radio button, 2 of 2, テーマを切り替える, group](./voice-over.png)
 
