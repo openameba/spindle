@@ -13,7 +13,7 @@
     "lint": "yarn lint:style",
     "lint:style": "stylelint '**/*.css'",
     "fix": "yarn lint:style --fix",
-    "test:interaction": "node --experimental-vm-modules node_modules/.bin/jest",
+    "test:interaction": "jest",
     "prebundlesize": "yarn build",
     "bundlesize": "npx bundlesize",
     "dev": "yarn storybook:start",
@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "ameba-color-palette.css": "^4.8.0",
-    "react-merge-refs": "^2.0.0"
+    "react-merge-refs": "^1.1.0"
   },
   "devDependencies": {
     "@mdx-js/react": "^1.6.22",
