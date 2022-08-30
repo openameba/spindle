@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.46.3](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.46.2...@openameba/spindle-ui@0.46.3) (2022-08-30)
+
+
+### Reverts
+
+* Revert "test: use ESM with ts-jest" ([e3ce4a0](https://github.com/openameba/spindle/commit/e3ce4a0677dbead171862ab1ae214fc7fd5c60cf))
+* Revert "fix: change import statement for react-merge-refs v2" ([a45ad1e](https://github.com/openameba/spindle/commit/a45ad1e3465813a146fbe0c704b9c61ab1d19147))
+
+
+
+
+
 ## [0.46.2](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.46.1...@openameba/spindle-ui@0.46.2) (2022-08-29)
 
 
