@@ -1,5 +1,5 @@
 import React, { forwardRef, useEffect, useRef, useState } from 'react';
-import { mergeRefs } from 'react-merge-refs';
+import mergeRefs from 'react-merge-refs';
 
 import { ChevronDownBold } from '../Icon';
 
