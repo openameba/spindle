@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.2.0 (2022-08-30)
+
+
+### Code Refactoring
+
+* **spindle-theme-switch:** setup in constructor ([35a0b6f](https://github.com/openameba/spindle/commit/35a0b6fe75f69e87fdc71ce6013bf95121da66bb))
+
+
+### Features
+
+* **spindle-theme-switch:** implement theme switch ([7e7fda5](https://github.com/openameba/spindle/commit/7e7fda5e0040e055a40198fe90cebc82649c161f))
+* **spindle-theme-switch:** reduce motion ([9a510dc](https://github.com/openameba/spindle/commit/9a510dc4efde703dd41d5efabf95dfcf60307805))
+
+
+### BREAKING CHANGES
+
+* **spindle-theme-switch:** setup function has been deleted
+
+
+
+
+
 ## [0.1.1-alpha.3](https://github.com/openameba/spindle/compare/@openameba/spindle-theme-switch@0.1.1-alpha.2...@openameba/spindle-theme-switch@0.1.1-alpha.3) (2022-08-09)
 
 **Note:** Version bump only for package @openameba/spindle-theme-switch
