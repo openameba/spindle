@@ -97,6 +97,10 @@ export class SpindleThemeSwitch extends DarkModeToggle {
         right: 0;
       }
 
+      [part=lightLabel]::after {
+        z-index: 2;
+      }
+
       input:focus + label {
         border-radius: 40px;
         outline: 2px solid var(--light-mode-focus-outline-color);
@@ -132,12 +136,13 @@ export class SpindleThemeSwitch extends DarkModeToggle {
       [part=darkRadio]:checked ~ [part=toggleLabel] {
         background: var(--dark-mode-checked-background);
         transform: translate(0, 0);
+        z-index: 1;
       }
 
       [part=aside] {
         display: none;
       }
-      
+
       @media (prefers-reduced-motion: reduce) {
         [part=toggleLabel] {
           transition-duration: 0.1ms;
