@@ -10164,6 +10164,11 @@ dargs@^7.0.0:
   resolved "https://registry.yarnpkg.com/dargs/-/dargs-7.0.0.tgz#04015c41de0bcb69ec84050f3d9be0caf8d6d5cc"
   integrity sha512-2iy1EkLdlBzQGvbweYRFxmFath8+K7+AKB0TlhHWkNuH+TmovaMH/Wp7V7R4u7f4SnX3OgLsU9t1NI9ioDnUpg==
 
+dark-mode-toggle@^0.14.0:
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/dark-mode-toggle/-/dark-mode-toggle-0.14.0.tgz#9fc59ad5f8ba815d886a84ec0a1d6a67975df5e9"
+  integrity sha512-P7beeJVQ2ndTSsB+90o5WAOhGsoyZ7+Bk+6y+L+SikpVwzWu2d8ZUBmJgmrROEz53OiCOSOONp/zgC5vfZybkA==
+
 dashdash@^1.12.0:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/dashdash/-/dashdash-1.14.1.tgz#853cfa0f7cbe2fed5de20326b8dd581035f6e2f0"
@@ -12318,7 +12323,7 @@ firebase-frameworks@^0.4.2:
     semver "^7.3.7"
     tslib "^2.3.1"
 
-firebase-tools@^11.0.0:
+firebase-tools@^11.0.0, firebase-tools@^11.3.0:
   version "11.3.0"
   resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-11.3.0.tgz#1f0a7cd2553efdaaa23a0964fe173fe34adfc1ba"
   integrity sha512-wg02bDKJCQIym1PGfuE+5RzBY6LTpi0+T3QGcig0QbfEFtqvcigllnbFqGFzzYk8cJgOxCwpY/AU8vCb2iKRjg==
