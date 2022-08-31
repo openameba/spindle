@@ -39,6 +39,6 @@
     "lodash.setwith": "^4.3.2",
     "make-dir": "^3.1.0",
     "style-dictionary": "^3.0.1",
-    "ts-jest": "28.0.7"
+    "ts-jest": "28.0.8"
   }
 }
