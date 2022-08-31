@@ -10,5 +10,23 @@
     "group:typescript-eslintMonorepo"
   ],
   "reviewers": ["team:spindle-working-group"],
-  "prConcurrentLimit": 0
+  "prConcurrentLimit": 0,
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchPackagePatterns": [
+        "eslint",
+        "jest",
+        "^@testing-library",
+        "stylelint",
+        "^bundlesize$",
+        "prettier",
+        "textlint",
+        "acot",
+        "yaml-lint",
+        "reg-suit"
+      ],
+      "automerge": true
+    }
+  ]
 }
