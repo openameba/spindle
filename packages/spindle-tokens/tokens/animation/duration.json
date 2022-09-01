@@ -1,0 +1,15 @@
+{
+  "Animation": {
+    "Duration": {
+      "Fast": {
+        "value": "150ms"
+      },
+      "Neutral": {
+        "value": "350ms"
+      },
+      "Slow": {
+        "value": "500ms"
+      }
+    }
+  }
+}
