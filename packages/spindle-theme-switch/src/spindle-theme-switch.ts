@@ -132,12 +132,13 @@ export class SpindleThemeSwitch extends DarkModeToggle {
       [part=darkRadio]:checked ~ [part=toggleLabel] {
         background: var(--dark-mode-checked-background);
         transform: translate(0, 0);
+        z-index: 1;
       }
 
       [part=aside] {
         display: none;
       }
-      
+
       @media (prefers-reduced-motion: reduce) {
         [part=toggleLabel] {
           transition-duration: 0.1ms;

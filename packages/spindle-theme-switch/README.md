@@ -37,7 +37,7 @@
     }
   </style>
   <!-- type=moduleを指定してスクリプトを読み込みます -->
-  <script src="https://unpkg.com/@openameba/spindle-theme-switch/spindle-theme-switch.js" type="module"></script>
+  <script src="https://unpkg.com/@openameba/spindle-theme-switch/dist/spindle-theme-switch.js" type="module"></script>
 </head>
 
 <body>
@@ -53,7 +53,7 @@
 - `legend` (Optional): ラジオボタンで構成されているテーマスイッチにタイトルを設定します。
 - `permanent` (Optional): テーマの変更をLocal Storageに保存し、再表示時に保存されたテーマを適用します。
 
-NOTE: 「スイッチなのになぜ`appearance=switch`を指定するの？」いい質問ですね。Custom Elements内で固定したいのですが、適切に指定できる場所がなく(constructorで属性を設定するとエラーになります)、Custom Elementsのデータフローに則って属性値として指定するのがよさそうなんです。
+NOTE: 「スイッチなのになぜ`appearance=switch`を指定するの？」いい質問ですね。Custom Elements内で固定したいのですが、適切に指定できる場所がなく(constructorで属性を設定するとエラーになります)、Custom Elementsのデータフローに則って属性値として指定するのがよさそうなんです。なお、現時点の実装では指定しなくても動作しますが、今後意図した動作にならない可能性があります。
 
 ## 型定義の利用
 `<spindle-theme-switch>`を拡張する場合には以下のようにして、定義された型を利用できます。
