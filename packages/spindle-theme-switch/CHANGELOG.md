@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/openameba/spindle/compare/@openameba/spindle-theme-switch@0.2.0...@openameba/spindle-theme-switch@0.2.1) (2022-09-02)
+
+
+### Bug Fixes
+
+* **spindle-theme-switch:** expand tap area ([e564912](https://github.com/openameba/spindle/commit/e5649121b3f175e88a98ac4b87daaee5b2c1931d))
+
+
+
+
+
 # 0.2.0 (2022-08-30)
 
 
