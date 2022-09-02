@@ -97,10 +97,6 @@ export class SpindleThemeSwitch extends DarkModeToggle {
         right: 0;
       }
 
-      [part=lightLabel]::after {
-        z-index: 2;
-      }
-
       input:focus + label {
         border-radius: 40px;
         outline: 2px solid var(--light-mode-focus-outline-color);
