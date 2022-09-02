@@ -34,10 +34,10 @@
     },
     "Content Change": {
       "easing": {
-        "value": "{Animation.Easing.Ease Out.value}"
+        "value": "{Animation.Easing.Ease In Out.value}"
       },
       "duration": {
-        "value": "{Animation.Duration.Neutral.value}"
+        "value": "{Animation.Duration.Fast.value}"
       }
     },
     "Scale Up": {
