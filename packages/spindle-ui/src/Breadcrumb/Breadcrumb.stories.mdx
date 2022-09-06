@@ -28,7 +28,7 @@ import { BreadcrumbItem } from './BreadcrumbItem';
 
 <Preview withSource="open">
   <Story name="BreadcrumbList">
-    <BreadcrumbList>
+    <BreadcrumbList variant="emphasized">
       <BreadcrumbItem href="#">Top</BreadcrumbItem>
       <BreadcrumbItem href="#">Team</BreadcrumbItem>
       <BreadcrumbItem href="#" current>Amebaとは</BreadcrumbItem>
@@ -40,7 +40,7 @@ import { BreadcrumbItem } from './BreadcrumbItem';
 
 <Source
   code={`
-<BreadcrumbList>
+<BreadcrumbList variant="emphasized">
   <BreadcrumbItem href="#">Top</BreadcrumbItem>
   <BreadcrumbItem href="#">Team</BreadcrumbItem>
   <BreadcrumbItem href="#" current>Amebaとは</BreadcrumbItem>
@@ -65,7 +65,7 @@ import { BreadcrumbItem } from './BreadcrumbItem';
 
 <Preview withSource="open">
   <Story name="BreadcrumbList Without BreadcrumbItem">
-    <BreadcrumbList>
+    <BreadcrumbList variant="emphasized">
       <a href="#">Top</a>
       <a href="#">Team</a>
       <a href="#" aria-current="page">Amebaとは</a>
@@ -73,14 +73,112 @@ import { BreadcrumbItem } from './BreadcrumbItem';
   </Story>
 </Preview>
 
-`<BreadcrumbItem>`を使わず、直接`<a>`要素を指定することもできます。`<Link>`も同様に指定できます。その際には、現在地となるa要素にaria-current属性を付与してください。
+`<BreadcrumbItem>`を使わず、直接`<a>`要素を指定することもできます。各種フレームワークで定義された`<Link>`も同様に指定できます。その際には、現在地となるa要素にaria-current属性を付与してください。
 
 <Source
   code={`
-<BreadcrumbList>
+<BreadcrumbList variant="emphasized">
   <a href="#">Top</a>
   <a href="#">Team</a>
   <a href="#" aria-current="page">Amebaとは</a>
+</BreadcrumbList>
+  `}
+/>
+
+## Variant
+
+### Standard
+
+<Preview withSource="open">
+  <Story name="Standard">
+    <BreadcrumbList variant="standard">
+      <BreadcrumbItem href="#">Top</BreadcrumbItem>
+      <BreadcrumbItem href="#">Team</BreadcrumbItem>
+      <BreadcrumbItem href="#" current>Amebaとは</BreadcrumbItem>
+    </BreadcrumbList>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<BreadcrumbList variant="standard">
+  <BreadcrumbItem href="#">Top</BreadcrumbItem>
+  <BreadcrumbItem href="#">Team</BreadcrumbItem>
+  <BreadcrumbItem href="#" current>Amebaとは</BreadcrumbItem>
+</BreadcrumbList>
+  `}
+/>
+
+### Emphasized
+
+<Preview withSource="open">
+  <Story name="Emphasized">
+    <BreadcrumbList variant="emphasized">
+      <BreadcrumbItem href="#">Top</BreadcrumbItem>
+      <BreadcrumbItem href="#">Team</BreadcrumbItem>
+      <BreadcrumbItem href="#" current>Amebaとは</BreadcrumbItem>
+    </BreadcrumbList>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<BreadcrumbList variant="emphasized">
+  <BreadcrumbItem href="#">Top</BreadcrumbItem>
+  <BreadcrumbItem href="#">Team</BreadcrumbItem>
+  <BreadcrumbItem href="#" current>Amebaとは</BreadcrumbItem>
+</BreadcrumbList>
+  `}
+/>
+
+## Wrap
+
+Standard variantにwrapオプションを指定すると、画面幅に入り切らなくなったタイミングで折り返されます。
+
+<Preview withSource="open">
+  <Story name="Wrap">
+    <BreadcrumbList variant="standard" wrap="wrap">
+      <BreadcrumbItem href="#">Amebaとは</BreadcrumbItem>
+      <BreadcrumbItem href="#">Ameヨコ (アメヨコ)</BreadcrumbItem>
+      <BreadcrumbItem href="#">福利厚生・社内制度</BreadcrumbItem>
+      <BreadcrumbItem href="#" current>「わたしたち、育休取得した経営陣です！」育休が2秒で快諾される、"取るのが当たり前"な環境とは</BreadcrumbItem>
+    </BreadcrumbList>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<BreadcrumbList variant="standard" wrap="wrap">
+  <BreadcrumbItem href="#">Amebaとは</BreadcrumbItem>
+  <BreadcrumbItem href="#">Ameヨコ (アメヨコ)</BreadcrumbItem>
+  <BreadcrumbItem href="#">福利厚生・社内制度</BreadcrumbItem>
+  <BreadcrumbItem href="#" current>「わたしたち、育休取得した経営陣です！」育休が2秒で快諾される、"取るのが当たり前"な環境とは</BreadcrumbItem>
+</BreadcrumbList>
+  `}
+/>
+
+## Scroll Management
+
+コンテンツが長く、見切れた場合にはcurrent指定されているアイテムが画面内に表示されるようにスクロールします。
+
+<Preview withSource="open">
+  <Story name="Standard Overflow">
+    <BreadcrumbList variant="standard">
+      <BreadcrumbItem href="#">Amebaとは</BreadcrumbItem>
+      <BreadcrumbItem href="#">Ameヨコ (アメヨコ)</BreadcrumbItem>
+      <BreadcrumbItem href="#">福利厚生・社内制度</BreadcrumbItem>
+      <BreadcrumbItem href="#" current>「わたしたち、育休取得した経営陣です！」育休が2秒で快諾される、"取るのが当たり前"な環境とは</BreadcrumbItem>
+    </BreadcrumbList>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<BreadcrumbList variant="standard">
+  <BreadcrumbItem href="#">Amebaとは</BreadcrumbItem>
+  <BreadcrumbItem href="#">Ameヨコ (アメヨコ)</BreadcrumbItem>
+  <BreadcrumbItem href="#">福利厚生・社内制度</BreadcrumbItem>
+  <BreadcrumbItem href="#" current>「わたしたち、育休取得した経営陣です！」育休が2秒で快諾される、"取るのが当たり前"な環境とは</BreadcrumbItem>
 </BreadcrumbList>
   `}
 />
