@@ -2,10 +2,11 @@
  * Breadcrumb
 */
 .spui-Breadcrumb {
+  overflow: scroll hidden;
   background: var(--color-surface-secondary);
   border-radius: 70px;
   display: inline-block;
-  overflow: hidden;
+  overflow: scroll hidden;
   padding: 0 16px;
 }
 
