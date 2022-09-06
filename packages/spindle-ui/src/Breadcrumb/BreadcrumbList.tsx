@@ -1,14 +1,18 @@
 import React, { useEffect, useRef } from 'react';
 import ChevronRightBold from '../Icon/ChevronRightBold';
+import ChevronRight from '../Icon/ChevronRight';
+
+type Variant = 'standard' | 'emphasized';
 
 interface Props extends React.HTMLAttributes<HTMLElement> {
   children?: React.ReactNode;
+  variant?: Variant;
 }
 
 const BLOCK_NAME = 'spui-Breadcrumb';
 
 export const BreadcrumbList = (props: Props) => {
-  const { children, className, ...rest } = props;
+  const { children, className, variant = 'standard', ...rest } = props;
   const currentRef = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
@@ -18,7 +22,10 @@ export const BreadcrumbList = (props: Props) => {
   return (
     <nav
       aria-label="パンくずリスト"
-      className={[BLOCK_NAME, className].join(' ').trim()}
+      className={[BLOCK_NAME, `${BLOCK_NAME}--${variant}`, className]
+        .filter(Boolean)
+        .join(' ')
+        .trim()}
       {...rest}
     >
       <ol className={`${BLOCK_NAME}-list`}>
@@ -31,10 +38,17 @@ export const BreadcrumbList = (props: Props) => {
                 : {})}
             >
               {child}
-              <ChevronRightBold
-                aria-hidden="true"
-                className={`${BLOCK_NAME}-chevron`}
-              />
+              {variant === 'standard' ? (
+                <ChevronRight
+                  aria-hidden="true"
+                  className={`${BLOCK_NAME}-chevron`}
+                />
+              ) : (
+                <ChevronRightBold
+                  aria-hidden="true"
+                  className={`${BLOCK_NAME}-chevron`}
+                />
+              )}
             </li>
           ) : null;
         })}
