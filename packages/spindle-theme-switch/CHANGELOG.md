@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.2-alpha.0](https://github.com/openameba/spindle/compare/@openameba/spindle-theme-switch@0.2.1...@openameba/spindle-theme-switch@0.2.2-alpha.0) (2022-09-07)
+
+
+### Bug Fixes
+
+* **spindle-theme-switch:** respect prefers-color-scheme until the first switch change ([1c5695f](https://github.com/openameba/spindle/commit/1c5695fc718053291979594212678e8a45a8134c))
+
+
+
+
+
 ## [0.2.1](https://github.com/openameba/spindle/compare/@openameba/spindle-theme-switch@0.2.0...@openameba/spindle-theme-switch@0.2.1) (2022-09-02)
 
 
