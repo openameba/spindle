@@ -5,6 +5,10 @@
   overflow: scroll hidden;
 }
 
+.spui-Breadcrumb--wrap {
+  overflow: hidden;
+}
+
 .spui-Breadcrumb--standard {
   padding: 12px 0;
   position: relative;
@@ -31,6 +35,11 @@
   margin: 0;
   padding: 0 16px;
   width: max-content;
+}
+
+.spui-Breadcrumb--standard.spui-Breadcrumb--wrap .spui-Breadcrumb-list {
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .spui-Breadcrumb-item {
@@ -114,6 +123,11 @@
   .spui-Breadcrumb a {
     font-size: 0.8125em;
     padding: 2px 6px;
+  }
+
+  .spui-Breadcrumb--standard.spui-Breadcrumb--wrap a {
+    padding-bottom: 4px;
+    padding-top: 4px;
   }
   /* stylelint-enable plugin/selector-bem-pattern */
 

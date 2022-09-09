@@ -3,16 +3,18 @@ import ChevronRightBold from '../Icon/ChevronRightBold';
 import ChevronRight from '../Icon/ChevronRight';
 
 type Variant = 'standard' | 'emphasized';
+type Wrap = 'wrap';
 
 interface Props extends React.HTMLAttributes<HTMLElement> {
   children?: React.ReactNode;
   variant?: Variant;
+  wrap?: Wrap;
 }
 
 const BLOCK_NAME = 'spui-Breadcrumb';
 
 export const BreadcrumbList = (props: Props) => {
-  const { children, className, variant = 'standard', ...rest } = props;
+  const { children, className, variant = 'standard', wrap, ...rest } = props;
   const currentRef = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
@@ -22,7 +24,12 @@ export const BreadcrumbList = (props: Props) => {
   return (
     <nav
       aria-label="パンくずリスト"
-      className={[BLOCK_NAME, `${BLOCK_NAME}--${variant}`, className]
+      className={[
+        BLOCK_NAME,
+        `${BLOCK_NAME}--${variant}`,
+        wrap && `${BLOCK_NAME}--${wrap}`,
+        className,
+      ]
         .filter(Boolean)
         .join(' ')
         .trim()}
