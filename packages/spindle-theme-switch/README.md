@@ -41,7 +41,7 @@
 </head>
 
 <body>
-  <spindle-theme-switch appearance="switch" legend="テーマを切り替える" permanent></spindle-theme-switch>
+  <spindle-theme-switch appearance="switch" legend="テーマを切り替える"></spindle-theme-switch>
 </body>
 ```
 
@@ -49,9 +49,9 @@
 
 `<spindle-theme-switch>`利用時には以下の属性を指定できます。
 
-- `appearance` (Required): `switch`を指定します。
-- `legend` (Optional): ラジオボタンで構成されているテーマスイッチにタイトルを設定します。
-- `permanent` (Optional): テーマの変更をLocal Storageに保存し、再表示時に保存されたテーマを適用します。
+- `appearance` (String, Required): `switch`を指定します。
+- `legend` (String, Optional): ラジオボタンで構成されているテーマスイッチにタイトルを設定します。
+- `permanent` (Boolean, Optional): 特別な理由がない限り何も指定しないでください。Spindle Theme SwitchはOSの設定を尊重し、最初にスイッチを使ってテーマが更新された際にテーマをLocal Storageに保存し、再表示時に保存されたテーマを適用します。OSの設定含め初期設定を保存したい場合には`true`指定します。
 
 NOTE: 「スイッチなのになぜ`appearance=switch`を指定するの？」いい質問ですね。Custom Elements内で固定したいのですが、適切に指定できる場所がなく(constructorで属性を設定するとエラーになります)、Custom Elementsのデータフローに則って属性値として指定するのがよさそうなんです。なお、現時点の実装では指定しなくても動作しますが、今後意図した動作にならない可能性があります。
 
