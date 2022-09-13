@@ -4,6 +4,8 @@ export {
   StackOffset,
   StackPositionOffset,
   ManagedStack,
+  StackNotificationManagerProps,
+  StackNotificationComponentProps,
 } from './StackNotificationManager';
 export {
   useStackNotificationManager,

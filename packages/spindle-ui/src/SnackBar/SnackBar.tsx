@@ -13,29 +13,23 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import {
-  StackPosition,
-  StackPositionOffset,
-} from '../StackNotificationManager';
+import { StackPositionOffset } from '../StackNotificationManager';
 import { CrossBold } from '../Icon';
 import { IconButton } from '../IconButton';
 import { TextLink as SpindleTextLink } from '../TextLink/TextLink';
 import { TextButton as SpindleTextButton } from '../TextButton/TextButton';
+import { StackNotificationComponentProps } from '../StackNotificationManager/StackNotificationManager';
 
 type Variant = 'information' | 'confirmation' | 'error';
 
-type Props = {
+type Props = StackNotificationComponentProps<{
   children?: React.ReactElement;
   active?: boolean;
-  offset?: { [K in keyof StackPositionOffset]?: StackPositionOffset[K] };
   // milliseconds to hide
   duration?: number;
   onHide?: () => void;
-  position?: StackPosition;
   variant?: Variant;
-  setContentHeight?: (height: number) => void;
-  stackPosition?: number;
-};
+}>;
 
 export const BLOCK_NAME = 'spui-SnackBar';
 

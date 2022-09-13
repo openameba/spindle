@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   ManagedStack,
+  StackNotificationManagerProps,
   StackOffset,
   StackPosition,
   useStackNotificationManagerContext,
@@ -294,14 +295,16 @@ export const useStackNotificationManager = <
       );
   }, [item?.order, position, stack]);
 
+  const stackProps: StackNotificationManagerProps = {
+    ...(item || {}),
+    position,
+    offset: offset[position],
+    stackPosition,
+    setContentHeight,
+  };
+
   return {
-    stackProps: {
-      ...(item || {}),
-      position,
-      offset: offset[position],
-      stackPosition,
-      setContentHeight,
-    },
+    stackProps,
     setActive,
     setOffset,
   };

@@ -2,6 +2,7 @@ import React, { FC, useCallback, useEffect, useRef, useState } from 'react';
 import { ManagedStack, StackPositionOffset } from '../StackNotificationManager';
 import { CrossBold } from '../Icon';
 import { IconButton } from '../IconButton';
+import { StackNotificationComponentProps } from '../StackNotificationManager/StackNotificationManager';
 
 type Position = keyof Pick<ManagedStack, 'topCenter' | 'bottomCenter'>;
 type PositionOffset = {
@@ -10,19 +11,18 @@ type PositionOffset = {
 
 type Variant = 'information' | 'confirmation' | 'error';
 
-type Props = {
-  children?: React.ReactNode;
-  active?: boolean;
-  offset?: PositionOffset;
-  // milliseconds to hide
-  duration?: number;
-  onHide?: () => void;
-  position?: Position;
-  icon?: React.ReactNode;
-  variant?: Variant;
-  setContentHeight?: (height: number) => void;
-  stackPosition?: number;
-};
+type Props = StackNotificationComponentProps<
+  {
+    children?: React.ReactNode;
+    active?: boolean;
+    // milliseconds to hide
+    duration?: number;
+    onHide?: () => void;
+    icon?: React.ReactNode;
+    variant?: Variant;
+  },
+  Position
+>;
 
 export const BLOCK_NAME = 'spui-Toast';
 
