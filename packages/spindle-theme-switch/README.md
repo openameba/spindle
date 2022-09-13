@@ -8,8 +8,10 @@
 
 `<spindle-theme-switch>`の利用例は以下のサイトで確認できます。
 
-- https://ameba-spindle-theme-switch.web.app/
-- https://a11y-guidelines.ameba.design/
+- [Spindleサイト](https://spindle.ameba.design/)
+- [Ameba Accessibility Guidelines](https://a11y-guidelines.ameba.design/)
+- [Spindle Theme Switch Example](https://ameba-spindle-theme-switch.web.app/)
+- [blog.keiya01.dev](https://blog.keiya01.dev/) (拡張例は[Pull Request](https://github.com/keiya01/keiya01.dev/pull/7)で確認できます)
 
 ## Usage
 
