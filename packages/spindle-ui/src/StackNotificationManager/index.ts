@@ -11,4 +11,5 @@ export {
   useStackNotificationManager,
   useStackInteraction,
   useRepeatedStackItem,
+  useStackNotificationComponent,
 } from './hooks';
