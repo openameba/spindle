@@ -18,15 +18,15 @@
     },
     {
       "path": "./dist/SnackBar/*.mjs",
-      "maxSize": "2 kB"
+      "maxSize": "1.4 kB"
     },
     {
       "path": "./dist/Toast/*.mjs",
-      "maxSize": "1.5 kB"
+      "maxSize": "1.0 kB"
     },
     {
       "path": "./dist/StackNotificationManager/*.mjs",
-      "maxSize": "1.9 kB"
+      "maxSize": "2.8 kB"
     },
     {
       "path": "./dist/!(Modal|SnackBar)/!(index).css",
