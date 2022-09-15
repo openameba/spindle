@@ -2,7 +2,7 @@
  * Breadcrumb
 */
 .spui-Breadcrumb {
-  overflow: scroll hidden;
+  overflow: auto hidden;
 }
 
 .spui-Breadcrumb--wrap {
