@@ -30,7 +30,7 @@ export const BLOCK_NAME = 'spui-Toast';
 export const ANIMATION_DURATION = 300;
 
 const MAX_DURATION = 4000;
-const TOTAL_ANIMATION_DURATION = MAX_DURATION - ANIMATION_DURATION;
+export const DISPLAYING_TIMEOUT_DURATION = MAX_DURATION - ANIMATION_DURATION;
 
 export const Toast: FC<Props> = ({
   children,
@@ -62,7 +62,7 @@ export const Toast: FC<Props> = ({
     onHide,
     stackPosition,
     setContentHeight,
-    animationDuration: TOTAL_ANIMATION_DURATION,
+    displayingTimeout: DISPLAYING_TIMEOUT_DURATION,
   });
 
   return (

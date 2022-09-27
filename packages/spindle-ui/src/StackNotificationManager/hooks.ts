@@ -353,7 +353,7 @@ export const useStackNotificationComponent = <
   position = 'topCenter' as P,
   stackPosition = 0,
   setContentHeight,
-  animationDuration,
+  displayingTimeout,
   onHide,
 }: {
   [K in keyof Omit<
@@ -361,7 +361,7 @@ export const useStackNotificationComponent = <
     'id' | 'order' | 'contentHeight' | 'isPreservingInternalActive'
   >]: StackNotificationManagerProperties<P>[K] | undefined;
 } & {
-  animationDuration: number;
+  displayingTimeout: number;
   onHide: (() => void) | undefined;
 }) => {
   const [isShow, setIsShow] = useState(false);
@@ -378,13 +378,13 @@ export const useStackNotificationComponent = <
   const [active, setActive] = useState(false);
 
   const setIsShowWithTimeout = useCallback(() => {
-    // Out animation is executed after `animationDuration` seconds.
+    // Out animation is executed after `displayingTimeout` seconds.
     if (timeoutID.current === null && isShow) {
       timeoutID.current = window.setTimeout(() => {
         setIsShow(false);
-      }, animationDuration);
+      }, displayingTimeout);
     }
-  }, [isShow, timeoutID, setIsShow, animationDuration]);
+  }, [isShow, timeoutID, setIsShow, displayingTimeout]);
 
   const resetTimeout = useCallback(() => {
     if (timeoutID.current) {

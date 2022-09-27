@@ -32,7 +32,8 @@ export const BLOCK_NAME = 'spui-SnackBar';
 // Duration for css animation.
 export const ANIMATION_DURATION = 300;
 
-export const MAX_DURATION = 10000;
+const MAX_DURATION = 10000;
+export const DISPLAYING_TIMEOUT_DURATION = MAX_DURATION - ANIMATION_DURATION;
 const DEFAULT_VARIANT = 'information';
 
 type InternalChildProps = {
@@ -70,7 +71,7 @@ const Frame = ({
     onHide,
     stackPosition,
     setContentHeight,
-    animationDuration: MAX_DURATION - ANIMATION_DURATION,
+    displayingTimeout: DISPLAYING_TIMEOUT_DURATION,
   });
 
   return (
