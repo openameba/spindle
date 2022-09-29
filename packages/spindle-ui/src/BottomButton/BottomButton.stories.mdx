@@ -30,7 +30,7 @@ import { BottomButton } from './BottomButton';
   <Story name="Fixed Position">
     <div style={{ ["--BottomButton-z-index"]: 2 }}>
       <BottomButton position="fixed">
-        <Button size="large" variant="contained" layout="fullWidth">新規登録</Button>
+        <Button size="large" variant="contained" layout="fullWidth">fixed button</Button>
       </BottomButton>
     </div>
   </Story>
@@ -39,7 +39,7 @@ import { BottomButton } from './BottomButton';
 <Source
   code={`
 <BottomButton position="fixed">
-  <Button size="large" variant="contained" layout="fullWidth">新規登録</Button>
+  <Button size="large" variant="contained" layout="fullWidth">fixed button</Button>
 </BottomButton>
   `}
 />
@@ -49,19 +49,19 @@ import { BottomButton } from './BottomButton';
   code={`
 <div class="spui-BottomButton spui-BottomButton--fixed">
   <div class="spui-BottomButton-wrap">
-    <button class="spui-Button spui-Button--large spui-Button--contained">新規登録</button>
+    <button class="spui-Button spui-Button--large spui-Button--contained">fixed button</button>
   </div>
 </div>
   `}
 />
 
 ## Sticky Position
-<Description>上部のコンテンツがスクロール中に画面下部に固定され、スクロール仕切ったあとは固定が解除されます</Description>
+<Description>上部のコンテンツがスクロール中に画面下部に固定され、スクロールし終わると固定が解除されます</Description>
 
 <Preview withSource="open">
   <Story name="Sticky Position">
     <BottomButton position="sticky">
-      <Button size="large" variant="contained" layout="fullWidth">新規登録</Button>
+      <Button size="large" variant="contained" layout="fullWidth">sticky button</Button>
     </BottomButton>
   </Story>
 </Preview>
@@ -69,7 +69,7 @@ import { BottomButton } from './BottomButton';
 <Source
   code={`
 <BottomButton position="sticky">
-  <Button size="large" variant="contained" layout="fullWidth">新規登録</Button>
+  <Button size="large" variant="contained" layout="fullWidth">sticky button</Button>
 </BottomButton>
   `}
 />
@@ -79,7 +79,7 @@ import { BottomButton } from './BottomButton';
   code={`
 <div class="spui-BottomButton spui-BottomButton--sticky">
   <div class="spui-BottomButton-wrap">
-    <button class="spui-Button spui-Button--fullWidth spui-Button--large spui-Button--contained">新規登録</button>
+    <button class="spui-Button spui-Button--fullWidth spui-Button--large spui-Button--contained">sticky button</button>
   </div>
 </div>
   `}
