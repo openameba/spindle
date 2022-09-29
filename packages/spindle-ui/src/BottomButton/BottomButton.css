@@ -9,6 +9,7 @@
 .spui-BottomButton {
   background: var(--BottomButton-backgroundColor);
   bottom: 0;
+  left: 0;
   z-index: var(--BottomButton-z-index);
 }
 
