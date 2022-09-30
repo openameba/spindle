@@ -197,6 +197,68 @@ const ListItem = ({ children, icon, onClick }: ListItemProps) => {
   );
 };
 
+// Storybookでのpositionプロパティのバリエーション確認用
+const Position = ({
+  children,
+  position = 'leftTop',
+  triggerRef,
+}: Omit<ListProps, 'onClose' | 'open'>) => {
+  const menuEl = useRef<HTMLUListElement>(null);
+  const [triggerHeight, setTriggerHeight] = useState(0);
+  const [triggerWidth, setTriggerWidth] = useState(0);
+  const [menuHeight, setMenuHeight] = useState(0);
+
+  // Triggerボタンの縦横幅を取得
+  useEffect(() => {
+    if (!triggerRef.current) return;
+
+    const { height, width } = triggerRef.current.getBoundingClientRect();
+    setTriggerHeight(height);
+    setTriggerWidth(width);
+  }, [triggerRef]);
+
+  // Menuの縦幅を取得
+  useEffect(() => {
+    if (!menuEl.current) return;
+
+    const { height } = menuEl.current.getBoundingClientRect();
+    setMenuHeight(height);
+  }, []);
+
+  let top;
+  let bottom;
+  let left;
+  if (['topLeft', 'topCenter', 'topRight'].includes(position)) {
+    bottom = `${triggerHeight}px`;
+  }
+  if (['topCenter', 'bottomCenter'].includes(position)) {
+    left = `-${(MENU_WIDTH - triggerWidth) / 2}px`;
+  }
+  if (['rightCenter', 'leftCenter'].includes(position)) {
+    top = `-${(menuHeight - triggerHeight) / 2}px`;
+  }
+  if (['bottomLeft', 'bottomCenter', 'bottomRight'].includes(position)) {
+    top = `${triggerHeight}px`;
+  }
+
+  return (
+    <ul
+      className={[
+        `${BLOCK_NAME}-menu`,
+        `${BLOCK_NAME}-menu--text`,
+        `${BLOCK_NAME}-menu--${position}`,
+      ]
+        .filter(Boolean)
+        .join(' ')}
+      ref={menuEl}
+      role="menu"
+      style={{ bottom, left, top }}
+    >
+      {children}
+    </ul>
+  );
+};
+
 const Title = ({ children }: DefaultProps) => {
   return <p className={`${BLOCK_NAME}-title`}>{children}</p>;
 };
@@ -206,5 +268,6 @@ export const DropdownMenu = {
   Frame,
   List,
   ListItem,
+  Position,
   Title,
 };

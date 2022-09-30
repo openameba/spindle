@@ -5,6 +5,7 @@ import {
   TextWithIcon,
   HeadWithIcon,
   HeadWithIconAndCaption,
+  Position,
 } from './DropdownMenu.stories.example';
 
 # DropdownMenu
@@ -288,3 +289,13 @@ return (
 );
   `}
 />
+
+## Position
+<Description>positionプロパティのバリエーション確認用です</Description>
+<Description>デフォルトはleftTopで、その他にもtopLeft, topCenter, topRight, rightTop, rightCenter, rightBottom, bottomLeft, bottomCenter, bottomRight, leftTop, leftCenter, leftBottomを指定することができます</Description>
+
+<Preview withSource="open">
+  <Story name="Position">
+    <Position />
+  </Story>
+</Preview>
