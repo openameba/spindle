@@ -32,7 +32,7 @@ export function Text() {
           id="dropdown-menu-example1"
           onClose={onClose}
           open={open}
-          position="right"
+          position="rightTop"
           triggerRef={triggerRef}
           variant="text"
         >
@@ -75,7 +75,7 @@ export function TextWithIcon() {
           id="dropdown-menu-example2"
           onClose={onClose}
           open={open}
-          position="right"
+          position="rightTop"
           triggerRef={triggerRef}
           variant="textWithIcon"
         >
@@ -124,7 +124,7 @@ export function HeadWithIcon() {
           id="dropdown-menu-example3"
           onClose={onClose}
           open={open}
-          position="right"
+          position="rightTop"
           triggerRef={triggerRef}
           variant="headWithIcon"
         >
@@ -173,7 +173,7 @@ export function HeadWithIconAndCaption() {
           id="dropdown-menu-example4"
           onClose={onClose}
           open={open}
-          position="right"
+          position="rightTop"
           triggerRef={triggerRef}
           variant="headWithIconAndCaption"
         >
