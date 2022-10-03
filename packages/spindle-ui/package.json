@@ -1,6 +1,6 @@
 {
   "name": "@openameba/spindle-ui",
-  "version": "0.46.4",
+  "version": "0.47.0",
   "main": "./index.js",
   "module": "./index.mjs",
   "types": "./index.d.ts",
