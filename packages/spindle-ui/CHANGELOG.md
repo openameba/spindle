@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.47.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.46.4...@openameba/spindle-ui@0.47.0) (2022-10-03)
+
+
+### Features
+
+* **spindle-ui:** add limit of bundlesize ([018ea89](https://github.com/openameba/spindle/commit/018ea890e18da38062112b7a5632444d1d641a06))
+* **spindle-ui:** add sample for checking position property ([56decdd](https://github.com/openameba/spindle/commit/56decdd512b77093e1e8238eb36116b11714791b))
+* **spindle-ui:** expand DropdownMenu positions ([1aa900e](https://github.com/openameba/spindle/commit/1aa900ee95c61c394173f769375270414a28e998))
+
+
+### BREAKING CHANGES
+
+* **spindle-ui:** the value of the position has been changed
+
+
+
+
+
 ## [0.46.4](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.46.3...@openameba/spindle-ui@0.46.4) (2022-09-02)
 
 **Note:** Version bump only for package @openameba/spindle-ui
