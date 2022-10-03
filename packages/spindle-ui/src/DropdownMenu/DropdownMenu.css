@@ -18,12 +18,10 @@
   border-radius: 12px;
   box-shadow: 0px 11px 28px rgba(8, 18, 26, 0.12);
   box-sizing: border-box;
-  left: -256px;
   list-style: none;
   margin: 0;
   padding: 12px 0;
   position: absolute;
-  top: 0;
   width: 256px;
   z-index: var(--DropdownMenu-z-index);
 }
@@ -34,10 +32,50 @@
   opacity: 0;
 }
 
-.spui-DropdownMenu-menu--right {
-  left: auto;
-  right: -256px;
-  width: 256px;
+.spui-DropdownMenu-menu--topLeft,
+.spui-DropdownMenu-menu--topCenter,
+.spui-DropdownMenu-menu--topRight {
+  margin-bottom: 8px;
+}
+
+.spui-DropdownMenu-menu--bottomLeft,
+.spui-DropdownMenu-menu--bottomCenter,
+.spui-DropdownMenu-menu--bottomRight {
+  margin-top: 8px;
+}
+
+.spui-DropdownMenu-menu--topLeft,
+.spui-DropdownMenu-menu--bottomLeft {
+  left: 0;
+}
+
+.spui-DropdownMenu-menu--topRight,
+.spui-DropdownMenu-menu--bottomRight {
+  right: 0;
+}
+
+.spui-DropdownMenu-menu--rightTop,
+.spui-DropdownMenu-menu--rightCenter,
+.spui-DropdownMenu-menu--rightBottom {
+  /* Menuの横幅256px + margin8px */
+  right: -264px;
+}
+
+.spui-DropdownMenu-menu--leftTop,
+.spui-DropdownMenu-menu--leftCenter,
+.spui-DropdownMenu-menu--leftBottom {
+  /* Menuの横幅256px + margin8px */
+  left: -264px;
+}
+
+.spui-DropdownMenu-menu--rightTop,
+.spui-DropdownMenu-menu--leftTop {
+  top: 0;
+}
+
+.spui-DropdownMenu-menu--rightBottom,
+.spui-DropdownMenu-menu--leftBottom {
+  bottom: 0;
 }
 
 .spui-DropdownMenu-menuButton {
@@ -130,15 +168,23 @@
 }
 
 @media screen and (max-width: 768px) {
-  .spui-DropdownMenu-menu {
-    left: auto;
-    right: 0;
-    top: auto;
+  .spui-DropdownMenu-menu--rightTop,
+  .spui-DropdownMenu-menu--rightCenter,
+  .spui-DropdownMenu-menu--rightBottom {
+    bottom: auto;
+    left: 0;
+    margin-top: 8px;
+    top: auto !important;
   }
 
-  .spui-DropdownMenu-menu--right {
-    left: 0;
-    top: auto;
+  .spui-DropdownMenu-menu--leftTop,
+  .spui-DropdownMenu-menu--leftCenter,
+  .spui-DropdownMenu-menu--leftBottom {
+    bottom: auto;
+    left: auto;
+    margin-top: 8px;
+    right: 0;
+    top: auto !important;
   }
 }
 

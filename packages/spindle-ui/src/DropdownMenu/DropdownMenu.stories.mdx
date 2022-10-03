@@ -5,23 +5,14 @@ import {
   TextWithIcon,
   HeadWithIcon,
   HeadWithIconAndCaption,
+  Position,
 } from './DropdownMenu.stories.example';
 
 # DropdownMenu
 
 <Meta title="DropdownMenu" component={DropdownMenu} />
 
-![stability-unstable](https://img.shields.io/badge/stability-unstable-yellow.svg)
-
-<Description>
-  - `DropdownMenu.List`は`open`プロパティの値を見て、開閉を行います。`onClick`や`onClose`内で`open`プロパティを変更してください
-</Description>
-<Description>
-  - DropdownMenuをボタンに対して左側に開くか右側に開くかは、`DropdownMenu.List`の`position`プロパティに指定してください。デフォルトは`left`です
-</Description>
-<Description>
-  - DropdownMenuのコンテンツの種類は、`DropdownMenu.List`の`variant`プロパティに指定してください。デフォルトは`text`です
-</Description>
+![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)
 
 <Source
   language='javascript'
@@ -37,6 +28,35 @@ import {
   language='html'
   code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/DropdownMenu/DropdownMenu.css">`}
 />
+
+## 指定できるプロパティ
+### DropdownMenu.List
+<Description>
+  - `open`(必須): DropdownMenuの開閉状態です。DropdownMenuは`open`プロパティの値を見て開閉を行うため、`onClick`や`onClose`内で`open`プロパティを変更してください。
+</Description>
+<Description>
+  - `triggerRef`（必須）: Triggerボタンのrefを指定してください。
+</Description>
+<Description>
+  - `onClose`（必須）: `open`プロパティをfalseにするための処理を指定してください。
+</Description>
+<Description>
+  - `position`（任意）: DropdownMenuをボタンに対してどの位置に開くかを指定します。デフォルトは`leftTop`で、その他にも`topLeft`, `topCenter`, `topRight`, `rightTop`, `rightCenter`, `rightBottom`, `bottomLeft`, `bottomCenter`, `bottomRight`, `leftTop`, `leftCenter`, `leftBottom`を指定することができます。
+</Description>
+<Description>
+  - `variant`（任意）: DropdownMenuの種類を指定します。デフォルトは`text`で、その他にも`textWithIcon`, `headWithIcon`, `headWithIconAndCaption`を指定することができます。
+</Description>
+<Description>
+  - `id`（任意）: idを指定することができます。
+</Description>
+
+### DropdownMenu.ListItem
+<Description>
+  - `onClick`（必須）: `open`プロパティを変更するための処理を指定してください。
+</Description>
+<Description>
+  - `icon`（任意）: DropdownMenu内にアイコンを表示したい場合は、指定することができます。
+</Description>
 
 ## Text
 <Description>テキストのみのDropdownMenuです</Description>
@@ -74,7 +94,7 @@ return (
         id="dropdown-menu-example1"
         onClose={onClose}
         open={open}
-        position="right"
+        position="rightTop"
         triggerRef={triggerRef}
         variant="text"
       >
@@ -127,7 +147,7 @@ return (
         id="dropdown-menu-example2"
         onClose={onClose}
         open={open}
-        position="right"
+        position="rightTop"
         triggerRef={triggerRef}
         variant="textWithIcon"
       >
@@ -186,7 +206,7 @@ return (
         id="dropdown-menu-example3"
         onClose={onClose}
         open={open}
-        position="right"
+        position="rightTop"
         triggerRef={triggerRef}
         variant="headWithIcon"
       >
@@ -245,7 +265,7 @@ return (
         id="dropdown-menu-example4"
         onClose={onClose}
         open={open}
-        position="right"
+        position="rightTop"
         triggerRef={triggerRef}
         variant="headWithIconAndCaption"
       >
@@ -269,3 +289,13 @@ return (
 );
   `}
 />
+
+## Position
+<Description>positionプロパティのバリエーション確認用です</Description>
+<Description>デフォルトはleftTopで、その他にもtopLeft, topCenter, topRight, rightTop, rightCenter, rightBottom, bottomLeft, bottomCenter, bottomRight, leftTop, leftCenter, leftBottomを指定することができます</Description>
+
+<Preview withSource="open">
+  <Story name="Position">
+    <Position />
+  </Story>
+</Preview>
