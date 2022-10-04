@@ -26,5 +26,5 @@ jobs:
       # TODO: Build script for spindle-icon should be added
       - name: build application
         run: |
-          npx lerna run --scope @openameba/spindle-ui storybook:build
-          npx lerna run --scope @openameba/spindle-ui build
+          yarn lerna run --scope @openameba/spindle-ui storybook:build
+          yarn lerna run --scope @openameba/spindle-ui build
