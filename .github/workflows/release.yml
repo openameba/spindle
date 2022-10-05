@@ -21,7 +21,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v2-beta
         with:
-          node-version: 14
+          node-version: 16
       # Bootstrap lerna for building app before publishing
       - name: restore lerna
         uses: actions/cache@v3
