@@ -163,6 +163,20 @@ export class SpindleThemeSwitch extends DarkModeToggle {
     document.addEventListener('colorschemechange', () => {
       html.dataset.colorScheme = this.mode;
     });
+
+    // To respect prefers-color-scheme until the first switch change
+    [
+      this.shadowRoot?.querySelector('[part=lightRadio]'),
+      this.shadowRoot?.querySelector('[part=darkRadio]'),
+    ].forEach((input) => {
+      input?.addEventListener(
+        'change',
+        () => {
+          this.permanent = true;
+        },
+        { once: true },
+      );
+    });
   }
 }
 

@@ -7,13 +7,12 @@ on:
 jobs:
   build:
     name: build
-          - 14
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v2-beta
         with:
-          node-version: 14
+          node-version: 16
       - name: restore lerna
         uses: actions/cache@v3
         with:
@@ -27,5 +26,5 @@ jobs:
       # TODO: Build script for spindle-icon should be added
       - name: build application
         run: |
-          npx lerna run --scope @openameba/spindle-ui storybook:build
-          npx lerna run --scope @openameba/spindle-ui build
+          yarn lerna run --scope @openameba/spindle-ui storybook:build
+          yarn lerna run --scope @openameba/spindle-ui build

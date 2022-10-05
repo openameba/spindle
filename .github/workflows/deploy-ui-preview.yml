@@ -2,8 +2,8 @@ name: deploy UI preview
 
 on:
   pull_request:
-    paths:
-      - 'packages/spindle-ui/**'
+    # paths:
+    #   - 'packages/spindle-ui/**'
 
 jobs:
   build_and_preview:
@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v2-beta
         with:
-          node-version: 14
+          node-version: 16
       - run: yarn install --frozen-lockfile
       - run: yarn storybook:build
       - name: deploy to preview channel

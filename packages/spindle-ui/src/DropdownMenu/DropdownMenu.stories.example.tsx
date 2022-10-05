@@ -32,7 +32,7 @@ export function Text() {
           id="dropdown-menu-example1"
           onClose={onClose}
           open={open}
-          position="right"
+          position="rightTop"
           triggerRef={triggerRef}
           variant="text"
         >
@@ -75,7 +75,7 @@ export function TextWithIcon() {
           id="dropdown-menu-example2"
           onClose={onClose}
           open={open}
-          position="right"
+          position="rightTop"
           triggerRef={triggerRef}
           variant="textWithIcon"
         >
@@ -124,7 +124,7 @@ export function HeadWithIcon() {
           id="dropdown-menu-example3"
           onClose={onClose}
           open={open}
-          position="right"
+          position="rightTop"
           triggerRef={triggerRef}
           variant="headWithIcon"
         >
@@ -173,7 +173,7 @@ export function HeadWithIconAndCaption() {
           id="dropdown-menu-example4"
           onClose={onClose}
           open={open}
-          position="right"
+          position="rightTop"
           triggerRef={triggerRef}
           variant="headWithIconAndCaption"
         >
@@ -194,5 +194,221 @@ export function HeadWithIconAndCaption() {
         </DropdownMenu.List>
       </DropdownMenu.Frame>
     </div>
+  );
+}
+
+// Storybookでのpositionプロパティのバリエーション確認用
+export function Position() {
+  const triggerRef = useRef<HTMLButtonElement>(null);
+
+  return (
+    <>
+      <div
+        style={{
+          ['--DropdownMenu-z-index']: 2,
+          marginTop: 80,
+          marginLeft: 210,
+        }}
+      >
+        <DropdownMenu.Frame>
+          <Button ref={triggerRef} size="medium" variant="neutral">
+            例
+          </Button>
+          <DropdownMenu.Position position="topRight" triggerRef={triggerRef}>
+            <DropdownMenu.ListItem {...actions('onClick')}>
+              <DropdownMenu.Title>position: topRightを指定</DropdownMenu.Title>
+            </DropdownMenu.ListItem>
+          </DropdownMenu.Position>
+        </DropdownMenu.Frame>
+      </div>
+      <div
+        style={{
+          ['--DropdownMenu-z-index']: 2,
+          marginTop: 90,
+          marginLeft: 105,
+        }}
+      >
+        <DropdownMenu.Frame>
+          <Button ref={triggerRef} size="medium" variant="neutral">
+            例
+          </Button>
+          <DropdownMenu.Position position="topCenter" triggerRef={triggerRef}>
+            <DropdownMenu.ListItem {...actions('onClick')}>
+              <DropdownMenu.Title>position: topCenterを指定</DropdownMenu.Title>
+            </DropdownMenu.ListItem>
+          </DropdownMenu.Position>
+        </DropdownMenu.Frame>
+      </div>
+      <div style={{ ['--DropdownMenu-z-index']: 2, marginTop: 90 }}>
+        <DropdownMenu.Frame>
+          <Button ref={triggerRef} size="medium" variant="neutral">
+            例
+          </Button>
+          <DropdownMenu.Position position="topLeft" triggerRef={triggerRef}>
+            <DropdownMenu.ListItem {...actions('onClick')}>
+              <DropdownMenu.Title>position: topLeftを指定</DropdownMenu.Title>
+            </DropdownMenu.ListItem>
+          </DropdownMenu.Position>
+        </DropdownMenu.Frame>
+      </div>
+
+      <div style={{ ['--DropdownMenu-z-index']: 2, marginTop: 20 }}>
+        <DropdownMenu.Frame>
+          <Button ref={triggerRef} size="medium" variant="neutral">
+            例
+          </Button>
+          <DropdownMenu.Position position="rightTop" triggerRef={triggerRef}>
+            <DropdownMenu.ListItem {...actions('onClick')}>
+              <DropdownMenu.Title>position: rightTopを指定</DropdownMenu.Title>
+            </DropdownMenu.ListItem>
+          </DropdownMenu.Position>
+        </DropdownMenu.Frame>
+      </div>
+      <div style={{ ['--DropdownMenu-z-index']: 2, marginTop: 90 }}>
+        <DropdownMenu.Frame>
+          <Button ref={triggerRef} size="medium" variant="neutral">
+            例
+          </Button>
+          <DropdownMenu.Position position="rightCenter" triggerRef={triggerRef}>
+            <DropdownMenu.ListItem {...actions('onClick')}>
+              <DropdownMenu.Title>
+                position: rightCenterを指定
+              </DropdownMenu.Title>
+            </DropdownMenu.ListItem>
+          </DropdownMenu.Position>
+        </DropdownMenu.Frame>
+      </div>
+      <div style={{ ['--DropdownMenu-z-index']: 2, marginTop: 90 }}>
+        <DropdownMenu.Frame>
+          <Button ref={triggerRef} size="medium" variant="neutral">
+            例
+          </Button>
+          <DropdownMenu.Position position="rightBottom" triggerRef={triggerRef}>
+            <DropdownMenu.ListItem {...actions('onClick')}>
+              <DropdownMenu.Title>
+                position: rightBottomを指定
+              </DropdownMenu.Title>
+            </DropdownMenu.ListItem>
+          </DropdownMenu.Position>
+        </DropdownMenu.Frame>
+      </div>
+
+      <div
+        style={{
+          ['--DropdownMenu-z-index']: 2,
+          marginTop: 90,
+          marginLeft: 210,
+        }}
+      >
+        <DropdownMenu.Frame>
+          <Button ref={triggerRef} size="medium" variant="neutral">
+            例
+          </Button>
+          <DropdownMenu.Position position="bottomRight" triggerRef={triggerRef}>
+            <DropdownMenu.ListItem {...actions('onClick')}>
+              <DropdownMenu.Title>
+                position: bottomRightを指定
+              </DropdownMenu.Title>
+            </DropdownMenu.ListItem>
+          </DropdownMenu.Position>
+        </DropdownMenu.Frame>
+      </div>
+      <div
+        style={{
+          ['--DropdownMenu-z-index']: 2,
+          marginTop: 90,
+          marginLeft: 110,
+        }}
+      >
+        <DropdownMenu.Frame>
+          <Button ref={triggerRef} size="medium" variant="neutral">
+            例
+          </Button>
+          <DropdownMenu.Position
+            position="bottomCenter"
+            triggerRef={triggerRef}
+          >
+            <DropdownMenu.ListItem {...actions('onClick')}>
+              <DropdownMenu.Title>
+                position: bottomCenterを指定
+              </DropdownMenu.Title>
+            </DropdownMenu.ListItem>
+          </DropdownMenu.Position>
+        </DropdownMenu.Frame>
+      </div>
+      <div style={{ ['--DropdownMenu-z-index']: 2, marginTop: 90 }}>
+        <DropdownMenu.Frame>
+          <Button ref={triggerRef} size="medium" variant="neutral">
+            例
+          </Button>
+          <DropdownMenu.Position position="bottomLeft" triggerRef={triggerRef}>
+            <DropdownMenu.ListItem {...actions('onClick')}>
+              <DropdownMenu.Title>
+                position: bottomLeftを指定
+              </DropdownMenu.Title>
+            </DropdownMenu.ListItem>
+          </DropdownMenu.Position>
+        </DropdownMenu.Frame>
+      </div>
+
+      <div
+        style={{
+          ['--DropdownMenu-z-index']: 2,
+          marginTop: 90,
+          marginLeft: 265,
+        }}
+      >
+        <DropdownMenu.Frame>
+          <Button ref={triggerRef} size="medium" variant="neutral">
+            例
+          </Button>
+          <DropdownMenu.Position position="leftTop" triggerRef={triggerRef}>
+            <DropdownMenu.ListItem {...actions('onClick')}>
+              <DropdownMenu.Title>position: leftTopを指定</DropdownMenu.Title>
+            </DropdownMenu.ListItem>
+          </DropdownMenu.Position>
+        </DropdownMenu.Frame>
+      </div>
+      <div
+        style={{
+          ['--DropdownMenu-z-index']: 2,
+          marginTop: 90,
+          marginLeft: 265,
+        }}
+      >
+        <DropdownMenu.Frame>
+          <Button ref={triggerRef} size="medium" variant="neutral">
+            例
+          </Button>
+          <DropdownMenu.Position position="leftCenter" triggerRef={triggerRef}>
+            <DropdownMenu.ListItem {...actions('onClick')}>
+              <DropdownMenu.Title>
+                position: leftCenterを指定
+              </DropdownMenu.Title>
+            </DropdownMenu.ListItem>
+          </DropdownMenu.Position>
+        </DropdownMenu.Frame>
+      </div>
+      <div
+        style={{
+          ['--DropdownMenu-z-index']: 2,
+          marginTop: 90,
+          marginLeft: 265,
+        }}
+      >
+        <DropdownMenu.Frame>
+          <Button ref={triggerRef} size="medium" variant="neutral">
+            例
+          </Button>
+          <DropdownMenu.Position position="leftBottom" triggerRef={triggerRef}>
+            <DropdownMenu.ListItem {...actions('onClick')}>
+              <DropdownMenu.Title>
+                position: leftBottomを指定
+              </DropdownMenu.Title>
+            </DropdownMenu.ListItem>
+          </DropdownMenu.Position>
+        </DropdownMenu.Frame>
+      </div>
+    </>
   );
 }
