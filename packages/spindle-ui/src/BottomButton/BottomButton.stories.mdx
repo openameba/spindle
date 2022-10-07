@@ -1,0 +1,86 @@
+import { Description, Meta, Story, Source } from '@storybook/addon-docs/blocks';
+import { Button } from '../Button';
+import { BottomButton } from './BottomButton';
+
+# Bottom Button
+
+<Meta title="BottomButton" component={BottomButton} />
+
+![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)
+
+<Source
+  language='javascript'
+  code={`import { BottomButton } from '@openameba/spindle-ui/BottomButton'`}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/BottomButton/BottomButton.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/BottomButton/BottomButton.css">`}
+/>
+
+## Fixed Position
+<Description>画面下部に配置されます</Description>
+
+<Preview withSource="open">
+  <Story name="Fixed Position">
+    <div style={{ ["--BottomButton-z-index"]: 2 }}>
+      <BottomButton position="fixed">
+        <Button size="large" variant="contained" layout="fullWidth">fixed button</Button>
+      </BottomButton>
+    </div>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<BottomButton position="fixed">
+  <Button size="large" variant="contained" layout="fullWidth">fixed button</Button>
+</BottomButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<div class="spui-BottomButton spui-BottomButton--fixed">
+  <div class="spui-BottomButton-wrap">
+    <button class="spui-Button spui-Button--large spui-Button--contained">fixed button</button>
+  </div>
+</div>
+  `}
+/>
+
+## Sticky Position
+<Description>上部のコンテンツがスクロール中に画面下部に固定され、スクロールし終わると固定が解除されます</Description>
+
+<Preview withSource="open">
+  <Story name="Sticky Position">
+    <BottomButton position="sticky">
+      <Button size="large" variant="contained" layout="fullWidth">sticky button</Button>
+    </BottomButton>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<BottomButton position="sticky">
+  <Button size="large" variant="contained" layout="fullWidth">sticky button</Button>
+</BottomButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<div class="spui-BottomButton spui-BottomButton--sticky">
+  <div class="spui-BottomButton-wrap">
+    <button class="spui-Button spui-Button--fullWidth spui-Button--large spui-Button--contained">sticky button</button>
+  </div>
+</div>
+  `}
+/>
