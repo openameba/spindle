@@ -74,6 +74,7 @@
   font-weight: normal;
 }
 
+/* To expand tap area */
 .spui-Breadcrumb a::before {
   border-radius: 4px;
   content: '';
