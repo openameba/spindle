@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.48.1-alpha.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.48.0...@openameba/spindle-ui@0.48.1-alpha.0) (2022-10-11)
+
+
+### Features
+
+* **spindle-ui:** add Breadcrumb variants ([d3c9c2c](https://github.com/openameba/spindle/commit/d3c9c2c4098606bf20c948a0cbe826e40af2f66b))
+* **spindle-ui:** add wrap option to Breadcrumb ([742ae01](https://github.com/openameba/spindle/commit/742ae017f97ce323eed8a3684fbd258555e52b0a))
+* **spindle-ui:** scrollable breadcrumb ([c1e8071](https://github.com/openameba/spindle/commit/c1e8071f44cdfc5e34aa2a834050140d2098143c))
+
+
+### BREAKING CHANGES
+
+* **spindle-ui:** the default variant is changed.
+
+
+
+
+
 # [0.48.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.47.0...@openameba/spindle-ui@0.48.0) (2022-10-11)
 
 
