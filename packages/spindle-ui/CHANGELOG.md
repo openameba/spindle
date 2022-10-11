@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.48.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.47.0...@openameba/spindle-ui@0.48.0) (2022-10-11)
+
+
+### Bug Fixes
+
+* **spindle-ui:** change button label in storybook ([3d7c4c2](https://github.com/openameba/spindle/commit/3d7c4c2cb5d583e9667fa41bd2a6be88e61dcc26))
+* **spindle-ui:** do not accept div tag attributes ([5becb97](https://github.com/openameba/spindle/commit/5becb9747c32511f4fbf2cfe63d51117069673ed))
+* **spindle-ui:** tweak style ([b1cc86c](https://github.com/openameba/spindle/commit/b1cc86ce0fc7643a7072074f8c62c2f8ce087747))
+
+
+### Features
+
+* **spindle-ui:** create BottomButton ([b02b4d8](https://github.com/openameba/spindle/commit/b02b4d8a1bad595d5e4772f2fcf803e543cbfcb6))
+
+
+
+
+
 # [0.47.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.46.4...@openameba/spindle-ui@0.47.0) (2022-10-03)
 
 
