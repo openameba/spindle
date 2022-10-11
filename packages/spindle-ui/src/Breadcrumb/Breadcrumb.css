@@ -99,6 +99,7 @@
 /* stylelint-enable plugin/selector-bem-pattern */
 
 .spui-Breadcrumb-chevron {
+  box-sizing: content-box;
   color: var(--color-object-low-emphasis);
   height: 16px;
   padding: 0 4px;
