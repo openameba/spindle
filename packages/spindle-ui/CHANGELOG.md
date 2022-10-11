@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.49.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.48.0...@openameba/spindle-ui@0.49.0) (2022-10-11)
+
+
+### Features
+
+* **spindle-ui:** add pagination component ([59a6683](https://github.com/openameba/spindle/commit/59a6683a66ae136ff5f4cef88bc79ea2d675868d))
+
+
+
+
+
 # [0.48.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.47.0...@openameba/spindle-ui@0.48.0) (2022-10-11)
 
 
