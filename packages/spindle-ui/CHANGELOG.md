@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.49.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.49.0...@openameba/spindle-ui@0.49.1) (2022-10-13)
+
+
+### Bug Fixes
+
+* **spindle-ui:** pagination style ([84d8d1f](https://github.com/openameba/spindle/commit/84d8d1fbafc98a476cd456d2ee64628321e8355a))
+
+
+
+
+
 # [0.49.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.48.0...@openameba/spindle-ui@0.49.0) (2022-10-11)
 
 
