@@ -97,13 +97,13 @@
 @media screen and (max-width: 414px) {
   .spui-Pagination-item:nth-child(4),
   .spui-Pagination-item:nth-child(6) {
-    display: block;
+    display: none;
   }
 }
 
 @media screen and (max-width: 360px) {
-  .spui-Pagination-item:nth-child(4),
-  .spui-Pagination-item:nth-child(6) {
+  .spui-Pagination-item--first,
+  .spui-Pagination-item--last {
     display: none;
   }
 }

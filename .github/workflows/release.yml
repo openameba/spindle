@@ -31,7 +31,7 @@ jobs:
             */*/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-v2
       - run: yarn install --frozen-lockfile
-      - run: npx lerna bootstrap -- --frozen-lockfile
+      - run: yarn lerna bootstrap -- --frozen-lockfile
       - name: Set git user
         run: |
           git config --global user.email "<>"
@@ -47,7 +47,7 @@ jobs:
         id: extract_branch
       - name: Releaseing with lerna
         # also see some options in lerna.json
-        run: npx lerna publish ${{ steps.extract_branch.outputs.version }} --conventional-commits --create-release github --yes --no-private
+        run: yarn lerna publish ${{ steps.extract_branch.outputs.version }} --conventional-commits --create-release github --yes --no-private
         env:
           GH_TOKEN: ${{ github.token }}
       - name: Create Pull Request

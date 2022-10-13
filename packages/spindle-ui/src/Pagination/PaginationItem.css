@@ -49,11 +49,11 @@
   flex-direction: row-reverse;
 }
 
-.spui-PaginationItem-link--prev {
+.spui-PaginationItem-link--prev .spui-PaginationItem-label {
   padding-right: 8px;
 }
 
-.spui-PaginationItem-link--next {
+.spui-PaginationItem-link--next .spui-PaginationItem-label {
   padding-left: 8px;
 }
 
@@ -65,22 +65,6 @@
 
 @media screen and (max-width: 768px) {
   .spui-PaginationItem-label {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 414px) {
-  .spui-PaginationItem-label,
-  .spui-PaginationItem--first,
-  .spui-PaginationItem--last {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 360px) {
-  .spui-PaginationItem-label,
-  .spui-PaginationItem-item--first,
-  .spui-PaginationItem-item--last {
     display: none;
   }
 }
