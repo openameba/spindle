@@ -95,8 +95,7 @@
 }
 
 @media screen and (max-width: 414px) {
-  .spui-Pagination-item:nth-child(4),
-  .spui-Pagination-item:nth-child(6) {
+  .spui-Pagination-item--hidden {
     display: none;
   }
 }

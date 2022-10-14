@@ -81,10 +81,16 @@ export const Pagination = (props: Props) => {
         {displayItem.map((pageNumber, index) => {
           const isCurrent = current === pageNumber;
           const hasRelAttribute = current === pageNumber + 1;
+          const isHidden = showPrevNext && (index === 1 || index === 3);
 
           return (
             <li
-              className={`${BLOCK_NAME}-item`}
+              className={[
+                `${BLOCK_NAME}-item`,
+                isHidden && `${BLOCK_NAME}-item--hidden`,
+              ]
+                .filter(Boolean)
+                .join(' ')}
               key={`pagination-item-${pageNumber}`}
             >
               {index === pageItem - 1 && showNextHorizontal && (
