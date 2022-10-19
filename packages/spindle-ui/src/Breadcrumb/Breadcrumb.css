@@ -14,16 +14,6 @@
   position: relative;
 }
 
-/* Display inner border */
-.spui-Breadcrumb--standard::before {
-  background: var(--color-border-low-emphasis);
-  bottom: 0;
-  content: '';
-  height: 1px;
-  position: absolute;
-  width: 100%;
-}
-
 .spui-Breadcrumb-list {
   display: flex;
   list-style: none;
