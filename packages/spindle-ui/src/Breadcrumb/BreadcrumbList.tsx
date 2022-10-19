@@ -18,7 +18,7 @@ export const BreadcrumbList = (props: Props) => {
   const currentRef = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
-    currentRef?.current?.scrollIntoView();
+    currentRef.current?.scrollIntoView();
   }, []);
 
   return (

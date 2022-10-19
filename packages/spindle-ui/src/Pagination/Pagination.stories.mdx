@@ -1,0 +1,190 @@
+import { Description, Meta, Story, Source } from '@storybook/addon-docs/blocks';
+import { actions } from '@storybook/addon-actions';
+import { Pagination } from './Pagination';
+
+# Pagination
+
+<Meta title="Pagination" component={Pagination} />
+
+![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)
+
+<Source
+  language="javascript"
+  code={`import { Pagination } from '@openameba/spindle-ui'`}
+/>
+
+<Source
+  language="css"
+  code={`@import './node_modules/@openameba/spindle-ui/Pagination.css'`}
+/>
+
+<Source
+  language="html"
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Pagination.css">`}
+/>
+
+<Description>Paginationはページの移動を目的として利用します。</Description>
+
+<Description>
+  ページの前後に移動することができます。また、画面幅によりレイアウトが変化します。
+</Description>
+
+<Description>デフォルトではアンカー要素を使用します。</Description>
+
+<Description>
+  `createUrl`に関数を渡すことでURLを任意の形で生成することが可能です。
+</Description>
+
+export const url = '/detail/CURRENT.html';
+export const pageNumber = 1;
+
+## Normal
+
+<Preview withSource="open">
+  <Story name="Normal">
+    <Pagination
+      total={5}
+      current={3}
+      showCount={true}
+      showPrevNext={true}
+      showFirstLast={true}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={'<Pagination url="/article/page-PAGE_NUMBER.html" total={5} current={3} showCount={true} showPrevNext={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+/>
+
+## current 8 total 20
+
+<Preview withSource="open">
+  <Story name="current 8 total 20">
+    <Pagination
+      total={20}
+      current={8}
+      showCount={true}
+      showPrevNext={true}
+      showFirstLast={true}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={'<Pagination total={20} current={8} showCount={true} showPrevNext={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+/>
+
+## current 900 total 999
+
+<Preview withSource="open">
+  <Story name="current 900 total 999">
+    <Pagination
+      total={999}
+      current={900}
+      showCount={true}
+      showPrevNext={true}
+      showFirstLast={true}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={'<Pagination total={999} current={900} showCount={true} showPrevNext={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+/>
+
+## current 10000 total 20000
+
+<Description>
+  上限は設けていないためページ数の値によってリンクの横幅が広がるレイアウトとなっています。
+</Description>
+
+<Preview withSource="open">
+  <Story name="current 10000 total 20000">
+    <Pagination
+      total={20000}
+      current={10000}
+      showCount={true}
+      showPrevNext={true}
+      showFirstLast={true}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={'<Pagination total={20000} current={10000} showCount={true} showPrevNext={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+/>
+
+## showPrevNext showFirstLast props false
+
+<Description>
+  `showPrevNext`と`showFirstLast`propsは`false`にすることが可能です。
+</Description>
+
+<Description>
+  その場合、ページリンクにて前後と最初最後のリンクを担保します。
+</Description>
+
+<Preview withSource="open">
+  <Story name="showPrevNext showFirstLast props false">
+    <Pagination
+      total={20}
+      current={8}
+      showCount={true}
+      showPrevNext={false}
+      showFirstLast={false}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={'<Pagination total={20} current={8} showCount={true} showPrevNext={false} showFirstLast={false} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+/>
+
+## create url function
+
+<Preview withSource="open">
+  <Story name="create url function">
+    <Pagination
+      total={20}
+      current={8}
+      showCount={true}
+      showPrevNext={true}
+      showFirstLast={true}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={'<Pagination total={20} current={8} showCount={true} showPrevNext={false} showFirstLast={false} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+/>
+
+## リンク動作のカスタマイズ
+
+<Description>
+  各サービスでルーティングを利用したい場合は、onPageChangeの第一引数にあるeventを利用してください。
+</Description>
+
+<Source
+  code={`function Component({children, url = '', external, ref, ...rest}) {
+    const handleClick = (event, pageNumber) => {
+      event.preventDefault();
+      router.push(pageNumber);
+    };
+    return (
+      <Pagination onPageChange={(event, pageNumber) => { handleClick(event, pageNumber); }} />
+    );
+  }
+`}
+/>
