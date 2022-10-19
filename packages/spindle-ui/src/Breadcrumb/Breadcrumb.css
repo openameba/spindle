@@ -24,17 +24,21 @@
   width: 100%;
 }
 
-.spui-Breadcrumb--emphasized .spui-Breadcrumb-list {
-  background: var(--color-surface-secondary);
-  border-radius: 70px;
-}
-
 .spui-Breadcrumb-list {
   display: flex;
   list-style: none;
   margin: 0;
-  padding: 0 16px;
   width: max-content;
+}
+
+.spui-Breadcrumb--standard .spui-Breadcrumb-list {
+  padding: 0;
+}
+
+.spui-Breadcrumb--emphasized .spui-Breadcrumb-list {
+  background: var(--color-surface-secondary);
+  border-radius: 70px;
+  padding: 0 16px;
 }
 
 .spui-Breadcrumb--standard.spui-Breadcrumb--wrap .spui-Breadcrumb-list {
@@ -91,6 +95,11 @@
 .spui-Breadcrumb a:focus {
   outline: 2px solid var(--color-focus-clarity);
   outline-offset: 1px;
+}
+
+/* To avoid overflow, standard variant has no padding */
+.spui-Breadcrumb--standard a:focus {
+  outline-offset: -2px;
 }
 
 .spui-Breadcrumb a:focus:not(:focus-visible) {
