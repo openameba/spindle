@@ -40,6 +40,22 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **spindle-ui:** create BottomButton ([b02b4d8](https://github.com/openameba/spindle/commit/b02b4d8a1bad595d5e4772f2fcf803e543cbfcb6))
 
 
+## [0.47.1-alpha.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.47.0...@openameba/spindle-ui@0.47.1-alpha.0) (2022-10-05)
+
+
+### Features
+
+* **spindle-ui:** create BottomButton ([b02b4d8](https://github.com/openameba/spindle/commit/b02b4d8a1bad595d5e4772f2fcf803e543cbfcb6))
+* **spindle-ui:** add Breadcrumb variants ([e0a8a1f](https://github.com/openameba/spindle/commit/e0a8a1f5ae5cfd0dad3e06ab594d397f84b7f1ce))
+* **spindle-ui:** add wrap option to Breadcrumb ([b925471](https://github.com/openameba/spindle/commit/b925471284922e180a2b6bbdfba6deb9aca17f8c))
+* **spindle-ui:** scrollable breadcrumb ([d85cb2e](https://github.com/openameba/spindle/commit/d85cb2ecc984eb25671bf40422f988d73ef4b228))
+
+
+### BREAKING CHANGES
+
+* **spindle-ui:** the default variant is changed.
+
+
 
 
 
