@@ -51,6 +51,7 @@
     }
   },
   "dependencies": {
+    "@openameba/spindle-hooks": "^0.10.2",
     "ameba-color-palette.css": "^4.8.0",
     "react-merge-refs": "^1.1.0"
   },
