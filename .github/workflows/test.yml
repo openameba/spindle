@@ -25,4 +25,6 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-v2
       - run: yarn install --frozen-lockfile
       - run: npx lerna bootstrap -- --frozen-lockfile
-      - run: yarn test
+      - run: |
+          yarn lerna run --scope @openameba/spindle-hooks prepublishOnly
+          yarn test
