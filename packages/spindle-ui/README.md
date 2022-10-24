@@ -103,6 +103,14 @@ yarn install
 yarn dev # storybookが起動します
 ```
 
+NOTE: 事前に [spindle-hooks](https://github.com/openameba/spindle/tree/main/packages/spindle-hooks) を 以下のように build しておく必要があります。
+
+```
+cd ../spindle-hooks
+yarn build
+cd -
+```
+
 ## ライセンス
 Spindle UIはMITライセンスで公開されています。ただし、アイコンは[Spindle Icons](../spindle-icons/)に準じて、Creative Commons BY-NC-ND 4.0ライセンスで公開されています。
 
