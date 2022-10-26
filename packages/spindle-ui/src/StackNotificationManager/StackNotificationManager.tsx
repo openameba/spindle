@@ -12,10 +12,30 @@ import React, {
 } from 'react';
 
 export type ManagedStackItem = {
+  /**
+   * This is identifier of the item.
+   * This value should unique in the stack.
+   */
   id: string;
+  /**
+   * This indicates whether the item is active or not.
+   */
   active: boolean;
+  /**
+   * This indicates how many components are stacked so far.
+   * This value continues to increase until the browser session ends.
+   */
   order: number;
+  /**
+   * This is used when deactivate the component internally.
+   * For example, the component can trigger the closing animation by changing this props.
+   * And it can set the `active` props to false by using `setActive` after the closing animation is finished.
+   */
   isPreservingInternalActive: boolean;
+  /**
+   * The height of notification component.
+   * Height includes padding, borders and margins size.
+   */
   contentHeight: number;
 };
 
@@ -36,6 +56,39 @@ export type StackOffset<P extends StackPosition = StackPosition> = {
     [K in keyof StackPositionOffset]?: StackPositionOffset[K];
   };
 };
+
+export type StackNotificationManagerProperties<
+  P extends StackPosition = StackPosition,
+> = ManagedStackItem & {
+  /**
+   * This indicates position where this item is stacked.
+   */
+  position: P;
+  /**
+   * Offset from the edge of the window to the first item.
+   */
+  offset: StackOffset[P];
+  /**
+   * This indicates the position where this item is placed in the stack.
+   */
+  stackPosition: number;
+  /**
+   * This is used to get components' height.
+   * Height includes padding, borders and margins size.
+   */
+  setContentHeight: (height: number) => void;
+};
+
+export type StackNotificationManagerProps<
+  P extends StackPosition = StackPosition,
+> = {
+  [K in keyof StackNotificationManagerProperties<P>]?: StackNotificationManagerProperties<P>[K];
+};
+
+export type StackNotificationComponentProps<
+  Props extends object = object,
+  Position extends StackPosition = StackPosition,
+> = StackNotificationManagerProps<Position> & Props;
 
 type StackNotificationManagerContextValue<
   P extends StackPosition = StackPosition,
