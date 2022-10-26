@@ -7,43 +7,33 @@ import React, {
   MouseEventHandler,
   ReactNode,
   SetStateAction,
-  useCallback,
-  useEffect,
   useMemo,
-  useRef,
-  useState,
 } from 'react';
-import {
-  StackPosition,
-  StackPositionOffset,
-} from '../StackNotificationManager';
+import { useStackNotificationComponent } from '../StackNotificationManager';
 import { CrossBold } from '../Icon';
 import { IconButton } from '../IconButton';
 import { TextLink as SpindleTextLink } from '../TextLink/TextLink';
 import { TextButton as SpindleTextButton } from '../TextButton/TextButton';
+import { StackNotificationComponentProps } from '../StackNotificationManager/StackNotificationManager';
 
 type Variant = 'information' | 'confirmation' | 'error';
 
-type Props = {
+type Props = StackNotificationComponentProps<{
   children?: React.ReactElement;
   active?: boolean;
-  offset?: { [K in keyof StackPositionOffset]?: StackPositionOffset[K] };
   // milliseconds to hide
   duration?: number;
   onHide?: () => void;
-  position?: StackPosition;
   variant?: Variant;
-  setContentHeight?: (height: number) => void;
-  stackPosition?: number;
-};
+}>;
 
 export const BLOCK_NAME = 'spui-SnackBar';
 
 // Duration for css animation.
 export const ANIMATION_DURATION = 300;
 
-export const MAX_DURATION = 10000;
-const VERTICAL_GAP = 20;
+const MAX_DURATION = 10000;
+export const DISPLAYING_TIMEOUT_DURATION = MAX_DURATION - ANIMATION_DURATION;
 const DEFAULT_VARIANT = 'information';
 
 type InternalChildProps = {
@@ -54,114 +44,52 @@ type InternalChildProps = {
 const Frame = ({
   children,
   active: _active,
-  position = 'topCenter',
+  position: _position = 'topCenter',
   offset: _offset = {},
   onHide,
   variant = DEFAULT_VARIANT,
   stackPosition = 0,
   setContentHeight,
 }: Props): React.ReactElement => {
-  const [isShow, setIsShow] = useState(false);
-  const offset: StackPositionOffset = {
-    top: _offset.top ?? 24,
-    // If position is top or bottom, then horizontal offset is not needed.
-    left: position.endsWith('Left') ? _offset.left ?? 32 : 0,
-    right: position.endsWith('Right') ? _offset.right ?? 32 : 0,
-    bottom: _offset.bottom ?? 24,
-  };
-  const formattedDuration = MAX_DURATION - ANIMATION_DURATION;
-  const timeoutID = useRef<number | null>(null);
-  const [clientHeight, setClientHeight] = useState(0);
-  const [shouldAnimation, setShouldAnimation] = useState(false);
-  const [active, setActive] = useState(false);
-
-  const setIsShowWithTimeout = useCallback(() => {
-    // Out animation is executed after `formattedDuration` seconds.
-    if (timeoutID.current === null && isShow) {
-      timeoutID.current = window.setTimeout(() => {
-        setIsShow(false);
-      }, formattedDuration);
-    }
-  }, [isShow, timeoutID, setIsShow, formattedDuration]);
-
-  const resetTimeout = useCallback(() => {
-    if (timeoutID.current) {
-      window.clearTimeout(timeoutID.current);
-      timeoutID.current = null;
-    }
-  }, [timeoutID]);
-
-  const handleTransitionEnd = useCallback(() => {
-    if (onHide && !isShow) {
-      onHide();
-      setActive(false);
-      timeoutID.current = null;
-    }
-  }, [isShow, onHide]);
-
-  const handleOnClickCloseButton = useCallback(() => {
-    setIsShow(false);
-  }, []);
-
-  useEffect(() => {
-    // Animation is not stopped even if `active` props is changed while running animation.
-    if (active && timeoutID.current === null) {
-      // Wait for applying transition until style is determined.
-      setShouldAnimation(true);
-      setIsShow(true);
-    }
-
-    if (!active) {
-      setShouldAnimation(false);
-    }
-  }, [active]);
-
-  useEffect(() => {
-    setIsShowWithTimeout();
-    return resetTimeout;
-  }, [setIsShowWithTimeout, resetTimeout]);
-
-  useEffect(() => {
-    if (_active) {
-      setActive(true);
-    }
-    if (!_active && isShow) {
-      setIsShow(false);
-    }
-  }, [_active, isShow]);
-
-  useEffect(() => {
-    setContentHeight?.(clientHeight + VERTICAL_GAP);
-  }, [clientHeight, setContentHeight]);
-
-  const positionPrefix = position.startsWith('top') ? 'top' : 'bottom';
-  const positionSuffix = position.slice(positionPrefix.length).toLowerCase() as
-    | 'left'
-    | 'center'
-    | 'right';
-  const orderOffsetTop = stackPosition + offset.top;
-  const orderOffsetBottom = stackPosition + offset.bottom;
+  const {
+    isShow,
+    active,
+    shouldAnimation,
+    position,
+    orderOffset,
+    offset,
+    initialHeight,
+    setIsShow,
+    focusEvent: { setIsShowWithTimeout, resetTimeout },
+    setClientHeight,
+    handleTransitionEnd,
+    handleOnClickCloseButton,
+  } = useStackNotificationComponent({
+    active: _active,
+    position: _position,
+    offset: _offset,
+    onHide,
+    stackPosition,
+    setContentHeight,
+    displayingTimeout: DISPLAYING_TIMEOUT_DURATION,
+  });
 
   return (
     <div
       style={{
-        ['--SnackBar--initial-height-top' as string]: `${
-          orderOffsetTop - clientHeight + offset.top
-        }px`,
-        ['--SnackBar--initial-height-bottom' as string]: `${
-          orderOffsetBottom - clientHeight + offset.bottom
-        }px`,
-        ['--SnackBar--order-offset-top' as string]: `${orderOffsetTop}px`,
-        ['--SnackBar--order-offset-bottom' as string]: `${-orderOffsetBottom}px`,
+        ['--SnackBar--initial-height-top' as string]: `${initialHeight.top}px`,
+        ['--SnackBar--initial-height-bottom' as string]: `${initialHeight.bottom}px`,
+        ['--SnackBar--order-offset-top' as string]: `${orderOffset.top}px`,
+        ['--SnackBar--order-offset-bottom' as string]: `${-orderOffset.bottom}px`,
         ['--SnackBar--offset-top' as string]: `${offset.top}px`,
         ['--SnackBar--offset-bottom' as string]: `${offset.bottom}px`,
         ['--SnackBar--offset-left' as string]: `${offset.left}px`,
         ['--SnackBar--offset-right' as string]: `${offset.right}px`,
-        ['--SnackBar--text-align' as string]: positionSuffix,
+        ['--SnackBar--text-align' as string]: position.horizontal,
       }}
       className={[
         BLOCK_NAME,
-        `${BLOCK_NAME}--${positionPrefix}`,
+        `${BLOCK_NAME}--${position.vertical}`,
         shouldAnimation && `${BLOCK_NAME}--slide`,
         isShow && `${BLOCK_NAME}-slide--in`,
         !active && `${BLOCK_NAME}--hidden`,

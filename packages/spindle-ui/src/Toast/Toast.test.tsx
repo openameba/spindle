@@ -2,9 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent, act } from '@testing-library/react';
 import { jest } from '@jest/globals';
 
-import { Toast, BLOCK_NAME, ANIMATION_DURATION } from './Toast';
-
-const DURATION = 4000;
+import { Toast, BLOCK_NAME, DISPLAYING_TIMEOUT_DURATION } from './Toast';
 
 describe('<Toast />', () => {
   beforeEach(() => {
@@ -25,7 +23,7 @@ describe('<Toast />', () => {
       ).toHaveClass(`${BLOCK_NAME}-slide--in`);
 
       act(() => {
-        jest.advanceTimersByTime(DURATION - ANIMATION_DURATION);
+        jest.advanceTimersByTime(DISPLAYING_TIMEOUT_DURATION);
       });
 
       expect(
@@ -86,7 +84,7 @@ describe('<Toast />', () => {
     fireEvent.mouseOver(screen.getByText(/content/));
 
     act(() => {
-      jest.advanceTimersByTime(DURATION - ANIMATION_DURATION);
+      jest.advanceTimersByTime(DISPLAYING_TIMEOUT_DURATION);
     });
 
     expect(
@@ -96,7 +94,7 @@ describe('<Toast />', () => {
     fireEvent.mouseOut(screen.getByText(/content/));
 
     act(() => {
-      jest.advanceTimersByTime(DURATION - ANIMATION_DURATION);
+      jest.advanceTimersByTime(DISPLAYING_TIMEOUT_DURATION);
     });
 
     expect(
@@ -132,7 +130,7 @@ describe('<Toast />', () => {
     handleCloseButtonEvent('focus');
 
     act(() => {
-      jest.advanceTimersByTime(DURATION - ANIMATION_DURATION);
+      jest.advanceTimersByTime(DISPLAYING_TIMEOUT_DURATION);
     });
 
     expect(
@@ -142,7 +140,7 @@ describe('<Toast />', () => {
     handleCloseButtonEvent('blur');
 
     act(() => {
-      jest.advanceTimersByTime(DURATION - ANIMATION_DURATION);
+      jest.advanceTimersByTime(DISPLAYING_TIMEOUT_DURATION);
     });
 
     expect(
