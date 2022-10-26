@@ -1,6 +1,7 @@
 /* stylelint-disable plugin/selector-bem-pattern */
 @import 'ameba-color-palette.css';
 @import './Breadcrumb/Breadcrumb.css';
+@import './BottomButton/BottomButton.css';
 @import './Button/Button.css';
 @import './ButtonGroup/ButtonGroup.css';
 @import './Dialog/Dialog.css';
@@ -16,3 +17,4 @@
 @import './SnackBar/SnackBar.css';
 @import './List/index.css';
 @import './DropdownMenu/DropdownMenu.css';
+@import './Pagination/Pagination.css';

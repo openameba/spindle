@@ -29,6 +29,8 @@ Spindle UIは以下のように利用できます。
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Button } from '@openameba/spindle-ui';
+// Tree Shakingされない環境下では個別にインポートすることを推奨します
+// 例）`import { Button } from '@openameba/spindle-ui/Button';`
 
 function App() {
   return <Button size="large" variant="contained">Spindle</Button>;

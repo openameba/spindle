@@ -1,0 +1,28 @@
+:root {
+  --BottomButton-z-index: 1;
+  --BottomButton-backgroundColor: var(--color-surface-primary);
+}
+
+/*
+ * Bottom Button
+*/
+.spui-BottomButton {
+  background: var(--BottomButton-backgroundColor);
+  bottom: 0;
+  left: 0;
+  z-index: var(--BottomButton-z-index);
+}
+
+.spui-BottomButton-wrap {
+  padding: 16px 16px calc(env(safe-area-inset-bottom) + 16px);
+}
+
+/* Position */
+.spui-BottomButton--fixed {
+  position: fixed;
+  width: 100%;
+}
+
+.spui-BottomButton--sticky {
+  position: sticky;
+}

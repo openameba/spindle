@@ -1,0 +1,109 @@
+@import './PaginationItem.css';
+
+/*
+ * Pagination
+*/
+:root {
+  --Pagination-tapHighlightColor: var(--color-tap-highlight-base);
+}
+
+.spui-Pagination {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.spui-Pagination-list {
+  align-items: center;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.spui-Pagination-item {
+  align-items: center;
+  display: flex;
+  margin: 0 5px;
+}
+
+.spui-Pagination-item--first,
+.spui-Pagination-item--last {
+  margin: 0;
+}
+
+.spui-Pagination-horizontal {
+  color: var(--color-object-low-emphasis);
+}
+
+.spui-Pagination-link {
+  align-items: center;
+  background: none;
+  border: none;
+  border-radius: 12px;
+  box-sizing: border-box;
+  display: flex;
+  font-size: 0.875em;
+  height: 40px;
+  justify-content: center;
+  line-height: 1.3;
+  margin: 0;
+  min-width: 40px;
+  padding: 0 4px;
+  position: relative;
+  -webkit-tap-highlight-color: var(--Pagination-tapHighlightColor);
+  text-decoration: none;
+}
+
+.spui-Pagination-link:not([aria-current]) {
+  background: var(--color-surface-tertiary);
+  color: var(--color-text-medium-emphasis);
+  font-weight: bold;
+}
+
+.spui-Pagination-link:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.spui-Pagination-link[aria-current] {
+  border: solid 1px var(--color-border-low-emphasis);
+  color: var(--color-text-low-emphasis);
+}
+
+.spui-Pagination-link:focus-visible {
+  outline: 2px solid var(--color-focus-clarity);
+  outline-offset: 1px;
+}
+
+@media (hover: hover) {
+  .spui-Pagination-link:not([aria-current]):hover {
+    background-color: var(--color-surface-quaternary);
+  }
+}
+
+.spui-Pagination-count {
+  color: var(--color-text-low-emphasis);
+  font-size: 0.8125em;
+  line-height: 1.3;
+  margin: 12px 0 0;
+  padding: 0;
+}
+
+.spui-Pagination-horizontal + .spui-Pagination-link,
+.spui-Pagination-link + .spui-Pagination-horizontal {
+  margin-left: 8px;
+}
+
+@media screen and (max-width: 414px) {
+  .spui-Pagination-item:nth-child(4),
+  .spui-Pagination-item:nth-child(6) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .spui-Pagination-item--first,
+  .spui-Pagination-item--last {
+    display: none;
+  }
+}
