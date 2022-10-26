@@ -3,6 +3,80 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.50.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.49.1...@openameba/spindle-ui@0.50.0) (2022-10-20)
+
+
+### Features
+
+* **spindle-ui:** add Breadcrumb variants ([a5e49bf](https://github.com/openameba/spindle/commit/a5e49bf8559cb9eecb757c7c19a65763311cc1c0))
+* **spindle-ui:** add wrap option to Breadcrumb ([88ea5e1](https://github.com/openameba/spindle/commit/88ea5e19f4c8c4bcbf317cde5c4b516b0e604afb))
+* **spindle-ui:** scrollable breadcrumb ([de56b83](https://github.com/openameba/spindle/commit/de56b8389719ae47ff5a532d4a1b6bce572e2964))
+
+
+### BREAKING CHANGES
+
+* **spindle-ui:** the default variant is changed.
+
+
+
+
+
+## [0.49.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.49.0...@openameba/spindle-ui@0.49.1) (2022-10-13)
+
+
+### Bug Fixes
+
+* **spindle-ui:** pagination style ([84d8d1f](https://github.com/openameba/spindle/commit/84d8d1fbafc98a476cd456d2ee64628321e8355a))
+
+
+
+
+
+# [0.49.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.48.0...@openameba/spindle-ui@0.49.0) (2022-10-11)
+
+
+### Features
+
+* **spindle-ui:** add pagination component ([59a6683](https://github.com/openameba/spindle/commit/59a6683a66ae136ff5f4cef88bc79ea2d675868d))
+
+
+
+
+
+# [0.48.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.47.0...@openameba/spindle-ui@0.48.0) (2022-10-11)
+
+
+### Bug Fixes
+
+* **spindle-ui:** change button label in storybook ([3d7c4c2](https://github.com/openameba/spindle/commit/3d7c4c2cb5d583e9667fa41bd2a6be88e61dcc26))
+* **spindle-ui:** do not accept div tag attributes ([5becb97](https://github.com/openameba/spindle/commit/5becb9747c32511f4fbf2cfe63d51117069673ed))
+* **spindle-ui:** tweak style ([b1cc86c](https://github.com/openameba/spindle/commit/b1cc86ce0fc7643a7072074f8c62c2f8ce087747))
+
+
+### Features
+
+* **spindle-ui:** create BottomButton ([b02b4d8](https://github.com/openameba/spindle/commit/b02b4d8a1bad595d5e4772f2fcf803e543cbfcb6))
+
+
+## [0.47.1-alpha.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.47.0...@openameba/spindle-ui@0.47.1-alpha.0) (2022-10-05)
+
+
+### Features
+
+* **spindle-ui:** create BottomButton ([b02b4d8](https://github.com/openameba/spindle/commit/b02b4d8a1bad595d5e4772f2fcf803e543cbfcb6))
+* **spindle-ui:** add Breadcrumb variants ([e0a8a1f](https://github.com/openameba/spindle/commit/e0a8a1f5ae5cfd0dad3e06ab594d397f84b7f1ce))
+* **spindle-ui:** add wrap option to Breadcrumb ([b925471](https://github.com/openameba/spindle/commit/b925471284922e180a2b6bbdfba6deb9aca17f8c))
+* **spindle-ui:** scrollable breadcrumb ([d85cb2e](https://github.com/openameba/spindle/commit/d85cb2ecc984eb25671bf40422f988d73ef4b228))
+
+
+### BREAKING CHANGES
+
+* **spindle-ui:** the default variant is changed.
+
+
+
+
+
 # [0.47.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.46.4...@openameba/spindle-ui@0.47.0) (2022-10-03)
 
 

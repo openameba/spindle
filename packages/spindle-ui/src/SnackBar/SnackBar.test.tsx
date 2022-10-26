@@ -2,12 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent, act } from '@testing-library/react';
 import { jest } from '@jest/globals';
 
-import {
-  SnackBar,
-  BLOCK_NAME,
-  ANIMATION_DURATION,
-  MAX_DURATION,
-} from './SnackBar';
+import { SnackBar, BLOCK_NAME, DISPLAYING_TIMEOUT_DURATION } from './SnackBar';
 
 describe('<SnackBar />', () => {
   beforeEach(() => {
@@ -28,7 +23,7 @@ describe('<SnackBar />', () => {
       ).toHaveClass(`${BLOCK_NAME}-slide--in`);
 
       act(() => {
-        jest.advanceTimersByTime(MAX_DURATION - ANIMATION_DURATION);
+        jest.advanceTimersByTime(DISPLAYING_TIMEOUT_DURATION);
       });
 
       expect(
@@ -89,7 +84,7 @@ describe('<SnackBar />', () => {
     fireEvent.mouseOver(screen.getByText(/content/));
 
     act(() => {
-      jest.advanceTimersByTime(MAX_DURATION - ANIMATION_DURATION);
+      jest.advanceTimersByTime(DISPLAYING_TIMEOUT_DURATION);
     });
 
     expect(
@@ -99,7 +94,7 @@ describe('<SnackBar />', () => {
     fireEvent.mouseOut(screen.getByText(/content/));
 
     act(() => {
-      jest.advanceTimersByTime(MAX_DURATION - ANIMATION_DURATION);
+      jest.advanceTimersByTime(DISPLAYING_TIMEOUT_DURATION);
     });
 
     expect(
@@ -135,7 +130,7 @@ describe('<SnackBar />', () => {
     handleCloseButtonEvent('focus');
 
     act(() => {
-      jest.advanceTimersByTime(MAX_DURATION - ANIMATION_DURATION);
+      jest.advanceTimersByTime(DISPLAYING_TIMEOUT_DURATION);
     });
 
     expect(
@@ -145,7 +140,7 @@ describe('<SnackBar />', () => {
     handleCloseButtonEvent('blur');
 
     act(() => {
-      jest.advanceTimersByTime(MAX_DURATION - ANIMATION_DURATION);
+      jest.advanceTimersByTime(DISPLAYING_TIMEOUT_DURATION);
     });
 
     expect(

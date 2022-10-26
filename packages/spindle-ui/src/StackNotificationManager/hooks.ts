@@ -1,8 +1,11 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   ManagedStack,
+  StackNotificationManagerProperties,
+  StackNotificationManagerProps,
   StackOffset,
   StackPosition,
+  StackPositionOffset,
   useStackNotificationManagerContext,
 } from './StackNotificationManager';
 
@@ -294,14 +297,16 @@ export const useStackNotificationManager = <
       );
   }, [item?.order, position, stack]);
 
+  const stackProps: StackNotificationManagerProps = {
+    ...(item || {}),
+    position,
+    offset: offset[position],
+    stackPosition,
+    setContentHeight,
+  };
+
   return {
-    stackProps: {
-      ...(item || {}),
-      position,
-      offset: offset[position],
-      stackPosition,
-      setContentHeight,
-    },
+    stackProps,
     setActive,
     setOffset,
   };
@@ -335,5 +340,159 @@ export const useRepeatedStackItem = <P extends StackPosition = StackPosition>({
     idList,
     append,
     onHide,
+  };
+};
+
+const VERTICAL_GAP = 20;
+
+export const useStackNotificationComponent = <
+  P extends StackPosition = StackPosition,
+>({
+  active: stackActive,
+  offset: stackOffset = {},
+  position = 'topCenter' as P,
+  stackPosition = 0,
+  setContentHeight,
+  displayingTimeout,
+  onHide,
+}: {
+  [K in keyof Omit<
+    StackNotificationManagerProperties<P>,
+    'id' | 'order' | 'contentHeight' | 'isPreservingInternalActive'
+  >]: StackNotificationManagerProperties<P>[K] | undefined;
+} & {
+  displayingTimeout: number;
+  onHide: (() => void) | undefined;
+}) => {
+  const [isShow, setIsShow] = useState(false);
+  const offset: StackPositionOffset = {
+    top: stackOffset.top ?? 24,
+    // If position is top or bottom, then horizontal offset is not needed.
+    left: position.endsWith('Left') ? stackOffset.left ?? 32 : 0,
+    right: position.endsWith('Right') ? stackOffset.right ?? 32 : 0,
+    bottom: stackOffset.bottom ?? 24,
+  };
+  const timeoutID = useRef<number | null>(null);
+  const [clientHeight, setClientHeight] = useState(0);
+  const [shouldAnimation, setShouldAnimation] = useState(false);
+  const [active, setActive] = useState(false);
+
+  const setIsShowWithTimeout = useCallback(() => {
+    // Out animation is executed after `displayingTimeout` seconds.
+    if (timeoutID.current === null && isShow) {
+      timeoutID.current = window.setTimeout(() => {
+        setIsShow(false);
+      }, displayingTimeout);
+    }
+  }, [isShow, timeoutID, setIsShow, displayingTimeout]);
+
+  const resetTimeout = useCallback(() => {
+    if (timeoutID.current) {
+      window.clearTimeout(timeoutID.current);
+      timeoutID.current = null;
+    }
+  }, [timeoutID]);
+
+  const handleTransitionEnd = useCallback(() => {
+    if (onHide && !isShow) {
+      onHide();
+      setActive(false);
+      timeoutID.current = null;
+    }
+  }, [isShow, onHide]);
+
+  const handleOnClickCloseButton = useCallback(() => {
+    setIsShow(false);
+  }, []);
+
+  useEffect(() => {
+    if (isShow) {
+      setShouldAnimation(true);
+    }
+    if (!active) {
+      setShouldAnimation(false);
+    }
+  }, [active, isShow]);
+
+  useEffect(() => {
+    setIsShowWithTimeout();
+    return resetTimeout;
+  }, [setIsShowWithTimeout, resetTimeout]);
+
+  useEffect(() => {
+    if (stackActive) {
+      setActive(true);
+    }
+    if (!stackActive && isShow) {
+      setIsShow(false);
+    }
+  }, [stackActive, isShow]);
+
+  useEffect(() => {
+    if (active) {
+      // To animate notification component smoothly, setIsShow needs to be executed after updating active prop to true.
+      setIsShow(true);
+    }
+  }, [active]);
+
+  useEffect(() => {
+    setContentHeight?.(clientHeight + VERTICAL_GAP);
+  }, [clientHeight, setContentHeight]);
+
+  const positionPrefix = position.startsWith('top')
+    ? ('top' as const)
+    : ('bottom' as const);
+  const positionSuffix = position.slice(positionPrefix.length).toLowerCase() as
+    | 'left'
+    | 'center'
+    | 'right';
+  const orderOffsetTop = stackPosition + offset.top;
+  const orderOffsetBottom = stackPosition + offset.bottom;
+
+  return {
+    active,
+    isShow,
+    clientHeight,
+    shouldAnimation,
+    position: {
+      vertical: positionPrefix,
+      horizontal: positionSuffix,
+    },
+    /**
+     * This is total height of stack from the top of the window to the bottom(top) of the notification component,
+     * including the height of the component.
+     */
+    orderOffset: {
+      top: orderOffsetTop,
+      bottom: orderOffsetBottom,
+    },
+    /**
+     * Offset from the edge of the window to the first stacked item.
+     */
+    offset,
+    /**
+     *
+     */
+    initialHeight: {
+      top: orderOffsetTop - clientHeight + VERTICAL_GAP,
+      bottom: orderOffsetBottom - clientHeight + VERTICAL_GAP,
+    },
+    /**
+     * This is used to handle stopping animation when user is focus on notification component.
+     */
+    focusEvent: {
+      setIsShowWithTimeout,
+      resetTimeout,
+    },
+    setIsShow,
+    /**
+     * This is used to set notification component height.
+     */
+    setClientHeight,
+    /**
+     * This is used to handle animation end.
+     */
+    handleTransitionEnd,
+    handleOnClickCloseButton,
   };
 };
