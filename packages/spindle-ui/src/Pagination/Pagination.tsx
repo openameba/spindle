@@ -32,11 +32,14 @@ export const Pagination = (props: Props) => {
     ...rest
   } = props;
 
-  const pageItem = 5;
-  const { displayItem, showPrevHorizontal, showNextHorizontal } = useShowItem({
+  const {
+    displayItem,
+    showPrevHorizontal,
+    showNextHorizontal,
+    hideDisplayItem,
+  } = useShowItem({
     current,
     total,
-    pageItem,
   });
 
   const handleClick = useCallback(
@@ -80,8 +83,14 @@ export const Pagination = (props: Props) => {
         )}
         {displayItem.map((pageNumber, index) => {
           const isCurrent = current === pageNumber;
+          const isHidden =
+            showPrevNext &&
+            hideDisplayItem &&
+            (current - 1 === pageNumber || current + 1 === pageNumber);
           const hasRelAttribute = current === pageNumber + 1;
-          const isHidden = showPrevNext && (index === 1 || index === 3);
+          const showPrevMenuHorizontal = index === 0 && showPrevHorizontal;
+          const showNextMenuHorizontal =
+            index === displayItem.length - 1 && showNextHorizontal;
 
           return (
             <li
@@ -93,7 +102,7 @@ export const Pagination = (props: Props) => {
                 .join(' ')}
               key={`pagination-item-${pageNumber}`}
             >
-              {index === pageItem - 1 && showNextHorizontal && (
+              {showNextMenuHorizontal && (
                 <MenuHorizontal
                   aria-hidden="true"
                   className={`${BLOCK_NAME}-horizontal`}
@@ -116,7 +125,7 @@ export const Pagination = (props: Props) => {
               >
                 {pageNumber}
               </a>
-              {index === 0 && showPrevHorizontal && (
+              {showPrevMenuHorizontal && (
                 <MenuHorizontal
                   aria-hidden="true"
                   className={`${BLOCK_NAME}-horizontal`}

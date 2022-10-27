@@ -97,6 +97,86 @@ export const pageNumber = 1;
   code={'<Pagination url="/article/page-PAGE_NUMBER.html" total={5} current={3} showCount={true} showPrevNext={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
 />
 
+## current 1 total 1
+
+<Preview withSource="open">
+  <Story name="current 1 total 1">
+    <Pagination
+      total={1}
+      current={1}
+      showCount={true}
+      showPrevNext={true}
+      showFirstLast={false}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={'<Pagination total={1} current={1} showCount={true} showPrevNext={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+/>
+
+## current 2 total 2
+
+<Preview withSource="open">
+  <Story name="current 2 total 2">
+    <Pagination
+      total={2}
+      current={2}
+      showCount={true}
+      showPrevNext={true}
+      showFirstLast={false}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={'<Pagination total={2} current={2} showCount={true} showPrevNext={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+/>
+
+## current 2 total 3
+
+<Preview withSource="open">
+  <Story name="current 2 total 3">
+    <Pagination
+      total={3}
+      current={2}
+      showCount={true}
+      showPrevNext={true}
+      showFirstLast={false}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={'<Pagination total={3} current={2} showCount={true} showPrevNext={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+/>
+
+## current 2 total 4
+
+<Preview withSource="open">
+  <Story name="current 2 total 4">
+    <Pagination
+      total={4}
+      current={2}
+      showCount={true}
+      showPrevNext={true}
+      showFirstLast={false}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={'<Pagination total={4} current={2} showCount={true} showPrevNext={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+/>
+
 ## current 8 total 20
 
 <Preview withSource="open">
