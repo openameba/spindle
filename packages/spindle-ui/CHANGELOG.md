@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.50.1-alpha.2](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.50.1-alpha.0...@openameba/spindle-ui@0.50.1-alpha.2) (2022-10-28)
+
+
+### Features
+
+* **spindle-ui:** use spindle-hooks ([69885ba](https://github.com/openameba/spindle/commit/69885bae6c477632bc2a8375ac780ccac022ac7c))
+
+
+
+
+
 ## [0.50.1-alpha.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.50.1-alpha.0...@openameba/spindle-ui@0.50.1-alpha.1) (2022-10-28)
 
 **Note:** Version bump only for package @openameba/spindle-ui
