@@ -83,10 +83,17 @@ export const Pagination = (props: Props) => {
         )}
         {displayItem.map((pageNumber, index) => {
           const isCurrent = current === pageNumber;
-          const isHidden =
+          const isHiddenPrevItem =
             showPrevNext &&
             hideDisplayItem &&
-            (current - 1 === pageNumber || current + 1 === pageNumber);
+            current - 1 === pageNumber &&
+            current !== 3;
+          const isHiddenNextItem =
+            showPrevNext &&
+            hideDisplayItem &&
+            current + 1 === pageNumber &&
+            current !== 1 &&
+            current !== 2;
           const hasRelAttribute = current === pageNumber + 1;
           const showPrevMenuHorizontal = index === 0 && showPrevHorizontal;
           const showNextMenuHorizontal =
@@ -96,7 +103,8 @@ export const Pagination = (props: Props) => {
             <li
               className={[
                 `${BLOCK_NAME}-item`,
-                isHidden && `${BLOCK_NAME}-item--hidden`,
+                (isHiddenPrevItem || isHiddenNextItem) &&
+                  `${BLOCK_NAME}-item--hidden`,
               ]
                 .filter(Boolean)
                 .join(' ')}
