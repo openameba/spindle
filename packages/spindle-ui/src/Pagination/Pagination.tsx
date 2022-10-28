@@ -8,8 +8,6 @@ interface Props extends React.HTMLAttributes<HTMLElement> {
   current: number;
   total: number;
   showCount?: boolean;
-  showPrevNext?: boolean;
-  showFirstLast?: boolean;
   onPageChange: (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
     pageNumber: number,
@@ -24,8 +22,6 @@ export const Pagination = (props: Props) => {
     current,
     total,
     showCount = false,
-    showPrevNext = true,
-    showFirstLast = false,
     onPageChange,
     createUrl,
     className,
@@ -34,9 +30,12 @@ export const Pagination = (props: Props) => {
 
   const {
     displayItem,
-    showPrevHorizontal,
-    showNextHorizontal,
-    hideDisplayItem,
+    hideDisplayItemLevel1,
+    hideDisplayItemLevel2,
+    hideDisplayItemLevel3,
+    showHorizontal,
+    showPrevNext,
+    showFirstLast,
   } = useShowItem({
     current,
     total,
@@ -50,6 +49,25 @@ export const Pagination = (props: Props) => {
       onPageChange?.(event, pageNumber);
     },
     [onPageChange],
+  );
+
+  const setHiddenItem = useCallback(
+    (
+      pageNumber: number,
+      index: number,
+      hideDisplayItemLevel1: boolean,
+      hideDisplayItemLevel2: boolean,
+      hideDisplayItemLevel3: boolean,
+    ) => {
+      if (hideDisplayItemLevel1 || hideDisplayItemLevel3) {
+        return index === 0 || index === 4;
+      } else if (hideDisplayItemLevel2) {
+        return current - 1 === pageNumber || current + 1 === pageNumber;
+      } else {
+        return false;
+      }
+    },
+    [],
   );
 
   return (
@@ -82,15 +100,15 @@ export const Pagination = (props: Props) => {
           </li>
         )}
         {displayItem.map((pageNumber, index) => {
+          const isHidden = setHiddenItem(
+            pageNumber,
+            index,
+            hideDisplayItemLevel1,
+            hideDisplayItemLevel2,
+            hideDisplayItemLevel3,
+          );
           const isCurrent = current === pageNumber;
-          const isHidden =
-            showPrevNext &&
-            hideDisplayItem &&
-            (current - 1 === pageNumber || current + 1 === pageNumber);
           const hasRelAttribute = current === pageNumber + 1;
-          const showPrevMenuHorizontal = index === 0 && showPrevHorizontal;
-          const showNextMenuHorizontal =
-            index === displayItem.length - 1 && showNextHorizontal;
 
           return (
             <li
@@ -102,7 +120,7 @@ export const Pagination = (props: Props) => {
                 .join(' ')}
               key={`pagination-item-${pageNumber}`}
             >
-              {showNextMenuHorizontal && (
+              {showHorizontal && index === displayItem.length - 1 && (
                 <MenuHorizontal
                   aria-hidden="true"
                   className={`${BLOCK_NAME}-horizontal`}
@@ -125,7 +143,7 @@ export const Pagination = (props: Props) => {
               >
                 {pageNumber}
               </a>
-              {showPrevMenuHorizontal && (
+              {showHorizontal && index === 0 && (
                 <MenuHorizontal
                   aria-hidden="true"
                   className={`${BLOCK_NAME}-horizontal`}

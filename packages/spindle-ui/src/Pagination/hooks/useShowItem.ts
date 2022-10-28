@@ -5,16 +5,24 @@ type Payload = {
   total: number;
 };
 
-const MAX_PAGE_ITEM = 5;
+const MINIMUM_PAGE_ITEM = 3;
+const DEFAULT_PAGE_ITEM = 5;
+const PAGE_ITEM_ONE_HUNDRED = 100;
 
 export function useShowItem({ current, total }: Payload) {
   const displayItem = useMemo(() => {
-    if (total < MAX_PAGE_ITEM) {
-      // 総ページ数がMAX_PAGE_ITEMよりも小さい場合
+    if (total < DEFAULT_PAGE_ITEM) {
+      // 総ページ数が5件よりも小さい場合
       return Array.from({ length: total }, (_element, index) => index + 1);
     } else if (current === 1 || current === 2) {
       // 現在値が1か2の場合は"1,2,3,4,total"とする
       return [1, 2, 3, 4, total];
+    } else if (
+      PAGE_ITEM_ONE_HUNDRED <= total &&
+      PAGE_ITEM_ONE_HUNDRED !== current
+    ) {
+      // 総ページ数が100件以上で現在地が100件じゃない場合
+      return [current - 2, current - 1, current, current + 1, current + 2];
     } else if (current !== total && current !== total - 1) {
       // "1,current-1,current,current+1,total"とする
       return [1, current - 1, current, current + 1, total];
@@ -24,20 +32,34 @@ export function useShowItem({ current, total }: Payload) {
     }
   }, [current, total]);
 
-  // totalは表示数超えている前提で、前から2つ目のアイテムが2より大きいかどうか（最初が連続した数字じゃないことをチェック）
-  const showPrevHorizontal = total > MAX_PAGE_ITEM && 2 < displayItem[1];
+  // 総ページ数が6件以上かつ100件以下の場合
+  const showHorizontal =
+    total > DEFAULT_PAGE_ITEM && total <= PAGE_ITEM_ONE_HUNDRED;
 
-  // totalは表示数超えている前提で、後ろから2つ目のアイテムがtotal-1より小さいか（最後が連続した数字じゃないことをチェック）
-  const showNextHorizontal =
-    total > MAX_PAGE_ITEM && displayItem[MAX_PAGE_ITEM - 2] < total - 1;
+  // 総ページ数が3件以上かつ5件以下の場合
+  const hideDisplayItemLevel1 =
+    total > MINIMUM_PAGE_ITEM && total <= DEFAULT_PAGE_ITEM;
 
-  // 総ページ数が5件より大きい場合
-  const hideDisplayItem = total > MAX_PAGE_ITEM;
+  // 総ページ数が6件以上かつ100件未満の場合
+  const hideDisplayItemLevel2 =
+    total > DEFAULT_PAGE_ITEM && total < PAGE_ITEM_ONE_HUNDRED;
+
+  // 総ページ数が100件以上の場合
+  const hideDisplayItemLevel3 = total >= PAGE_ITEM_ONE_HUNDRED;
+
+  // 「前へ」「次へ」アイコンの表示条件
+  const showPrevNext = hideDisplayItemLevel1 || hideDisplayItemLevel2;
+
+  // 「最初へ」「最後へ」アイコンの表示条件
+  const showFirstLast = hideDisplayItemLevel3;
 
   return {
     displayItem,
-    showPrevHorizontal,
-    showNextHorizontal,
-    hideDisplayItem,
+    hideDisplayItemLevel1,
+    hideDisplayItemLevel2,
+    hideDisplayItemLevel3,
+    showHorizontal,
+    showPrevNext,
+    showFirstLast,
   };
 }

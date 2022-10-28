@@ -47,12 +47,6 @@ import { Pagination } from './Pagination';
   - `showCount`(任意): ページのカウントを表示したい場合は、指定することができます。デフォルト値はfalseです。
 </Description>
 <Description>
-  - `showPrevNext`(任意): 「前へ」「次へ」アイコンを表示したい場合は、指定することができます。デフォルト値はtrueです。
-</Description>
-<Description>
-  - `showFirstLast`(任意): 「最初へ」「最後へ」アイコンを表示したい場合は、指定することができます。デフォルト値はfalseです。
-</Description>
-<Description>
   - `onPageChange`(必須): リンクをクリック後に処理をしたい場合に利用することができます。
 </Description>
 <Description>
@@ -63,16 +57,66 @@ import { Pagination } from './Pagination';
 
 <Description>Paginationは画面幅によりレイアウトが変化します。</Description>
 
-- showPrevNext
-- showFirstLast
+### 画面幅360pxから414pxの間
 
-<Description>上記、オプショナルなプロパティの存在有無に限らず「ページの前後」「ページの最初と最後」への移動が可能となります。</Description>
+#### ページ数5件以下
+<Description>
+  - 「最初へ」「最後へ」非表示
+</Description>
+<Description>
+  - 「前へ」「次へ」表示
+</Description>
 
-<Description>例えば、showFirstLastがfalseの場合は最初と最後をページ番号で担保します。</Description>
+#### ページ数が6件以上
+<Description>
+  - 「最初へ」「最後へ」非表示
+</Description>
+<Description>
+  - 「前へ」「次へ」表示
+</Description>
 
-<Description>showPrevNextがtrueの場合、現在のページ数に対してその前後に値するページ番号がブレイクポイント（414px以下）により非表示になります。</Description>
+#### ページ数が100件以上
+<Description>
+  - 「最初へ」「最後へ」表示
+</Description>
+<Description>
+  - 「前へ」「次へ」非表示
+</Description>
 
-<Description>例えば、1・2・3（current）・4・5とした場合、2と4が非表示になります。</Description>
+### 画面幅360px以下
+
+#### ページ数5件以下
+<Description>
+  - 「最初へ」「最後へ」非表示
+</Description>
+<Description>
+  - 「前へ」「次へ」表示
+</Description>
+<Description>
+  - 最初と最後のページ番号が非表示
+</Description>
+
+#### ページ数が6件以上
+<Description>
+  - 「最初へ」「最後へ」非表示
+</Description>
+<Description>
+  - 「前へ」「次へ」は表示
+</Description>
+<Description>
+  - 現在のページに対して前後のページ番号が非表示
+</Description>
+
+#### ページ数が100件以上
+<Description>
+  - 「最初へ」「最後へ」表示
+</Description>
+<Description>
+  - 「前へ」「次へ」は非表示
+</Description>
+<Description>
+  - 最初と最後のページ番号が非表示
+</Description>
 
 export const url = '/detail/CURRENT.html';
 export const pageNumber = 1;
@@ -85,8 +129,6 @@ export const pageNumber = 1;
       total={5}
       current={3}
       showCount={true}
-      showPrevNext={true}
-      showFirstLast={true}
       createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
       {...actions('onClick')}
     />
@@ -105,8 +147,6 @@ export const pageNumber = 1;
       total={1}
       current={1}
       showCount={true}
-      showPrevNext={true}
-      showFirstLast={false}
       createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
       {...actions('onClick')}
     />
@@ -125,8 +165,6 @@ export const pageNumber = 1;
       total={2}
       current={2}
       showCount={true}
-      showPrevNext={true}
-      showFirstLast={false}
       createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
       {...actions('onClick')}
     />
@@ -145,8 +183,6 @@ export const pageNumber = 1;
       total={3}
       current={2}
       showCount={true}
-      showPrevNext={true}
-      showFirstLast={false}
       createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
       {...actions('onClick')}
     />
@@ -165,8 +201,6 @@ export const pageNumber = 1;
       total={4}
       current={2}
       showCount={true}
-      showPrevNext={true}
-      showFirstLast={false}
       createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
       {...actions('onClick')}
     />
@@ -177,6 +211,95 @@ export const pageNumber = 1;
   code={'<Pagination total={4} current={2} showCount={true} showPrevNext={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
 />
 
+## current 4 total 4
+
+<Preview withSource="open">
+  <Story name="current 4 total 4">
+    <Pagination
+      total={4}
+      current={4}
+      showCount={true}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={'<Pagination total={4} current={4} showCount={true} showPrevNext={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+/>
+## current 1 total 20
+
+<Preview withSource="open">
+  <Story name="current 1 total 20">
+    <Pagination
+      total={20}
+      current={1}
+      showCount={true}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={'<Pagination total={20} current={1} showCount={true} showPrevNext={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+/>
+
+## current 2 total 20
+
+<Preview withSource="open">
+  <Story name="current 2 total 20">
+    <Pagination
+      total={20}
+      current={2}
+      showCount={true}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={'<Pagination total={20} current={2} showCount={true} showPrevNext={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+/>
+
+## current 3 total 20
+
+<Preview withSource="open">
+  <Story name="current 3 total 20">
+    <Pagination
+      total={20}
+      current={3}
+      showCount={true}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={'<Pagination total={20} current={3} showCount={true} showPrevNext={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+/>
+
+## current 4 total 20
+
+<Preview withSource="open">
+  <Story name="current 4 total 20">
+    <Pagination
+      total={20}
+      current={4}
+      showCount={true}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={'<Pagination total={20} current={4} showCount={true} showPrevNext={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+/>
+
 ## current 8 total 20
 
 <Preview withSource="open">
@@ -185,8 +308,6 @@ export const pageNumber = 1;
       total={20}
       current={8}
       showCount={true}
-      showPrevNext={true}
-      showFirstLast={true}
       createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
       {...actions('onClick')}
     />
@@ -197,16 +318,14 @@ export const pageNumber = 1;
   code={'<Pagination total={20} current={8} showCount={true} showPrevNext={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
 />
 
-## current 900 total 999
+## current 20 total 20
 
 <Preview withSource="open">
-  <Story name="current 900 total 999">
+  <Story name="current 20 total 20">
     <Pagination
-      total={999}
-      current={900}
+      total={20}
+      current={20}
       showCount={true}
-      showPrevNext={true}
-      showFirstLast={true}
       createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
       {...actions('onClick')}
     />
@@ -214,8 +333,63 @@ export const pageNumber = 1;
 </Preview>
 
 <Source
-  code={'<Pagination total={999} current={900} showCount={true} showPrevNext={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+  code={'<Pagination total={20} current={20} showCount={true} showPrevNext={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
 />
+
+## current 97 total 100
+
+<Preview withSource="open">
+  <Story name="current 97 total 100">
+    <Pagination
+      total={100}
+      current={97}
+      showCount={true}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={'<Pagination total={100} current={97} showCount={true} showPrevNext={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+/>
+
+## current 1 total 100
+
+<Preview withSource="open">
+  <Story name="current 1 total 100">
+    <Pagination
+      total={100}
+      current={1}
+      showCount={true}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={'<Pagination total={100} current={1} showCount={true} showPrevNext={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+/>
+
+## current 100 total 100
+
+<Preview withSource="open">
+  <Story name="current 100 total 100">
+    <Pagination
+      total={100}
+      current={100}
+      showCount={true}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={'<Pagination total={100} current={100} showCount={true} showPrevNext={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+/>
+
 
 ## current 10000 total 20000
 
@@ -229,8 +403,6 @@ export const pageNumber = 1;
       total={20000}
       current={10000}
       showCount={true}
-      showPrevNext={true}
-      showFirstLast={true}
       createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
       {...actions('onClick')}
     />
@@ -241,90 +413,6 @@ export const pageNumber = 1;
   code={'<Pagination total={20000} current={10000} showCount={true} showPrevNext={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
 />
 
-## showFirstLast props false
-
-<Description>
-  `showFirstLast`プロパティは`false`にすることで、「最初へ」と「最後へ」アイコンを非表示にできます。
-</Description>
-
-<Description>
-  その場合、ページ番号にて前後と最初と最後のリンクを担保します。
-</Description>
-
-<Preview withSource="open">
-  <Story name="showFirstLast props false">
-    <Pagination
-      total={20}
-      current={8}
-      showCount={true}
-      showPrevNext={true}
-      showFirstLast={false}
-      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
-      {...actions('onClick')}
-    />
-  </Story>
-</Preview>
-
-<Source
-  code={'<Pagination total={20} current={8} showCount={true} showPrevNext={false} showFirstLast={false} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
-/>
-
-## showPrevNext props false
-
-<Description>
-  `showPrevNext`プロパティは`false`にすることで、「前へ」と「次へ」アイコンを非表示にできます。
-</Description>
-
-<Description>
-  その場合、ページ番号にて前後と最初と最後のリンクを担保します。
-</Description>
-
-<Preview withSource="open">
-  <Story name="showPrevNext props false">
-    <Pagination
-      total={20}
-      current={8}
-      showCount={true}
-      showPrevNext={false}
-      showFirstLast={true}
-      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
-      {...actions('onClick')}
-    />
-  </Story>
-</Preview>
-
-<Source
-  code={'<Pagination total={20} current={8} showCount={true} showPrevNext={false} showFirstLast={false} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
-/>
-
-## showPrevNext showFirstLast props false
-
-<Description>
-  `showPrevNext`と`showFirstLast`プロパティは`false`にすることで、全てのアイコンを非表示にできます。
-</Description>
-
-<Description>
-  その場合、ページ番号にて前後と最初と最後のリンクを担保します。
-</Description>
-
-<Preview withSource="open">
-  <Story name="showPrevNext showFirstLast props false">
-    <Pagination
-      total={20}
-      current={8}
-      showCount={true}
-      showPrevNext={false}
-      showFirstLast={false}
-      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
-      {...actions('onClick')}
-    />
-  </Story>
-</Preview>
-
-<Source
-  code={'<Pagination total={20} current={8} showCount={true} showPrevNext={false} showFirstLast={false} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
-/>
-
 ## create url function
 
 <Preview withSource="open">
@@ -333,8 +421,6 @@ export const pageNumber = 1;
       total={20}
       current={8}
       showCount={true}
-      showPrevNext={true}
-      showFirstLast={true}
       createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
       {...actions('onClick')}
     />

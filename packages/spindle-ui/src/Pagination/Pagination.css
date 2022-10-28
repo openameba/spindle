@@ -27,6 +27,8 @@
   margin: 0 5px;
 }
 
+.spui-Pagination-item--prev,
+.spui-Pagination-item--next,
 .spui-Pagination-item--first,
 .spui-Pagination-item--last {
   margin: 0;
@@ -94,15 +96,8 @@
   margin-left: 8px;
 }
 
-@media screen and (max-width: 414px) {
-  .spui-Pagination-item--hidden {
-    display: none;
-  }
-}
-
 @media screen and (max-width: 360px) {
-  .spui-Pagination-item--first,
-  .spui-Pagination-item--last {
+  .spui-Pagination-item--hidden {
     display: none;
   }
 }
