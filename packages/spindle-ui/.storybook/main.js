@@ -10,4 +10,23 @@ module.exports = {
   core: {
     builder: 'webpack5',
   },
+  webpackFinal: async (config) => {
+    return {
+      ...config,
+      target: 'web',
+      module: {
+        ...config.module,
+        rules: [
+          ...config.module.rules,
+          {
+            test: /\.mjs$/,
+            type: 'javascript/auto',
+            resolve: {
+              fullySpecified: false,
+            },
+          },
+        ],
+      },
+    };
+  },
 };

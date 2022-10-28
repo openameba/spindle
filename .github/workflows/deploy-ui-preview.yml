@@ -8,16 +8,16 @@ on:
 jobs:
   build_and_preview:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./packages/spindle-ui/
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v2-beta
         with:
           node-version: 16
       - run: yarn install --frozen-lockfile
-      - run: yarn storybook:build
+      - run: npx lerna bootstrap -- --frozen-lockfile
+      - run: |
+          yarn lerna run --scope @openameba/spindle-hooks build
+          yarn lerna run --scope @openameba/spindle-ui storybook:build
       - name: deploy to preview channel
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:

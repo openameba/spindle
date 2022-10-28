@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
+import { useCarousel } from '@openameba/spindle-hooks';
 import ChevronLeftBold from '../Icon/ChevronLeftBold';
 import ChevronRightBold from '../Icon/ChevronRightBold';
 import Pause from '../Icon/Pause';
 import PlayFill from '../Icon/PlayFill';
 import type { CarouselItem } from './HeroCarouselItem';
 import HeroCarouselItem from './HeroCarouselItem';
-import { useAutoPlayCarousel } from './hooks/useAutoPlayCarousel';
 
 type Props = {
   carouselList: CarouselItem[];
@@ -33,7 +33,7 @@ export const HeroCarousel: FC<Props> = React.memo(function HeroCarousel({
     toggleAutoPlay,
     handleFocus,
     handleBlur,
-  } = useAutoPlayCarousel({
+  } = useCarousel({
     items: carouselList,
     itemLinkClassName: ITEM_LINK_CLASS_NAME,
   });

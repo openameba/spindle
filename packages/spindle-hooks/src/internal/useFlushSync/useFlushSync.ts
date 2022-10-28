@@ -13,7 +13,7 @@ export const useFlushSync = (): ((cb: FlushSyncCallback) => void) => {
   if (flushSync) {
     return flushSync;
   }
-  return () => {
-    // noop
+  return (cb) => {
+    cb();
   };
 };
