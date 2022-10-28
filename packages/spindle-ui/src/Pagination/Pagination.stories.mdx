@@ -70,9 +70,18 @@ import { Pagination } from './Pagination';
 
 <Description>例えば、showFirstLastがfalseの場合は最初と最後をページ番号で担保します。</Description>
 
-<Description>showPrevNextがtrueの場合、現在のページ数に対してその前後に値するページ番号がブレイクポイント（414px以下）により非表示になります。</Description>
+### showPrevNextがtrueの場合
+
+<Description>現在のページ数に対してその前後に値するページ番号がブレイクポイント（414px以下）により非表示になります。</Description>
 
 <Description>例えば、1・2・3（current）・4・5とした場合、2と4が非表示になります。</Description>
+
+### 総ページ数が5件以上の場合
+
+- currentが2の場合はcurrentに対して前のページ番号のみが非表示
+- currentが3の場合はcurrentに対して次のページ番号のみが非表示
+
+<Description>となります。</Description>
 
 export const url = '/detail/CURRENT.html';
 export const pageNumber = 1;
