@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.50.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.50.0...@openameba/spindle-ui@0.50.1) (2022-10-27)
+
+
+### Bug Fixes
+
+* **spindle-ui:** pagination display item ([e62621e](https://github.com/openameba/spindle/commit/e62621e31fc8a286e3a47a04aac40f7695636f57))
+* **spindle-ui:** pagination style and docs ([a307efb](https://github.com/openameba/spindle/commit/a307efb1c70c700b739afe98336d2a5c2bff06c5))
+
+
+### Features
+
+* **spindle-ui:** add useStackNotificationComponent ([b18c498](https://github.com/openameba/spindle/commit/b18c4981bc38c9a7e2abd682ef504b55bcfde2bb))
+
+
+
+
+
 # [0.50.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.49.1...@openameba/spindle-ui@0.50.0) (2022-10-20)
 
 
