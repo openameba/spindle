@@ -24,7 +24,7 @@ jobs:
             */*/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-v2
       - run: yarn install --frozen-lockfile
-      - run: yarn lerna bootstrap -- --frozen-lockfile
+      - run: yarn lerna bootstrap
       - name: Update UI catalog
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
