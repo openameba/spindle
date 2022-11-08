@@ -9,6 +9,7 @@
     "*.css"
   ],
   "scripts": {
+    "generate": "scaffdog generate",
     "test": "run-p bundlesize lint test:interaction",
     "lint": "yarn lint:style",
     "lint:style": "stylelint '**/*.css'",
@@ -86,6 +87,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "reg-suit": "^0.12.0",
+    "scaffdog": "^2.4.0",
     "stylelint": "^13.6.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0",
