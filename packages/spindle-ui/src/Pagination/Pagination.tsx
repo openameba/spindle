@@ -18,8 +18,8 @@ interface Props extends React.HTMLAttributes<HTMLElement> {
 
 const BLOCK_NAME = 'spui-Pagination';
 
-// 表示仕様が変わる桁の閾値
-const DIGIT_THRESHOLD = 100;
+// ページ総数の閾値
+const TOTAL_THRESHOLD = 100;
 
 export const Pagination = (props: Props) => {
   const {
@@ -52,7 +52,7 @@ export const Pagination = (props: Props) => {
     },
     [onPageChange],
   );
-  const showPrevNext = total < DIGIT_THRESHOLD;
+  const showPrevNext = total < TOTAL_THRESHOLD;
 
   return (
     <nav
