@@ -80,7 +80,9 @@ const Frame = forwardRef<DialogHTMLElement, AppealModalProps>(
       const classNameToStopScrollBehindDialog = `${BLOCK_NAME}--open`;
 
       if (open) {
-        dialogEl.current.showModal && dialogEl.current.showModal();
+        !dialogEl.current.open &&
+          dialogEl.current.showModal &&
+          dialogEl.current.showModal();
         document.documentElement.classList.add(
           classNameToStopScrollBehindDialog,
         );
