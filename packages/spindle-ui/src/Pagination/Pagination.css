@@ -81,7 +81,7 @@
   }
 }
 
-.spui-Pagination-count {
+.spui-Pagination-total {
   color: var(--color-text-low-emphasis);
   font-size: 0.8125em;
   line-height: 1.3;
