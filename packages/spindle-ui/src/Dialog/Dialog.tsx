@@ -64,7 +64,8 @@ const Frame = forwardRef<DialogHTMLElement, DialogProps>(function Dialog(
   }, [dialogEl, handleAnimationEnd]);
 
   useEffect(() => {
-    if (!dialogEl.current) {
+    const dialog = dialogEl.current;
+    if (!dialog) {
       return;
     }
 
@@ -72,12 +73,10 @@ const Frame = forwardRef<DialogHTMLElement, DialogProps>(function Dialog(
     const classNameToStopScrollBehindDialog = `${BLOCK_NAME}--open`;
 
     if (open) {
-      !dialogEl.current.open &&
-        dialogEl.current.showModal &&
-        dialogEl.current.showModal();
+      !dialog.open && dialog.showModal?.();
       document.documentElement.classList.add(classNameToStopScrollBehindDialog);
     } else {
-      dialogEl.current?.open && setClosing(true);
+      dialog?.open && setClosing(true);
       // Always remove this class to avoid unexpected scroll stopping
       document.documentElement.classList.remove(
         classNameToStopScrollBehindDialog,
