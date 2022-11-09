@@ -7,7 +7,7 @@ import { useShowItem } from './hooks/useShowItem';
 interface Props extends React.HTMLAttributes<HTMLElement> {
   current: number;
   total: number;
-  showCount?: boolean;
+  showTotal?: boolean;
   showFirstLast?: boolean;
   onPageChange: (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
@@ -25,7 +25,7 @@ export const Pagination = (props: Props) => {
   const {
     current,
     total,
-    showCount = false,
+    showTotal = false,
     showFirstLast = false,
     onPageChange,
     createUrl,
@@ -159,9 +159,9 @@ export const Pagination = (props: Props) => {
           </li>
         )}
       </ul>
-      {showCount && (
+      {showTotal && (
         <p
-          className={`${BLOCK_NAME}-count`}
+          className={`${BLOCK_NAME}-total`}
           aria-label={`${total}ページ中の${current}ページ目`}
         >
           {current}/{total}ページ
