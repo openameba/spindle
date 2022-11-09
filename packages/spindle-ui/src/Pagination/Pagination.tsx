@@ -8,7 +8,6 @@ interface Props extends React.HTMLAttributes<HTMLElement> {
   current: number;
   total: number;
   showCount?: boolean;
-  showPrevNext?: boolean;
   showFirstLast?: boolean;
   onPageChange: (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
@@ -19,12 +18,14 @@ interface Props extends React.HTMLAttributes<HTMLElement> {
 
 const BLOCK_NAME = 'spui-Pagination';
 
+// 表示仕様が変わる桁の閾値
+const DIGIT_THRESHOLD = 100;
+
 export const Pagination = (props: Props) => {
   const {
     current,
     total,
     showCount = false,
-    showPrevNext = true,
     showFirstLast = false,
     onPageChange,
     createUrl,
@@ -51,6 +52,7 @@ export const Pagination = (props: Props) => {
     },
     [onPageChange],
   );
+  const showPrevNext = total < DIGIT_THRESHOLD;
 
   return (
     <nav

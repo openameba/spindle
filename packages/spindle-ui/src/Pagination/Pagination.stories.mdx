@@ -47,9 +47,6 @@ import { Pagination } from './Pagination';
   - `showCount`(任意): ページのカウントを表示したい場合は、指定することができます。デフォルト値はfalseです。
 </Description>
 <Description>
-  - `showPrevNext`(任意): 「前へ」「次へ」アイコンを表示したい場合は、指定することができます。デフォルト値はtrueです。
-</Description>
-<Description>
   - `showFirstLast`(任意): 「最初へ」「最後へ」アイコンを表示したい場合は、指定することができます。デフォルト値はfalseです。
 </Description>
 <Description>
@@ -58,21 +55,6 @@ import { Pagination } from './Pagination';
 <Description>
   - `createUrl`(必須): リンクのhrefとなる値を指定してください。
 </Description>
-
-## レスポンシブデザイン
-
-<Description>Paginationは画面幅によりレイアウトが変化します。</Description>
-
-- showPrevNext
-- showFirstLast
-
-<Description>上記、オプショナルなプロパティの存在有無に限らず「ページの前後」「ページの最初と最後」への移動が可能となります。</Description>
-
-<Description>例えば、showFirstLastがfalseの場合は最初と最後をページ番号で担保します。</Description>
-
-<Description>showPrevNextがtrueの場合、現在のページ数に対してその前後に値するページ番号がブレイクポイント（414px以下）により非表示になります。</Description>
-
-<Description>例えば、1・2・3（current）・4・5とした場合、2と4が非表示になります。</Description>
 
 export const url = '/detail/CURRENT.html';
 export const pageNumber = 1;
@@ -85,7 +67,6 @@ export const pageNumber = 1;
       total={5}
       current={3}
       showCount={true}
-      showPrevNext={true}
       showFirstLast={true}
       createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
       {...actions('onClick')}
@@ -94,7 +75,7 @@ export const pageNumber = 1;
 </Preview>
 
 <Source
-  code={'<Pagination url="/article/page-PAGE_NUMBER.html" total={5} current={3} showCount={true} showPrevNext={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+  code={'<Pagination url="/article/page-PAGE_NUMBER.html" total={5} current={3} showCount={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
 />
 
 ## current 1 total 1
@@ -105,7 +86,6 @@ export const pageNumber = 1;
       total={1}
       current={1}
       showCount={true}
-      showPrevNext={true}
       showFirstLast={false}
       createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
       {...actions('onClick')}
@@ -114,7 +94,7 @@ export const pageNumber = 1;
 </Preview>
 
 <Source
-  code={'<Pagination total={1} current={1} showCount={true} showPrevNext={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+  code={'<Pagination total={1} current={1} showCount={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
 />
 
 ## current 2 total 2
@@ -125,7 +105,6 @@ export const pageNumber = 1;
       total={2}
       current={2}
       showCount={true}
-      showPrevNext={true}
       showFirstLast={false}
       createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
       {...actions('onClick')}
@@ -134,7 +113,7 @@ export const pageNumber = 1;
 </Preview>
 
 <Source
-  code={'<Pagination total={2} current={2} showCount={true} showPrevNext={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+  code={'<Pagination total={2} current={2} showCount={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
 />
 
 ## current 2 total 3
@@ -145,7 +124,6 @@ export const pageNumber = 1;
       total={3}
       current={2}
       showCount={true}
-      showPrevNext={true}
       showFirstLast={false}
       createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
       {...actions('onClick')}
@@ -154,7 +132,7 @@ export const pageNumber = 1;
 </Preview>
 
 <Source
-  code={'<Pagination total={3} current={2} showCount={true} showPrevNext={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+  code={'<Pagination total={3} current={2} showCount={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
 />
 
 ## current 2 total 4
@@ -165,7 +143,6 @@ export const pageNumber = 1;
       total={4}
       current={2}
       showCount={true}
-      showPrevNext={true}
       showFirstLast={false}
       createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
       {...actions('onClick')}
@@ -174,7 +151,7 @@ export const pageNumber = 1;
 </Preview>
 
 <Source
-  code={'<Pagination total={4} current={2} showCount={true} showPrevNext={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+  code={'<Pagination total={4} current={2} showCount={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
 />
 
 ## current 8 total 20
@@ -185,7 +162,6 @@ export const pageNumber = 1;
       total={20}
       current={8}
       showCount={true}
-      showPrevNext={true}
       showFirstLast={true}
       createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
       {...actions('onClick')}
@@ -194,7 +170,7 @@ export const pageNumber = 1;
 </Preview>
 
 <Source
-  code={'<Pagination total={20} current={8} showCount={true} showPrevNext={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+  code={'<Pagination total={20} current={8} showCount={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
 />
 
 ## current 900 total 999
@@ -205,7 +181,6 @@ export const pageNumber = 1;
       total={999}
       current={900}
       showCount={true}
-      showPrevNext={true}
       showFirstLast={true}
       createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
       {...actions('onClick')}
@@ -214,7 +189,7 @@ export const pageNumber = 1;
 </Preview>
 
 <Source
-  code={'<Pagination total={999} current={900} showCount={true} showPrevNext={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+  code={'<Pagination total={999} current={900} showCount={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
 />
 
 ## current 10000 total 20000
@@ -229,7 +204,6 @@ export const pageNumber = 1;
       total={20000}
       current={10000}
       showCount={true}
-      showPrevNext={true}
       showFirstLast={true}
       createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
       {...actions('onClick')}
@@ -238,7 +212,7 @@ export const pageNumber = 1;
 </Preview>
 
 <Source
-  code={'<Pagination total={20000} current={10000} showCount={true} showPrevNext={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+  code={'<Pagination total={20000} current={10000} showCount={true} showFirstLast={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
 />
 
 ## showFirstLast props false
@@ -257,7 +231,6 @@ export const pageNumber = 1;
       total={20}
       current={8}
       showCount={true}
-      showPrevNext={true}
       showFirstLast={false}
       createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
       {...actions('onClick')}
@@ -266,7 +239,7 @@ export const pageNumber = 1;
 </Preview>
 
 <Source
-  code={'<Pagination total={20} current={8} showCount={true} showPrevNext={false} showFirstLast={false} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+  code={'<Pagination total={20} current={8} showCount={true} showFirstLast={false} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
 />
 
 ## showPrevNext props false
@@ -285,7 +258,6 @@ export const pageNumber = 1;
       total={20}
       current={8}
       showCount={true}
-      showPrevNext={false}
       showFirstLast={true}
       createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
       {...actions('onClick')}
@@ -294,7 +266,7 @@ export const pageNumber = 1;
 </Preview>
 
 <Source
-  code={'<Pagination total={20} current={8} showCount={true} showPrevNext={false} showFirstLast={false} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+  code={'<Pagination total={20} current={8} showCount={true} showFirstLast={false} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
 />
 
 ## showPrevNext showFirstLast props false
@@ -313,7 +285,6 @@ export const pageNumber = 1;
       total={20}
       current={8}
       showCount={true}
-      showPrevNext={false}
       showFirstLast={false}
       createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
       {...actions('onClick')}
@@ -322,7 +293,7 @@ export const pageNumber = 1;
 </Preview>
 
 <Source
-  code={'<Pagination total={20} current={8} showCount={true} showPrevNext={false} showFirstLast={false} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+  code={'<Pagination total={20} current={8} showCount={true} showFirstLast={false} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
 />
 
 ## create url function
@@ -333,7 +304,6 @@ export const pageNumber = 1;
       total={20}
       current={8}
       showCount={true}
-      showPrevNext={true}
       showFirstLast={true}
       createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
       {...actions('onClick')}
@@ -342,7 +312,7 @@ export const pageNumber = 1;
 </Preview>
 
 <Source
-  code={'<Pagination total={20} current={8} showCount={true} showPrevNext={false} showFirstLast={false} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+  code={'<Pagination total={20} current={8} showCount={true} showFirstLast={false} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
 />
 
 ## リンク動作のカスタマイズ
