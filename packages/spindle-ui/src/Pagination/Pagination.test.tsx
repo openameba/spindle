@@ -15,7 +15,6 @@ describe('<Pagination />', () => {
         total={20}
         current={8}
         showTotal={true}
-        showFirstLast={true}
         createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
         onPageChange={onClick}
       />,
