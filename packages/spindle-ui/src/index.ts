@@ -8,6 +8,7 @@ import { HeroCarousel } from './HeroCarousel';
 import { IconButton } from './IconButton';
 import { LinkButton } from './LinkButton';
 import { TextButton } from './TextButton';
+import { TextLink } from './TextLink';
 import { Toast } from './Toast';
 import { DropdownMenu } from './DropdownMenu';
 import { SnackBar } from './SnackBar';
@@ -25,6 +26,7 @@ export {
   IconButton,
   LinkButton,
   TextButton,
+  TextLink,
   Toast,
   DropdownMenu,
   SnackBar,
