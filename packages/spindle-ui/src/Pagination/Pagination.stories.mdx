@@ -232,33 +232,6 @@ export const pageNumber = 1;
   }
 />
 
-## showFirstLast props false
-
-<Description>
-  `showFirstLast`プロパティは`false`にすることで、「最初へ」と「最後へ」アイコンを非表示にできます。
-</Description>
-
-<Description>
-  その場合、ページ番号にて前後と最初と最後のリンクを担保します。
-</Description>
-
-<Preview withSource="open">
-  <Story name="showFirstLast props false">
-    <Pagination
-      total={20}
-      current={8}
-      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
-      {...actions('onClick')}
-    />
-  </Story>
-</Preview>
-
-<Source
-  code={
-    '<Pagination total={20} current={8} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
-
 ## create url function
 
 <Preview withSource="open">
