@@ -65,7 +65,8 @@ import { {{ inputs.name | pascal }} } from ‘./{{ inputs.name | pascal }}‘;
 ## Normal
 
 <Preview withSource=“open”>
-  <Story name=“”>
+  <Story name=“Normal”>
+    <{{ inputs.name | pascal }} />
   </Story>
 </Preview>
 
