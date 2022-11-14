@@ -113,6 +113,27 @@ yarn build
 cd -
 ```
 
+新規コンポーネントを作成する際にはgenerateコマンドが便利です。
+
+```
+yarn generate
+? Please select a document. (Use arrow keys)
+❯ component 
+? Please select the output destination directory. (Use arrow keys or type to search)
+❯ src/ 
+? Please enter a component name. NewComponent
+
+🐶 Generated 7 files!
+
+      ✔ src/NewComponent/index.ts
+      ✔ src/NewComponent/NewComponent.tsx
+      ✔ src/NewComponent/NewComponent.css
+      ✔ src/NewComponent/NewComponent.stories.mdx
+      ✔ src/NewComponent/NewComponent.test.tsx
+      ✔ src/index.ts
+      ✔ src/index.css
+```
+
 ## ライセンス
 Spindle UIはMITライセンスで公開されています。ただし、アイコンは[Spindle Icons](../spindle-icons/)に準じて、Creative Commons BY-NC-ND 4.0ライセンスで公開されています。
 
