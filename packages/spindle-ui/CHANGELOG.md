@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.51.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.51.0...@openameba/spindle-ui@0.51.1) (2022-11-14)
+
+
+### Bug Fixes
+
+* **spindle-ui:** make enabled import TextLink from entry point ([7402d9a](https://github.com/openameba/spindle/commit/7402d9a1fbea08a231fbb3974a01325655ab4c71))
+
+
+
+
+
 # [0.51.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.50.1...@openameba/spindle-ui@0.51.0) (2022-11-07)
 
 
