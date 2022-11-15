@@ -7,8 +7,7 @@ import { useShowItem } from './hooks/useShowItem';
 interface Props extends React.HTMLAttributes<HTMLElement> {
   current: number;
   total: number;
-  showCount?: boolean;
-  showPrevNext?: boolean;
+  showTotal?: boolean;
   showFirstLast?: boolean;
   onPageChange: (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
@@ -19,12 +18,14 @@ interface Props extends React.HTMLAttributes<HTMLElement> {
 
 const BLOCK_NAME = 'spui-Pagination';
 
+// ページ総数の閾値
+const TOTAL_THRESHOLD = 100;
+
 export const Pagination = (props: Props) => {
   const {
     current,
     total,
-    showCount = false,
-    showPrevNext = true,
+    showTotal = false,
     showFirstLast = false,
     onPageChange,
     createUrl,
@@ -51,6 +52,7 @@ export const Pagination = (props: Props) => {
     },
     [onPageChange],
   );
+  const showPrevNext = total < TOTAL_THRESHOLD;
 
   return (
     <nav
@@ -157,9 +159,9 @@ export const Pagination = (props: Props) => {
           </li>
         )}
       </ul>
-      {showCount && (
+      {showTotal && (
         <p
-          className={`${BLOCK_NAME}-count`}
+          className={`${BLOCK_NAME}-total`}
           aria-label={`${total}ページ中の${current}ページ目`}
         >
           {current}/{total}ページ

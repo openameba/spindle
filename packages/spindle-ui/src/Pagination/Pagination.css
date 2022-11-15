@@ -49,7 +49,7 @@
   line-height: 1.3;
   margin: 0;
   min-width: 40px;
-  padding: 0 4px;
+  padding: 0 10px;
   position: relative;
   -webkit-tap-highlight-color: var(--Pagination-tapHighlightColor);
   text-decoration: none;
@@ -81,7 +81,7 @@
   }
 }
 
-.spui-Pagination-count {
+.spui-Pagination-total {
   color: var(--color-text-low-emphasis);
   font-size: 0.8125em;
   line-height: 1.3;
