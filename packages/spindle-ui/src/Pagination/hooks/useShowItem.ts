@@ -24,20 +24,11 @@ export function useShowItem({ current, total }: Payload) {
     }
   }, [current, total]);
 
-  // totalは表示数超えている前提で、前から2つ目のアイテムが2より大きいかどうか（最初が連続した数字じゃないことをチェック）
-  const showPrevHorizontal = total > MAX_PAGE_ITEM && 2 < displayItem[1];
-
-  // totalは表示数超えている前提で、後ろから2つ目のアイテムがtotal-1より小さいか（最後が連続した数字じゃないことをチェック）
-  const showNextHorizontal =
-    total > MAX_PAGE_ITEM && displayItem[MAX_PAGE_ITEM - 2] < total - 1;
-
   // 総ページ数が5件より大きい場合
   const hideDisplayItem = total > MAX_PAGE_ITEM;
 
   return {
     displayItem,
-    showPrevHorizontal,
-    showNextHorizontal,
     hideDisplayItem,
   };
 }

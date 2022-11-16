@@ -32,7 +32,7 @@
   margin: 0;
 }
 
-.spui-Pagination-horizontal {
+.spui-Pagination-ellipsis {
   color: var(--color-object-low-emphasis);
 }
 
@@ -89,8 +89,8 @@
   padding: 0;
 }
 
-.spui-Pagination-horizontal + .spui-Pagination-link,
-.spui-Pagination-link + .spui-Pagination-horizontal {
+.spui-Pagination-ellipsis + .spui-Pagination-link,
+.spui-Pagination-link + .spui-Pagination-ellipsis {
   margin-left: 8px;
 }
 

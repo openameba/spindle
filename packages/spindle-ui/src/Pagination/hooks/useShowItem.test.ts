@@ -9,8 +9,6 @@ describe('useShowItem()', () => {
     const { result } = renderHook(() => useShowItem({ current, total }));
 
     expect(result.current.displayItem).toEqual([1, 7, 8, 9, 20]);
-    expect(result.current.showPrevHorizontal).toEqual(true);
-    expect(result.current.showNextHorizontal).toEqual(true);
     expect(result.current.hideDisplayItem).toEqual(true);
   });
 
@@ -21,8 +19,6 @@ describe('useShowItem()', () => {
     const { result } = renderHook(() => useShowItem({ current, total }));
 
     expect(result.current.displayItem).toEqual([1, 2, 3, 4, 20]);
-    expect(result.current.showPrevHorizontal).toEqual(false);
-    expect(result.current.showNextHorizontal).toEqual(true);
     expect(result.current.hideDisplayItem).toEqual(true);
   });
 
@@ -33,8 +29,6 @@ describe('useShowItem()', () => {
     const { result } = renderHook(() => useShowItem({ current, total }));
 
     expect(result.current.displayItem).toEqual([1, 17, 18, 19, 20]);
-    expect(result.current.showPrevHorizontal).toEqual(true);
-    expect(result.current.showNextHorizontal).toEqual(false);
     expect(result.current.hideDisplayItem).toEqual(true);
   });
 
@@ -45,8 +39,6 @@ describe('useShowItem()', () => {
     const { result } = renderHook(() => useShowItem({ current, total }));
 
     expect(result.current.displayItem).toEqual([1, 2, 3]);
-    expect(result.current.showPrevHorizontal).toEqual(false);
-    expect(result.current.showNextHorizontal).toEqual(false);
     expect(result.current.hideDisplayItem).toEqual(false);
   });
 });

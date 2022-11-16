@@ -31,12 +31,7 @@ export const Pagination = (props: Props) => {
     ...rest
   } = props;
 
-  const {
-    displayItem,
-    showPrevHorizontal,
-    showNextHorizontal,
-    hideDisplayItem,
-  } = useShowItem({
+  const { displayItem, hideDisplayItem } = useShowItem({
     current,
     total,
   });
@@ -89,9 +84,10 @@ export const Pagination = (props: Props) => {
             hideDisplayItem &&
             (current - 1 === pageNumber || current + 1 === pageNumber);
           const hasRelAttribute = current === pageNumber + 1;
-          const showPrevMenuHorizontal = index === 0 && showPrevHorizontal;
-          const showNextMenuHorizontal =
-            index === displayItem.length - 1 && showNextHorizontal;
+
+          // 数字が隣接していない場合に表示
+          const showEllipsis =
+            !!displayItem[index + 1] && displayItem[index + 1] - pageNumber > 1;
 
           return (
             <li
@@ -103,12 +99,6 @@ export const Pagination = (props: Props) => {
                 .join(' ')}
               key={`pagination-item-${pageNumber}`}
             >
-              {showNextMenuHorizontal && (
-                <MenuHorizontal
-                  aria-hidden="true"
-                  className={`${BLOCK_NAME}-horizontal`}
-                />
-              )}
               <a
                 className={`${BLOCK_NAME}-link`}
                 rel={hasRelAttribute ? undefined : 'nofollow'}
@@ -126,10 +116,10 @@ export const Pagination = (props: Props) => {
               >
                 {pageNumber}
               </a>
-              {showPrevMenuHorizontal && (
+              {showEllipsis && (
                 <MenuHorizontal
                   aria-hidden="true"
-                  className={`${BLOCK_NAME}-horizontal`}
+                  className={`${BLOCK_NAME}-ellipsis`}
                 />
               )}
             </li>
