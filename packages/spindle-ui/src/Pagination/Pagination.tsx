@@ -8,7 +8,6 @@ interface Props extends React.HTMLAttributes<HTMLElement> {
   current: number;
   total: number;
   showTotal?: boolean;
-  showFirstLast?: boolean;
   onPageChange: (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
     pageNumber: number,
@@ -26,7 +25,6 @@ export const Pagination = (props: Props) => {
     current,
     total,
     showTotal = false,
-    showFirstLast = false,
     onPageChange,
     createUrl,
     className,
@@ -53,6 +51,7 @@ export const Pagination = (props: Props) => {
     [onPageChange],
   );
   const showPrevNext = total < TOTAL_THRESHOLD;
+  const showFirstLast = total >= TOTAL_THRESHOLD;
 
   return (
     <nav
