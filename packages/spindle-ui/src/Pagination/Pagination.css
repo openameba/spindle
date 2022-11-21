@@ -89,7 +89,6 @@
   padding: 0;
 }
 
-.spui-Pagination-ellipsis + .spui-Pagination-link,
 .spui-Pagination-link + .spui-Pagination-ellipsis {
   margin-left: 10px;
 }
