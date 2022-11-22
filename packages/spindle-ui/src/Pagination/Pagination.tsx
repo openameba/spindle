@@ -8,7 +8,7 @@ interface Props extends React.HTMLAttributes<HTMLElement> {
   current: number;
   total: number;
   showTotal?: boolean;
-  onPageChange: (
+  onPageChange?: (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
     pageNumber: number,
   ) => void;
