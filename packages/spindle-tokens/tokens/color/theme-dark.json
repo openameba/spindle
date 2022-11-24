@@ -72,6 +72,12 @@
           },
           "value": "{Color.Primitive.White.20 alpha.value}"
         },
+        "Low Emphasis Inverse": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{Color.Primitive.Gray.20 alpha.value}"
+        },
         "Medium Emphasis": {
           "attributes": {
             "category": "color"
@@ -333,6 +339,18 @@
         }
       },
       "Surface": {
+        "Accent Neutral High Emphasis": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{Color.Primitive.Gray.10.value}"
+        },
+        "Accent Neutral Medium Emphasis": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{Color.Primitive.White.70 alpha.value}"
+        },
         "Accent Primary": {
           "attributes": {
             "category": "color"
