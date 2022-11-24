@@ -234,6 +234,10 @@ export const pageNumber = 1;
 
 ## on page change function
 
+<Description>
+  各サービスでルーティングを利用したい場合は、onPageChangeの第一引数にあるeventを利用してください。
+</Description>
+
 export const handleClick = (event, pageNumber) => {
   event.preventDefault();
 };
@@ -251,26 +255,16 @@ export const handleClick = (event, pageNumber) => {
 </Preview>
 
 <Source
-  code={
-    '<Pagination total={20} current={8} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} onPageChange={(event, pageNumber) => { handleClick(event, pageNumber); }} />'
-  }
-/>
-
-### リンク動作のカスタマイズ
-
-<Description>
-  各サービスでルーティングを利用したい場合は、onPageChangeの第一引数にあるeventを利用してください。
-</Description>
-
-<Source
-  code={`function Component({children, url = '', external, ref, ...rest}) {
-    const handleClick = (event, pageNumber) => {
-      event.preventDefault();
-      router.push(pageNumber);
-    };
-    return (
-      <Pagination onPageChange={(event, pageNumber) => { handleClick(event, pageNumber); }} />
-    );
-  }
-`}
+  code={`
+    function Component({children, url = '', external, ref, ...rest}) {
+      const handleClick = (event, pageNumber) => {
+        event.preventDefault();
+        router.push(pageNumber);
+      };
+      return (
+    ` + 
+        '<Pagination total={20} current={8} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} onPageChange={(event, pageNumber) => { handleClick(event, pageNumber); }} />'
+    + `);
+    }
+  `}
 />
