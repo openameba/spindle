@@ -255,16 +255,11 @@ export const handleClick = (event, pageNumber) => {
 </Preview>
 
 <Source
-  code={`
-    function Component({children, url = '', external, ref, ...rest}) {
-      const handleClick = (event, pageNumber) => {
-        event.preventDefault();
-        router.push(pageNumber);
-      };
-      return (
-    ` + 
-        '<Pagination total={20} current={8} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} onPageChange={(event, pageNumber) => { handleClick(event, pageNumber); }} />'
-    + `);
-    }
-  `}
+code={`
+  const handleClick = (event, pageNumber) => {
+    event.preventDefault();
+    // router.push などで遷移処理を記述
+};
+` +'<Pagination total={20} current={8} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} onPageChange={(event, pageNumber) => { handleClick(event, pageNumber); }} />'+ `
+`}
 />
