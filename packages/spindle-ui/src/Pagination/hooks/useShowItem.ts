@@ -1,34 +1,62 @@
-import { useMemo } from 'react';
-
 type Payload = {
   current: number;
   total: number;
+  totalThreshold: number;
+  maxShowItemSize: number;
 };
 
-const MAX_PAGE_ITEM = 5;
+export function useShowItem({
+  current,
+  total,
+  totalThreshold,
+  maxShowItemSize,
+}: Payload) {
+  const showItemSize = 5;
 
-export function useShowItem({ current, total }: Payload) {
-  const displayItem = useMemo(() => {
-    if (total < MAX_PAGE_ITEM) {
-      // 総ページ数がMAX_PAGE_ITEMよりも小さい場合
-      return Array.from({ length: total }, (_element, index) => index + 1);
-    } else if (current === 1 || current === 2) {
-      // 現在値が1か2の場合は"1,2,3,4,total"とする
-      return [1, 2, 3, 4, total];
-    } else if (current !== total && current !== total - 1) {
-      // "1,current-1,current,current+1,total"とする
-      return [1, current - 1, current, current + 1, total];
-    } else {
-      // 現在値最大値なら"1,total-3,total-2,total-1,total"とする
-      return [1, total - 3, total - 2, total - 1, total];
+  // 総数が表示したいアイテム数に満たない場合
+  if (total <= showItemSize) {
+    return Array.from({ length: total }, (_e, index) => index + 1);
+  }
+  // 中央値（少数の切り捨て）
+  const median = (showItemSize / 2) | 0;
+  // 総数がアイテムの表示最大数に満たない、または総数がしきい値を超える場合
+  if (total <= maxShowItemSize || total >= totalThreshold) {
+    if (current < 1 + median) {
+      return Array.from({ length: showItemSize }, (_e, index) => index + 1);
     }
-  }, [current, total]);
-
-  // 総ページ数が5件より大きい場合
-  const hideDisplayItem = total > MAX_PAGE_ITEM;
-
-  return {
-    displayItem,
-    hideDisplayItem,
-  };
+    if (current > total - median) {
+      return Array.from(
+        { length: showItemSize },
+        (_e, index) => total - index,
+      ).reverse();
+    }
+    return Array.from(
+      { length: showItemSize },
+      (_e, index) => current - (index - median),
+    ).reverse();
+  }
+  // 総数がアイテムの表示最大数以上の場合
+  if (current < 1 + median) {
+    return [
+      ...Array.from({ length: showItemSize - 1 }, (_e, index) => index + 1),
+      total,
+    ];
+  }
+  if (current > total - median) {
+    return [
+      1,
+      ...Array.from(
+        { length: showItemSize - 1 },
+        (_e, index) => total - index,
+      ).reverse(),
+    ];
+  }
+  return [
+    1,
+    ...Array.from(
+      { length: showItemSize - 2 },
+      (_e, index) => current - (index - median),
+    ).reverse(),
+    total,
+  ];
 }

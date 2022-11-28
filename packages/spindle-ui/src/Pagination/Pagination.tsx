@@ -19,6 +19,8 @@ const BLOCK_NAME = 'spui-Pagination';
 
 // ページ総数の閾値
 const TOTAL_THRESHOLD = 100;
+// 表示出来る数字（アイテム）の最大数
+const MAX_SHOW_ITEM_SIZE = 5;
 
 export const Pagination = (props: Props) => {
   const {
@@ -31,9 +33,11 @@ export const Pagination = (props: Props) => {
     ...rest
   } = props;
 
-  const { displayItem, hideDisplayItem } = useShowItem({
+  const displayItem = useShowItem({
     current,
     total,
+    totalThreshold: TOTAL_THRESHOLD,
+    maxShowItemSize: MAX_SHOW_ITEM_SIZE,
   });
 
   const handleClick = useCallback(
@@ -79,10 +83,6 @@ export const Pagination = (props: Props) => {
         )}
         {displayItem.map((pageNumber, index) => {
           const isCurrent = current === pageNumber;
-          const isHidden =
-            showPrevNext &&
-            hideDisplayItem &&
-            (current - 1 === pageNumber || current + 1 === pageNumber);
           const hasRelAttribute = current === pageNumber + 1;
 
           // 数字が隣接していない場合に表示
@@ -91,12 +91,7 @@ export const Pagination = (props: Props) => {
 
           return (
             <li
-              className={[
-                `${BLOCK_NAME}-item`,
-                isHidden && `${BLOCK_NAME}-item--hidden`,
-              ]
-                .filter(Boolean)
-                .join(' ')}
+              className={`${BLOCK_NAME}-item`}
               key={`pagination-item-${pageNumber}`}
             >
               <a

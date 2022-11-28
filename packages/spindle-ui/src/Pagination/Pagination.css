@@ -93,12 +93,6 @@
   margin-left: 10px;
 }
 
-@media screen and (max-width: 414px) {
-  .spui-Pagination-item--hidden {
-    display: none;
-  }
-}
-
 @media screen and (max-width: 360px) {
   .spui-Pagination-item--first,
   .spui-Pagination-item--last {
