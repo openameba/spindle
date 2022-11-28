@@ -8,14 +8,19 @@ type Payload = {
 // 表示出来る数字（アイテム）の最大数
 const MAX_SHOW_ITEM_SIZE = 5;
 
-export function useShowItem({ current, total, showItemSize, totalThreshold }: Payload) {
+export function useShowItem({
+  current,
+  total,
+  showItemSize,
+  totalThreshold,
+}: Payload) {
   // 総数が表示したいアイテム数に満たない場合
   if (total <= showItemSize) {
     return Array.from({ length: total }, (_e, index) => index + 1);
   }
   // 中央値（少数の切り捨て）
   const median = (showItemSize / 2) | 0;
-  // 総数がアイテムの表示最大数に満たない、または総数がしきい値を超える場合
+  // 総数がアイテムの表示最大数に満たない、または総数が閾値を超える場合
   if (total <= MAX_SHOW_ITEM_SIZE || total >= totalThreshold) {
     if (current < 1 + median) {
       return Array.from({ length: showItemSize }, (_e, index) => index + 1);
@@ -38,6 +43,7 @@ export function useShowItem({ current, total, showItemSize, totalThreshold }: Pa
       total,
     ];
   }
+  // 総数がアイテムの表示最大数以下の場合
   if (current > total - median) {
     return [
       1,
@@ -51,7 +57,7 @@ export function useShowItem({ current, total, showItemSize, totalThreshold }: Pa
     1,
     ...Array.from(
       { length: showItemSize - 2 },
-      (_e, index) => current - (index - median),
+      (_e, index) => current - (index + 1 - median),
     ).reverse(),
     total,
   ];
