@@ -10,6 +10,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 1,
         total: 1,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -21,6 +22,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 1,
         total: 2,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -32,6 +34,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 2,
         total: 2,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -43,6 +46,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 1,
         total: 3,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -55,6 +59,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 2,
         total: 3,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -66,6 +71,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 3,
         total: 3,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -77,6 +83,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 1,
         total: 4,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -88,6 +95,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 2,
         total: 4,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -99,6 +107,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 3,
         total: 4,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -110,6 +119,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 4,
         total: 4,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -121,6 +131,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 1,
         total: 5,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -132,6 +143,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 2,
         total: 5,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -143,6 +155,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 3,
         total: 5,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -154,6 +167,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 4,
         total: 5,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -165,6 +179,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 5,
         total: 5,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -176,6 +191,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 1,
         total: 6,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -187,6 +203,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 2,
         total: 6,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -198,6 +215,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 3,
         total: 6,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -209,6 +227,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 4,
         total: 6,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -220,6 +239,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 5,
         total: 6,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -231,6 +251,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 6,
         total: 6,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -242,6 +263,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 1,
         total: 7,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -253,6 +275,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 2,
         total: 7,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -264,6 +287,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 3,
         total: 7,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -275,6 +299,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 4,
         total: 7,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -286,6 +311,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 5,
         total: 7,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -297,6 +323,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 6,
         total: 7,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -308,6 +335,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 7,
         total: 7,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -319,6 +347,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 1,
         total: 1000,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -330,6 +359,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 2,
         total: 1000,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -341,6 +371,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 3,
         total: 1000,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -352,6 +383,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 4,
         total: 1000,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -363,6 +395,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 5,
         total: 1000,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -374,6 +407,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 200,
         total: 1000,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -385,6 +419,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 998,
         total: 1000,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -396,6 +431,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 999,
         total: 1000,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );
@@ -407,6 +443,7 @@ describe('useShowItem()', () => {
       useShowItem({
         current: 1000,
         total: 1000,
+        showItemSize: 5,
         totalThreshold: TOTAL_THRESHOLD,
       }),
     );

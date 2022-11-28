@@ -34,6 +34,7 @@ export const Pagination = (props: Props) => {
   const displayItem = useShowItem({
     current,
     total,
+    showItemSize: 5,
     totalThreshold: TOTAL_THRESHOLD,
   });
 

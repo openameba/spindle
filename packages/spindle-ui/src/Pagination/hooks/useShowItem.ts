@@ -1,15 +1,14 @@
 type Payload = {
   current: number;
   total: number;
+  showItemSize: 3 | 5;
   totalThreshold: number;
 };
 
 // 表示出来る数字（アイテム）の最大数
 const MAX_SHOW_ITEM_SIZE = 5;
 
-export function useShowItem({ current, total, totalThreshold }: Payload) {
-  const showItemSize = 5;
-
+export function useShowItem({ current, total, showItemSize, totalThreshold }: Payload) {
   // 総数が表示したいアイテム数に満たない場合
   if (total <= showItemSize) {
     return Array.from({ length: total }, (_e, index) => index + 1);
