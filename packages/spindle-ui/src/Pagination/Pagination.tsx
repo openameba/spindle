@@ -19,8 +19,6 @@ const BLOCK_NAME = 'spui-Pagination';
 
 // ページ総数の閾値
 const TOTAL_THRESHOLD = 100;
-// 表示出来る数字（アイテム）の最大数
-const MAX_SHOW_ITEM_SIZE = 5;
 
 export const Pagination = (props: Props) => {
   const {
@@ -37,7 +35,6 @@ export const Pagination = (props: Props) => {
     current,
     total,
     totalThreshold: TOTAL_THRESHOLD,
-    maxShowItemSize: MAX_SHOW_ITEM_SIZE,
   });
 
   const handleClick = useCallback(
