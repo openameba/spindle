@@ -33,8 +33,8 @@ export function useShowItem({
     }
     return Array.from(
       { length: showItemSize },
-      (_e, index) => current - (index - median),
-    ).reverse();
+      (_e, index) => current - median + index,
+    );
   }
   // 総数がアイテムの表示最大数以上の場合
   if (current < 1 + median) {
@@ -57,8 +57,8 @@ export function useShowItem({
     1,
     ...Array.from(
       { length: showItemSize - 2 },
-      (_e, index) => current - (index + 1 - median),
-    ).reverse(),
+      (_e, index) => current - (median - 1) + index,
+    ),
     total,
   ];
 }
