@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect, useState, useRef } from 'react';
 import MenuHorizontal from '../Icon/MenuHorizontal';
 
 import PaginationItem from './PaginationItem';
@@ -31,10 +31,29 @@ export const Pagination = (props: Props) => {
     ...rest
   } = props;
 
+  const handleMatchMedia =
+    typeof window !== 'undefined' && window.matchMedia
+      ? window.matchMedia('(max-width: 360px)')
+      : undefined;
+
+  const isMobile = useRef(handleMatchMedia);
+  const [matches, setMatches] = useState(() =>
+    isMobile.current ? isMobile.current.matches : false,
+  );
+
+  const onOrientationchange = useCallback(() => {
+    const isMobile = handleMatchMedia;
+    setMatches(isMobile && isMobile.matches ? isMobile.matches : false);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('orientationchange', onOrientationchange, false);
+  }, []);
+
   const displayItem = useShowItem({
     current,
     total,
-    showItemSize: 5,
+    showItemSize: matches ? 3 : 5,
     totalThreshold: TOTAL_THRESHOLD,
   });
 
