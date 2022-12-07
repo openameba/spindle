@@ -39,29 +39,37 @@ export const Pagination = (props: Props) => {
       ? window.matchMedia('(max-width: 360px)')
       : undefined;
 
-  const isMobile = useRef(handleMatchMedia);
+  const isMatchMedia = useRef(handleMatchMedia);
   const [matches, setMatches] = useState(() =>
-    isMobile.current ? isMobile.current.matches : false,
+    isMatchMedia.current ? isMatchMedia.current.matches : false,
   );
 
-  const onOrientationchange = useCallback(() => {
-    const isMobile = handleMatchMedia;
-    setMatches(isMobile && isMobile.matches ? isMobile.matches : false);
+  const onChangeView = useCallback(() => {
+    const isMatchMedia = handleMatchMedia;
+    setMatches(
+      isMatchMedia && isMatchMedia.matches ? isMatchMedia.matches : false,
+    );
   }, [handleMatchMedia]);
+
+  const onOrientationchange = useCallback(() => {
+    onChangeView();
+  }, [onChangeView]);
 
   useEffect(() => {
     window.addEventListener('orientationchange', onOrientationchange, false);
+    return () =>
+      window.removeEventListener('orientationchange', onOrientationchange);
   }, [onOrientationchange]);
 
   const onResizeView = useCallback(() => {
     setTimeout(() => {
-      const isMobile = handleMatchMedia;
-      setMatches(isMobile && isMobile.matches ? isMobile.matches : false);
+      onChangeView();
     }, RESIZE_DELAY_TIME);
-  }, [handleMatchMedia]);
+  }, [onChangeView]);
 
   useEffect(() => {
     window.addEventListener('resize', onResizeView, false);
+    return () => window.removeEventListener('resize', onResizeView);
   }, [onResizeView]);
 
   const displayItem = useShowItem({
