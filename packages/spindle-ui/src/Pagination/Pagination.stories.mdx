@@ -90,6 +90,25 @@ export const pageNumber = 1;
   }
 />
 
+## current 1 total 2
+
+<Preview withSource="open">
+  <Story name="current 1 total 2">
+    <Pagination
+      total={2}
+      current={1}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={
+    '<Pagination total={2} current={1} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
 ## current 2 total 2
 
 <Preview withSource="open">
@@ -106,6 +125,25 @@ export const pageNumber = 1;
 <Source
   code={
     '<Pagination total={2} current={2} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
+## current 1 total 3
+
+<Preview withSource="open">
+  <Story name="current 1 total 3">
+    <Pagination
+      total={3}
+      current={1}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={
+    '<Pagination total={3} current={1} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
   }
 />
 
@@ -128,6 +166,44 @@ export const pageNumber = 1;
   }
 />
 
+## current 3 total 3
+
+<Preview withSource="open">
+  <Story name="current 3 total 3">
+    <Pagination
+      total={3}
+      current={3}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={
+    '<Pagination total={3} current={3} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
+## current 1 total 4
+
+<Preview withSource="open">
+  <Story name="current 1 total 4">
+    <Pagination
+      total={4}
+      current={1}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={
+    '<Pagination total={4} current={1} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
 ## current 2 total 4
 
 <Preview withSource="open">
@@ -147,13 +223,13 @@ export const pageNumber = 1;
   }
 />
 
-## current 8 total 20
+## current 3 total 4
 
 <Preview withSource="open">
-  <Story name="current 8 total 20">
+  <Story name="current 3 total 4">
     <Pagination
-      total={20}
-      current={8}
+      total={4}
+      current={3}
       createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
       {...actions('onClick')}
     />
@@ -162,17 +238,17 @@ export const pageNumber = 1;
 
 <Source
   code={
-    '<Pagination total={20} current={8} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+    '<Pagination total={4} current={3} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
   }
 />
 
-## current 900 total 999
+## current 4 total 4
 
 <Preview withSource="open">
-  <Story name="current 900 total 999">
+  <Story name="current 4 total 4">
     <Pagination
-      total={999}
-      current={900}
+      total={4}
+      current={4}
       createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
       {...actions('onClick')}
     />
@@ -181,21 +257,17 @@ export const pageNumber = 1;
 
 <Source
   code={
-    '<Pagination total={999} current={900} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+    '<Pagination total={4} current={4} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
   }
 />
 
-## current 10000 total 20000
-
-<Description>
-  上限は設けていないためページ数の値によってリンクの横幅が広がるレイアウトとなっています。
-</Description>
+## current 1 total 5
 
 <Preview withSource="open">
-  <Story name="current 10000 total 20000">
+  <Story name="current 1 total 5">
     <Pagination
-      total={20000}
-      current={10000}
+      total={5}
+      current={1}
       createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
       {...actions('onClick')}
     />
@@ -204,7 +276,501 @@ export const pageNumber = 1;
 
 <Source
   code={
-    '<Pagination total={20000} current={10000} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+    '<Pagination total={5} current={1} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
+## current 2 total 5
+
+<Preview withSource="open">
+  <Story name="current 2 total 5">
+    <Pagination
+      total={5}
+      current={2}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={
+    '<Pagination total={5} current={2} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
+## current 3 total 5
+
+<Preview withSource="open">
+  <Story name="current 3 total 5">
+    <Pagination
+      total={5}
+      current={3}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={
+    '<Pagination total={5} current={3} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
+## current 4 total 5
+
+<Preview withSource="open">
+  <Story name="current 4 total 5">
+    <Pagination
+      total={5}
+      current={4}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={
+    '<Pagination total={5} current={4} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
+## current 5 total 5
+
+<Preview withSource="open">
+  <Story name="current 5 total 5">
+    <Pagination
+      total={5}
+      current={5}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={
+    '<Pagination total={5} current={5} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
+## current 1 total 6
+
+<Preview withSource="open">
+  <Story name="current 1 total 6">
+    <Pagination
+      total={6}
+      current={1}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={
+    '<Pagination total={6} current={1} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
+## current 2 total 6
+
+<Preview withSource="open">
+  <Story name="current 2 total 6">
+    <Pagination
+      total={6}
+      current={2}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={
+    '<Pagination total={6} current={2} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
+## current 3 total 6
+
+<Preview withSource="open">
+  <Story name="current 3 total 6">
+    <Pagination
+      total={6}
+      current={3}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={
+    '<Pagination total={6} current={3} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
+## current 4 total 6
+
+<Preview withSource="open">
+  <Story name="current 4 total 6">
+    <Pagination
+      total={6}
+      current={4}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={
+    '<Pagination total={6} current={4} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
+## current 5 total 6
+
+<Preview withSource="open">
+  <Story name="current 5 total 6">
+    <Pagination
+      total={6}
+      current={5}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={
+    '<Pagination total={6} current={5} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
+## current 6 total 6
+
+<Preview withSource="open">
+  <Story name="current 6 total 6">
+    <Pagination
+      total={6}
+      current={6}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={
+    '<Pagination total={6} current={6} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
+## current 1 total 7
+
+<Preview withSource="open">
+  <Story name="current 1 total 7">
+    <Pagination
+      total={7}
+      current={1}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={
+    '<Pagination total={7} current={1} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
+## current 2 total 7
+
+<Preview withSource="open">
+  <Story name="current 2 total 7">
+    <Pagination
+      total={7}
+      current={2}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={
+    '<Pagination total={7} current={2} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
+## current 3 total 7
+
+<Preview withSource="open">
+  <Story name="current 3 total 7">
+    <Pagination
+      total={7}
+      current={3}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={
+    '<Pagination total={7} current={3} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
+## current 4 total 7
+
+<Preview withSource="open">
+  <Story name="current 4 total 7">
+    <Pagination
+      total={7}
+      current={4}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={
+    '<Pagination total={7} current={4} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
+## current 5 total 7
+
+<Preview withSource="open">
+  <Story name="current 5 total 7">
+    <Pagination
+      total={7}
+      current={5}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={
+    '<Pagination total={7} current={5} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
+## current 6 total 7
+
+<Preview withSource="open">
+  <Story name="current 6 total 7">
+    <Pagination
+      total={7}
+      current={6}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={
+    '<Pagination total={7} current={6} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
+## current 7 total 7
+
+<Preview withSource="open">
+  <Story name="current 7 total 7">
+    <Pagination
+      total={7}
+      current={7}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={
+    '<Pagination total={7} current={7} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
+## current 1 total 1000
+
+<Preview withSource="open">
+  <Story name="current 1 total 1000">
+    <Pagination
+      total={1000}
+      current={1}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={
+    '<Pagination total={1000} current={1} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
+## current 2 total 1000
+
+<Preview withSource="open">
+  <Story name="current 2 total 1000">
+    <Pagination
+      total={1000}
+      current={2}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={
+    '<Pagination total={1000} current={2} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
+## current 3 total 1000
+
+<Preview withSource="open">
+  <Story name="current 3 total 1000">
+    <Pagination
+      total={1000}
+      current={3}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={
+    '<Pagination total={1000} current={3} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
+## current 4 total 1000
+
+<Preview withSource="open">
+  <Story name="current 4 total 1000">
+    <Pagination
+      total={1000}
+      current={4}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={
+    '<Pagination total={1000} current={4} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
+## current 5 total 1000
+
+<Preview withSource="open">
+  <Story name="current 5 total 1000">
+    <Pagination
+      total={1000}
+      current={5}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={
+    '<Pagination total={1000} current={5} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
+## current 200 total 1000
+
+<Preview withSource="open">
+  <Story name="current 200 total 1000">
+    <Pagination
+      total={1000}
+      current={200}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={
+    '<Pagination total={1000} current={200} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
+## current 998 total 1000
+
+<Preview withSource="open">
+  <Story name="current 998 total 1000">
+    <Pagination
+      total={1000}
+      current={998}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={
+    '<Pagination total={1000} current={998} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
+## current 999 total 1000
+
+<Preview withSource="open">
+  <Story name="current 999 total 1000">
+    <Pagination
+      total={1000}
+      current={999}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={
+    '<Pagination total={1000} current={999} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
+## current 1000 total 1000
+
+<Preview withSource="open">
+  <Story name="current 1000 total 1000">
+    <Pagination
+      total={1000}
+      current={1000}
+      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      {...actions('onClick')}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={
+    '<Pagination total={1000} current={1000} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
   }
 />
 
