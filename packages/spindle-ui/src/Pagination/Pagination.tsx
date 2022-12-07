@@ -20,6 +20,9 @@ const BLOCK_NAME = 'spui-Pagination';
 // ページ総数の閾値
 const TOTAL_THRESHOLD = 100;
 
+// ウィンドウリサイズ時の間引き処理時間
+const RESIZE_DELAY_TIME = 800;
+
 export const Pagination = (props: Props) => {
   const {
     current,
@@ -49,6 +52,17 @@ export const Pagination = (props: Props) => {
   useEffect(() => {
     window.addEventListener('orientationchange', onOrientationchange, false);
   }, [onOrientationchange]);
+
+  const onResizeView = useCallback(() => {
+    setTimeout(() => {
+      const isMobile = handleMatchMedia;
+      setMatches(isMobile && isMobile.matches ? isMobile.matches : false);
+    }, RESIZE_DELAY_TIME);
+  }, [handleMatchMedia]);
+
+  useEffect(() => {
+    window.addEventListener('resize', onResizeView, false);
+  }, [onResizeView]);
 
   const displayItem = useShowItem({
     current,
