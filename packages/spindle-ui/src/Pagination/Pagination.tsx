@@ -44,11 +44,11 @@ export const Pagination = (props: Props) => {
   const onOrientationchange = useCallback(() => {
     const isMobile = handleMatchMedia;
     setMatches(isMobile && isMobile.matches ? isMobile.matches : false);
-  }, []);
+  }, [handleMatchMedia]);
 
   useEffect(() => {
     window.addEventListener('orientationchange', onOrientationchange, false);
-  }, []);
+  }, [onOrientationchange]);
 
   const displayItem = useShowItem({
     current,
