@@ -31,9 +31,11 @@ export const Pagination = (props: Props) => {
     ...rest
   } = props;
 
-  const { displayItem, hideDisplayItem } = useShowItem({
+  const displayItem = useShowItem({
     current,
     total,
+    showItemSize: 5,
+    totalThreshold: TOTAL_THRESHOLD,
   });
 
   const handleClick = useCallback(
@@ -79,10 +81,6 @@ export const Pagination = (props: Props) => {
         )}
         {displayItem.map((pageNumber, index) => {
           const isCurrent = current === pageNumber;
-          const isHidden =
-            showPrevNext &&
-            hideDisplayItem &&
-            (current - 1 === pageNumber || current + 1 === pageNumber);
           const hasRelAttribute = current === pageNumber + 1;
 
           // 数字が隣接していない場合に表示
@@ -91,12 +89,7 @@ export const Pagination = (props: Props) => {
 
           return (
             <li
-              className={[
-                `${BLOCK_NAME}-item`,
-                isHidden && `${BLOCK_NAME}-item--hidden`,
-              ]
-                .filter(Boolean)
-                .join(' ')}
+              className={`${BLOCK_NAME}-item`}
               key={`pagination-item-${pageNumber}`}
             >
               <a
