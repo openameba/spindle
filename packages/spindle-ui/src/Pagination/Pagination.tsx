@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect, useState, useRef } from 'react';
 import MenuHorizontal from '../Icon/MenuHorizontal';
 
 import PaginationItem from './PaginationItem';
@@ -20,6 +20,9 @@ const BLOCK_NAME = 'spui-Pagination';
 // ページ総数の閾値
 const TOTAL_THRESHOLD = 100;
 
+// ウィンドウリサイズ時の間引き処理時間
+const RESIZE_DELAY_TIME = 800;
+
 export const Pagination = (props: Props) => {
   const {
     current,
@@ -31,10 +34,48 @@ export const Pagination = (props: Props) => {
     ...rest
   } = props;
 
+  const handleMatchMedia =
+    typeof window !== 'undefined' && window.matchMedia
+      ? window.matchMedia('(max-width: 360px)')
+      : undefined;
+
+  const isMatchMedia = useRef(handleMatchMedia);
+  const [matches, setMatches] = useState(() =>
+    isMatchMedia.current ? isMatchMedia.current.matches : false,
+  );
+
+  const onChangeView = useCallback(() => {
+    const isMatchMedia = handleMatchMedia;
+    setMatches(
+      isMatchMedia && isMatchMedia.matches ? isMatchMedia.matches : false,
+    );
+  }, [handleMatchMedia]);
+
+  const onOrientationchange = useCallback(() => {
+    onChangeView();
+  }, [onChangeView]);
+
+  useEffect(() => {
+    window.addEventListener('orientationchange', onOrientationchange, false);
+    return () =>
+      window.removeEventListener('orientationchange', onOrientationchange);
+  }, [onOrientationchange]);
+
+  const onResizeView = useCallback(() => {
+    setTimeout(() => {
+      onChangeView();
+    }, RESIZE_DELAY_TIME);
+  }, [onChangeView]);
+
+  useEffect(() => {
+    window.addEventListener('resize', onResizeView, false);
+    return () => window.removeEventListener('resize', onResizeView);
+  }, [onResizeView]);
+
   const displayItem = useShowItem({
     current,
     total,
-    showItemSize: 5,
+    showItemSize: matches ? 3 : 5,
     totalThreshold: TOTAL_THRESHOLD,
   });
 
