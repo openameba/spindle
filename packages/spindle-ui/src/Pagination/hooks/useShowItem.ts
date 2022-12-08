@@ -1,43 +1,74 @@
-import { useMemo } from 'react';
-
 type Payload = {
   current: number;
   total: number;
+  showItemSize: 3 | 5;
+  totalThreshold: number;
 };
 
-const MAX_PAGE_ITEM = 5;
+// 表示出来る数字（アイテム）の最大数
+const MAX_SHOW_ITEM_SIZE = 5;
 
-export function useShowItem({ current, total }: Payload) {
-  const displayItem = useMemo(() => {
-    if (total < MAX_PAGE_ITEM) {
-      // 総ページ数がMAX_PAGE_ITEMよりも小さい場合
-      return Array.from({ length: total }, (_element, index) => index + 1);
-    } else if (current === 1 || current === 2) {
-      // 現在値が1か2の場合は"1,2,3,4,total"とする
-      return [1, 2, 3, 4, total];
-    } else if (current !== total && current !== total - 1) {
-      // "1,current-1,current,current+1,total"とする
-      return [1, current - 1, current, current + 1, total];
-    } else {
-      // 現在値最大値なら"1,total-3,total-2,total-1,total"とする
-      return [1, total - 3, total - 2, total - 1, total];
+/**
+ * useShowItem分岐条件
+ * 1.総ページ数が表示したいアイテム数以下の場合、総ページ数と同じアイテム数を返す
+ * 2.総ページ数がアイテムの表示最大数以下、または総ページ数が閾値以上の場合
+ *   1.現在のページ数が中央値 + 1より小さい場合、表示したいアイテム数を最初のページから返す
+ *   2.現在のページ数が総ページ数 - 中央値より大きい場合、総ページ数からさかのぼった表示したいアイテム数を返す
+ *   3.現在のページ数と前後に表示したいアイテム数を返す
+ * 3.上記に該当しない場合は以下の処理を行う
+ *   1.現在のページ数が中央値 + 1より小さい場合、表示したいアイテム数を最初のページから返し最後は総ページ数を返す
+ *   2.現在のページ数が総ページ数 - 中央値より大きい場合、最初のページとtotalまでの表示したいアイテム数を返す
+ *   3.最初のアイテムは1を最後のアイテムは総ページ数を返すとともにlengthが3の場合は現在のページ数のみでlengthが5の場合は現在のページ数とその前後のアイテム数を返す
+ */
+export function useShowItem({
+  current,
+  total,
+  showItemSize,
+  totalThreshold,
+}: Payload) {
+  if (total <= showItemSize) {
+    return Array.from({ length: total }, (_e, index) => index + 1);
+  }
+
+  // 中央値（少数の切り捨て）
+  const median = (showItemSize / 2) | 0;
+
+  if (total <= MAX_SHOW_ITEM_SIZE || total >= totalThreshold) {
+    if (current < 1 + median) {
+      return Array.from({ length: showItemSize }, (_e, index) => index + 1);
     }
-  }, [current, total]);
-
-  // totalは表示数超えている前提で、前から2つ目のアイテムが2より大きいかどうか（最初が連続した数字じゃないことをチェック）
-  const showPrevHorizontal = total > MAX_PAGE_ITEM && 2 < displayItem[1];
-
-  // totalは表示数超えている前提で、後ろから2つ目のアイテムがtotal-1より小さいか（最後が連続した数字じゃないことをチェック）
-  const showNextHorizontal =
-    total > MAX_PAGE_ITEM && displayItem[MAX_PAGE_ITEM - 2] < total - 1;
-
-  // 総ページ数が5件より大きい場合
-  const hideDisplayItem = total > MAX_PAGE_ITEM;
-
-  return {
-    displayItem,
-    showPrevHorizontal,
-    showNextHorizontal,
-    hideDisplayItem,
-  };
+    if (current > total - median) {
+      return Array.from(
+        { length: showItemSize },
+        (_e, index) => total - index,
+      ).reverse();
+    }
+    return Array.from(
+      { length: showItemSize },
+      (_e, index) => current - median + index,
+    );
+  }
+  if (current < 1 + median) {
+    return [
+      ...Array.from({ length: showItemSize - 1 }, (_e, index) => index + 1),
+      total,
+    ];
+  }
+  if (current > total - median) {
+    return [
+      1,
+      ...Array.from(
+        { length: showItemSize - 1 },
+        (_e, index) => total - index,
+      ).reverse(),
+    ];
+  }
+  return [
+    1,
+    ...Array.from(
+      { length: showItemSize - 2 },
+      (_e, index) => current - (median - 1) + index,
+    ),
+    total,
+  ];
 }
