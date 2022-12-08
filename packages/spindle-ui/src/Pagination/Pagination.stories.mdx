@@ -52,25 +52,6 @@ import { Pagination } from './Pagination';
 export const url = '/detail/CURRENT.html';
 export const pageNumber = 1;
 
-## Normal
-
-<Preview withSource="open">
-  <Story name="Normal">
-    <Pagination
-      total={5}
-      current={3}
-      createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
-      {...actions('onClick')}
-    />
-  </Story>
-</Preview>
-
-<Source
-  code={
-    '<Pagination url="/article/page-PAGE_NUMBER.html" total={5} current={3} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
-
 ## current 1 total 1
 
 <Preview withSource="open">
