@@ -3,6 +3,58 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.52.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.51.0...@openameba/spindle-ui@0.52.0) (2022-12-08)
+
+
+### Bug Fixes
+
+* **spindle-ui:** adjustment document ([b97b0a1](https://github.com/openameba/spindle/commit/b97b0a10b767cde7ff10900ba0bc324d0146e66c))
+* **spindle-ui:** avoid running dialog showModal() twice ([8c94ddd](https://github.com/openameba/spindle/commit/8c94ddd2ebc9247e9be8bc2fc162403e619ffb80))
+* **spindle-ui:** change show ellipsis logic ([3c2e598](https://github.com/openameba/spindle/commit/3c2e598660d0724d57aa4bc4c3559d0bb2df93d3))
+* **spindle-ui:** change show item logic ([6dfd0af](https://github.com/openameba/spindle/commit/6dfd0af8c01b96a65e57d009f2c9307a1e27101d))
+* **spindle-ui:** change total threshold name ([baf5b96](https://github.com/openameba/spindle/commit/baf5b967193005583e8bbc768cfbfbf845e73d58))
+* **spindle-ui:** delete pagination ellipsis unused style ([a1f333b](https://github.com/openameba/spindle/commit/a1f333b009ffc1801c52564524cf1ebd64018e92))
+* **spindle-ui:** delete pagination normal story ([dc02419](https://github.com/openameba/spindle/commit/dc0241935cf1bf6568d77db48ff604260a69ed62))
+* **spindle-ui:** delete show first last storybook ([85da2b5](https://github.com/openameba/spindle/commit/85da2b55dcb20b638746306c1f6e16088063b639))
+* **spindle-ui:** delete show first last test code ([b8efcca](https://github.com/openameba/spindle/commit/b8efcca192203f6563d4b624f60da17339063d0a))
+* **spindle-ui:** delete show total props ([76af01f](https://github.com/openameba/spindle/commit/76af01fdf603070799cf92fb64b840386c9f7097))
+* **spindle-ui:** make enabled import TextLink from entry point ([7402d9a](https://github.com/openameba/spindle/commit/7402d9a1fbea08a231fbb3974a01325655ab4c71))
+* **spindle-ui:** max show item size ([3b41bd1](https://github.com/openameba/spindle/commit/3b41bd19b85a18d8e82819547cf9ed3791f0e7a0))
+* **spindle-ui:** on page change props ([55e8b60](https://github.com/openameba/spindle/commit/55e8b609dd7cad2fbe4c858d5a1fc534c8a628b8))
+* **spindle-ui:** pagination breakpoint ([bd18821](https://github.com/openameba/spindle/commit/bd1882160e219d700da4d1286d2590c87bd73707))
+* **spindle-ui:** pagination ellipsis margin style ([408ca61](https://github.com/openameba/spindle/commit/408ca61b56fa848f0c1c5e929ec7ac1fe0f5fdc0))
+* **spindle-ui:** pagination link style ([d5b5d2c](https://github.com/openameba/spindle/commit/d5b5d2cb42d95b54d0549296aae03f72735b71ee))
+* **spindle-ui:** pagination show prev next logic ([1a61400](https://github.com/openameba/spindle/commit/1a61400c92efc56abdff388795ff2c8e529358f1))
+* **spindle-ui:** pagination story ([00cebb4](https://github.com/openameba/spindle/commit/00cebb4f8a5c9a0296104cbfbc6922949a08b360))
+* **spindle-ui:** pagination test case ([32731b2](https://github.com/openameba/spindle/commit/32731b2e0df3663a1df07385d769dba8516aad12))
+* **spindle-ui:** pagination test case ([8315bcf](https://github.com/openameba/spindle/commit/8315bcf09682c86dffb5aa1941ac8360607f5c2e))
+* **spindle-ui:** pagination test case ([7ccab3f](https://github.com/openameba/spindle/commit/7ccab3fdf907f1d3d0eb56813aaeb96bba789197))
+* **spindle-ui:** pagination use callback and effect ([8bbcc9c](https://github.com/openameba/spindle/commit/8bbcc9c682d67593e0d28cbebfd80801016a9a5f))
+* **spindle-ui:** show item logic ([659afe2](https://github.com/openameba/spindle/commit/659afe28d9533a27a9f3468a5fd138185eab88e8))
+* **spindle-ui:** show item size ([cd12e8e](https://github.com/openameba/spindle/commit/cd12e8e2de9bd0f772ad3da0fdba949fb63a221f))
+* **spindle-ui:** show total story book pattern ([1ecf615](https://github.com/openameba/spindle/commit/1ecf615f02d6bf96df70e65abd4ce2234a9fd9e6))
+* **spindle-ui:** update document ([20577b1](https://github.com/openameba/spindle/commit/20577b10cd632939d21b657ac1dbce0828cfeb0f))
+
+
+### Code Refactoring
+
+* **spindle-ui:** export components directly ([694dab6](https://github.com/openameba/spindle/commit/694dab6df3fcf902809e3ee0b24295109fc55ae8))
+
+
+### Features
+
+* **spindle-ui:** add pagination window resize ([6743c29](https://github.com/openameba/spindle/commit/6743c2983ac4e54676b96b2462ac6777281f1e18))
+* **spindle-ui:** change pagination bundlesize ([62866cf](https://github.com/openameba/spindle/commit/62866cf986c36aebe5bfe390cf66794d01edb742))
+
+
+### BREAKING CHANGES
+
+* **spindle-ui:** TypeScript under v3.8 has been no longer supported
+
+
+
+
+
 ## [0.51.1-alpha.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.51.0...@openameba/spindle-ui@0.51.1-alpha.0) (2022-11-28)
 
 
