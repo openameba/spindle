@@ -75,7 +75,7 @@
     "@types/jest": "^27.0.0",
     "@types/react": "^17.0.1",
     "autoprefixer": "^9.8.5",
-    "babel-loader": "^8.2.5",
+    "babel-loader": "^9.0.0",
     "bundlesize": "^0.18.0",
     "cssnano": "^4.1.10",
     "dialog-polyfill": "^0.5.6",
