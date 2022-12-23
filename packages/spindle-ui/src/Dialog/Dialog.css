@@ -34,14 +34,23 @@
 }
 
 /* NOTE: set no animations to the dialog-polyfill browsers for stability */
-.spui-Dialog[open]:not(.spui-Dialog--closing),
-.spui-Dialog[open]:not(.spui-Dialog--closing).spui-Dialog::backdrop {
-  animation: 0.35s cubic-bezier(0, 0, 0, 1) spui-Dialog-fade-in;
+.spui-Dialog[open]:not(.spui-Dialog--closing) {
+  animation: var(--animation-appear-in-duration)
+    var(--animation-appear-in-timing-function) spui-Dialog-fade-in;
 }
 
-.spui-Dialog--closing,
+/* NOTE: custom properties do not work in ::backdrop */
+.spui-Dialog[open]:not(.spui-Dialog--closing).spui-Dialog::backdrop {
+  animation: 350ms cubic-bezier(0.5, 0, 0.5, 1) spui-Dialog-fade-in;
+}
+
+.spui-Dialog--closing {
+  animation: var(--animation-disappear-in-duration)
+    var(--animation-disappear-in-timing-function) spui-Dialog-fade-out;
+}
+
 .spui-Dialog--closing.spui-Dialog::backdrop {
-  animation: 0.15s cubic-bezier(0, 0, 0, 1) spui-Dialog-fade-out;
+  animation: 150ms cubic-bezier(0.5, 0, 0.5, 1) spui-Dialog-fade-out;
 }
 
 @media (prefers-reduced-motion: reduce) {
