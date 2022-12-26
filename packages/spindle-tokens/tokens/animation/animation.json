@@ -16,6 +16,14 @@
         "value": "{Animation.Duration.Neutral.value}"
       }
     },
+    "Disappear": {
+      "easing": {
+        "value": "{Animation.Easing.Ease In Out.value}"
+      },
+      "duration": {
+        "value": "{Animation.Duration.Fast.value}"
+      }
+    },
     "In View": {
       "easing": {
         "value": "{Animation.Easing.Ease Out.value}"
