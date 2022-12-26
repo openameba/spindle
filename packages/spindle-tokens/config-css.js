@@ -1,3 +1,21 @@
+function makeAnimationTokens(dictionary) {
+  return dictionary.allTokens
+    .filter((token) => {
+      return token.attributes.category === 'Animation';
+    })
+    .map((token) => {
+      if (dictionary.usesReference(token.original.value)) {
+        const [ref] = dictionary.getReferences(token.original.value);
+        token.value = `var(--${ref.name})`;
+      }
+      if (token.attributes.type === 'Easing') {
+        token.value = `cubic-bezier(${token.value})`;
+      }
+      return token;
+    })
+    .map((token) => `  --${token.name}: ${token.value};`);
+}
+
 function makeShadowTokens(dictionary) {
   return dictionary.allTokens
     .filter((token) => token.filePath.includes('shadow'))
@@ -44,6 +62,10 @@ function makeThemeColorTokens(theme, dictionary) {
 module.exports = {
   source: ['tokens/**/*.json'],
   format: {
+    cssAnimation: ({ dictionary }) => {
+      const tokens = makeAnimationTokens(dictionary);
+      return [':root {', ...tokens, '}', ''].join('\n');
+    },
     cssShadow: ({ dictionary }) => {
       const tokens = makeShadowTokens(dictionary);
       return [':root {', ...tokens, '}', ''].join('\n');
@@ -89,6 +111,7 @@ module.exports = {
       const darkThemeTokens = makeThemeColorTokens('dark', dictionary);
       return [
         ':root {',
+        ...makeAnimationTokens(dictionary),
         ...makeShadowTokens(dictionary),
         ...makePrimitiveColorTokens(dictionary),
         ...makeThemeColorTokens('light', dictionary),
@@ -111,6 +134,7 @@ module.exports = {
       const darkThemeTokens = makeThemeColorTokens('dark', dictionary);
       return [
         ':root {',
+        ...makeAnimationTokens(dictionary),
         ...makeShadowTokens(dictionary),
         ...makeUsedPrimitiveColors(dictionary),
         ...makeThemeColorTokens('light', dictionary),
@@ -134,6 +158,10 @@ module.exports = {
     css: {
       transforms: ['attribute/cti', 'name/cti/kebab', 'size/px', 'color/css'],
       files: [
+        {
+          destination: 'dist/css/spindle-tokens-animation.css',
+          format: 'cssAnimation',
+        },
         {
           destination: 'dist/css/spindle-tokens-shadow.css',
           format: 'cssShadow',
