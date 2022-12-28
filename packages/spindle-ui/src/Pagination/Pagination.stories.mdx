@@ -27,16 +27,13 @@ import { Pagination } from './Pagination';
 
 <Description>ページの前後に移動できます。</Description>
 
-<Description>デフォルトではアンカー要素を使用します。</Description>
-
-<Description>
-  `createUrl`に関数を渡すことでURLを任意の形で生成することが可能です。
-</Description>
-
 ## 指定できるプロパティ
 
 <Description>- `current`(必須): 現在のページ数を指定してください。</Description>
 <Description>- `total`(必須): 総ページ数を指定してください。</Description>
+<Description>
+  - `createUrl`(必須): 関数を渡すことでリンクのhrefとなる値を生成することが可能です。
+</Description>
 <Description>
   - `showTotal`(任意):
   現在のページ数と総ページ数を表示します。デフォルト値はfalseです。
@@ -45,14 +42,25 @@ import { Pagination } from './Pagination';
   - `onPageChange`(任意):
   リンクをクリック後に処理をしたい場合に利用できます。
 </Description>
-<Description>
-  - `createUrl`(必須): リンクのhrefとなる値を指定してください。
-</Description>
 
 export const url = '/detail/CURRENT.html';
 export const pageNumber = 1;
 
-## current 1 total 1
+## ページ総数が表示できる最大数以下の場合
+
+<Description>
+  基本的にすべてのページ番号を表示します。前後のページへ移動することができるナビゲーションが配置されます。
+</Description>
+
+### total 1
+
+<Source
+  code={
+    '<Pagination total={1} current={1} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+  }
+/>
+
+#### current 1
 
 <Preview withSource="open">
   <Story name="current 1 total 1">
@@ -65,13 +73,15 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
+### total 2
+
 <Source
   code={
-    '<Pagination total={1} current={1} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+    '<Pagination total={2} current={1} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
   }
 />
 
-## current 1 total 2
+#### current 1
 
 <Preview withSource="open">
   <Story name="current 1 total 2">
@@ -84,13 +94,7 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
-<Source
-  code={
-    '<Pagination total={2} current={1} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
-
-## current 2 total 2
+#### current 2
 
 <Preview withSource="open">
   <Story name="current 2 total 2">
@@ -103,13 +107,15 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
+### total 3
+
 <Source
   code={
-    '<Pagination total={2} current={2} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+    '<Pagination total={3} current={1} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
   }
 />
 
-## current 1 total 3
+#### current 1
 
 <Preview withSource="open">
   <Story name="current 1 total 3">
@@ -122,13 +128,7 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
-<Source
-  code={
-    '<Pagination total={3} current={1} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
-
-## current 2 total 3
+#### current 2
 
 <Preview withSource="open">
   <Story name="current 2 total 3">
@@ -141,13 +141,7 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
-<Source
-  code={
-    '<Pagination total={3} current={2} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
-
-## current 3 total 3
+#### current 3
 
 <Preview withSource="open">
   <Story name="current 3 total 3">
@@ -160,13 +154,15 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
+### total 4
+
 <Source
   code={
-    '<Pagination total={3} current={3} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+    '<Pagination total={4} current={1} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
   }
 />
 
-## current 1 total 4
+#### current 1
 
 <Preview withSource="open">
   <Story name="current 1 total 4">
@@ -179,13 +175,7 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
-<Source
-  code={
-    '<Pagination total={4} current={1} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
-
-## current 2 total 4
+#### current 2
 
 <Preview withSource="open">
   <Story name="current 2 total 4">
@@ -198,13 +188,7 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
-<Source
-  code={
-    '<Pagination total={4} current={2} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
-
-## current 3 total 4
+#### current 3
 
 <Preview withSource="open">
   <Story name="current 3 total 4">
@@ -217,13 +201,7 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
-<Source
-  code={
-    '<Pagination total={4} current={3} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
-
-## current 4 total 4
+#### current 4
 
 <Preview withSource="open">
   <Story name="current 4 total 4">
@@ -236,13 +214,15 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
+### total 5
+
 <Source
   code={
-    '<Pagination total={4} current={4} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+    '<Pagination total={5} current={1} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
   }
 />
 
-## current 1 total 5
+#### current 1
 
 <Preview withSource="open">
   <Story name="current 1 total 5">
@@ -255,13 +235,7 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
-<Source
-  code={
-    '<Pagination total={5} current={1} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
-
-## current 2 total 5
+#### current 2
 
 <Preview withSource="open">
   <Story name="current 2 total 5">
@@ -274,13 +248,7 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
-<Source
-  code={
-    '<Pagination total={5} current={2} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
-
-## current 3 total 5
+#### current 3
 
 <Preview withSource="open">
   <Story name="current 3 total 5">
@@ -293,13 +261,7 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
-<Source
-  code={
-    '<Pagination total={5} current={3} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
-
-## current 4 total 5
+#### current 4
 
 <Preview withSource="open">
   <Story name="current 4 total 5">
@@ -312,13 +274,7 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
-<Source
-  code={
-    '<Pagination total={5} current={4} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
-
-## current 5 total 5
+#### current 5
 
 <Preview withSource="open">
   <Story name="current 5 total 5">
@@ -331,13 +287,21 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
+## ページ総数が最大表示数より大きい場合
+
+<Description>
+  可能な限り現在のページ番号を中央に配置しつつ前後のページ数を含めて表示します。前後のページへ移動することができるナビゲーションが配置されます。
+</Description>
+
+### total 6
+
 <Source
   code={
-    '<Pagination total={5} current={5} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+    '<Pagination total={6} current={1} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
   }
 />
 
-## current 1 total 6
+#### current 1
 
 <Preview withSource="open">
   <Story name="current 1 total 6">
@@ -350,13 +314,8 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
-<Source
-  code={
-    '<Pagination total={6} current={1} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
 
-## current 2 total 6
+#### current 2
 
 <Preview withSource="open">
   <Story name="current 2 total 6">
@@ -369,13 +328,7 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
-<Source
-  code={
-    '<Pagination total={6} current={2} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
-
-## current 3 total 6
+#### current 3
 
 <Preview withSource="open">
   <Story name="current 3 total 6">
@@ -388,13 +341,7 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
-<Source
-  code={
-    '<Pagination total={6} current={3} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
-
-## current 4 total 6
+#### current 4
 
 <Preview withSource="open">
   <Story name="current 4 total 6">
@@ -407,13 +354,7 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
-<Source
-  code={
-    '<Pagination total={6} current={4} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
-
-## current 5 total 6
+#### current 5
 
 <Preview withSource="open">
   <Story name="current 5 total 6">
@@ -426,13 +367,8 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
-<Source
-  code={
-    '<Pagination total={6} current={5} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
 
-## current 6 total 6
+#### current 6
 
 <Preview withSource="open">
   <Story name="current 6 total 6">
@@ -445,13 +381,15 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
+### total 7
+
 <Source
   code={
-    '<Pagination total={6} current={6} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+    '<Pagination total={7} current={1} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
   }
 />
 
-## current 1 total 7
+#### current 1
 
 <Preview withSource="open">
   <Story name="current 1 total 7">
@@ -464,13 +402,7 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
-<Source
-  code={
-    '<Pagination total={7} current={1} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
-
-## current 2 total 7
+#### current 2
 
 <Preview withSource="open">
   <Story name="current 2 total 7">
@@ -483,13 +415,7 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
-<Source
-  code={
-    '<Pagination total={7} current={2} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
-
-## current 3 total 7
+#### current 3
 
 <Preview withSource="open">
   <Story name="current 3 total 7">
@@ -502,13 +428,7 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
-<Source
-  code={
-    '<Pagination total={7} current={3} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
-
-## current 4 total 7
+#### current 4
 
 <Preview withSource="open">
   <Story name="current 4 total 7">
@@ -521,13 +441,7 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
-<Source
-  code={
-    '<Pagination total={7} current={4} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
-
-## current 5 total 7
+#### current 5
 
 <Preview withSource="open">
   <Story name="current 5 total 7">
@@ -540,13 +454,7 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
-<Source
-  code={
-    '<Pagination total={7} current={5} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
-
-## current 6 total 7
+#### current 6
 
 <Preview withSource="open">
   <Story name="current 6 total 7">
@@ -559,13 +467,7 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
-<Source
-  code={
-    '<Pagination total={7} current={6} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
-
-## current 7 total 7
+#### current 7
 
 <Preview withSource="open">
   <Story name="current 7 total 7">
@@ -578,13 +480,19 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
+## ページ総数が100件を超える場合
+
+<Description>
+  可能な限り現在のページ番号を中央に配置しつつ前後のページ数を含めて表示します。最初と最後のページへ移動することができるナビゲーションが配置されます。
+</Description>
+
 <Source
   code={
-    '<Pagination total={7} current={7} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
+    '<Pagination total={1000} current={1} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
   }
 />
 
-## current 1 total 1000
+### current 1
 
 <Preview withSource="open">
   <Story name="current 1 total 1000">
@@ -597,13 +505,7 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
-<Source
-  code={
-    '<Pagination total={1000} current={1} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
-
-## current 2 total 1000
+### current 2
 
 <Preview withSource="open">
   <Story name="current 2 total 1000">
@@ -616,13 +518,7 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
-<Source
-  code={
-    '<Pagination total={1000} current={2} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
-
-## current 3 total 1000
+### current 3
 
 <Preview withSource="open">
   <Story name="current 3 total 1000">
@@ -635,13 +531,7 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
-<Source
-  code={
-    '<Pagination total={1000} current={3} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
-
-## current 4 total 1000
+### current 4
 
 <Preview withSource="open">
   <Story name="current 4 total 1000">
@@ -654,13 +544,7 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
-<Source
-  code={
-    '<Pagination total={1000} current={4} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
-
-## current 5 total 1000
+### current 5
 
 <Preview withSource="open">
   <Story name="current 5 total 1000">
@@ -673,13 +557,7 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
-<Source
-  code={
-    '<Pagination total={1000} current={5} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
-
-## current 200 total 1000
+### current 200
 
 <Preview withSource="open">
   <Story name="current 200 total 1000">
@@ -692,13 +570,7 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
-<Source
-  code={
-    '<Pagination total={1000} current={200} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
-
-## current 998 total 1000
+### current 998
 
 <Preview withSource="open">
   <Story name="current 998 total 1000">
@@ -711,13 +583,7 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
-<Source
-  code={
-    '<Pagination total={1000} current={998} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
-
-## current 999 total 1000
+### current 999
 
 <Preview withSource="open">
   <Story name="current 999 total 1000">
@@ -730,13 +596,7 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
-<Source
-  code={
-    '<Pagination total={1000} current={999} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
-
-## current 1000 total 1000
+### current 1000
 
 <Preview withSource="open">
   <Story name="current 1000 total 1000">
@@ -749,16 +609,10 @@ export const pageNumber = 1;
   </Story>
 </Preview>
 
-<Source
-  code={
-    '<Pagination total={1000} current={1000} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'
-  }
-/>
-
-## showTotal props true
+## ページ総数の表示
 
 <Description>
-  `showTotal`プロパティは`true`にすることで、現在のページ数と総ページ数を表示することができます。
+  `showTotal`を`true`にすることで、ページ総数と現在のページ番号を表示できます。
 </Description>
 
 <Preview withSource="open">
@@ -779,10 +633,10 @@ export const pageNumber = 1;
   }
 />
 
-## on page change function
+## onPageChangeの利用
 
 <Description>
-  各サービスでルーティングを利用したい場合は、onPageChangeの第一引数にあるeventを利用してください。
+  遷移時の処理を独自に記述したい場合はonPageChangeを利用してください。
 </Description>
 
 export const handleClick = (event, pageNumber) => {
