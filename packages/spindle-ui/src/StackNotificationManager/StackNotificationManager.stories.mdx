@@ -13,7 +13,7 @@ StackNotificationManager コンポーネントは、利用者に一時的なお�
 「重要なお知らせ」とは何か、他の notification 系のコンポーネントとの違いは別途まとめる予定です。
 
 基本的にNotification系のコンポーネントを使用する際にはStackNotificationManagerを一緒に使用する必要があります。
-Notificationは処理が終了したことに対する通知なので該当の処理が複数回実行される可能性があれば、StackNotificationManagerを使用して複数表示をサポートする必要があります。
+Notificationは処理が終了したことに対する通知です。該当の処理を複数回実行する可能性があれば、StackNotificationManagerを使用して複数表示をサポートする必要があります。
 
 <Source
   language="javascript"
@@ -198,7 +198,7 @@ const { stackProps } = useStackNotificationManager({
 返り値は以下の通りです。
 
 - `idList`: `string[]` ... スタックされている同一要素のIDです。
-- `append`: `() => void` ... 同一要素をスタックに追加したい時に呼び出すとIdListに新しいidが追加されます。
+- `append`: `() => void` ... 同一要素をスタック追加したい時に呼び出すとIdListに新しいidが追加されます。
 - `onHide`: `(id: string) => void` ... スタックされている同一要素を非表示にするための関数です。
 
 ```ts
