@@ -12,7 +12,7 @@ export const usePoliteAnnouncer = (message) => {
     return () => {
       announcer.current = null;
     };
-  }, []);
+  },[]);
   useEffect(() => {
     const announcerContent = announcer.current;
     if (announcerContent && message) {
@@ -23,7 +23,7 @@ export const usePoliteAnnouncer = (message) => {
         announcerContent.textContent = '';
       }
     };
-  }, [message]);
+  },[message]);
 };
 
 export const ActivateButton = ({
@@ -33,7 +33,7 @@ export const ActivateButton = ({
   icon,
   position,
 }) => {
-  const [message, setMessage] = useState('');
+  const[message, setMessage]= useState('');
   usePoliteAnnouncer(message);
   return (
     <div>
@@ -44,7 +44,7 @@ export const ActivateButton = ({
       >
         Activate
       </Button>
-      <div style={{ ["--Toast-z-index"]: 2 }}>
+      <div style={{["--Toast-z-index"]: 2 }}>
         <Toast
           active={!!message}
           variant={variant}
@@ -61,9 +61,9 @@ export const ActivateButton = ({
 };
 
 export const MultiActivateButton = ({ offset, icon, position }) => {
-  const [message1, setMessage1] = useState('');
-  const [message2, setMessage2] = useState('');
-  const [stackPosition, setStackPosition] = useState(0);
+  const[message1, setMessage1]= useState('');
+  const[message2, setMessage2]= useState('');
+  const[stackPosition, setStackPosition]= useState(0);
   usePoliteAnnouncer(message1);
   return (
     <div>
@@ -77,7 +77,7 @@ export const MultiActivateButton = ({ offset, icon, position }) => {
       >
         Activate
       </Button>
-      <div style={{ ["--Toast-z-index"]: 2 }}>
+      <div style={{["--Toast-z-index"]: 2 }}>
         <Toast
           active={!!message1}
           offset={offset}
@@ -89,7 +89,7 @@ export const MultiActivateButton = ({ offset, icon, position }) => {
           {message1}
         </Toast>
       </div>
-      <div style={{ ["--Toast-z-index"]: 2 }}>
+      <div style={{["--Toast-z-index"]: 2 }}>
         <Toast
           active={!!message2}
           offset={offset}
@@ -342,5 +342,5 @@ const usePoliteAnnouncer = (message) => {
 
 ## スタック機能
 
-StackNotificationManager を使用することで Toast や SnackBar をスタックして複数表示できます。
+StackNotificationManagerを使用することでToastやSnackBarをスタックして複数表示できます。
 詳しくは[StackNotificationManager のドキュメント](/docs/stacknotificationmanager--normal)を参照してください。
