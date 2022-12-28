@@ -12,7 +12,7 @@ export const usePoliteAnnouncer = (message) => {
     return () => {
       announcer.current = null;
     };
-  }, []);
+  },[]);
   useEffect(() => {
     const announcerContent = announcer.current;
     if (announcerContent && message) {
@@ -23,7 +23,7 @@ export const usePoliteAnnouncer = (message) => {
         announcerContent.textContent = '';
       }
     };
-  }, [message]);
+  },[message]);
 };
 
 export const ActivateButton = ({
@@ -36,7 +36,7 @@ export const ActivateButton = ({
   position,
   buttonIcon,
 }) => {
-  const [message, setMessage] = useState('');
+  const[message, setMessage]= useState('');
   usePoliteAnnouncer(message);
   return (
     <div>
@@ -68,9 +68,9 @@ export const ActivateButton = ({
 };
 
 export const MultiActivateButton = ({ offset, icon, position }) => {
-  const [message1, setMessage1] = useState('');
-  const [message2, setMessage2] = useState('');
-  const [stackPosition, setStackPosition] = useState(0);
+  const[message1, setMessage1]= useState('');
+  const[message2, setMessage2]= useState('');
+  const[stackPosition, setStackPosition]= useState(0);
   usePoliteAnnouncer(message1);
   return (
     <div>
@@ -78,7 +78,7 @@ export const MultiActivateButton = ({ offset, icon, position }) => {
         size="medium"
         variant={'outlined'}
         onClick={() => {
-          setMessage1('メッセージが届きましたメッセージが届きましたメッセージが届きましたメッセージが届きましたメッセージが届きましたメッセージが届きました');
+          setMessage1('SnackBarには複数行にわたる長いメッセージも表示できます。それがどのように表示されるか、このサンプルで確認してください。');
           setMessage2('メッセージが届きました');
         }}
       >
@@ -471,7 +471,7 @@ SnackBarコンポーネントは、利用者に一時的なお知らせをする
 
 - SnackBarは自動で消えてしまうため、見落とされても影響のない、「重要ではないお知らせ」に用います
 - アイコンの設定は利用者に委ねられていますが、基本的には設定します。**`information`のみアイコンを外すことができます。**
-- 任意のボタンを設定できます。システム上では制御しませんが、5文字以上設定してはいけません。またボタンは1つ以上追加しないでください。
+- 任意のボタンを設定できます。システム上では制御しませんが、5文字以上を設定してはいけません。またボタンは1つ以上追加しないでください。
 - SnackBarでは最大3行まで表示されます。320px以下の画面では4行まで表示されます。超える部分は切られます。
 - モバイル表示ではbottom-center固定になるので注意してください。
 - このコンポーネントでは関与しませんが、ライブリージョンをアプリケーションで実装してください（参考：[実装方法 - 4.1.3 コンテンツの変更をユーザーに知らせる - Ameba Accessibility Guidelines](https://a11y-guidelines.ameba.design/4/1/3/#%E5%AE%9F%E8%A3%85%E6%96%B9%E6%B3%95)）
@@ -534,5 +534,5 @@ const usePoliteAnnouncer = (message) => {
 
 ## スタック機能
 
-StackNotificationManager を使用することで Toast や SnackBar をスタックして複数表示することができます。
+StackNotificationManagerを使用することでToastやSnackBarをスタックして複数表示できます。
 詳しくは[StackNotificationManager のドキュメント](/docs/stacknotificationmanager--normal)を参照してください。

@@ -8,12 +8,12 @@ import { StackNotificationManager } from '.';
 
 ![stability-experiment](https://img.shields.io/badge/stability-experiment-red.svg)
 
-StackNotificationManager コンポーネントは、利用者に一時的なお知らせをする際に利用します。画面上に複数表示できます。StackNotificationManager は自動で消えてしまうため、見落とされても影響のない「重要ではないお知らせ」に用います。利用する際には、その他により適切な手段がないか必ず確認してください。
+StackNotificationManagerコンポーネントは、利用者に一時的なお知らせをする際に利用します。画面上に複数表示できます。StackNotificationManagerは自動で消えてしまうため、見落とされても影響のない「重要ではないお知らせ」に用います。利用する際には、その他により適切な手段がないか必ず確認してください。
 
-「重要なお知らせ」とは何か、他の notification 系のコンポーネントとの違いは別途まとめる予定です。
+「重要なお知らせ」とは何か、他のnotification系のコンポーネントとの違いは別途まとめる予定です。
 
 基本的にNotification系のコンポーネントを使用する際にはStackNotificationManagerを一緒に使用する必要があります。
-Notificationは処理が終了したことに対する通知なので該当の処理が複数回実行される可能性があれば、StackNotificationManagerを使用して複数表示をサポートする必要があります。
+Notificationは処理が終了したことに対する通知です。該当の処理を複数回実行する可能性があれば、StackNotificationManagerを使用して複数表示をサポートする必要があります。
 
 <Source
   language="javascript"
@@ -90,13 +90,13 @@ render(<StackNotificationManagerProvider>
 
 ## このコンポーネントでやっていること
 
-- Toast または Snack Bar どちらにも使用できます
-- 複数の Toast や Snack Bar を表示したいときに、表示数や表示順序などを管理するためのコンポーネントです
+- ToastまたはSnack Barどちらにも使用できます
+- 複数のToastやSnack Barを表示したいときに、表示数や表示順序などを管理するためのコンポーネントです
 
 ## 利用時に注意してほしいこと
 
-- スタック機能はあくまで補足的な用途で使い、stack 自体がメインになるような使い方はしません。
-- 最大スタック数は PC では 4 つまでで、SP では 3 つまでです。これをこえる場合は古い要素が自動で消えます。
+- スタック機能はあくまで補足的な用途で使い、stack自体がメインになるような使い方はしません。
+- 最大スタック数はPCでは4つまでで、SPでは3つまでです。これをこえる場合は古い要素が自動で消えます。
 - 基本的にモーダルのように要素をグローバルに持たせる必要はありません。
 - このコンポーネントでは関与しませんが、ライブリージョンをアプリケーションで実装してください（参考：[実装方法 - 4.1.3 コンテンツの変更をユーザーに知らせる - Ameba Accessibility Guidelines](https://a11y-guidelines.ameba.design/4/1/3/#%E5%AE%9F%E8%A3%85%E6%96%B9%E6%B3%95)）
 - ライブリージョンは次のように実装します。 `html` 側に `aria-live="polite"` 及び `role="status"` を持つ要素を予め埋め込んでおき、この要素にコンテンツを動的に挿入することで、スクリーンリーダーが自動でコンテンツを読み上げてくれます。
@@ -162,24 +162,24 @@ const usePoliteAnnouncer = (message) => {
 
 ## Hooks
 
-以下の Hooks をあわせて使用します。
+以下のHooksをあわせて使用します。
 
-- useStackNotificationManager ... 一意の ID と position を指定することで、スタックを管理するための Hook です。
-- useRepeatedStackItem ... 同じ要素が何度もスタックする場合に必要な処理をまとめた Hook です。
-- useStackInteraction ... 直接 ID と position を指定して active や offset を操作したい時に使用します。
+- useStackNotificationManager ... 一意のIDとpositionを指定することで、スタックを管理するためのHookです。
+- useRepeatedStackItem ... 同じ要素が何度もスタックする場合に必要な処理をまとめたHookです。
+- useStackInteraction ... 直接IDとpositionを指定してactiveやoffsetを操作したい時に使用します。
 
 ### useStackNotificationManager
 
 引数には以下を指定します。
 
-- `id`: `string` ... スタックに追加する要素の ID です。
+- `id`: `string` ... スタックに追加する要素のIDです。
 - `position`: `${'top' | 'bottom'}${'Left' | 'Center' | 'Right'}` ... 要素を表示する位置を指定します。
 
 返り値は以下の通りです。
 
 - `stackProps`: `object` ... 基本的には`<Toast {...stackProps}/>`のようにして`Toast`や`SnackBar`に渡します。
 - `setActive`: `(active: boolean) => void` ... スタックに追加している要素をアクティブにするための関数です。
-- `setOffset`: `(offset: { top: number, bottom: number, right: number, left: number ] }) => void` ... スタックに追加している要素の offset を変更するための関数です。
+- `setOffset`: `(offset: { top: number, bottom: number, right: number, left: number ] }) => void` ... スタックに追加している要素のoffsetを変更するための関数です。
 
 ```ts
 const { stackProps } = useStackNotificationManager({
@@ -192,13 +192,13 @@ const { stackProps } = useStackNotificationManager({
 
 引数には以下を指定します。
 
-- `id`: `string` ... スタックに追加する要素の ID です。
+- `id`: `string` ... スタックに追加する要素のIDです。
 - `position`: `${'top' | 'bottom'}${'Left' | 'Center' | 'Right'}` ... 要素を表示する位置を指定します。
 
 返り値は以下の通りです。
 
 - `idList`: `string[]` ... スタックされている同一要素のIDです。
-- `append`: `() => void` ... 同一要素をスタックに追加したい時に呼び出すとIdListに新しいidが追加されます。
+- `append`: `() => void` ... 同一要素をスタック追加したい時に呼び出すとIdListに新しいidが追加されます。
 - `onHide`: `(id: string) => void` ... スタックされている同一要素を非表示にするための関数です。
 
 ```ts
