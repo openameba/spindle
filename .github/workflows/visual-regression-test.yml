@@ -14,11 +14,14 @@ on:
 jobs:
   visual-regression-test:
     runs-on: ubuntu-latest
+    # ignoring if triggered by bot
     # need specified label if Pull-request
     if: >
-      github.event_name == 'push' ||
-      github.event_name == 'workflow_dispatch' || (
-        github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'allow execute workflow')
+      (github.actor != 'dependabot[bot]' && github.actor != 'renovate[bot]') && (
+        github.event_name == 'push' ||
+        github.event_name == 'workflow_dispatch' || (
+          github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'allow execute workflow')
+        )
       )
     steps:
       - run: sudo apt-get --yes update
