@@ -54,7 +54,7 @@
   "dependencies": {
     "@openameba/spindle-hooks": "^0.11.0",
     "ameba-color-palette.css": "^4.9.0",
-    "react-merge-refs": "^1.1.0"
+    "react-merge-refs": "^2.0.0"
   },
   "devDependencies": {
     "@mdx-js/react": "^1.6.22",
