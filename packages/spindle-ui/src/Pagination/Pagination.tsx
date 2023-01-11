@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect, useState, useRef } from 'react';
 import MenuHorizontal from '../Icon/MenuHorizontal';
 
 import PaginationItem from './PaginationItem';
@@ -7,10 +7,8 @@ import { useShowItem } from './hooks/useShowItem';
 interface Props extends React.HTMLAttributes<HTMLElement> {
   current: number;
   total: number;
-  showCount?: boolean;
-  showPrevNext?: boolean;
-  showFirstLast?: boolean;
-  onPageChange: (
+  showTotal?: boolean;
+  onPageChange?: (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
     pageNumber: number,
   ) => void;
@@ -19,27 +17,66 @@ interface Props extends React.HTMLAttributes<HTMLElement> {
 
 const BLOCK_NAME = 'spui-Pagination';
 
+// ページ総数の閾値
+const TOTAL_THRESHOLD = 100;
+
+// ウィンドウリサイズ時の間引き処理時間
+const RESIZE_DELAY_TIME = 800;
+
 export const Pagination = (props: Props) => {
   const {
     current,
     total,
-    showCount = false,
-    showPrevNext = true,
-    showFirstLast = false,
+    showTotal = false,
     onPageChange,
     createUrl,
     className,
     ...rest
   } = props;
 
-  const {
-    displayItem,
-    showPrevHorizontal,
-    showNextHorizontal,
-    hideDisplayItem,
-  } = useShowItem({
+  const handleMatchMedia =
+    typeof window !== 'undefined' && window.matchMedia
+      ? window.matchMedia('(max-width: 360px)')
+      : undefined;
+
+  const isMatchMedia = useRef(handleMatchMedia);
+  const [matches, setMatches] = useState(() =>
+    isMatchMedia.current ? isMatchMedia.current.matches : false,
+  );
+
+  const onChangeView = useCallback(() => {
+    const isMatchMedia = handleMatchMedia;
+    setMatches(
+      isMatchMedia && isMatchMedia.matches ? isMatchMedia.matches : false,
+    );
+  }, [handleMatchMedia]);
+
+  const onOrientationchange = useCallback(() => {
+    onChangeView();
+  }, [onChangeView]);
+
+  useEffect(() => {
+    window.addEventListener('orientationchange', onOrientationchange, false);
+    return () =>
+      window.removeEventListener('orientationchange', onOrientationchange);
+  }, [onOrientationchange]);
+
+  const onResizeView = useCallback(() => {
+    setTimeout(() => {
+      onChangeView();
+    }, RESIZE_DELAY_TIME);
+  }, [onChangeView]);
+
+  useEffect(() => {
+    window.addEventListener('resize', onResizeView, false);
+    return () => window.removeEventListener('resize', onResizeView);
+  }, [onResizeView]);
+
+  const displayItem = useShowItem({
     current,
     total,
+    showItemSize: matches ? 3 : 5,
+    totalThreshold: TOTAL_THRESHOLD,
   });
 
   const handleClick = useCallback(
@@ -51,6 +88,8 @@ export const Pagination = (props: Props) => {
     },
     [onPageChange],
   );
+  const showPrevNext = total < TOTAL_THRESHOLD;
+  const showFirstLast = total >= TOTAL_THRESHOLD;
 
   return (
     <nav
@@ -83,31 +122,17 @@ export const Pagination = (props: Props) => {
         )}
         {displayItem.map((pageNumber, index) => {
           const isCurrent = current === pageNumber;
-          const isHidden =
-            showPrevNext &&
-            hideDisplayItem &&
-            (current - 1 === pageNumber || current + 1 === pageNumber);
           const hasRelAttribute = current === pageNumber + 1;
-          const showPrevMenuHorizontal = index === 0 && showPrevHorizontal;
-          const showNextMenuHorizontal =
-            index === displayItem.length - 1 && showNextHorizontal;
+
+          // 数字が隣接していない場合に表示
+          const showEllipsis =
+            !!displayItem[index + 1] && displayItem[index + 1] - pageNumber > 1;
 
           return (
             <li
-              className={[
-                `${BLOCK_NAME}-item`,
-                isHidden && `${BLOCK_NAME}-item--hidden`,
-              ]
-                .filter(Boolean)
-                .join(' ')}
+              className={`${BLOCK_NAME}-item`}
               key={`pagination-item-${pageNumber}`}
             >
-              {showNextMenuHorizontal && (
-                <MenuHorizontal
-                  aria-hidden="true"
-                  className={`${BLOCK_NAME}-horizontal`}
-                />
-              )}
               <a
                 className={`${BLOCK_NAME}-link`}
                 rel={hasRelAttribute ? undefined : 'nofollow'}
@@ -125,10 +150,10 @@ export const Pagination = (props: Props) => {
               >
                 {pageNumber}
               </a>
-              {showPrevMenuHorizontal && (
+              {showEllipsis && (
                 <MenuHorizontal
                   aria-hidden="true"
-                  className={`${BLOCK_NAME}-horizontal`}
+                  className={`${BLOCK_NAME}-ellipsis`}
                 />
               )}
             </li>
@@ -157,9 +182,9 @@ export const Pagination = (props: Props) => {
           </li>
         )}
       </ul>
-      {showCount && (
+      {showTotal && (
         <p
-          className={`${BLOCK_NAME}-count`}
+          className={`${BLOCK_NAME}-total`}
           aria-label={`${total}ページ中の${current}ページ目`}
         >
           {current}/{total}ページ

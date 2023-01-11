@@ -10,7 +10,7 @@ Spindle (Ameba Design System) Hooks
 
 ![MIT licence](https://img.shields.io/npm/l/@openameba/spindle-hooks) ![npm](https://img.shields.io/npm/v/@openameba/spindle-hooks)
 
-Spindle Hooks は、Ameba のデザインシステム「Spindle」で定義されたコンポーネントの機能部分にフォーカスし、再利用可能な React Hooks を提供するライブラリです。様々なタイプのプロジェクトに導入できるように設計されています。
+Spindle Hooksは、Amebaのデザインシステム「Spindle」で定義されたコンポーネントの機能部分にフォーカスし、再利用可能なReact Hooksを提供するライブラリです。様々なタイプのプロジェクトに導入できるように設計されています。
 
 ## インストール
 
@@ -24,7 +24,7 @@ yarn add @openameba/spindle-hooks
 
 ## 利用方法
 
-Spindle Hooks は以下のように利用できます。
+Spindle Hooksは以下のように利用できます。
 
 ```js
 import { render } from 'react-dom';
@@ -40,11 +40,11 @@ function App() {
 ReactDOM.render(<App />, document.querySelector('#app'));
 ```
 
-Spindle Hooks は Spindle UI と同様に module 版の配信もしています。利用する際には、[導入ガイド](https://github.com/openameba/spindle/pull/175)を参考にしてください(リンク先は spindle-ui なので spindle-hooks に置き換えてください)。
+Spindle HooksはSpindle UIと同様にmodule版の配信もしています。利用する際には、[導入ガイド](https://github.com/openameba/spindle/pull/175)を参考にしてください(リンク先はspindle-uiなのでspindle-hooksに置き換えてください)。
 
 ## Hooks 一覧
 
-利用可能な React Hooks は、[Storybook](https://ameba-spindle-hooks.web.app/)で公開されています。各コンポーネントの開発状況は[Stoybook Doc](https://ameba-spindle-hooks.web.app/?path=/docs/usecarousel--normal)の Stability Budge で以下のように表されています。
+利用可能なReact Hooksは、[Storybook](https://ameba-spindle-hooks.web.app/)で公開されています。各コンポーネントの開発状況は[Stoybook Doc](https://ameba-spindle-hooks.web.app/?path=/docs/usecarousel--normal)のStability Budgeで以下のように表されています。
 
 - ![stability-stable](https://img.shields.io/badge/stability-stable-green.svg) 想定された機能が実装、テストされており本番環境で利用できます
 - ![stability-unstable](https://img.shields.io/badge/stability-unstable-yellow.svg) 足りていない機能や不安定な動作があり、まだ完全ではないですが、本番環境で利用できます
@@ -54,7 +54,7 @@ Spindle Hooks は Spindle UI と同様に module 版の配信もしています�
 
 ## ブラウザサポート
 
-Spindle Hooks は Firefox、Google Chrome、Microsoft Edge、Safari の最新版と Internet Explorer 11 で動作確認しています。
+Spindle HooksはFirefox、Google Chrome、Microsoft Edge、Safariの最新版とInternet Explorer 11で動作確認しています。
 
 ## 開発方法
 
@@ -63,7 +63,7 @@ yarn install
 yarn dev # storybookが起動します
 ```
 
-新規 Hooks を追加する際には利用方法がイメージしやすいように Storybook も追加します。
+新規Hooksを追加する際には利用方法がイメージしやすいようにStorybookも追加します。
 必要に応じてユニットテストも追加します。
 
 ユニットテストは以下のように実行します。
@@ -74,7 +74,7 @@ yarn test:interaction
 
 ## ライセンス
 
-Spindle Hooks は MIT ライセンスで公開されています。ただし、アイコンは[Spindle Icons](../spindle-icons/)に準じて、Creative Commons BY-NC-ND 4.0 ライセンスで公開されています。
+Spindle HooksはMITライセンスで公開されています。ただし、アイコンは[Spindle Icons](../spindle-icons/)に準じて、Creative Commons BY-NC-ND 4.0ライセンスで公開されています。
 
 ## 関連ドキュメント
 

@@ -9,7 +9,7 @@
       "maxSize": "1.1 kB"
     },
     {
-      "path": "./dist/!(Icon|Toast|DropdownMenu|Modal|SnackBar|StackNotificationManager)/*.mjs",
+      "path": "./dist/!(Icon|Toast|DropdownMenu|Pagination|Modal|SnackBar|StackNotificationManager)/*.mjs",
       "maxSize": "1.1 kB"
     },
     {
@@ -26,6 +26,10 @@
     },
     {
       "path": "./dist/DropdownMenu/*.mjs",
+      "maxSize": "1.5 kB"
+    },
+    {
+      "path": "./dist/Pagination/*.mjs",
       "maxSize": "1.5 kB"
     },
     {

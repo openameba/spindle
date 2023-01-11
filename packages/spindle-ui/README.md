@@ -105,7 +105,7 @@ yarn install
 yarn dev # storybookが起動します
 ```
 
-NOTE: 事前に [spindle-hooks](https://github.com/openameba/spindle/tree/main/packages/spindle-hooks) を 以下のように build しておく必要があります。
+NOTE: 事前に [spindle-hooks](https://github.com/openameba/spindle/tree/main/packages/spindle-hooks) を以下のようにbuildしておく必要があります。
 
 ```
 cd ../spindle-hooks

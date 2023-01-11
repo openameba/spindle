@@ -1,37 +1,42 @@
-import { useCallback } from 'react';
-import { Description, Meta, Story, Source } from '@storybook/addon-docs/blocks';
-import { actions } from '@storybook/addon-actions';
+import React, { useCallback } from 'react';
 import { useCarousel } from './useCarousel';
-import { HeroCarousel } from './useCarousel.stories';
 
-# useCarousel
+export const ITEM_LINK_CLASS_NAME = 'js-auto-play-carousel-item-link';
 
-<Meta title="useCarousel" component={HeroCarousel} />
+export const carouselList = [
+  {
+    title: '1. 生きたコンテンツをつむぐ',
+    imageUrl:
+      'https://images.microcms-assets.io/assets/24995dc41d5c40808fe4a9e3f6fb2b20/e2526e7bfa494168a2e547cfe55ac89f/top_mv.jpg?w=640&h=336&fit=crop&fm=webp&q=85',
+    link: 'https://about.ameba.jp/',
+  },
+  {
+    title: '2. 長期間続けるためのシステム開発',
+    imageUrl:
+      'https://images.microcms-assets.io/assets/24995dc41d5c40808fe4a9e3f6fb2b20/8582f4d2842741f78a7d8496019a2be2/team_article_003_cover.png?w=640&h=336&fm=webp&q=85',
+    link: 'https://about.ameba.jp/contents/czriiu_tv/',
+  },
+  {
+    title: '3.「Spindle」成立の軌跡',
+    imageUrl:
+      'https://images.microcms-assets.io/assets/24995dc41d5c40808fe4a9e3f6fb2b20/eb868ea0d6af41aaaff3091b7c1d4cfb/team_article_002_cover.png?w=640&h=336&fm=webp&q=85',
+    link: 'https://about.ameba.jp/contents/ed88wdx61mf1/',
+  },
+  {
+    title: '4. ブロガーを応援しよう',
+    imageUrl:
+      'https://ssl-stat.amebame.com/pub/ads/adx/a1ea86ff-7ba6-4155-b8e5-a89c67cd1292.png?size=640',
+    link: 'https://cheering.ameba.jp/feature',
+  },
+  {
+    title: '5.「人」や「文化」をご紹介',
+    imageUrl:
+      'https://images.microcms-assets.io/assets/24995dc41d5c40808fe4a9e3f6fb2b20/2ed4baaeb1b24a0096bef49b087fbe38/team_article_004__cover%402x.jpg?w=640&h=336&fit=crop&fm=webp&q=85',
+    link: 'https://about.ameba.jp/team/',
+  },
+];
 
-![stability-experiment](https://img.shields.io/badge/stability-experiment-red.svg)
-
-<Description>Carouselの機能をまとめたHooksです。</Description>
-
-<Description>
-  マークアップ部分のアクセシビリティ周りは担保できないので下の例を参考に実装してください。
-</Description>
-
-<Source
-  language="javascript"
-  code={`import { useCarousel } from '@openameba/spindle-hooks'`}
-/>
-
-## Normal
-
-<Preview withSource="open">
-  <Story name="Normal">
-    <HeroCarousel />
-  </Story>
-</Preview>
-
-<Source
-  code={`
-const HeroCarouselItem = ({
+export const HeroCarouselItem = ({
   carouselItem,
   isLinkClicked,
   itemLinkClassName,
@@ -75,7 +80,8 @@ const HeroCarouselItem = ({
     </li>
   );
 };
-const HeroCarousel = () => {
+
+export const HeroCarousel = () => {
   const {
     handleSlideToPrev,
     handleSlideToNext,
@@ -94,7 +100,7 @@ const HeroCarousel = () => {
     handleBlur,
   } = useCarousel({
     items: carouselList,
-    itemLinkClassName: 'js-auto-play-carousel-item-link',
+    itemLinkClassName: ITEM_LINK_CLASS_NAME,
     shouldAutoPlaying: false,
     displayCount: 3,
   });
@@ -137,45 +143,22 @@ const HeroCarousel = () => {
               carouselItem={item}
               isLinkClicked={isLinkClicked}
               itemLinkClassName={ITEM_LINK_CLASS_NAME}
-              key={\`hero-carousel-\${index}\`}
+              key={`hero-carousel-${index}`}
             />
           ))}
         </ul>
       </div>
       <div>
-        <button
-          type="button"
-          onClick={handleSlideToPrev}
-        >
+        <button type="button" onClick={handleSlideToPrev}>
           前へ
         </button>
-        <button
-          type="button"
-          onClick={toggleAutoPlay}
-        >
+        <button type="button" onClick={toggleAutoPlay}>
           {isAutoPlaying ? '停止' : '再生'}
         </button>
-        <button
-          type="button"
-          onClick={handleSlideToNext}
-        >
+        <button type="button" onClick={handleSlideToNext}>
           次へ
         </button>
       </div>
     </div>
   );
 };
-  `}
-/>
-
-## このHooksでやっていること
-
-<Description>
-  - スライドの自動再生を停止/再開、前後のスライドに移動する機能を持ちます。
-</Description>
-<Description>
-  - キーボード・フォーカスがスライドに入っているとき、自動再生は止まります。また、スライドにマウス・ホバーしているときも止まります。
-</Description>
-<Description>
-  - reduced motionが指定された時に、アニメーションを軽減または削除します
-</Description>

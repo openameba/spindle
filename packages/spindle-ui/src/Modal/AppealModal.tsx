@@ -49,6 +49,16 @@ const Frame = forwardRef<DialogHTMLElement, AppealModalProps>(
       }
     };
 
+    const handleDialogClose = (
+      event: React.SyntheticEvent<DialogHTMLElement>,
+    ) => {
+      // Detect escape key type
+      if (event.target === dialogEl.current) {
+        onClose && onClose(event);
+        setClosing(false);
+      }
+    };
+
     const handleAnimationEnd = useCallback(
       (event: AnimationEvent) => {
         if (
@@ -57,7 +67,6 @@ const Frame = forwardRef<DialogHTMLElement, AppealModalProps>(
           !event.pseudoElement // To exclude ::backdrop
         ) {
           dialogEl.current.close && dialogEl.current.close();
-          setClosing(false);
         }
       },
       [dialogEl],
@@ -107,6 +116,7 @@ const Frame = forwardRef<DialogHTMLElement, AppealModalProps>(
           .trim()}
         ref={mergeRefs([dialogEl, ref])}
         onClick={handleDialogClick}
+        onClose={handleDialogClose}
         {...rest}
       >
         <form

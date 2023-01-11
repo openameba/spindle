@@ -1,6 +1,6 @@
 {
   "name": "@openameba/spindle-ui",
-  "version": "0.51.0",
+  "version": "0.52.0",
   "main": "./index.js",
   "module": "./index.mjs",
   "types": "./index.d.ts",
@@ -75,7 +75,7 @@
     "@types/jest": "^27.0.0",
     "@types/react": "^17.0.1",
     "autoprefixer": "^9.8.5",
-    "babel-loader": "^8.2.5",
+    "babel-loader": "^9.0.0",
     "bundlesize": "^0.18.0",
     "cssnano": "^4.1.10",
     "dialog-polyfill": "^0.5.6",
@@ -94,7 +94,7 @@
     "stylelint-order": "^4.1.0",
     "stylelint-prettier": "^1.1.2",
     "stylelint-selector-bem-pattern": "^2.1.0",
-    "ts-jest": "28.0.8",
+    "ts-jest": "29.0.3",
     "webpack": "^5.73.0"
   }
 }

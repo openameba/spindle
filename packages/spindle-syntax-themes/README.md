@@ -2,7 +2,7 @@
 
 Spindle Syntax Themesは、Spindleで定義された色を利用したコードシンタックステーマ(CSS)です。LightテーマとDarkテーマが用意されており、どちらも背景色とテキスト色のコントラスト比を担保するように作成されています。
 
-実際にコードに適用されたスタイルは、[サンプルページ](https://ameba-spindle-syntax.web.app/)で閲覧できます。
+実際のコードに適用されたスタイルは、[サンプルページ](https://ameba-spindle-syntax.web.app/)で閲覧できます。
 
 ## テーマ
 

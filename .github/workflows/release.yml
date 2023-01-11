@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v2-beta
+      - uses: actions/setup-node@v3
         with:
           node-version: 16
       # Bootstrap lerna for building app before publishing
@@ -32,6 +32,7 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-v2
       - run: yarn install --frozen-lockfile
       - run: npx lerna bootstrap -- --frozen-lockfile
+      - run: yarn lerna run --scope @openameba/spindle-hooks build
       - name: Set git user
         run: |
           git config --global user.email "<>"
@@ -47,7 +48,7 @@ jobs:
         id: extract_branch
       - name: Releaseing with lerna
         # also see some options in lerna.json
-        run: npx lerna publish ${{ steps.extract_branch.outputs.version }} --conventional-commits --create-release github --yes --no-private
+        run: yarn lerna publish ${{ steps.extract_branch.outputs.version }} --conventional-commits --create-release github --yes --no-private
         env:
           GH_TOKEN: ${{ github.token }}
       - name: Create Pull Request

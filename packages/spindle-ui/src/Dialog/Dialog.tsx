@@ -41,6 +41,23 @@ const Frame = forwardRef<DialogHTMLElement, DialogProps>(function Dialog(
     typeof onClose === 'function' && onClose(event);
   };
 
+  const handleDialogClick = (event: React.MouseEvent<DialogHTMLElement>) => {
+    // Detect backdrop click
+    if (event.target === dialogEl.current) {
+      onClose && onClose(event);
+    }
+  };
+
+  const handleDialogClose = (
+    event: React.SyntheticEvent<DialogHTMLElement>,
+  ) => {
+    // Detect escape key type
+    if (event.target === dialogEl.current) {
+      onClose && onClose(event);
+      setClosing(false);
+    }
+  };
+
   const handleAnimationEnd = useCallback(
     (event: AnimationEvent) => {
       if (
@@ -91,6 +108,8 @@ const Frame = forwardRef<DialogHTMLElement, DialogProps>(function Dialog(
         .filter(Boolean)
         .join(' ')
         .trim()}
+      onClick={handleDialogClick}
+      onClose={handleDialogClose}
       {...rest}
     >
       <form method="dialog" onSubmit={handleFormSubmit}>

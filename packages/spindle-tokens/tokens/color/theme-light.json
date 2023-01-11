@@ -71,6 +71,13 @@
           "comment": "Do : 背景が濃い時の罫線, Don't : 背景色が薄い時の罫線",
           "value": "{Color.Primitive.White.100.value}"
         },
+        "Low Emphasis Inverse": {
+          "attributes": {
+            "category": "color"
+          },
+          "comment": "Do : 背景が濃い時の罫線, Don't : 背景色が薄い時の罫線",
+          "value": "{Color.Primitive.White.20 alpha.value}"
+        },
         "Medium Emphasis": {
           "attributes": {
             "category": "color"
@@ -344,6 +351,20 @@
         }
       },
       "Surface": {
+        "Accent Neutral High Emphasis": {
+          "attributes": {
+            "category": "color"
+          },
+          "comment": "Do : snackbar / tooltip / toast , , Amebaのメインカラー白に対してコントラストを担保しつつ、暗い印象を持たず、, ポジティブでもネガティブでもない中立の意味合いを表現できつつ、文字に対してコントラストが担保できる色",
+          "value": "{Color.Primitive.Gray.80.value}"
+        },
+        "Accent Neutral Medium Emphasis": {
+          "attributes": {
+            "category": "color"
+          },
+          "comment": "画像の上にアイコンなどの要素を置く時の下地に使う",
+          "value": "{Color.Primitive.Gray.60 alpha.value}"
+        },
         "Accent Primary": {
           "attributes": {
             "category": "color"
