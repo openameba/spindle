@@ -7,6 +7,7 @@ module.exports = {
     '@storybook/addon-docs',
     '@storybook/addon-viewport',
   ],
+  staticDirs: ['../assets'],
   core: {
     builder: 'webpack5',
   },
