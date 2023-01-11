@@ -465,7 +465,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-- **spindle-ui:** Lighted から試験中ステータスを削除 ([9a630d3](https://github.com/openameba/spindle/commit/9a630d3aa8b1b1be0c9cfef5cf67e75c673fa463))
+- **spindle-ui:** Lightedから試験中ステータスを削除 ([9a630d3](https://github.com/openameba/spindle/commit/9a630d3aa8b1b1be0c9cfef5cf67e75c673fa463))
 
 # [0.23.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.22.0...@openameba/spindle-ui@0.23.0) (2021-10-11)
 
