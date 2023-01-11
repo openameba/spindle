@@ -6989,10 +6989,10 @@ alphanum-sort@^1.0.0:
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
   integrity sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
 
-ameba-color-palette.css@^4.8.0:
-  version "4.8.0"
-  resolved "https://registry.yarnpkg.com/ameba-color-palette.css/-/ameba-color-palette.css-4.8.0.tgz#b07f9bf2887fb4a0d711c9755ed696271847b22c"
-  integrity sha512-8tz7CTC5oLRhExGj9zZjZpQ30A74IxKGIYEf3Ra/Z5f6b4W7or83B2TkrKXQqdBRk4v9tZDUSpWgh7SnM22tvw==
+ameba-color-palette.css@^4.9.0:
+  version "4.9.0"
+  resolved "https://registry.yarnpkg.com/ameba-color-palette.css/-/ameba-color-palette.css-4.9.0.tgz#b3f8f7620147b34b9cabe566cd59349237e77574"
+  integrity sha512-F04oXEFTFzoyoyYcA8ZOMFqNCWhdE8nna6B003+XHFjxEvAPwiLEo1QY696+uBD9l7UNVplueIk7HUfQzXcboA==
 
 analyze-desumasu-dearu@^4.0.0:
   version "4.0.0"
