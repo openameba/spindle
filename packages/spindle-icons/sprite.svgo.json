@@ -1,10 +1,10 @@
 {
   "plugins": [
     {
-      "removeAttrs":
-        {
-          "attrs": "fill"
-        }
+      "name": "removeAttrs",
+      "params": {
+        "attrs": "fill"
+      }
     }
   ]
 }
