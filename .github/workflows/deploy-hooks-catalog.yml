@@ -3,7 +3,7 @@ name: deploy Hooks catalog
 on:
   push:
     branches:
-      - main
+      - feat/deploy-test
     paths:
       - 'packages/spindle-hooks/**'
 
