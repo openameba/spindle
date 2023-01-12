@@ -52,6 +52,7 @@ export { default as BellFill } from './BellFill';
 export { default as BellFillSlash } from './BellFillSlash';
 export { default as BellSlash } from './BellSlash';
 export { default as Blog } from './Blog';
+export { default as Bloggersshop } from './Bloggersshop';
 export { default as Bold } from './Bold';
 export { default as Book } from './Book';
 export { default as BookFill } from './BookFill';
