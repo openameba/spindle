@@ -1,11 +1,12 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const { extendDefaultPlugins } = require('svgo');
-
 module.exports = {
-  plugins: extendDefaultPlugins([
+  plugins: [
     {
-      name: 'removeViewBox',
-      active: false,
+      name: 'preset-default',
+      params: {
+        overrides: {
+          removeViewBox: false,
+        },
+      },
     },
     {
       name: 'removeAttrs',
@@ -23,5 +24,5 @@ module.exports = {
         ],
       },
     },
-  ]),
+  ],
 };
