@@ -55,6 +55,7 @@
 | bell_fill_slash | ![](../dist/svg/bell_fill_slash.svg) |
 | bell_slash | ![](../dist/svg/bell_slash.svg) |
 | blog | ![](../dist/svg/blog.svg) |
+| bloggersshop | ![](../dist/svg/bloggersshop.svg) |
 | bold | ![](../dist/svg/bold.svg) |
 | book | ![](../dist/svg/book.svg) |
 | book_fill | ![](../dist/svg/book_fill.svg) |
