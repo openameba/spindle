@@ -30,4 +30,4 @@ jobs:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         run: |
           yarn lerna run --scope @openameba/spindle-hooks storybook:build
-          yarn lerna run --scope @openameba/spindle-hooks storybook:deploy -- --token $FIREBASE_TOKEN
+          npx lerna run --scope @openameba/spindle-hooks storybook:deploy -- --token $FIREBASE_TOKEN
