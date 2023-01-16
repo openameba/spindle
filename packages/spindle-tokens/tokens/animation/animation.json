@@ -1,0 +1,68 @@
+{
+  "Animation": {
+    "Move": {
+      "easing": {
+        "value": "{Animation.Easing.Ease Out.value}"
+      },
+      "duration": {
+        "value": "{Animation.Duration.Neutral.value}"
+      }
+    },
+    "Appear In": {
+      "easing": {
+        "value": "{Animation.Easing.Ease In Out.value}"
+      },
+      "duration": {
+        "value": "{Animation.Duration.Neutral.value}"
+      }
+    },
+    "Disappear": {
+      "easing": {
+        "value": "{Animation.Easing.Ease In Out.value}"
+      },
+      "duration": {
+        "value": "{Animation.Duration.Fast.value}"
+      }
+    },
+    "In View": {
+      "easing": {
+        "value": "{Animation.Easing.Ease Out.value}"
+      },
+      "duration": {
+        "value": "{Animation.Duration.Neutral.value}"
+      }
+    },
+    "Out of View": {
+      "easing": {
+        "value": "{Animation.Easing.Ease Out.value}"
+      },
+      "duration": {
+        "value": "{Animation.Duration.Neutral.value}"
+      }
+    },
+    "Content Change": {
+      "easing": {
+        "value": "{Animation.Easing.Ease In Out.value}"
+      },
+      "duration": {
+        "value": "{Animation.Duration.Fast.value}"
+      }
+    },
+    "Scale Up": {
+      "easing": {
+        "value": "{Animation.Easing.Ease Out.value}"
+      },
+      "duration": {
+        "value": "{Animation.Duration.Slow.value}"
+      }
+    },
+    "Scale Down": {
+      "easing": {
+        "value": "{Animation.Easing.Ease Out.value}"
+      },
+      "duration": {
+        "value": "{Animation.Duration.Neutral.value}"
+      }
+    }
+  }
+}
