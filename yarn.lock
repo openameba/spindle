@@ -5111,10 +5111,10 @@
     prettier ">=2.2.1 <=2.3.0"
     ts-dedent "^2.0.0"
 
-"@storybook/mdx2-csf@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@storybook/mdx2-csf/-/mdx2-csf-0.0.3.tgz#6e60e223121f8464ead3dd190f517a1261fd081f"
-  integrity sha512-PFhucALIP23H3D/VyA4vlDsHKEJfhbLCIullmvaSl+KTTGbn4g+IkOAsIhVx+dEHYdCqCRW53r66+D4P6A7uOA==
+"@storybook/mdx2-csf@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@storybook/mdx2-csf/-/mdx2-csf-0.0.4.tgz#a5be59643899427213606d457c27b683c2303039"
+  integrity sha512-Qtlx+r5s877kL6xUGMKM4lxiG3ZEoOR6Q9v5pXkWzCR06Rp48SyK8MbfpfW2ELISUXijEWgq2TGQUgOA3qix2A==
   dependencies:
     "@babel/generator" "^7.12.11"
     "@babel/parser" "^7.12.11"
@@ -5122,7 +5122,7 @@
     estree-to-babel "^4.9.0"
     hast-util-to-estree "^2.0.2"
     js-string-escape "^1.0.1"
-    loader-utils "^2.0.0"
+    loader-utils "^2.0.2"
     lodash "^4.17.21"
 
 "@storybook/node-logger@6.5.9":
@@ -16515,6 +16515,15 @@ loader-utils@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-2.0.0.tgz#e4cace5b816d425a166b5f097e10cd12b36064b0"
   integrity sha512-rP4F0h2RaWSvPEkD7BLDFQnvSf+nK+wr3ESUjNTyAGobqrijmW92zc+SO6d4p4B1wh7+B/Jg1mkQe5NYUEHtHQ==
+  dependencies:
+    big.js "^5.2.2"
+    emojis-list "^3.0.0"
+    json5 "^2.1.2"
+
+loader-utils@^2.0.2:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-2.0.4.tgz#8b5cb38b5c34a9a018ee1fc0e6a066d1dfcc528c"
+  integrity sha512-xXqpXoINfFhgua9xiqD8fPFHgkoq1mmmpE92WlDbm9rNRd/EbRb+Gqf908T2DMfuHjjJlksiK2RbHVOdD/MqSw==
   dependencies:
     big.js "^5.2.2"
     emojis-list "^3.0.0"
