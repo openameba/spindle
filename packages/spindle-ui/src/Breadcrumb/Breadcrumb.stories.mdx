@@ -85,6 +85,31 @@ import { BreadcrumbItem } from './BreadcrumbItem';
   `}
 />
 
+## No Href
+
+hrefを指定せずに使用できます。その場合、hrefを指定していないものはunderlineが表示されません。
+
+<Preview withSource="open">
+  <Story name="No Href">
+    <BreadcrumbList variant="emphasized">
+      <a href="#">Top</a>
+      <a href="#">Team</a>
+      <a aria-current="page">Amebaとは</a>
+    </BreadcrumbList>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<BreadcrumbList variant="standard">
+  <a href="#">Top</a>
+  <a href="#">Team</a>
+  <a aria-current="page">Amebaとは</a>
+</BreadcrumbList>
+  `}
+/>
+
+
 ## Variant
 
 ### Standard
@@ -185,28 +210,3 @@ Standard variantにwrapオプションを指定すると、画面幅に入り切
   `}
 />
 
-## Non Href
-
-hrefを指定せずに使用できます。その場合、hrefを指定していないものはunderlineが表示されません。
-
-<Preview withSource="open">
-  <Story name="Non Href">
-    <BreadcrumbList variant="standard">
-      <BreadcrumbItem href="#">Amebaとは</BreadcrumbItem>
-      <BreadcrumbItem href="#">Ameヨコ (アメヨコ)</BreadcrumbItem>
-      <BreadcrumbItem href="#">福利厚生・社内制度</BreadcrumbItem>
-      <BreadcrumbItem current>「わたしたち、育休取得した経営陣です！」育休が2秒で快諾される、"取るのが当たり前"な環境とは</BreadcrumbItem>
-    </BreadcrumbList>
-  </Story>
-</Preview>
-
-<Source
-  code={`
-<BreadcrumbList variant="standard">
-  <BreadcrumbItem href="#">Amebaとは</BreadcrumbItem>
-  <BreadcrumbItem href="#">Ameヨコ (アメヨコ)</BreadcrumbItem>
-  <BreadcrumbItem href="#">福利厚生・社内制度</BreadcrumbItem>
-  <BreadcrumbItem current>「わたしたち、育休取得した経営陣です！」育休が2秒で快諾される、"取るのが当たり前"な環境とは</BreadcrumbItem>
-</BreadcrumbList>
-  `}
-/>
