@@ -2,16 +2,12 @@ name: deploy UI preview
 
 on:
   pull_request:
-    paths:
-      - 'packages/spindle-ui/**'
   pull_request_target:
     types:
       - labeled
-    paths:
-      - 'packages/spindle-ui/**'
 
 jobs:
-  build_and_preview:
+  check_paths:
     runs-on: ubuntu-latest
     # need specified label if Pull-request from fork
     if: >
@@ -19,6 +15,20 @@ jobs:
         github.event.pull_request.head.repo.full_name != github.repository &&
         contains(github.event.pull_request.labels.*.name, 'allow execute workflow')
       )
+    outputs:
+      ui: ${{ steps.filter.outputs.ui }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          filters: |
+            ui:
+              - 'packages/spindle-ui/**'
+  build_and_preview:
+    runs-on: ubuntu-latest
+    needs: check_paths
+    if: ${{ needs.check_paths.outputs.ui == 'true' }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
