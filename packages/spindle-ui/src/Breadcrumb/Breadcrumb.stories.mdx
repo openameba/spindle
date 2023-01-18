@@ -16,12 +16,12 @@ import { BreadcrumbItem } from './BreadcrumbItem';
 
 <Source
   language='css'
-  code={`@import './node_modules/@openameba/spindle-ui/BreadcrumbList.css'`}
+  code={`@import './node_modules/@openameba/spindle-ui/Breadcrumb/Breadcrumb.css'`}
 />
 
 <Source
   language='html'
-  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/BreadcrumbList.css">`}
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Breadcrumb/Breadcrumb.css">`}
 />
 
 ## BreadcrumbList
@@ -31,7 +31,7 @@ import { BreadcrumbItem } from './BreadcrumbItem';
     <BreadcrumbList variant="emphasized">
       <BreadcrumbItem href="#">Top</BreadcrumbItem>
       <BreadcrumbItem href="#">Team</BreadcrumbItem>
-      <BreadcrumbItem href="#" current>Amebaとは</BreadcrumbItem>
+      <BreadcrumbItem current>Amebaとは</BreadcrumbItem>
     </BreadcrumbList>
   </Story>
 </Preview>
@@ -43,7 +43,7 @@ import { BreadcrumbItem } from './BreadcrumbItem';
 <BreadcrumbList variant="emphasized">
   <BreadcrumbItem href="#">Top</BreadcrumbItem>
   <BreadcrumbItem href="#">Team</BreadcrumbItem>
-  <BreadcrumbItem href="#" current>Amebaとは</BreadcrumbItem>
+  <BreadcrumbItem current>Amebaとは</BreadcrumbItem>
 </BreadcrumbList>
   `}
 />
@@ -55,7 +55,7 @@ import { BreadcrumbItem } from './BreadcrumbItem';
   <ol class="spui-Breadcrumb-list">
     <li class="spui-Breadcrumb-item"><a href="/top">Top</a><svg class="spui-Breadcrumb-chevron" role="img" aria-hidden="true"></svg></li>
     <li class="spui-Breadcrumb-item"><a href="/team">Team</a><svg class="spui-Breadcrumb-chevron" role="img" aria-hidden="true"></svg></li>
-    <li class="spui-Breadcrumb-item"><a href="#" aria-current="page">Amebaとは</a><svg class="spui-Breadcrumb-chevron" role="img" aria-hidden="true"></svg></li>
+    <li class="spui-Breadcrumb-item"><a aria-current="page">Amebaとは</a><svg class="spui-Breadcrumb-chevron" role="img" aria-hidden="true"></svg></li>
   </ol>
 </nav>
   `}
@@ -68,7 +68,7 @@ import { BreadcrumbItem } from './BreadcrumbItem';
     <BreadcrumbList variant="emphasized">
       <a href="#">Top</a>
       <a href="#">Team</a>
-      <a href="#" aria-current="page">Amebaとは</a>
+      <a aria-current="page">Amebaとは</a>
     </BreadcrumbList>
   </Story>
 </Preview>
@@ -80,7 +80,7 @@ import { BreadcrumbItem } from './BreadcrumbItem';
 <BreadcrumbList variant="emphasized">
   <a href="#">Top</a>
   <a href="#">Team</a>
-  <a href="#" aria-current="page">Amebaとは</a>
+  <a aria-current="page">Amebaとは</a>
 </BreadcrumbList>
   `}
 />
@@ -94,7 +94,7 @@ import { BreadcrumbItem } from './BreadcrumbItem';
     <BreadcrumbList variant="standard">
       <BreadcrumbItem href="#">Top</BreadcrumbItem>
       <BreadcrumbItem href="#">Team</BreadcrumbItem>
-      <BreadcrumbItem href="#" current>Amebaとは</BreadcrumbItem>
+      <BreadcrumbItem current>Amebaとは</BreadcrumbItem>
     </BreadcrumbList>
   </Story>
 </Preview>
@@ -106,7 +106,7 @@ Standard Variantはタップエリアを確保する目的でテキストに余�
 <BreadcrumbList variant="standard">
   <BreadcrumbItem href="#">Top</BreadcrumbItem>
   <BreadcrumbItem href="#">Team</BreadcrumbItem>
-  <BreadcrumbItem href="#" current>Amebaとは</BreadcrumbItem>
+  <BreadcrumbItem current>Amebaとは</BreadcrumbItem>
 </BreadcrumbList>
   `}
 />
@@ -118,7 +118,7 @@ Standard Variantはタップエリアを確保する目的でテキストに余�
     <BreadcrumbList variant="emphasized">
       <BreadcrumbItem href="#">Top</BreadcrumbItem>
       <BreadcrumbItem href="#">Team</BreadcrumbItem>
-      <BreadcrumbItem href="#" current>Amebaとは</BreadcrumbItem>
+      <BreadcrumbItem current>Amebaとは</BreadcrumbItem>
     </BreadcrumbList>
   </Story>
 </Preview>
@@ -128,7 +128,7 @@ Standard Variantはタップエリアを確保する目的でテキストに余�
 <BreadcrumbList variant="emphasized">
   <BreadcrumbItem href="#">Top</BreadcrumbItem>
   <BreadcrumbItem href="#">Team</BreadcrumbItem>
-  <BreadcrumbItem href="#" current>Amebaとは</BreadcrumbItem>
+  <BreadcrumbItem current>Amebaとは</BreadcrumbItem>
 </BreadcrumbList>
   `}
 />
@@ -143,7 +143,7 @@ Standard variantにwrapオプションを指定すると、画面幅に入り切
       <BreadcrumbItem href="#">Amebaとは</BreadcrumbItem>
       <BreadcrumbItem href="#">Ameヨコ (アメヨコ)</BreadcrumbItem>
       <BreadcrumbItem href="#">福利厚生・社内制度</BreadcrumbItem>
-      <BreadcrumbItem href="#" current>「わたしたち、育休取得した経営陣です！」育休が2秒で快諾される、"取るのが当たり前"な環境とは</BreadcrumbItem>
+      <BreadcrumbItem current>「わたしたち、育休取得した経営陣です！」育休が2秒で快諾される、"取るのが当たり前"な環境とは</BreadcrumbItem>
     </BreadcrumbList>
   </Story>
 </Preview>
@@ -154,7 +154,7 @@ Standard variantにwrapオプションを指定すると、画面幅に入り切
   <BreadcrumbItem href="#">Amebaとは</BreadcrumbItem>
   <BreadcrumbItem href="#">Ameヨコ (アメヨコ)</BreadcrumbItem>
   <BreadcrumbItem href="#">福利厚生・社内制度</BreadcrumbItem>
-  <BreadcrumbItem href="#" current>「わたしたち、育休取得した経営陣です！」育休が2秒で快諾される、"取るのが当たり前"な環境とは</BreadcrumbItem>
+  <BreadcrumbItem current>「わたしたち、育休取得した経営陣です！」育休が2秒で快諾される、"取るのが当たり前"な環境とは</BreadcrumbItem>
 </BreadcrumbList>
   `}
 />
@@ -169,7 +169,7 @@ Standard variantにwrapオプションを指定すると、画面幅に入り切
       <BreadcrumbItem href="#">Amebaとは</BreadcrumbItem>
       <BreadcrumbItem href="#">Ameヨコ (アメヨコ)</BreadcrumbItem>
       <BreadcrumbItem href="#">福利厚生・社内制度</BreadcrumbItem>
-      <BreadcrumbItem href="#" current>「わたしたち、育休取得した経営陣です！」育休が2秒で快諾される、"取るのが当たり前"な環境とは</BreadcrumbItem>
+      <BreadcrumbItem current>「わたしたち、育休取得した経営陣です！」育休が2秒で快諾される、"取るのが当たり前"な環境とは</BreadcrumbItem>
     </BreadcrumbList>
   </Story>
 </Preview>
@@ -180,7 +180,7 @@ Standard variantにwrapオプションを指定すると、画面幅に入り切
   <BreadcrumbItem href="#">Amebaとは</BreadcrumbItem>
   <BreadcrumbItem href="#">Ameヨコ (アメヨコ)</BreadcrumbItem>
   <BreadcrumbItem href="#">福利厚生・社内制度</BreadcrumbItem>
-  <BreadcrumbItem href="#" current>「わたしたち、育休取得した経営陣です！」育休が2秒で快諾される、"取るのが当たり前"な環境とは</BreadcrumbItem>
+  <BreadcrumbItem current>「わたしたち、育休取得した経営陣です！」育休が2秒で快諾される、"取るのが当たり前"な環境とは</BreadcrumbItem>
 </BreadcrumbList>
   `}
 />

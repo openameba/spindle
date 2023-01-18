@@ -82,6 +82,10 @@
   text-decoration: underline;
 }
 
+.spui-Breadcrumb a[aria-current]:hover {
+  text-decoration: none;
+}
+
 .spui-Breadcrumb a:focus {
   outline: 2px solid var(--color-focus-clarity);
   outline-offset: 1px;
