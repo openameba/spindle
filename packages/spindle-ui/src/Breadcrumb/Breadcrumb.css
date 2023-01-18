@@ -82,7 +82,7 @@
   text-decoration: underline;
 }
 
-.spui-Breadcrumb a[aria-current]:hover {
+.spui-Breadcrumb a:not([href]):hover {
   text-decoration: none;
 }
 
