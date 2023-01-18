@@ -2,17 +2,13 @@ name: visual regression test
 
 on:
   push:
-    paths:
-      - 'packages/spindle-ui/**'
   pull_request_target:
     types:
       - labeled
-    paths:
-      - 'packages/spindle-ui/**'
   workflow_dispatch:
 
 jobs:
-  visual-regression-test:
+  check_paths:
     runs-on: ubuntu-latest
     # ignoring if triggered by bot
     # need specified label if Pull-request
@@ -23,6 +19,20 @@ jobs:
           github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'allow execute workflow')
         )
       )
+    outputs:
+      ui: ${{ steps.filter.outputs.ui }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          filters: |
+            ui:
+              - 'packages/spindle-ui/**'
+  visual_regression_test:
+    runs-on: ubuntu-latest
+    needs: check_paths
+    if: ${{ needs.check_paths.outputs.ui == 'true' }}
     steps:
       - run: sudo apt-get --yes update
       - run: sudo apt-get --yes install fonts-noto
