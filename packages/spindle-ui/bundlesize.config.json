@@ -47,10 +47,6 @@
     {
       "path": "./dist/SnackBar/!(index).css",
       "maxSize": "2.1 kB"
-    },
-    {
-      "path": "./dist/index.css",
-      "maxSize": "9.0 kB"
     }
   ]
 }
