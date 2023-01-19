@@ -26,7 +26,12 @@ jobs:
     outputs:
       ui: ${{ steps.filter.outputs.ui }}
     steps:
-      - uses: actions/checkout@v3
+      - if: github.event_name == 'pull_request'
+        uses: actions/checkout@v3
+        with:
+          ref: 'refs/pull/${{ github.event.number }}/merge'
+      - if: github.event_name != 'pull_request'
+        uses: actions/checkout@v3
       - uses: dorny/paths-filter@v2
         id: filter
         with:
@@ -40,7 +45,13 @@ jobs:
     steps:
       - run: sudo apt-get --yes update
       - run: sudo apt-get --yes install fonts-noto
-      - uses: actions/checkout@v3
+      - if: github.event_name == 'pull_request'
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: 'refs/pull/${{ github.event.number }}/merge'
+      - if: github.event_name != 'pull_request'
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - uses: actions/setup-node@v3
