@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.57.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.57.0...@openameba/spindle-ui@0.57.1) (2023-01-19)
+
+### Bug Fixes
+
+- **spindle-ui:** remove underline when no href ([355fcf6](https://github.com/openameba/spindle/commit/355fcf6fd93b15a6e0af7de2ca7a4ba0286fc38f))
+
 # [0.57.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.56.0...@openameba/spindle-ui@0.57.0) (2023-01-19)
 
 **Note:** Version bump only for package @openameba/spindle-ui
