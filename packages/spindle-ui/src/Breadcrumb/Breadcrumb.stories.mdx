@@ -16,12 +16,12 @@ import { BreadcrumbItem } from './BreadcrumbItem';
 
 <Source
   language='css'
-  code={`@import './node_modules/@openameba/spindle-ui/BreadcrumbList.css'`}
+  code={`@import './node_modules/@openameba/spindle-ui/Breadcrumb/Breadcrumb.css'`}
 />
 
 <Source
   language='html'
-  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/BreadcrumbList.css">`}
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Breadcrumb/Breadcrumb.css">`}
 />
 
 ## BreadcrumbList
@@ -81,6 +81,30 @@ import { BreadcrumbItem } from './BreadcrumbItem';
   <a href="#">Top</a>
   <a href="#">Team</a>
   <a href="#" aria-current="page">Amebaとは</a>
+</BreadcrumbList>
+  `}
+/>
+
+## No Href
+
+hrefを指定せずに使用できます。その場合、hrefを指定していないものはunderlineが表示されません。
+
+<Preview withSource="open">
+  <Story name="No Href">
+    <BreadcrumbList variant="emphasized">
+      <a href="#">Top</a>
+      <a href="#">Team</a>
+      <a aria-current="page">Amebaとは</a>
+    </BreadcrumbList>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<BreadcrumbList variant="standard">
+  <a href="#">Top</a>
+  <a href="#">Team</a>
+  <a aria-current="page">Amebaとは</a>
 </BreadcrumbList>
   `}
 />
