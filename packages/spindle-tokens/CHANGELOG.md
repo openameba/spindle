@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@0.9.0...@openameba/spindle-tokens@0.10.0) (2023-01-19)
+
+### Features
+
+- **spindle-tokens:** add diappear animation ([75c589d](https://github.com/openameba/spindle/commit/75c589d1f451a96195c1c464e81cd5a90fe2a073))
+- **spindle-tokens:** create animation token for css ([846b7fe](https://github.com/openameba/spindle/commit/846b7fe6bb9794621ca5c58f017ee9f3d66282b2))
+- **spindle-tokens:** create animation tokens ([3702918](https://github.com/openameba/spindle/commit/37029180dfe49f73b3a6a1ad5c6623ff2bc4dbcb))
+- **spindle-tokens:** update content change animation ([cdcd43e](https://github.com/openameba/spindle/commit/cdcd43e37ae596ed2a06f5900e017ecdcfbf9c95))
+
 # [0.9.0](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@0.8.0...@openameba/spindle-tokens@0.9.0) (2023-01-12)
 
 **Note:** Version bump only for package @openameba/spindle-tokens
