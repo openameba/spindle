@@ -1,28 +1,37 @@
 name: visual regression test
 
 on:
-  push:
-  pull_request_target:
-    types:
-      - labeled
-  workflow_dispatch:
+  - push
+  - pull_request_target
+  - workflow_dispatch
 
 jobs:
   check_paths:
     runs-on: ubuntu-latest
     # ignoring if triggered by bot
-    # need specified label if Pull-request
+    # need specified label if Pull-request from fork
     if: >
       (github.actor != 'dependabot[bot]' && github.actor != 'renovate[bot]') && (
         github.event_name == 'push' ||
         github.event_name == 'workflow_dispatch' || (
-          github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'allow execute workflow')
+          github.event_name == 'pull_request' && (
+            github.event.pull_request.head.repo.full_name == github.repository || (
+              github.event.pull_request.head.repo.full_name != github.repository &&
+              github.event.pull_request.action == 'labeled' &&
+              contains(github.event.pull_request.labels.*.name, 'allow execute workflow')
+            )
+          )
         )
       )
     outputs:
       ui: ${{ steps.filter.outputs.ui }}
     steps:
-      - uses: actions/checkout@v3
+      - if: github.event_name == 'pull_request'
+        uses: actions/checkout@v3
+        with:
+          ref: 'refs/pull/${{ github.event.number }}/merge'
+      - if: github.event_name != 'pull_request'
+        uses: actions/checkout@v3
       - uses: dorny/paths-filter@v2
         id: filter
         with:
@@ -36,7 +45,13 @@ jobs:
     steps:
       - run: sudo apt-get --yes update
       - run: sudo apt-get --yes install fonts-noto
-      - uses: actions/checkout@v3
+      - if: github.event_name == 'pull_request'
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: 'refs/pull/${{ github.event.number }}/merge'
+      - if: github.event_name != 'pull_request'
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - uses: actions/setup-node@v3

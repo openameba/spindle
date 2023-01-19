@@ -1,10 +1,7 @@
 name: deploy UI preview
 
 on:
-  pull_request:
-  pull_request_target:
-    types:
-      - labeled
+  - pull_request_target
 
 jobs:
   check_paths:
@@ -13,12 +10,15 @@ jobs:
     if: >
       github.event.pull_request.head.repo.full_name == github.repository || (
         github.event.pull_request.head.repo.full_name != github.repository &&
+        github.event.pull_request.action == 'labeled' &&
         contains(github.event.pull_request.labels.*.name, 'allow execute workflow')
       )
     outputs:
       ui: ${{ steps.filter.outputs.ui }}
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: 'refs/pull/${{ github.event.number }}/merge'
       - uses: dorny/paths-filter@v2
         id: filter
         with:
@@ -31,6 +31,8 @@ jobs:
     if: ${{ needs.check_paths.outputs.ui == 'true' }}
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: 'refs/pull/${{ github.event.number }}/merge'
       - uses: actions/setup-node@v3
         with:
           node-version: 16
