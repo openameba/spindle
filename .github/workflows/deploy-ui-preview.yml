@@ -1,10 +1,7 @@
 name: deploy UI preview
 
 on:
-  pull_request:
-  pull_request_target:
-    types:
-      - labeled
+  - pull_request_target
 
 jobs:
   check_paths:
@@ -13,6 +10,7 @@ jobs:
     if: >
       github.event.pull_request.head.repo.full_name == github.repository || (
         github.event.pull_request.head.repo.full_name != github.repository &&
+        github.event.pull_request.action == 'labeled' &&
         contains(github.event.pull_request.labels.*.name, 'allow execute workflow')
       )
     outputs:
