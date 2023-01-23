@@ -44,7 +44,7 @@ export function PopupModalExample() {
           AmebaはAmebaブログをはじめ、最新の芸能人ニュースやマンガ・占いなど生きたコンテンツが集結した月間7,500万人が利用する国民的メディアサービスです。
         </SemiModal.Contents>
         <SemiModal.Footer>
-          <Button layout="fullWidth">確認する</Button>
+          <Button>確認する</Button>
         </SemiModal.Footer>
       </SemiModal.Frame>
     </>
@@ -81,7 +81,7 @@ export function SheetModalExample() {
           AmebaはAmebaブログをはじめ、最新の芸能人ニュースやマンガ・占いなど生きたコンテンツが集結した月間7,500万人が利用する国民的メディアサービスです。
         </SemiModal.Contents>
         <SemiModal.Footer>
-          <Button layout="fullWidth">確認する</Button>
+          <Button>確認する</Button>
         </SemiModal.Footer>
       </SemiModal.Frame>
     </>
