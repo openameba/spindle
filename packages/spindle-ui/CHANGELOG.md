@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.58.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.57.1...@openameba/spindle-ui@0.58.0) (2023-01-25)
+
+### Features
+
+- **spindle-ui:** add SemiModal component ([d493ba6](https://github.com/openameba/spindle/commit/d493ba645b8361c4e5b0dbf8562715b9f22a348f))
+
 ## [0.57.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.57.0...@openameba/spindle-ui@0.57.1) (2023-01-19)
 
 ### Bug Fixes
