@@ -75,6 +75,20 @@ Spindle TokensはAmebaのデザインシステム「Spindle」で定義された
 ]
 ```
 
+### CSS
+
+デザイントークンをCSSカスタムプロパティとして利用できます。
+
+```
+yarn add @openameba/spindle-tokens
+```
+
+カテゴリごとにファイルに分けられているため必要なトークンだけを読み込むことをおすすめします。
+
+```css
+import '@openameba/spindle-tokens'; /* 全部のトークンが読み込まれます、Productionでの利用は非推奨です */
+import '@openameba/spindle-tokens/dist/css/spindle-tokens-animation.css'; # アニメーション
+```
 
 ## 開発方法
 
