@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.58.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.58.0...@openameba/spindle-ui@0.58.1) (2023-01-30)
+
+### Bug Fixes
+
+- **spindle-ui:** scrollIntoView caused the breadcrumbs to come to the top of the page. ([6ec175b](https://github.com/openameba/spindle/commit/6ec175b3b719619cb1e535609d26b23c8ca39676))
+
 # [0.58.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.57.1...@openameba/spindle-ui@0.58.0) (2023-01-25)
 
 ### Bug Fixes
