@@ -15,10 +15,13 @@ const BLOCK_NAME = 'spui-Breadcrumb';
 
 export const BreadcrumbList = (props: Props) => {
   const { children, className, variant = 'standard', wrap, ...rest } = props;
+  const navRef = useRef<HTMLElement>(null);
   const currentRef = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
-    currentRef.current?.scrollIntoView();
+    navRef.current?.scrollTo({
+      left: currentRef.current?.offsetLeft,
+    });
   }, []);
 
   return (
@@ -34,6 +37,7 @@ export const BreadcrumbList = (props: Props) => {
         .join(' ')
         .trim()}
       {...rest}
+      ref={navRef}
     >
       <ol className={`${BLOCK_NAME}-list`}>
         {React.Children.map(children, (child) => {
