@@ -123,12 +123,7 @@ const Button: FC<
   const buttonVariant: ButtonVariant = computedButtonVariant(variant, emphasis);
   return (
     <div className={`${BLOCK_NAME}-button`}>
-      <SpindleButton
-        layout="fullWidth"
-        variant={buttonVariant}
-        size="small"
-        {...props}
-      >
+      <SpindleButton variant={buttonVariant} size="small" {...props}>
         {children}
       </SpindleButton>
     </div>
