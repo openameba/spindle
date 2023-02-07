@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.58.2](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.58.1...@openameba/spindle-ui@0.58.2) (2023-02-07)
+
+### Bug Fixes
+
+- **spindle-ui:** change the button width of the InlineNotification ([bde9f08](https://github.com/openameba/spindle/commit/bde9f088ff07c2e57f00952363fba93c61916145))
+
 ## [0.58.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.58.0...@openameba/spindle-ui@0.58.1) (2023-01-30)
 
 ### Bug Fixes
