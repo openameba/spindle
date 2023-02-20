@@ -48,13 +48,21 @@ const Frame = forwardRef<DialogHTMLElement, SemiModalProps>(function SemiModal(
   };
 
   // backdropを押した時
-  const handleDialogClick = (
-    event: React.SyntheticEvent<DialogHTMLElement>,
-  ) => {
-    setClosing(false);
+  const handleDialogClick = (event: React.MouseEvent<DialogHTMLElement>) => {
     // Detect backdrop click
     if (event.target === dialogEl.current) {
       onClose?.(event);
+    }
+  };
+
+  //EscKeyを押したとき
+  const handleDialogClose = (
+    event: React.SyntheticEvent<DialogHTMLElement>,
+  ) => {
+    // Detect escape key type
+    if (event.target === dialogEl.current) {
+      onClose?.(event);
+      setClosing(false);
     }
   };
 
@@ -109,7 +117,7 @@ const Frame = forwardRef<DialogHTMLElement, SemiModalProps>(function SemiModal(
         .trim()}
       ref={mergeRefs([dialogEl, ref])}
       onClick={handleDialogClick}
-      onClose={handleDialogClick}
+      onClose={handleDialogClose}
       data-type={type}
       data-size={size}
       {...rest}
