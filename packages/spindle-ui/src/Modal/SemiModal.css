@@ -1,5 +1,5 @@
+@import '../IconButton/IconButton.css';
 /*
- /*
  * SemiModal
  * NOTE: Styles can be overridden with "--SemiModal-*" variables
 */
@@ -23,6 +23,7 @@
 
 .spui-SemiModal[data-type='sheet'] {
   border-radius: 20px 20px 0 0;
+  bottom: 0;
   margin: auto auto 0;
   transform: translateY(100%);
   will-change: translate;
