@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.58.3](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.58.2...@openameba/spindle-ui@0.58.3) (2023-02-21)
+
+### Bug Fixes
+
+- **spindle-ui:** separate close handler ([d828a22](https://github.com/openameba/spindle/commit/d828a22bdc5a9b40ac5b6ff4487a83ea668fcb20))
+- **spindle-ui:** set bottom for iOS14, import IconButton ([b3e6afb](https://github.com/openameba/spindle/commit/b3e6afbefd76bfd86120146b50f1c38973aa2c0f))
+
 ## [0.58.2](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.58.1...@openameba/spindle-ui@0.58.2) (2023-02-07)
 
 ### Bug Fixes
