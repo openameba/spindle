@@ -64,7 +64,6 @@ Spindle UIのSemi Modalは[HTMLDialogElement](https://developer.mozilla.org/en-U
   const [open, setOpen] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const handleOpenButtonClick = () => setOpen(true);
-  const handleDialogCancel = () => setOpen(false);
   const handleDialogClose = () => setOpen(false);
   useDialogpolyfill(dialogRef);
   return (
@@ -77,7 +76,6 @@ Spindle UIのSemi Modalは[HTMLDialogElement](https://developer.mozilla.org/en-U
         aria-labelledby="dialog-title"
         ref={dialogRef}
         open={open}
-        onCancel={handleDialogCancel}
         onClose={handleDialogClose}
       >
         <SemiModal.Header id="dialog-title">

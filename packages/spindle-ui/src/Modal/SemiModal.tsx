@@ -39,6 +39,7 @@ const Frame = forwardRef<DialogHTMLElement, SemiModalProps>(function SemiModal(
   ref,
 ) {
   const [closing, setClosing] = useState(false);
+  const [escClicked, setEscClicked] = useState(false);
   const dialogEl = useRef<DialogHTMLElement>(null);
 
   // 閉じるアイコンを押した時
@@ -48,23 +49,19 @@ const Frame = forwardRef<DialogHTMLElement, SemiModalProps>(function SemiModal(
   };
 
   // backdropを押した時
-  const handleDialogClick = (event: React.MouseEvent<DialogHTMLElement>) => {
-    // Detect backdrop click
+  const handleDialogClose = (
+    event: React.SyntheticEvent<DialogHTMLElement>,
+  ) => {
+    if (closing) {
+      return;
+    }
     if (event.target === dialogEl.current) {
       onClose?.(event);
     }
   };
 
-  //EscKeyを押したとき
-  const handleDialogClose = (
-    event: React.SyntheticEvent<DialogHTMLElement>,
-  ) => {
-    // Detect escape key type
-    if (event.target === dialogEl.current) {
-      onClose?.(event);
-      setClosing(false);
-    }
-  };
+  // EscKey押下時
+  const handleDialogCancel = () => setEscClicked(true);
 
   // modalアニメーション終了時
   const handleAnimationEnd = useCallback(
@@ -75,6 +72,7 @@ const Frame = forwardRef<DialogHTMLElement, SemiModalProps>(function SemiModal(
         !event.pseudoElement // To exclude ::backdrop
       ) {
         dialogEl.current?.close?.();
+        setClosing(false);
       }
     },
     [dialogEl],
@@ -96,6 +94,15 @@ const Frame = forwardRef<DialogHTMLElement, SemiModalProps>(function SemiModal(
     // Remove this when browsers support :has() pseudo-class
     const classNameToStopScrollBehindDialog = `${BLOCK_NAME}--open`;
 
+    if (escClicked) {
+      setEscClicked(false);
+      // Always remove this class to avoid unexpected scroll stopping
+      document.documentElement.classList.remove(
+        classNameToStopScrollBehindDialog,
+      );
+      return;
+    }
+
     if (open) {
       dialogEl.current?.showModal?.();
       document.documentElement.classList.add(classNameToStopScrollBehindDialog);
@@ -106,7 +113,7 @@ const Frame = forwardRef<DialogHTMLElement, SemiModalProps>(function SemiModal(
         classNameToStopScrollBehindDialog,
       );
     }
-  }, [open, dialogEl]);
+  }, [open, dialogEl, escClicked]);
 
   return (
     <dialog
@@ -116,8 +123,9 @@ const Frame = forwardRef<DialogHTMLElement, SemiModalProps>(function SemiModal(
         .join(' ')
         .trim()}
       ref={mergeRefs([dialogEl, ref])}
-      onClick={handleDialogClick}
+      onClick={handleDialogClose}
       onClose={handleDialogClose}
+      onCancel={handleDialogCancel}
       data-type={type}
       data-size={size}
       {...rest}

@@ -18,8 +18,6 @@ export function PopupModalExample() {
 
   const handleOpenButtonClick = () => setOpen(true);
 
-  const handleDialogCancel = () => setOpen(false);
-
   const handleDialogClose = () => setOpen(false);
 
   useDialogpolyfill(dialogRef);
@@ -34,8 +32,9 @@ export function PopupModalExample() {
         aria-labelledby="dialog-title"
         ref={dialogRef}
         open={open}
-        onCancel={handleDialogCancel}
+        onClick={handleDialogClose}
         onClose={handleDialogClose}
+        onCancel={handleDialogClose}
       >
         <SemiModal.Header id="dialog-title">
           <SemiModal.HeaderTitle>About Ameba</SemiModal.HeaderTitle>
@@ -72,7 +71,9 @@ export function SheetModalExample() {
         ref={dialogRef}
         open={open}
         type="sheet"
+        onClick={handleDialogClose}
         onClose={handleDialogClose}
+        onCancel={handleDialogClose}
       >
         <SemiModal.Header id="dialog-title">
           <SemiModal.HeaderTitle>About Ameba</SemiModal.HeaderTitle>
