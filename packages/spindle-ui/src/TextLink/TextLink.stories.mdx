@@ -1,7 +1,7 @@
 import { Description, Meta, Story, Source } from '@storybook/addon-docs/blocks';
 import { actions } from '@storybook/addon-actions';
 import { TextLink } from './TextLink';
-import { ChevronRightBold, CameraFill } from '../Icon';
+import { ChevronRightBold, CameraFill, PencilAdd } from '../Icon';
 
 # TextLink
 
@@ -28,20 +28,20 @@ import { ChevronRightBold, CameraFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="Normal">
-    <TextLink href="#" {...actions('onMouseOver')}>Text Link</TextLink>
+    <TextLink href="#" {...actions('onMouseOver')}>もっと見る</TextLink>
   </Story>
 </Preview>
 
 <Source
   code={`
-<TextLink href="#">Text Link</TextLink>
+<TextLink href="#">もっと見る</TextLink>
   `}
 />
 
 <Source
   language='html'
   code={`
-<a class="spui-TextLink" href="#">TextLink</a>
+<a class="spui-TextLink" href="#">もっと見る</a>
   `}
 />
 
@@ -49,20 +49,20 @@ import { ChevronRightBold, CameraFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="NormalWithIcon">
-    <TextLink href="#" icon={<CameraFill aria-label="カメラ" />} iconPosition="start" {...actions('onMouseOver')}>Text Link</TextLink>
+    <TextLink href="#" icon={<PencilAdd aria-hidden="true" />} iconPosition="start" {...actions('onMouseOver')}>ブログを書く</TextLink>
   </Story>
 </Preview>
 
 <Source
   code={`
-<TextLink href="#" icon={<CameraFill aria-label="カメラ" />} iconPosition="start" />Text Link</TextLink>
+<TextLink href="#" icon={<PencilAdd aria-hidden="true" />} iconPosition="start" />ブログを書く</TextLink>
   `}
 />
 
 <Source
   language='html'
   code={`
-<a href="#" class="spui-TextLink spui-TextLink--hasIcon spui-TextLink--iconstart"><span class="spui-TextLink-icon"><svg>...</svg></span>TextLink</a>
+<a href="#" class="spui-TextLink spui-TextLink--hasIcon spui-TextLink--iconstart"><span class="spui-TextLink-icon"><svg>...</svg></span>ブログを書く</a>
   `}
 />
 
@@ -70,20 +70,20 @@ import { ChevronRightBold, CameraFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="Subtle">
-    <TextLink href="#" variant="subtle" {...actions('onMouseOver')}>Text Link</TextLink>
+    <TextLink href="#" variant="subtle" {...actions('onMouseOver')}>もっと見る</TextLink>
   </Story>
 </Preview>
 
 <Source
   code={`
-<TextLink href="#" variant="subtle" />}>Text Link</TextLink>
+<TextLink href="#" variant="subtle" />}>もっと見る</TextLink>
   `}
 />
 
 <Source
   language='html'
   code={`
-<a href="#" class="spui-TextLink spui-TextLink--subtle">TextLink</a>
+<a href="#" class="spui-TextLink spui-TextLink--subtle">もっと見る</a>
   `}
 />
 
@@ -91,20 +91,20 @@ import { ChevronRightBold, CameraFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="SubtleWithIcon">
-    <TextLink href="#" variant="subtle" icon={<ChevronRightBold aria-hidden="true" />} iconPosition="end" {...actions('onMouseOver')}>Text Link</TextLink>
+    <TextLink href="#" variant="subtle" icon={<ChevronRightBold aria-hidden="true" />} iconPosition="end" {...actions('onMouseOver')}>もっと見る</TextLink>
   </Story>
 </Preview>
 
 <Source
   code={`
-<TextLink href="#" icon={<ChevronRightBold aria-hidden="true" />} iconPosition="end">Text Link</TextLink>
+<TextLink href="#" icon={<ChevronRightBold aria-hidden="true" />} iconPosition="end">もっと見る</TextLink>
   `}
 />
 
 <Source
   language='html'
   code={`
-<a href="#" class="spui-TextLink spui-TextLink--subtle spui-TextLink--hasIcon spui-TextLink--iconend"><span class="spui-TextLink-icon"><svg>...</svg></span>TextLink</a>
+<a href="#" class="spui-TextLink spui-TextLink--subtle spui-TextLink--hasIcon spui-TextLink--iconend"><span class="spui-TextLink-icon"><svg>...</svg></span>もっと見る</a>
   `}
 />
 
@@ -120,20 +120,20 @@ import { ChevronRightBold, CameraFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="UnderlineHover">
-    <TextLink href="#" underline="hover" {...actions('onMouseOver')}>Text Link</TextLink>
+    <TextLink href="#" underline="hover" {...actions('onMouseOver')}>もっと見る</TextLink>
   </Story>
 </Preview>
 
 <Source
   code={`
-<TextLink href="#" underline="hover">Text Link</TextLink>
+<TextLink href="#" underline="hover">もっと見る</TextLink>
   `}
 />
 
 <Source
   language='html'
   code={`
-<a href="#" class="spui-TextLink spui-TextLink--underlinehover">TextLink</a>
+<a href="#" class="spui-TextLink spui-TextLink--underlinehover">もっと見る</a>
   `}
 />
 
@@ -151,7 +151,7 @@ import { ChevronRightBold, CameraFill } from '../Icon';
 </style>
 <div class="container">
 <ul>
-  <li><a class="spui-TextLink" href="#">Text Link</a></li>
+  <li><a class="spui-TextLink" href="#">もっと見る</a></li>
 </ul>
 </div>
   `}
