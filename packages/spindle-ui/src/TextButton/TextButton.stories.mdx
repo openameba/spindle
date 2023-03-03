@@ -1,13 +1,13 @@
 import { Description, Meta, Story, Source } from '@storybook/addon-docs/blocks';
 import { actions } from '@storybook/addon-actions';
 import { TextButton } from './TextButton';
-import { ChevronRightBold, CameraFill } from '../Icon';
+import { ChevronRightBold, CameraFill, PencilAdd } from '../Icon';
 
 # TextButton
 
 <Meta title="TextButton" component={TextButton} />
 
-![stability-unstable](https://img.shields.io/badge/stability-unstable-yellow.svg)
+![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)
 
 <Source
   language='javascript'
@@ -28,20 +28,20 @@ import { ChevronRightBold, CameraFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="Normal">
-    <TextButton {...actions('onClick', 'onMouseOver')}>Text Button</TextButton>
+    <TextButton {...actions('onClick', 'onMouseOver')}>もっと見る</TextButton>
   </Story>
 </Preview>
 
 <Source
   code={`
-<TextButton>Text Button</TextButton>
+<TextButton>もっと見る</TextButton>
   `}
 />
 
 <Source
   language='html'
   code={`
-<a class="spui-TextButton">Text Button</a>
+<a class="spui-TextButton">もっと見る</a>
   `}
 />
 
@@ -49,20 +49,20 @@ import { ChevronRightBold, CameraFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="NormalWithIcon">
-    <TextButton icon={<CameraFill aria-label="カメラ" />} iconPosition="start" {...actions('onClick', 'onMouseOver')}>Text Button</TextButton>
+    <TextButton icon={<PencilAdd aria-hidden="true" />} iconPosition="start" {...actions('onClick', 'onMouseOver')}>ブログを書く</TextButton>
   </Story>
 </Preview>
 
 <Source
   code={`
-<TextButton icon={<CameraFill aria-label="カメラ" />} iconPosition="start" />Text Button</TextButton>
+<TextButton icon={<PencilAdd aria-hidden="true" />} iconPosition="start" />ブログを書く</TextButton>
   `}
 />
 
 <Source
   language='html'
   code={`
-<button class="spui-TextButton spui-TextButton--hasIcon spui-TextButton--iconstart"><span class="spui-TextButton-icon"><svg>...</svg></span>Text Button</button>
+<button class="spui-TextButton spui-TextButton--hasIcon spui-TextButton--iconstart"><span class="spui-TextButton-icon"><svg>...</svg></span>ブログを書く</button>
   `}
 />
 
@@ -70,20 +70,20 @@ import { ChevronRightBold, CameraFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="Subtle">
-    <TextButton variant="subtle" {...actions('onClick', 'onMouseOver')}>Text Button</TextButton>
+    <TextButton variant="subtle" {...actions('onClick', 'onMouseOver')}>もっと見る</TextButton>
   </Story>
 </Preview>
 
 <Source
   code={`
-<TextButton variant="subtle" />}>Text Button</TextButton>
+<TextButton variant="subtle" />}>もっと見る</TextButton>
   `}
 />
 
 <Source
   language='html'
   code={`
-<button class="spui-TextButton spui-TextButton--subtle">Text Button</button>
+<button class="spui-TextButton spui-TextButton--subtle">もっと見る</button>
   `}
 />
 
@@ -91,20 +91,20 @@ import { ChevronRightBold, CameraFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="SubtleWithIcon">
-    <TextButton variant="subtle" icon={<ChevronRightBold aria-hidden="true" />} iconPosition="end" {...actions('onClick', 'onMouseOver')}>Text Button</TextButton>
+    <TextButton variant="subtle" icon={<ChevronRightBold aria-hidden="true" />} iconPosition="end" {...actions('onClick', 'onMouseOver')}>もっと見る</TextButton>
   </Story>
 </Preview>
 
 <Source
   code={`
-<TextButton variant="subtle" icon={<ChevronRightBold aria-hidden="true" />} iconPosition="end">Text Button</TextButton>
+<TextButton variant="subtle" icon={<ChevronRightBold aria-hidden="true" />} iconPosition="end">もっと見る</TextButton>
   `}
 />
 
 <Source
   language='html'
   code={`
-<button class="spui-TextButton spui-TextButton--subtle spui-TextButton--hasIcon spui-TextButton--iconend"><span class="spui-TextButton-icon"><svg>...</svg></span>Text Button</button>
+<button class="spui-TextButton spui-TextButton--subtle spui-TextButton--hasIcon spui-TextButton--iconend"><span class="spui-TextButton-icon"><svg>...</svg></span>もっと見る</button>
   `}
 />
 
@@ -120,20 +120,20 @@ import { ChevronRightBold, CameraFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="UnderlineHover">
-    <TextButton underline="hover" {...actions('onClick', 'onMouseOver')}>Text Button</TextButton>
+    <TextButton underline="hover" {...actions('onClick', 'onMouseOver')}>もっと見る</TextButton>
   </Story>
 </Preview>
 
 <Source
   code={`
-<TextButton underline="hover">Text Button</TextButton>
+<TextButton underline="hover">もっと見る</TextButton>
   `}
 />
 
 <Source
   language='html'
   code={`
-<button class="spui-TextButton spui-TextButton--underlinehover">Text Button</button>
+<button class="spui-TextButton spui-TextButton--underlinehover">もっと見る</button>
   `}
 />
 
@@ -151,7 +151,7 @@ import { ChevronRightBold, CameraFill } from '../Icon';
 </style>
 <div class="container">
 <ul>
-  <li><button class="spui-TextButton" href="#">Text Button</button></li>
+  <li><button class="spui-TextButton" href="#">もっと見る</button></li>
 </ul>
 </div>
   `}
