@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.58.4](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.58.3...@openameba/spindle-ui@0.58.4) (2023-03-03)
+
+### Bug Fixes
+
+- **spindle-ui:** add line-height to TextLink and TextButton ([04d3462](https://github.com/openameba/spindle/commit/04d346292b13af2586fe08b5f03bf22db4de12a8))
+
 ## [0.58.3](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.58.2...@openameba/spindle-ui@0.58.3) (2023-02-21)
 
 ### Bug Fixes
