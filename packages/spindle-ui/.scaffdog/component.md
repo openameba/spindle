@@ -45,8 +45,6 @@ import { {{ inputs.name | pascal }} } from ‘./{{ inputs.name | pascal }}‘;
 
 <Meta title=“{{ inputs.name | pascal }}” component={ {{ inputs.name | pascal }} } />
 
-![stability-wip](https://img.shields.io/badge/stability-work_in_progress-lightgrey.svg)
-
 <Source
   language=‘javascript’
   code={`import { {{ inputs.name | pascal }} } from ‘@openameba/spindle-ui’`}
