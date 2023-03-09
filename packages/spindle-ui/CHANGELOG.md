@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.58.5](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.58.4...@openameba/spindle-ui@0.58.5) (2023-03-09)
+
+### Bug Fixes
+
+- **spindle-ui:** wider acceptance of props ([a82e7f5](https://github.com/openameba/spindle/commit/a82e7f5a4bd995b5c6bfce7eb35d42077716ad78))
+
 ## [0.58.4](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.58.3...@openameba/spindle-ui@0.58.4) (2023-03-03)
 
 ### Bug Fixes
