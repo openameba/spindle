@@ -20,7 +20,7 @@ type Props = {
   emphasis?: boolean;
   layout?: Layout;
   visible?: boolean;
-};
+} & Omit<React.HTMLAttributes<HTMLDivElement>, 'className'>;
 
 const BLOCK_NAME = 'spui-InlineNotification';
 const DEFAULT_VARIANT = 'information';
@@ -48,6 +48,7 @@ const Frame: FC<Props> = ({
   emphasis = DEFAULT_EMPHASIS,
   layout = DEFAULT_LAYOUT,
   visible = DEFAULT_VISIBLE,
+  ...rest
 }) => {
   return (
     <div
@@ -60,6 +61,7 @@ const Frame: FC<Props> = ({
         .filter(Boolean)
         .join(' ')}
       hidden={!visible}
+      {...rest}
     >
       <div className={`${BLOCK_NAME}-content`}>
         {Children.map(children, (child) =>

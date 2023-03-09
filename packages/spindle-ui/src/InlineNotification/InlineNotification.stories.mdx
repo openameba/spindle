@@ -41,6 +41,15 @@ InlineNotificationコンポーネントは、ユーザーのアクションに�
 ## アクセシビリティ
 コンポーネントからはアプリケーション内での使われ方や重要度がわからないため、aria-*属性やrole属性は付与していません。そのため、コンポーネント利用時には適宜付与して支援技術に通知してください。
 
+<Source
+  code={`
+<InlineNotification.Frame role="alert" variant='error' visible>
+  <InlineNotification.Icon><ExclamationmarkCircleFill aria-hidden="true"/></InlineNotification.Icon>
+  <InlineNotification.Text>ファイル形式が正しくありません</InlineNotification.Text>
+</InlineNotification.Frame>
+  `}
+/>
+
 Avatar画像に関してはalt属性をPropsとして提供しているため、必要に応じて指定してください。何も指定しなかった場合は`alt=""`が設定されます。
 
 ## Variant
