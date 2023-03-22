@@ -25,20 +25,20 @@ import { TextArea } from './TextArea';
 
 <Preview withSource="open">
   <Story name="Text Area">
-    <TextArea aria-label="Text area" id="TextArea" placeholder="How are you feeling?" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')}></TextArea>
+    <TextArea id="TextArea" placeholder="ブログを読んで感じたことを伝えましょう" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')}></TextArea>
   </Story>
 </Preview>
 
 <Source
   code={`
-<TextArea aria-label="Text area" id="TextArea"></TextArea>
+<TextArea placeholder="ブログを読んで感じたことを伝えましょう" id="TextArea"></TextArea>
   `}
 />
 
 <Source
   language='html'
   code={`
-<textarea aria-label="Text area" class="spui-TextArea" id="TextArea"></textarea>
+<textarea placeholder="ブログを読んで感じたことを伝えましょう" class="spui-TextArea" id="TextArea"></textarea>
   `}
 />
 
@@ -46,19 +46,19 @@ import { TextArea } from './TextArea';
 
 <Preview withSource="open">
   <Story name="Text Area With Error">
-    <TextArea aria-label="Text area" hasError id="TextAreaWithError" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')}></TextArea>
+    <TextArea placeholder="ブログを読んで感じたことを伝えましょう" hasError id="TextAreaWithError" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')}></TextArea>
   </Story>
 </Preview>
 
 <Source
   code={`
-<TextArea aria-label="Text area" hasError id="TextAreaWithError"></TextArea>
+<TextArea placeholder="ブログを読んで感じたことを伝えましょう" hasError id="TextAreaWithError"></TextArea>
   `}
 />
 
 <Source
   language='html'
   code={`
-<textarea aria-label="Text area" class="spui-TextArea is-error" id="TextAreaWithError"></textarea>
+<textarea placeholder="ブログを読んで感じたことを伝えましょう" class="spui-TextArea is-error" id="TextAreaWithError"></textarea>
   `}
 />

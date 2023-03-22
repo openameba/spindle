@@ -53,7 +53,7 @@ function DialogExample() {
   }, [dialogRef]);
   return (
     <>
-      <Button aria-haspopup="true" onClick={handleOpenButtonClick} size="medium">Open Dialog</Button>
+      <Button aria-haspopup="true" onClick={handleOpenButtonClick} size="medium" variant="neutral">開く</Button>
       <Dialog.Frame
         aria-describedby="dialog-description"
         aria-labelledby="dialog-title"
@@ -213,7 +213,7 @@ function DialogExample() {
           Spindleをフォローする
         </Button>
         <SubtleButton size="medium">
-          閉じる
+          とじる
         </Button>
       </Dialog.ButtonGroup>
     </Dialog.StyleOnly>
@@ -229,7 +229,7 @@ function DialogExample() {
   <p class="spui-Dialog-body">ここに本文が入りますよ</p>
   <div class="spui-ButtonGroup spui-ButtonGroup--column spui-ButtonGroup--medium spui-Dialog-buttonGroup">
     <button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--contained" type="button">Spindleをフォローする</button>
-    <button class="spui-SubtleButton spui-SubtleButton--medium">閉じる</button>
+    <button class="spui-SubtleButton spui-SubtleButton--medium">とじる</button>
   </div>
 </div>
   `}

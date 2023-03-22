@@ -1,7 +1,7 @@
 import { Description, Meta, Story, Source } from '@storybook/addon-docs/blocks';
 import { actions } from '@storybook/addon-actions';
 import { LinkButton } from './LinkButton';
-import { PlusBold, ArrowRightBold, OpenblankFill } from '../Icon';
+import { PlusBold, ArrowRightBold, OpenblankFill, Link, GraphBar, Present, PencilAdd } from '../Icon';
 
 # LinkButton
 
@@ -26,29 +26,29 @@ import { PlusBold, ArrowRightBold, OpenblankFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="Large">
-    <LinkButton href="#" size="large" variant="contained" {...actions('onMouseOver')}>Contained</LinkButton>
-    <LinkButton href="#" size="large" variant="outlined" {...actions('onMouseOver')}>Outlined</LinkButton>
-    <LinkButton href="#" size="large" variant="neutral" {...actions('onMouseOver')}>Neutral</LinkButton>
-    <LinkButton href="#" size="large" variant="danger" {...actions('onMouseOver')}>Danger</LinkButton>
+    <LinkButton href="#" size="large" variant="contained" {...actions('onMouseOver')}>応援を送る</LinkButton>
+    <LinkButton href="#" size="large" variant="outlined" {...actions('onMouseOver')}>ブログを書く</LinkButton>
+    <LinkButton href="#" size="large" variant="neutral" {...actions('onMouseOver')}>詳細を見る</LinkButton>
+    <LinkButton href="#" size="large" variant="danger" {...actions('onMouseOver')}>削除する</LinkButton>
   </Story>
 </Preview>
 
 <Source
   code={`
-<LinkButton href="#" size="large" variant="contained">Contained</LinkButton>
-<LinkButton href="#" size="large" variant="outlined">Outlined</LinkButton>
-<LinkButton href="#" size="large" variant="neutral">Neutral</LinkButton>
-<LinkButton href="#" size="large" variant="danger">Danger</LinkButton>
+<LinkButton href="#" size="large" variant="contained">応援を送る</LinkButton>
+<LinkButton href="#" size="large" variant="outlined">ブログを書く</LinkButton>
+<LinkButton href="#" size="large" variant="neutral">詳細を見る</LinkButton>
+<LinkButton href="#" size="large" variant="danger">削除する</LinkButton>
   `}
 />
 
 <Source
   language='html'
   code={`
-<a class="spui-LinkButton spui-LinkButton--large spui-LinkButton--contained" href="#">Contained</a>
-<a class="spui-LinkButton spui-LinkButton--large spui-LinkButton--outlined" href="#">Outlined</a>
-<a class="spui-LinkButton spui-LinkButton--large spui-LinkButton--neutral" href="#">Neutral</a>
-<a class="spui-LinkButton spui-LinkButton--large spui-LinkButton--danger" href="#">Danger</a>
+<a class="spui-LinkButton spui-LinkButton--large spui-LinkButton--contained" href="#">応援を送る</a>
+<a class="spui-LinkButton spui-LinkButton--large spui-LinkButton--outlined" href="#">ブログを書く</a>
+<a class="spui-LinkButton spui-LinkButton--large spui-LinkButton--neutral" href="#">詳細を見る</a>
+<a class="spui-LinkButton spui-LinkButton--large spui-LinkButton--danger" href="#">削除する</a>
   `}
 />
 
@@ -56,29 +56,29 @@ import { PlusBold, ArrowRightBold, OpenblankFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="Large Full Width">
-    <LinkButton href="#" layout="fullWidth" size="large" variant="contained" {...actions('onMouseOver')}>Contained</LinkButton>
-    <LinkButton href="#" layout="fullWidth" size="large" variant="outlined" {...actions('onMouseOver')}>Outlined</LinkButton>
-    <LinkButton href="#" layout="fullWidth" size="large" variant="neutral" {...actions('onMouseOver')}>Neutral</LinkButton>
-    <LinkButton href="#" layout="fullWidth" size="large" variant="danger" {...actions('onMouseOver')}>Danger</LinkButton>
+    <LinkButton href="#" layout="fullWidth" size="large" variant="contained" {...actions('onMouseOver')}>応援を送る</LinkButton>
+    <LinkButton href="#" layout="fullWidth" size="large" variant="outlined" {...actions('onMouseOver')}>ブログを書く</LinkButton>
+    <LinkButton href="#" layout="fullWidth" size="large" variant="neutral" {...actions('onMouseOver')}>詳細を見る</LinkButton>
+    <LinkButton href="#" layout="fullWidth" size="large" variant="danger" {...actions('onMouseOver')}>削除する</LinkButton>
   </Story>
 </Preview>
 
 <Source
   code={`
-<LinkButton href="#" layout="fullWidth" size="large" variant="contained">Contained</LinkButton>
-<LinkButton href="#" layout="fullWidth" size="large" variant="outlined">Outlined</LinkButton>
-<LinkButton href="#" layout="fullWidth" size="large" variant="neutral">Neutral</LinkButton>
-<LinkButton href="#" layout="fullWidth" size="large" variant="danger">Danger</LinkButton>
+<LinkButton href="#" layout="fullWidth" size="large" variant="contained">応援を送る</LinkButton>
+<LinkButton href="#" layout="fullWidth" size="large" variant="outlined">ブログを書く</LinkButton>
+<LinkButton href="#" layout="fullWidth" size="large" variant="neutral">詳細を見る</LinkButton>
+<LinkButton href="#" layout="fullWidth" size="large" variant="danger">削除する</LinkButton>
   `}
 />
 
 <Source
   language='html'
   code={`
-<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--large spui-LinkButton--contained" href="#">Contained</a>
-<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--large spui-LinkButton--outlined" href="#">Outlined</a>
-<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--large spui-LinkButton--neutral" href="#">Neutral</a>
-<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--large spui-LinkButton--danger" href="#">Danger</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--large spui-LinkButton--contained" href="#">応援を送る</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--large spui-LinkButton--outlined" href="#">ブログを書く</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--large spui-LinkButton--neutral" href="#">詳細を見る</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--large spui-LinkButton--danger" href="#">削除する</a>
   `}
 />
 
@@ -86,29 +86,29 @@ import { PlusBold, ArrowRightBold, OpenblankFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="Medium">
-    <LinkButton href="#" size="medium" variant="contained" {...actions('onMouseOver')}>Contained</LinkButton>
-    <LinkButton href="#" size="medium" variant="outlined" {...actions('onMouseOver')}>Outlined</LinkButton>
-    <LinkButton href="#" size="medium" variant="neutral" {...actions('onMouseOver')}>Neutral</LinkButton>
-    <LinkButton href="#" size="medium" variant="danger" {...actions('onMouseOver')}>Danger</LinkButton>
+    <LinkButton href="#" size="medium" variant="contained" {...actions('onMouseOver')}>応援を送る</LinkButton>
+    <LinkButton href="#" size="medium" variant="outlined" {...actions('onMouseOver')}>ブログを書く</LinkButton>
+    <LinkButton href="#" size="medium" variant="neutral" {...actions('onMouseOver')}>詳細を見る</LinkButton>
+    <LinkButton href="#" size="medium" variant="danger" {...actions('onMouseOver')}>削除する</LinkButton>
   </Story>
 </Preview>
 
 <Source
   code={`
-<LinkButton href="#" size="medium" variant="contained">Contained</LinkButton>
-<LinkButton href="#" size="medium" variant="outlined">Outlined</LinkButton>
-<LinkButton href="#" size="medium" variant="neutral">Neutral</LinkButton>
-<LinkButton href="#" size="medium" variant="danger">Danger</LinkButton>
+<LinkButton href="#" size="medium" variant="contained">応援を送る</LinkButton>
+<LinkButton href="#" size="medium" variant="outlined">ブログを書く</LinkButton>
+<LinkButton href="#" size="medium" variant="neutral">詳細を見る</LinkButton>
+<LinkButton href="#" size="medium" variant="danger">削除する</LinkButton>
   `}
 />
 
 <Source
   language='html'
   code={`
-<a class="spui-LinkButton spui-LinkButton--medium spui-LinkButton--contained" href="#">Contained</a>
-<a class="spui-LinkButton spui-LinkButton--medium spui-LinkButton--outlined" href="#">Outlined</a>
-<a class="spui-LinkButton spui-LinkButton--medium spui-LinkButton--neutral" href="#">Neutral</a>
-<a class="spui-LinkButton spui-LinkButton--medium spui-LinkButton--danger" href="#">Danger</a>
+<a class="spui-LinkButton spui-LinkButton--medium spui-LinkButton--contained" href="#">応援を送る</a>
+<a class="spui-LinkButton spui-LinkButton--medium spui-LinkButton--outlined" href="#">ブログを書く</a>
+<a class="spui-LinkButton spui-LinkButton--medium spui-LinkButton--neutral" href="#">詳細を見る</a>
+<a class="spui-LinkButton spui-LinkButton--medium spui-LinkButton--danger" href="#">削除する</a>
   `}
 />
 
@@ -116,29 +116,29 @@ import { PlusBold, ArrowRightBold, OpenblankFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="Medium Full Width">
-    <LinkButton href="#" layout="fullWidth" size="medium" variant="contained" {...actions('onMouseOver')}>Contained</LinkButton>
-    <LinkButton href="#" layout="fullWidth" size="medium" variant="outlined" {...actions('onMouseOver')}>Outlined</LinkButton>
-    <LinkButton href="#" layout="fullWidth" size="medium" variant="neutral" {...actions('onMouseOver')}>Neutral</LinkButton>
-    <LinkButton href="#" layout="fullWidth" size="medium" variant="danger" {...actions('onMouseOver')}>Danger</LinkButton>
+    <LinkButton href="#" layout="fullWidth" size="medium" variant="contained" {...actions('onMouseOver')}>応援を送る</LinkButton>
+    <LinkButton href="#" layout="fullWidth" size="medium" variant="outlined" {...actions('onMouseOver')}>ブログを書く</LinkButton>
+    <LinkButton href="#" layout="fullWidth" size="medium" variant="neutral" {...actions('onMouseOver')}>詳細を見る</LinkButton>
+    <LinkButton href="#" layout="fullWidth" size="medium" variant="danger" {...actions('onMouseOver')}>削除する</LinkButton>
   </Story>
 </Preview>
 
 <Source
   code={`
-<LinkButton href="#" layout="fullWidth" size="medium" variant="contained">Contained</LinkButton>
-<LinkButton href="#" layout="fullWidth" size="medium" variant="outlined">Outlined</LinkButton>
-<LinkButton href="#" layout="fullWidth" size="medium" variant="neutral">Neutral</LinkButton>
-<LinkButton href="#" layout="fullWidth" size="medium" variant="danger">Danger</LinkButton>
+<LinkButton href="#" layout="fullWidth" size="medium" variant="contained">応援を送る</LinkButton>
+<LinkButton href="#" layout="fullWidth" size="medium" variant="outlined">ブログを書く</LinkButton>
+<LinkButton href="#" layout="fullWidth" size="medium" variant="neutral">詳細を見る</LinkButton>
+<LinkButton href="#" layout="fullWidth" size="medium" variant="danger">削除する</LinkButton>
   `}
 />
 
 <Source
   language='html'
   code={`
-<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--medium spui-LinkButton--contained" href="#">Contained</a>
-<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--medium spui-LinkButton--outlined" href="#">Outlined</a>
-<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--medium spui-LinkButton--neutral" href="#">Neutral</a>
-<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--medium spui-LinkButton--danger" href="#">Danger</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--medium spui-LinkButton--contained" href="#">応援を送る</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--medium spui-LinkButton--outlined" href="#">ブログを書く</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--medium spui-LinkButton--neutral" href="#">詳細を見る</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--medium spui-LinkButton--danger" href="#">削除する</a>
   `}
 />
 
@@ -146,29 +146,29 @@ import { PlusBold, ArrowRightBold, OpenblankFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="Small">
-    <LinkButton href="#" size="small" variant="contained" {...actions('onMouseOver')}>Contained</LinkButton>
-    <LinkButton href="#" size="small" variant="outlined" {...actions('onMouseOver')}>Outlined</LinkButton>
-    <LinkButton href="#" size="small" variant="neutral" {...actions('onMouseOver')}>Neutral</LinkButton>
-    <LinkButton href="#" size="small" variant="danger" {...actions('onMouseOver')}>Danger</LinkButton>
+    <LinkButton href="#" size="small" variant="contained" {...actions('onMouseOver')}>応援を送る</LinkButton>
+    <LinkButton href="#" size="small" variant="outlined" {...actions('onMouseOver')}>ブログを書く</LinkButton>
+    <LinkButton href="#" size="small" variant="neutral" {...actions('onMouseOver')}>詳細を見る</LinkButton>
+    <LinkButton href="#" size="small" variant="danger" {...actions('onMouseOver')}>削除する</LinkButton>
   </Story>
 </Preview>
 
 <Source
   code={`
-<LinkButton href="#" size="small" variant="contained">Contained</LinkButton>
-<LinkButton href="#" size="small" variant="outlined">Outlined</LinkButton>
-<LinkButton href="#" size="small" variant="neutral">Neutral</LinkButton>
-<LinkButton href="#" size="small" variant="danger">Danger</LinkButton>
+<LinkButton href="#" size="small" variant="contained">応援を送る</LinkButton>
+<LinkButton href="#" size="small" variant="outlined">ブログを書く</LinkButton>
+<LinkButton href="#" size="small" variant="neutral">詳細を見る</LinkButton>
+<LinkButton href="#" size="small" variant="danger">削除する</LinkButton>
   `}
 />
 
 <Source
   language='html'
   code={`
-<a class="spui-LinkButton spui-LinkButton--small spui-LinkButton--contained" href="#">Contained</a>
-<a class="spui-LinkButton spui-LinkButton--small spui-LinkButton--outlined" href="#">Outlined</a>
-<a class="spui-LinkButton spui-LinkButton--small spui-LinkButton--neutral" href="#">Neutral</a>
-<a class="spui-LinkButton spui-LinkButton--small spui-LinkButton--danger" href="#">Danger</a>
+<a class="spui-LinkButton spui-LinkButton--small spui-LinkButton--contained" href="#">応援を送る</a>
+<a class="spui-LinkButton spui-LinkButton--small spui-LinkButton--outlined" href="#">ブログを書く</a>
+<a class="spui-LinkButton spui-LinkButton--small spui-LinkButton--neutral" href="#">詳細を見る</a>
+<a class="spui-LinkButton spui-LinkButton--small spui-LinkButton--danger" href="#">削除する</a>
   `}
 />
 
@@ -176,29 +176,29 @@ import { PlusBold, ArrowRightBold, OpenblankFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="Small Full Width">
-    <LinkButton href="#" layout="fullWidth" size="small" variant="contained" {...actions('onMouseOver')}>Contained</LinkButton>
-    <LinkButton href="#" layout="fullWidth" size="small" variant="outlined" {...actions('onMouseOver')}>Outlined</LinkButton>
-    <LinkButton href="#" layout="fullWidth" size="small" variant="neutral" {...actions('onMouseOver')}>Neutral</LinkButton>
-    <LinkButton href="#" layout="fullWidth" size="small" variant="danger" {...actions('onMouseOver')}>Danger</LinkButton>
+    <LinkButton href="#" layout="fullWidth" size="small" variant="contained" {...actions('onMouseOver')}>応援を送る</LinkButton>
+    <LinkButton href="#" layout="fullWidth" size="small" variant="outlined" {...actions('onMouseOver')}>ブログを書く</LinkButton>
+    <LinkButton href="#" layout="fullWidth" size="small" variant="neutral" {...actions('onMouseOver')}>詳細を見る</LinkButton>
+    <LinkButton href="#" layout="fullWidth" size="small" variant="danger" {...actions('onMouseOver')}>削除する</LinkButton>
   </Story>
 </Preview>
 
 <Source
   code={`
-<LinkButton href="#" layout="fullWidth" size="small" variant="contained">Contained</LinkButton>
-<LinkButton href="#" layout="fullWidth" size="small" variant="outlined">Outlined</LinkButton>
-<LinkButton href="#" layout="fullWidth" size="small" variant="neutral">Neutral</LinkButton>
-<LinkButton href="#" layout="fullWidth" size="small" variant="danger">Danger</LinkButton>
+<LinkButton href="#" layout="fullWidth" size="small" variant="contained">応援を送る</LinkButton>
+<LinkButton href="#" layout="fullWidth" size="small" variant="outlined">ブログを書く</LinkButton>
+<LinkButton href="#" layout="fullWidth" size="small" variant="neutral">詳細を見る</LinkButton>
+<LinkButton href="#" layout="fullWidth" size="small" variant="danger">削除する</LinkButton>
   `}
 />
 
 <Source
   language='html'
   code={`
-<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--small spui-LinkButton--contained" href="#">Contained</a>
-<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--small spui-LinkButton--outlined" href="#">Outlined</a>
-<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--small spui-LinkButton--neutral" href="#">Neutral</a>
-<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--small spui-LinkButton--danger" href="#">Danger</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--small spui-LinkButton--contained" href="#">応援を送る</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--small spui-LinkButton--outlined" href="#">ブログを書く</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--small spui-LinkButton--neutral" href="#">詳細を見る</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--small spui-LinkButton--danger" href="#">削除する</a>
   `}
 />
 
@@ -206,26 +206,26 @@ import { PlusBold, ArrowRightBold, OpenblankFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="With Icon">
-    <LinkButton href="#" icon={<PlusBold/>} size="large" variant="contained" {...actions('onMouseOver')}>Contained</LinkButton>
-    <LinkButton href="#" icon={<ArrowRightBold/>} size="medium" variant="outlined" {...actions('onMouseOver')}>Outlined</LinkButton>
-    <LinkButton href="#" icon={<OpenblankFill/>} size="small" variant="neutral" {...actions('onMouseOver')}>Neutral</LinkButton>
+    <LinkButton href="#" icon={<Present/>} size="large" variant="contained" {...actions('onMouseOver')}>応援を送る</LinkButton>
+    <LinkButton href="#" icon={<PencilAdd/>} size="medium" variant="outlined" {...actions('onMouseOver')}>ブログを書く</LinkButton>
+    <LinkButton href="#" icon={<GraphBar/>} size="small" variant="neutral" {...actions('onMouseOver')}>詳細を見る</LinkButton>
   </Story>
 </Preview>
 
 <Source
   code={`
-<LinkButton href="#" icon={<PlusBold/>} size="large" variant="contained">Contained</LinkButton>
-<LinkButton href="#" icon={<ArrowRightBold/>} size="medium" variant="outlined">Outlined</LinkButton>
-<LinkButton href="#" icon={<OpenblankFill/>} size="small" variant="neutral">Neutral</LinkButton>
+<LinkButton href="#" icon={<Present/>} size="large" variant="contained">応援を送る</LinkButton>
+<LinkButton href="#" icon={<PencilAdd/>} size="medium" variant="outlined">ブログを書く</LinkButton>
+<LinkButton href="#" icon={<GraphBar/>} size="small" variant="neutral">詳細を見る</LinkButton>
   `}
 />
 
 <Source
   language='html'
   code={`
-<a class="spui-LinkButton spui-LinkButton--intrinsic spui-LinkButton--large spui-LinkButton--contained" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--large"><svg /></span>Contained</a>
-<a class="spui-LinkButton spui-LinkButton--intrinsic spui-LinkButton--medium spui-LinkButton--outlined" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--medium"><svg /></span>Outlined</a>
-<a class="spui-LinkButton spui-LinkButton--intrinsic spui-LinkButton--small spui-LinkButton--neutral" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--small"><svg /></span>Neutral</a>
+<a class="spui-LinkButton spui-LinkButton--intrinsic spui-LinkButton--large spui-LinkButton--contained" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--large"><svg /></span>応援を送る</a>
+<a class="spui-LinkButton spui-LinkButton--intrinsic spui-LinkButton--medium spui-LinkButton--outlined" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--medium"><svg /></span>ブログを書く</a>
+<a class="spui-LinkButton spui-LinkButton--intrinsic spui-LinkButton--small spui-LinkButton--neutral" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--small"><svg /></span>詳細を見る</a>
   `}
 />
 
@@ -233,26 +233,26 @@ import { PlusBold, ArrowRightBold, OpenblankFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="Full Width With Icon">
-    <LinkButton href="#" layout="fullWidth" icon={<PlusBold/>} size="large" variant="contained" {...actions('onMouseOver')}>Contained</LinkButton>
-    <LinkButton href="#" layout="fullWidth" icon={<ArrowRightBold/>} size="medium" variant="outlined" {...actions('onMouseOver')}>Outlined</LinkButton>
-    <LinkButton href="#" layout="fullWidth" icon={<OpenblankFill/>} size="small" variant="neutral" {...actions('onMouseOver')}>Neutral</LinkButton>
+    <LinkButton href="#" layout="fullWidth" icon={<Present/>} size="large" variant="contained" {...actions('onMouseOver')}>応援を送る</LinkButton>
+    <LinkButton href="#" layout="fullWidth" icon={<PencilAdd/>} size="medium" variant="outlined" {...actions('onMouseOver')}>ブログを書く</LinkButton>
+    <LinkButton href="#" layout="fullWidth" icon={<GraphBar/>} size="small" variant="neutral" {...actions('onMouseOver')}>詳細を見る</LinkButton>
   </Story>
 </Preview>
 
 <Source
   code={`
-<LinkButton href="#" layout="fullWidth" icon={<PlusBold/>} size="large" variant="contained">Contained</LinkButton>
-<LinkButton href="#" layout="fullWidth" icon={<ArrowRightBold/>} size="medium" variant="outlined">Outlined</LinkButton>
-<LinkButton href="#" layout="fullWidth" icon={<OpenblankFill/>} size="small" variant="neutral">Neutral</LinkButton>
+<LinkButton href="#" layout="fullWidth" icon={<Present/>} size="large" variant="contained">応援を送る</LinkButton>
+<LinkButton href="#" layout="fullWidth" icon={<PencilAdd/>} size="medium" variant="outlined">ブログを書く</LinkButton>
+<LinkButton href="#" layout="fullWidth" icon={<GraphBar/>} size="small" variant="neutral">詳細を見る</LinkButton>
   `}
 />
 
 <Source
   language='html'
   code={`
-<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--large spui-LinkButton--contained" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--large"><svg /></span>Contained</a>
-<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--medium spui-LinkButton--outlined" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--medium"><svg /></span>Outlined</a>
-<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--small spui-LinkButton--neutral" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--small"><svg /></span>Neutral</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--large spui-LinkButton--contained" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--large"><svg /></span>応援を送る</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--medium spui-LinkButton--outlined" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--medium"><svg /></span>ブログを書く</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--small spui-LinkButton--neutral" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--small"><svg /></span>修正する</a>
   `}
 />
 
@@ -264,20 +264,20 @@ import { PlusBold, ArrowRightBold, OpenblankFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="Lighted">
-    <LinkButton href="#" size="large" variant="lighted" {...actions('onMouseOver')}>Lighted</LinkButton>
+    <LinkButton href="#" size="large" variant="lighted" {...actions('onMouseOver')}>フォロー中</LinkButton>
   </Story>
 </Preview>
 
 <Source
   code={`
-<LinkButton href="#" size="large" variant="lighted">Lighted</LinkButton>
+<LinkButton href="#" size="large" variant="lighted">フォロー中</LinkButton>
   `}
 />
 
 <Source
   language='html'
   code={`
-<a class="spui-LinkButton spui-LinkButton--large spui-LinkButton--lighted" href="#">Lighted</a>
+<a class="spui-LinkButton spui-LinkButton--large spui-LinkButton--lighted" href="#">フォロー中</a>
   `}
 />
 

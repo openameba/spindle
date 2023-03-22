@@ -69,8 +69,8 @@ function AppealModalExample() {
   }, [dialogRef]);
   return (
     <>
-      <Button aria-haspopup="true" onClick={handleOpenButtonClick}>
-        Open Appeal Modal
+      <Button aria-haspopup="true" size="medium" variant="neutral" onClick={handleOpenButtonClick}>
+        開く
       </Button>
       <AppealModal.Frame
         aria-describedby="dialog-description"
@@ -169,7 +169,7 @@ function AppealModalExample() {
     <div class="spui-ButtonGroup spui-ButtonGroup--column spui-ButtonGroup--medium spui-AppealModal-buttonGroup">
       <a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--medium spui-LinkButton--contained" href="https://about.ameba.jp/">サイトを見る</a>
     </div>
-    <div class="spui-AppealModal-closeTextButton"><button class="spui-SubtleButton spui-SubtleButton--large">閉じる</button></div>
+    <div class="spui-AppealModal-closeTextButton"><button class="spui-SubtleButton spui-SubtleButton--large">とじる</button></div>
   </div>
 </div>
   `}

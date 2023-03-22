@@ -32,8 +32,9 @@ export function DialogExample() {
         aria-haspopup="true"
         onClick={handleOpenButtonClick}
         size="medium"
+        variant="neutral"
       >
-        Open Dialog
+        開く
       </Button>
       <Dialog.Frame
         aria-describedby="dialog-description"
@@ -114,7 +115,7 @@ export function ButtonColumnWithSubtleButton() {
         <Button layout="fullWidth" size="medium" type="button">
           Spindleをフォローする
         </Button>
-        <SubtleButton size="medium">閉じる</SubtleButton>
+        <SubtleButton size="medium">とじる</SubtleButton>
       </Dialog.ButtonGroup>
     </Dialog.StyleOnly>
   );

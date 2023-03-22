@@ -1,7 +1,7 @@
 import { Description, Meta, Story, Source } from '@storybook/addon-docs/blocks';
 import { actions } from '@storybook/addon-actions';
 import { Button } from './Button';
-import { PlusBold, ArrowRightBold, OpenblankFill } from '../Icon';
+import { PlusBold, Link, FileAdd } from '../Icon';
 
 # Button
 
@@ -26,29 +26,29 @@ import { PlusBold, ArrowRightBold, OpenblankFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="Large">
-    <Button size="large" variant="contained" {...actions('onClick', 'onMouseOver')}>Contained</Button>
-    <Button size="large" variant="outlined" {...actions('onClick', 'onMouseOver')}>Outlined</Button>
-    <Button size="large" variant="neutral" {...actions('onClick', 'onMouseOver')}>Neutral</Button>
-    <Button size="large" variant="danger" {...actions('onClick', 'onMouseOver')}>Danger</Button>
+    <Button size="large" variant="contained" {...actions('onClick', 'onMouseOver')}>申請する</Button>
+    <Button size="large" variant="outlined" {...actions('onClick', 'onMouseOver')}>選択する</Button>
+    <Button size="large" variant="neutral" {...actions('onClick', 'onMouseOver')}>修正する</Button>
+    <Button size="large" variant="danger" {...actions('onClick', 'onMouseOver')}>削除する</Button>
   </Story>
 </Preview>
 
 <Source
   code={`
-<Button size="large" variant="contained">Contained</Button>
-<Button size="large" variant="outlined">Outlined</Button>
-<Button size="large" variant="neutral">Neutral</Button>
-<Button size="large" variant="danger">Danger</Button>
+<Button size="large" variant="contained">申請する</Button>
+<Button size="large" variant="outlined">選択する</Button>
+<Button size="large" variant="neutral">修正する</Button>
+<Button size="large" variant="danger">削除する</Button>
   `}
 />
 
 <Source
   language='html'
   code={`
-<button class="spui-Button spui-Button--large spui-Button--contained">Contained</button>
-<button class="spui-Button spui-Button--large spui-Button--outlined">Outlined</button>
-<button class="spui-Button spui-Button--large spui-Button--neutral">Neutral</button>
-<button class="spui-Button spui-Button--large spui-Button--danger">Danger</button>
+<button class="spui-Button spui-Button--large spui-Button--contained">申請する</button>
+<button class="spui-Button spui-Button--large spui-Button--outlined">選択する</button>
+<button class="spui-Button spui-Button--large spui-Button--neutral">修正する</button>
+<button class="spui-Button spui-Button--large spui-Button--danger">削除する</button>
   `}
 />
 
@@ -56,29 +56,29 @@ import { PlusBold, ArrowRightBold, OpenblankFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="Large Full Width">
-    <Button layout="fullWidth" size="large" variant="contained" {...actions('onClick', 'onMouseOver')}>Contained</Button>
-    <Button layout="fullWidth" size="large" variant="outlined" {...actions('onClick', 'onMouseOver')}>Outlined</Button>
-    <Button layout="fullWidth" size="large" variant="neutral" {...actions('onClick', 'onMouseOver')}>Neutral</Button>
-    <Button layout="fullWidth" size="large" variant="danger" {...actions('onClick', 'onMouseOver')}>Danger</Button>
+    <Button layout="fullWidth" size="large" variant="contained" {...actions('onClick', 'onMouseOver')}>申請する</Button>
+    <Button layout="fullWidth" size="large" variant="outlined" {...actions('onClick', 'onMouseOver')}>選択する</Button>
+    <Button layout="fullWidth" size="large" variant="neutral" {...actions('onClick', 'onMouseOver')}>修正する</Button>
+    <Button layout="fullWidth" size="large" variant="danger" {...actions('onClick', 'onMouseOver')}>削除する</Button>
   </Story>
 </Preview>
 
 <Source
   code={`
-<Button layout="fullWidth" size="large" variant="contained">Contained</Button>
-<Button layout="fullWidth" size="large" variant="outlined">Outlined</Button>
-<Button layout="fullWidth" size="large" variant="neutral">Neutral</Button>
-<Button layout="fullWidth" size="large" variant="danger">Danger</Button>
+<Button layout="fullWidth" size="large" variant="contained">申請する</Button>
+<Button layout="fullWidth" size="large" variant="outlined">選択する</Button>
+<Button layout="fullWidth" size="large" variant="neutral">修正する</Button>
+<Button layout="fullWidth" size="large" variant="danger">削除する</Button>
   `}
 />
 
 <Source
   language='html'
   code={`
-<button class="spui-Button spui-Button--fullWidth spui-Button--large spui-Button--contained">Contained</button>
-<button class="spui-Button spui-Button--fullWidth spui-Button--large spui-Button--outlined">Outlined</button>
-<button class="spui-Button spui-Button--fullWidth spui-Button--large spui-Button--neutral">Neutral</button>
-<button class="spui-Button spui-Button--fullWidth spui-Button--large spui-Button--danger">Danger</button>
+<button class="spui-Button spui-Button--fullWidth spui-Button--large spui-Button--contained">申請する</button>
+<button class="spui-Button spui-Button--fullWidth spui-Button--large spui-Button--outlined">選択する</button>
+<button class="spui-Button spui-Button--fullWidth spui-Button--large spui-Button--neutral">修正する</button>
+<button class="spui-Button spui-Button--fullWidth spui-Button--large spui-Button--danger">削除する</button>
   `}
 />
 
@@ -86,29 +86,29 @@ import { PlusBold, ArrowRightBold, OpenblankFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="Medium">
-    <Button size="medium" variant="contained" {...actions('onClick', 'onMouseOver')}>Contained</Button>
-    <Button size="medium" variant="outlined" {...actions('onClick', 'onMouseOver')}>Outlined</Button>
-    <Button size="medium" variant="neutral" {...actions('onClick', 'onMouseOver')}>Neutral</Button>
-    <Button size="medium" variant="danger" {...actions('onClick', 'onMouseOver')}>Danger</Button>
+    <Button size="medium" variant="contained" {...actions('onClick', 'onMouseOver')}>申請する</Button>
+    <Button size="medium" variant="outlined" {...actions('onClick', 'onMouseOver')}>選択する</Button>
+    <Button size="medium" variant="neutral" {...actions('onClick', 'onMouseOver')}>修正する</Button>
+    <Button size="medium" variant="danger" {...actions('onClick', 'onMouseOver')}>削除する</Button>
   </Story>
 </Preview>
 
 <Source
   code={`
-<Button size="medium" variant="contained">Contained</Button>
-<Button size="medium" variant="outlined">Outlined</Button>
-<Button size="medium" variant="neutral">Neutral</Button>
-<Button size="medium" variant="danger">Danger</Button>
+<Button size="medium" variant="contained">申請する</Button>
+<Button size="medium" variant="outlined">選択する</Button>
+<Button size="medium" variant="neutral">修正する</Button>
+<Button size="medium" variant="danger">削除する</Button>
   `}
 />
 
 <Source
   language='html'
   code={`
-<button class="spui-Button spui-Button--medium spui-Button--contained">Contained</button>
-<button class="spui-Button spui-Button--medium spui-Button--outlined">Outlined</button>
-<button class="spui-Button spui-Button--medium spui-Button--neutral">Neutral</button>
-<button class="spui-Button spui-Button--medium spui-Button--danger">Danger</button>
+<button class="spui-Button spui-Button--medium spui-Button--contained">申請する</button>
+<button class="spui-Button spui-Button--medium spui-Button--outlined">選択する</button>
+<button class="spui-Button spui-Button--medium spui-Button--neutral">修正する</button>
+<button class="spui-Button spui-Button--medium spui-Button--danger">削除する</button>
   `}
 />
 
@@ -116,29 +116,29 @@ import { PlusBold, ArrowRightBold, OpenblankFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="Medium Full Width">
-    <Button layout="fullWidth" size="medium" variant="contained" {...actions('onClick', 'onMouseOver')}>Contained</Button>
-    <Button layout="fullWidth" size="medium" variant="outlined" {...actions('onClick', 'onMouseOver')}>Outlined</Button>
-    <Button layout="fullWidth" size="medium" variant="neutral" {...actions('onClick', 'onMouseOver')}>Neutral</Button>
-    <Button layout="fullWidth" size="medium" variant="danger" {...actions('onClick', 'onMouseOver')}>Danger</Button>
+    <Button layout="fullWidth" size="medium" variant="contained" {...actions('onClick', 'onMouseOver')}>申請する</Button>
+    <Button layout="fullWidth" size="medium" variant="outlined" {...actions('onClick', 'onMouseOver')}>選択する</Button>
+    <Button layout="fullWidth" size="medium" variant="neutral" {...actions('onClick', 'onMouseOver')}>修正する</Button>
+    <Button layout="fullWidth" size="medium" variant="danger" {...actions('onClick', 'onMouseOver')}>削除する</Button>
   </Story>
 </Preview>
 
 <Source
   code={`
-<Button layout="fullWidth" size="medium" variant="contained">Contained</Button>
-<Button layout="fullWidth" size="medium" variant="outlined">Outlined</Button>
-<Button layout="fullWidth" size="medium" variant="neutral">Neutral</Button>
-<Button layout="fullWidth" size="medium" variant="danger">Danger</Button>
+<Button layout="fullWidth" size="medium" variant="contained">申請する</Button>
+<Button layout="fullWidth" size="medium" variant="outlined">選択する</Button>
+<Button layout="fullWidth" size="medium" variant="neutral">修正する</Button>
+<Button layout="fullWidth" size="medium" variant="danger">削除する</Button>
   `}
 />
 
 <Source
   language='html'
   code={`
-<button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--contained">Contained</button>
-<button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--outlined">Outlined</button>
-<button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--neutral">Neutral</button>
-<button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--danger">Danger</button>
+<button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--contained">申請する</button>
+<button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--outlined">選択する</button>
+<button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--neutral">修正する</button>
+<button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--danger">削除する</button>
   `}
 />
 
@@ -146,29 +146,29 @@ import { PlusBold, ArrowRightBold, OpenblankFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="Small">
-    <Button size="small" variant="contained" {...actions('onClick', 'onMouseOver')}>Contained</Button>
-    <Button size="small" variant="outlined" {...actions('onClick', 'onMouseOver')}>Outlined</Button>
-    <Button size="small" variant="neutral" {...actions('onClick', 'onMouseOver')}>Neutral</Button>
-    <Button size="small" variant="danger" {...actions('onClick', 'onMouseOver')}>Danger</Button>
+    <Button size="small" variant="contained" {...actions('onClick', 'onMouseOver')}>申請する</Button>
+    <Button size="small" variant="outlined" {...actions('onClick', 'onMouseOver')}>選択する</Button>
+    <Button size="small" variant="neutral" {...actions('onClick', 'onMouseOver')}>修正する</Button>
+    <Button size="small" variant="danger" {...actions('onClick', 'onMouseOver')}>削除する</Button>
   </Story>
 </Preview>
 
 <Source
   code={`
-<Button size="small" variant="contained">Contained</Button>
-<Button size="small" variant="outlined">Outlined</Button>
-<Button size="small" variant="neutral">Neutral</Button>
-<Button size="small" variant="danger">Danger</Button>
+<Button size="small" variant="contained">申請する</Button>
+<Button size="small" variant="outlined">選択する</Button>
+<Button size="small" variant="neutral">修正する</Button>
+<Button size="small" variant="danger">削除する</Button>
   `}
 />
 
 <Source
   language='html'
   code={`
-<button class="spui-Button spui-Button--small spui-Button--contained">Contained</button>
-<button class="spui-Button spui-Button--small spui-Button--outlined">Outlined</button>
-<button class="spui-Button spui-Button--small spui-Button--neutral">Neutral</button>
-<button class="spui-Button spui-Button--small spui-Button--danger">Danger</button>
+<button class="spui-Button spui-Button--small spui-Button--contained">申請する</button>
+<button class="spui-Button spui-Button--small spui-Button--outlined">選択する</button>
+<button class="spui-Button spui-Button--small spui-Button--neutral">修正する</button>
+<button class="spui-Button spui-Button--small spui-Button--danger">削除する</button>
   `}
 />
 
@@ -176,29 +176,29 @@ import { PlusBold, ArrowRightBold, OpenblankFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="Small Full Width">
-    <Button layout="fullWidth" size="small" variant="contained" {...actions('onClick', 'onMouseOver')}>Contained</Button>
-    <Button layout="fullWidth" size="small" variant="outlined" {...actions('onClick', 'onMouseOver')}>Outlined</Button>
-    <Button layout="fullWidth" size="small" variant="neutral" {...actions('onClick', 'onMouseOver')}>Neutral</Button>
-    <Button layout="fullWidth" size="small" variant="danger" {...actions('onClick', 'onMouseOver')}>Danger</Button>
+    <Button layout="fullWidth" size="small" variant="contained" {...actions('onClick', 'onMouseOver')}>申請する</Button>
+    <Button layout="fullWidth" size="small" variant="outlined" {...actions('onClick', 'onMouseOver')}>選択する</Button>
+    <Button layout="fullWidth" size="small" variant="neutral" {...actions('onClick', 'onMouseOver')}>修正する</Button>
+    <Button layout="fullWidth" size="small" variant="danger" {...actions('onClick', 'onMouseOver')}>削除する</Button>
   </Story>
 </Preview>
 
 <Source
   code={`
-<Button layout="fullWidth" size="small" variant="contained">Contained</Button>
-<Button layout="fullWidth" size="small" variant="outlined">Outlined</Button>
-<Button layout="fullWidth" size="small" variant="neutral">Neutral</Button>
-<Button layout="fullWidth" size="small" variant="danger">Danger</Button>
+<Button layout="fullWidth" size="small" variant="contained">申請する</Button>
+<Button layout="fullWidth" size="small" variant="outlined">選択する</Button>
+<Button layout="fullWidth" size="small" variant="neutral">修正する</Button>
+<Button layout="fullWidth" size="small" variant="danger">削除する</Button>
   `}
 />
 
 <Source
   language='html'
   code={`
-<button class="spui-Button spui-Button--fullWidth spui-Button--small spui-Button--contained">Contained</button>
-<button class="spui-Button spui-Button--fullWidth spui-Button--small spui-Button--outlined">Outlined</button>
-<button class="spui-Button spui-Button--fullWidth spui-Button--small spui-Button--neutral">Neutral</button>
-<button class="spui-Button spui-Button--fullWidth spui-Button--small spui-Button--danger">Danger</button>
+<button class="spui-Button spui-Button--fullWidth spui-Button--small spui-Button--contained">申請する</button>
+<button class="spui-Button spui-Button--fullWidth spui-Button--small spui-Button--outlined">選択する</button>
+<button class="spui-Button spui-Button--fullWidth spui-Button--small spui-Button--neutral">修正する</button>
+<button class="spui-Button spui-Button--fullWidth spui-Button--small spui-Button--danger">削除する</button>
   `}
 />
 
@@ -206,29 +206,29 @@ import { PlusBold, ArrowRightBold, OpenblankFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="Disabled">
-    <Button disabled size="medium" variant="contained" {...actions('onClick', 'onMouseOver')}>Contained</Button>
-    <Button disabled size="medium" variant="outlined" {...actions('onClick', 'onMouseOver')}>Outlined</Button>
-    <Button disabled size="medium" variant="neutral" {...actions('onClick', 'onMouseOver')}>Neutral</Button>
-    <Button disabled size="medium" variant="danger" {...actions('onClick', 'onMouseOver')}>Danger</Button>
+    <Button disabled size="medium" variant="contained" {...actions('onClick', 'onMouseOver')}>申請する</Button>
+    <Button disabled size="medium" variant="outlined" {...actions('onClick', 'onMouseOver')}>選択する</Button>
+    <Button disabled size="medium" variant="neutral" {...actions('onClick', 'onMouseOver')}>修正する</Button>
+    <Button disabled size="medium" variant="danger" {...actions('onClick', 'onMouseOver')}>削除する</Button>
   </Story>
 </Preview>
 
 <Source
   code={`
-<Button disabled size="medium" variant="contained">Contained</Button>
-<Button disabled size="medium" variant="outlined">Outlined</Button>
-<Button disabled size="medium" variant="neutral">Neutral</Button>
-<Button disabled size="medium" variant="danger">Danger</Button>
+<Button disabled size="medium" variant="contained">申請する</Button>
+<Button disabled size="medium" variant="outlined">選択する</Button>
+<Button disabled size="medium" variant="neutral">修正する</Button>
+<Button disabled size="medium" variant="danger">削除する</Button>
   `}
 />
 
 <Source
   language='html'
   code={`
-<button class="spui-Button spui-Button--medium spui-Button--contained" disabled>Contained</button>
-<button class="spui-Button spui-Button--medium spui-Button--outlined" disabled>Outlined</button>
-<button class="spui-Button spui-Button--medium spui-Button--neutral" disabled>Neutral</button>
-<button class="spui-Button spui-Button--medium spui-Button--danger" disabled>Danger</button>
+<button class="spui-Button spui-Button--medium spui-Button--contained" disabled>申請する</button>
+<button class="spui-Button spui-Button--medium spui-Button--outlined" disabled>選択する</button>
+<button class="spui-Button spui-Button--medium spui-Button--neutral" disabled>修正する</button>
+<button class="spui-Button spui-Button--medium spui-Button--danger" disabled>削除する</button>
   `}
 />
 
@@ -236,29 +236,29 @@ import { PlusBold, ArrowRightBold, OpenblankFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="Disabled Full Width">
-    <Button layout="fullWidth" disabled size="medium" variant="contained" {...actions('onClick', 'onMouseOver')}>Contained</Button>
-    <Button layout="fullWidth" disabled size="medium" variant="outlined" {...actions('onClick', 'onMouseOver')}>Outlined</Button>
-    <Button layout="fullWidth" disabled size="medium" variant="neutral" {...actions('onClick', 'onMouseOver')}>Neutral</Button>
-    <Button layout="fullWidth" disabled size="medium" variant="danger" {...actions('onClick', 'onMouseOver')}>Danger</Button>
+    <Button layout="fullWidth" disabled size="medium" variant="contained" {...actions('onClick', 'onMouseOver')}>申請する</Button>
+    <Button layout="fullWidth" disabled size="medium" variant="outlined" {...actions('onClick', 'onMouseOver')}>選択する</Button>
+    <Button layout="fullWidth" disabled size="medium" variant="neutral" {...actions('onClick', 'onMouseOver')}>修正する</Button>
+    <Button layout="fullWidth" disabled size="medium" variant="danger" {...actions('onClick', 'onMouseOver')}>削除する</Button>
   </Story>
 </Preview>
 
 <Source
   code={`
-<Button layout="fullWidth" disabled size="medium" variant="contained">Contained</Button>
-<Button layout="fullWidth" disabled size="medium" variant="outlined">Outlined</Button>
-<Button layout="fullWidth" disabled size="medium" variant="neutral">Neutral</Button>
-<Button layout="fullWidth" disabled size="medium" variant="danger">Danger</Button>
+<Button layout="fullWidth" disabled size="medium" variant="contained">申請する</Button>
+<Button layout="fullWidth" disabled size="medium" variant="outlined">選択する</Button>
+<Button layout="fullWidth" disabled size="medium" variant="neutral">修正する</Button>
+<Button layout="fullWidth" disabled size="medium" variant="danger">削除する</Button>
   `}
 />
 
 <Source
   language='html'
   code={`
-<button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--contained" disabled>Contained</button>
-<button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--outlined" disabled>Outlined</button>
-<button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--neutral" disabled>Neutral</button>
-<button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--danger" disabled>Danger</button>
+<button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--contained" disabled>申請する</button>
+<button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--outlined" disabled>選択する</button>
+<button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--neutral" disabled>修正する</button>
+<button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--danger" disabled>削除する</button>
   `}
 />
 
@@ -266,26 +266,26 @@ import { PlusBold, ArrowRightBold, OpenblankFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="With Icon">
-    <Button icon={<PlusBold/>} size="large" variant="contained" {...actions('onClick', 'onMouseOver')}>Contained</Button>
-    <Button icon={<ArrowRightBold/>} size="medium" variant="outlined" {...actions('onClick', 'onMouseOver')}>Outlined</Button>
-    <Button icon={<OpenblankFill/>} size="small" variant="neutral" {...actions('onClick', 'onMouseOver')}>Neutral</Button>
+    <Button icon={<FileAdd/>} size="large" variant="contained" {...actions('onClick', 'onMouseOver')}>ファイルを選択する</Button>
+    <Button icon={<Link/>} size="medium" variant="outlined" {...actions('onClick', 'onMouseOver')}>リンクをコピーする</Button>
+    <Button icon={<PlusBold/>} size="small" variant="neutral" {...actions('onClick', 'onMouseOver')}>フォローする</Button>
   </Story>
 </Preview>
 
 <Source
   code={`
-<Button icon={<PlusBold/>} size="large" variant="contained">Contained</Button>
-<Button icon={<ArrowRightBold/>} size="medium" variant="outlined">Outlined</Button>
-<Button icon={<OpenblankFill/>} size="small" variant="neutral">Neutral</Button>
+<Button icon={<FileAdd/>} size="large" variant="contained">ファイルを選択する</Button>
+<Button icon={<Link/>} size="medium" variant="outlined">リンクをコピーする</Button>
+<Button icon={<PlusBold/>} size="small" variant="neutral">フォローする</Button>
   `}
 />
 
 <Source
   language='html'
   code={`
-<button class="spui-Button spui-Button--intrinsic spui-Button--large spui-Button--contained"><span class="spui-Button-icon spui-Button-icon--large"><svg /></span>Contained</button>
-<button class="spui-Button spui-Button--intrinsic spui-Button--medium spui-Button--outlined"><span class="spui-Button-icon spui-Button-icon--medium"><svg /></span>Outlined</button>
-<button class="spui-Button spui-Button--intrinsic spui-Button--small spui-Button--neutral"><span class="spui-Button-icon spui-Button-icon--small"><svg /></span>Neutral</button>
+<button class="spui-Button spui-Button--intrinsic spui-Button--large spui-Button--contained"><span class="spui-Button-icon spui-Button-icon--large"><svg /></span>ファイルを選択する</button>
+<button class="spui-Button spui-Button--intrinsic spui-Button--medium spui-Button--outlined"><span class="spui-Button-icon spui-Button-icon--medium"><svg /></span>リンクをコピーする</button>
+<button class="spui-Button spui-Button--intrinsic spui-Button--small spui-Button--neutral"><span class="spui-Button-icon spui-Button-icon--small"><svg /></span>フォローする</button>
   `}
 />
 
@@ -293,26 +293,26 @@ import { PlusBold, ArrowRightBold, OpenblankFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="Full Width With Icon">
-    <Button layout="fullWidth" icon={<PlusBold/>} size="large" variant="contained" {...actions('onClick', 'onMouseOver')}>Contained</Button>
-    <Button layout="fullWidth" icon={<ArrowRightBold/>} size="medium" variant="outlined" {...actions('onClick', 'onMouseOver')}>Outlined</Button>
-    <Button layout="fullWidth" icon={<OpenblankFill/>} size="small" variant="neutral" {...actions('onClick', 'onMouseOver')}>Neutral</Button>
+    <Button layout="fullWidth" icon={<FileAdd/>} size="large" variant="contained" {...actions('onClick', 'onMouseOver')}>ファイルを選択する</Button>
+    <Button layout="fullWidth" icon={<Link/>} size="medium" variant="outlined" {...actions('onClick', 'onMouseOver')}>リンクをコピーする</Button>
+    <Button layout="fullWidth" icon={<PlusBold/>} size="small" variant="neutral" {...actions('onClick', 'onMouseOver')}>フォローする</Button>
   </Story>
 </Preview>
 
 <Source
   code={`
-<Button layout="fullWidth" icon={<PlusBold/>} size="large" variant="contained">Contained</Button>
-<Button layout="fullWidth" icon={<ArrowRightBold/>} size="medium" variant="outlined">Outlined</Button>
-<Button layout="fullWidth" icon={<OpenblankFill/>} size="small" variant="neutral">Neutral</Button>
+<Button layout="fullWidth" icon={<FileAdd/>} size="large" variant="contained">ファイルを選択する</Button>
+<Button layout="fullWidth" icon={<Link/>} size="medium" variant="outlined">リンクをコピーする</Button>
+<Button layout="fullWidth" icon={<PlusBold/>} size="small" variant="neutral">フォローする</Button>
   `}
 />
 
 <Source
   language='html'
   code={`
-<button class="spui-Button spui-Button--fullWidth spui-Button--large spui-Button--contained"><span class="spui-Button-icon spui-Button-icon--large"><svg /></span>Contained</button>
-<button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--outlined"><span class="spui-Button-icon spui-Button-icon--medium"><svg /></span>Outlined</button>
-<button class="spui-Button spui-Button--fullWidth spui-Button--small spui-Button--neutral"><span class="spui-Button-icon spui-Button-icon--small"><svg /></span>Neutral</button>
+<button class="spui-Button spui-Button--fullWidth spui-Button--large spui-Button--contained"><span class="spui-Button-icon spui-Button-icon--large"><svg /></span>ファイルを選択する</button>
+<button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--outlined"><span class="spui-Button-icon spui-Button-icon--medium"><svg /></span>リンクをコピーする</button>
+<button class="spui-Button spui-Button--fullWidth spui-Button--small spui-Button--neutral"><span class="spui-Button-icon spui-Button-icon--small"><svg /></span>フォローする</button>
   `}
 />
 
@@ -320,20 +320,20 @@ import { PlusBold, ArrowRightBold, OpenblankFill } from '../Icon';
 
 <Preview withSource="open">
   <Story name="Lighted">
-    <Button size="large" variant="lighted" {...actions('onClick', 'onMouseOver')}>Lighted</Button>
+    <Button size="large" variant="lighted" {...actions('onClick', 'onMouseOver')}>フォロー中</Button>
   </Story>
 </Preview>
 
 <Source
   code={`
-<Button size="large" variant="lighted">Lighted</Button>
+<Button size="large" variant="lighted">フォロー中</Button>
   `}
 />
 
 <Source
   language='html'
   code={`
-<button class="spui-Button spui-Button--large spui-Button--lighted">Lighted</button>
+<button class="spui-Button spui-Button--large spui-Button--lighted">フォロー中</button>
   `}
 />
 

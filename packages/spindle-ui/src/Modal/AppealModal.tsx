@@ -161,7 +161,7 @@ const StyleOnly = ({
         </div>
         {children}
         <div className={`${BLOCK_NAME}-closeTextButton`}>
-          <SubtleButton>閉じる</SubtleButton>
+          <SubtleButton>とじる</SubtleButton>
         </div>
       </div>
     </div>

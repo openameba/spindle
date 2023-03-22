@@ -45,7 +45,7 @@ export const ActivateButton = ({
         variant={variant === 'error' ? 'danger' : 'outlined'}
         onClick={() => setMessage(_message || 'メッセージが届きました')}
       >
-        Activate
+        送信する
       </Button>
       <SnackBar.Frame
         active={!!message}
@@ -82,7 +82,7 @@ export const MultiActivateButton = ({ offset, icon, position }) => {
           setMessage2('メッセージが届きました');
         }}
       >
-        Activate
+        送信する
       </Button>
       <SnackBar.Frame
         active={!!message1}
