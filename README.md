@@ -14,4 +14,4 @@ Ameba Design System
 
 ## License
 
-Spindle is licensed under MIT License, but Icon files in [Spindle Icons](https://github.com/openameba/spindle/tree/docs/license/packages/spindle-icons/dist) and [Spindle UI](https://github.com/openameba/spindle/tree/docs/license/packages/spindle-ui/src/Icon) are licensed under Creative Commons BY-NC-ND 4.0.
+Spindle is licensed under MIT License, but Icon files in [Spindle Icons](https://github.com/openameba/spindle/tree/main/packages/spindle-icons#%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9) and [Spindle UI](https://github.com/openameba/spindle/tree/main/packages/spindle-ui#%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9) are licensed under Creative Commons BY-NC-ND 4.0.
