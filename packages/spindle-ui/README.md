@@ -129,7 +129,7 @@ yarn generate
 ```
 
 ## ライセンス
-Spindle UIはMITライセンスで公開されています。ただし、アイコンは[Spindle Icons](../spindle-icons/)に準じて、Creative Commons BY-NC-ND 4.0ライセンスで公開されています。
+Spindle UIはMITライセンスで公開されています。ただし、アイコンは[Spindle Icons](https://github.com/openameba/spindle/tree/main/packages/spindle-icons#%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9)に準じて、Creative Commons BY-NC-ND 4.0ライセンスで公開されています。
 
 ## 関連ドキュメント
 - [Design Doc](docs/design-doc.md)
