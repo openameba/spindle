@@ -29,8 +29,13 @@ export function AppealModalExample() {
 
   return (
     <>
-      <Button aria-haspopup="true" onClick={handleOpenButtonClick}>
-        Open Appeal Modal
+      <Button
+        aria-haspopup="true"
+        size="medium"
+        variant="neutral"
+        onClick={handleOpenButtonClick}
+      >
+        開く
       </Button>
       <AppealModal.Frame
         aria-describedby="dialog-description"

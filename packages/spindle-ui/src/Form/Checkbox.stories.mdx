@@ -25,13 +25,13 @@ import { Checkbox } from './Checkbox';
 
 <Preview withSource="open">
   <Story name="Checkbox">
-    <Checkbox aria-label="Japanese" name="language" value="japanese" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')} />
+    <Checkbox aria-label="Amebaブログ" name="blog" value="amebaBlog" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')} />
   </Story>
 </Preview>
 
 <Source
   code={`
-<Checkbox aria-label="Japanese" name="language" value="japanese" />
+<Checkbox aria-label="Amebaブログ" name="blog" value="amebaBlog" />
   `}
 />
 
@@ -39,7 +39,7 @@ import { Checkbox } from './Checkbox';
   language='html'
   code={`
 <label class="spui-Checkbox-label">
-  <input aria-label="Japanese" class="spui-Checkbox-input" type="checkbox" name="language" value="japanese">
+  <input aria-label="Amebaブログ" class="spui-Checkbox-input" type="checkbox" name="blog" value="amebaBlog">
   <span class="spui-Checkbox-icon"></span>
   <span class="spui-Checkbox-outline"></span>
 </label>
@@ -50,13 +50,13 @@ import { Checkbox } from './Checkbox';
 
 <Preview withSource="open">
   <Story name="Checkbox Disabled">
-    <Checkbox aria-label="Japanese" disabled name="language" value="japanese" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')} />
+    <Checkbox aria-label="Amebaブログ" disabled name="blog" value="amebaBlog" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')} />
   </Story>
 </Preview>
 
 <Source
   code={`
-<Checkbox aria-label="Japanese" disabled name="language" value="japanese" />
+<Checkbox aria-label="Amebaブログ" disabled name="blog" value="amebaBlog" />
   `}
 />
 
@@ -64,7 +64,7 @@ import { Checkbox } from './Checkbox';
   language='html'
   code={`
 <label class="spui-Checkbox-label">
-  <input aria-label="Japanese" class="spui-Checkbox-input" disabled type="checkbox" name="language" value="japanese">
+  <input aria-label="Amebaブログ" class="spui-Checkbox-input" disabled type="checkbox" name="blog" value="amebaBlog">
   <span class="spui-Checkbox-icon"></span>
   <span class="spui-Checkbox-outline"></span>
 </label>
@@ -75,13 +75,13 @@ import { Checkbox } from './Checkbox';
 
 <Preview withSource="open">
   <Story name="Checkbox With Text">
-    <Checkbox name="language" value="japanese" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')}>Japanese</Checkbox>
+    <Checkbox name="blog" value="amebaBlog" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')}>Amebaブログ</Checkbox>
   </Story>
 </Preview>
 
 <Source
   code={`
-<Checkbox name="language" value="japanese">Japanese</Checkbox>
+<Checkbox name="blog" value="amebaBlog">Amebaブログ</Checkbox>
   `}
 />
 
@@ -89,10 +89,10 @@ import { Checkbox } from './Checkbox';
   language='html'
   code={`
 <label class="spui-Checkbox-label">
-  <input class="spui-Checkbox-input" type="checkbox" name="language" value="japanese">
+  <input class="spui-Checkbox-input" type="checkbox" name="blog" value="amebaBlog">
   <span class="spui-Checkbox-icon"></span>
   <span class="spui-Checkbox-outline"></span>
-  <span class="spui-Checkbox-text">Japanese</span>
+  <span class="spui-Checkbox-text">Amebaブログ</span>
 </label>
   `}
 />

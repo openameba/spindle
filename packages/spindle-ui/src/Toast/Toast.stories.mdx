@@ -42,7 +42,7 @@ export const ActivateButton = ({
         variant={variant === "error" ? 'danger' : 'outlined'}
         onClick={() => setMessage(_message || 'メッセージが届きました')}
       >
-        Activate
+        送信する
       </Button>
       <div style={{["--Toast-z-index"]: 2 }}>
         <Toast
@@ -75,7 +75,7 @@ export const MultiActivateButton = ({ offset, icon, position }) => {
           setMessage2('今何してる？');
         }}
       >
-        Activate
+        送信する
       </Button>
       <div style={{["--Toast-z-index"]: 2 }}>
         <Toast

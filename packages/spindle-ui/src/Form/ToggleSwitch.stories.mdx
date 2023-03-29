@@ -25,13 +25,13 @@ import { ToggleSwitch } from './ToggleSwitch';
 
 <Preview withSource="open">
   <Story name="Toggle Switch">
-    <ToggleSwitch aria-label="Toggle switch" id="toggle" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')} />
+    <ToggleSwitch aria-label="自動で挿入する" id="toggle" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')} />
   </Story>
 </Preview>
 
 <Source
   code={`
-<ToggleSwitch aria-label="Toggle switch" id="toggle" />
+<ToggleSwitch aria-label="自動で挿入する" id="toggle" />
   `}
 />
 
@@ -39,7 +39,7 @@ import { ToggleSwitch } from './ToggleSwitch';
   language='html'
   code={`
 <label class="spui-ToggleSwitch">
-  <input aria-label="Toggle switch" class="spui-ToggleSwitch-input" id="toddle" type="checkbox">
+  <input aria-label="自動で挿入する" class="spui-ToggleSwitch-input" id="toggle" type="checkbox">
   <span class="spui-ToggleSwitch-visual"></span>
   <span class="spui-ToggleSwitch-outline"></span>
 </label>
@@ -50,13 +50,13 @@ import { ToggleSwitch } from './ToggleSwitch';
 
 <Preview withSource="open">
   <Story name="Toggle Switch Disabled">
-    <ToggleSwitch aria-label="Toggle switch" disabled id="toggleDisabled" />
+    <ToggleSwitch aria-label="自動で挿入する" disabled id="toggleDisabled" />
   </Story>
 </Preview>
 
 <Source
   code={`
-<ToggleSwitch aria-label="Toggle switch" disabled id="toggleDisabled" />
+<ToggleSwitch aria-label="自動で挿入する" disabled id="toggleDisabled" />
   `}
 />
 
@@ -64,7 +64,7 @@ import { ToggleSwitch } from './ToggleSwitch';
   language='html'
   code={`
 <label class="spui-ToggleSwitch">
-  <input class="spui-ToggleSwitch-input" disabled id="toddle" type="checkbox">
+  <input aria-label="自動で挿入する" class="spui-ToggleSwitch-input" disabled id="toggle" type="checkbox">
   <span class="spui-ToggleSwitch-visual"></span>
   <span class="spui-ToggleSwitch-outline"></span>
 </label>

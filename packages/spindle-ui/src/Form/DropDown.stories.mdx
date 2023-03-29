@@ -27,20 +27,20 @@ import { DropDown } from './DropDown';
 
 <Preview withSource="open">
   <Story name="DropDown">
-    <DropDown aria-label="Fruits" name="fruits" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')}>
-      <option value="apple">Apple</option>
-      <option value="orange">Orange</option>
-      <option value="melon">Melon</option>
+    <DropDown aria-label="期間を選択" name="term" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')}>
+      <option value="today">今日</option>
+      <option value="seven_days">7日間</option>
+      <option value="thirty_days">30日間</option>
     </DropDown>
   </Story>
 </Preview>
 
 <Source
   code={`
-<DropDown aria-label="Fruits" name="fruits">
-  <option value="apple">Apple</option>
-  <option value="orange">Orange</option>
-  <option value="melon">Melon</option>
+<DropDown aria-label="期間を選択" name="term">
+  <option value="today">今日</option>
+  <option value="seven_days">7日間</option>
+  <option value="thirty_days">30日間</option>
 </DropDown>
   `}
 />
@@ -49,12 +49,12 @@ import { DropDown } from './DropDown';
   language='html'
   code={`
 <label class="spui-DropDown-label is-active">
-  <span class="spui-DropDown-visual">Orange</span>
+  <span class="spui-DropDown-visual">7日間</span>
   <span class="spui-DropDown-icon"><svg>...</svg></span>
-  <select aria-label="Fruits" class="spui-DropDown-select" name="fruits">
-    <option value="apple">Apple</option>
-    <option value="orange">Orange</option>
-    <option value="melon">Melon</option>
+  <select aria-label="期間を選択" class="spui-DropDown-select" name="term">
+    <option value="today">今日</option>
+    <option value="seven_days">7日間</option>
+    <option value="thirty_days">30日間</option>
   </select>
   <span class="spui-DropDown-outline"></span>
 </label>
@@ -67,20 +67,20 @@ import { DropDown } from './DropDown';
 
 <Preview withSource="open">
   <Story name="DropDown With Selected And Disabled">
-    <DropDown aria-label="Fruits" name="fruits" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')}>
-      <option value="apple">Apple</option>
-      <option value="orange" selected disabled>Orange</option>
-      <option value="melon">Melon</option>
+    <DropDown aria-label="期間を選択" name="term" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')}>
+      <option value="today">今日</option>
+      <option value="seven_days" selected disabled>7日間</option>
+      <option value="thirty_days">30日間</option>
     </DropDown>
   </Story>
 </Preview>
 
 <Source
   code={`
-<DropDown aria-label="Fruits" name="fruits">
-  <option value="apple">Apple</option>
-  <option value="orange" selected disabled>Orange</option>
-  <option value="melon">Melon</option>
+<DropDown aria-label="期間を選択" name="term">
+  <option value="today">今日</option>
+  <option value="seven_days" selected disabled>7日間</option>
+  <option value="thirty_days">30日間</option>
 </DropDown>
   `}
 />
@@ -89,12 +89,12 @@ import { DropDown } from './DropDown';
   language='html'
   code={`
 <label class="spui-DropDown-label">
-  <span class="spui-DropDown-visual">Orange</span>
+  <span class="spui-DropDown-visual">7日間</span>
   <span class="spui-DropDown-icon"><svg>...</svg></span>
-  <select aria-label="Fruits" class="spui-DropDown-select" name="fruits">
-    <option value="apple">Apple</option>
-    <option value="orange" selected disabled>Orange</option>
-    <option value="melon">Melon</option>
+  <select aria-label="期間を選択" class="spui-DropDown-select" name="term">
+    <option value="today">今日</option>
+    <option value="seven_days" selected disabled>7日間</option>
+    <option value="thirty_days">30日間</option>
   </select>
   <span class="spui-DropDown-outline"></span>
 </label>
@@ -105,20 +105,20 @@ import { DropDown } from './DropDown';
 
 <Preview withSource="open">
   <Story name="DropDown With Error">
-    <DropDown aria-label="Fruits" hasError name="fruitsWithError" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')}>
-      <option value="apple">Apple</option>
-      <option value="orange">Orange</option>
-      <option value="melon">Melon</option>
+    <DropDown aria-label="期間を選択" hasError name="termWithError" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')}>
+      <option value="today">今日</option>
+      <option value="seven_days">7日間</option>
+      <option value="thirty_days">30日間</option>
     </DropDown>
   </Story>
 </Preview>
 
 <Source
   code={`
-<DropDown aria-label="Fruits" hasError name="fruits">
-  <option value="apple">Apple</option>
-  <option value="orange">Orange</option>
-  <option value="melon">Melon</option>
+<DropDown aria-label="期間を選択" hasError name="term">
+  <option value="today">今日</option>
+  <option value="seven_days">7日間</option>
+  <option value="thirty_days">30日間</option>
 </DropDown>
   `}
 />
@@ -127,12 +127,12 @@ import { DropDown } from './DropDown';
   language='html'
   code={`
 <label class="spui-DropDown-label is-active is-error">
-  <span class="spui-DropDown-visual">Orange</span>
+  <span class="spui-DropDown-visual">7日間</span>
   <span class="spui-DropDown-icon"><svg>...</svg></span>
-  <select aria-label="Fruits" class="spui-DropDown-select" name="fruits">
-    <option value="apple">Apple</option>
-    <option value="orange">Orange</option>
-    <option value="melon">Melon</option>
+  <select aria-label="期間を選択" class="spui-DropDown-select" name="term">
+    <option value="today">今日</option>
+    <option value="seven_days">7日間</option>
+    <option value="thirty_days">30日間</option>
   </select>
   <span class="spui-DropDown-outline"></span>
 </label>
@@ -145,10 +145,10 @@ import { DropDown } from './DropDown';
 
 <Source
   code={`
-<DropDown aria-label="Fruits" id="fruits-selection" name="fruits" placeholder="Fruits">
-  <option value="apple">Apple</option>
-  <option value="orange">Orange</option>
-  <option value="melon">Melon</option>
+<DropDown aria-label="期間を選択" id="term-selection" name="term" placeholder="期間を選択">
+  <option value="today">今日</option>
+  <option value="seven_days">7日間</option>
+  <option value="thirty_days">30日間</option>
 </DropDown>
   `}
 />
@@ -156,11 +156,11 @@ import { DropDown } from './DropDown';
 <Source
   code={`
 <>
-  <InputLabel id="fruits-selection">Fruits</InputLabel>
-  <DropDown id="fruits-selection" name="fruits" placeholder="Fruits">
-    <option value="apple">Apple</option>
-    <option value="orange">Orange</option>
-    <option value="melon">Melon</option>
+  <InputLabel id="term-selection">期間を選択</InputLabel>
+  <DropDown id="term-selection" name="term" placeholder="期間を選択">
+    <option value="today">今日</option>
+    <option value="seven_days">7日間</option>
+    <option value="thirty_days">30日間</option>
   </DropDown>
 </>
   `}

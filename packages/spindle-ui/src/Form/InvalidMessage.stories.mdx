@@ -24,13 +24,13 @@ import { InvalidMessage } from './InvalidMessage';
 
 <Preview withSource="open">
   <Story name="Invalid Message">
-    <InvalidMessage visible>Please input your mail address</InvalidMessage>
+    <InvalidMessage visible>ファイル形式が正しくありません</InvalidMessage>
   </Story>
 </Preview>
 
 <Source
   code={`
-<InvalidMessage visible>Please input your mail address</InvalidMessage>
+<InvalidMessage visible>ファイル形式が正しくありません</InvalidMessage>
   `}
 />
 
@@ -39,7 +39,7 @@ import { InvalidMessage } from './InvalidMessage';
   code={`
 <p class="spui-InvalidMessage">
   <span class="spui-InvalidMessage-icon"><svg>...</svg></span>
-  Please input your mail address
+  <span class="spui-InvalidMessage-body">ファイル形式が正しくありません</span>
 </p>
   `}
 />
@@ -50,6 +50,6 @@ import { InvalidMessage } from './InvalidMessage';
 
 <Source
   code={`
-<InvalidMessage role="alert" visible>Please input your mail address</InvalidMessage>
+<InvalidMessage role="alert" visible>ファイル形式が正しくありません</InvalidMessage>
   `}
 />
