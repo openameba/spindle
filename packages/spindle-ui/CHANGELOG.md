@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.58.6](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.58.5...@openameba/spindle-ui@0.58.6) (2023-03-31)
+
+### Bug Fixes
+
+- **spindle-ui:** import components related to InlineNotification ([39f8896](https://github.com/openameba/spindle/commit/39f88961f1c82f499ebe7a62b39edde9836dbfd2))
+
 ## [0.58.5](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.58.4...@openameba/spindle-ui@0.58.5) (2023-03-09)
 
 ### Bug Fixes
