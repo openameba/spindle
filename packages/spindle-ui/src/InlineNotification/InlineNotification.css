@@ -2,6 +2,13 @@
  * InlineNotification
  * NOTE: Styles can be overridden with "--InlineNotification-*" variables
 */
+
+@import '../Button/Button.css';
+@import '../IconButton/IconButton.css';
+@import '../LinkButton/LinkButton.css';
+@import '../TextLink/TextLink.css';
+@import '../TextButton/TextButton.css';
+
 :root {
   --InlineNotification--neutral-backgroundColor: var(--white-20-alpha);
   --InlineNotification--neutral-color: var(--color-text-high-emphasis-inverse);
