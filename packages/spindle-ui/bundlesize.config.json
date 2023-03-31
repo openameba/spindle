@@ -37,7 +37,7 @@
       "maxSize": "2.8 kB"
     },
     {
-      "path": "./dist/!(Modal|SnackBar)/!(index).css",
+      "path": "./dist/!(InlineNotification|Modal|SnackBar)/!(index).css",
       "maxSize": "1.5 kB"
     },
     {
@@ -47,6 +47,10 @@
     {
       "path": "./dist/SnackBar/!(index).css",
       "maxSize": "2.1 kB"
+    },
+    {
+      "path": "./dist/InlineNotification/!(index).css",
+      "maxSize": "2.8 kB"
     }
   ]
 }
