@@ -94,7 +94,7 @@
     "stylelint-order": "^4.1.0",
     "stylelint-prettier": "^1.1.2",
     "stylelint-selector-bem-pattern": "^2.1.0",
-    "ts-jest": "29.0.5",
+    "ts-jest": "29.1.0",
     "webpack": "^5.73.0"
   }
 }
