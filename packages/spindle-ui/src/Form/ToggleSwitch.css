@@ -53,7 +53,8 @@
   left: 4px;
   position: absolute;
   top: 4px;
-  transition: transform ease-out 0.3s;
+  transition: transform var(--animation-move-easing)
+    var(--animation-move-duration);
   width: 24px;
 }
 
