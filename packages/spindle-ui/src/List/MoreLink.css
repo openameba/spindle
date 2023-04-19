@@ -26,7 +26,8 @@
   padding: 16px;
   -webkit-tap-highlight-color: var(--MoreLink-tapHighlightColor);
   text-decoration: none;
-  transition: background-color 0.3s;
+  transition: background-color var(--animation-content-change-duration)
+    var(--animation-content-change-easing);
 }
 
 .spui-MoreLink:focus {

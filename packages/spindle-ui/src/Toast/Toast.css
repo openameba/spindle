@@ -60,7 +60,9 @@
 }
 
 .spui-Toast--slide {
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform var(--animation-in-view-duration)
+      var(--animation-in-view-easing),
+    opacity var(--animation-in-view-duration) var(--animation-in-view-easing);
 }
 
 .spui-Toast--hidden {
@@ -69,7 +71,9 @@
 
 .spui-Toast-slide--in {
   opacity: 1;
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition: transform var(--animation-duration-slow)
+      var(--animation-in-view-easing),
+    opacity var(--animation-duration-slow) var(--animation-in-view-easing);
 }
 
 .spui-Toast-slide--in.spui-Toast--top {
