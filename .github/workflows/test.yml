@@ -27,4 +27,5 @@ jobs:
       - run: npx lerna bootstrap -- --frozen-lockfile
       - run: |
           yarn lerna run --scope @openameba/spindle-hooks build
+          yarn lerna run --scope @openameba/spindle-tokens build
           yarn test
