@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   /**
    * TODO: create .browserslistrc
@@ -6,7 +8,10 @@ module.exports = {
    */
   plugins: [
     require('autoprefixer'),
-    require('postcss-import'),
+    require('postcss-import')({
+      root: path.resolve(__dirname, '../../'),
+      path: ['node_modules', 'packages/*/node_modules'],
+    }),
     require('cssnano'),
   ],
 };

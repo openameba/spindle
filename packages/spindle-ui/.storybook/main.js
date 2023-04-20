@@ -6,6 +6,7 @@ module.exports = {
     '@storybook/addon-backgrounds',
     '@storybook/addon-docs',
     '@storybook/addon-viewport',
+    '@storybook/addon-postcss',
   ],
   staticDirs: ['../assets'],
   core: {
