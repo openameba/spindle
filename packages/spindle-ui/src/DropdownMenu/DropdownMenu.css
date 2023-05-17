@@ -13,7 +13,8 @@
 }
 
 .spui-DropdownMenu-menu {
-  animation: 0.3s spui-DropdownMenu-fade-in;
+  animation: spui-DropdownMenu-fade-in var(--animation-appear-in-duration)
+    var(--animation-appear-in-easing);
   background-color: var(--color-surface-primary);
   border-radius: 12px;
   box-shadow: 0px 11px 28px rgba(8, 18, 26, 0.12);
@@ -28,7 +29,8 @@
 
 /* stylelint-disable-next-line plugin/selector-bem-pattern */
 .spui-DropdownMenu-menu.is-fade-out {
-  animation: 0.3s spui-DropdownMenu-fade-out;
+  animation: spui-DropdownMenu-fade-out var(--animation-disappear-duration)
+    var(--animation-disappear-easing);
   opacity: 0;
 }
 
@@ -85,7 +87,8 @@
   display: flex;
   font-size: 1em;
   position: relative;
-  transition: background-color 0.3s;
+  transition: background-color var(--animation-content-change-duration)
+    var(--animation-content-change-easing);
   width: 100%;
 }
 

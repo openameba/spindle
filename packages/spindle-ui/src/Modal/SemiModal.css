@@ -1,4 +1,5 @@
 @import '../IconButton/IconButton.css';
+
 /*
  * SemiModal
  * NOTE: Styles can be overridden with "--SemiModal-*" variables
@@ -31,24 +32,41 @@
 
 /* stylelint-disable plugin/selector-bem-pattern */
 /* NOTE: set no animations to the dialog-polyfill browsers for stability */
-.spui-SemiModal[data-type='popup'][open]:not(.spui-SemiModal--closing),
-.spui-SemiModal[data-type='popup'][open]:not(.spui-SemiModal--closing).spui-SemiModal::backdrop,
-.spui-SemiModal[data-type='sheet'][open]:not(.spui-SemiModal--closing).spui-SemiModal::backdrop {
-  animation: 350ms cubic-bezier(0, 0, 0, 1) spui-SemiModal-fade-in;
+/* CSS custom property seems not to work with ::backdrop */
+.spui-SemiModal[data-type='popup'][open]:not(.spui-SemiModal--closing).spui-SemiModal::backdrop {
+  animation: spui-SemiModal-fade-in 0.35s cubic-bezier(0.5, 0, 0.5, 1);
 }
 
-.spui-SemiModal--closing.spui-SemiModal[data-type='popup'],
-.spui-SemiModal--closing[data-type='popup'].spui-SemiModal::backdrop,
-.spui-SemiModal--closing[data-type='sheet'].spui-SemiModal::backdrop {
-  animation: 350ms cubic-bezier(0, 0, 0, 1) spui-SemiModal-fade-out;
+.spui-SemiModal[data-type='popup'][open]:not(.spui-SemiModal--closing) {
+  animation: spui-SemiModal-fade-in var(--animation-appear-in-duration)
+    var(--animation-appear-in-easing);
+}
+
+.spui-SemiModal--closing[data-type='popup'].spui-SemiModal::backdrop {
+  animation: spui-SemiModal-fade-out 0.15s cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+.spui-SemiModal--closing.spui-SemiModal[data-type='popup'] {
+  animation: spui-SemiModal-fade-out var(--animation-disappear-duration)
+    var(--animation-disappear-easing);
+}
+
+.spui-SemiModal[data-type='sheet'][open]:not(.spui-SemiModal--closing).spui-SemiModal::backdrop {
+  animation: spui-SemiModal-fade-in 350ms cubic-bezier(0, 0, 0, 1) both;
 }
 
 .spui-SemiModal[data-type='sheet'][open]:not(.spui-SemiModal--closing, button) {
-  animation: both 350ms cubic-bezier(0, 0, 0, 1) spui-SemiModal-slide-in;
+  animation: spui-SemiModal-slide-in var(--animation-in-view-duration)
+    var(--animation-in-view-easing) both;
+}
+
+.spui-SemiModal--closing[data-type='sheet'].spui-SemiModal::backdrop {
+  animation: spui-SemiModal-fade-out 350ms cubic-bezier(0, 0, 0, 1) both;
 }
 
 .spui-SemiModal--closing.spui-SemiModal[data-type='sheet'] {
-  animation: both 350ms cubic-bezier(0, 0, 0, 1) spui-SemiModal-slide-out;
+  animation: spui-SemiModal-slide-out var(--animation-out-of-view-duration)
+    var(--animation-out-of-view-easing) both;
 }
 
 @media (prefers-reduced-motion: reduce) {

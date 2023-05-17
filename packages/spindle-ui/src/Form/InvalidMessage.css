@@ -9,7 +9,8 @@
   line-height: 1.4;
   margin: 8px 0 0;
   min-height: 1.1em;
-  transition: height 0.3s;
+  transition: height var(--animation-appear-in-duration)
+    var(--animation-appear-in-easing);
 }
 
 .spui-InvalidMessage[hidden] {

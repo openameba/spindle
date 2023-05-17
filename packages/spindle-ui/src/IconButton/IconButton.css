@@ -47,7 +47,8 @@
   padding: 0;
   -webkit-tap-highlight-color: var(--IconButton-tapHighlightColor);
   text-align: center;
-  transition: background-color 0.3s;
+  transition: background-color var(--animation-content-change-duration)
+    var(--animation-content-change-easing);
 }
 
 .spui-IconButton:disabled {

@@ -38,9 +38,9 @@ jobs:
           node-version: 16
       - run: yarn install --frozen-lockfile
       - run: npx lerna bootstrap -- --frozen-lockfile
-      - run: |
-          yarn lerna run --scope @openameba/spindle-hooks build
-          yarn lerna run --scope @openameba/spindle-ui storybook:build
+      - run: yarn lerna run --scope @openameba/spindle-hooks build
+      - run: yarn lerna run --scope @openameba/spindle-tokens build
+      - run: yarn lerna run --scope @openameba/spindle-ui storybook:build
       - name: deploy to preview channel
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:

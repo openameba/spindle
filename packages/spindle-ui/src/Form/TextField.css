@@ -11,7 +11,8 @@
   margin: 0;
   outline: none;
   padding: 0 16px;
-  transition: box-shadow 0.3s;
+  transition: box-shadow var(--animation-content-change-duration)
+    var(--animation-content-change-easing);
   width: 100%;
 }
 
