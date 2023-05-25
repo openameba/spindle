@@ -128,7 +128,7 @@
 }
 
 /* === Information Emphasized === */
-.spui-InlineNotification--information ~ .spui-InlineNotification--emphasized {
+.spui-InlineNotification--information.spui-InlineNotification--emphasized {
   background-color: var(--color-surface-accent-neutral-high-emphasis);
 }
 .spui-InlineNotification--information.spui-InlineNotification--emphasized
@@ -209,7 +209,7 @@
 }
 
 /* === Confirmation Emphasized === */
-.spui-InlineNotification--confirmation ~ .spui-InlineNotification--emphasized {
+.spui-InlineNotification--confirmation.spui-InlineNotification--emphasized {
   background-color: var(--color-surface-accent-primary);
 }
 .spui-InlineNotification--confirmation.spui-InlineNotification--emphasized
@@ -263,7 +263,7 @@
 }
 
 /* === Error Emphasized === */
-.spui-InlineNotification--error ~ .spui-InlineNotification--emphasized {
+.spui-InlineNotification--error.spui-InlineNotification--emphasized {
   background-color: var(--color-surface-caution);
 }
 .spui-InlineNotification--error.spui-InlineNotification--emphasized
