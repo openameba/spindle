@@ -1,4 +1,4 @@
-# Spindle UI (In development)
+# Spindle UI (In development!)
 
 Spindle (Ameba Design System) UI Components
 

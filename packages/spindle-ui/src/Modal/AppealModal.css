@@ -22,14 +22,23 @@
 
 /* stylelint-disable plugin/selector-bem-pattern */
 /* NOTE: set no animations to the dialog-polyfill browsers for stability */
-.spui-AppealModal[open]:not(.spui-AppealModal--closing),
+/* CSS custom property seems not to work with ::backdrop */
 .spui-AppealModal[open]:not(.spui-AppealModal--closing).spui-AppealModal::backdrop {
-  animation: 0.5s cubic-bezier(0, 0, 0, 1) spui-AppealModal-fade-in;
+  animation: spui-AppealModal-fade-in 0.35s cubic-bezier(0.5, 0, 0.5, 1);
 }
 
-.spui-AppealModal--closing,
+.spui-AppealModal[open]:not(.spui-AppealModal--closing) {
+  animation: spui-AppealModal-fade-in var(--animation-appear-in-duration)
+    var(--animation-appear-in-easing);
+}
+
 .spui-AppealModal--closing.spui-AppealModal::backdrop {
-  animation: 0.3s cubic-bezier(0, 0, 0, 1) spui-AppealModal-fade-out;
+  animation: spui-AppealModal-fade-out 0.15s cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+.spui-AppealModal--closing {
+  animation: spui-AppealModal-fade-out var(--animation-disappear-duration)
+    var(--animation-disappear-easing);
 }
 
 @media (prefers-reduced-motion: reduce) {

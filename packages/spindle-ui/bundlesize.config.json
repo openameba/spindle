@@ -42,7 +42,7 @@
     },
     {
       "path": "./dist/Modal/!(index).css",
-      "maxSize": "2.0 kB"
+      "maxSize": "2.1 kB"
     },
     {
       "path": "./dist/SnackBar/!(index).css",
