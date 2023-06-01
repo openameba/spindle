@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.58.7](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.58.6...@openameba/spindle-ui@0.58.7) (2023-06-01)
+
+### Bug Fixes
+
+- **spindle-ui:** inline notification emphasis story pattern ([4e5de59](https://github.com/openameba/spindle/commit/4e5de593ed103ea938e86e6e9c36cce15bfef363))
+- **spindle-ui:** inline notification emphasized style ([4c26959](https://github.com/openameba/spindle/commit/4c26959df9deedac0e996962443f656f7f3617f8))
+
 ## [0.58.6](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.58.5...@openameba/spindle-ui@0.58.6) (2023-03-31)
 
 ### Bug Fixes
