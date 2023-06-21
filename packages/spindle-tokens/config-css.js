@@ -38,6 +38,10 @@ module.exports = {
         },
         {
           destination: 'dist/css/spindle-tokens.css',
+          format: 'cssAnimation',
+        },
+        {
+          destination: 'dist/css/spindle-tokens.all.css',
           format: 'css/variables',
         },
       ],
