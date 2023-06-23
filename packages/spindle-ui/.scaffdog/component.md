@@ -38,32 +38,32 @@ export const {{ inputs.name | pascal }}: React.FC<Props> = ({}) => {
 # `{{ inputs.name | pascal }}/{{ inputs.name | pascal }}.stories.mdx`
 
 ```
-import { Meta, Story, Source } from ‘@storybook/addon-docs/blocks’;
-import { {{ inputs.name | pascal }} } from ‘./{{ inputs.name | pascal }}‘;
+import { Meta, Story, Source } from '@storybook/addon-docs/blocks';
+import { {{ inputs.name | pascal }} } from './{{ inputs.name | pascal }}';
 
 # {{ inputs.name | pascal }}
 
-<Meta title=“{{ inputs.name | pascal }}” component={ {{ inputs.name | pascal }} } />
+<Meta title="{{ inputs.name | pascal }}" component={ {{ inputs.name | pascal }} } />
 
 <Source
-  language=‘javascript’
-  code={`import { {{ inputs.name | pascal }} } from ‘@openameba/spindle-ui’`}
+  language='javascript'
+  code={`import { {{ inputs.name | pascal }} } from '@openameba/spindle-ui'`}
 />
 
 <Source
-  language=‘css’
-  code={`@import ‘./node_modules/@openameba/spindle-ui/{{ inputs.name | pascal }}/{{ inputs.name | pascal }}.css’`}
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/{{ inputs.name | pascal }}/{{ inputs.name | pascal }}.css'`}
 />
 
 <Source
-  language=‘html’
-  code={`<link rel=“stylesheet” href=“https://unpkg.com/@openameba/spindle-ui/{{ inputs.name | pascal }}/{{ inputs.name | pascal }}.css”>`}
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/{{ inputs.name | pascal }}/{{ inputs.name | pascal }}.css">`}
 />
 
 ## Normal
 
-<Preview withSource=“open”>
-  <Story name=“Normal”>
+<Preview withSource="open">
+  <Story name="Normal">
     <{{ inputs.name | pascal }} />
   </Story>
 </Preview>
@@ -73,7 +73,7 @@ import { {{ inputs.name | pascal }} } from ‘./{{ inputs.name | pascal }}‘;
 />
 
 <Source
-  language=‘html’
+  language='html'
   code={``}
 />
 ```
