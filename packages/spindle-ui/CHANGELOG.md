@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.59.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.58.7...@openameba/spindle-ui@0.59.0) (2023-06-28)
+
+### Features
+
+- **spindle-ui:** create SegmentedControl component ([bfc63dc](https://github.com/openameba/spindle/commit/bfc63dc93f749808a7952918743b10ce1dcbaa5a))
+- **spindle-ui:** pagination style with container queries ([a44df52](https://github.com/openameba/spindle/commit/a44df52d53977a20de82d02d2b1eb6b9a096b69c))
+
 ## [0.58.7](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.58.6...@openameba/spindle-ui@0.58.7) (2023-06-01)
 
 ### Bug Fixes
