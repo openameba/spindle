@@ -63,7 +63,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@container spui-pagination (max-width: 768px) {
   .spui-PaginationItem-label {
     display: none;
   }
