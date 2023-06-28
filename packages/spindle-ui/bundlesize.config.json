@@ -9,7 +9,7 @@
       "maxSize": "1.1 kB"
     },
     {
-      "path": "./dist/!(Icon|Toast|DropdownMenu|Pagination|Modal|SnackBar|StackNotificationManager)/*.mjs",
+      "path": "./dist/!(Icon|Toast|DropdownMenu|Pagination|Modal|SnackBar|StackNotificationManager|SegmentedControl)/*.mjs",
       "maxSize": "1.1 kB"
     },
     {
@@ -35,6 +35,10 @@
     {
       "path": "./dist/StackNotificationManager/*.mjs",
       "maxSize": "2.8 kB"
+    },
+    {
+      "path": "./dist/SegmentedControl/*.mjs",
+      "maxSize": "1.3 kB"
     },
     {
       "path": "./dist/!(InlineNotification|Modal|SnackBar)/!(index).css",
