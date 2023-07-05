@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.11.0](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@0.10.1...@openameba/spindle-tokens@0.11.0) (2023-07-05)
+
+### Features
+
+- **spindle-tokens:** include minimum tokens in token.css ([e29c6c0](https://github.com/openameba/spindle/commit/e29c6c06967a6bf3c792398641e9171065717001))
+
 ## [0.10.1](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@0.10.0...@openameba/spindle-tokens@0.10.1) (2023-06-01)
 
 **Note:** Version bump only for package @openameba/spindle-tokens

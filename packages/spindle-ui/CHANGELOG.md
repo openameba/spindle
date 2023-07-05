@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.60.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.59.0...@openameba/spindle-ui@0.60.0) (2023-07-05)
+
+**Note:** Version bump only for package @openameba/spindle-ui
+
 # [0.59.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.58.7...@openameba/spindle-ui@0.59.0) (2023-06-28)
 
 ### Features
