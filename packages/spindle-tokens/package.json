@@ -7,10 +7,11 @@
   "publishConfig": {
     "access": "public"
   },
-  "style": "dist/css/spindle-tokens.css",
+  "style": "spindle-tokens.css",
   "files": [
     "dist/**",
-    "spindle-tokens.png"
+    "spindle-tokens.png",
+    "spindle-tokens.css"
   ],
   "repository": {
     "type": "git",
@@ -24,7 +25,8 @@
     "build:css": "style-dictionary build --config ./config-css.js",
     "preexport": "tsc",
     "export": "./node_modules/.bin/figma-export use-config",
-    "prepublishOnly": "yarn build"
+    "cp": "npx cpx dist/css/spindle-tokens.css ./",
+    "prepublishOnly": "yarn build & yarn cp"
   },
   "bugs": {
     "url": "https://github.com/openameba/spindle/issues"
