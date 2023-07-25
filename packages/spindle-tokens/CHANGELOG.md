@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.1](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@0.12.0...@openameba/spindle-tokens@0.12.1) (2023-07-25)
+
+### Bug Fixes
+
+- **spindle-tokens:** correct invalid css property value ([111e4bc](https://github.com/openameba/spindle/commit/111e4bc6f6738c57a5956e46c64cd9fc6bb7b931))
+
 # [0.12.0](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@0.11.0...@openameba/spindle-tokens@0.12.0) (2023-07-21)
 
 ### Features
