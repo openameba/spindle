@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@0.11.0...@openameba/spindle-tokens@0.12.0) (2023-07-21)
+
+### Features
+
+- **spindle-tokens:** publish css at package root ([1b6a781](https://github.com/openameba/spindle/commit/1b6a7817f41f43c8a3d1377664f6349c3e414324))
+
 # [0.11.0](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@0.10.1...@openameba/spindle-tokens@0.11.0) (2023-07-05)
 
 ### Features
