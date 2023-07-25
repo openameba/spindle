@@ -19,10 +19,12 @@
   },
   "scripts": {
     "test": "tsc --noEmit && yarn jest",
+    "stylelint": "stylelint dist/**/*.css",
     "jest": "jest",
     "build": "run-p build:*",
     "build:tokens": "style-dictionary build",
     "build:css": "style-dictionary build --config ./config-css.js",
+    "postbuild:css": "yarn stylelint",
     "preexport": "tsc",
     "export": "./node_modules/.bin/figma-export use-config",
     "cp": "npx cpx dist/css/spindle-tokens.css ./",
@@ -41,6 +43,8 @@
     "lodash.setwith": "^4.3.2",
     "make-dir": "^4.0.0",
     "style-dictionary": "^3.0.1",
+    "stylelint": "^15.10.2",
+    "stylelint-config-standard": "^34.0.0",
     "ts-jest": "29.1.1"
   }
 }
