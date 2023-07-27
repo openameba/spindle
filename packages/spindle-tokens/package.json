@@ -28,7 +28,7 @@
     "preexport": "tsc",
     "export": "./node_modules/.bin/figma-export use-config",
     "cp": "npx cpx dist/css/spindle-tokens.css ./",
-    "prepublishOnly": "yarn build & yarn cp"
+    "prepublishOnly": "yarn build && yarn cp"
   },
   "bugs": {
     "url": "https://github.com/openameba/spindle/issues"
