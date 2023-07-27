@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.2](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@0.12.1...@openameba/spindle-tokens@0.12.2) (2023-07-27)
+
+### Bug Fixes
+
+- **spindle-tokens:** chain commands ([3a7f707](https://github.com/openameba/spindle/commit/3a7f7071205cbf2205cd4aa5a68768949f771265))
+
 ## [0.12.1](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@0.12.0...@openameba/spindle-tokens@0.12.1) (2023-07-25)
 
 ### Bug Fixes
