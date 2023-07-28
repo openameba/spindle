@@ -134,7 +134,7 @@ html.spui-SemiModal--open {
   height: 48px;
   width: 48px;
   /* stylelint-disable plugin/selector-bem-pattern */
-  --IconButton--neutral-backgroundColor: none;
+  --IconButton--neutral-backgroundColor: transparent;
   --IconButton--neutral-onHover-backgroundColor: var(--color-surface-tertiary);
 }
 
@@ -252,7 +252,7 @@ html.spui-SemiModal--open {
   .spui-SemiModal-closeIconButton {
     height: 24px;
     width: 24px;
-    --IconButton--neutral-onHover-backgroundColor: none;
+    --IconButton--neutral-onHover-backgroundColor: transparent;
   }
 
   .spui-SemiModal-frame {
