@@ -1,7 +1,7 @@
 import { Description, Meta, Story, Source } from '@storybook/addon-docs/blocks';
 import { actions } from '@storybook/addon-actions';
 import { LinkButton } from './LinkButton';
-import { PlusBold, ArrowRightBold, OpenblankFill, Link, GraphBar, Present, PencilAdd } from '../Icon';
+import { PlusBold, ArrowRightBold, OpenblankFill, Link, GraphBar, Present, PencilAdd, ChevronDownBold } from '../Icon';
 
 # LinkButton
 
@@ -227,6 +227,9 @@ import { PlusBold, ArrowRightBold, OpenblankFill, Link, GraphBar, Present, Penci
     <LinkButton href="#" icon={<Present/>} size="large" variant="contained" {...actions('onMouseOver')}>応援を送る</LinkButton>
     <LinkButton href="#" icon={<PencilAdd/>} size="medium" variant="outlined" {...actions('onMouseOver')}>ブログを書く</LinkButton>
     <LinkButton href="#" icon={<GraphBar/>} size="small" variant="neutral" {...actions('onMouseOver')}>詳細を見る</LinkButton>
+    <LinkButton href="#" icon={<ChevronDownBold/>} iconPosition="end" size="large" variant="contained" {...actions('onMouseOver')}>さらに表示</LinkButton>
+    <LinkButton href="#" icon={<ChevronDownBold/>} iconPosition="end" size="medium" variant="outlined" {...actions('onMouseOver')}>もっと見る</LinkButton>
+    <LinkButton href="#" icon={<ChevronDownBold/>} iconPosition="end" size="small" variant="neutral" {...actions('onMouseOver')}>さらに表示</LinkButton>
   </Story>
 </Preview>
 
@@ -235,15 +238,21 @@ import { PlusBold, ArrowRightBold, OpenblankFill, Link, GraphBar, Present, Penci
 <LinkButton href="#" icon={<Present/>} size="large" variant="contained">応援を送る</LinkButton>
 <LinkButton href="#" icon={<PencilAdd/>} size="medium" variant="outlined">ブログを書く</LinkButton>
 <LinkButton href="#" icon={<GraphBar/>} size="small" variant="neutral">詳細を見る</LinkButton>
+<LinkButton href="#" icon={<ChevronDownBold/>} iconPosition="end" size="large" variant="contained">さらに表示</LinkButton>
+<LinkButton href="#" icon={<ChevronDownBold/>} iconPosition="end" size="medium" variant="outlined">もっと見る</LinkButton>
+<LinkButton href="#" icon={<ChevronDownBold/>} iconPosition="end" size="small" variant="neutral">さらに表示</LinkButton>
   `}
 />
 
 <Source
   language='html'
   code={`
-<a class="spui-LinkButton spui-LinkButton--intrinsic spui-LinkButton--large spui-LinkButton--contained" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--large"><svg /></span>応援を送る</a>
-<a class="spui-LinkButton spui-LinkButton--intrinsic spui-LinkButton--medium spui-LinkButton--outlined" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--medium"><svg /></span>ブログを書く</a>
-<a class="spui-LinkButton spui-LinkButton--intrinsic spui-LinkButton--small spui-LinkButton--neutral" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--small"><svg /></span>詳細を見る</a>
+<a class="spui-LinkButton spui-LinkButton--intrinsic spui-LinkButton--large spui-LinkButton--contained spui-LinkButton--iconstart" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--large"><svg /></span>応援を送る</a>
+<a class="spui-LinkButton spui-LinkButton--intrinsic spui-LinkButton--medium spui-LinkButton--outlined spui-LinkButton--iconstart" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--medium"><svg /></span>ブログを書く</a>
+<a class="spui-LinkButton spui-LinkButton--intrinsic spui-LinkButton--small spui-LinkButton--neutral spui-LinkButton--iconstart" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--small"><svg /></span>詳細を見る</a>
+<a class="spui-LinkButton spui-LinkButton--intrinsic spui-LinkButton--large spui-LinkButton--contained spui-LinkButton--iconend" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--large"><svg /></span>さらに表示</a>
+<a class="spui-LinkButton spui-LinkButton--intrinsic spui-LinkButton--medium spui-LinkButton--outlined spui-LinkButton--iconend" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--medium"><svg /></span>もっと見る</a>
+<a class="spui-LinkButton spui-LinkButton--intrinsic spui-LinkButton--small spui-LinkButton--neutral spui-LinkButton--iconend" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--small"><svg /></span>さらに表示</a>
   `}
 />
 
@@ -254,6 +263,9 @@ import { PlusBold, ArrowRightBold, OpenblankFill, Link, GraphBar, Present, Penci
     <LinkButton href="#" layout="fullWidth" icon={<Present/>} size="large" variant="contained" {...actions('onMouseOver')}>応援を送る</LinkButton>
     <LinkButton href="#" layout="fullWidth" icon={<PencilAdd/>} size="medium" variant="outlined" {...actions('onMouseOver')}>ブログを書く</LinkButton>
     <LinkButton href="#" layout="fullWidth" icon={<GraphBar/>} size="small" variant="neutral" {...actions('onMouseOver')}>詳細を見る</LinkButton>
+    <LinkButton href="#" layout="fullWidth" icon={<ChevronDownBold/>} iconPosition="end" size="large" variant="contained" {...actions('onMouseOver')}>さらに表示</LinkButton>
+    <LinkButton href="#" layout="fullWidth" icon={<ChevronDownBold/>} iconPosition="end" size="medium" variant="outlined" {...actions('onMouseOver')}>もっと見る</LinkButton>
+    <LinkButton href="#" layout="fullWidth" icon={<ChevronDownBold/>} iconPosition="end" size="small" variant="neutral" {...actions('onMouseOver')}>さらに表示</LinkButton>
   </Story>
 </Preview>
 
@@ -262,15 +274,21 @@ import { PlusBold, ArrowRightBold, OpenblankFill, Link, GraphBar, Present, Penci
 <LinkButton href="#" layout="fullWidth" icon={<Present/>} size="large" variant="contained">応援を送る</LinkButton>
 <LinkButton href="#" layout="fullWidth" icon={<PencilAdd/>} size="medium" variant="outlined">ブログを書く</LinkButton>
 <LinkButton href="#" layout="fullWidth" icon={<GraphBar/>} size="small" variant="neutral">詳細を見る</LinkButton>
+<LinkButton href="#" layout="fullWidth" icon={<ChevronDownBold/>} iconPosition="end" size="large" variant="contained">さらに表示</LinkButton>
+<LinkButton href="#" layout="fullWidth" icon={<ChevronDownBold/>} iconPosition="end" size="medium" variant="outlined">もっと見る</LinkButton>
+<LinkButton href="#" layout="fullWidth" icon={<ChevronDownBold/>} iconPosition="end" size="small" variant="neutral">さらに表示</LinkButton>
   `}
 />
 
 <Source
   language='html'
   code={`
-<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--large spui-LinkButton--contained" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--large"><svg /></span>応援を送る</a>
-<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--medium spui-LinkButton--outlined" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--medium"><svg /></span>ブログを書く</a>
-<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--small spui-LinkButton--neutral" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--small"><svg /></span>修正する</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--large spui-LinkButton--contained spui-LinkButton--iconstart" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--large"><svg /></span>応援を送る</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--medium spui-LinkButton--outlined spui-LinkButton--iconstart" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--medium"><svg /></span>ブログを書く</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--small spui-LinkButton--neutral spui-LinkButton--iconstart" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--small"><svg /></span>修正する</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--large spui-LinkButton--contained spui-LinkButton--iconend" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--large"><svg /></span>さらに表示</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--medium spui-LinkButton--outlined spui-LinkButton--iconend" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--medium"><svg /></span>もっと見る</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--small spui-LinkButton--neutral spui-LinkButton--iconend" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--small"><svg /></span>さらに表示</a>
   `}
 />
 
