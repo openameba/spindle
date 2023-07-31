@@ -22,6 +22,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+          registry-url: 'https://registry.npmjs.org'
       # Bootstrap lerna for building app before publishing
       - name: restore lerna
         uses: actions/cache@v3
@@ -37,10 +38,6 @@ jobs:
         run: |
           git config --global user.email "<>"
           git config --global user.name "openameba"
-      - name: Log in to npm
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-          npm whoami
       - name: Extract branch from git ref
         run: |
           echo "::set-output name=name::${GITHUB_REF#refs/*/}"
