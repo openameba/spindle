@@ -13,6 +13,7 @@ interface Props
   size?: Size;
   variant?: Variant;
   icon?: React.ReactNode;
+  iconPosition?: 'start' | 'end';
 }
 
 const BLOCK_NAME = 'spui-Button';
@@ -24,13 +25,22 @@ export const Button = forwardRef<HTMLButtonElement, Props>(function Button(
     size = 'large',
     variant = 'contained',
     icon,
+    iconPosition = 'start',
     ...rest
   }: Props,
   ref,
 ) {
   return (
     <button
-      className={`${BLOCK_NAME} ${BLOCK_NAME}--${layout} ${BLOCK_NAME}--${size} ${BLOCK_NAME}--${variant}`}
+      className={[
+        BLOCK_NAME,
+        `${BLOCK_NAME}--${layout}`,
+        `${BLOCK_NAME}--${size}`,
+        `${BLOCK_NAME}--${variant}`,
+        icon && `${BLOCK_NAME}--icon${iconPosition}`,
+      ]
+        .filter(Boolean)
+        .join(' ')}
       ref={ref}
       {...rest}
     >
