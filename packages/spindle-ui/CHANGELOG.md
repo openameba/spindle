@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.62.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.61.0...@openameba/spindle-ui@0.62.0) (2023-07-31)
+
+### Bug Fixes
+
+- **spindle-ui:** invalid AppealModal background-color type ([8705ba8](https://github.com/openameba/spindle/commit/8705ba8496f51ce7299d526572e1279588cbddad))
+- **spindle-ui:** invalid SemiModal background-color type ([cdb3f27](https://github.com/openameba/spindle/commit/cdb3f27efc8c243ef699899b8219404cfe241a91))
+
+### Features
+
+- **spindle-ui:** add Button with iconPosition ([5d5312f](https://github.com/openameba/spindle/commit/5d5312fb8d13e3e3b5cabacad2af8d9a8fd0d91f))
+- **spindle-ui:** add LinkButton with iconPosition ([df94a2c](https://github.com/openameba/spindle/commit/df94a2cdb60f249ec1eae98ad83a3ef77baaab50))
+
 # [0.61.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.60.0...@openameba/spindle-ui@0.61.0) (2023-07-21)
 
 **Note:** Version bump only for package @openameba/spindle-ui
