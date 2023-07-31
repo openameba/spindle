@@ -36,8 +36,8 @@ jobs:
       - run: yarn lerna run --scope @openameba/spindle-hooks build
       - name: Set git user
         run: |
-          git config --global user.email "<>"
-          git config --global user.name "openameba"
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
       - name: Extract branch from git ref
         run: |
           echo "::set-output name=name::${GITHUB_REF#refs/*/}"
