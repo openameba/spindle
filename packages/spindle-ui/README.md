@@ -107,7 +107,20 @@ yarn build
 cd -
 ```
 
-新規コンポーネントを作成する際にはgenerateコマンドが便利です。
+新規コンポーネントを作成する際にはgenerateコマンドが便利です。推奨されるフローは、まずDesign Docを作成しPull Requestします。レビューが終わったらマージし、コンポーネント実装を進めます。
+
+```
+yarn generate
+? Please select a document. (Use arrow keys)
+❯ design doc 
+? Please select the output destination directory. (Use arrow keys or type to search)
+❯ src/ 
+? Please enter a component name. NewComponent
+
+🐶 Generated 1 files!
+
+      ✔ src/NewComponent/design-doc.md
+```
 
 ```
 yarn generate
