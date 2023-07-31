@@ -220,7 +220,7 @@ html.spui-AppealModal--open {
 
   .spui-AppealModal-closeIconButton {
     /* stylelint-disable plugin/selector-bem-pattern */
-    --IconButton--neutral-backgroundColor: none;
+    --IconButton--neutral-backgroundColor: transparent;
     --IconButton--neutral-onHover-backgroundColor: var(
       --color-surface-tertiary
     );
