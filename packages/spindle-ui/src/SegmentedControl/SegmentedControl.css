@@ -31,7 +31,9 @@
   overflow-wrap: break-word;
   padding: 4px;
   position: relative;
-  transition: font-weight 0.35s ease, color 0.35s ease,
+  transition:
+    font-weight 0.35s ease,
+    color 0.35s ease,
     background-color 0.15s ease;
 }
 
