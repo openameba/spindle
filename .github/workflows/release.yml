@@ -22,6 +22,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+          registry-url: 'https://registry.npmjs.org'
       # Bootstrap lerna for building app before publishing
       - name: restore lerna
         uses: actions/cache@v3
@@ -30,17 +31,14 @@ jobs:
             node_modules
             */*/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-v2
+      - run: npm install -g npm@9
       - run: yarn install --frozen-lockfile
       - run: npx lerna bootstrap -- --frozen-lockfile
       - run: yarn lerna run --scope @openameba/spindle-hooks build
       - name: Set git user
         run: |
-          git config --global user.email "<>"
-          git config --global user.name "openameba"
-      - name: Log in to npm
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-          npm whoami
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
       - name: Extract branch from git ref
         run: |
           echo "::set-output name=name::${GITHUB_REF#refs/*/}"
@@ -51,6 +49,8 @@ jobs:
         run: yarn lerna publish ${{ steps.extract_branch.outputs.version }} --conventional-commits --create-release github --yes --no-private
         env:
           GH_TOKEN: ${{ github.token }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
       - name: Create Pull Request
         run: >
           curl
