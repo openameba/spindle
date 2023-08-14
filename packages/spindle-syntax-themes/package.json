@@ -21,7 +21,7 @@
     "build:example": "npx rimraf public && npx cpx '*.{html,css,ico}' public",
     "predeploy": "yarn build:example",
     "deploy": "firebase deploy --only hosting",
-    "serve": "npx serve -p 5000"
+    "serve": "npx serve -p 5001"
   },
   "devDependencies": {
     "@acot/acot-config": "^0.0.19",
