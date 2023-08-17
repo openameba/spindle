@@ -1,47 +1,48 @@
 name: visual regression test
 
 on:
-  - push
-  - pull_request_target
-  - workflow_dispatch
+  push:
+    branches:
+      - main
+  pull_request_target:
+  workflow_dispatch:
 
 jobs:
-  check_paths:
+  check_condition:
     runs-on: ubuntu-latest
-    # ignoring if triggered by bot
-    # need specified label if Pull-request from fork
-    if: >
-      (github.actor != 'dependabot[bot]' && github.actor != 'renovate[bot]') && (
-        github.event_name == 'push' ||
-        github.event_name == 'workflow_dispatch' || (
-          github.event_name == 'pull_request' && (
-            github.event.pull_request.head.repo.full_name == github.repository || (
-              github.event.pull_request.head.repo.full_name != github.repository &&
-              github.event.pull_request.action == 'labeled' &&
-              contains(github.event.pull_request.labels.*.name, 'allow execute workflow')
-            )
-          )
-        )
-      )
+    timeout-minutes: 5
     outputs:
-      ui: ${{ steps.filter.outputs.ui }}
+      result: ${{ steps.condition.outputs.result }}
     steps:
-      - if: github.event_name == 'pull_request'
-        uses: actions/checkout@v3
-        with:
-          ref: 'refs/pull/${{ github.event.number }}/merge'
-      - if: github.event_name != 'pull_request'
-        uses: actions/checkout@v3
-      - uses: dorny/paths-filter@v2
-        id: filter
-        with:
-          filters: |
-            ui:
-              - 'packages/spindle-ui/**'
+      - run: echo 'RESULT=false' >> "$GITHUB_ENV"
+      - name: execute if triggered by members
+        if: >
+          github.event_name == 'push' ||
+          github.event_name == 'workflow_dispatch'
+        run: echo 'RESULT=true' >> "$GITHUB_ENV"
+      - name: execute if the PR from a forked repository, it have the [allow execute workflow] label
+        if: >
+          github.event_name == 'pull_request' &&
+          github.event.pull_request.head.repo.full_name != github.repository &&
+          contains(github.event.pull_request.labels.*.name, 'allow execute workflow')
+        run: echo 'RESULT=true' >> "$GITHUB_ENV"
+      - name: execute if the PR from a this repository
+        if: >
+          github.event_name == 'pull_request' &&
+          github.event.pull_request.head.repo.full_name == github.repository
+        run: echo 'RESULT=true' >> "$GITHUB_ENV"
+      - name: ignoring if triggered by bot
+        if: >
+          github.actor == 'dependabot[bot]' ||
+          github.actor == 'renovate[bot]'
+        run: echo 'RESULT=false' >> "$GITHUB_ENV"
+      - id: condition
+        run: echo "result=${RESULT}" >> "$GITHUB_OUTPUT"
   visual_regression_test:
     runs-on: ubuntu-latest
-    needs: check_paths
-    if: ${{ needs.check_paths.outputs.ui == 'true' }}
+    timeout-minutes: 30
+    needs: check_condition
+    if: needs.check_condition.outputs.result == 'true'
     steps:
       - run: sudo apt-get --yes update
       - run: sudo apt-get --yes install fonts-noto
