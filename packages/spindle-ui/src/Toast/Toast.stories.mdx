@@ -109,12 +109,21 @@ export const MultiActivateButton = ({ offset, icon, position }) => {
 
 <Meta title="Toast" component={Toast} />
 
-<Description>
-  Toastコンポーネントは、利用者に一時的なお知らせをする際に利用します。画面上に複数表示することができます。Toastは自動で消えてしまうため、見落とされても影響のない「重要ではないお知らせ」に用います。利用する際には、その他により適切な手段がないか必ず確認してください。
-</Description>
-<Description>
-  「重要なお知らせ」とは何か、他のnotification系のコンポーネントとの違いは別途まとめる予定です。
-</Description>
+Toastコンポーネントは、利用者に一時的なお知らせをする際に利用します。画面上に複数表示することができます。Toastは自動で消えてしまうため、見落とされても影響のない「重要ではないお知らせ」に用います。利用する際には、その他により適切な手段がないか必ず確認してください。
+
+「重要なお知らせ」とは何かは別途まとめる予定です。
+
+## 通知系のComponentの違い
+
+SnackbarとToastは非常に似ているComponentです。また、ユーザーにお知らせをするための他のComponentとしてInlineNotificationもあります。現状下記のように使い分けています。
+
+Component | テキストの長さ | 追加のアクションの有無 | 自動で消える秒数 | 表示位置 | メッセージの内容
+:-- | :-- | :-- | :-- | :-- | :--
+Toast | 1行のみ | なし | 4秒 | フローティングで位置固定で表示（画面上下の中央のみ※） | 見落としても支障がない
+[Snackbar](/docs/snackbar--information) | 3,4行まで | あり | 10秒 | フローティングで位置固定で表示（画面上下の左・右・中央）| 読んでは欲しい、訴求
+[InlineNotification](/docs/inlinenotification--information) | 制限なし | あり | 消えない | ページに埋め込む必要がありレイアウトに影響を与える | エラー通知など、ユーザーの追加のアクションが必要なもの
+
+※現在は、SPは中央下のみ実装されています。
 
 <Source
   language="javascript"
