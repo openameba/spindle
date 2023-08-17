@@ -14,6 +14,18 @@ jobs:
     outputs:
       result: ${{ steps.condition.outputs.result }}
     steps:
+      - if: github.event_name == 'pull_request'
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: 'refs/pull/${{ github.event.number }}/merge'
+      - id: changes
+        if: github.event_name == 'pull_request'
+        uses: dorny/paths-filter@v2
+        with:
+          filters: |
+            ui:
+              - 'packages/spindle-ui/**'
       - run: echo 'RESULT=false' >> "$GITHUB_ENV"
       - name: execute if triggered by members
         if: >
@@ -24,12 +36,14 @@ jobs:
         if: >
           github.event_name == 'pull_request' &&
           github.event.pull_request.head.repo.full_name != github.repository &&
-          contains(github.event.pull_request.labels.*.name, 'allow execute workflow')
+          contains(github.event.pull_request.labels.*.name, 'allow execute workflow') &&
+          steps.changes.outputs.ui == 'true'
         run: echo 'RESULT=true' >> "$GITHUB_ENV"
       - name: execute if the PR from a this repository
         if: >
           github.event_name == 'pull_request' &&
-          github.event.pull_request.head.repo.full_name == github.repository
+          github.event.pull_request.head.repo.full_name == github.repository &&
+          steps.changes.outputs.ui == 'true'
         run: echo 'RESULT=true' >> "$GITHUB_ENV"
       - name: ignoring if triggered by bot
         if: >
