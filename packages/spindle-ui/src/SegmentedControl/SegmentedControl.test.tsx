@@ -101,6 +101,23 @@ describe('<SegmentedControl />', () => {
     expect(result.current.selectedId).toEqual(options[2].id);
   });
 
+  test('should be reflected if the received selectedId changes', async () => {
+    const { rerender } = render(
+      <SegmentedControl selectedId={options[0].id} options={options} />,
+    );
+    expect(
+      screen.getByText(options[0].label).getAttribute('aria-checked'),
+    ).toEqual('true');
+
+    rerender(<SegmentedControl selectedId={options[1].id} options={options} />);
+    expect(
+      screen.getByText(options[0].label).getAttribute('aria-checked'),
+    ).toEqual('false');
+    expect(
+      screen.getByText(options[1].label).getAttribute('aria-checked'),
+    ).toEqual('true');
+  });
+
   test('a11y', async () => {
     const user = userEvent.setup();
 
