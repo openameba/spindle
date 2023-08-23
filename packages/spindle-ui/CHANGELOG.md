@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.62.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.62.0...@openameba/spindle-ui@0.62.1) (2023-08-23)
+
+### Bug Fixes
+
+- **spindle-ui:** added processing when userSelectedId in SegmentedControl is updated ([168c355](https://github.com/openameba/spindle/commit/168c3553f5d28517fb08fd74723e4e1584922af7))
+
 # [0.62.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.61.0...@openameba/spindle-ui@0.62.0) (2023-07-31)
 
 ### Bug Fixes
