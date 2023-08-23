@@ -56,7 +56,9 @@ export const SegmentedControl: React.FC<Props> = ({
     // selectedIdがどの項目にも一致しない場合は最初の項目を選択する
     if (!options.some((option) => option.id === userSelectedId)) {
       setSelectedId(options[0].id);
+      return;
     }
+    setSelectedId(userSelectedId);
   }, [options, userSelectedId]);
 
   const handleClick = useCallback(
