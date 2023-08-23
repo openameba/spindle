@@ -23,9 +23,7 @@
 /* stylelint-disable plugin/selector-bem-pattern */
 /* NOTE: set no animations to the dialog-polyfill browsers for stability */
 .spui-AppealModal[open]:not(.spui-AppealModal--closing),
-.spui-AppealModal[open]:not(
-    .spui-AppealModal--closing
-  ).spui-AppealModal::backdrop {
+.spui-AppealModal[open]:not(.spui-AppealModal--closing).spui-AppealModal::backdrop {
   animation: 0.5s cubic-bezier(0, 0, 0, 1) spui-AppealModal-fade-in;
 }
 
@@ -36,9 +34,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .spui-AppealModal[open]:not(.spui-AppealModal--closing),
-  .spui-AppealModal[open]:not(
-      .spui-AppealModal--closing
-    ).spui-AppealModal::backdrop,
+  .spui-AppealModal[open]:not(.spui-AppealModal--closing).spui-AppealModal::backdrop,
   .spui-AppealModal--closing,
   .spui-AppealModal--closing.spui-AppealModal::backdrop {
     /* Do not remove this animation to detect animationend in JavaScript */
@@ -82,25 +78,14 @@ html.spui-AppealModal--open {
  * - Safari does not support radius outline
 */
 .spui-AppealModal
-  :is(
-    .spui-Button,
-    .spui-LinkButton,
-    .spui-IconButton,
-    .spui-SubtleButton
-  ):focus {
-  box-shadow:
-    0 0 0 1px var(--color-surface-secondary),
+  :is(.spui-Button, .spui-LinkButton, .spui-IconButton, .spui-SubtleButton):focus {
+  box-shadow: 0 0 0 1px var(--color-surface-secondary),
     0 0 0 3px var(--color-focus-clarity);
   outline: none;
 }
 
 .spui-AppealModal
-  :is(
-    .spui-Button,
-    .spui-LinkButton,
-    .spui-IconButton,
-    .spui-SubtleButton
-  ):focus:not(:focus-visible) {
+  :is(.spui-Button, .spui-LinkButton, .spui-IconButton, .spui-SubtleButton):focus:not(:focus-visible) {
   box-shadow: none;
 }
 
