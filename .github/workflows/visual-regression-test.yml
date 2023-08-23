@@ -44,11 +44,6 @@ jobs:
           github.event.pull_request.head.repo.full_name == github.repository &&
           steps.changes.outputs.ui == 'true'
         run: echo 'RESULT=true' >> "$GITHUB_ENV"
-      - name: ignoring if triggered by bot
-        if: >
-          github.actor == 'dependabot[bot]' ||
-          github.actor == 'renovate[bot]'
-        run: echo 'RESULT=false' >> "$GITHUB_ENV"
       - id: condition
         run: echo "result=${RESULT}" >> "$GITHUB_OUTPUT"
   visual_regression_test:
