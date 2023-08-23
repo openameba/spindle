@@ -19,7 +19,11 @@ jobs:
         with:
           node-version: 16
       - run: yarn install --frozen-lockfile
-      - name: Update example
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        run: yarn deploy -- --token $FIREBASE_TOKEN
+      - run: yarn build:example
+      - name: deploy to live channel
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
+          entryPoint: ./packages/spindle-syntax-themes/
+          channelId: live
