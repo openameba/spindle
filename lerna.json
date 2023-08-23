@@ -1,18 +1,12 @@
 {
-  "npmClient": "yarn",
-  "useWorkspaces": true,
   "version": "independent",
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/*"],
   "includeMergedTags": true,
   "command": {
     "version": {
       "message": "chore(release): publish",
-      "allowBranch": [
-        "version/*",
-        "release/*"
-      ]
+      "allowBranch": ["version/*", "release/*"]
     }
-  }
+  },
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json"
 }
