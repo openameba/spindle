@@ -85,8 +85,8 @@ const convertInternalChildProps = (
   const hasInternalChildProps = (
     props: OwnProps,
   ): props is InternalChildProps =>
-    ({}).hasOwnProperty.call(props, 'variant') ||
-    {}.hasOwnProperty.call(props, 'emphasis');
+    ({}.hasOwnProperty.call(props, 'variant') ||
+    {}.hasOwnProperty.call(props, 'emphasis'));
 
   if (hasInternalChildProps(props)) {
     const result = {
