@@ -1,4 +1,5 @@
 {
+  "npmClient": "yarn",
   "version": "independent",
   "packages": ["packages/*"],
   "includeMergedTags": true,
