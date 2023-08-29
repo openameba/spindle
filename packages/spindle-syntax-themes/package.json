@@ -9,6 +9,10 @@
     "highlightjs-light.min.css",
     "highlightjs-dark.min.css"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openameba/spindle.git"
+  },
   "publishConfig": {
     "access": "public"
   },
