@@ -8,6 +8,7 @@
   box-shadow: 0 11px 28px rgba(8, 18, 26, 0.12);
   color: var(--color-text-medium-emphasis);
   padding: 24px;
+  position: fixed;
   /* NOTE: box-sizing does not work well with dialog-polyfill */
   /* width property is calculated from dialog width - padding * 2 */
   width: calc(400px - 24px * 2);
@@ -109,6 +110,10 @@ html.spui-Dialog--open {
 /* stylelint-disable-next-line plugin/selector-bem-pattern */
 .spui-Dialog-buttonGroup :is(.spui-Button, .spui-SubtleButton) {
   max-width: 240px;
+}
+
+.spui-Dialog--styleOnly {
+  position: static;
 }
 
 @media screen and (min-width: 768px) {

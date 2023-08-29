@@ -121,7 +121,12 @@ const Frame = forwardRef<DialogHTMLElement, DialogProps>(function Dialog(
 
 const StyleOnly = ({ className, children }: PartsProps) => {
   return (
-    <div className={[BLOCK_NAME, className].filter(Boolean).join(' ').trim()}>
+    <div
+      className={[BLOCK_NAME, `${BLOCK_NAME}--styleOnly`, className]
+        .filter(Boolean)
+        .join(' ')
+        .trim()}
+    >
       {children}
     </div>
   );
