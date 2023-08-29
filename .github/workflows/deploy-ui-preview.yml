@@ -37,7 +37,6 @@ jobs:
         with:
           node-version: 16
       - run: yarn install --frozen-lockfile
-      - run: npx lerna bootstrap -- --frozen-lockfile
       - run: |
           yarn lerna run --scope @openameba/spindle-hooks build
           yarn lerna run --scope @openameba/spindle-ui storybook:build

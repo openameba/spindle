@@ -23,7 +23,6 @@ jobs:
         with:
           node-version: 16
           registry-url: 'https://registry.npmjs.org'
-      # Bootstrap lerna for building app before publishing
       - name: restore lerna
         uses: actions/cache@v3
         with:
@@ -33,7 +32,6 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-v2
       - run: npm install -g npm@9
       - run: yarn install --frozen-lockfile
-      - run: npx lerna bootstrap -- --frozen-lockfile
       - run: yarn lerna run --scope @openameba/spindle-hooks build
       - name: Set git user
         run: |

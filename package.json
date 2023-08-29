@@ -22,7 +22,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.0.0",
     "@commitlint/config-conventional": "^17.0.0",
-    "@commitlint/config-lerna-scopes": "^17.0.0",
+    "@commitlint/config-lerna-scopes": "^17.7.0",
     "@typescript-eslint/eslint-plugin": "6.5.0",
     "@typescript-eslint/parser": "6.5.0",
     "eslint": "7.32.0",
@@ -31,7 +31,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.0",
     "is-ci": "^3.0.0",
-    "lerna": "^6.0.0",
+    "lerna": "^7.0.0",
     "npm-run-all": "^4.1.5",
     "prettier": "2.7.1",
     "textlint": "^13.0.0",
