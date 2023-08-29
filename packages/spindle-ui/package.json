@@ -39,6 +39,10 @@
     "prepublishOnly": "yarn build && yarn cp"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openameba/spindle.git"
+  },
   "publishConfig": {
     "access": "public"
   },
