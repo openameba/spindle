@@ -1,0 +1,42 @@
+name: event test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request_target:
+  workflow_dispatch:
+
+jobs:
+  check_condition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      result: ${{ steps.condition.outputs.result }}
+    steps:
+      - run: echo ${{ github.event_name }}
+      - run: echo ${{ github.event.pull_request.head.repo.full_name }}
+      - run: echo ${{ github.repository }}
+      - if: github.event_name == 'pull_request'
+        uses: actions/checkout@v3
+        with:
+          ref: 'refs/pull/${{ github.event.number }}/merge'
+      - run: echo 'RESULT=false' >> "$GITHUB_ENV"
+      - name: execute if triggered by members
+        if: >
+          github.event_name == 'push' ||
+          github.event_name == 'workflow_dispatch'
+        run: echo 'RESULT=true' >> "$GITHUB_ENV"
+      - name: execute if the PR from a forked repository, it have the [allow execute workflow] label
+        if: >
+          github.event_name == 'pull_request' &&
+          github.event.pull_request.head.repo.full_name != github.repository &&
+          contains(github.event.pull_request.labels.*.name, 'allow execute workflow')
+        run: echo 'RESULT=true' >> "$GITHUB_ENV"
+      - name: execute if the PR from a this repository
+        if: >
+          github.event_name == 'pull_request' &&
+          github.event.pull_request.head.repo.full_name == github.repository
+        run: echo 'RESULT=true' >> "$GITHUB_ENV"
+      - id: condition
+        run: echo "result=${RESULT}" >> "$GITHUB_OUTPUT"
