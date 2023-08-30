@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.2](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@0.12.1...@openameba/spindle-tokens@0.12.2) (2023-07-27)
+
+### Bug Fixes
+
+- **spindle-tokens:** chain commands ([3a7f707](https://github.com/openameba/spindle/commit/3a7f7071205cbf2205cd4aa5a68768949f771265))
+
+## [0.12.1](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@0.12.0...@openameba/spindle-tokens@0.12.1) (2023-07-25)
+
+### Bug Fixes
+
+- **spindle-tokens:** correct invalid css property value ([111e4bc](https://github.com/openameba/spindle/commit/111e4bc6f6738c57a5956e46c64cd9fc6bb7b931))
+
+# [0.12.0](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@0.11.0...@openameba/spindle-tokens@0.12.0) (2023-07-21)
+
+### Features
+
+- **spindle-tokens:** publish css at package root ([1b6a781](https://github.com/openameba/spindle/commit/1b6a7817f41f43c8a3d1377664f6349c3e414324))
+
+# [0.11.0](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@0.10.1...@openameba/spindle-tokens@0.11.0) (2023-07-05)
+
+### Features
+
+- **spindle-tokens:** include minimum tokens in token.css ([e29c6c0](https://github.com/openameba/spindle/commit/e29c6c06967a6bf3c792398641e9171065717001))
+
+## [0.10.1](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@0.10.0...@openameba/spindle-tokens@0.10.1) (2023-06-01)
+
+**Note:** Version bump only for package @openameba/spindle-tokens
+
 # [0.10.0](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@0.9.0...@openameba/spindle-tokens@0.10.0) (2023-01-19)
 
 ### Features

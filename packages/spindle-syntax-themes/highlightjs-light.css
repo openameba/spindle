@@ -56,7 +56,11 @@
 }
 
 .hljs {
-  /* Set background color (foreground --gray-5-alpha / background --white-100) directly to check the contrast ratio with acot. */
+  /**
+   * Set background color directly to check the contrast ratio with acot.
+   * - foreground: --gray-5-alpha
+   * - background: --white-100
+   */
   background: rgb(246, 246, 246);
   color: var(--gray-70-alpha);
   display: block;

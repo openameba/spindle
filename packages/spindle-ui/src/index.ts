@@ -13,3 +13,4 @@ export { Toast } from './Toast';
 export { DropdownMenu } from './DropdownMenu';
 export { SnackBar } from './SnackBar';
 export { InlineNotification } from './InlineNotification';
+export { SegmentedControl } from './SegmentedControl';

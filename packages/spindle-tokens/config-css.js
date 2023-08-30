@@ -5,6 +5,9 @@ function makeAnimationTokens(dictionary) {
     })
     .map((token) => {
       if (token.attributes.type === 'Easing') {
+        if (token.value.startsWith('cubic-bezier')) {
+          return token;
+        }
         token.value = `cubic-bezier(${token.value})`;
         return token;
       }
@@ -38,6 +41,10 @@ module.exports = {
         },
         {
           destination: 'dist/css/spindle-tokens.css',
+          format: 'cssAnimation',
+        },
+        {
+          destination: 'dist/css/spindle-tokens.all.css',
           format: 'css/variables',
         },
       ],

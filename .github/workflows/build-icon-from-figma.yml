@@ -34,7 +34,6 @@ jobs:
             */*/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-v2
       - run: yarn install --frozen-lockfile
-      - run: npx lerna bootstrap -- --frozen-lockfile
       - name: Update Icons
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
@@ -47,7 +46,7 @@ jobs:
           yarn lerna run --scope @openameba/spindle-ui icon
           yarn format
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
+        uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           commit-message: 'feat(spindle-icons): update icons'

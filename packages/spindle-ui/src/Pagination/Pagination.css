@@ -9,6 +9,7 @@
 
 .spui-Pagination {
   align-items: center;
+  container: spui-pagination / inline-size;
   display: flex;
   flex-direction: column;
 }
@@ -93,7 +94,7 @@
   margin-left: 10px;
 }
 
-@media screen and (max-width: 360px) {
+@container spui-pagination (max-width: 360px) {
   .spui-Pagination-item--first,
   .spui-Pagination-item--last {
     display: none;

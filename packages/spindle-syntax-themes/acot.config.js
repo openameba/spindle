@@ -3,7 +3,7 @@ module.exports = {
   connection: {
     command: 'yarn serve',
   },
-  origin: 'http://localhost:5000',
+  origin: 'http://localhost:5001',
   paths: ['/', '/?theme=dark'],
   rules: {
     '@acot/wcag/focusable-has-indicator': 'warn',

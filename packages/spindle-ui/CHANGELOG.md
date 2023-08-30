@@ -3,6 +3,50 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.62.2](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.62.1...@openameba/spindle-ui@0.62.2) (2023-08-29)
+
+**Note:** Version bump only for package @openameba/spindle-ui
+
+## [0.62.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.62.0...@openameba/spindle-ui@0.62.1) (2023-08-23)
+
+### Bug Fixes
+
+- **spindle-ui:** added processing when userSelectedId in SegmentedControl is updated ([168c355](https://github.com/openameba/spindle/commit/168c3553f5d28517fb08fd74723e4e1584922af7))
+
+# [0.62.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.61.0...@openameba/spindle-ui@0.62.0) (2023-07-31)
+
+### Bug Fixes
+
+- **spindle-ui:** invalid AppealModal background-color type ([8705ba8](https://github.com/openameba/spindle/commit/8705ba8496f51ce7299d526572e1279588cbddad))
+- **spindle-ui:** invalid SemiModal background-color type ([cdb3f27](https://github.com/openameba/spindle/commit/cdb3f27efc8c243ef699899b8219404cfe241a91))
+
+### Features
+
+- **spindle-ui:** add Button with iconPosition ([5d5312f](https://github.com/openameba/spindle/commit/5d5312fb8d13e3e3b5cabacad2af8d9a8fd0d91f))
+- **spindle-ui:** add LinkButton with iconPosition ([df94a2c](https://github.com/openameba/spindle/commit/df94a2cdb60f249ec1eae98ad83a3ef77baaab50))
+
+# [0.61.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.60.0...@openameba/spindle-ui@0.61.0) (2023-07-21)
+
+**Note:** Version bump only for package @openameba/spindle-ui
+
+# [0.60.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.59.0...@openameba/spindle-ui@0.60.0) (2023-07-05)
+
+**Note:** Version bump only for package @openameba/spindle-ui
+
+# [0.59.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.58.7...@openameba/spindle-ui@0.59.0) (2023-06-28)
+
+### Features
+
+- **spindle-ui:** create SegmentedControl component ([bfc63dc](https://github.com/openameba/spindle/commit/bfc63dc93f749808a7952918743b10ce1dcbaa5a))
+- **spindle-ui:** pagination style with container queries ([a44df52](https://github.com/openameba/spindle/commit/a44df52d53977a20de82d02d2b1eb6b9a096b69c))
+
+## [0.58.7](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.58.6...@openameba/spindle-ui@0.58.7) (2023-06-01)
+
+### Bug Fixes
+
+- **spindle-ui:** inline notification emphasis story pattern ([4e5de59](https://github.com/openameba/spindle/commit/4e5de593ed103ea938e86e6e9c36cce15bfef363))
+- **spindle-ui:** inline notification emphasized style ([4c26959](https://github.com/openameba/spindle/commit/4c26959df9deedac0e996962443f656f7f3617f8))
+
 ## [0.58.6](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.58.5...@openameba/spindle-ui@0.58.6) (2023-03-31)
 
 ### Bug Fixes

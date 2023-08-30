@@ -214,17 +214,36 @@
   line-height: 0; /* Fix Icon position align */
 }
 
-.spui-LinkButton-icon--large {
+.spui-LinkButton--iconstart .spui-LinkButton-icon--large {
   font-size: 1.375em; /* Icon 22px / Text 16px = 1.375 */
   margin-right: 6px;
 }
 
-.spui-LinkButton-icon--medium {
+.spui-LinkButton--iconstart .spui-LinkButton-icon--medium {
   font-size: 1.429em; /* Icon 20px / Text 14px =  1.42857142857 */
   margin-right: 4px;
 }
 
-.spui-LinkButton-icon--small {
+.spui-LinkButton--iconstart .spui-LinkButton-icon--small {
   font-size: 1.23em; /* Icon 16px / Text 13px = 1.23076923077 */
   margin-right: 2px;
+}
+
+.spui-LinkButton--iconend {
+  flex-direction: row-reverse;
+}
+
+.spui-LinkButton--iconend .spui-LinkButton-icon--large {
+  font-size: 1.125em; /* Icon 18px / Text 16px = 1.125 */
+  margin-left: 6px;
+}
+
+.spui-LinkButton--iconend .spui-LinkButton-icon--medium {
+  font-size: 1.143em; /* Icon 16px / Text 14px =  1.14285714285 */
+  margin-left: 4px;
+}
+
+.spui-LinkButton--iconend .spui-LinkButton-icon--small {
+  font-size: 1.077em; /* Icon 14px / Text 13px = 1.07692307692 */
+  margin-left: 2px;
 }
