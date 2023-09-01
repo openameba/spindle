@@ -90,7 +90,9 @@
 }
 
 .spui-SnackBar--slide {
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .spui-SnackBar--hidden {
@@ -99,7 +101,9 @@
 
 .spui-SnackBar-slide--in {
   opacity: 1;
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
 }
 
 .spui-SnackBar-slide--in.spui-SnackBar--top {
