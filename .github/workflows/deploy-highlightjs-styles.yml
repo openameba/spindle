@@ -1,25 +1,29 @@
-name: deploy Highlight.js themes preview
+name: deploy Highlight.js themes
 
 on:
   push:
     branches:
       - main
     paths:
-      - 'packages/spindle-highlightjs-themes/**'
+      - 'packages/spindle-syntax-themes/**'
 
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./packages/spindle-highlightjs-themes/
+        working-directory: ./packages/spindle-syntax-themes/
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 16
       - run: yarn install --frozen-lockfile
-      - name: Update example
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        run: yarn deploy -- --token $FIREBASE_TOKEN
+      - run: yarn build:example
+      - name: deploy to live channel
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
+          entryPoint: ./packages/spindle-syntax-themes/
+          channelId: live

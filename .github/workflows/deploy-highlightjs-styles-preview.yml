@@ -1,16 +1,16 @@
-name: deploy Highlight.js themes
+name: deploy Highlight.js themes preview
 
 on:
   pull_request:
     paths:
-      - 'packages/spindle-highlightjs-themes/**'
+      - 'packages/spindle-syntax-themes/**'
 
 jobs:
   build_and_preview:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./packages/spindle-highlightjs-themes/
+        working-directory: ./packages/spindle-syntax-themes/
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -24,4 +24,4 @@ jobs:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
           expires: 30d
-          entryPoint: ./packages/spindle-highlightjs-themes/
+          entryPoint: ./packages/spindle-syntax-themes/

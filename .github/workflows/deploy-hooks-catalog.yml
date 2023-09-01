@@ -25,8 +25,11 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-v2
       - run: yarn install --frozen-lockfile
       - name: Update UI catalog
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        run: |
-          yarn lerna run --scope @openameba/spindle-hooks storybook:build
-          npx lerna run --scope @openameba/spindle-hooks storybook:deploy -- --token $FIREBASE_TOKEN
+        run: yarn lerna run --scope @openameba/spindle-hooks storybook:build
+      - name: deploy to live channel
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
+          entryPoint: ./packages/spindle-hooks/
+          channelId: live
