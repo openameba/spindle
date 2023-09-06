@@ -1,6 +1,6 @@
 {
   "name": "@openameba/spindle-theme-switch",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Spindle theme switch",
   "license": "MIT",
   "type": "module",
