@@ -39,10 +39,10 @@ endobj
 
 4 0 obj
   << /Annots []
+     /Parent 5 0 R
      /MediaBox [ 0.000000 0.000000 20.000000 16.000000 ]
      /Resources 1 0 R
      /Contents 2 0 R
-     /Parent 5 0 R
      /Type /Page
   >>
 endobj
@@ -55,8 +55,8 @@ endobj
 endobj
 
 6 0 obj
-  << /Type /Catalog
-     /Pages 5 0 R
+  << /Pages 5 0 R
+     /Type /Catalog
   >>
 endobj
 
