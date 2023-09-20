@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.63.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.63.0...@openameba/spindle-ui@0.63.1) (2023-09-20)
+
+### Bug Fixes
+
+- **spindle-ui:** fix Dialog position bug ([6328c7e](https://github.com/openameba/spindle/commit/6328c7eb1fdef5e550ba1cf7b94b506296e0cc18))
+
 # [0.63.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.62.2...@openameba/spindle-ui@0.63.0) (2023-09-06)
 
 ### Features
