@@ -24274,10 +24274,10 @@ textlint-rule-prefer-tari-tari@^1.0.3:
     textlint-rule-helper "^2.0.0"
     textlint-util-to-string "^2.1.1"
 
-textlint-rule-preset-ameba@openameba/textlint-rule-preset-ameba#v0.5.0:
-  version "0.5.0"
-  uid "92adc0364ecbb46142d65b2b5c6864109737cc09"
-  resolved "https://codeload.github.com/openameba/textlint-rule-preset-ameba/tar.gz/92adc0364ecbb46142d65b2b5c6864109737cc09"
+textlint-rule-preset-ameba@openameba/textlint-rule-preset-ameba#v0.5.1:
+  version "0.5.1"
+  uid e22b25089b6ab737ca03cedb8a089f2377d3386e
+  resolved "https://codeload.github.com/openameba/textlint-rule-preset-ameba/tar.gz/e22b25089b6ab737ca03cedb8a089f2377d3386e"
   dependencies:
     "@textlint-ja/textlint-rule-no-dropping-i" "^1.0.0"
     "@textlint-ja/textlint-rule-no-insert-dropping-sa" "^1.0.1"
