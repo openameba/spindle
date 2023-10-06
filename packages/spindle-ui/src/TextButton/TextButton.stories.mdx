@@ -43,6 +43,27 @@ import { ChevronRightBold, CameraFill, PencilAdd } from '../Icon';
   `}
 />
 
+## Normal Disabled
+
+<Preview withSource="open">
+  <Story name="NormalDisabled">
+    <TextButton {...actions('onClick', 'onMouseOver')} disabled>もっと見る</TextButton>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<TextButton disabled>もっと見る</TextButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-TextButton">もっと見る</button>
+  `}
+/>
+
 ## Normal With Icon
 
 <Preview withSource="open">
@@ -61,6 +82,27 @@ import { ChevronRightBold, CameraFill, PencilAdd } from '../Icon';
   language='html'
   code={`
 <button class="spui-TextButton spui-TextButton--hasIcon spui-TextButton--iconstart"><span class="spui-TextButton-icon"><svg>...</svg></span>ブログを書く</button>
+  `}
+/>
+
+## Normal With Icon Disabled
+
+<Preview withSource="open">
+  <Story name="NormalWithIconDisabled">
+    <TextButton icon={<PencilAdd aria-hidden="true" />} iconPosition="start" {...actions('onClick', 'onMouseOver')} disabled>ブログを書く</TextButton>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<TextButton icon={<PencilAdd aria-hidden="true" />} iconPosition="start" disabled>ブログを書く</TextButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-TextButton spui-TextButton--hasIcon spui-TextButton--iconstart" disabled><span class="spui-TextButton-icon"><svg>...</svg></span>ブログを書く</button>
   `}
 />
 
@@ -85,6 +127,27 @@ import { ChevronRightBold, CameraFill, PencilAdd } from '../Icon';
   `}
 />
 
+## Subtle Disabled
+
+<Preview withSource="open">
+  <Story name="SubtleDisabled">
+    <TextButton variant="subtle" {...actions('onClick', 'onMouseOver')} disabled>もっと見る</TextButton>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<TextButton variant="subtle" disabled>もっと見る</TextButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-TextButton spui-TextButton--subtle" disabled>もっと見る</button>
+  `}
+/>
+
 ## Subtle With Icon
 
 <Preview withSource="open">
@@ -103,6 +166,27 @@ import { ChevronRightBold, CameraFill, PencilAdd } from '../Icon';
   language='html'
   code={`
 <button class="spui-TextButton spui-TextButton--subtle spui-TextButton--hasIcon spui-TextButton--iconend"><span class="spui-TextButton-icon"><svg>...</svg></span>もっと見る</button>
+  `}
+/>
+
+## Subtle With Icon Disabled
+
+<Preview withSource="open">
+  <Story name="SubtleWithIconDisabled">
+    <TextButton variant="subtle" icon={<ChevronRightBold aria-hidden="true" />} iconPosition="end" {...actions('onClick', 'onMouseOver')} disabled>もっと見る</TextButton>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<TextButton variant="subtle" icon={<ChevronRightBold aria-hidden="true" />} iconPosition="end" disabled>もっと見る</TextButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-TextButton spui-TextButton--subtle spui-TextButton--hasIcon spui-TextButton--iconend" disabled><span class="spui-TextButton-icon"><svg>...</svg></span>もっと見る</button>
   `}
 />
 
@@ -132,6 +216,27 @@ import { ChevronRightBold, CameraFill, PencilAdd } from '../Icon';
   language='html'
   code={`
 <button class="spui-TextButton spui-TextButton--underlinehover">もっと見る</button>
+  `}
+/>
+
+## Underline Hover Disabled
+
+<Preview withSource="open">
+  <Story name="UnderlineHoverDisabled">
+    <TextButton underline="hover" {...actions('onClick', 'onMouseOver')} disabled>もっと見る</TextButton>
+  </Story>
+</Preview>
+
+<Source
+  code={`
+<TextButton underline="hover" disabled>もっと見る</TextButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-TextButton spui-TextButton--underlinehover" disabled>もっと見る</button>
   `}
 />
 
