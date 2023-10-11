@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.63.2](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.63.1...@openameba/spindle-ui@0.63.2) (2023-10-11)
+
+### Bug Fixes
+
+- **spindle-ui:** add TextButton disabled style ([dc6f5ac](https://github.com/openameba/spindle/commit/dc6f5ac00ba57db38ea21246ec7114ea1a0127b2))
+
 ## [0.63.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.63.0...@openameba/spindle-ui@0.63.1) (2023-09-20)
 
 ### Bug Fixes
