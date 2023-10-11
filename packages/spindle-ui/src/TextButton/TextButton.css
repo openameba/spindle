@@ -27,6 +27,10 @@
   -webkit-tap-highlight-color: var(--TextButton-tapHighlightColor);
 }
 
+.spui-TextButton:disabled {
+  opacity: 0.3;
+}
+
 .spui-TextButton:focus {
   outline: 2px solid var(--TextButton-onFocus-outlineColor);
   outline-offset: 1px;
@@ -79,6 +83,10 @@
   text-decoration: none;
 }
 
+.spui-TextButton:disabled {
+  text-decoration: none;
+}
+
 @media (hover: hover) {
   .spui-TextButton:hover {
     text-decoration: none;
@@ -86,5 +94,9 @@
 
   :is(.spui-TextButton--hasIcon, .spui-TextButton--underlinehover):hover {
     text-decoration: underline;
+  }
+
+  .spui-TextButton:disabled:hover {
+    text-decoration: none;
   }
 }
