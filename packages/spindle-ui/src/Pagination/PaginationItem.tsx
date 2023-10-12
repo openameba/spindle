@@ -5,11 +5,14 @@ import TriangleendRightBold from '../Icon/TriangleendRightBold';
 import TriangleendLeftBold from '../Icon/TriangleendLeftBold';
 
 import { useItemPageNumber } from './hooks/useItemPageNumber';
+import { getLinkRelAttribute } from './helpers/getLinkRelAttribute';
+import type { LinkFollowType } from './Pagination';
 
 type Props = {
   type: 'first' | 'last' | 'next' | 'prev';
   current: number;
   total: number;
+  linkFollowType: LinkFollowType;
   onClick: (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
     pageNumber: number,
@@ -20,7 +23,14 @@ type Props = {
 const BLOCK_NAME = 'spui-PaginationItem';
 
 export const PaginationItem: FC<Props> = React.memo(
-  function PaginationItem({ type, current, total, onClick, createUrl }) {
+  function PaginationItem({
+    type,
+    current,
+    total,
+    linkFollowType,
+    onClick,
+    createUrl,
+  }) {
     const isDisabled =
       type === 'first' || type === 'prev' ? current === 1 : current === total;
     const isShowLabel = type === 'prev' || type === 'next';
@@ -81,7 +91,7 @@ export const PaginationItem: FC<Props> = React.memo(
     return (
       <a
         className={`${BLOCK_NAME}-link ${BLOCK_NAME}-link--${type}`}
-        rel={type === 'next' ? 'nofollow' : undefined}
+        rel={getLinkRelAttribute({ linkFollowType, pageNumber })}
         aria-label={itemPropMap[type].label}
         href={isDisabled ? undefined : createUrl(pageNumber)}
         aria-disabled={isDisabled ? true : undefined}
