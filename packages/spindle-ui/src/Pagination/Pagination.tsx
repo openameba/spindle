@@ -3,10 +3,14 @@ import MenuHorizontal from '../Icon/MenuHorizontal';
 
 import PaginationItem from './PaginationItem';
 import { useShowItem } from './hooks/useShowItem';
+import { getLinkRelAttribute } from './helpers/getLinkRelAttribute';
+
+export type LinkFollowType = 'all' | 'none' | 'firstPage';
 
 interface Props extends React.HTMLAttributes<HTMLElement> {
   current: number;
   total: number;
+  linkFollowType: LinkFollowType;
   showTotal?: boolean;
   onPageChange?: (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
@@ -27,6 +31,7 @@ export const Pagination = (props: Props) => {
   const {
     current,
     total,
+    linkFollowType,
     showTotal = false,
     onPageChange,
     createUrl,
@@ -103,6 +108,7 @@ export const Pagination = (props: Props) => {
             <PaginationItem
               type="first"
               current={current}
+              linkFollowType={linkFollowType}
               total={total}
               onClick={handleClick}
               createUrl={createUrl}
@@ -114,6 +120,7 @@ export const Pagination = (props: Props) => {
             <PaginationItem
               type="prev"
               current={current}
+              linkFollowType={linkFollowType}
               total={total}
               onClick={handleClick}
               createUrl={createUrl}
@@ -122,7 +129,6 @@ export const Pagination = (props: Props) => {
         )}
         {displayItem.map((pageNumber, index) => {
           const isCurrent = current === pageNumber;
-          const hasRelAttribute = current === pageNumber + 1;
 
           // 数字が隣接していない場合に表示
           const showEllipsis =
@@ -135,7 +141,7 @@ export const Pagination = (props: Props) => {
             >
               <a
                 className={`${BLOCK_NAME}-link`}
-                rel={hasRelAttribute ? undefined : 'nofollow'}
+                rel={getLinkRelAttribute({ linkFollowType, pageNumber })}
                 href={isCurrent ? undefined : createUrl(pageNumber)}
                 aria-current={isCurrent ? 'page' : undefined}
                 aria-disabled={isCurrent ? true : undefined}
@@ -164,6 +170,7 @@ export const Pagination = (props: Props) => {
             <PaginationItem
               type="next"
               current={current}
+              linkFollowType={linkFollowType}
               total={total}
               onClick={handleClick}
               createUrl={createUrl}
@@ -175,6 +182,7 @@ export const Pagination = (props: Props) => {
             <PaginationItem
               type="last"
               current={current}
+              linkFollowType={linkFollowType}
               total={total}
               onClick={handleClick}
               createUrl={createUrl}
