@@ -1,12 +1,10 @@
-# Spindle UI (In development)
+# Spindle UI
 
 Spindle (Ameba Design System) UI Components
 
 <p align="center">
   <img alt="Spindle" src="./docs/images/components.png" width="400">
 </p>
-
-> Spindle UIは試験開発中のため、大幅に変更される可能性があります。安定版リリースまでの間はバージョン番号は0となり、バージョンに関わらずbreaking changeが行われることがありますので、利用時には注意してください。変更内容は、[CHANGELOG](CHANGELOG.md)に記載されています。
 
 ![MIT license](https://img.shields.io/npm/l/@openameba/spindle-ui) ![npm](https://img.shields.io/npm/v/@openameba/spindle-ui)
 
