@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.64.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.63.2...@openameba/spindle-ui@0.64.0) (2023-10-16)
+
+### Features
+
+- **spindle-ui:** add helper to get rel attribute of each anchor elements ([531c89e](https://github.com/openameba/spindle/commit/531c89e3584a0a02655aa116cb8f8157a58bde8f))
+- **spindle-ui:** add linkFollowType props in Pagination ([e0a6213](https://github.com/openameba/spindle/commit/e0a6213b448033f6a680e127e1733cf4cef2b63f))
+
+### BREAKING CHANGES
+
+- **spindle-ui:** Pagination requires the 'linkFollowType' property to be set.
+
 ## [0.63.2](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.63.1...@openameba/spindle-ui@0.63.2) (2023-10-11)
 
 ### Bug Fixes
