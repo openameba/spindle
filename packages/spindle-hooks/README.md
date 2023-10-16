@@ -1,12 +1,10 @@
-# Spindle Hooks (In development)
+# Spindle Hooks
 
 Spindle (Ameba Design System) Hooks
 
 <p align="center">
   <img alt="Spindle" src="./docs/images/components.png" width="400">
 </p>
-
-> Spindle Hooks は試験開発中のため、大幅に変更される可能性があります。安定版リリースまでの間はバージョン番号は 0 となり、バージョンに関わらず breaking change が行われることがありますので、利用時には注意してください。変更内容は、[CHANGELOG](CHANGELOG.md)に記載されています。
 
 ![MIT licence](https://img.shields.io/npm/l/@openameba/spindle-hooks) ![npm](https://img.shields.io/npm/v/@openameba/spindle-hooks)
 
