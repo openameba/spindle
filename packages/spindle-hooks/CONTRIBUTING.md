@@ -14,5 +14,4 @@ Amebaとして提供される成果物は、それらに則って開発される
 2. Design Docの作成。SpindleではHooksごとにDesign Docを作成し、該当Hooksに関わる事柄を整理します。Hooks名・概要・使用するデザイントークン・アクセシビリティ対応項目などを記載します。Design Docの雛形はNotionにありますので確認してみてください。
 3. Design Docのレビュー。ある程度Design DocができあがったらSpindleチームやWebチームでレビューをします。この段階でのDesign Docはレビュー用途で使用するので完璧に仕上げる必要はありません！
 4. Hooks作成。実際にHooksを実装します。Storybookやテストの作成も忘れずお願いします！また、コンポーネント設計に困った場合には、すでに作成されているコンポーネントを見たり、[Spindle Hooks の Design Doc](/packages/spindle-hooks/docs/design-doc.md)を見たりしてみてください。
-5. コンポーネントStabilityの決定。Spindle HooksではコンポーネントごとにStabilityを決め、どうゆう利用が想定されているか明記しています。[定められた Stability](/packages/spindle-hooks#Hooks%20%E4%B8%80%E8%A6%A7)の中から選択肢、Storybookの冒頭に記載します。
-6. Pull Requestの作成。ここまでできたら後はGitHub上でやりとりし、リリースまで進めます。Pull Requestやリリースに関しては[Contributing to Spindle](/CONTRIBUTING.md)を参照してください。
+5. Pull Requestの作成。ここまでできたら後はGitHub上でやりとりし、リリースまで進めます。Pull Requestやリリースに関しては[Contributing to Spindle](/CONTRIBUTING.md)を参照してください。
