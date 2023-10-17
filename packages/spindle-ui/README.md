@@ -76,13 +76,13 @@ Spindle UIのスタイルは、名前空間(`spui`)をもったCSSとして定�
 <!-- 常に最新のスタイルを読み込む場合。ただしリダイレクトされるため遅延します -->
 <link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/index.css">
 <!-- バージョンを指定して読み込む場合。リダイレクトされないのでレスポンスが少し早いです -->
-<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui@0.11.2/index.css">
+<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui@1.0.0/index.css">
 
 <!-- コンポーネント毎にスタイルを読み込む場合 -->
 <!-- 常に最新のスタイルを読み込む場合。ただしリダイレクトされるため遅延します -->
 <link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Button/Button.css">
 <!-- バージョンを指定して読み込む場合。リダイレクトされないのでレスポンスが少し早いです -->
-<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui@0.11.2/Button/Button.css">
+<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui@1.0.0/Button/Button.css">
 ```
 
 ただし、CSSファイルサイズやファイル数が不必要に大きくなり、CDNサーバが遅延の原因になる可能性があるため**本番Webアプリケーションでの利用は推奨していません**。
