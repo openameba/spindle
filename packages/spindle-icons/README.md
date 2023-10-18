@@ -1,8 +1,6 @@
-# Spindle Icons (In development)
+# Spindle Icons
 
 SVG and PDF Icons with Spindle (Ameba Design System)
-
-> Spindle Iconsは試験開発中のため、大幅に変更される可能性があります。安定版リリースまでの間はバージョン番号は0となり、バージョンに関わらずbreaking changeが行われることがありますので、利用時には注意してください。変更内容は、[CHANGELOG](CHANGELOG.md)に記載されています。
 
 ![See license in readme.md](https://img.shields.io/npm/l/@openameba/spindle-icons) ![npm](https://img.shields.io/npm/v/@openameba/spindle-icons)
 

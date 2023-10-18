@@ -1,6 +1,6 @@
 # Spindle Theme Switch
 
-`<spindle-theme-switch>`はライトテーマとダークテーマを切り替えるためのコンポーネントです。Spindleで定義しているスタイルや動作、アクセシビリティ要件を考慮して作成されています。
+`<spindle-theme-switch>`はライトテーマとダークテーマを切り替えるためのコンポーネント([Custom Element](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements))です。Spindleで定義しているスタイルや動作、アクセシビリティ要件を考慮して作成されています。
 
 実装は[GoogleChromeLabs/dark-mode-toggle](https://github.com/GoogleChromeLabs/dark-mode-toggle)を継承して作成されています。
 
