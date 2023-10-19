@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@1.0.0...@openameba/spindle-ui@1.0.1) (2023-10-19)
+
+### Bug Fixes
+
+- **spindle-ui:** drop down appearance style ([ebc0e83](https://github.com/openameba/spindle/commit/ebc0e8397e4c92de263f7e9f38be39eb6aca0003))
+
 # [1.0.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@0.64.0...@openameba/spindle-ui@1.0.0) (2023-10-18)
 
 **Note:** Version bump only for package @openameba/spindle-ui
