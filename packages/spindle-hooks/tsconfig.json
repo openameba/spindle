@@ -8,6 +8,7 @@
     "paths": {
       "react": ["./node_modules/@types/react"]
     },
+    "types": ["node", "jest", "@testing-library/jest-dom"],
     "jsx": "react"
   },
   "include": [
