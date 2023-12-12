@@ -31,6 +31,7 @@ Dialogは、利用者に重要な意思決定を促す時に利用されます�
 - `<Button>`に固有の処理を追加したい場合には`type="button"`や`type="reset"`などの属性を指定してください
 - `<Dialog>`は`open`プロパティの値を見て、開く・閉じるの動作をします。`onClose`や`onCancel`のタイミングで`open`プロパティに`false`を指定し、ダイアログを閉じます
   - `onCancel`イベントはEscapeキーを押されたなどデバイスや支援技術から伝達されます。特にそれらの動作を無効にする必要がない場合、通常は`open`プロパティを`false`にしてダイアログを閉じる動作を指定してください
+- ダイアログ起動時にフォーカスさせたい要素には、可能な限り`autofocus`属性を指定してください。これにより、ユーザーエージェントの差異なく指定の要素に自動的にフォーカスされ、動作に一貫性をもたせることができます
 
 <Preview withSource="open">
   <Story name="Normal">
@@ -64,7 +65,7 @@ function DialogExample() {
         <Dialog.Title id="dialog-title">タイトルですよ</Dialog.Title>
         <Dialog.Body id="dialog-description">ここに本文が入りますよ</Dialog.Body>
         <Dialog.ButtonGroup>
-          <Button layout="fullWidth" size="medium" onClick={handleButtonClick}>OK</Button>
+          <Button layout="fullWidth" size="medium" onClick={handleButtonClick} autoFocus>OK</Button>
         </Dialog.ButtonGroup>
       </Dialog.Frame>
     </>
@@ -91,7 +92,7 @@ function DialogExample() {
       <Dialog.Title>タイトルですよ</Dialog.Title>
       <Dialog.Body>ここに本文が入りますよ</Dialog.Body>
       <Dialog.ButtonGroup>
-        <Button layout="fullWidth" size="medium">OK</Button>
+        <Button layout="fullWidth" size="medium" autoFocus>OK</Button>
       </Dialog.ButtonGroup>
     </Dialog.StyleOnly>
   );
@@ -105,7 +106,7 @@ function DialogExample() {
   <p class="spui-Dialog-title">タイトルですよ</p>
   <p class="spui-Dialog-body">ここに本文が入りますよ</p>
   <div class="spui-ButtonGroup spui-ButtonGroup--row spui-ButtonGroup--medium spui-Dialog-buttonGroup">
-    <button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--contained">OK</button>
+    <button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--contained" autofocus>OK</button>
   </div>
 </div>
   `}
@@ -129,7 +130,7 @@ function DialogExample() {
       <Dialog.Title>タイトルですよ</Dialog.Title>
       <Dialog.Body>ここに本文が入りますよ</Dialog.Body>
       <Dialog.ButtonGroup>
-        <Button layout="fullWidth" size="medium" variant="neutral">
+        <Button layout="fullWidth" size="medium" variant="neutral" autoFocus>
           キャンセル
         </Button>
         <Button layout="fullWidth" size="medium" variant="danger">
@@ -149,7 +150,7 @@ function DialogExample() {
   <p class="spui-Dialog-body">ここに本文が入りますよ</p>
   <div class="spui-ButtonGroup spui-ButtonGroup--row spui-ButtonGroup--medium spui-Dialog-buttonGroup">
     <button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--neutral">キャンセル</button>
-    <button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--danger" type="button">削除する</button>
+    <button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--danger" type="button" autofocus>削除する</button>
   </div>
 </div>
   `}
@@ -169,7 +170,7 @@ function DialogExample() {
       <Dialog.Title>タイトルですよ</Dialog.Title>
       <Dialog.Body>ここに本文が入りますよ</Dialog.Body>
       <Dialog.ButtonGroup direction="column">
-        <Button layout="fullWidth" size="medium">
+        <Button layout="fullWidth" size="medium" autoFocus>
           Spindleをフォローする
         </Button>
         <Button layout="fullWidth" size="medium" variant="neutral">
@@ -188,7 +189,7 @@ function DialogExample() {
   <p class="spui-Dialog-title">タイトルですよ</p>
   <p class="spui-Dialog-body">ここに本文が入りますよ</p>
   <div class="spui-ButtonGroup spui-ButtonGroup--column spui-ButtonGroup--medium spui-Dialog-buttonGroup">
-    <button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--contained" type="button">Spindleをフォローする</button>
+    <button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--contained" type="button" autofocus>Spindleをフォローする</button>
     <button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--neutral">キャンセル</button>
   </div>
 </div>
@@ -209,7 +210,7 @@ function DialogExample() {
       <Dialog.Title>タイトルですよ</Dialog.Title>
       <Dialog.Body>ここに本文が入りますよ</Dialog.Body>
       <Dialog.ButtonGroup direction="column">
-        <Button layout="fullWidth" size="medium">
+        <Button layout="fullWidth" size="medium" autoFocus>
           Spindleをフォローする
         </Button>
         <SubtleButton size="medium">
@@ -228,7 +229,7 @@ function DialogExample() {
   <p class="spui-Dialog-title">タイトルですよ</p>
   <p class="spui-Dialog-body">ここに本文が入りますよ</p>
   <div class="spui-ButtonGroup spui-ButtonGroup--column spui-ButtonGroup--medium spui-Dialog-buttonGroup">
-    <button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--contained" type="button">Spindleをフォローする</button>
+    <button class="spui-Button spui-Button--fullWidth spui-Button--medium spui-Button--contained" type="button" autofocus>Spindleをフォローする</button>
     <button class="spui-SubtleButton spui-SubtleButton--medium">とじる</button>
   </div>
 </div>
