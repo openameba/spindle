@@ -15,15 +15,14 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 18
       - run: yarn install --frozen-lockfile
       - run: yarn build
       - run: yarn cp
       - name: deploy to preview channel
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
           expires: 30d
           entryPoint: ./packages/spindle-theme-switch/
-          firebaseToolsVersion: v12.9.1
