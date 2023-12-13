@@ -26,3 +26,4 @@ jobs:
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
           expires: 30d
           entryPoint: ./packages/spindle-theme-switch/
+          firebaseToolsVersion: v12.9.1
