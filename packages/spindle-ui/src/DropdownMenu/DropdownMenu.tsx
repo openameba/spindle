@@ -40,7 +40,7 @@ interface ListProps extends DefaultProps {
 
 export const BLOCK_NAME = 'spui-DropdownMenu';
 const FADE_IN_ANIMATION = 'spui-DropdownMenu-fade-in';
-const CLOSE_KEY_LIST = ['Escape', 'Esc'];
+const CLOSE_KEY_LIST = ['ESCAPE', 'ESC'];
 const MENU_WIDTH = 256;
 
 const Caption = ({ children }: DefaultProps) => {
@@ -86,7 +86,7 @@ const List = ({
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
-      if (CLOSE_KEY_LIST.includes(e.key)) {
+      if (CLOSE_KEY_LIST.includes(e.key.toUpperCase())) {
         onClickCloser();
       }
     },
@@ -123,27 +123,28 @@ const List = ({
 
   useEffect(() => {
     const menu = menuEl.current;
-    menu?.addEventListener('animationend', handleAnimationEnd, false);
+    if (open) {
+      menu?.addEventListener('animationend', handleAnimationEnd, false);
+    }
 
     return () =>
       menu?.removeEventListener('animationend', handleAnimationEnd, false);
-  }, [menuEl, handleAnimationEnd]);
+  }, [menuEl, handleAnimationEnd, open]);
 
   useEffect(() => {
-    window.addEventListener('click', onClickBody, false);
+    if (open) {
+      window.addEventListener('click', onClickBody, false);
+    }
 
-    return () => {
-      window.removeEventListener('click', onClickBody, false);
-    };
-  }, [onClickBody]);
+    return () => window.removeEventListener('click', onClickBody, false);
+  }, [onClickBody, open]);
 
   useEffect(() => {
-    window.addEventListener('keydown', handleKeyDown);
-
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [handleKeyDown]);
+    if (open) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [handleKeyDown, open]);
 
   if (!open) {
     return <></>;
