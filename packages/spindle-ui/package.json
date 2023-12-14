@@ -1,6 +1,6 @@
 {
   "name": "@openameba/spindle-ui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "./index.js",
   "module": "./index.mjs",
   "types": "./index.d.ts",
@@ -56,7 +56,7 @@
     }
   },
   "dependencies": {
-    "@openameba/spindle-hooks": "^1.0.0",
+    "@openameba/spindle-hooks": "^1.0.1",
     "ameba-color-palette.css": "^4.9.0",
     "react-merge-refs": "^1.1.0"
   },

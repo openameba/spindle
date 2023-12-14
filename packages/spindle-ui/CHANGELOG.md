@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@1.0.1...@openameba/spindle-ui@1.0.2) (2023-12-14)
+
+### Bug Fixes
+
+- **spindle-ui:** esc handler in DropdownMenu ([975e81d](https://github.com/openameba/spindle/commit/975e81dba3a00bdc7dae7efb0024745624dfb8e7))
+
 ## [1.0.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@1.0.0...@openameba/spindle-ui@1.0.1) (2023-10-19)
 
 ### Bug Fixes
