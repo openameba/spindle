@@ -239,6 +239,7 @@
 | openblank | ![](../dist/svg/openblank.svg) |
 | openblank_fill | ![](../dist/svg/openblank_fill.svg) |
 | ownd | ![](../dist/svg/ownd.svg) |
+| paidplan | ![](../dist/svg/paidplan.svg) |
 | palette_fill | ![](../dist/svg/palette_fill.svg) |
 | paperplane | ![](../dist/svg/paperplane.svg) |
 | paperplane_fill | ![](../dist/svg/paperplane_fill.svg) |
@@ -291,6 +292,7 @@
 | service | ![](../dist/svg/service.svg) |
 | share | ![](../dist/svg/share.svg) |
 | shine_fill | ![](../dist/svg/shine_fill.svg) |
+| shine_two | ![](../dist/svg/shine_two.svg) |
 | shirt | ![](../dist/svg/shirt.svg) |
 | sideface_close | ![](../dist/svg/sideface_close.svg) |
 | sideface_open | ![](../dist/svg/sideface_open.svg) |
