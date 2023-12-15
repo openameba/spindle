@@ -60,4 +60,4 @@ jobs:
           -H "Accept: application/vnd.github.v3+json"
           -H "Authorization: token ${{ secrets.PERSONAL_ACCESS_TOKEN }}"
           https://api.github.com/repos/${{ github.event.repository.owner.name }}/${{ github.event.repository.name }}/pulls
-          -d '{"head":"${{ steps.extract_branch.outputs.name }}","base":"${{ github.event.repository.default_branch }}","title":"chore(release): publish"}'
+          -d '{"head":"${{ steps.extract_branch.outputs.name }}","base":"${{ github.event.repository.default_branch }}","title":"chore: publish"}'
