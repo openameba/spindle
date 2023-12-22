@@ -14,43 +14,23 @@
   flex-direction: column;
 }
 
-/* NOTE: gap property should be used in the near future */
-
 /* stylelint-disable plugin/selector-bem-pattern */
-.spui-ButtonGroup--large.spui-ButtonGroup--row > *:not(:first-child) {
-  margin-left: 16px;
+.spui-ButtonGroup--large {
+  gap: 16px;
 }
 
-.spui-ButtonGroup--large.spui-ButtonGroup--column > *:not(:first-child) {
-  margin-top: 16px;
+.spui-ButtonGroup--medium,
+.spui-ButtonGroup--small {
+  gap: 12px;
 }
 
-.spui-ButtonGroup--medium.spui-ButtonGroup--row > *:not(:first-child) {
-  margin-left: 12px;
-}
-
-.spui-ButtonGroup--medium.spui-ButtonGroup--column > *:not(:first-child) {
-  margin-top: 12px;
-}
-
-.spui-ButtonGroup--small.spui-ButtonGroup--row > *:not(:first-child) {
-  margin-left: 8px;
-}
-
-.spui-ButtonGroup--small.spui-ButtonGroup--column > *:not(:first-child) {
-  margin-top: 12px;
-}
-
-/* Override margin for Subtle button */
+/* Add margin for Subtle button */
 .spui-ButtonGroup--large.spui-ButtonGroup--column
   > .spui-SubtleButton:not(:first-child) {
-  margin-top: 20px;
+  margin-top: 4px;
 }
 
-:is(
-    .spui-ButtonGroup--medium,
-    .spui-ButtonGroup--small
-  ).spui-ButtonGroup--column
+.spui-ButtonGroup--medium.spui-ButtonGroup--column
   > .spui-SubtleButton:not(:first-child) {
-  margin-top: 14px;
+  margin-top: 2px;
 }
