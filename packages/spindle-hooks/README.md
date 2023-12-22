@@ -46,7 +46,7 @@ Spindle HooksはSpindle UIと同様にmodule版の配信もしています。利
 
 ## ブラウザサポート
 
-Spindle HooksはFirefox、Google Chrome、Microsoft Edge、Safariの最新版とInternet Explorer 11で動作確認しています。
+Spindle HooksはGoogle Chrome最新版で動作確認しています。それ以外のブラウザでは[Amebaの推奨環境](https://helps.ameba.jp/faq/others/5510/top_08.html)に基づき表示・動作に問題がある場合は対応していきます。
 
 ## 開発方法
 

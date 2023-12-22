@@ -88,7 +88,7 @@ Spindle UIのスタイルは、名前空間(`spui`)をもったCSSとして定�
 ただし、CSSファイルサイズやファイル数が不必要に大きくなり、CDNサーバが遅延の原因になる可能性があるため**本番Webアプリケーションでの利用は推奨していません**。
 
 ## ブラウザサポート
-Spindle UIはFirefox、Google Chrome、Microsoft Edge、Safariの最新版とInternet Explorer 11で動作確認しています。ただし、CSS custom propertiesを使用しているため、Internet Explorer 11での利用時には[ie11-custom-properties](https://www.npmjs.com/package/ie11-custom-properties)や[css-vars-ponyfill](https://github.com/jhildenbiddle/css-vars-ponyfill)などpolyfillとの併用が必要です。
+Spindle UIはGoogle Chrome最新版で動作確認しています。それ以外のブラウザでは[Amebaの推奨環境](https://helps.ameba.jp/faq/others/5510/top_08.html)に基づき表示・動作に問題がある場合は対応していきます。
 
 ## 開発方法
 
