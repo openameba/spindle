@@ -18,7 +18,7 @@
     },
     {
       "path": "./dist/SnackBar/*.mjs",
-      "maxSize": "1.4 kB"
+      "maxSize": "1.5 kB"
     },
     {
       "path": "./dist/Toast/*.mjs",

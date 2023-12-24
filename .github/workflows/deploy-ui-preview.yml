@@ -35,7 +35,7 @@ jobs:
           ref: 'refs/pull/${{ github.event.number }}/merge'
       - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 18
       - run: yarn install --frozen-lockfile
       - run: |
           yarn lerna run --scope @openameba/spindle-hooks build
@@ -43,8 +43,7 @@ jobs:
       - name: deploy to preview channel
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
           expires: 30d
           entryPoint: ./packages/spindle-ui/
-          firebaseToolsVersion: v12.9.1
