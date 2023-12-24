@@ -48,12 +48,12 @@ jobs:
       - run: sudo apt-get --yes update
       - run: sudo apt-get --yes install fonts-noto
       - if: github.event_name == 'pull_request'
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           ref: 'refs/pull/${{ github.event.number }}/merge'
       - if: github.event_name != 'pull_request'
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - uses: actions/setup-node@v4
