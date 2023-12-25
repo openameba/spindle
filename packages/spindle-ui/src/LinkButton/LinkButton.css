@@ -75,24 +75,30 @@
   border-radius: calc(48em / 16);
   font-size: 1em;
   min-height: 48px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding: 8px 16px;
 }
 
 .spui-LinkButton--medium {
   border-radius: calc(40em / 14);
   font-size: 0.875em;
   min-height: 40px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding: 8px 16px;
 }
 
 .spui-LinkButton--small {
   border-radius: calc(32em / 13);
   font-size: 0.8125em;
   min-height: 32px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 6px 10px;
+}
+
+/* Bordered small buttons exceeds the minimum height with the default padding */
+.spui-LinkButton--small:is(
+    .spui-LinkButton--outlined,
+    .spui-LinkButton--danger
+  ) {
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
 
 /*
@@ -115,9 +121,6 @@
   background-color: var(--LinkButton--contained-backgroundColor);
   border: none;
   color: var(--LinkButton--contained-color);
-  /* Button variants have different vertical padding to normalize height */
-  padding-bottom: 8px;
-  padding-top: 8px;
 }
 
 .spui-LinkButton--contained:active {
@@ -135,8 +138,6 @@
   background-color: transparent;
   border: 2px solid var(--LinkButton--outlined-borderColor);
   color: var(--LinkButton--outlined-color);
-  padding-bottom: 6px;
-  padding-top: 6px;
 }
 
 .spui-LinkButton--outlined:active {
@@ -154,8 +155,6 @@
   background-color: var(--LinkButton--lighted-backgroundColor);
   border: none;
   color: var(--LinkButton--lighted-color);
-  padding-bottom: 8px;
-  padding-top: 8px;
 }
 
 .spui-LinkButton--lighted:active {
@@ -173,8 +172,6 @@
   background-color: var(--LinkButton--neutral-backgroundColor);
   border: none;
   color: var(--LinkButton--neutral-color);
-  padding-bottom: 8px;
-  padding-top: 8px;
 }
 
 .spui-LinkButton--neutral:active {
@@ -192,8 +189,6 @@
   background-color: transparent;
   border: 2px solid var(--LinkButton--danger-borderColor);
   color: var(--LinkButton--danger-color);
-  padding-bottom: 6px;
-  padding-top: 6px;
 }
 
 .spui-LinkButton--danger:active {
