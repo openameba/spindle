@@ -29,6 +29,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: check_paths
     if: ${{ needs.check_paths.outputs.ui == 'true' }}
+    permissions:
+      checks: write
+      pull-requests: write
+      contents: read
     steps:
       - uses: actions/checkout@v3
         with:

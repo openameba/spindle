@@ -11,6 +11,10 @@ jobs:
     defaults:
       run:
         working-directory: ./packages/spindle-hooks/
+    permissions:
+      checks: write
+      pull-requests: write
+      contents: read
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v4
