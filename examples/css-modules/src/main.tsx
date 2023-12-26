@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { SpindleButton } from './SpindleButton';
 
 // Ameba color palette should be loaded before using Spindle UI
@@ -14,4 +14,6 @@ const App = () => (
   </>
 );
 
-ReactDOM.render(<App />, document.body);
+const container = document.body;
+const root = createRoot(container);
+root.render(<App />);
