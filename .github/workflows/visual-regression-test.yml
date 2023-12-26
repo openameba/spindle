@@ -9,6 +9,9 @@ on:
       - 'packages/spindle-ui/**'
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   check_condition:
     runs-on: ubuntu-latest
@@ -16,11 +19,8 @@ jobs:
     outputs:
       result: ${{ steps.condition.outputs.result }}
     steps:
-      - if: github.event_name == 'pull_request'
-        uses: actions/checkout@v3
-        with:
-          ref: 'refs/pull/${{ github.event.number }}/merge'
-      - run: echo 'RESULT=false' >> "$GITHUB_ENV"
+      - name: default to not running
+        run: echo 'RESULT=false' >> "$GITHUB_ENV"
       - name: execute if triggered by members
         if: >
           github.event_name == 'push' ||
@@ -28,13 +28,13 @@ jobs:
         run: echo 'RESULT=true' >> "$GITHUB_ENV"
       - name: execute if the PR from a forked repository, it have the [allow execute workflow] label
         if: >
-          github.event_name == 'pull_request' &&
+          github.event_name == 'pull_request_target' &&
           github.event.pull_request.head.repo.full_name != github.repository &&
           contains(github.event.pull_request.labels.*.name, 'allow execute workflow')
         run: echo 'RESULT=true' >> "$GITHUB_ENV"
       - name: execute if the PR from a this repository
         if: >
-          github.event_name == 'pull_request' &&
+          github.event_name == 'pull_request_target' &&
           github.event.pull_request.head.repo.full_name == github.repository
         run: echo 'RESULT=true' >> "$GITHUB_ENV"
       - id: condition
@@ -47,13 +47,13 @@ jobs:
     steps:
       - run: sudo apt-get --yes update
       - run: sudo apt-get --yes install fonts-noto
-      - if: github.event_name == 'pull_request'
-        uses: actions/checkout@v3
+      - if: github.event_name == 'pull_request_target'
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           ref: 'refs/pull/${{ github.event.number }}/merge'
-      - if: github.event_name != 'pull_request'
-        uses: actions/checkout@v3
+      - if: github.event_name != 'pull_request_target'
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - uses: actions/setup-node@v4
@@ -77,7 +77,8 @@ jobs:
           --outDir packages/spindle-ui/.reg-suit/actual_images/
           --serverCmd 'npx serve -p 5000 packages/spindle-ui/public'
           http://localhost:5000
-      - run: git checkout ${{ github.head_ref || github.ref_name }}
+      - name: workaround for detached HEAD
+        run: git checkout ${{ github.head_ref || github.ref_name }}
       - run: |
           printf -- '%s' "$GOOGLE_APPLICATION_CREDENTIALS_JSON" | base64 --decode > "${PWD}/storage-key.json"
           export GOOGLE_APPLICATION_CREDENTIALS="${PWD}/storage-key.json"
