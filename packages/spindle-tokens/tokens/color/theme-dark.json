@@ -161,7 +161,7 @@
           "attributes": {
             "category": "color"
           },
-          "value": "{Color.Primitive.Highlight.Yellow 100.value}"
+          "value": "{Color.Primitive.Highlight.Yellow.30 alpha.value}"
         }
       },
       "Highlighted": {
