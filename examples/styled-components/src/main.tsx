@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import styled, { createGlobalStyle } from 'styled-components';
 import { SpindleButton } from './SpindleButton';
 
@@ -26,4 +26,6 @@ const App = () => (
   </>
 );
 
-ReactDOM.render(<App />, document.body);
+const container = document.body;
+const root = createRoot(container);
+root.render(<App />);
