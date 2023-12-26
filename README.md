@@ -4,7 +4,7 @@
 
 # Spindle
 
-Ameba Design System
+Ameba Design System!
 
 - [Spindle Tokens](packages/spindle-tokens) (Design tokens)
 - [Spindle Icons](packages/spindle-icons) (SVG and PDF icons)
