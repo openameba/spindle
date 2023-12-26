@@ -5,7 +5,8 @@
   "plugins": {
     "reg-keygen-git-hash-plugin": true,
     "reg-notify-github-plugin": {
-      "clientId": "$REG_SUIT_NOTIFY_CLIENT_ID"
+      "clientId": "$REG_SUIT_NOTIFY_CLIENT_ID",
+      "shortDescription": true
     },
     "reg-publish-gcs-plugin": {
       "bucketName": "$GCS_BUCKET_NAME_REG_SUIT"
