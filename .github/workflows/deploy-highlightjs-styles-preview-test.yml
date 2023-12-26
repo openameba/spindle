@@ -1,0 +1,29 @@
+name: deploy Highlight.js themes preview test
+
+on:
+  - pull_request
+
+jobs:
+  build_and_preview:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./packages/spindle-syntax-themes/
+    permissions:
+      checks: write
+      pull-requests: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - run: yarn install --frozen-lockfile
+      - run: yarn build:example
+      - name: deploy to preview channel
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
+          expires: 30d
+          entryPoint: ./packages/spindle-syntax-themes/
