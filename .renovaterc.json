@@ -3,6 +3,7 @@
     "config:base",
     ":label(renovate)",
     ":preserveSemverRanges",
+    ":semanticCommitScopeDisabled",
     ":timezone(Asia/Tokyo)",
     "group:definitelyTyped",
     "group:linters",
