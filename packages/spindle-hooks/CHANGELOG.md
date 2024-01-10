@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/openameba/spindle/compare/@openameba/spindle-hooks@1.0.1...@openameba/spindle-hooks@1.1.0) (2024-01-10)
+
+### Features
+
+- node to vesrion 18 ([07ec70e](https://github.com/openameba/spindle/commit/07ec70e4a19dc7c5a5f39d6044769c90d57d8d37))
+
 ## [1.0.1](https://github.com/openameba/spindle/compare/@openameba/spindle-hooks@1.0.0...@openameba/spindle-hooks@1.0.1) (2023-12-14)
 
 **Note:** Version bump only for package @openameba/spindle-hooks
