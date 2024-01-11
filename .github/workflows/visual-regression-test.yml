@@ -70,7 +70,6 @@ jobs:
       - run: |
           yarn lerna run --scope @openameba/spindle-hooks build
           yarn lerna run --scope @openameba/spindle-ui storybook:build
-      - run: yarn workspace @openameba/spindle-ui add reg-keygen-git-hash-plugin reg-notify-github-plugin reg-publish-gcs-plugin --dev
       - name: capture stories
         run: >
           npx storycap
