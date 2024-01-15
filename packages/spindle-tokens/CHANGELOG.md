@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.3](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@0.12.2...@openameba/spindle-tokens@0.12.3) (2024-01-15)
+
+### Bug Fixes
+
+- **spindle-tokens:** correct highlight yellow in dark ([0607cd4](https://github.com/openameba/spindle/commit/0607cd4e96e0f3abf70936c760dabc3408946477))
+
 ## [0.12.2](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@0.12.1...@openameba/spindle-tokens@0.12.2) (2023-07-27)
 
 ### Bug Fixes

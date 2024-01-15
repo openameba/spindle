@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@1.2.0...@openameba/spindle-ui@1.2.1) (2024-01-15)
+
+### Bug Fixes
+
+- **spindle-ui:** change padding to correct Button height ([dda632b](https://github.com/openameba/spindle/commit/dda632b1801b90e78507b0cf304f6e5117f4bf1b))
+- **spindle-ui:** margin in ButtonGroup ([22df4f6](https://github.com/openameba/spindle/commit/22df4f663509b160948d03eeaf45244ed42e1f38))
+
 # [1.2.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@1.1.0...@openameba/spindle-ui@1.2.0) (2024-01-10)
 
 ### Features
