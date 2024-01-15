@@ -77,24 +77,27 @@
   border-radius: calc(48em / 16);
   font-size: 1em;
   min-height: 48px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding: 8px 16px;
 }
 
 .spui-Button--medium {
   border-radius: calc(40em / 14);
   font-size: 0.875em;
   min-height: 40px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding: 8px 16px;
 }
 
 .spui-Button--small {
   border-radius: calc(32em / 13);
   font-size: 0.8125em;
   min-height: 32px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 6px 10px;
+}
+
+/* Bordered small buttons exceeds the minimum height with the default padding */
+.spui-Button--small:is(.spui-Button--outlined, .spui-Button--danger) {
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
 
 /*
@@ -117,9 +120,6 @@
   background-color: var(--Button--contained-backgroundColor);
   border: none;
   color: var(--Button--contained-color);
-  /* Button variants have different vertical padding to normalize height */
-  padding-bottom: 8px;
-  padding-top: 8px;
 }
 
 .spui-Button--contained:active {
@@ -137,8 +137,6 @@
   background-color: transparent;
   border: 2px solid var(--Button--outlined-borderColor);
   color: var(--Button--outlined-color);
-  padding-bottom: 6px;
-  padding-top: 6px;
 }
 
 .spui-Button--outlined:active {
@@ -156,8 +154,6 @@
   background-color: var(--Button--lighted-backgroundColor);
   border: none;
   color: var(--Button--lighted-color);
-  padding-bottom: 8px;
-  padding-top: 8px;
 }
 
 .spui-Button--lighted:active {
@@ -175,8 +171,6 @@
   background-color: var(--Button--neutral-backgroundColor);
   border: none;
   color: var(--Button--neutral-color);
-  padding-bottom: 8px;
-  padding-top: 8px;
 }
 
 .spui-Button--neutral:active {
@@ -194,8 +188,6 @@
   background-color: transparent;
   border: 2px solid var(--Button--danger-borderColor);
   color: var(--Button--danger-color);
-  padding-bottom: 6px;
-  padding-top: 6px;
 }
 
 .spui-Button--danger:active {
