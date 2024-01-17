@@ -345,4 +345,5 @@ export { default as Undo } from './Undo';
 export { default as UndoBold } from './UndoBold';
 export { default as Wallet } from './Wallet';
 export { default as Webview } from './Webview';
+export { default as X } from './X';
 export { default as Youtube } from './Youtube';

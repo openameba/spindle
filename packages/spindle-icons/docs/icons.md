@@ -348,4 +348,5 @@
 | undo_bold | ![](../dist/svg/undo_bold.svg) |
 | wallet | ![](../dist/svg/wallet.svg) |
 | webview | ![](../dist/svg/webview.svg) |
+| x | ![](../dist/svg/x.svg) |
 | youtube | ![](../dist/svg/youtube.svg) |
