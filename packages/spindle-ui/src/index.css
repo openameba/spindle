@@ -1,5 +1,6 @@
 /* stylelint-disable plugin/selector-bem-pattern */
 @import 'ameba-color-palette.css';
+@import '@openameba/spindle-tokens';
 @import './Breadcrumb/Breadcrumb.css';
 @import './BottomButton/BottomButton.css';
 @import './Button/Button.css';

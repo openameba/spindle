@@ -28,6 +28,14 @@ module.exports = {
           },
         ],
       },
+      resolve: {
+        ...config.resolve,
+        alias: {
+          ...config.resolve.alias,
+          '@openameba/spindle-tokens':
+            '@openameba/spindle-tokens/spindle-tokens.css',
+        },
+      },
     };
   },
 };
