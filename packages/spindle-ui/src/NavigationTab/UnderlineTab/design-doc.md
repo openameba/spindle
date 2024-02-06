@@ -16,6 +16,8 @@ UnderlineTabはNavigationTabの3種(Underline/Capsule/Inline)の内の１つで�
 #### Fixed, Scrollable
 表示するタブアイテム数によってFixed, Scrollableの2パターンがあります。Fixedはタブアイテムが画面幅に収まる場合、Scrollableは収まらない場合にスクロール可能になり左右にボタンが配置されます。
 
+Scrollableパターンで左右に見切れたタブアイテムがある場合には、操作用途のボタンが表示されます。ボタンが押されると、左または右側に150pxスクロールします。この値は「想定する最小画面幅より大きくならない適当な値」として指定されています。画面幅に従って動的に割合で算出するプランもありましたが、よりシンプルな方で進めることにしました。
+
 ## スクリーンショット
 ![UnderlineTabのイメージ。Fixed, Scrollableの2パターンの表示がある。Fixedはアイテムが全て表示されている。Scrollableは画面内に表示し切れないアイテムがあり、画面の左端または右端に「＜」または「＞」アイコンが表示されている。他に、Borderをつけるものや、Count Badgeをつけるタイプのものがある。](https://github.com/openameba/spindle/assets/44389443/c0ef6998-603c-473a-ab5c-a022fdb478d3)
 
@@ -28,7 +30,6 @@ linkUrlを指定するとリンクになります。
 ```tsx
 <UnderlineTab
   defaultSelectedId="team"
-  countBadgeLabel="未読"
   hasBorder
 >
   <UnderlineTabItem label="top" id="top" linkUrl="/top" countBadge={99} />
@@ -42,7 +43,6 @@ linkUrlを指定しない場合はボタンとなります。ボタンには指�
 ```tsx
 <UnderlineTab
   defaultSelectedId="team"
-  countBadgeLabel="新着"
   hasBorder
 >
   <UnderlineTabItem label="Top" id="top" onClick={handleClick} />
@@ -57,28 +57,12 @@ linkUrlを指定しない場合はボタンとなります。ボタンには指�
 ```tsx
 <UnderlineTab
   defaultSelectedId="team"
-  countBadgeLabel="未読"
   hasBorder
 >
   <a id="top" href="/top" role="tab" aria-selected={false} onClick={handleClick}>Top</a>
   <a id="team" href="/team" role="tab" aria-selected={true} aria-current="page" onClick={handleClick}>Team</a>
   <a id="about" href="/about" role="tab" aria-selected={false} onClick={handleClick}>Amebaとは</a>
 </UnderlineTab>
-```
-
-#### 直接buttonタグを使うパターン
-`role`属性、`aria-selected`属性、`aria-controls`属性が必要です。また、表示されるコンテンツ側には、選択されているタブの`aria-controls`属性と一致した`id`属性が必要です。
-```tsx
-<UnderlineTab
-  defaultSelectedId="team"
-  hasBorder
-  countBadgeLabel="新着"
->
-  <button id="top" role="tab" aria-selected={false} aria-controls="top-tabpanel" onClick={handleClick}>Top</button>
-  <button id="team" role="tab" aria-selected={true} aria-controls="team-tabpanel" onClick={handleClick}>Team</button>
-  <button id="about" role="tab" aria-selected={false} aria-controls="about-tabpanel" onClick={handleClick}>Amebaとは</button>
-</UnderlineTab>
-<div id="team-tabpanel" role="tabpanel">表示されるコンテンツ</div>
 ```
 
 ### DO NOT
@@ -94,6 +78,8 @@ linkUrlを指定しない場合はボタンとなります。ボタンには指�
 - Border Low Emphasis (下線)
 - Text High Emphasis Inverse (数字バッジテキスト)
 - Surface Accent Primary (数字バッジ背景)
+- Animation Content Change (タブhover時, 左右移動ボタンhover時)
+- Animation Appear In (タブ下線の出現時, 左右移動ボタンの出現時)
 
 ### プロパティ
 #### UnderlineTab.tsx
@@ -101,7 +87,6 @@ linkUrlを指定しない場合はボタンとなります。ボタンには指�
 type Props = {
   children: React.ReactNode;
   defaultSelectedId: string; // アイテムのidを指定します。指定したidが初期表示時に選択されているタブとして下線が表示されます。該当のidが存在しない場合は、下線が表示されません。
-  countBadgeLabel?: string; // バッジの意味を表すための不可視のラベルに用います。ラベルは視覚的に伝わる以上の意味を含めたラベルをつけるべきではなく、必要最低限の簡潔なテキストにする必要があります。初期値は`件数`です。
   hasBorder?: boolean; // タブに区切りとしての下線を表示します。初期値は`false`です
   onClick?: (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>, id) => void;
 };
@@ -126,14 +111,12 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 
 const UnderlineTabContext = React.createContext<{
   selectedId: string;
-  countBadgeLabel: string;
   handleClick: (
     e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>,
     id: string,
   ) => void;
 }>({
   selectedId: '',
-  countBadgeLabel: '',
   handleClick: () => {},
 });
 
@@ -150,7 +133,6 @@ export const useUnderlineTabContextContext = () => {
 type Props = {
   children: React.ReactNode;
   defaultSelectedId: string;
-  countBadgeLabel?: string;
   hasBorder?: boolean;
   onClick?: (
     e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>,
@@ -163,7 +145,6 @@ const BLOCK_NAME = 'spui-UnderlineTab';
 export const UnderlineTab: React.FC<Props> = ({
   children,
   defaultSelectedId,
-  countBadgeLabel = '件数',
   hasBorder = false,
   onClick,
 }) => {
@@ -222,7 +203,7 @@ export const UnderlineTab: React.FC<Props> = ({
 
   return (
     <UnderlineTabContext.Provider
-      value={{ selectedId, countBadgeLabel, handleClick }}
+      value={{ selectedId, handleClick }}
     >
       <div
         ref={tabRef}
@@ -281,7 +262,6 @@ export const UnderlineTabItem = forwardRef<HTMLAnchorElement, Props>(
   function Item({ label, id, linkUrl, countBadge }: Props) {
     const {
       selectedId,
-      countBadgeLabel = '件数',
       handleClick,
     } = useUnderlineTabContextContext();
 
@@ -293,9 +273,8 @@ export const UnderlineTabItem = forwardRef<HTMLAnchorElement, Props>(
 
     const countBadgeElement = countBadge && (
       <>
-        <span className="visually-hidden">{countBadgeLabel}</span>
-        {/* 100以上の場合は99+の表記にする */}
         {countBadge}
+        <span className="visually-hidden">件</span>
       </>
     );
 
@@ -347,7 +326,6 @@ export const UnderlineTabItem = forwardRef<HTMLAnchorElement, Props>(
     { id: 'team', linkUrl: '/team', label: 'Team' },
     { id: 'ameba', linkUrl: '/about', label: 'Amebaとは' },
   ]}
-  countBadgeLabel="未読"
   hasBorder
 />
 ```
@@ -362,7 +340,6 @@ export const UnderlineTabItem = forwardRef<HTMLAnchorElement, Props>(
     { id: 'team', label: 'Team', linkComponentProps: { to: '/team' } },
     { id: 'ameba', label: 'Amebaとは', linkComponentProps: { to: '/about' } },
   ]}
-  countBadgeLabel="未読"
   hasBorder
   onClick={handleClick}
 />
@@ -377,7 +354,6 @@ export const UnderlineTabItem = forwardRef<HTMLAnchorElement, Props>(
     { id: 'team', label: 'Team' },
     { id: 'ameba', label: 'Amebaとは' },
   ]}
-  countBadgeLabel="新着"
   hasBorder
   onClick={handleClick}
 />
@@ -391,11 +367,11 @@ export const UnderlineTabItem = forwardRef<HTMLAnchorElement, Props>(
 - [テキストや文字画像のコントラストを確保する](https://a11y-guidelines.ameba.design/1/4/3/)[基本必須]
   - [ ] SpindleカラーパレットのTheme Colorsを適切に使い分けている
 - [テキストサイズを拡大縮小できる](https://a11y-guidelines.ameba.design/1/4/4/)[基本必須]
-  - [ ] 画面を200%拡大・文字サイズを2倍に変更しても、横スクロールで全てのタブを表示できる
+  - [ ] 画面を200%拡大・文字サイズを2倍に変更しても、改行または横スクロールで全てのタブを確認できる
 - [リフローできる](https://a11y-guidelines.ameba.design/1/4/10/)[できれば]
-  - [ ] 画面を400%まで拡大しても、横スクロールで全てのタブを表示できる
+  - [ ] 画面を400%まで拡大しても、改行または横スクロールで全てのタブを表示できる
 - [キーボード、タッチデバイスで操作できる](https://a11y-guidelines.ameba.design/2/1/1/)[基本必須]
-  - [ ] リンクとボタンはTabキーでフォーカスでき、Enterキーで実行できる
+  - [ ] リンクとボタンはTabキーまたは左右キーでフォーカスでき、Enterキーで実行できる
 - [適切なフォーカス順序にする](https://a11y-guidelines.ameba.design/2/4/3/)[基本必須]
   - [ ] キーボード操作の順序が、見た目の順序と一致している
 - [リンクの目的を理解できるようにする](https://a11y-guidelines.ameba.design/2/4/4/)[基本必須]
@@ -407,6 +383,8 @@ export const UnderlineTabItem = forwardRef<HTMLAnchorElement, Props>(
   - [ ] 現在位置は `aria-selected="true"` を付与している。リンクの場合は、`aria-current="page"` を追加で付与している
 - [ポインタジェスチャを必須としない](https://a11y-guidelines.ameba.design/2/5/1/)[基本必須]
   - [ ] スクロールできる場合はスクロールボタンを配置している
+- [ターゲットのサイズを理解する](https://a11y-guidelines.ameba.design/2/5/5/)[できれば]
+  - [ ] リンクやボタンのタップ領域は44px × 44px以上確保している
 - [HTMLを正しく記述する](https://a11y-guidelines.ameba.design/4/1/1/)[基本必須]
   - [ ] HTML仕様に準拠した実装をしている
 - [カスタムコントロールの操作性を担保する](https://a11y-guidelines.ameba.design/4/1/2/)[基本必須]
