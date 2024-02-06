@@ -212,7 +212,7 @@ export const UnderlineTab: React.FC<Props> = ({
               onClick={(e) => handleClick(e, id)}
               onKeyDown={(e) => handleKeyDown(e, index)}
             >
-              <p className={`${BLOCK_NAME}-labelWrapper`}>
+              <span className={`${BLOCK_NAME}-labelWrapper`}>
                 <span className={`${BLOCK_NAME}-label`}>{label}</span>
                 {countBadge && (
                   <>
@@ -220,7 +220,7 @@ export const UnderlineTab: React.FC<Props> = ({
                     <span className={`${BLOCK_NAME}-visuallyHidden`}>件</span>
                   </>
                 )}
-              </p>
+              </span>
             </button>
           );
         })}
