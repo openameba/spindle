@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@1.3.0...@openameba/spindle-ui@1.4.0) (2024-02-06)
+
+### Features
+
+- **spindle-ui:** add NavigationTab/UnderlineTab component ([676707e](https://github.com/openameba/spindle/commit/676707e88f1932385d983901a33caa04ced55970))
+
 # [1.3.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@1.2.1...@openameba/spindle-ui@1.3.0) (2024-01-17)
 
 ### Features

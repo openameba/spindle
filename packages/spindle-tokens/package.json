@@ -1,6 +1,6 @@
 {
   "name": "@openameba/spindle-tokens",
-  "version": "0.12.3",
+  "version": "0.13.0",
   "description": "Spindle design tokens.",
   "homepage": "https://github.com/openameba/spindle#readme",
   "license": "MIT",
