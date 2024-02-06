@@ -83,17 +83,17 @@ UnderlineTab内の各項目は`tab`roleを持ち、`id`には`options`の`id`が
 <Preview withSource="open">
   <Story name="Variant (fixed)">
     <UnderlineTab
-      defaultSelectedId={'all'}
+      defaultSelectedId={'fixed-all'}
       options={[
-        { id: 'all', label: 'すべて' },
-        { id: 'follow', label: 'フォロー' },
-        { id: 'follower', label: 'フォロワー' },
+        { id: 'fixed-all', label: 'すべて' },
+        { id: 'fixed-follow', label: 'フォロー' },
+        { id: 'fixed-follower', label: 'フォロワー' },
       ]}
       {...actions('onClick')}
     />
-    <div id="all-tabpanel" role="tabpanel" aria-labelledby="all" />
-    <div id="follow-tabpanel" role="tabpanel" aria-labelledby="follow" />
-    <div id="follower-tabpanel" role="tabpanel" aria-labelledby="follower" />
+    <div id="fixed-all-tabpanel" role="tabpanel" aria-labelledby="fixed-all" />
+    <div id="fixed-follow-tabpanel" role="tabpanel" aria-labelledby="fixed-follow" />
+    <div id="fixed-follower-tabpanel" role="tabpanel" aria-labelledby="fixed-follower" />
   </Story>
 </Preview>
 
@@ -101,17 +101,17 @@ UnderlineTab内の各項目は`tab`roleを持ち、`id`には`options`の`id`が
   code={`
 <div class="spui-UnderlineTab spui-UnderlineTab--fixed spui-UnderlineTab--border">
   <div class="spui-UnderlineTab-container" role="tablist">
-    <button aria-controls="all-tabpanel" aria-selected="true" class="spui-UnderlineTab-button" id="all" tabindex="0" type="button" role="tab" style="max-width: calc(33.3333%);">
+    <button aria-controls="fixed-all-tabpanel" aria-selected="true" class="spui-UnderlineTab-button" id="fixed-all" tabindex="0" type="button" role="tab" style="max-width: calc(33.3333%);">
       <p class="spui-UnderlineTab-labelWrapper">
         <span class="spui-UnderlineTab-label">すべて</span>
       </p>
     </button>
-    <button aria-controls="follow-tabpanel" aria-selected="false" class="spui-UnderlineTab-button" id="follow" tabindex="-1" type="button" role="tab" style="max-width: calc(33.3333%);">
+    <button aria-controls="fixed-follow-tabpanel" aria-selected="false" class="spui-UnderlineTab-button" id="fixed-follow" tabindex="-1" type="button" role="tab" style="max-width: calc(33.3333%);">
       <p class="spui-UnderlineTab-labelWrapper">
         <span class="spui-UnderlineTab-label">フォロー</span>
       </p>
     </button>
-    <button aria-controls="follower-tabpanel" aria-selected="false" class="spui-UnderlineTab-button" id="follower" tabindex="-1" type="button" role="tab" style="max-width: calc(33.3333%);">
+    <button aria-controls="fixed-follower-tabpanel" aria-selected="false" class="spui-UnderlineTab-button" id="fixed-follower" tabindex="-1" type="button" role="tab" style="max-width: calc(33.3333%);">
       <p class="spui-UnderlineTab-labelWrapper">
         <span class="spui-UnderlineTab-label">フォロワー</span>
       </p>
@@ -127,20 +127,20 @@ UnderlineTab内の各項目は`tab`roleを持ち、`id`には`options`の`id`が
 <Preview withSource="open">
   <Story name="Variant (scrollable)">
     <UnderlineTab
-      defaultSelectedId={'follow'}
+      defaultSelectedId={'scrollable-follow'}
       options={[
-        { id: 'all', label: 'すべて' },
-        { id: 'follow', label: 'フォロー' },
-        { id: 'follower', label: 'フォロワー' },
-        { id: 'others', label: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' },
+        { id: 'scrollable-all', label: 'すべて' },
+        { id: 'scrollable-follow', label: 'フォロー' },
+        { id: 'scrollable-follower', label: 'フォロワー' },
+        { id: 'scrollable-others', label: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' },
       ]}
       variant='scrollable'
       {...actions('onClick')}
     />
-    <div id="all-tabpanel" role="tabpanel" aria-labelledby="all" />
-    <div id="follow-tabpanel" role="tabpanel" aria-labelledby="follow" />
-    <div id="follower-tabpanel" role="tabpanel" aria-labelledby="follower" />
-    <div id="others-tabpanel" role="tabpanel" aria-labelledby="others" />
+    <div id="scrollable-all-tabpanel" role="tabpanel" aria-labelledby="scrollable-all" />
+    <div id="scrollable-follow-tabpanel" role="tabpanel" aria-labelledby="scrollable-follow" />
+    <div id="scrollable-follower-tabpanel" role="tabpanel" aria-labelledby="scrollable-follower" />
+    <div id="scrollable-others-tabpanel" role="tabpanel" aria-labelledby="scrollable-others" />
   </Story>
 </Preview>
 
@@ -154,22 +154,22 @@ UnderlineTab内の各項目は`tab`roleを持ち、`id`には`options`の`id`が
       </button>
     </div>
     <div class="spui-UnderlineTab-container" role="tablist">
-      <button aria-controls="all-tabpanel" aria-selected="false" class="spui-UnderlineTab-button" id="all" tabindex="-1" type="button" role="tab" style="max-width: fit-content;">
+      <button aria-controls="scrollable-all-tabpanel" aria-selected="false" class="spui-UnderlineTab-button" id="scrollable-all" tabindex="-1" type="button" role="tab" style="max-width: fit-content;">
         <p class="spui-UnderlineTab-labelWrapper">
           <span class="spui-UnderlineTab-label">すべて</span>
         </p>
       </button>
-      <button aria-controls="follow-tabpanel" aria-selected="true" class="spui-UnderlineTab-button" id="follow" tabindex="0" type="button" role="tab" style="max-width: fit-content;">
+      <button aria-controls="scrollable-follow-tabpanel" aria-selected="true" class="spui-UnderlineTab-button" id="scrollable-follow" tabindex="0" type="button" role="tab" style="max-width: fit-content;">
         <p class="spui-UnderlineTab-labelWrapper">
           <span class="spui-UnderlineTab-label">フォロー</span>
         </p>
       </button>
-      <button aria-controls="follower-tabpanel" aria-selected="false" class="spui-UnderlineTab-button" id="follower" tabindex="-1" type="button" role="tab" style="max-width: fit-content;">
+      <button aria-controls="scrollable-follower-tabpanel" aria-selected="false" class="spui-UnderlineTab-button" id="scrollable-follower" tabindex="-1" type="button" role="tab" style="max-width: fit-content;">
         <p class="spui-UnderlineTab-labelWrapper">
           <span class="spui-UnderlineTab-label">フォロワー</span>
         </p>
       </button>
-      <button aria-controls="others-tabpanel" aria-selected="false" class="spui-UnderlineTab-button" id="others" tabindex="-1" type="button" role="tab" style="max-width: fit-content;">
+      <button aria-controls="scrollable-others-tabpanel" aria-selected="false" class="spui-UnderlineTab-button" id="scrollable-others" tabindex="-1" type="button" role="tab" style="max-width: fit-content;">
         <p class="spui-UnderlineTab-labelWrapper">
           <span class="spui-UnderlineTab-label">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span>
         </p>
@@ -191,18 +191,18 @@ UnderlineTabの全体が表示領域内に収まっている場合は、特に�
 <Preview withSource="open">
   <Story name="Variant (scrollable with short label)">
     <UnderlineTab
-      defaultSelectedId={'follower'}
+      defaultSelectedId={'scrollable-short-follower'}
       options={[
-        { id: 'all', label: 'すべて' },
-        { id: 'follow', label: 'フォロー' },
-        { id: 'follower', label: 'フォロワー' },
+        { id: 'scrollable-short-all', label: 'すべて' },
+        { id: 'scrollable-short-follow', label: 'フォロー' },
+        { id: 'scrollable-short-follower', label: 'フォロワー' },
       ]}
       variant='scrollable'
       {...actions('onClick')}
     />
-    <div id="all-tabpanel" role="tabpanel" aria-labelledby="all" />
-    <div id="follow-tabpanel" role="tabpanel" aria-labelledby="follow" />
-    <div id="follower-tabpanel" role="tabpanel" aria-labelledby="follower" />
+    <div id="scrollable-short-all-tabpanel" role="tabpanel" aria-labelledby="scrollable-short-all" />
+    <div id="scrollable-short-follow-tabpanel" role="tabpanel" aria-labelledby="scrollable-short-follow" />
+    <div id="scrollable-short-follower-tabpanel" role="tabpanel" aria-labelledby="scrollable-short-follower" />
   </Story>
 </Preview>
 
@@ -212,18 +212,18 @@ UnderlineTabの全体が表示領域内に収まっている場合は、特に�
 <Preview withSource="open">
   <Story name="HasBorder (true)">
     <UnderlineTab
-      defaultSelectedId={'all'}
+      defaultSelectedId={'hasBorder-all'}
       hasBorder={true}
       options={[
-        { id: 'all', label: 'すべて' },
-        { id: 'follow', label: 'フォロー' },
-        { id: 'follower', label: 'フォロワー' },
+        { id: 'hasBorder-all', label: 'すべて' },
+        { id: 'hasBorder-follow', label: 'フォロー' },
+        { id: 'hasBorder-follower', label: 'フォロワー' },
       ]}
       {...actions('onClick')}
     />
-    <div id="all-tabpanel" role="tabpanel" aria-labelledby="all" />
-    <div id="follow-tabpanel" role="tabpanel" aria-labelledby="follow" />
-    <div id="follower-tabpanel" role="tabpanel" aria-labelledby="follower" />
+    <div id="hasBorder-all-tabpanel" role="tabpanel" aria-labelledby="hasBorder-all" />
+    <div id="hasBorder-follow-tabpanel" role="tabpanel" aria-labelledby="hasBorder-follow" />
+    <div id="hasBorder-follower-tabpanel" role="tabpanel" aria-labelledby="hasBorder-follower" />
   </Story>
 </Preview>
 
@@ -233,17 +233,17 @@ UnderlineTabの全体が表示領域内に収まっている場合は、特に�
 <Preview withSource="open">
   <Story name="CountBadge">
     <UnderlineTab
-      defaultSelectedId={'follow'}
+      defaultSelectedId={'countBadge-follow'}
       options={[
-        { id: 'all', label: 'すべて', countBadge: '1' },
-        { id: 'follow', label: 'フォロー' },
-        { id: 'follower', label: 'フォロワー', countBadge: '100' },
+        { id: 'countBadge-all', label: 'すべて', countBadge: '1' },
+        { id: 'countBadge-follow', label: 'フォロー' },
+        { id: 'countBadge-follower', label: 'フォロワー', countBadge: '100' },
       ]}
       variant='scrollable'
       {...actions('onClick')}
     />
-    <div id="all-tabpanel" role="tabpanel" aria-labelledby="all" />
-    <div id="follow-tabpanel" role="tabpanel" aria-labelledby="follow" />
-    <div id="follower-tabpanel" role="tabpanel" aria-labelledby="follower" />
+    <div id="countBadge-all-tabpanel" role="tabpanel" aria-labelledby="countBadge-all" />
+    <div id="countBadge-follow-tabpanel" role="tabpanel" aria-labelledby="countBadge-follow" />
+    <div id="countBadge-follower-tabpanel" role="tabpanel" aria-labelledby="countBadge-follower" />
   </Story>
 </Preview>
