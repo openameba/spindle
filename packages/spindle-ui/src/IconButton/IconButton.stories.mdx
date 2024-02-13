@@ -3,7 +3,10 @@ import { actions } from '@storybook/addon-actions';
 import { IconButton } from './IconButton';
 import { PlusBold } from '../Icon';
 
-# Icon Button
+# IconButton
+<Description>
+  アイコン単体でボタンとするケースで使用します。アイコンは特異なものは避け、ひと目見ただけでアクションが想起される理解しやすいものを選んでください。
+</Description>
 
 <Meta title="IconButton" component={IconButton} />
 
@@ -22,36 +25,53 @@ import { PlusBold } from '../Icon';
   code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/IconButton/IconButton.css">`}
 />
 
+## 指定できるプロパティ
+<Description>
+  - `size`(任意): IconButtonのサイズを指定します。デフォルトは`large`で、その他に`medium`, `small`, `exSmall`を指定することもできます。
+</Description>
+<Description>
+  - `variant`(任意): IconButtonの種類を指定します。デフォルトは`contained`で、その他に`outlined`, `lighted`, `neutral`, `danger`を指定することもできます。
+</Description>
+
+## アクセシビリティ
+アクションの内容が伝わるような不可視ラベルを設定してください。
+
+<Source
+  code={`
+<IconButton size="large" variant="contained"><PlusBold aria-label="追加" /></IconButton>
+  `}
+/>
+
 ## Large
 
 <Preview withSource="open">
   <Story name="Large">
-    <IconButton size="large" variant="contained" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
-    <IconButton size="large" variant="outlined" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
-    <IconButton size="large" variant="neutral" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
-    <IconButton size="large" variant="danger" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
-    <IconButton size="large" variant="lighted" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
+    <IconButton size="large" variant="contained" {...actions('onClick', 'onMouseOver')}><PlusBold aria-label="追加" /></IconButton>
+    <IconButton size="large" variant="outlined" {...actions('onClick', 'onMouseOver')}><PlusBold aria-label="追加" /></IconButton>
+    <IconButton size="large" variant="neutral" {...actions('onClick', 'onMouseOver')}><PlusBold aria-label="追加" /></IconButton>
+    <IconButton size="large" variant="danger" {...actions('onClick', 'onMouseOver')}><PlusBold aria-label="追加" /></IconButton>
+    <IconButton size="large" variant="lighted" {...actions('onClick', 'onMouseOver')}><PlusBold aria-label="追加" /></IconButton>
   </Story>
 </Preview>
 
 <Source
   code={`
-<IconButton size="large" variant="contained"><PlusBold /></IconButton>
-<IconButton size="large" variant="outlined"><PlusBold /></IconButton>
-<IconButton size="large" variant="neutral"><PlusBold /></IconButton>
-<IconButton size="large" variant="danger"><PlusBold /></IconButton>
-<IconButton size="large" variant="lighted"><PlusBold /></IconButton>
+<IconButton size="large" variant="contained"><PlusBold aria-label="追加" /></IconButton>
+<IconButton size="large" variant="outlined"><PlusBold aria-label="追加" /></IconButton>
+<IconButton size="large" variant="neutral"><PlusBold aria-label="追加" /></IconButton>
+<IconButton size="large" variant="danger"><PlusBold aria-label="追加" /></IconButton>
+<IconButton size="large" variant="lighted"><PlusBold aria-label="追加" /></IconButton>
   `}
 />
 
 <Source
   language='html'
   code={`
-<button class="spui-IconButton spui-IconButton--large spui-IconButton--contained"><svg /></button>
-<button class="spui-IconButton spui-IconButton--large spui-IconButton--outlined"><svg /></button>
-<button class="spui-IconButton spui-IconButton--large spui-IconButton--neutral"><svg /></button>
-<button class="spui-IconButton spui-IconButton--large spui-IconButton--danger"><svg /></button>
-<button class="spui-IconButton spui-IconButton--large spui-IconButton--lighted"><svg /></button>
+<button class="spui-IconButton spui-IconButton--large spui-IconButton--contained"><svg aria-label="追加" /></button>
+<button class="spui-IconButton spui-IconButton--large spui-IconButton--outlined"><svg aria-label="追加" /></button>
+<button class="spui-IconButton spui-IconButton--large spui-IconButton--neutral"><svg aria-label="追加" /></button>
+<button class="spui-IconButton spui-IconButton--large spui-IconButton--danger"><svg aria-label="追加" /></button>
+<button class="spui-IconButton spui-IconButton--large spui-IconButton--lighted"><svg aria-label="追加" /></button>
   `}
 />
 
@@ -59,32 +79,32 @@ import { PlusBold } from '../Icon';
 
 <Preview withSource="open">
   <Story name="Medium">
-    <IconButton size="medium" variant="contained" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
-    <IconButton size="medium" variant="outlined" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
-    <IconButton size="medium" variant="neutral" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
-    <IconButton size="medium" variant="danger" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
-    <IconButton size="medium" variant="lighted" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
+    <IconButton size="medium" variant="contained" {...actions('onClick', 'onMouseOver')}><PlusBold aria-label="追加" /></IconButton>
+    <IconButton size="medium" variant="outlined" {...actions('onClick', 'onMouseOver')}><PlusBold aria-label="追加" /></IconButton>
+    <IconButton size="medium" variant="neutral" {...actions('onClick', 'onMouseOver')}><PlusBold aria-label="追加" /></IconButton>
+    <IconButton size="medium" variant="danger" {...actions('onClick', 'onMouseOver')}><PlusBold aria-label="追加" /></IconButton>
+    <IconButton size="medium" variant="lighted" {...actions('onClick', 'onMouseOver')}><PlusBold aria-label="追加" /></IconButton>
   </Story>
 </Preview>
 
 <Source
   code={`
-<IconButton size="medium" variant="contained"><PlusBold /></IconButton>
-<IconButton size="medium" variant="outlined"><PlusBold /></IconButton>
-<IconButton size="medium" variant="neutral"><PlusBold /></IconButton>
-<IconButton size="medium" variant="danger"><PlusBold /></IconButton>
-<IconButton size="medium" variant="lighted"><PlusBold /></IconButton>
+<IconButton size="medium" variant="contained"><PlusBold aria-label="追加" /></IconButton>
+<IconButton size="medium" variant="outlined"><PlusBold aria-label="追加" /></IconButton>
+<IconButton size="medium" variant="neutral"><PlusBold aria-label="追加" /></IconButton>
+<IconButton size="medium" variant="danger"><PlusBold aria-label="追加" /></IconButton>
+<IconButton size="medium" variant="lighted"><PlusBold aria-label="追加" /></IconButton>
   `}
 />
 
 <Source
   language='html'
   code={`
-<button class="spui-IconButton spui-IconButton--medium spui-IconButton--contained"><svg /></button>
-<button class="spui-IconButton spui-IconButton--medium spui-IconButton--outlined"><svg /></button>
-<button class="spui-IconButton spui-IconButton--medium spui-IconButton--neutral"><svg /></button>
-<button class="spui-IconButton spui-IconButton--medium spui-IconButton--danger"><svg /></button>
-<button class="spui-IconButton spui-IconButton--medium spui-IconButton--lighted"><svg /></button>
+<button class="spui-IconButton spui-IconButton--medium spui-IconButton--contained"><svg aria-label="追加" /></button>
+<button class="spui-IconButton spui-IconButton--medium spui-IconButton--outlined"><svg aria-label="追加" /></button>
+<button class="spui-IconButton spui-IconButton--medium spui-IconButton--neutral"><svg aria-label="追加" /></button>
+<button class="spui-IconButton spui-IconButton--medium spui-IconButton--danger"><svg aria-label="追加" /></button>
+<button class="spui-IconButton spui-IconButton--medium spui-IconButton--lighted"><svg aria-label="追加" /></button>
   `}
 />
 
@@ -92,32 +112,32 @@ import { PlusBold } from '../Icon';
 
 <Preview withSource="open">
   <Story name="Small">
-    <IconButton size="small" variant="contained" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
-    <IconButton size="small" variant="outlined" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
-    <IconButton size="small" variant="neutral" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
-    <IconButton size="small" variant="danger" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
-    <IconButton size="small" variant="lighted" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
+    <IconButton size="small" variant="contained" {...actions('onClick', 'onMouseOver')}><PlusBold aria-label="追加" /></IconButton>
+    <IconButton size="small" variant="outlined" {...actions('onClick', 'onMouseOver')}><PlusBold aria-label="追加" /></IconButton>
+    <IconButton size="small" variant="neutral" {...actions('onClick', 'onMouseOver')}><PlusBold aria-label="追加" /></IconButton>
+    <IconButton size="small" variant="danger" {...actions('onClick', 'onMouseOver')}><PlusBold aria-label="追加" /></IconButton>
+    <IconButton size="small" variant="lighted" {...actions('onClick', 'onMouseOver')}><PlusBold aria-label="追加" /></IconButton>
   </Story>
 </Preview>
 
 <Source
   code={`
-<IconButton size="small" variant="contained"><PlusBold /></IconButton>
-<IconButton size="small" variant="outlined"><PlusBold /></IconButton>
-<IconButton size="small" variant="neutral"><PlusBold /></IconButton>
-<IconButton size="small" variant="danger"><PlusBold /></IconButton>
-<IconButton size="small" variant="lighted"><PlusBold /></IconButton>
+<IconButton size="small" variant="contained"><PlusBold aria-label="追加" /></IconButton>
+<IconButton size="small" variant="outlined"><PlusBold aria-label="追加" /></IconButton>
+<IconButton size="small" variant="neutral"><PlusBold aria-label="追加" /></IconButton>
+<IconButton size="small" variant="danger"><PlusBold aria-label="追加" /></IconButton>
+<IconButton size="small" variant="lighted"><PlusBold aria-label="追加" /></IconButton>
   `}
 />
 
 <Source
   language='html'
   code={`
-<button class="spui-IconButton spui-IconButton--small spui-IconButton--contained"><svg /></button>
-<button class="spui-IconButton spui-IconButton--small spui-IconButton--outlined"><svg /></button>
-<button class="spui-IconButton spui-IconButton--small spui-IconButton--neutral"><svg /></button>
-<button class="spui-IconButton spui-IconButton--small spui-IconButton--danger"><svg /></button>
-<button class="spui-IconButton spui-IconButton--small spui-IconButton--lighted"><svg /></button>
+<button class="spui-IconButton spui-IconButton--small spui-IconButton--contained"><svg aria-label="追加" /></button>
+<button class="spui-IconButton spui-IconButton--small spui-IconButton--outlined"><svg aria-label="追加" /></button>
+<button class="spui-IconButton spui-IconButton--small spui-IconButton--neutral"><svg aria-label="追加" /></button>
+<button class="spui-IconButton spui-IconButton--small spui-IconButton--danger"><svg aria-label="追加" /></button>
+<button class="spui-IconButton spui-IconButton--small spui-IconButton--lighted"><svg aria-label="追加" /></button>
   `}
 />
 
@@ -125,32 +145,32 @@ import { PlusBold } from '../Icon';
 
 <Preview withSource="open">
   <Story name="ExSmall">
-    <IconButton size="exSmall" variant="contained" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
-    <IconButton size="exSmall" variant="outlined" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
-    <IconButton size="exSmall" variant="neutral" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
-    <IconButton size="exSmall" variant="danger" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
-    <IconButton size="exSmall" variant="lighted" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
+    <IconButton size="exSmall" variant="contained" {...actions('onClick', 'onMouseOver')}><PlusBold aria-label="追加" /></IconButton>
+    <IconButton size="exSmall" variant="outlined" {...actions('onClick', 'onMouseOver')}><PlusBold aria-label="追加" /></IconButton>
+    <IconButton size="exSmall" variant="neutral" {...actions('onClick', 'onMouseOver')}><PlusBold aria-label="追加" /></IconButton>
+    <IconButton size="exSmall" variant="danger" {...actions('onClick', 'onMouseOver')}><PlusBold aria-label="追加" /></IconButton>
+    <IconButton size="exSmall" variant="lighted" {...actions('onClick', 'onMouseOver')}><PlusBold aria-label="追加" /></IconButton>
   </Story>
 </Preview>
 
 <Source
   code={`
-<IconButton size="exSmall" variant="contained"><PlusBold /></IconButton>
-<IconButton size="exSmall" variant="outlined"><PlusBold /></IconButton>
-<IconButton size="exSmall" variant="neutral"><PlusBold /></IconButton>
-<IconButton size="exSmall" variant="danger"><PlusBold /></IconButton>
-<IconButton size="exSmall" variant="lighted"><PlusBold /></IconButton>
+<IconButton size="exSmall" variant="contained"><PlusBold aria-label="追加" /></IconButton>
+<IconButton size="exSmall" variant="outlined"><PlusBold aria-label="追加" /></IconButton>
+<IconButton size="exSmall" variant="neutral"><PlusBold aria-label="追加" /></IconButton>
+<IconButton size="exSmall" variant="danger"><PlusBold aria-label="追加" /></IconButton>
+<IconButton size="exSmall" variant="lighted"><PlusBold aria-label="追加" /></IconButton>
   `}
 />
 
 <Source
   language='html'
   code={`
-<button class="spui-IconButton spui-IconButton--exSmall spui-IconButton--contained"><svg /></button>
-<button class="spui-IconButton spui-IconButton--exSmall spui-IconButton--outlined"><svg /></button>
-<button class="spui-IconButton spui-IconButton--exSmall spui-IconButton--neutral"><svg /></button>
-<button class="spui-IconButton spui-IconButton--exSmall spui-IconButton--danger"><svg /></button>
-<button class="spui-IconButton spui-IconButton--exSmall spui-IconButton--lighted"><svg /></button>
+<button class="spui-IconButton spui-IconButton--exSmall spui-IconButton--contained"><svg aria-label="追加" /></button>
+<button class="spui-IconButton spui-IconButton--exSmall spui-IconButton--outlined"><svg aria-label="追加" /></button>
+<button class="spui-IconButton spui-IconButton--exSmall spui-IconButton--neutral"><svg aria-label="追加" /></button>
+<button class="spui-IconButton spui-IconButton--exSmall spui-IconButton--danger"><svg aria-label="追加" /></button>
+<button class="spui-IconButton spui-IconButton--exSmall spui-IconButton--lighted"><svg aria-label="追加" /></button>
   `}
 />
 
@@ -158,32 +178,32 @@ import { PlusBold } from '../Icon';
 
 <Preview withSource="open">
   <Story name="Disabled">
-    <IconButton disabled size="medium" variant="contained" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
-    <IconButton disabled size="medium" variant="outlined" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
-    <IconButton disabled size="medium" variant="neutral" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
-    <IconButton disabled size="medium" variant="danger" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
-    <IconButton disabled size="medium" variant="lighted" {...actions('onClick', 'onMouseOver')}><PlusBold /></IconButton>
+    <IconButton disabled size="medium" variant="contained" {...actions('onClick', 'onMouseOver')}><PlusBold aria-label="追加" /></IconButton>
+    <IconButton disabled size="medium" variant="outlined" {...actions('onClick', 'onMouseOver')}><PlusBold aria-label="追加" /></IconButton>
+    <IconButton disabled size="medium" variant="neutral" {...actions('onClick', 'onMouseOver')}><PlusBold aria-label="追加" /></IconButton>
+    <IconButton disabled size="medium" variant="danger" {...actions('onClick', 'onMouseOver')}><PlusBold aria-label="追加" /></IconButton>
+    <IconButton disabled size="medium" variant="lighted" {...actions('onClick', 'onMouseOver')}><PlusBold aria-label="追加" /></IconButton>
   </Story>
 </Preview>
 
 <Source
   code={`
-<IconButton disabled size="medium" variant="contained"><PlusBold /></IconButton>
-<IconButton disabled size="medium" variant="outlined"><PlusBold /></IconButton>
-<IconButton disabled size="medium" variant="neutral"><PlusBold /></IconButton>
-<IconButton disabled size="medium" variant="danger"><PlusBold /></IconButton>
-<IconButton disabled size="medium" variant="lighted"><PlusBold /></IconButton>
+<IconButton disabled size="medium" variant="contained"><PlusBold aria-label="追加" /></IconButton>
+<IconButton disabled size="medium" variant="outlined"><PlusBold aria-label="追加" /></IconButton>
+<IconButton disabled size="medium" variant="neutral"><PlusBold aria-label="追加" /></IconButton>
+<IconButton disabled size="medium" variant="danger"><PlusBold aria-label="追加" /></IconButton>
+<IconButton disabled size="medium" variant="lighted"><PlusBold aria-label="追加" /></IconButton>
   `}
 />
 
 <Source
   language='html'
   code={`
-<button class="spui-IconButton spui-IconButton--medium spui-IconButton--contained" disabled><svg /></button>
-<button class="spui-IconButton spui-IconButton--medium spui-IconButton--outlined" disabled><svg /></button>
-<button class="spui-IconButton spui-IconButton--medium spui-IconButton--neutral" disabled><svg /></button>
-<button class="spui-IconButton spui-IconButton--medium spui-IconButton--danger" disabled><svg /></button>
-<button class="spui-IconButton spui-IconButton--medium spui-IconButton--lighted" disabled><svg /></button>
+<button class="spui-IconButton spui-IconButton--medium spui-IconButton--contained" disabled><svg aria-label="追加" /></button>
+<button class="spui-IconButton spui-IconButton--medium spui-IconButton--outlined" disabled><svg aria-label="追加" /></button>
+<button class="spui-IconButton spui-IconButton--medium spui-IconButton--neutral" disabled><svg aria-label="追加" /></button>
+<button class="spui-IconButton spui-IconButton--medium spui-IconButton--danger" disabled><svg aria-label="追加" /></button>
+<button class="spui-IconButton spui-IconButton--medium spui-IconButton--lighted" disabled><svg aria-label="追加" /></button>
   `}
 />
 
