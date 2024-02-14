@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@1.4.0...@openameba/spindle-ui@1.4.1) (2024-02-14)
+
+### Bug Fixes
+
+- **spindle-ui:** fix markup for UnderlineTab ([ec66c4f](https://github.com/openameba/spindle/commit/ec66c4f33a05403830564fdb55bcd0cff2d9cb0e))
+
 # [1.4.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@1.3.0...@openameba/spindle-ui@1.4.0) (2024-02-06)
 
 ### Features
