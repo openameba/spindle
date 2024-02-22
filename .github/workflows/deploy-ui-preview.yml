@@ -16,7 +16,7 @@ jobs:
     outputs:
       ui: ${{ steps.filter.outputs.ui }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: 'refs/pull/${{ github.event.number }}/merge'
       - uses: dorny/paths-filter@v2
@@ -34,7 +34,7 @@ jobs:
       pull-requests: write
       contents: read
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: 'refs/pull/${{ github.event.number }}/merge'
       - uses: actions/setup-node@v4
