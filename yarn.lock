@@ -2711,6 +2711,13 @@
   dependencies:
     figma-js "~1.14.0"
 
+"@figma-export/types@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@figma-export/types/-/types-5.0.0.tgz#0f99f62eec948c9285676f0a8c5941765e400235"
+  integrity sha512-LdcHDEeyYBh8/qMlmS+6ecI4El0zehE5W2U8dRo1qJ56EGSH/QpuQBO9VtB1pOUg57sVt1iboNQ3568Y2HeZaw==
+  dependencies:
+    figma-js "~1.16.0"
+
 "@google-cloud/paginator@^3.0.7":
   version "3.0.7"
   resolved "https://registry.yarnpkg.com/@google-cloud/paginator/-/paginator-3.0.7.tgz#fb6f8e24ec841f99defaebf62c75c2e744dd419b"
@@ -11975,6 +11982,13 @@ figma-js@~1.14.0:
   version "1.14.0"
   resolved "https://registry.yarnpkg.com/figma-js/-/figma-js-1.14.0.tgz#f427a8585d3fbe48f915e19c7eb25f964d1dc04e"
   integrity sha512-XqUmDmGj8tJkjNEuSoKWke0dzbRedya0jc0Ob3lr/g0pLeQI5TtMmz5zpsFLw4KRRtbDD5V/J2MRJhm9nvRS+A==
+  dependencies:
+    axios "^0.21.1"
+
+figma-js@~1.16.0:
+  version "1.16.0"
+  resolved "https://registry.yarnpkg.com/figma-js/-/figma-js-1.16.0.tgz#84bfa6bf8dad25ba106b8b4ffa0d595bd6277e11"
+  integrity sha512-cImQT9DAJp1J0xr6FMUAswXKEnjwrDz4QKAgIBpUyydKAgDS/lm862stjweHp99uco5qLoNv+GbwQWBHyDvDQw==
   dependencies:
     axios "^0.21.1"
 
