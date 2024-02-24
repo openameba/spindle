@@ -2684,25 +2684,26 @@
   resolved "https://registry.yarnpkg.com/@fastify/error/-/error-2.0.0.tgz#a9f94af56eb934f0ab1ce4ef9f0ced6ebf2319dc"
   integrity sha512-wI3fpfDT0t7p8E6dA2eTECzzOd+bZsZCJ2Hcv+Onn2b7ZwK3RwD27uW2QDaMtQhAfWQQP+WNK7nKf0twLsBf9w==
 
-"@figma-export/cli@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@figma-export/cli/-/cli-4.0.0.tgz#8d83d113b1689d9aa07737fead97edce6a63ab50"
-  integrity sha512-r1yl35sHDje+KD5h0At1Zf/SZkcz4FH7tQlFOX/+m8EIZNgQAzKK7Y5n2ZaCiqDpT6isLFLTpJn9esPWqbK55A==
+"@figma-export/cli@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@figma-export/cli/-/cli-5.0.0.tgz#3f927ba06766543bd26da0242e80fc18c5b59e22"
+  integrity sha512-N/Z1iVjvsoTgtLj3diPZMJnNhhLYRhR79IjBoST3ZZtoMxEUxpCnGxIsLj6JlMnax3tvqi5Pu6pCexiZ2pDRag==
   dependencies:
-    "@figma-export/core" "^4.0.0"
-    "@figma-export/types" "^4.0.0"
+    "@figma-export/core" "^5.0.0"
+    "@figma-export/types" "^5.0.0"
     ora "~5.4.1"
     sade "~1.8.1"
 
-"@figma-export/core@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@figma-export/core/-/core-4.0.0.tgz#c2865acb80d644a0efc65e4a3647079e95cabd14"
-  integrity sha512-7YwaDco37jO0EedtkKnKMjd22FpO/Duhs9nRuKin3bgbNfmEjZ0ljpJQvx1tJhsrfNGph7+UjRUOezQyIhnk1g==
+"@figma-export/core@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@figma-export/core/-/core-5.0.0.tgz#9cc4b1d449f0e057016f3a07c0b67d3407486846"
+  integrity sha512-bKTL+ML6R80NRVPaa1KGttHBPAhDd0uFv+gJrhZBthpCRtBPMRgeTus484ZYFeeSdusz4dQ2WANWGEYW5LaUow==
   dependencies:
-    "@figma-export/types" "^4.0.0"
-    axios "~0.24.0"
-    figma-js "~1.14.0"
+    "@figma-export/types" "^5.0.0"
+    axios "^1.6.7"
+    figma-js "~1.16.0"
     p-limit "^3.1.0"
+    p-retry "^4.6.2"
 
 "@figma-export/types@^4.0.0":
   version "4.0.0"
@@ -2710,6 +2711,13 @@
   integrity sha512-vScnw10jaiktWJo0swk8IaWwbGofhn2nPNGb11RC7Bqj4W8eSGSqp+iV4lBbcKlF99hzJQI0G3BZzJ/d6Z0R/w==
   dependencies:
     figma-js "~1.14.0"
+
+"@figma-export/types@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@figma-export/types/-/types-5.0.0.tgz#0f99f62eec948c9285676f0a8c5941765e400235"
+  integrity sha512-LdcHDEeyYBh8/qMlmS+6ecI4El0zehE5W2U8dRo1qJ56EGSH/QpuQBO9VtB1pOUg57sVt1iboNQ3568Y2HeZaw==
+  dependencies:
+    figma-js "~1.16.0"
 
 "@google-cloud/paginator@^3.0.7":
   version "3.0.7"
@@ -5840,6 +5848,11 @@
     "@types/scheduler" "*"
     csstype "^3.0.2"
 
+"@types/retry@0.12.0":
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/@types/retry/-/retry-0.12.0.tgz#2b35eccfcee7d38cd72ad99232fbd58bffb3c84d"
+  integrity sha512-wWKOClTTiizcZhXnPY4wikVAwmdYHp8q6DmC+EJUzAMsycb7HB32Kh9RN4+0gExjmPmZSAQjgURXIGATPegAvA==
+
 "@types/scheduler@*":
   version "0.16.2"
   resolved "https://registry.yarnpkg.com/@types/scheduler/-/scheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
@@ -7343,12 +7356,14 @@ axios@^1.5.1:
     form-data "^4.0.0"
     proxy-from-env "^1.1.0"
 
-axios@~0.24.0:
-  version "0.24.0"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.24.0.tgz#804e6fa1e4b9c5288501dd9dff56a7a0940d20d6"
-  integrity sha512-Q6cWsys88HoPgAaFAVUb0WpPk0O8iTeisR9IMqy9G8AbO4NlpVknrnQS03zzF9PGAWgO3cgletO3VjV/P7VztA==
+axios@^1.6.7:
+  version "1.6.7"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-1.6.7.tgz#7b48c2e27c96f9c68a2f8f31e2ab19f59b06b0a7"
+  integrity sha512-/hDJGff6/c7u0hDkvkGxR/oy6CbCs8ziCsC7SqmhjfozqiJGc8Z11wrv9z9lYfY4K8l+H9TpjcMDX0xOZmx+RA==
   dependencies:
-    follow-redirects "^1.14.4"
+    follow-redirects "^1.15.4"
+    form-data "^4.0.0"
+    proxy-from-env "^1.1.0"
 
 b4a@^1.6.4:
   version "1.6.4"
@@ -11978,6 +11993,13 @@ figma-js@~1.14.0:
   dependencies:
     axios "^0.21.1"
 
+figma-js@~1.16.0:
+  version "1.16.0"
+  resolved "https://registry.yarnpkg.com/figma-js/-/figma-js-1.16.0.tgz#84bfa6bf8dad25ba106b8b4ffa0d595bd6277e11"
+  integrity sha512-cImQT9DAJp1J0xr6FMUAswXKEnjwrDz4QKAgIBpUyydKAgDS/lm862stjweHp99uco5qLoNv+GbwQWBHyDvDQw==
+  dependencies:
+    axios "^0.21.1"
+
 figures@3.2.0, figures@^3.0.0, figures@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/figures/-/figures-3.2.0.tgz#625c18bd293c604dc4a8ddb2febf0c88341746af"
@@ -12330,15 +12352,15 @@ follow-redirects@^1.10.0:
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.0.tgz#b42e8d93a2a7eea5ed88633676d6597bc8e384db"
   integrity sha512-aq6gF1BEKje4a9i9+5jimNFIpq4Q1WiwBToeRK5NvZBd/TRsmW8BsJfOEGkr76TbOyPVD3OVDN910EcUNtRYEA==
 
-follow-redirects@^1.14.4:
-  version "1.14.6"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.6.tgz#8cfb281bbc035b3c067d6cd975b0f6ade6e855cd"
-  integrity sha512-fhUl5EwSJbbl8AR+uYL2KQDxLkdSjZGR36xy46AO7cOMTrCMON6Sa28FmAnC2tRTDbd/Uuzz3aJBv7EBN7JH8A==
-
 follow-redirects@^1.15.0:
   version "1.15.2"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.2.tgz#b460864144ba63f2681096f274c4e57026da2c13"
   integrity sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==
+
+follow-redirects@^1.15.4:
+  version "1.15.5"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.5.tgz#54d4d6d062c0fa7d9d17feb008461550e3ba8020"
+  integrity sha512-vSFWUON1B+yAw1VN4xMfxgn5fTUiaOzAJCKBwIIgT/+7CuGy9+r+5gITvP62j3RmaD5Ph65UaERdOSRGUzZtgw==
 
 for-each@^0.3.3:
   version "0.3.3"
@@ -19131,6 +19153,14 @@ p-reduce@2.1.0, p-reduce@^2.0.0, p-reduce@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/p-reduce/-/p-reduce-2.1.0.tgz#09408da49507c6c274faa31f28df334bc712b64a"
   integrity sha512-2USApvnsutq8uoxZBGbbWM0JIYLiEMJ9RlaN7fAzVNb9OZN0SHjjTTfIcb667XynS5Y1VhwDJVDa72TnPzAYWw==
+
+p-retry@^4.6.2:
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/p-retry/-/p-retry-4.6.2.tgz#9baae7184057edd4e17231cee04264106e092a16"
+  integrity sha512-312Id396EbJdvRONlngUx0NydfrIQ5lsYu0znKVUzVvArzEIt08V1qhtyESbGVd1FGX7UKtiFp5uwKZdM8wIuQ==
+  dependencies:
+    "@types/retry" "0.12.0"
+    retry "^0.13.1"
 
 p-series@^2.1.0:
   version "2.1.0"
