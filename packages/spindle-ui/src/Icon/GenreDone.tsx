@@ -1,13 +1,12 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-
+import type { SVGProps } from 'react';
 const SvgGenreDone = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
     height="1em"
-    viewBox="0 0 24 24"
     fill="currentColor"
+    viewBox="0 0 24 24"
     role="img"
     {...props}
   >
@@ -18,5 +17,4 @@ const SvgGenreDone = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-
 export default SvgGenreDone;

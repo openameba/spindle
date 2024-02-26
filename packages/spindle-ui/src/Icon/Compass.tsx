@@ -1,13 +1,12 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-
+import type { SVGProps } from 'react';
 const SvgCompass = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
     height="1em"
-    viewBox="0 0 24 24"
     fill="currentColor"
+    viewBox="0 0 24 24"
     role="img"
     {...props}
   >
@@ -15,5 +14,4 @@ const SvgCompass = (props: SVGProps<SVGSVGElement>) => (
     <path d="m15.3 6.9-5.1 3.3-3.3 5.1c-.3.5-.3 1.1.2 1.6.2.2.6.4.9.4.2 0 .5-.1.7-.2l5.1-3.3 3.3-5.1c.3-.5.3-1.1-.2-1.6-.4-.4-1.1-.5-1.6-.2Zm-.4 2.3-2.1 3.3c-.1.1-.2.1-.3 0l-1-1c-.1-.1-.1-.2 0-.3l3.3-2.1c.1-.1.2 0 .1.1Z" />
   </svg>
 );
-
 export default SvgCompass;
