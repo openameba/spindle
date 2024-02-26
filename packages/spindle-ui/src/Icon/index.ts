@@ -120,6 +120,7 @@ export { default as Dice } from './Dice';
 export { default as Dot } from './Dot';
 export { default as Dotmoney } from './Dotmoney';
 export { default as Download } from './Download';
+export { default as DragIndicator } from './DragIndicator';
 export { default as Embed } from './Embed';
 export { default as EmotionFill } from './EmotionFill';
 export { default as EntryLost } from './EntryLost';

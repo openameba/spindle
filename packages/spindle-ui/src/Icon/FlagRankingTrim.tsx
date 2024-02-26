@@ -1,13 +1,12 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-
+import type { SVGProps } from 'react';
 const SvgFlagRankingTrim = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
     height="1em"
-    viewBox="0 0 18 13"
     fill="currentColor"
+    viewBox="0 0 18 13"
     role="img"
     {...props}
   >
@@ -25,5 +24,4 @@ const SvgFlagRankingTrim = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 );
-
 export default SvgFlagRankingTrim;

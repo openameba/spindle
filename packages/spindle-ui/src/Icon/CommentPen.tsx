@@ -1,18 +1,16 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-
+import type { SVGProps } from 'react';
 const SvgCommentPen = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
     height="1em"
-    viewBox="0 0 24 24"
     fill="currentColor"
+    viewBox="0 0 24 24"
     role="img"
     {...props}
   >
     <path d="M9.05 10.99c0 .55-.45 1-1 1s-1-.45-1-1 .45-1 1-1 1 .44 1 1Zm3-1c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1Zm7.95.8v3.18c0 1.1-.9 2-2 2h-2.46c-.55 0-1 .45-1 1v1.94l-3.66-2.74a.984.984 0 0 0-.6-.2H6c-1.1 0-2-.9-2-2V8c0-1.1.9-2 2-2h11.28l1.31-1.3.52-.52C18.75 4.07 18.39 4 18 4H6C3.79 4 2 5.79 2 8v5.97c0 2.21 1.79 4 4 4h3.95l4.19 3.14a1.498 1.498 0 0 0 1.57.14c.51-.25.83-.77.83-1.34v-1.94H18c2.21 0 4-1.79 4-4V8.79l-2 2Zm2.8-4.91-.34.34c-.2.2-.51.2-.71 0l-.92-.92c-.2-.2-.2-.51 0-.71l.34-.34c.2-.2.51-.2.71 0l.92.92c.19.2.19.51 0 .71Zm-7.32 4.05-.41 1.42a.5.5 0 0 0 .62.62l1.42-.41 3.82-3.82c.2-.2.2-.51 0-.71L20 6.11c-.2-.2-.51-.2-.71 0l-3.81 3.82Z" />
   </svg>
 );
-
 export default SvgCommentPen;

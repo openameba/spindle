@@ -123,6 +123,7 @@
 | dot | ![](../dist/svg/dot.svg) |
 | dotmoney | ![](../dist/svg/dotmoney.svg) |
 | download | ![](../dist/svg/download.svg) |
+| drag_indicator | ![](../dist/svg/drag_indicator.svg) |
 | embed | ![](../dist/svg/embed.svg) |
 | emotion_fill | ![](../dist/svg/emotion_fill.svg) |
 | entry_lost | ![](../dist/svg/entry_lost.svg) |
