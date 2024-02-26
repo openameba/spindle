@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/openameba/spindle/compare/@openameba/spindle-icons@1.3.0...@openameba/spindle-icons@1.4.0) (2024-02-26)
+
+### Features
+
+- **spindle-icons:** update icons ([8ae5b4b](https://github.com/openameba/spindle/commit/8ae5b4b46139b47c0017f22bd64c77cbc5d7b2e4))
+
 # [1.3.0](https://github.com/openameba/spindle/compare/@openameba/spindle-icons@1.2.0...@openameba/spindle-icons@1.3.0) (2024-02-06)
 
 **Note:** Version bump only for package @openameba/spindle-icons
