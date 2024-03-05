@@ -9,6 +9,7 @@ import CrossBold from '../Icon/CrossBold';
 import {
   VisiblePropsSample
 } from './InlineNotification.stories.example';
+import UserNotificationTypes from '../../storybook/UserNotificationTypes.mdx';
 
 # InlineNotification
 
@@ -33,27 +34,7 @@ InlineNotificationコンポーネントは、ユーザーのアクションに�
 
 また、エラー内容を表示するForm/InvalidMessageコンポーネントとは異なり、フォームに紐づかない形で提供されます。
 
-## ユーザーへの通知の種別
-
-ユーザーにお知らせをするための他のComponentとしてToastとSnackBarがあります。画面内で完結せず、遷移させるべき状況もあります。現状下記のように使い分けています。
-
-### 通信を伴うデータ更新のフィードバック
-
-- 成功：[Toast - Confirmation](/docs/toast--confirmation)で、成功した事実のみを伝える
-- 失敗：[InlineNotification - Error Emphasis](/docs/inlinenotification--error-emphasis)で、失敗した理由とユーザーがすべきアクションを伝える
-- 一連の動作のゴールがある場合：完了画面に遷移させる。例：
-  - 登録完了時
-  - 「元の画面に戻る」動作をユーザーにさせたい時
-
-### 通知系Componentの違い
-
-| Component | 用途 | テキストの長さ | 追加のアクション | 自動で消える秒数 | 表示位置 |
-| ---- | ---- | ---- | ---- | ---- | ---- |
-| [Toast](/docs/toast--information) | 更新処理の**成功を伝える**<br />**見落としても支障がないもの** | 1行 | なし | 4秒 | フローティング<br />（画面上下の中央のみ※） |
-| [SnackBar](/docs/snackbar--information) | **読んでは欲しい訴求** | 3,4行まで | あり | 10秒 | フローティング<br />（画面上下の左・右・中央） |
-| [InlineNotification](/docs/inlinenotification--information) | 更新処理の**失敗を伝える**<br />**ユーザーが追加でアクションする必要があるもの** | 制限なし | あり | 消えない | ページに埋め込む必要があり、レイアウトに影響を与える |
-
-※現在は、SPは中央下のみ実装されています。
+<UserNotificationTypes />
 
 ## 指定できる要素
 - `<InlineNotification.Frame>`: 大枠です
