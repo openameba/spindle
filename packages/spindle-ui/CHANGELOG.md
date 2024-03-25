@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@1.5.0...@openameba/spindle-ui@1.5.1) (2024-03-25)
+
+### Bug Fixes
+
+- **spindle-ui:** snackbar/textlink の型を修正 ([b89ad4f](https://github.com/openameba/spindle/commit/b89ad4f88babe50b9c2566062a99bc726aee9d56))
+
 # [1.5.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@1.4.1...@openameba/spindle-ui@1.5.0) (2024-02-26)
 
 ### Features
