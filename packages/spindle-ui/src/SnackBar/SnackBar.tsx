@@ -4,6 +4,7 @@ import React, {
   Dispatch,
   FC,
   HTMLAttributes,
+  AnchorHTMLAttributes,
   MouseEventHandler,
   ReactNode,
   SetStateAction,
@@ -182,7 +183,10 @@ const TextButton: FC<
   );
 };
 const TextLink: FC<
-  { icon?: ReactNode; children: ReactNode } & HTMLAttributes<HTMLAnchorElement>
+  {
+    icon?: ReactNode;
+    children: ReactNode;
+  } & AnchorHTMLAttributes<HTMLAnchorElement>
 > = ({ icon, children, onClick, ...rest }) => {
   const [props, internalProps] = useMemo(
     () => convertInternalChildProps(rest),
