@@ -75,7 +75,11 @@ import { Radio } from './Radio';
 
 <Preview withSource="open">
   <Story name="Radio With Text">
-    <Radio id="withText" name="blog" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')}>Amebaブログ</Radio>
+    <div style={{ display: 'flex', gap: '20px', flexDirection: 'column' }}>
+      <Radio id="withText1" name="select" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')}>選択肢１</Radio>
+      <Radio id="withText2" name="select" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')}>選択肢２：文言が長い時の表示を確認するための選択肢です。基本的にはここまで長い文言は推奨されませんが表示の確認用です</Radio>
+      <Radio id="withText3" name="select" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')}>選択肢３</Radio>
+    </div>
   </Story>
 </Preview>
 
