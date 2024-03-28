@@ -28,6 +28,7 @@
   box-sizing: border-box;
   color: transparent;
   display: inline-flex;
+  flex-shrink: 0;
   font-size: 0.875em;
   height: 20px;
   justify-content: center;
