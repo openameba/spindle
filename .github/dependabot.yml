@@ -11,6 +11,8 @@ updates:
     open-pull-requests-limit: 10
     labels:
       - dependencies
+    reviewers:
+      - "openameba/spindle-working-group"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -22,3 +24,5 @@ updates:
     open-pull-requests-limit: 10
     labels:
       - dependencies
+    reviewers:
+      - "openameba/spindle-working-group"
