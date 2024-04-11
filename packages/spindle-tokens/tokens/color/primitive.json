@@ -982,6 +982,18 @@
         }
       },
       "Third Party": {
+        "Amazon Black": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "rgba(0, 0, 0, 1)"
+        },
+        "Amazon Yellow": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "rgba(255, 153, 0, 1)"
+        },
         "Apple Black": {
           "attributes": {
             "category": "color"
@@ -1006,11 +1018,41 @@
           },
           "value": "rgba(242, 0, 118, 1)"
         },
+        "Rakuten Red": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "rgba(191, 0, 0, 1)"
+        },
         "Twitter Blue": {
           "attributes": {
             "category": "color"
           },
           "value": "rgba(29, 161, 242, 1)"
+        },
+        "Twitter White": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "rgba(255, 255, 255, 1)"
+        },
+        "X Black": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "rgba(0, 0, 0, 1)"
+        },
+        "X White": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "rgba(255, 255, 255, 1)"
+        },
+        "Yahoo! Red": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "rgba(255, 0, 51, 1)"
         },
         "Youtube Red": {
           "attributes": {

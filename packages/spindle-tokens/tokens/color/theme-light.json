@@ -494,11 +494,23 @@
         }
       },
       "Third Party": {
+        "Amazon Black": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{Color.Primitive.Third Party.Amazon Black.value}"
+        },
+        "Amazon Yellow": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{Color.Primitive.Third Party.Amazon Yellow.value}"
+        },
         "Apple": {
           "attributes": {
             "category": "color"
           },
-          "value": "{Color.Primitive.Black.100.value}"
+          "value": "{Color.Primitive.Third Party.Apple Black.value}"
         },
         "Facebook": {
           "attributes": {
@@ -512,11 +524,42 @@
           },
           "value": "{Color.Primitive.Third Party.Instagram Pink.value}"
         },
-        "Twitter": {
+        "Rakuten": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{Color.Primitive.Third Party.Rakuten Red.value}"
+        },
+        "Twitter Blue": {
           "attributes": {
             "category": "color"
           },
           "value": "{Color.Primitive.Third Party.Twitter Blue.value}"
+        },
+        "Twitter White": {
+          "attributes": {
+            "category": "color"
+          },
+          "comment": "{Color.Primitive.Third Party.Twitter White, .value}",
+          "value": "rgba(255, 255, 255, 1)"
+        },
+        "X Black": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{Color.Primitive.Third Party.X Bkacj.value}"
+        },
+        "X White": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{Color.Primitive.Third Party.X White.value}"
+        },
+        "Yahoo!": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{Color.Primitive.Third Party.Yahoo! Red.value}"
         },
         "Youtube": {
           "attributes": {
