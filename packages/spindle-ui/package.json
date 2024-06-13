@@ -47,8 +47,8 @@
     "access": "public"
   },
   "peerDependencies": {
-    "@types/react": "^16.8.6 || ^17.0.0",
-    "react": "^16.8.0 || ^17.0.0"
+    "@types/react": "^16.8.6 || ^17.0.0 || ^18.0.0",
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "peerDependenciesMeta": {
     "@types/react": {
@@ -77,7 +77,7 @@
     "@testing-library/react-hooks": "^8.0.1",
     "@testing-library/user-event": "^14.0.0",
     "@types/jest": "^27.0.0",
-    "@types/react": "^17.0.1",
+    "@types/react": "^18.3.3",
     "autoprefixer": "^10.0.0",
     "babel-loader": "^9.0.0",
     "bundlesize": "^0.18.0",
@@ -89,8 +89,8 @@
     "postcss": "^8.4.27",
     "postcss-cli": "^11.0.0",
     "postcss-import": "^16.0.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "reg-keygen-git-hash-plugin": "^0.14.0",
     "reg-notify-github-plugin": "^0.14.0",
     "reg-publish-gcs-plugin": "^0.14.0",
