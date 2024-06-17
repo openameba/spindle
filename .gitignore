@@ -129,3 +129,8 @@ dist
 # Files in packages
 packages/spindle-tokens/lib/*.js
 packages/spindle-tokens/output-folder/
+
+# iOS
+xcuserdata/
+.swiftpm/configuration/registries.json
+.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
