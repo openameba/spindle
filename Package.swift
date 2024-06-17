@@ -10,9 +10,14 @@ let package = Package(
         .library(
             name: "Spindle",
             targets: [
+                "Color",
             ]
         ),
     ],
     targets: [
+        .target(
+            name: "Color",
+            path: "ios/Color"
+        ),
     ]
 )
