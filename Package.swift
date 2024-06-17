@@ -11,6 +11,7 @@ let package = Package(
             name: "Spindle",
             targets: [
                 "Color",
+                "Icons",
             ]
         ),
     ],
@@ -18,6 +19,10 @@ let package = Package(
         .target(
             name: "Color",
             path: "ios/Color"
+        ),
+        .target(
+            name: "Icons",
+            path: "ios/Icons"
         ),
     ]
 )
