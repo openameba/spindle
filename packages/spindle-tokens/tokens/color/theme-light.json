@@ -294,6 +294,12 @@
           },
           "comment": "Do : 准強調アイコン, Don't : 非強調アイコン、上にテキストが乗る要素、テキスト",
           "value": "{Color.Primitive.Gray.70 alpha.value}"
+        },
+        "Positive": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{Color.Primitive.Primary Green.70.value}"
         }
       },
       "Overlay": {
@@ -407,6 +413,18 @@
           "comment": "Do : 軽度の注意喚起を行う時の表層, Don't : 文字、アイコン、重度の警告",
           "value": "{Color.Primitive.Caution.Red 5 alpha.value}"
         },
+        "Positive": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{Color.Primitive.Primary Green.70.value}"
+        },
+        "Positive Light": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{Color.Primitive.Primary Green.5.value}"
+        },
         "Primary": {
           "attributes": {
             "category": "color"
@@ -491,38 +509,116 @@
           },
           "comment": "Do : 背景が濃い色に対しての強調色から本文まで, Don't : 背景が薄い色",
           "value": "{Color.Primitive.White.100.value}"
-        }
-      },
-      "Third Party": {
-        "Apple": {
+        },
+        "Positive": {
           "attributes": {
             "category": "color"
           },
-          "value": "{Color.Primitive.Black.100.value}"
+          "value": "{Color.Primitive.Primary Green.80.value}"
+        }
+      },
+      "Third Party": {
+        "Amazon Black": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{Color.Primitive.Third Party.Amazon Black.value}"
         },
-        "Facebook": {
+        "Amazon Yellow": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{Color.Primitive.Third Party.Amazon Yellow.value}"
+        },
+        "Apple Primary": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{Color.Primitive.Third Party.Apple Black.value}"
+        },
+        "Apple Secondary": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{Color.Primitive.Third Party.Apple White.value}"
+        },
+        "Facebook Blue": {
           "attributes": {
             "category": "color"
           },
           "value": "{Color.Primitive.Third Party.Facebook Blue.value}"
         },
-        "Instagram": {
+        "Facebook White": {
           "attributes": {
             "category": "color"
           },
-          "value": "{Color.Primitive.Third Party.Instagram Pink.value}"
+          "value": "{Color.Primitive.Third Party.Facebook White.value}"
         },
-        "Twitter": {
+        "Instagram Pink": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{Color.Primitive.Third Party.Instagram White.value}"
+        },
+        "Rakuten Red": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{Color.Primitive.Third Party.Rakuten Red.value}"
+        },
+        "Rakuten White": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{Color.Primitive.Third Party.Rakuten White.value}"
+        },
+        "Twitter Blue": {
           "attributes": {
             "category": "color"
           },
           "value": "{Color.Primitive.Third Party.Twitter Blue.value}"
         },
-        "Youtube": {
+        "Twitter White": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{Color.Primitive.Third Party.Twitter White.value}"
+        },
+        "X Primary": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{Color.Primitive.Third Party.X Bkack.value}"
+        },
+        "X Secondary": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{Color.Primitive.Third Party.X White.value}"
+        },
+        "Yahoo! Red": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{Color.Primitive.Third Party.Yahoo! Red.value}"
+        },
+        "Yahoo!White": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{Color.Primitive.Third Party.Yahoo! White.value}"
+        },
+        "Youtube Red": {
           "attributes": {
             "category": "color"
           },
           "value": "{Color.Primitive.Third Party.Youtube Red.value}"
+        },
+        "Youtube White": {
+          "attributes": {
+            "category": "color"
+          },
+          "value": "{Color.Primitive.Third Party.Youtube White.value}"
         }
       }
     }
