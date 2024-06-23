@@ -22,7 +22,10 @@ let package = Package(
         ),
         .target(
             name: "Icons",
-            path: "ios/Icons"
+            path: "ios/Icons",
+            exclude: [
+                "generate_SpindleIcon.sh"
+            ]
         ),
     ]
 )
