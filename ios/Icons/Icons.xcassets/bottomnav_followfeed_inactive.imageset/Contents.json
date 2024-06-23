@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "bottomnav_followfeed_inactive.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
+}

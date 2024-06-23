@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "image_ban_fill.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
+}
