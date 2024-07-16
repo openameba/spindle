@@ -1,0 +1,1542 @@
+{
+  "Primitive Color": {
+    "Brand Color/Ameba Green": {
+      "$type": "color",
+      "$value": "rgb(0.18 0.55 0.24 / 1)"
+    },
+    "Brand Color/Ameba Black": {
+      "$type": "color",
+      "$value": "rgb(0 0 0 / 1)"
+    },
+    "Brand Color/Ameba White": {
+      "$type": "color",
+      "$value": "rgb(1 1 1 / 1)"
+    },
+    "Brand Color/Ameba Neutral Gray": {
+      "$type": "color",
+      "$value": "rgb(0.96 0.96 0.96 / 1)"
+    },
+    "Brand Color/Ameba Yellow Green": {
+      "$type": "color",
+      "$value": "rgb(0.51 0.75 0.16 / 1)"
+    },
+    "Brand Color/Ameba Yellow": {
+      "$type": "color",
+      "$value": "rgb(0.96 0.88 0 / 1)"
+    },
+    "Primary Green/Primary Green 100": {
+      "$type": "color",
+      "$value": "rgb(0.06 0.36 0.12 / 1)"
+    },
+    "Primary Green/Primary Green 90": {
+      "$type": "color",
+      "$value": "rgb(0.09 0.42 0.15 / 1)"
+    },
+    "Primary Green/Primary Green 80": {
+      "$type": "color",
+      "$value": "rgb(0.14 0.48 0.19 / 1)"
+    },
+    "Primary Green/Primary Green 70": {
+      "$type": "color",
+      "$value": "rgb(0.16 0.53 0.22 / 1)"
+    },
+    "Primary Green/Primary Green 50": {
+      "$type": "color",
+      "$value": "rgb(0.25 0.68 0.31 / 1)"
+    },
+    "Primary Green/Primary Green 20": {
+      "$type": "color",
+      "$value": "rgb(0.63 0.84 0.65 / 1)"
+    },
+    "Primary Green/Primary Green 10": {
+      "$type": "color",
+      "$value": "rgb(0.78 0.9 0.79 / 1)"
+    },
+    "Primary Green/Primary Green 5": {
+      "$type": "color",
+      "$value": "rgb(0.91 0.96 0.91 / 1)"
+    },
+    "Seconrady Green/Secondary Green 80": {
+      "$type": "color",
+      "$value": "rgb(0.28 0.49 0 / 1)"
+    },
+    "Seconrady Green/Secondary Green 70": {
+      "$type": "color",
+      "$value": "rgb(0.37 0.61 0.08 / 1)"
+    },
+    "Seconrady Green/Secondary Green 50": {
+      "$type": "color",
+      "$value": "rgb(0.51 0.75 0.16 / 1)"
+    },
+    "Seconrady Green/Secondary Green 40": {
+      "$type": "color",
+      "$value": "rgb(0.58 0.78 0.3 / 1)"
+    },
+    "Seconrady Green/Secondary Green 5": {
+      "$type": "color",
+      "$value": "rgb(0.94 0.97 0.9 / 1)"
+    },
+    "Gray/Gray 100": {
+      "$type": "color",
+      "$value": "rgb(0.03 0.07 0.1 / 1)"
+    },
+    "Gray/Gray 70 alpha": {
+      "$type": "color",
+      "$value": "rgb(0.03 0.07 0.1 / 0.74)"
+    },
+    "Gray/Gray 60 alpha": {
+      "$type": "color",
+      "$value": "rgb(0.03 0.07 0.1 / 0.61)"
+    },
+    "Gray/Gray 30 alpha": {
+      "$type": "color",
+      "$value": "rgb(0.03 0.07 0.1 / 0.3)"
+    },
+    "Gray/Gray 20 alpha": {
+      "$type": "color",
+      "$value": "rgb(0.03 0.07 0.1 / 0.16)"
+    },
+    "Gray/Gray 10 alpha": {
+      "$type": "color",
+      "$value": "rgb(0.03 0.07 0.1 / 0.08)"
+    },
+    "Gray/Gray 5 alpha": {
+      "$type": "color",
+      "$value": "rgb(0.03 0.07 0.1 / 0.04)"
+    },
+    "Gray/Gray 90": {
+      "$type": "color",
+      "$value": "rgb(0.08 0.12 0.15 / 1)"
+    },
+    "Gray/Gray 80": {
+      "$type": "color",
+      "$value": "rgb(0.22 0.25 0.28 / 1)"
+    },
+    "Gray/Gray 10": {
+      "$type": "color",
+      "$value": "rgb(0.92 0.93 0.93 / 1)"
+    },
+    "Gray/Gray 5": {
+      "$type": "color",
+      "$value": "rgb(0.96 0.96 0.96 / 1)"
+    },
+    "White/White 100": {
+      "$type": "color",
+      "$value": "rgb(1 1 1 / 1)"
+    },
+    "White/White 80 alpha": {
+      "$type": "color",
+      "$value": "rgb(1 1 1 / 0.8)"
+    },
+    "White/White 60 alpha": {
+      "$type": "color",
+      "$value": "rgb(1 1 1 / 0.6)"
+    },
+    "White/White 50 alpha": {
+      "$type": "color",
+      "$value": "rgb(1 1 1 / 0.5)"
+    },
+    "White/White 40 alpha": {
+      "$type": "color",
+      "$value": "rgb(1 1 1 / 0.43)"
+    },
+    "White/White 30 alpha": {
+      "$type": "color",
+      "$value": "rgb(1 1 1 / 0.3)"
+    },
+    "White/White 20 alpha": {
+      "$type": "color",
+      "$value": "rgb(1 1 1 / 0.16)"
+    },
+    "White/White 10 alpha": {
+      "$type": "color",
+      "$value": "rgb(1 1 1 / 0.1)"
+    },
+    "White/White  5 alpha": {
+      "$type": "color",
+      "$value": "rgb(1 1 1 / 0.05)"
+    },
+    "Black/Black 80 alpha": {
+      "$type": "color",
+      "$value": "rgb(0 0 0 / 0.8)"
+    },
+    "Black/Black 60 alpha": {
+      "$type": "color",
+      "$value": "rgb(0 0 0 / 0.6)"
+    },
+    "Black/Black 30 alpha": {
+      "$type": "color",
+      "$value": "rgb(0 0 0 / 0.3)"
+    },
+    "Black/Black 20 alpha": {
+      "$type": "color",
+      "$value": "rgb(0 0 0 / 0.2)"
+    },
+    "Expressive Pink/Expressive Pink 40": {
+      "$type": "color",
+      "$value": "rgb(0.9 0.27 0.42 / 1)"
+    },
+    "Caution/Caution Red 100": {
+      "$type": "color",
+      "$value": "rgb(0.85 0.11 0.04 / 1)"
+    },
+    "Caution/Caution Red 20 alpha": {
+      "$type": "color",
+      "$value": "rgb(0.85 0.11 0.04 / 0.2)"
+    },
+    "Caution/Caution Red 5 alpha": {
+      "$type": "color",
+      "$value": "rgb(0.85 0.11 0.04 / 0.05)"
+    },
+    "Caution/Caution Red Vivid 100": {
+      "$type": "color",
+      "$value": "rgb(1 0.42 0.35 / 1)"
+    },
+    "Caution/Caution Red Vivid 20 alpha": {
+      "$type": "color",
+      "$value": "rgb(1 0.42 0.35 / 0.2)"
+    },
+    "Focus/Focus Blue 100": {
+      "$type": "color",
+      "$value": "rgb(0 0.57 1 / 1)"
+    },
+    "Focus/Blue 30 alpha": {
+      "$type": "color",
+      "$value": "rgb(0 0.57 1 / 0.3)"
+    },
+    "Third Party/Facebook Blue": {
+      "$type": "color",
+      "$value": "rgb(0.09 0.47 0.95 / 1)"
+    },
+    "Third Party/Facebook White": {
+      "$type": "color",
+      "$value": "rgb(1 1 1 / 1)"
+    },
+    "Third Party/Twitter Blue": {
+      "$type": "color",
+      "$value": "rgb(0.11 0.63 0.95 / 1)"
+    },
+    "Third Party/Twitter White": {
+      "$type": "color",
+      "$value": "rgb(1 1 1 / 1)"
+    },
+    "Third Party/X Black": {
+      "$type": "color",
+      "$value": "rgb(0 0 0 / 1)"
+    },
+    "Third Party/X White": {
+      "$type": "color",
+      "$value": "rgb(1 1 1 / 1)"
+    },
+    "Third Party/Instagram Pink": {
+      "$type": "color",
+      "$value": "rgb(0.95 0 0.46 / 1)"
+    },
+    "Third Party/Instagram White": {
+      "$type": "color",
+      "$value": "rgb(1 1 1 / 1)"
+    },
+    "Third Party/Apple Black": {
+      "$type": "color",
+      "$value": "rgb(0 0 0 / 1)"
+    },
+    "Third Party/Apple White": {
+      "$type": "color",
+      "$value": "rgb(1 1 1 / 1)"
+    },
+    "Third Party/Youtube Red": {
+      "$type": "color",
+      "$value": "rgb(1 0 0 / 1)"
+    },
+    "Third Party/Youtube White": {
+      "$type": "color",
+      "$value": "rgb(1 1 1 / 1)"
+    },
+    "Highlight/HIghlight Yellow 100": {
+      "$type": "color",
+      "$value": "rgb(0.96 0.88 0 / 1)"
+    },
+    "Highlight/Highlight Yellow 30 alpha": {
+      "$type": "color",
+      "$value": "rgb(0.96 0.88 0 / 0.3)"
+    },
+    "Third Party/Amazon Yellow": {
+      "$type": "color",
+      "$value": "rgb(1 0.6 0 / 1)"
+    },
+    "Third Party/Amazon Black": {
+      "$type": "color",
+      "$value": "rgb(0 0 0 / 1)"
+    },
+    "Third Party/Rakuten Red": {
+      "$type": "color",
+      "$value": "rgb(0.75 0 0 / 1)"
+    },
+    "Third Party/Rakuten White": {
+      "$type": "color",
+      "$value": "rgb(1 1 1 / 1)"
+    },
+    "Third Party/Yahoo! Red": {
+      "$type": "color",
+      "$value": "rgb(1 0 0.2 / 1)"
+    },
+    "Third Party/Yahoo! White": {
+      "$type": "color",
+      "$value": "rgb(1 1 1 / 1)"
+    }
+  },
+  "Light": {
+    "Background/Base": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 5}"
+    },
+    "Surface/Primary": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Surface/Secondary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 5 alpha}"
+    },
+    "Surface/Tertiary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 10 alpha}"
+    },
+    "Surface/Quaternary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 20 alpha}"
+    },
+    "Surface/Accent Primary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 70}"
+    },
+    "Surface/Accent Primary Light": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 5}"
+    },
+    "Surface/Accent Secondary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Seconrady Green/Secondary Green 50}"
+    },
+    "Surface/Accent Secondary Light": {
+      "$type": "color",
+      "$value": "{Primitive Color.Seconrady Green/Secondary Green 5}"
+    },
+    "Surface/Accent Neutral High Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 80}"
+    },
+    "Surface/Accent Neutral Medium Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 60 alpha}"
+    },
+    "Surface/Positive": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 70}"
+    },
+    "Surface/Positive Light": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 5}"
+    },
+    "Surface/Caution": {
+      "$type": "color",
+      "$value": "{Primitive Color.Caution/Caution Red 100}"
+    },
+    "Surface/Caution Light": {
+      "$type": "color",
+      "$value": "{Primitive Color.Caution/Caution Red 5 alpha}"
+    },
+    "Text/High Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 100}"
+    },
+    "Text/Medium Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 70 alpha}"
+    },
+    "Text/Low Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 60 alpha}"
+    },
+    "Text/Disable": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 30 alpha}"
+    },
+    "Text/Accent Primary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 80}"
+    },
+    "Text/Accent Secondary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Seconrady Green/Secondary Green 80}"
+    },
+    "Text/High Emphasis on Inverse": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Text/High Emphasis on Green": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Text/Positive": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 80}"
+    },
+    "Text/Caution": {
+      "$type": "color",
+      "$value": "{Primitive Color.Caution/Caution Red 100}"
+    },
+    "Object/High Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 100}"
+    },
+    "Object/Medium Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 70 alpha}"
+    },
+    "Object/Low Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 60 alpha}"
+    },
+    "Object/Disable": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 30 alpha}"
+    },
+    "Object/Accent Primary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 70}"
+    },
+    "Object/Accent Secondary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Seconrady Green/Secondary Green 70}"
+    },
+    "Object/High Emphasis on Inverse": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Object/High Emphasis on Green": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Object/Positive": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 70}"
+    },
+    "Object/Caution": {
+      "$type": "color",
+      "$value": "{Primitive Color.Caution/Caution Red 100}"
+    },
+    "Object/Expressive Pink": {
+      "$type": "color",
+      "$value": "{Primitive Color.Expressive Pink/Expressive Pink 40}"
+    },
+    "Border/High Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 60 alpha}"
+    },
+    "Border/Medium Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 30 alpha}"
+    },
+    "Border/Low Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 10 alpha}"
+    },
+    "Border/Strong Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 100}"
+    },
+    "Border/Accent Primary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 70}"
+    },
+    "Border/High Emphasis on Inverse": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Border/Low Emphasis on Inverse": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 20 alpha}"
+    },
+    "Border/High Emphasis on Green": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Border/Low Emphasis on Green": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 20 alpha}"
+    },
+    "Border/Caution": {
+      "$type": "color",
+      "$value": "{Primitive Color.Caution/Caution Red 100}"
+    },
+    "Highlight/Error": {
+      "$type": "color",
+      "$value": "{Primitive Color.Caution/Caution Red 20 alpha}"
+    },
+    "Overlay/Dark": {
+      "$type": "color",
+      "$value": "{Primitive Color.Black/Black 80 alpha}"
+    },
+    "Focus/Clarity": {
+      "$type": "color",
+      "$value": "{Primitive Color.Focus/Focus Blue 100}"
+    },
+    "Brand/Ameba Green": {
+      "$type": "color",
+      "$value": "{Primitive Color.Brand Color/Ameba Green}"
+    },
+    "Third Party/Facebook Blue": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Facebook Blue}"
+    },
+    "Third Party/Facebook White": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Facebook White}"
+    },
+    "Third Party/Twitter Blue": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Twitter Blue}"
+    },
+    "Third Party/Twitter White": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Twitter White}"
+    },
+    "Third Party/X Primary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/X Black}"
+    },
+    "Third Party/X Secondary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/X White}"
+    },
+    "Third Party/Instagram Pink": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Instagram Pink}"
+    },
+    "Third Party/Instagram White": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Instagram White}"
+    },
+    "Third Party/Apple Primary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Apple Black}"
+    },
+    "Third Party/Apple Secondary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Apple White}"
+    },
+    "Third Party/Youtube Red": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Youtube Red}"
+    },
+    "Third Party/Youtube White": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Youtube White}"
+    },
+    "Third Party/Amazon Yellow": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Amazon Yellow}"
+    },
+    "Third Party/Amazon Black": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Amazon Black}"
+    },
+    "Third Party/Rakuten Red": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Rakuten Red}"
+    },
+    "Third Party/Rakuten White": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Rakuten White}"
+    },
+    "Third Party/Yahoo! Red": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Yahoo! Red}"
+    },
+    "Third Party/Yahoo! White": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Yahoo! White}"
+    },
+    "Brand/Black": {
+      "$type": "color",
+      "$value": "{Primitive Color.Brand Color/Ameba Black}"
+    },
+    "Brand/White": {
+      "$type": "color",
+      "$value": "{Primitive Color.Brand Color/Ameba White}"
+    },
+    "Brand/Netural Gray": {
+      "$type": "color",
+      "$value": "{Primitive Color.Brand Color/Ameba Neutral Gray}"
+    },
+    "Brand/Yellow Green": {
+      "$type": "color",
+      "$value": "{Primitive Color.Brand Color/Ameba Yellow Green}"
+    },
+    "Brand/Yellow": {
+      "$type": "color",
+      "$value": "{Primitive Color.Brand Color/Ameba Yellow}"
+    },
+    "Focus/Ambiguous": {
+      "$type": "color",
+      "$value": "{Primitive Color.Focus/Blue 30 alpha}"
+    },
+    "Overlay/Medium": {
+      "$type": "color",
+      "$value": "{Primitive Color.Black/Black 60 alpha}"
+    },
+    "Overlay/Light": {
+      "$type": "color",
+      "$value": "{Primitive Color.Black/Black 20 alpha}"
+    },
+    "Highlight/Hover": {
+      "$type": "color",
+      "$value": "{Primitive Color.Black/Black 30 alpha}"
+    },
+    "Highlight/Yellow": {
+      "$type": "color",
+      "$value": "{Primitive Color.Highlight/HIghlight Yellow 100}"
+    },
+    "Tap Highlight/Base": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 5 alpha}"
+    },
+    "Hover/Contained Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 100}"
+    },
+    "Hover/Outlined Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 5}"
+    },
+    "Hover/Neutral Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 20 alpha}"
+    },
+    "Hover/Lighted Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 10}"
+    },
+    "Hover/Danger Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Caution/Caution Red 5 alpha}"
+    },
+    "Active/Contained Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 100}"
+    },
+    "Active/Outlined Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 5}"
+    },
+    "Active/Neutral Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 10 alpha}"
+    },
+    "Active/Lighted Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 10}"
+    },
+    "Active/Danger Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Caution/Caution Red 5 alpha}"
+    },
+    "Highlighted/Contained Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 100}"
+    },
+    "Highlighted/Outlined Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 5}"
+    },
+    "Highlighted/Neutral Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 20 alpha}"
+    },
+    "Highlighted/Lighted Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 10}"
+    },
+    "Highlighted/Danger Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Caution/Caution Red 5 alpha}"
+    },
+    "Ripple/Contained Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 20 alpha}"
+    },
+    "Ripple/Outlined Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 5}"
+    },
+    "Ripple/Neutral Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 10 alpha}"
+    },
+    "Ripple/Lighted Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 10}"
+    },
+    "Ripple/Danger Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Caution/Caution Red 5 alpha}"
+    },
+    "Ripple/Text Link Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 5 alpha}"
+    },
+    "System/Pink": {
+      "$type": "color",
+      "$value": "rgb(0.89 0 0.5 / 1)"
+    },
+    "System/Blue": {
+      "$type": "color",
+      "$value": "rgb(0 0.57 1 / 1)"
+    },
+    "System/Black": {
+      "$type": "color",
+      "$value": "rgb(0 0 0 / 1)"
+    },
+    "System/White": {
+      "$type": "color",
+      "$value": "rgb(1 1 1 / 1)"
+    }
+  },
+  "Dark": {
+    "Background/Base": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 100}"
+    },
+    "Surface/Primary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 90}"
+    },
+    "Surface/Secondary": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White  5 alpha}"
+    },
+    "Surface/Tertiary": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 10 alpha}"
+    },
+    "Surface/Quaternary": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 20 alpha}"
+    },
+    "Surface/Accent Primary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 70}"
+    },
+    "Surface/Accent Primary Light": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White  5 alpha}"
+    },
+    "Surface/Accent Secondary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Seconrady Green/Secondary Green 50}"
+    },
+    "Surface/Accent Secondary Light": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White  5 alpha}"
+    },
+    "Surface/Accent Neutral High Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 10}"
+    },
+    "Surface/Accent Neutral Medium Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 10}"
+    },
+    "Surface/Positive": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 70}"
+    },
+    "Surface/Positive Light": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White  5 alpha}"
+    },
+    "Surface/Caution": {
+      "$type": "color",
+      "$value": "{Primitive Color.Caution/Caution Red Vivid 100}"
+    },
+    "Surface/Caution Light": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White  5 alpha}"
+    },
+    "Text/High Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Text/Medium Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 80 alpha}"
+    },
+    "Text/Low Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 60 alpha}"
+    },
+    "Text/Disable": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 20 alpha}"
+    },
+    "Text/Accent Primary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 50}"
+    },
+    "Text/Accent Secondary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Seconrady Green/Secondary Green 50}"
+    },
+    "Text/High Emphasis on Inverse": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 100}"
+    },
+    "Text/High Emphasis on Green": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Text/Positive": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 50}"
+    },
+    "Text/Caution": {
+      "$type": "color",
+      "$value": "{Primitive Color.Caution/Caution Red Vivid 100}"
+    },
+    "Object/High Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Object/Medium Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 80 alpha}"
+    },
+    "Object/Low Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 60 alpha}"
+    },
+    "Object/Disable": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 30 alpha}"
+    },
+    "Object/Accent Primary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 50}"
+    },
+    "Object/Accent Secondary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Seconrady Green/Secondary Green 40}"
+    },
+    "Object/High Emphasis on Inverse": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 100}"
+    },
+    "Object/High Emphasis on Green": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Object/Positive": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 50}"
+    },
+    "Object/Caution": {
+      "$type": "color",
+      "$value": "{Primitive Color.Caution/Caution Red Vivid 100}"
+    },
+    "Object/Expressive Pink": {
+      "$type": "color",
+      "$value": "{Primitive Color.Expressive Pink/Expressive Pink 40}"
+    },
+    "Border/High Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 60 alpha}"
+    },
+    "Border/Medium Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 40 alpha}"
+    },
+    "Border/Low Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 10 alpha}"
+    },
+    "Border/Strong Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Border/Accent Primary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 50}"
+    },
+    "Border/High Emphasis on Inverse": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 90}"
+    },
+    "Border/Low Emphasis on Inverse": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 20 alpha}"
+    },
+    "Border/High Emphasis on Green": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Border/Low Emphasis on Green": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 20 alpha}"
+    },
+    "Border/Caution": {
+      "$type": "color",
+      "$value": "{Primitive Color.Caution/Caution Red Vivid 100}"
+    },
+    "Highlight/Error": {
+      "$type": "color",
+      "$value": "{Primitive Color.Caution/Caution Red Vivid 20 alpha}"
+    },
+    "Overlay/Dark": {
+      "$type": "color",
+      "$value": "{Primitive Color.Black/Black 80 alpha}"
+    },
+    "Focus/Clarity": {
+      "$type": "color",
+      "$value": "{Primitive Color.Focus/Focus Blue 100}"
+    },
+    "Brand/Ameba Green": {
+      "$type": "color",
+      "$value": "{Primitive Color.Brand Color/Ameba Green}"
+    },
+    "Third Party/Facebook Blue": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Facebook Blue}"
+    },
+    "Third Party/Facebook White": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Facebook White}"
+    },
+    "Third Party/Twitter Blue": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Twitter Blue}"
+    },
+    "Third Party/Twitter White": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Twitter White}"
+    },
+    "Third Party/X Primary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/X White}"
+    },
+    "Third Party/X Secondary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/X Black}"
+    },
+    "Third Party/Instagram Pink": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Instagram Pink}"
+    },
+    "Third Party/Instagram White": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Instagram White}"
+    },
+    "Third Party/Apple Primary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Apple White}"
+    },
+    "Third Party/Apple Secondary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Apple Black}"
+    },
+    "Third Party/Youtube Red": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Youtube Red}"
+    },
+    "Third Party/Youtube White": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Youtube White}"
+    },
+    "Third Party/Amazon Yellow": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Amazon Yellow}"
+    },
+    "Third Party/Amazon Black": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Amazon Black}"
+    },
+    "Third Party/Rakuten Red": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Rakuten Red}"
+    },
+    "Third Party/Rakuten White": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Rakuten White}"
+    },
+    "Third Party/Yahoo! Red": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Yahoo! Red}"
+    },
+    "Third Party/Yahoo! White": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Yahoo! White}"
+    },
+    "Brand/Black": {
+      "$type": "color",
+      "$value": "{Primitive Color.Brand Color/Ameba Black}"
+    },
+    "Brand/White": {
+      "$type": "color",
+      "$value": "{Primitive Color.Brand Color/Ameba White}"
+    },
+    "Brand/Netural Gray": {
+      "$type": "color",
+      "$value": "{Primitive Color.Brand Color/Ameba Neutral Gray}"
+    },
+    "Brand/Yellow Green": {
+      "$type": "color",
+      "$value": "{Primitive Color.Brand Color/Ameba Yellow Green}"
+    },
+    "Brand/Yellow": {
+      "$type": "color",
+      "$value": "{Primitive Color.Brand Color/Ameba Yellow}"
+    },
+    "Focus/Ambiguous": {
+      "$type": "color",
+      "$value": "{Primitive Color.Focus/Blue 30 alpha}"
+    },
+    "Overlay/Medium": {
+      "$type": "color",
+      "$value": "{Primitive Color.Black/Black 60 alpha}"
+    },
+    "Overlay/Light": {
+      "$type": "color",
+      "$value": "{Primitive Color.Black/Black 20 alpha}"
+    },
+    "Highlight/Hover": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 30 alpha}"
+    },
+    "Highlight/Yellow": {
+      "$type": "color",
+      "$value": "{Primitive Color.Highlight/Highlight Yellow 30 alpha}"
+    },
+    "Tap Highlight/Base": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White  5 alpha}"
+    },
+    "Hover/Contained Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 100}"
+    },
+    "Hover/Outlined Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White  5 alpha}"
+    },
+    "Hover/Neutral Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White  5 alpha}"
+    },
+    "Hover/Lighted Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 10 alpha}"
+    },
+    "Hover/Danger Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White  5 alpha}"
+    },
+    "Active/Contained Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 100}"
+    },
+    "Active/Outlined Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White  5 alpha}"
+    },
+    "Active/Neutral Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White  5 alpha}"
+    },
+    "Active/Lighted Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 10 alpha}"
+    },
+    "Active/Danger Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White  5 alpha}"
+    },
+    "Highlighted/Contained Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 100}"
+    },
+    "Highlighted/Outlined Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White  5 alpha}"
+    },
+    "Highlighted/Neutral Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White  5 alpha}"
+    },
+    "Highlighted/Lighted Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 10 alpha}"
+    },
+    "Highlighted/Danger Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White  5 alpha}"
+    },
+    "Ripple/Contained Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 20 alpha}"
+    },
+    "Ripple/Outlined Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 10 alpha}"
+    },
+    "Ripple/Neutral Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White  5 alpha}"
+    },
+    "Ripple/Lighted Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 10 alpha}"
+    },
+    "Ripple/Danger Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 10 alpha}"
+    },
+    "Ripple/Text Link Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White  5 alpha}"
+    },
+    "System/Pink": {
+      "$type": "color",
+      "$value": "rgb(0.89 0 0.5 / 1)"
+    },
+    "System/Blue": {
+      "$type": "color",
+      "$value": "rgb(0 0.57 1 / 1)"
+    },
+    "System/Black": {
+      "$type": "color",
+      "$value": "rgb(0 0 0 / 1)"
+    },
+    "System/White": {
+      "$type": "color",
+      "$value": "rgb(1 1 1 / 1)"
+    }
+  },
+  "Green": {
+    "Background/Base": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 90}"
+    },
+    "Surface/Primary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 70}"
+    },
+    "Surface/Secondary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 80}"
+    },
+    "Surface/Tertiary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 80}"
+    },
+    "Surface/Quaternary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 90}"
+    },
+    "Surface/Accent Primary": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Surface/Accent Primary Light": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 90}"
+    },
+    "Surface/Accent Secondary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Seconrady Green/Secondary Green 50}"
+    },
+    "Surface/Accent Secondary Light": {
+      "$type": "color",
+      "$value": "{Primitive Color.Seconrady Green/Secondary Green 5}"
+    },
+    "Surface/Accent Neutral High Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 80}"
+    },
+    "Surface/Accent Neutral Medium Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.Gray/Gray 60 alpha}"
+    },
+    "Surface/Positive": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Surface/Positive Light": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 90}"
+    },
+    "Surface/Caution": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Surface/Caution Light": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 10 alpha}"
+    },
+    "Text/High Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Text/Medium Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Text/Low Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Text/Disable": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 30 alpha}"
+    },
+    "Text/Accent Primary": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Text/Accent Secondary": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Text/High Emphasis on Inverse": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Text/High Emphasis on Green": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 80}"
+    },
+    "Text/Positive": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Text/Caution": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Object/High Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Object/Medium Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Object/Low Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Object/Disable": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 30 alpha}"
+    },
+    "Object/Accent Primary": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Object/Accent Secondary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Seconrady Green/Secondary Green 70}"
+    },
+    "Object/High Emphasis on Inverse": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Object/High Emphasis on Green": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 70}"
+    },
+    "Object/Positive": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Object/Caution": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Object/Expressive Pink": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Border/High Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 50 alpha}"
+    },
+    "Border/Medium Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 40 alpha}"
+    },
+    "Border/Low Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 20 alpha}"
+    },
+    "Border/Strong Emphasis": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Border/Accent Primary": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Border/High Emphasis on Inverse": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 70}"
+    },
+    "Border/Low Emphasis on Inverse": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 20}"
+    },
+    "Border/High Emphasis on Green": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Border/Low Emphasis on Green": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 20 alpha}"
+    },
+    "Border/Caution": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 100}"
+    },
+    "Highlight/Error": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 20 alpha}"
+    },
+    "Overlay/Dark": {
+      "$type": "color",
+      "$value": "{Primitive Color.Black/Black 80 alpha}"
+    },
+    "Focus/Clarity": {
+      "$type": "color",
+      "$value": "{Primitive Color.Focus/Focus Blue 100}"
+    },
+    "Brand/Ameba Green": {
+      "$type": "color",
+      "$value": "{Primitive Color.Brand Color/Ameba Green}"
+    },
+    "Third Party/Facebook Blue": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Facebook Blue}"
+    },
+    "Third Party/Facebook White": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Facebook White}"
+    },
+    "Third Party/Twitter Blue": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Twitter Blue}"
+    },
+    "Third Party/Twitter White": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Twitter White}"
+    },
+    "Third Party/X Primary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/X White}"
+    },
+    "Third Party/X Secondary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/X Black}"
+    },
+    "Third Party/Instagram Pink": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Instagram Pink}"
+    },
+    "Third Party/Instagram White": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Instagram White}"
+    },
+    "Third Party/Apple Primary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Apple White}"
+    },
+    "Third Party/Apple Secondary": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Apple Black}"
+    },
+    "Third Party/Youtube Red": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Youtube Red}"
+    },
+    "Third Party/Youtube White": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Youtube White}"
+    },
+    "Third Party/Amazon Yellow": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Amazon Yellow}"
+    },
+    "Third Party/Amazon Black": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Amazon Black}"
+    },
+    "Third Party/Rakuten Red": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Rakuten Red}"
+    },
+    "Third Party/Rakuten White": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Rakuten White}"
+    },
+    "Third Party/Yahoo! Red": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Yahoo! Red}"
+    },
+    "Third Party/Yahoo! White": {
+      "$type": "color",
+      "$value": "{Primitive Color.Third Party/Yahoo! White}"
+    },
+    "Brand/Black": {
+      "$type": "color",
+      "$value": "{Primitive Color.Brand Color/Ameba Black}"
+    },
+    "Brand/White": {
+      "$type": "color",
+      "$value": "{Primitive Color.Brand Color/Ameba White}"
+    },
+    "Brand/Netural Gray": {
+      "$type": "color",
+      "$value": "{Primitive Color.Brand Color/Ameba Neutral Gray}"
+    },
+    "Brand/Yellow Green": {
+      "$type": "color",
+      "$value": "{Primitive Color.Brand Color/Ameba Yellow Green}"
+    },
+    "Brand/Yellow": {
+      "$type": "color",
+      "$value": "{Primitive Color.Brand Color/Ameba Yellow}"
+    },
+    "Focus/Ambiguous": {
+      "$type": "color",
+      "$value": "{Primitive Color.Focus/Blue 30 alpha}"
+    },
+    "Overlay/Medium": {
+      "$type": "color",
+      "$value": "{Primitive Color.Black/Black 60 alpha}"
+    },
+    "Overlay/Light": {
+      "$type": "color",
+      "$value": "{Primitive Color.Black/Black 20 alpha}"
+    },
+    "Highlight/Hover": {
+      "$type": "color",
+      "$value": "{Primitive Color.Black/Black 30 alpha}"
+    },
+    "Highlight/Yellow": {
+      "$type": "color",
+      "$value": "{Primitive Color.Highlight/HIghlight Yellow 100}"
+    },
+    "Tap Highlight/Base": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White  5 alpha}"
+    },
+    "Hover/Contained Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 60 alpha}"
+    },
+    "Hover/Outlined Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 20 alpha}"
+    },
+    "Hover/Neutral Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 90}"
+    },
+    "Hover/Lighted Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 100}"
+    },
+    "Hover/Danger Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 20 alpha}"
+    },
+    "Active/Contained Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 60 alpha}"
+    },
+    "Active/Outlined Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 20 alpha}"
+    },
+    "Active/Neutral Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 90}"
+    },
+    "Active/Lighted Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 100}"
+    },
+    "Active/Danger Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 20 alpha}"
+    },
+    "Highlighted/Contained Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 60 alpha}"
+    },
+    "Highlighted/Outlined Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 20 alpha}"
+    },
+    "Highlighted/Neutral Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 90}"
+    },
+    "Highlighted/Lighted Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 100}"
+    },
+    "Highlighted/Danger Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 20 alpha}"
+    },
+    "Ripple/Contained Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.Primary Green/Primary Green 10}"
+    },
+    "Ripple/Outlined Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 10 alpha}"
+    },
+    "Ripple/Neutral Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White  5 alpha}"
+    },
+    "Ripple/Lighted Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 10 alpha}"
+    },
+    "Ripple/Danger Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White 10 alpha}"
+    },
+    "Ripple/Text Link Button": {
+      "$type": "color",
+      "$value": "{Primitive Color.White/White  5 alpha}"
+    },
+    "System/Pink": {
+      "$type": "color",
+      "$value": "rgb(0.89 0 0.5 / 1)"
+    },
+    "System/Blue": {
+      "$type": "color",
+      "$value": "rgb(0 0.57 1 / 1)"
+    },
+    "System/Black": {
+      "$type": "color",
+      "$value": "rgb(0 0 0 / 1)"
+    },
+    "System/White": {
+      "$type": "color",
+      "$value": "rgb(1 1 1 / 1)"
+    }
+  }
+}
