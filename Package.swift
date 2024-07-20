@@ -7,10 +7,19 @@ let spindle: Product = .library(
     name: "Spindle",
     targets: [
         "Color",
+        "Button",
         "Icon"
     ]
 )
 let color: Target = .target(name: "Color", path: "ios/Color")
+let button: Target = .target(
+    name: "Button",
+    dependencies: [
+        .target(name: "Color"),
+        .target(name: "Icon")
+    ],
+    path: "ios/Button"
+)
 let icon: Target = .target(
     name: "Icon",
     path: "ios/Icon",
@@ -25,6 +34,7 @@ let package = Package(
     products: [spindle],
     targets: [
         color,
+        button,
         icon,
     ]
 )
