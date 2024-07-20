@@ -3,29 +3,28 @@
 
 import PackageDescription
 
+let spindle: Product = .library(
+    name: "Spindle",
+    targets: [
+        "Color",
+        "Icon"
+    ]
+)
+let color: Target = .target(name: "Color", path: "ios/Color")
+let icon: Target = .target(
+    name: "Icon",
+    path: "ios/Icon",
+    exclude: [
+        "generate_SpindleIcon.sh"
+    ]
+)
+
 let package = Package(
     name: "Spindle",
     platforms: [.iOS(.v15)],
-    products: [
-        .library(
-            name: "Spindle",
-            targets: [
-                "Color",
-                "Icons",
-            ]
-        ),
-    ],
+    products: [spindle],
     targets: [
-        .target(
-            name: "Color",
-            path: "ios/Color"
-        ),
-        .target(
-            name: "Icons",
-            path: "ios/Icons",
-            exclude: [
-                "generate_SpindleIcon.sh"
-            ]
-        ),
+        color,
+        icon,
     ]
 )
