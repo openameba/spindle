@@ -60,7 +60,7 @@ jobs:
         with:
           node-version: 18
       - name: restore lerna
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             node_modules
