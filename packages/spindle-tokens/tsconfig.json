@@ -5,7 +5,8 @@
     "moduleResolution": "Node"
   },
   "include": [
-    "lib"
+    "lib",
+    "scripts",
   ],
   "exclude": [
     "./lib/**/*.test.*"
