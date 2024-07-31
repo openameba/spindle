@@ -1,0 +1,37 @@
+name: Deploy Spindle UI Assets
+
+on:
+  - push
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: restore lerna
+        uses: actions/cache@v3
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-v2
+      - run: yarn install --frozen-lockfile
+      - run: yarn lerna run --scope @openameba/spindle-hooks build
+      - name: Build UI Assets
+        run: yarn lerna run --scope @openameba/spindle-ui build:style
+      - name: Get version from package.json
+        run: echo VERSION=$(node -p "require('./packages/spindle-ui/package.json').version") >> $GITHUB_ENV
+      - uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY_SPINDLE_SITE }}
+      - uses: google-github-actions/setup-gcloud@v2
+      - name: Deploy to Cloud Storage
+        run: |
+          gsutil -m rsync -r dist/ gs://${{ secrets.GCS_BUCKET_SPINDLE_SITE }}/packages/@openameba/spindle-ui@${{ env.VERSION }}/
+          gsutil -m rsync -r dist/ gs://${{ secrets.GCS_BUCKET_SPINDLE_SITE }}/packages/@openameba/spindle-ui/
+          gsutil -m setmeta -h "Cache-Control:public, max-age=31536000, immutable" gs://${{ secrets.GCS_BUCKET_SPINDLE_SITE }}/packages/@openameba/spindle-ui@${{ env.VERSION }}/**/*.css
+          gsutil -m setmeta -h "Cache-Control:public, max-age=300" gs://${{ secrets.GCS_BUCKET_SPINDLE_SITE }}/packages/@openameba/spindle-ui/**/*.css
+        working-directory: packages/spindle-ui
