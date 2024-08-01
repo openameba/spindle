@@ -1,11 +1,13 @@
 //
-//  SpindleIcon.swift
+//  SpindleIconResource.swift
 //
 //
 //  Created by generate_SpindleIcon.sh
 //
 
-public enum SpindleIcon {
+import Foundation
+
+public enum SpindleIconResource {
     case _755
     case abemakun
     case abematv
@@ -358,8 +360,8 @@ public enum SpindleIcon {
     case youtube
 }
 
-extension SpindleIcon {
-    var assetName: String {
+extension SpindleIconResource {
+    package var assetName: String {
         switch self {
         case ._755: "755"
         case .abemakun: "abemakun"
@@ -712,5 +714,9 @@ extension SpindleIcon {
         case .x: "x"
         case .youtube: "youtube"
         }
+    }
+
+    package var bundle: Bundle {
+        Bundle.module
     }
 }

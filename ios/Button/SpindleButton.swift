@@ -52,14 +52,14 @@ public struct SpindleButton: View {
     @ScaledMetric private var scaledIconSize: CGFloat
     private let style: SpindleButtonStyle
     private let size: SpindleButtonSize
-    private let icon: SpindleIcon?
+    private let icon: SpindleIconResource?
     private let title: String
     private let action: () -> Void
     
     public init(
         style: SpindleButtonStyle,
         size: SpindleButtonSize,
-        icon: SpindleIcon? = nil,
+        icon: SpindleIconResource? = nil,
         title: String,
         action: @escaping () -> Void
     ) {
@@ -84,7 +84,7 @@ public struct SpindleButton: View {
     @ViewBuilder
     private var iconImage: some View {
         if let icon {
-            Image(spindleIcon: icon)
+            Image(icon.assetName, bundle: icon.bundle)
                 .resizable()
                 .frame(
                     width: scaledIconSize,
