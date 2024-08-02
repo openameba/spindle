@@ -5,7 +5,7 @@
 //  Created by 小田島 直樹 on 7/20/24.
 //
 
-import struct CoreGraphics.CGFloat
+import SwiftUI
 
 public enum SpindleButtonSize {
     case large
@@ -69,5 +69,23 @@ extension SpindleButtonSize {
         case .small:
             13
         }
+    }
+}
+
+extension SpindleButtonSize: EnvironmentKey {
+    public static let defaultValue: SpindleButtonSize = .medium
+}
+
+extension EnvironmentValues {
+    var spindleButtonSize: SpindleButtonSize {
+        get { self[SpindleButtonSize.self] }
+        set { self[SpindleButtonSize.self] = newValue }
+    }
+}
+
+public extension View {
+    /// SpindleButtonのサイズを指定する
+    func spindleButtonSize(_ size: SpindleButtonSize) -> some View {
+        environment(\.spindleButtonSize, size)
     }
 }

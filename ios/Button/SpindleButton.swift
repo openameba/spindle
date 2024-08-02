@@ -13,13 +13,8 @@ fileprivate extension SpindleButton {
         @Environment(\.isEnabled) private var isEnabled
         @Environment(\.spindleButtonLabelWidth) private var labelWidth
         @Environment(\.spindleButtonLabelMinWidth) private var labelMinWidth
-        private let style: SpindleButtonStyle
-        private let size: SpindleButtonSize
-        
-        init(style: SpindleButtonStyle, size: SpindleButtonSize) {
-            self.style = style
-            self.size = size
-        }
+        @Environment(\.spindleButtonStyle) private var style
+        @Environment(\.spindleButtonSize) private var size
         
         func makeBody(configuration: Configuration) -> some View {
             let clipShape = Capsule()
@@ -49,26 +44,34 @@ fileprivate extension SpindleButton {
 }
 
 public struct SpindleButton: View {
-    @ScaledMetric private var scaledIconSize: CGFloat
-    private let style: SpindleButtonStyle
-    private let size: SpindleButtonSize
-    private let icon: SpindleIconResource?
+    // 30ptのフォントサイズのスケール具合をアイコンにも適用する
+    @ScaledMetric private var iconScaleSource: CGFloat = 30.0
+    private var scaledIconSize: CGFloat {
+        iconScaleSource / 30.0 * size.iconSize
+    }
+    @Environment(\.spindleButtonStyle) private var style
+    @Environment(\.spindleButtonSize) private var size
     private let title: String
+    private let icon: SpindleIconResource?
     private let action: () -> Void
     
     public init(
-        style: SpindleButtonStyle,
-        size: SpindleButtonSize,
-        icon: SpindleIconResource? = nil,
-        title: String,
+        _ title: String,
         action: @escaping () -> Void
     ) {
-        self.style = style
-        self.size = size
+        self.title = title
+        self.icon = nil
+        self.action = action
+    }
+    
+    public init(
+        _ title: String,
+        icon: SpindleIconResource,
+        action: @escaping () -> Void
+    ) {
         self.icon = icon
         self.title = title
         self.action = action
-        self._scaledIconSize = .init(wrappedValue: size.iconSize)
     }
     
     public var body: some View {
@@ -78,7 +81,7 @@ public struct SpindleButton: View {
                 titleText
             }
         }
-        .buttonStyle(Style(style: style, size: size))
+        .buttonStyle(SpindleButton.Style())
     }
     
     @ViewBuilder
@@ -103,50 +106,26 @@ public struct SpindleButton: View {
 
 #Preview {
     VStack(alignment: .center) {
-        SpindleButton(
-            style: .contained,
-            size: .large,
-            icon: .abemakun,
-            title: "Button"
-        ) {
-        }
-        .spindleButtonLabelMinWidth(200)
+        SpindleButton("Button", icon: .abemakun) {}
+            .spindleButtonStyle(.contained)
+            .spindleButtonLabelMinWidth(200)
         
-        SpindleButton(
-            style: .outlined,
-            size: .large,
-            icon: .abemakun,
-            title: "Button"
-        ) {
-        }
-        .spindleButtonLabelMinWidth(100)
+        SpindleButton("Button", icon: .abemakun) {}
+            .spindleButtonStyle(.outlined)
+            .spindleButtonLabelMinWidth(100)
         
-        SpindleButton(
-            style: .lighted,
-            size: .large,
-            icon: .abemakun,
-            title: "ButtonButtonButton"
-        ) {
-        }
+        SpindleButton("ButtonButtonButton", icon: .abemakun) {}
+            .spindleButtonStyle(.lighted)
         
-        SpindleButton(
-            style: .neutral,
-            size: .large,
-            icon: .abemakun,
-            title: "ButtonButtonButtonButtonButton"
-        ) {
-        }
-        .lineLimit(1)
-        .frame(maxWidth: 200)
+        SpindleButton("ButtonButtonButtonButtonButton", icon: .abemakun) {}
+            .spindleButtonStyle(.neutral)
+            .lineLimit(1)
+            .frame(maxWidth: 200)
         
-        SpindleButton(
-            style: .danger,
-            size: .large,
-            icon: .abemakun,
-            title: "ButtonButtonButtonButtonButtonButton"
-        ) {
-        }
-        .spindleButtonLabelWidth(200)
+        SpindleButton("ButtonButtonButtonButtonButtonButton", icon: .abemakun) {}
+            .spindleButtonStyle(.danger)
+            .spindleButtonLabelWidth(200)
     }
+    .spindleButtonSize(.large)
     .disabled(false)
 }

@@ -86,3 +86,21 @@ extension SpindleButtonStyle {
         }
     }
 }
+
+extension SpindleButtonStyle: EnvironmentKey {
+    public static let defaultValue: SpindleButtonStyle = .contained
+}
+
+extension EnvironmentValues {
+    var spindleButtonStyle: SpindleButtonStyle {
+        get { self[SpindleButtonStyle.self] }
+        set { self[SpindleButtonStyle.self] = newValue }
+    }
+}
+
+public extension View {
+    /// SpindleButtonのスタイルを指定する
+    func spindleButtonStyle(_ style: SpindleButtonStyle) -> some View {
+        environment(\.spindleButtonStyle, style)
+    }
+}
