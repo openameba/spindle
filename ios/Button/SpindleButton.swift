@@ -44,10 +44,13 @@ fileprivate extension SpindleButton {
 }
 
 public struct SpindleButton: View {
-    // 30ptのフォントサイズのスケール具合をアイコンにも適用する
-    @ScaledMetric private var iconScaleSource: CGFloat = 30.0
+    // 20ptのフォントサイズを仮定し、ダイナミックタイプ適用時の倍率のベースとする
+    @ScaledMetric private var defaultSize: CGFloat = 20.0
+    private var scaledFontSize: CGFloat {
+        defaultSize / 20.0 * size.fontSize
+    }
     private var scaledIconSize: CGFloat {
-        iconScaleSource / 30.0 * size.iconSize
+        defaultSize / 20.0 * size.iconSize
     }
     @Environment(\.spindleButtonStyle) private var style
     @Environment(\.spindleButtonSize) private var size
@@ -97,9 +100,13 @@ public struct SpindleButton: View {
         }
     }
     
+    @ViewBuilder
     private var titleText: some View {
+        let lineHeight: CGFloat = scaledFontSize * 1.3
         Text(title)
-            .font(.custom("HiraginoSans-W6", size: size.fontSize))
+            .font(.custom("HiraginoSans-W6", fixedSize: scaledFontSize))
+            .lineSpacing(lineHeight - scaledFontSize)
+            .padding(.vertical, (lineHeight - scaledFontSize) / 2)
             .foregroundStyle(style.titleForegroundStyle)
     }
 }
