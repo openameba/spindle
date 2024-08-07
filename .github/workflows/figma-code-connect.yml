@@ -1,0 +1,30 @@
+name: Publish Figma Code Connect
+
+on:
+  push:
+    paths:
+      - packages/spindle-ui/src/**/*.figma.tsx
+    branches:
+      - main
+
+jobs:
+  code-connect:
+    name: Code Connect
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: restore lerna
+        uses: actions/cache@v3
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-v2
+      - run: yarn install --frozen-lockfile
+      - run: npx figma connect publish
+        env:
+          FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_TOKEN_CODE_CONNECT }}
+        working-directory: packages/spindle-ui
