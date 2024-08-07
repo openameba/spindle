@@ -1,0 +1,15 @@
+import React from 'react';
+import { Radio } from './Radio';
+import figma from '@figma/code-connect';
+
+figma.connect(
+  Radio,
+  'https://www.figma.com/design/FSgvRthUiMMXWgrSE4RUgr/Spindle-UI?node-id=473-33051&t=BiQUBKKifVQV5TbP-0',
+  {
+    imports: ["import { Radio } from '@openameba/spindle-ui/Form';"],
+    props: {
+      active: figma.boolean('Active'),
+    },
+    example: () => <Radio id="" name="" aria-label=""></Radio>,
+  },
+);
