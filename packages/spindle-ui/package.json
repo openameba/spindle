@@ -34,8 +34,10 @@
     "build:script:esm:rename": "npx renamer --find js --replace mjs 'dist/**'",
     "build:style": "postcss src/**/*.css src/*.css --base src -d dist/",
     "preicon": "npx rimraf 'src/Icon/!(*.stories).tsx' && npx cpx '../spindle-icons/dist/svg/!(sprite).svg' icon-tmp",
-    "icon": "svgr --out-dir src/Icon icon-tmp",
+    "icon": "run-s icon:react icon:connect",
     "posticon": "npx rimraf icon-tmp",
+    "icon:react": "svgr --out-dir src/Icon icon-tmp",
+    "icon:connect": "npx tsx scripts/figma-connect-icons.ts",
     "prepublishOnly": "yarn build && yarn cp"
   },
   "license": "MIT",
