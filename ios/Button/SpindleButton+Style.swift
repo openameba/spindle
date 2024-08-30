@@ -1,5 +1,5 @@
 //
-//  SpindleButtonStyle.swift
+//  SpindleButton+Style.swift
 //
 //
 //  Created by 小田島 直樹 on 7/20/24.
@@ -8,15 +8,17 @@
 import Color
 import SwiftUI
 
-public enum SpindleButtonStyle {
-    case contained
-    case outlined
-    case neutral
-    case lighted
-    case danger
+public extension SpindleButton {
+    enum Style {
+        case contained
+        case outlined
+        case neutral
+        case lighted
+        case danger
+    }
 }
 
-extension SpindleButtonStyle {
+extension SpindleButton.Style {
     var iconForegroundStyle: some ShapeStyle {
         switch self {
         case .contained:
@@ -87,20 +89,20 @@ extension SpindleButtonStyle {
     }
 }
 
-extension SpindleButtonStyle: EnvironmentKey {
-    public static let defaultValue: SpindleButtonStyle = .contained
+extension SpindleButton.Style: EnvironmentKey {
+    public static let defaultValue: SpindleButton.Style = .contained
 }
 
 extension EnvironmentValues {
-    var spindleButtonStyle: SpindleButtonStyle {
-        get { self[SpindleButtonStyle.self] }
-        set { self[SpindleButtonStyle.self] = newValue }
+    var spindleButtonStyle: SpindleButton.Style {
+        get { self[SpindleButton.Style.self] }
+        set { self[SpindleButton.Style.self] = newValue }
     }
 }
 
 public extension View {
     /// SpindleButtonのスタイルを指定する
-    func spindleButtonStyle(_ style: SpindleButtonStyle) -> some View {
+    func spindleButtonStyle(_ style: SpindleButton.Style) -> some View {
         environment(\.spindleButtonStyle, style)
     }
 }

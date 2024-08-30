@@ -9,7 +9,7 @@ import Icon
 import SwiftUI
 
 fileprivate extension SpindleButton {
-    struct Style: ButtonStyle {
+    struct SwiftUIButtonStyle: ButtonStyle {
         @Environment(\.isEnabled) private var isEnabled
         @Environment(\.spindleButtonLabelWidth) private var labelWidth
         @Environment(\.spindleButtonLabelMinWidth) private var labelMinWidth
@@ -84,7 +84,7 @@ public struct SpindleButton: View {
                 titleText
             }
         }
-        .buttonStyle(SpindleButton.Style())
+        .buttonStyle(SwiftUIButtonStyle())
     }
     
     @ViewBuilder

@@ -1,5 +1,5 @@
 //
-//  SpindleButtonLabelWidth.swift
+//  SpindleButton+LabelWidth.swift
 //
 //
 //  Created by 小田島 直樹 on 7/20/24.
@@ -7,23 +7,25 @@
 
 import SwiftUI
 
-private struct SpindleButtonLabelWidthKey: EnvironmentKey {
-    static let defaultValue: CGFloat? = nil
-}
-
-private struct SpindleButtonLabelMinWidthKey: EnvironmentKey {
-    static let defaultValue: CGFloat? = nil
+private extension SpindleButton {
+    struct LabelWidthKey: EnvironmentKey {
+        static let defaultValue: CGFloat? = nil
+    }
+    
+    struct LabelMinWidthKey: EnvironmentKey {
+        static let defaultValue: CGFloat? = nil
+    }
 }
 
 extension EnvironmentValues {
     var spindleButtonLabelWidth: CGFloat? {
-        get { self[SpindleButtonLabelWidthKey.self] }
-        set { self[SpindleButtonLabelWidthKey.self] = newValue }
+        get { self[SpindleButton.LabelWidthKey.self] }
+        set { self[SpindleButton.LabelWidthKey.self] = newValue }
     }
 
     var spindleButtonLabelMinWidth: CGFloat? {
-        get { self[SpindleButtonLabelMinWidthKey.self] }
-        set { self[SpindleButtonLabelMinWidthKey.self] = newValue }
+        get { self[SpindleButton.LabelMinWidthKey.self] }
+        set { self[SpindleButton.LabelMinWidthKey.self] = newValue }
     }
 }
 

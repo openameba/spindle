@@ -1,5 +1,5 @@
 //
-//  SpindleButtonSize.swift
+//  SpindleButton+Size.swift
 //
 //
 //  Created by 小田島 直樹 on 7/20/24.
@@ -7,13 +7,15 @@
 
 import SwiftUI
 
-public enum SpindleButtonSize {
-    case large
-    case medium
-    case small
+public extension SpindleButton {
+    enum Size {
+        case large
+        case medium
+        case small
+    }
 }
 
-extension SpindleButtonSize {
+extension SpindleButton.Size {
     var minHeight: CGFloat {
         switch self {
         case .large:
@@ -72,20 +74,20 @@ extension SpindleButtonSize {
     }
 }
 
-extension SpindleButtonSize: EnvironmentKey {
-    public static let defaultValue: SpindleButtonSize = .medium
+extension SpindleButton.Size: EnvironmentKey {
+    public static let defaultValue: SpindleButton.Size = .medium
 }
 
 extension EnvironmentValues {
-    var spindleButtonSize: SpindleButtonSize {
-        get { self[SpindleButtonSize.self] }
-        set { self[SpindleButtonSize.self] = newValue }
+    var spindleButtonSize: SpindleButton.Size {
+        get { self[SpindleButton.Size.self] }
+        set { self[SpindleButton.Size.self] = newValue }
     }
 }
 
 public extension View {
     /// SpindleButtonのサイズを指定する
-    func spindleButtonSize(_ size: SpindleButtonSize) -> some View {
+    func spindleButtonSize(_ size: SpindleButton.Size) -> some View {
         environment(\.spindleButtonSize, size)
     }
 }
