@@ -43,7 +43,7 @@ public struct SpindleLinkButton: View {
     private let action: () -> Void
     
     public init(
-        title: String,
+        _ title: String,
         icon: SpindleIconResource,
         action: @escaping () -> Void
     ) {
@@ -95,15 +95,15 @@ public struct SpindleLinkButton: View {
 private struct PreviewView: View {
     var body: some View {
         VStack {
-            SpindleLinkButton(title: "Link Button", icon: .chevronRightBold) {}
+            SpindleLinkButton("Link Button", icon: .chevronRightBold) {}
             
-            SpindleLinkButton(title: "Link Button", icon: .checkCircleFill) {}
+            SpindleLinkButton("Link Button", icon: .checkCircleFill) {}
                 .spindleLinkButtonIconAlignment(.leading)
             
-            SpindleLinkButton(title: "Subtle Lonk", icon: .chevronRightBold) {}
+            SpindleLinkButton("Subtle Lonk", icon: .chevronRightBold) {}
                 .spindleLinkButtonStyle(.subtle)
             
-            SpindleLinkButton(title: "Subtle Lonk", icon: .checkCircleFill) {}
+            SpindleLinkButton("Subtle Lonk", icon: .checkCircleFill) {}
                 .spindleLinkButtonStyle(.subtle)
                 .spindleLinkButtonIconAlignment(.leading)
         }
