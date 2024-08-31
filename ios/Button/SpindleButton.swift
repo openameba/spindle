@@ -21,7 +21,8 @@ fileprivate extension SpindleButton {
             return configuration.label
                 .padding(.vertical, size.verticalEdgePadding)
                 .padding(.horizontal, size.horizontalEdgePadding)
-                .frame(minHeight: size.minHeight)
+                .frame(width: labelWidth)
+                .frame(minWidth: labelMinWidth, minHeight: size.minHeight)
                 .background {
                     if configuration.isPressed {
                         style.highlightedBackground
@@ -34,8 +35,6 @@ fileprivate extension SpindleButton {
                     clipShape
                         .stroke(style.borderShapeStyle, lineWidth: 2.0)
                 }
-                .frame(width: labelWidth)
-                .frame(minWidth: labelMinWidth)
                 .contentShape(Rectangle())
                 .compositingGroup()
                 .opacity(isEnabled ? 1.0 : 0.3)
@@ -111,28 +110,64 @@ public struct SpindleButton: View {
     }
 }
 
-#Preview {
-    VStack(alignment: .center) {
-        SpindleButton("Button", icon: .abemakun) {}
-            .spindleButtonStyle(.contained)
-            .spindleButtonLabelMinWidth(200)
-        
-        SpindleButton("Button", icon: .abemakun) {}
-            .spindleButtonStyle(.outlined)
-            .spindleButtonLabelMinWidth(100)
-        
-        SpindleButton("ButtonButtonButton", icon: .abemakun) {}
-            .spindleButtonStyle(.lighted)
-        
-        SpindleButton("ButtonButtonButtonButtonButton", icon: .abemakun) {}
-            .spindleButtonStyle(.neutral)
-            .lineLimit(1)
-            .frame(maxWidth: 200)
-        
-        SpindleButton("ButtonButtonButtonButtonButtonButton", icon: .abemakun) {}
-            .spindleButtonStyle(.danger)
-            .spindleButtonLabelWidth(200)
+#if DEBUG
+
+private struct PreviewView: View {
+    var body: some View {
+        VStack {
+            SpindleButton("Button", icon: .plusBold) {}
+                .spindleButtonSize(.large)
+                .spindleButtonLabelWidth(343)
+            
+            SpindleButton("Button", icon: .plusBold) {}
+                .spindleButtonSize(.large)
+                .spindleButtonLabelMinWidth(240)
+            
+            SpindleButton("Button", icon: .plusBold) {}
+                .spindleButtonSize(.large)
+                .spindleButtonLabelMinWidth(132)
+            
+            Group {
+                SpindleButton("Button", icon: .plusBold) {}
+                    .spindleButtonSize(.large)
+                    .spindleButtonLabelWidth(343)
+                
+                SpindleButton("Button", icon: .plusBold) {}
+                    .spindleButtonSize(.large)
+                    .spindleButtonLabelMinWidth(240)
+                
+                SpindleButton("Button", icon: .plusBold) {}
+                    .spindleButtonSize(.large)
+                    .spindleButtonLabelMinWidth(132)
+            }
+            .disabled(true)
+        }
     }
-    .spindleButtonSize(.large)
-    .disabled(false)
 }
+
+#Preview("Contained") {
+    PreviewView()
+        .spindleButtonStyle(.contained)
+}
+
+#Preview("Outlined") {
+    PreviewView()
+        .spindleButtonStyle(.outlined)
+}
+
+#Preview("Neutral") {
+    PreviewView()
+        .spindleButtonStyle(.neutral)
+}
+
+#Preview("Lighted") {
+    PreviewView()
+        .spindleButtonStyle(.lighted)
+}
+
+#Preview("Danger") {
+    PreviewView()
+        .spindleButtonStyle(.danger)
+}
+
+#endif
