@@ -7,14 +7,14 @@ enum TargetInfo: CaseIterable {
     case button
     case color
     case icon
-    case textButton
+    case linkButton
     
     var name: String {
         switch self {
         case .button: "Button"
         case .color: "Color"
         case .icon: "Icon"
-        case .textButton: "TextButton"
+        case .linkButton: "LinkButton"
         }
     }
     
@@ -23,7 +23,7 @@ enum TargetInfo: CaseIterable {
         case .button: "ios/Button"
         case .color: "ios/Color"
         case .icon: "ios/Icon"
-        case .textButton: "ios/TextButton"
+        case .linkButton: "ios/LinkButton"
         }
     }
 }
@@ -73,8 +73,8 @@ extension Target {
         )
     }
     
-    static var textButton: Target {
-        let info = TargetInfo.textButton
+    static var linkButton: Target {
+        let info = TargetInfo.linkButton
         return .target(
             name: info.name,
             dependencies: [.color, .icon],
@@ -91,6 +91,6 @@ let package = Package(
         .button,
         .color,
         .icon,
-        .textButton,
+        .linkButton,
     ]
 )
