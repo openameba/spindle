@@ -10,11 +10,11 @@ import SwiftUI
 
 fileprivate extension SpindleButton {
     struct SwiftUIButtonStyle: ButtonStyle {
-        @Environment(\.isEnabled) private var isEnabled
-        @Environment(\.spindleButtonLabelWidth) private var labelWidth
-        @Environment(\.spindleButtonLabelMinWidth) private var labelMinWidth
-        @Environment(\.spindleButtonStyle) private var style
-        @Environment(\.spindleButtonSize) private var size
+        @Environment(\.isEnabled) private var isEnabled: Bool
+        @Environment(\.spindleButtonLabelWidth) private var labelWidth: CGFloat?
+        @Environment(\.spindleButtonLabelMinWidth) private var labelMinWidth: CGFloat?
+        @Environment(\.spindleButtonStyle) private var style: SpindleButton.Style
+        @Environment(\.spindleButtonSize) private var size: SpindleButton.Size
         
         func makeBody(configuration: Configuration) -> some View {
             let clipShape = Capsule()
@@ -51,8 +51,8 @@ public struct SpindleButton: View {
     private var scaledIconSize: CGFloat {
         defaultSize / 20.0 * size.iconSize
     }
-    @Environment(\.spindleButtonStyle) private var style
-    @Environment(\.spindleButtonSize) private var size
+    @Environment(\.spindleButtonStyle) private var style: SpindleButton.Style
+    @Environment(\.spindleButtonSize) private var size: SpindleButton.Size
     private let title: String
     private let icon: SpindleIconResource?
     private let action: () -> Void

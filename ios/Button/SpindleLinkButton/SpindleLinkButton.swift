@@ -10,7 +10,7 @@ import SwiftUI
 
 fileprivate extension SpindleLinkButton {
     struct SwiftUIButtonStyle: ButtonStyle {
-        @Environment(\.isEnabled) private var isEnabled
+        @Environment(\.isEnabled) private var isEnabled: Bool
         
         func makeBody(configuration: Configuration) -> some View {
             configuration.label
@@ -33,8 +33,9 @@ fileprivate extension SpindleLinkButton {
 public struct SpindleLinkButton: View {
     // 20ptのフォントサイズを仮定し、ダイナミックタイプ適用時の倍率のベースとする
     @ScaledMetric private var defaultSize: CGFloat = 20.0
+    @Environment(\.spindleLinkButtonSize) private var size: CGFloat
     private var scaledFontSize: CGFloat {
-        defaultSize / 20.0 * 16.0
+        defaultSize / 20.0 * size
     }
     @Environment(\.spindleLinkButtonStyle) private var style: SpindleLinkButton.Style
     @Environment(\.spindleLinkButtonIconAlignment) private var iconAlignment: SpindleLinkButton.IconAlignment

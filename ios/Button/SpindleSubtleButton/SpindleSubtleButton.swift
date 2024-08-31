@@ -10,7 +10,7 @@ import SwiftUI
 
 fileprivate extension SpindleSubtleButton {
     struct SwiftUIButtonStyle: ButtonStyle {
-        @Environment(\.isEnabled) private var isEnabled
+        @Environment(\.isEnabled) private var isEnabled: Bool
         
         func makeBody(configuration: Configuration) -> some View {
             configuration.label
@@ -31,7 +31,12 @@ fileprivate extension SpindleSubtleButton {
 }
 
 public struct SpindleSubtleButton: View {
-    @ScaledMetric private var scaledFontSize: CGFloat = 16.0
+    // 20ptのフォントサイズを仮定し、ダイナミックタイプ適用時の倍率のベースとする
+    @ScaledMetric private var defaultSize: CGFloat = 20.0
+    @Environment(\.spindleSubtleButtonFontSize) private var fontSize: CGFloat
+    private var scaledFontSize: CGFloat {
+        defaultSize / 20.0 * fontSize
+    }
     private let title: String
     private let action: () -> Void
     
