@@ -5,7 +5,7 @@
 //  Created by 小田島 直樹 on 8/6/24.
 //
 
-import Icon
+import SpindleIcon
 import SwiftUI
 
 fileprivate extension SpindleLinkButton {

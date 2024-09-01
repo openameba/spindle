@@ -4,23 +4,23 @@
 import PackageDescription
 
 enum TargetInfo: CaseIterable {
-    case button
     case color
     case icon
+    case ui
     
     var name: String {
         switch self {
-        case .button: "Button"
-        case .color: "Color"
-        case .icon: "Icon"
+        case .color: "SpindleColor"
+        case .icon: "SpindleIcon"
+        case .ui: "SpindleUI"
         }
     }
     
     var path: String {
         switch self {
-        case .button: "ios/Button"
-        case .color: "ios/Color"
-        case .icon: "ios/Icon"
+        case .color: "ios/SpindleColor"
+        case .icon: "ios/SpindleIcon"
+        case .ui: "ios/SpindleUI"
         }
     }
 }
@@ -42,15 +42,6 @@ extension Target.Dependency {
 }
 
 extension Target {
-    static var button: Target {
-        let info = TargetInfo.button
-        return .target(
-            name: info.name,
-            dependencies: [.color, .icon],
-            path: info.path
-        )
-    }
-    
     static var color: Target {
         let info = TargetInfo.color
         return .target(
@@ -69,6 +60,15 @@ extension Target {
             ]
         )
     }
+    
+    static var ui: Target {
+        let info = TargetInfo.ui
+        return .target(
+            name: info.name,
+            dependencies: [.color, .icon],
+            path: info.path
+        )
+    }
 }
 
 let package = Package(
@@ -76,8 +76,8 @@ let package = Package(
     platforms: [.iOS(.v15)],
     products: [.spindle],
     targets: [
-        .button,
         .color,
         .icon,
+        .ui,
     ]
 )

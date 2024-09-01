@@ -5,7 +5,7 @@
 //  Created by 小田島 直樹 on 7/20/24.
 //
 
-import Color
+import SpindleColor
 import SwiftUI
 
 public extension SpindleButton {
