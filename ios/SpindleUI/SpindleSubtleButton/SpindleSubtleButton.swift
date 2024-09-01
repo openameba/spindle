@@ -50,20 +50,12 @@ public struct SpindleSubtleButton: View {
     
     public var body: some View {
         Button(action: action) {
-            titleText
+            SpindleText(title)
+                .spindleTextFont(.hiraginoSansW6(fixedSize: scaledFontSize))
+                .multilineTextAlignment(.center)
+                .foregroundStyle(Color.Spindle.Text.mediumEmphasis)
         }
         .buttonStyle(SwiftUIButtonStyle())
-    }
-    
-    @ViewBuilder
-    private var titleText: some View {
-        let lineHeight = scaledFontSize * 1.3
-        Text(title)
-            .font(.custom("HiraginoSans-W6", fixedSize: scaledFontSize))
-            .lineSpacing(lineHeight - scaledFontSize)
-            .padding(.vertical, (lineHeight - scaledFontSize) / 2)
-            .multilineTextAlignment(.center)
-            .foregroundStyle(Color.Spindle.Text.mediumEmphasis)
     }
 }
 

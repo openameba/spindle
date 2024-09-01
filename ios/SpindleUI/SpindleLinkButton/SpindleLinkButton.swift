@@ -60,7 +60,10 @@ public struct SpindleLinkButton: View {
                     iconImage
                 }
                 
-                titleText
+                SpindleText(title)
+                    .spindleTextFont(.hiraginoSansW6(fixedSize: scaledFontSize))
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(style.titleForegroundStyle)
                 
                 if case .trailing = iconAlignment {
                     iconImage
@@ -77,17 +80,6 @@ public struct SpindleLinkButton: View {
             .resizable()
             .frame(width: size, height: size)
             .foregroundStyle(style.iconForegroundStyle)
-    }
-    
-    @ViewBuilder
-    private var titleText: some View {
-        let lineHeight = scaledFontSize * 1.3
-        Text(title)
-            .font(.custom("HiraginoSans-W6", fixedSize: scaledFontSize))
-            .lineSpacing(lineHeight - scaledFontSize)
-            .padding(.vertical, (lineHeight - scaledFontSize) / 2)
-            .multilineTextAlignment(.center)
-            .foregroundStyle(style.titleForegroundStyle)
     }
 }
 

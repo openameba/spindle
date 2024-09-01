@@ -80,7 +80,10 @@ public struct SpindleButton: View {
         Button(action: action) {
             HStack(spacing: size.iconPadding) {
                 iconImage
-                titleText
+                SpindleText(title)
+                    .spindleTextFont(.hiraginoSansW6(fixedSize: scaledFontSize))
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(style.titleForegroundStyle)
             }
         }
         .buttonStyle(SwiftUIButtonStyle())
@@ -97,16 +100,6 @@ public struct SpindleButton: View {
                 )
                 .foregroundStyle(style.iconForegroundStyle)
         }
-    }
-    
-    @ViewBuilder
-    private var titleText: some View {
-        let lineHeight: CGFloat = scaledFontSize * 1.3
-        Text(title)
-            .font(.custom("HiraginoSans-W6", fixedSize: scaledFontSize))
-            .lineSpacing(lineHeight - scaledFontSize)
-            .padding(.vertical, (lineHeight - scaledFontSize) / 2)
-            .foregroundStyle(style.titleForegroundStyle)
     }
 }
 
