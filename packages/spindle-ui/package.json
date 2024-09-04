@@ -61,7 +61,7 @@
     "react-merge-refs": "^1.1.0"
   },
   "devDependencies": {
-    "@mdx-js/react": "^1.6.22",
+    "@mdx-js/react": "^3.0.1",
     "@storybook/addon-a11y": "^6.5.9",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-backgrounds": "^6.5.9",
