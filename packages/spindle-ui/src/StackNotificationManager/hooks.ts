@@ -368,8 +368,8 @@ export const useStackNotificationComponent = <
   const offset: StackPositionOffset = {
     top: stackOffset.top ?? 24,
     // If position is top or bottom, then horizontal offset is not needed.
-    left: position.endsWith('Left') ? stackOffset.left ?? 32 : 0,
-    right: position.endsWith('Right') ? stackOffset.right ?? 32 : 0,
+    left: position.endsWith('Left') ? (stackOffset.left ?? 32) : 0,
+    right: position.endsWith('Right') ? (stackOffset.right ?? 32) : 0,
     bottom: stackOffset.bottom ?? 24,
   };
   const timeoutID = useRef<number | null>(null);
