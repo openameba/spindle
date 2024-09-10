@@ -1,27 +1,35 @@
-module.exports = {
-  source: [`tokens/**/!(*.css).json`],
-  format: {
-    jsonDataSource: ({ dictionary }) => {
-      // Flatten data to be a data source of some querying use cases
-      // Stringify the child values to ensure the types are the same, but original.value keeps their type
-      const tokens = dictionary.allTokens.map((token) => ({
-        ...token,
-        value: `${token.value}`, // ensure the value type is string
-        pathString: token.path.join('.'), // useful for filtering the token
-      }));
-      return JSON.stringify(tokens, null, 2);
-    },
+const transitionOnlyFilter = {
+  name: 'transition-only',
+  filter: async (token) => {
+    return token.$type === 'transition' || token.$type === 'cubicBezier';
   },
+};
+
+// Using dynamic import until ESM is supported in this repogitory
+import('style-dictionary').then((module) => {
+  module.default.registerFilter(transitionOnlyFilter);
+});
+
+module.exports = {
+  source: [`tokens/**/*.json`],
   platforms: {
-    json: {
+    css: {
+      transformGroup: 'css',
       files: [
         {
-          destination: 'dist/json/spindle-tokens.json',
-          format: 'json',
+          destination: 'dist/spindle-tokens.css',
+          format: 'css/variables',
+          options: {
+            outputReferences: true,
+          },
         },
         {
-          destination: 'dist/json/spindle-tokens-flat.json',
-          format: 'jsonDataSource',
+          destination: 'dist/animation.css',
+          format: 'css/variables',
+          options: {
+            outputReferences: true,
+          },
+          filter: 'transition-only',
         },
       ],
     },
