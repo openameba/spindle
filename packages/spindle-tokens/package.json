@@ -17,6 +17,7 @@
     "type": "git",
     "url": "git+https://github.com/openameba/spindle.git"
   },
+  "type": "module",
   "scripts": {
     "test": "tsc --noEmit && yarn jest",
     "stylelint": "stylelint dist/**/*.css",
