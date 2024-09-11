@@ -1,0 +1,155 @@
+{
+  "Animation": {
+    "Easing/Ease Out": {
+      "$type": "cubicBezier",
+      "$value": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    "Easing/Ease Out Bounce": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.55,
+        2.05,
+        0.65,
+        0.75
+      ]
+    },
+    "Easing/Ease In Out": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.5,
+        0,
+        0.5,
+        1
+      ]
+    },
+    "Duration/Fast": {
+      "$type": "transition",
+      "$value": "150ms"
+    },
+    "Duration/Neutral": {
+      "$type": "transition",
+      "$value": "350ms"
+    },
+    "Duration/Slow": {
+      "$type": "transition",
+      "$value": "500ms"
+    },
+    "Move/Easing": {
+      "$type": "transition",
+      "$value": "{Animation.Easing/Ease Out}"
+    },
+    "Move/Duration": {
+      "$type": "transition",
+      "$value": "{Animation.Duration/Neutral}"
+    },
+    "Move Pop/Easing": {
+      "$type": "transition",
+      "$value": "{Animation.Easing/Ease Out Bounce}"
+    },
+    "Move Pop/Duration": {
+      "$type": "transition",
+      "$value": "{Animation.Duration/Neutral}"
+    },
+    "Move Fast/Easing": {
+      "$type": "transition",
+      "$value": "{Animation.Easing/Ease Out}"
+    },
+    "Move Fast/Duration": {
+      "$type": "transition",
+      "$value": "{Animation.Duration/Fast}"
+    },
+    "Move Pop Fast/Easing": {
+      "$type": "transition",
+      "$value": "{Animation.Easing/Ease Out Bounce}"
+    },
+    "Move Pop Fast/Duration": {
+      "$type": "transition",
+      "$value": "{Animation.Duration/Fast}"
+    },
+    "Appear In/Easing": {
+      "$type": "transition",
+      "$value": "{Animation.Easing/Ease In Out}"
+    },
+    "Appear In/Duration": {
+      "$type": "transition",
+      "$value": "{Animation.Duration/Neutral}"
+    },
+    "Disappear/Easing": {
+      "$type": "transition",
+      "$value": "{Animation.Easing/Ease In Out}"
+    },
+    "Disappear/Duration": {
+      "$type": "transition",
+      "$value": "{Animation.Duration/Fast}"
+    },
+    "In View/Easing": {
+      "$type": "transition",
+      "$value": "{Animation.Easing/Ease Out}"
+    },
+    "In View/Duration": {
+      "$type": "transition",
+      "$value": "{Animation.Duration/Neutral}"
+    },
+    "In View Pop/Easing": {
+      "$type": "transition",
+      "$value": "{Animation.Easing/Ease Out Bounce}"
+    },
+    "In View Pop/Duration": {
+      "$type": "transition",
+      "$value": "{Animation.Duration/Neutral}"
+    },
+    "Out of View/Easing": {
+      "$type": "transition",
+      "$value": "{Animation.Easing/Ease Out}"
+    },
+    "Out of View/Duration": {
+      "$type": "transition",
+      "$value": "{Animation.Duration/Neutral}"
+    },
+    "Content Change/Easing": {
+      "$type": "transition",
+      "$value": "{Animation.Easing/Ease In Out}"
+    },
+    "Content Change/Duration": {
+      "$type": "transition",
+      "$value": "{Animation.Duration/Fast}"
+    },
+    "Content Change Pop/Easing": {
+      "$type": "transition",
+      "$value": "{Animation.Easing/Ease Out Bounce}"
+    },
+    "Content Change Pop/Duration": {
+      "$type": "transition",
+      "$value": "{Animation.Duration/Fast}"
+    },
+    "Scale Up/Easing": {
+      "$type": "transition",
+      "$value": "{Animation.Easing/Ease Out}"
+    },
+    "Scale Up/Duration": {
+      "$type": "transition",
+      "$value": "{Animation.Duration/Slow}"
+    },
+    "Scale Up Pop/Easing": {
+      "$type": "transition",
+      "$value": "{Animation.Easing/Ease Out Bounce}"
+    },
+    "Scale Up Pop/Duration": {
+      "$type": "transition",
+      "$value": "{Animation.Duration/Slow}"
+    },
+    "Scale Down/Easing": {
+      "$type": "transition",
+      "$value": "{Animation.Easing/Ease Out}"
+    },
+    "Scale Down/Duration": {
+      "$type": "transition",
+      "$value": "{Animation.Duration/Neutral}"
+    }
+  }
+}
