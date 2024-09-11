@@ -2658,6 +2658,11 @@
     zod "^3.23.6"
     zod-validation-error "^3.2.0"
 
+"@figma/rest-api-spec@^0.17.0":
+  version "0.17.0"
+  resolved "https://registry.yarnpkg.com/@figma/rest-api-spec/-/rest-api-spec-0.17.0.tgz#fb5f8e316c9c0d362e00f6404a772cd2db464620"
+  integrity sha512-T+C7pl4n/HK4ZRBumGdww9bU77MB5MQiUmyjqfYVwyDbod5XhDXAHz6mJjuxp65C64B6JbOxtV17jugo63/60Q==
+
 "@google-cloud/cloud-sql-connector@^1.3.3":
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/@google-cloud/cloud-sql-connector/-/cloud-sql-connector-1.3.4.tgz#478945877596664832f71ade3ea2d26ac7ae1a40"
@@ -23237,14 +23242,7 @@ strip-ansi@^5.1.0:
   dependencies:
     ansi-regex "^4.1.0"
 
-strip-ansi@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.0.tgz#0b1571dd7669ccd4f3e06e14ef1eed26225ae532"
-  integrity sha512-AuvKTrTfQNYNIctbR1K/YGTR1756GycPsg7b9bdV9Duqur4gv6aKqHXah67Z8ImS7WEz5QVcOtlfW2rZEugt6w==
-  dependencies:
-    ansi-regex "^5.0.0"
-
-strip-ansi@^6.0.1:
+strip-ansi@^6.0.0, strip-ansi@^6.0.1:
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
