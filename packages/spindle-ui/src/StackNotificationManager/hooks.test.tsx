@@ -1,5 +1,5 @@
 import React from 'react';
-import { act, renderHook as _renderHook } from '@testing-library/react-hooks';
+import { act, renderHook as _renderHook } from '@testing-library/react';
 import {
   StackNotificationManagerProvider,
   useStackNotificationManager,
