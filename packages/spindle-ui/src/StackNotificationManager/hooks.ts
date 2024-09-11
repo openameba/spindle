@@ -329,7 +329,7 @@ export const useRepeatedStackItem = <P extends StackPosition = StackPosition>({
     setIdList((prev) => [...prev, nextId]);
   }, [id, position, setActive]);
   const onHide = useCallback(
-    (id) => {
+    (id: string) => {
       setActive({ id, position, active: false });
       setIdList((prev) => prev.filter((item) => item !== id));
     },
