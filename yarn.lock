@@ -6608,9 +6608,9 @@ ajv@^8.0.0, ajv@^8.0.1, ajv@^8.1.0, ajv@^8.11.0, ajv@^8.3.0, ajv@^8.8.0:
     uri-js "^4.2.2"
 
 ameba-color-palette.css@^4.9.0:
-  version "4.9.0"
-  resolved "https://registry.yarnpkg.com/ameba-color-palette.css/-/ameba-color-palette.css-4.9.0.tgz#b3f8f7620147b34b9cabe566cd59349237e77574"
-  integrity sha512-F04oXEFTFzoyoyYcA8ZOMFqNCWhdE8nna6B003+XHFjxEvAPwiLEo1QY696+uBD9l7UNVplueIk7HUfQzXcboA==
+  version "4.13.0"
+  resolved "https://registry.yarnpkg.com/ameba-color-palette.css/-/ameba-color-palette.css-4.13.0.tgz#94843116c63d89db67c8172daf959ad3279d9cc1"
+  integrity sha512-z0V0kVYd/EHawsFVPRbzjy/Y8Sc5yYTJHbzLv7+g7tQs6nPihLyEC+9106fpHaxwjM131SXP1zqweFxwkapQWA==
 
 analyze-desumasu-dearu@^4.0.0:
   version "4.0.0"
