@@ -33,7 +33,7 @@
     "csso-cli": "^4.0.0",
     "firebase-tools": "^13.0.0",
     "puppeteer": "^23.0.0",
-    "stylelint": "^15.0.0",
+    "stylelint": "^16.9.0",
     "stylelint-config-standard": "^36.0.1"
   }
 }
