@@ -42,22 +42,6 @@ module.exports = {
       transformGroup: 'css',
       files: [
         {
-          destination: 'dist/css/spindle-tokens-primitive-color.css',
-          format: 'css/variables',
-          options: {
-            outputReferences: true,
-          },
-          filter: 'primitive-color',
-        },
-        {
-          destination: 'dist/css/spindle-tokens-theme-light.css',
-          format: 'css/variables',
-          options: {
-            outputReferences: true,
-          },
-          filter: 'theme-light',
-        },
-        {
           destination: 'dist/css/spindle-tokens-animation.css',
           format: 'css/variables',
           options: {
