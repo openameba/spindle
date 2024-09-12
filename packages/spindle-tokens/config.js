@@ -8,21 +8,21 @@ const transitionFilter = {
 const primitiveColorFilter = {
   name: 'primitive-color',
   filter: async (token) => {
-    return token.filePath.endsWith('primitive-color.json');
+    return token.filePath.endsWith('primitive-color.tokens.json');
   },
 };
 
 const themeLightFilter = {
   name: 'theme-light',
   filter: async (token) => {
-    return token.filePath.endsWith('theme-light.json');
+    return token.filePath.endsWith('theme-light.tokens.json');
   },
 };
 
 const themeDarkFilter = {
   name: 'theme-dark',
   filter: async (token) => {
-    return token.filePath.endsWith('theme-dark.json');
+    return token.filePath.endsWith('theme-dark.tokens.json');
   },
 };
 
@@ -36,7 +36,7 @@ import('style-dictionary').then((module) => {
 });
 
 module.exports = {
-  source: [`tokens/**/*.json`],
+  source: [`tokens/**/*.tokens.json`],
   platforms: {
     css: {
       transformGroup: 'css',

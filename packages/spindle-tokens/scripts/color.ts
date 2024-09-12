@@ -23,19 +23,19 @@ const FIGMA_TOKEN = process.env.FIGMA_TOKEN || '';
   };
 
   fs.writeFileSync(
-    path.resolve(__dirname, '../tokens/primitive-color.json'),
+    path.resolve(__dirname, '../tokens/primitive-color.tokens.json'),
     JSON.stringify(primitiveColorResult, null, 2),
   );
 
   const transformedThemeColor = transformThemeColor(variables);
 
   fs.writeFileSync(
-    path.resolve(__dirname, '../tokens/theme-light.json'),
+    path.resolve(__dirname, '../tokens/theme-light.tokens.json'),
     JSON.stringify({ Color: transformedThemeColor['Light'] }, null, 2),
   );
 
   fs.writeFileSync(
-    path.resolve(__dirname, '../tokens/theme-dark.json'),
+    path.resolve(__dirname, '../tokens/theme-dark.tokens.json'),
     JSON.stringify({ Color: transformedThemeColor['Dark'] }, null, 2),
   );
 })();

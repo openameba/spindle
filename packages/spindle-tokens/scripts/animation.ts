@@ -27,7 +27,7 @@ const FIGMA_TOKEN = process.env.FIGMA_TOKEN || '';
   };
 
   fs.writeFileSync(
-    path.resolve(__dirname, '../tokens/animation.json'),
+    path.resolve(__dirname, '../tokens/animation.tokens.json'),
     JSON.stringify(result, null, 2),
   );
 })();
