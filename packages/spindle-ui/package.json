@@ -100,7 +100,7 @@
     "stylelint-config-prettier": "^9.0.0",
     "stylelint-config-standard": "^34.0.0",
     "stylelint-order": "^6.0.0",
-    "stylelint-prettier": "^4.0.0",
+    "stylelint-prettier": "^5.0.2",
     "stylelint-selector-bem-pattern": "^3.0.0",
     "ts-jest": "29.2.5",
     "webpack": "^5.73.0"
