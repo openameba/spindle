@@ -73,7 +73,7 @@ extension Target {
 
 let package = Package(
     name: "Spindle",
-    platforms: [.iOS(.v15)],
+    platforms: [.iOS(.v16)],
     products: [.spindle],
     targets: [
         .color,
