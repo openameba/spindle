@@ -7454,13 +7454,6 @@ axios@1.6.0:
     form-data "^4.0.0"
     proxy-from-env "^1.1.0"
 
-axios@^0.19.0:
-  version "0.19.2"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
-  integrity sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
-  dependencies:
-    follow-redirects "1.5.10"
-
 axios@^0.21.1:
   version "0.21.1"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
@@ -10053,7 +10046,7 @@ debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0:
   dependencies:
     ms "2.0.0"
 
-debug@3.1.0, debug@=3.1.0:
+debug@3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
   integrity sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==
@@ -11984,12 +11977,12 @@ figgy-pudding@^3.5.1:
   integrity sha512-0btnI/H8f2pavGMN8w40mlSKOfTK2SVJmBfBeVIj3kNw0swwgzyRq0d5TJVOwodFmtvpPeWPN/MCcfuWF0Ezbw==
 
 figma-api@^1.5.5:
-  version "1.5.5"
-  resolved "https://registry.yarnpkg.com/figma-api/-/figma-api-1.5.5.tgz#c3fec5b28fef6704f83a6a314c5743420d75e787"
-  integrity sha512-43vSylpCIBx1EfUVXQKSEtfBWQjANct0ntTsdtZQuXtlRKXwsOlqz1bUi38T/B53PYv7eJw8H+GuhOVZPFn8Rg==
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/figma-api/-/figma-api-1.11.0.tgz#5218208cc03996f91c4afe3056f7d09aa1a0ca47"
+  integrity sha512-inGRug909pPeLqcCcjMwXGnxcJjMVeAXk/kLLjlo2y/IjYURgX56u7HUqUrmASmSUqQB9BVuz/PlK9KRDWkiPA==
   dependencies:
     "@types/node" "12.0.2"
-    axios "^0.19.0"
+    axios "^0.21.1"
 
 figma-js@~1.14.0:
   version "1.14.0"
@@ -12388,13 +12381,6 @@ folktale@2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/folktale/-/folktale-2.1.0.tgz#3332b9e37b4b92150788b72bd0e2ddd8d70e4096"
   integrity sha512-eG9lWx/MAOPoFllqASH7d1+QMl6qCd+E+rOPSWgulFPKG55506kXKQZLnMg3fMHFZUWY/2POZUPc/MH7048nIg==
-
-follow-redirects@1.5.10:
-  version "1.5.10"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
-  integrity sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==
-  dependencies:
-    debug "=3.1.0"
 
 follow-redirects@^1.10.0, follow-redirects@^1.14.4, follow-redirects@^1.15.6:
   version "1.15.6"
