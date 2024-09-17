@@ -76,7 +76,7 @@
     "@testing-library/jest-dom": "^6.0.0",
     "@testing-library/react": "^16.0.1",
     "@testing-library/user-event": "^14.0.0",
-    "@types/jest": "^27.0.0",
+    "@types/jest": "^29.0.0",
     "@types/react": "^18.3.3",
     "autoprefixer": "^10.0.0",
     "babel-loader": "^9.0.0",
