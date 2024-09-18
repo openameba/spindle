@@ -1,0 +1,23 @@
+name: Publish Figma Code Connect
+
+on:
+  push:
+    paths:
+      - packages/spindle-ui/src/**/*.figma.tsx
+    branches:
+      - main
+
+jobs:
+  code-connect:
+    name: Code Connect
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm i -g @figma/code-connect
+      - run: figma connect publish
+        env:
+          FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_TOKEN_CODE_CONNECT }}
+        working-directory: packages/spindle-ui

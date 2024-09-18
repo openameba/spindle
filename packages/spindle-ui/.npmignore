@@ -16,3 +16,4 @@ regconfig.json
 tsconfig.json
 design-doc.md
 setup-tests.ts
+*.figma.tsx
