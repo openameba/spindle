@@ -9,16 +9,16 @@ figma.connect(
   {
     imports: ["import { InlineNotification } from '@openameba/spindle-ui';"],
     props: {
-      type: figma.enum('Type', {
+      variant: figma.enum('variant', {
         Information: 'information',
         Confirmation: 'confirmation',
         Error: 'error',
       }),
-      layout: figma.enum('Shape', {
+      layout: figma.enum('layout', {
         full: 'full',
         inset: 'inset',
       }),
-      emphasis: figma.boolean('Emphasized'),
+      emphasis: figma.boolean('emphasis'),
       label: figma.textContent('label'),
       leftIcon: figma.enum('Left Icon', {
         Icon: <Information aria-hidden="true" />,
@@ -37,9 +37,9 @@ figma.connect(
         Button: <InlineNotification.Button>{''}</InlineNotification.Button>,
       }),
     },
-    example: ({ type, layout, emphasis, label, leftIcon, closeButton }) => (
+    example: ({ variant, layout, emphasis, label, leftIcon, closeButton }) => (
       <InlineNotification.Frame
-        variant={type}
+        variant={variant}
         layout={layout}
         emphasis={emphasis}
       >
