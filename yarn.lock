@@ -4053,22 +4053,12 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-viewport@^6.5.9":
-  version "6.5.9"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-6.5.9.tgz#fc390ccebea56d2e874ed2fda085c09fe04dd240"
-  integrity sha512-thKS+iw6M7ueDQQ7M66STZ5rgtJKliAcIX6UCopo0Ffh4RaRYmX6MCjqtvBKk8joyXUvm9SpWQemJD9uBQrjgw==
+"@storybook/addon-viewport@^8.1.11":
+  version "8.1.11"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-8.1.11.tgz#7985ace7cbb66ef160a79e4040e3491048715f4e"
+  integrity sha512-qk4IcGnAgiAUQxt8l5PIQ293Za+w6wxlJQIpxr7+QM8OVkADPzXY0MmQfYWU9EQplrxAC2MSx3/C1gZeq+MDOQ==
   dependencies:
-    "@storybook/addons" "6.5.9"
-    "@storybook/api" "6.5.9"
-    "@storybook/client-logger" "6.5.9"
-    "@storybook/components" "6.5.9"
-    "@storybook/core-events" "6.5.9"
-    "@storybook/theming" "6.5.9"
-    core-js "^3.8.2"
-    global "^4.4.0"
     memoizerific "^1.11.3"
-    prop-types "^15.7.2"
-    regenerator-runtime "^0.13.7"
 
 "@storybook/addons@6.5.16":
   version "6.5.16"
