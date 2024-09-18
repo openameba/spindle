@@ -22,9 +22,15 @@ figma.connect(
       }),
       disabled: figma.boolean('Disabled'),
       children: figma.children('*'),
+      label: figma.string('Label'),
     },
-    example: ({ size, style, disabled, children }) => (
-      <IconButton size={size} variant={style} disabled={disabled} aria-label="">
+    example: ({ size, style, disabled, children, label }) => (
+      <IconButton
+        size={size}
+        variant={style}
+        disabled={disabled}
+        aria-label={label}
+      >
         {children}
       </IconButton>
     ),
