@@ -355,7 +355,7 @@
           "attributes": {
             "category": "color"
           },
-          "comment": "Do : snackbar / tooltip / toast , , Amebaのメインカラー白に対してコントラストを担保しつつ、暗い印象を持たず、, ポジティブでもネガティブでもない中立の意味合いを表現できつつ、文字に対してコントラストが担保できる色",
+          "comment": "Do : snackbar / toggletip / toast , , Amebaのメインカラー白に対してコントラストを担保しつつ、暗い印象を持たず、, ポジティブでもネガティブでもない中立の意味合いを表現できつつ、文字に対してコントラストが担保できる色",
           "value": "{Color.Primitive.Gray.80.value}"
         },
         "Accent Neutral Medium Emphasis": {

@@ -1,0 +1,94 @@
+import { Description, Meta, Story, Source } from '@storybook/addon-docs/blocks';
+import { Toggletip } from './Toggletip';
+import {
+  TopRight,
+  TopCenter,
+  TopLeft,
+  BottomRight,
+  BottomCenter,
+  BottomLeft,
+} from './Toggletip.stories.example';
+
+# Toggletip
+
+<Meta title="Toggletip" component={Toggletip} />
+
+<Source
+  language='javascript'
+  code={`import { Toggletip } from '@openameba/spindle-ui'`}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/Toggletip/Toggletip.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Toggletip/Toggletip.css">`}
+/>
+
+## 指定できるプロパティ
+### Toggletip.List
+<Description>
+  - `open`(必須): Toggletipの開閉状態です。Toggletipは`open`プロパティの値を見て開閉を行うため、`onClick`や`onClose`内で`open`プロパティを変更してください。
+</Description>
+<Description>
+  - `triggerRef`（必須）: Triggerボタンのrefを指定してください。
+</Description>
+<Description>
+  - `onClose`（必須）: `open`プロパティをfalseにするための処理を指定してください。
+</Description>
+<Description>
+  - `position`（任意）: Toggletipをボタンに対してどの位置に開くかを指定します。デフォルトは`leftTop`で、その他にも`topLeft`, `topCenter`, `topRight`, `rightTop`, `rightCenter`, `rightBottom`, `bottomLeft`, `bottomCenter`, `bottomRight`, `leftTop`, `leftCenter`, `leftBottom`を指定することができます。
+</Description>
+<Description>
+  - `variant`（任意）: Toggletipの種類を指定します。デフォルトは`text`で、その他にも`textWithIcon`, `headWithIcon`, `headWithIconAndCaption`を指定することができます。
+</Description>
+<Description>
+  - `id`（任意）: idを指定することができます。
+</Description>
+
+### Toggletip.ListItem
+<Description>
+  - `onClick`（必須）: 各要素をクリックした際に実行したい処理を指定してください。
+</Description>
+<Description>
+  - `icon`（任意）: Toggletip内にアイコンを表示したい場合は、指定することができます。
+</Description>
+
+<Preview withSource="open">
+  <Story name="TopRight">
+    <TopRight />
+  </Story>
+</Preview>
+
+<Preview withSource="open">
+  <Story name="TopCenter">
+    <TopCenter />
+  </Story>
+</Preview>
+
+<Preview withSource="open">
+  <Story name="TopLeft">
+    <TopLeft />
+  </Story>
+</Preview>
+
+<Preview withSource="open">
+  <Story name="BottomRight">
+    <BottomRight />
+  </Story>
+</Preview>
+
+<Preview withSource="open">
+  <Story name="BottomCenter">
+    <BottomCenter />
+  </Story>
+</Preview>
+
+<Preview withSource="open">
+  <Story name="BottomLeft">
+    <BottomLeft />
+  </Story>
+</Preview>

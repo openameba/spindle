@@ -1,0 +1,147 @@
+/*
+ * Toggletip
+ * NOTE: Styles can be overridden with "--Toggletip-*" variables
+*/
+:root {
+  --Toggletip-onFocus-outlineColor: var(--color-focus-clarity);
+  --Toggletip-menu-gap: 8px;
+}
+
+.spui-Toggletip {
+  position: relative;
+  width: fit-content;
+}
+
+.spui-Toggletip-menu {
+  animation: 0.3s spui-Toggletip-fade-in;
+  border: none;
+  display: none;
+  list-style: none;
+  opacity: 0;
+  padding: 8px;
+  transition:
+    opacity 300ms,
+    display 300ms allow-discrete,
+    overlay 300ms allow-discrete;
+}
+
+.spui-Toggletip-menu:popover-open {
+  display: block;
+  opacity: 1;
+
+  @starting-style {
+    opacity: 0;
+  }
+}
+
+.spui-Toggletip-inner {
+  background: var(--color-surface-accent-neutral-high-emphasis);
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 12px;
+  position: relative;
+  width: 206px;
+}
+
+.spui-Toggletip-inner::after {
+  background: url('union.png') left top no-repeat;
+  background-size: 16px 7px;
+  content: '';
+  display: block;
+  height: 7px;
+  position: absolute;
+  width: 16px;
+}
+
+.spui-Toggletip-menu--topRight {
+  inset-area: top right;
+  margin: 0 0 var(--Toggletip-menu-gap) -44px;
+}
+
+.spui-Toggletip-inner--topRight::after {
+  bottom: -7px;
+  left: 16px;
+  transform: rotate(-180deg);
+}
+
+.spui-Toggletip-menu--topCenter {
+  inset-area: top center;
+  margin: 0 0 var(--Toggletip-menu-gap);
+}
+
+.spui-Toggletip-inner--topCenter::after {
+  bottom: -7px;
+  left: 50%;
+  margin-left: -8px;
+  transform: rotate(-180deg);
+}
+
+.spui-Toggletip-menu--topLeft {
+  inset-area: top left;
+  margin: 0 -44px var(--Toggletip-menu-gap) 0;
+}
+
+.spui-Toggletip-inner--topLeft::after {
+  bottom: -7px;
+  margin-left: -8px;
+  right: 16px;
+  transform: rotate(-180deg);
+}
+
+.spui-Toggletip-menu--bottomRight {
+  inset-area: bottom span-right;
+  margin: var(--Toggletip-menu-gap) 0 0 -22px;
+}
+
+.spui-Toggletip-inner--bottomRight::after {
+  left: 16px;
+  top: -7px;
+}
+
+.spui-Toggletip-menu--bottomCenter {
+  inset-area: bottom center;
+  margin: var(--Toggletip-menu-gap) 0 0;
+}
+
+.spui-Toggletip-inner--bottomCenter::after {
+  left: 50%;
+  margin-left: -8px;
+  top: -7px;
+}
+
+.spui-Toggletip-menu--bottomLeft {
+  inset-area: bottom span-left;
+  margin: var(--Toggletip-menu-gap) -22px 0 0;
+}
+
+.spui-Toggletip-inner--bottomLeft::after {
+  margin-left: -8px;
+  right: 16px;
+  top: -7px;
+}
+
+.spui-Toggletip-menuButton {
+  align-items: center;
+  background-color: var(--color-surface-primary);
+  border: none;
+  display: flex;
+  font-size: 1em;
+  position: relative;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.spui-Toggletip-label {
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 1.4;
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spui-Toggletip-menu {
+    transition-duration: 0.1s;
+  }
+}
