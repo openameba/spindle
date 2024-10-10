@@ -1,0 +1,290 @@
+{
+  "status": 200,
+  "error": false,
+  "meta": {
+    "variableCollections": {
+      "VariableCollectionId:d3a4d44b718b21a8ff67eeb2aedbeaa6bbb048b4/855:1": {
+        "defaultModeId": "855:0",
+        "id": "VariableCollectionId:d3a4d44b718b21a8ff67eeb2aedbeaa6bbb048b4/855:1",
+        "name": "Primitive Color",
+        "remote": true,
+        "modes": [
+          {
+            "modeId": "855:0",
+            "name": "Mode 1"
+          }
+        ],
+        "key": "d3a4d44b718b21a8ff67eeb2aedbeaa6bbb048b4",
+        "hiddenFromPublishing": true,
+        "variableIds": [
+          "VariableID:ff3755135e1b7dedf144aeaa44f05837dcd95aee/855:5",
+          "VariableID:fddbbfceda458dddb82751f92a53757f99831792/1079:0"
+        ]
+      },
+      "VariableCollectionId:5635:431": {
+        "defaultModeId": "5635:0",
+        "id": "VariableCollectionId:5635:431",
+        "name": "Color",
+        "remote": false,
+        "modes": [
+          {
+            "modeId": "5635:0",
+            "name": "Light"
+          },
+          {
+            "modeId": "5636:0",
+            "name": "Dark"
+          },
+          {
+            "modeId": "5640:0",
+            "name": "Green"
+          }
+        ],
+        "key": "78bb157f9e7fdc87ea02b30fe92ad980d3815df9",
+        "hiddenFromPublishing": false,
+        "variableIds": [
+          "VariableID:5636:431",
+          "VariableID:5636:432"
+        ]
+      }
+    },
+    "variables": {
+      "VariableID:ff3755135e1b7dedf144aeaa44f05837dcd95aee/855:5": {
+        "id": "VariableID:ff3755135e1b7dedf144aeaa44f05837dcd95aee/855:5",
+        "name": "Brand Color/Ameba Green",
+        "remote": true,
+        "key": "ff3755135e1b7dedf144aeaa44f05837dcd95aee",
+        "variableCollectionId": "VariableCollectionId:d3a4d44b718b21a8ff67eeb2aedbeaa6bbb048b4/855:1",
+        "resolvedType": "COLOR",
+        "description": "",
+        "hiddenFromPublishing": true,
+        "valuesByMode": {
+          "855:0": {
+            "r": 0.1764705926179886,
+            "g": 0.5490196347236633,
+            "b": 0.23529411852359772,
+            "a": 1
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "codeSyntax": {}
+      },
+      "VariableID:fddbbfceda458dddb82751f92a53757f99831792/1079:0": {
+        "id": "VariableID:fddbbfceda458dddb82751f92a53757f99831792/1079:0",
+        "name": "Brand Color/Ameba Black",
+        "remote": true,
+        "key": "fddbbfceda458dddb82751f92a53757f99831792",
+        "variableCollectionId": "VariableCollectionId:d3a4d44b718b21a8ff67eeb2aedbeaa6bbb048b4/855:1",
+        "resolvedType": "COLOR",
+        "description": "",
+        "hiddenFromPublishing": true,
+        "valuesByMode": {
+          "855:0": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 1
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "codeSyntax": {}
+      },
+      "VariableID:5636:431": {
+        "id": "VariableID:5636:431",
+        "name": "Background/Base",
+        "remote": false,
+        "key": "cf4aca9d16e157ab5aad05eb526c3ef314dbbccb",
+        "variableCollectionId": "VariableCollectionId:5635:431",
+        "resolvedType": "COLOR",
+        "description": "",
+        "hiddenFromPublishing": false,
+        "valuesByMode": {
+          "5635:0": {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:0878c143c6f44deb55b6ab2c7c1d1930e6b0f46a/862:189"
+          },
+          "5636:0": {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:57b737327c08990769d44d7307cbe4648b437dc4/862:128"
+          },
+          "5640:0": {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:b5de8b878d9d2c0ee36c71f06ee2bdba2e4fb328/862:29"
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "codeSyntax": {
+          "WEB": "var(--color-background-base)"
+        }
+      },
+      "VariableID:5636:432": {
+        "id": "VariableID:5636:432",
+        "name": "Surface/Primary",
+        "remote": false,
+        "key": "8da9c5415699bf0e5a97599f5076491c12cdf430",
+        "variableCollectionId": "VariableCollectionId:5635:431",
+        "resolvedType": "COLOR",
+        "description": "",
+        "hiddenFromPublishing": false,
+        "valuesByMode": {
+          "5635:0": {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:360828e0a0c3f5c0d8fe4b1c5bf98e6bae60d38b/862:212"
+          },
+          "5636:0": {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:51859c81f15ee09c864adf3bff2dfb39e4166333/862:180"
+          },
+          "5640:0": {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:a6d1af07a6f45abd5dea1c23567fe6659e769eb3/862:31"
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "codeSyntax": {
+          "WEB": "var(--color-surface-primary)"
+        }
+      },
+      "VariableID:0878c143c6f44deb55b6ab2c7c1d1930e6b0f46a/862:189": {
+        "id": "VariableID:0878c143c6f44deb55b6ab2c7c1d1930e6b0f46a/862:189",
+        "name": "Gray/Gray 5",
+        "remote": true,
+        "key": "0878c143c6f44deb55b6ab2c7c1d1930e6b0f46a",
+        "variableCollectionId": "VariableCollectionId:d3a4d44b718b21a8ff67eeb2aedbeaa6bbb048b4/855:1",
+        "resolvedType": "COLOR",
+        "description": "",
+        "hiddenFromPublishing": true,
+        "valuesByMode": {
+          "855:0": {
+            "r": 0.9607843160629272,
+            "g": 0.9647058844566345,
+            "b": 0.9647058844566345,
+            "a": 1
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "codeSyntax": {}
+      },
+      "VariableID:360828e0a0c3f5c0d8fe4b1c5bf98e6bae60d38b/862:212": {
+        "id": "VariableID:360828e0a0c3f5c0d8fe4b1c5bf98e6bae60d38b/862:212",
+        "name": "White/White 100",
+        "remote": true,
+        "key": "360828e0a0c3f5c0d8fe4b1c5bf98e6bae60d38b",
+        "variableCollectionId": "VariableCollectionId:d3a4d44b718b21a8ff67eeb2aedbeaa6bbb048b4/855:1",
+        "resolvedType": "COLOR",
+        "description": "",
+        "hiddenFromPublishing": true,
+        "valuesByMode": {
+          "855:0": {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "codeSyntax": {}
+      },
+      "VariableID:57b737327c08990769d44d7307cbe4648b437dc4/862:128": {
+        "id": "VariableID:57b737327c08990769d44d7307cbe4648b437dc4/862:128",
+        "name": "Gray/Gray 100",
+        "remote": true,
+        "key": "57b737327c08990769d44d7307cbe4648b437dc4",
+        "variableCollectionId": "VariableCollectionId:d3a4d44b718b21a8ff67eeb2aedbeaa6bbb048b4/855:1",
+        "resolvedType": "COLOR",
+        "description": "",
+        "hiddenFromPublishing": true,
+        "valuesByMode": {
+          "855:0": {
+            "r": 0.0313725508749485,
+            "g": 0.07058823853731155,
+            "b": 0.10196078568696976,
+            "a": 1
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "codeSyntax": {}
+      },
+      "VariableID:b5de8b878d9d2c0ee36c71f06ee2bdba2e4fb328/862:29": {
+        "id": "VariableID:b5de8b878d9d2c0ee36c71f06ee2bdba2e4fb328/862:29",
+        "name": "Primary Green/Primary Green 90",
+        "remote": true,
+        "key": "b5de8b878d9d2c0ee36c71f06ee2bdba2e4fb328",
+        "variableCollectionId": "VariableCollectionId:d3a4d44b718b21a8ff67eeb2aedbeaa6bbb048b4/855:1",
+        "resolvedType": "COLOR",
+        "description": "",
+        "hiddenFromPublishing": true,
+        "valuesByMode": {
+          "855:0": {
+            "r": 0.0941176488995552,
+            "g": 0.41960784792900085,
+            "b": 0.15294118225574493,
+            "a": 1
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "codeSyntax": {}
+      },
+      "VariableID:51859c81f15ee09c864adf3bff2dfb39e4166333/862:180": {
+        "id": "VariableID:51859c81f15ee09c864adf3bff2dfb39e4166333/862:180",
+        "name": "Gray/Gray 90",
+        "remote": true,
+        "key": "51859c81f15ee09c864adf3bff2dfb39e4166333",
+        "variableCollectionId": "VariableCollectionId:d3a4d44b718b21a8ff67eeb2aedbeaa6bbb048b4/855:1",
+        "resolvedType": "COLOR",
+        "description": "",
+        "hiddenFromPublishing": true,
+        "valuesByMode": {
+          "855:0": {
+            "r": 0.0784313753247261,
+            "g": 0.11764705926179886,
+            "b": 0.14509804546833038,
+            "a": 1
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "codeSyntax": {}
+      },
+      "VariableID:a6d1af07a6f45abd5dea1c23567fe6659e769eb3/862:31": {
+        "id": "VariableID:a6d1af07a6f45abd5dea1c23567fe6659e769eb3/862:31",
+        "name": "Primary Green/Primary Green 70",
+        "remote": true,
+        "key": "a6d1af07a6f45abd5dea1c23567fe6659e769eb3",
+        "variableCollectionId": "VariableCollectionId:d3a4d44b718b21a8ff67eeb2aedbeaa6bbb048b4/855:1",
+        "resolvedType": "COLOR",
+        "description": "",
+        "hiddenFromPublishing": true,
+        "valuesByMode": {
+          "855:0": {
+            "r": 0.16078431904315948,
+            "g": 0.529411792755127,
+            "b": 0.21568627655506134,
+            "a": 1
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "codeSyntax": {}
+      }
+    }
+  }
+}
