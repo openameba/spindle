@@ -32,7 +32,7 @@
     "husky": "^9.1.5",
     "is-ci": "^3.0.0",
     "lerna": "^8.0.0",
-    "npm-run-all2": "^6.0.0",
+    "npm-run-all2": "^7.0.0",
     "prettier": "3.3.3",
     "textlint": "^14.0.0",
     "textlint-rule-preset-ameba": "openameba/textlint-rule-preset-ameba#v0.5.1",
