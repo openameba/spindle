@@ -2,12 +2,14 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "target": "ES5",
-    "moduleResolution": "Node"
+    "moduleResolution": "Node",
+    "skipLibCheck": true,
   },
   "include": [
-    "lib"
+    "scripts/**/*.ts",
+    "lib/**/*.ts",
   ],
   "exclude": [
-    "./lib/**/*.test.*"
+    "./scripts/**/*.test.*"
   ]
 }

@@ -1,0 +1,288 @@
+{
+  "Primitive Color": {
+    "Brand Color/Ameba Green": {
+      "$type": "color",
+      "$value": "#2d8c3c"
+    },
+    "Brand Color/Ameba Black": {
+      "$type": "color",
+      "$value": "#000000"
+    },
+    "Brand Color/Ameba White": {
+      "$type": "color",
+      "$value": "#ffffff"
+    },
+    "Brand Color/Ameba Neutral Gray": {
+      "$type": "color",
+      "$value": "#f6f6f6"
+    },
+    "Brand Color/Ameba Yellow Green": {
+      "$type": "color",
+      "$value": "#82be28"
+    },
+    "Brand Color/Ameba Yellow": {
+      "$type": "color",
+      "$value": "#f5e100"
+    },
+    "Primary Green/Primary Green 100": {
+      "$type": "color",
+      "$value": "#0f5c1f"
+    },
+    "Primary Green/Primary Green 90": {
+      "$type": "color",
+      "$value": "#186b27"
+    },
+    "Primary Green/Primary Green 80": {
+      "$type": "color",
+      "$value": "#237b31"
+    },
+    "Primary Green/Primary Green 70": {
+      "$type": "color",
+      "$value": "#298737"
+    },
+    "Primary Green/Primary Green 50": {
+      "$type": "color",
+      "$value": "#41ad4f"
+    },
+    "Primary Green/Primary Green 20": {
+      "$type": "color",
+      "$value": "#a1d5a7"
+    },
+    "Primary Green/Primary Green 10": {
+      "$type": "color",
+      "$value": "#c6e5c9"
+    },
+    "Primary Green/Primary Green 5": {
+      "$type": "color",
+      "$value": "#e7f5e9"
+    },
+    "Seconrady Green/Secondary Green 80": {
+      "$type": "color",
+      "$value": "#477d00"
+    },
+    "Seconrady Green/Secondary Green 70": {
+      "$type": "color",
+      "$value": "#5e9b15"
+    },
+    "Seconrady Green/Secondary Green 50": {
+      "$type": "color",
+      "$value": "#82be28"
+    },
+    "Seconrady Green/Secondary Green 40": {
+      "$type": "color",
+      "$value": "#95c84d"
+    },
+    "Seconrady Green/Secondary Green 5": {
+      "$type": "color",
+      "$value": "#f0f7e6"
+    },
+    "Gray/Gray 100": {
+      "$type": "color",
+      "$value": "#08121a"
+    },
+    "Gray/Gray 70 alpha": {
+      "$type": "color",
+      "$value": "#08121abd"
+    },
+    "Gray/Gray 60 alpha": {
+      "$type": "color",
+      "$value": "#08121a9c"
+    },
+    "Gray/Gray 30 alpha": {
+      "$type": "color",
+      "$value": "#08121a4d"
+    },
+    "Gray/Gray 20 alpha": {
+      "$type": "color",
+      "$value": "#08121a29"
+    },
+    "Gray/Gray 10 alpha": {
+      "$type": "color",
+      "$value": "#08121a14"
+    },
+    "Gray/Gray 5 alpha": {
+      "$type": "color",
+      "$value": "#08121a0a"
+    },
+    "Gray/Gray 90": {
+      "$type": "color",
+      "$value": "#141e25"
+    },
+    "Gray/Gray 80": {
+      "$type": "color",
+      "$value": "#394148"
+    },
+    "Gray/Gray 10": {
+      "$type": "color",
+      "$value": "#ebeced"
+    },
+    "Gray/Gray 5": {
+      "$type": "color",
+      "$value": "#f5f6f6"
+    },
+    "White/White 100": {
+      "$type": "color",
+      "$value": "#ffffff"
+    },
+    "White/White 80 alpha": {
+      "$type": "color",
+      "$value": "#ffffffcc"
+    },
+    "White/White 60 alpha": {
+      "$type": "color",
+      "$value": "#ffffff99"
+    },
+    "White/White 50 alpha": {
+      "$type": "color",
+      "$value": "#ffffff80"
+    },
+    "White/White 40 alpha": {
+      "$type": "color",
+      "$value": "#ffffff6e"
+    },
+    "White/White 30 alpha": {
+      "$type": "color",
+      "$value": "#ffffff4d"
+    },
+    "White/White 20 alpha": {
+      "$type": "color",
+      "$value": "#ffffff29"
+    },
+    "White/White 10 alpha": {
+      "$type": "color",
+      "$value": "#ffffff1a"
+    },
+    "White/White  5 alpha": {
+      "$type": "color",
+      "$value": "#ffffff0d"
+    },
+    "Black/Black 80 alpha": {
+      "$type": "color",
+      "$value": "#000000cc"
+    },
+    "Black/Black 60 alpha": {
+      "$type": "color",
+      "$value": "#00000099"
+    },
+    "Black/Black 30 alpha": {
+      "$type": "color",
+      "$value": "#0000004d"
+    },
+    "Black/Black 20 alpha": {
+      "$type": "color",
+      "$value": "#00000033"
+    },
+    "Expressive Pink/Expressive Pink 40": {
+      "$type": "color",
+      "$value": "#e6456a"
+    },
+    "Caution/Caution Red 100": {
+      "$type": "color",
+      "$value": "#d91c0b"
+    },
+    "Caution/Caution Red 20 alpha": {
+      "$type": "color",
+      "$value": "#d91c0b33"
+    },
+    "Caution/Caution Red 5 alpha": {
+      "$type": "color",
+      "$value": "#d91c0b0d"
+    },
+    "Caution/Caution Red Vivid 100": {
+      "$type": "color",
+      "$value": "#ff6a59"
+    },
+    "Caution/Caution Red Vivid 20 alpha": {
+      "$type": "color",
+      "$value": "#ff6a5933"
+    },
+    "Focus/Focus Blue 100": {
+      "$type": "color",
+      "$value": "#0091ff"
+    },
+    "Focus/Blue 30 alpha": {
+      "$type": "color",
+      "$value": "#0091ff4d"
+    },
+    "Third Party/Facebook Blue": {
+      "$type": "color",
+      "$value": "#1877f2"
+    },
+    "Third Party/Facebook White": {
+      "$type": "color",
+      "$value": "#ffffff"
+    },
+    "Third Party/Twitter Blue": {
+      "$type": "color",
+      "$value": "#1da1f2"
+    },
+    "Third Party/Twitter White": {
+      "$type": "color",
+      "$value": "#ffffff"
+    },
+    "Third Party/X Black": {
+      "$type": "color",
+      "$value": "#000000"
+    },
+    "Third Party/X White": {
+      "$type": "color",
+      "$value": "#ffffff"
+    },
+    "Third Party/Instagram Pink": {
+      "$type": "color",
+      "$value": "#f20076"
+    },
+    "Third Party/Instagram White": {
+      "$type": "color",
+      "$value": "#ffffff"
+    },
+    "Third Party/Apple Black": {
+      "$type": "color",
+      "$value": "#000000"
+    },
+    "Third Party/Apple White": {
+      "$type": "color",
+      "$value": "#ffffff"
+    },
+    "Third Party/Youtube Red": {
+      "$type": "color",
+      "$value": "#ff0000"
+    },
+    "Third Party/Youtube White": {
+      "$type": "color",
+      "$value": "#ffffff"
+    },
+    "Highlight/HIghlight Yellow 100": {
+      "$type": "color",
+      "$value": "#f5e100"
+    },
+    "Highlight/Highlight Yellow 30 alpha": {
+      "$type": "color",
+      "$value": "#f5e1004d"
+    },
+    "Third Party/Amazon Yellow": {
+      "$type": "color",
+      "$value": "#ff9900"
+    },
+    "Third Party/Amazon Black": {
+      "$type": "color",
+      "$value": "#000000"
+    },
+    "Third Party/Rakuten Red": {
+      "$type": "color",
+      "$value": "#bf0000"
+    },
+    "Third Party/Rakuten White": {
+      "$type": "color",
+      "$value": "#ffffff"
+    },
+    "Third Party/Yahoo! Red": {
+      "$type": "color",
+      "$value": "#ff0033"
+    },
+    "Third Party/Yahoo! White": {
+      "$type": "color",
+      "$value": "#ffffff"
+    }
+  }
+}

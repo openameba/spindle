@@ -5,6 +5,7 @@
     "alpha-value-notation": "number",
     "declaration-property-value-allowed-list": {
       "/^--animation-easing-/": "/^cubic-bezier\\([\\d.]+, [\\d.]+, [\\d.]+, [\\d.]+\\)/"
-    }
+    },
+    "color-hex-length": "long"
   }
 }

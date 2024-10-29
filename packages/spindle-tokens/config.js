@@ -1,27 +1,61 @@
-module.exports = {
-  source: [`tokens/**/!(*.css).json`],
-  format: {
-    jsonDataSource: ({ dictionary }) => {
-      // Flatten data to be a data source of some querying use cases
-      // Stringify the child values to ensure the types are the same, but original.value keeps their type
-      const tokens = dictionary.allTokens.map((token) => ({
-        ...token,
-        value: `${token.value}`, // ensure the value type is string
-        pathString: token.path.join('.'), // useful for filtering the token
-      }));
-      return JSON.stringify(tokens, null, 2);
-    },
+const transitionFilter = {
+  name: 'transition',
+  filter: async (token) => {
+    return token.$type === 'transition' || token.$type === 'cubicBezier';
   },
+};
+
+const primitiveColorFilter = {
+  name: 'primitive-color',
+  filter: async (token) => {
+    return token.filePath.endsWith('primitive-color.tokens.json');
+  },
+};
+
+const themeLightFilter = {
+  name: 'theme-light',
+  filter: async (token) => {
+    return token.filePath.endsWith('theme-light.tokens.json');
+  },
+};
+
+const themeDarkFilter = {
+  name: 'theme-dark',
+  filter: async (token) => {
+    return token.filePath.endsWith('theme-dark.tokens.json');
+  },
+};
+
+// Using dynamic import until ESM is supported in this repogitory
+import('style-dictionary').then((module) => {
+  const StyleDictionary = module.default;
+  StyleDictionary.registerFilter(transitionFilter);
+  StyleDictionary.registerFilter(primitiveColorFilter);
+  StyleDictionary.registerFilter(themeLightFilter);
+  StyleDictionary.registerFilter(themeDarkFilter);
+});
+
+module.exports = {
+  source: [`tokens/**/*.tokens.json`],
   platforms: {
-    json: {
+    css: {
+      transformGroup: 'css',
       files: [
         {
-          destination: 'dist/json/spindle-tokens.json',
-          format: 'json',
+          destination: 'dist/css/spindle-tokens-animation.css',
+          format: 'css/variables',
+          options: {
+            outputReferences: true,
+          },
+          filter: 'transition',
         },
         {
-          destination: 'dist/json/spindle-tokens-flat.json',
-          format: 'jsonDataSource',
+          destination: 'dist/css/spindle-tokens.css',
+          format: 'css/variables',
+          options: {
+            outputReferences: true,
+          },
+          filter: 'transition',
         },
       ],
     },
