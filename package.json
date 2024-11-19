@@ -16,7 +16,7 @@
     "fix:format": "prettier --write '**/*.{js,ts,tsx}'",
     "fix:text": "textlint --fix .",
     "bootstrap": "lerna bootstrap",
-    "build": "lerna run build",
+    "build": "lerna run build && npx tsx bin/outputExtensionReplace.ts",
     "prepare": "is-ci || husky install"
   },
   "devDependencies": {
@@ -29,6 +29,7 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-react": "7.37.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "glob-promise": "^6.0.7",
     "husky": "^9.1.5",
     "is-ci": "^3.0.0",
     "lerna": "^8.0.0",
