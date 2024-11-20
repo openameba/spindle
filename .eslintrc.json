@@ -17,7 +17,8 @@
   },
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
+    "jest": true
   },
   "overrides": [
     {
@@ -26,5 +27,8 @@
         "react/prop-types": "off"
       }
     }
-  ]
+  ],
+  "rules": {
+    "@typescript-eslint/no-var-requires": "off"
+  }
 }

@@ -1,10 +1,7 @@
-import { readdir, readFile, writeFile, stat, access } from 'fs/promises';
-import { join, dirname, resolve } from 'path';
-import { fileURLToPath } from 'url';
-import glob from 'glob-promise';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const { readdir, readFile, writeFile, stat, access } = require('fs').promises;
+const { join, dirname, resolve } = require('path');
+const glob = require('glob-promise');
+const process = require('process');
 
 /**
  * 指定されたディレクトリ配下のすべての.mjsファイルを再帰的に取得する
@@ -12,7 +9,7 @@ const __dirname = dirname(__filename);
  * @param {string[]} [fileList=[]] - ファイルリスト
  * @return {Promise<string[]>}
  */
-async function getMjsFiles(dir: string, fileList: string[] = []): Promise<string[]> {
+async function getMjsFiles(dir, fileList = []) {
   const files = await readdir(dir);
   for (const file of files) {
     const filePath = join(dir, file);
@@ -33,20 +30,15 @@ async function getMjsFiles(dir: string, fileList: string[] = []): Promise<string
  * @param {(match: string, ...args: any[]) => Promise<string>} asyncFn - 非同期関数
  * @return {Promise<string>}
  */
-async function replaceAsync(
-  str: string,
-  regex: RegExp,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  asyncFn: (match: string, ...args: any[]) => Promise<string>
-): Promise<string> {
-  const promises: Promise<string>[] = [];
+async function replaceAsync(str, regex, asyncFn) {
+  const promises = [];
   str.replace(regex, (match, ...args) => {
     const promise = asyncFn(match, ...args);
     promises.push(promise);
     return match; // 置換のために必要
   });
   const data = await Promise.all(promises);
-  return str.replace(regex, () => data.shift() as string);
+  return str.replace(regex, () => data.shift());
 }
 
 /**
@@ -54,27 +46,34 @@ async function replaceAsync(
  * @param {string} filePath - ファイルのパス
  * @return {Promise<void>}
  */
-async function replaceImportsInFile(filePath: string): Promise<void> {
+async function replaceImportsInFile(filePath) {
   try {
     const data = await readFile(filePath, 'utf8');
-    const importRegex = /from\s+['"](\.\/|\.\.\/)(?!.*\.mjs['"])([^'"]+)(['"])/g;
-    const result = await replaceAsync(data, importRegex, async (_match, p1, p2, p3) => {
-      const importPath = resolve(dirname(filePath), p1 + p2);
-      const mjsPath = importPath + '.mjs';
-      const indexPath = join(importPath, 'index.mjs');
-      try {
-        await access(mjsPath);
-        return `from '${p1}${p2}.mjs${p3}`;
-      } catch {
+    const importRegex =
+      /from\s+['"](\.\/|\.\.\/)(?!.*\.mjs['"])([^'"]+)(['"])/g;
+    const result = await replaceAsync(
+      data,
+      importRegex,
+      async (_match, p1, p2, p3) => {
+        const importPath = resolve(dirname(filePath), p1 + p2);
+        const mjsPath = importPath + '.mjs';
+        const indexPath = join(importPath, 'index.mjs');
         try {
-          await access(indexPath);
-          return `from '${p1}${p2}/index.mjs${p3}`;
+          await access(mjsPath);
+          return `from '${p1}${p2}.mjs${p3}`;
         } catch {
-          console.error(`.mjs または /index.mjs が存在しません: ${importPath}`);
-          process.exit(1);
+          try {
+            await access(indexPath);
+            return `from '${p1}${p2}/index.mjs${p3}`;
+          } catch {
+            console.error(
+              `.mjs または /index.mjs が存在しません: ${importPath}`,
+            );
+            process.exit(1);
+          }
         }
-      }
-    });
+      },
+    );
     await writeFile(filePath, result, 'utf8');
     if (data !== result) {
       console.log(`置換処理が完了しました: ${filePath}`);
@@ -85,12 +84,14 @@ async function replaceImportsInFile(filePath: string): Promise<void> {
   }
 }
 
-async function main(): Promise<void> {
+async function main() {
   try {
     const directories = await glob(join(__dirname, '../packages/*/dist'));
     for (const dir of directories) {
       const mjsFiles = await getMjsFiles(dir);
-      await Promise.all(mjsFiles.map(filePath => replaceImportsInFile(filePath)));
+      await Promise.all(
+        mjsFiles.map((filePath) => replaceImportsInFile(filePath)),
+      );
     }
   } catch (err) {
     console.error('エラーが発生しました', err);
@@ -98,4 +99,12 @@ async function main(): Promise<void> {
   }
 }
 
-main();
+if (require.main === module) {
+  main();
+}
+
+module.exports = {
+  getMjsFiles,
+  replaceAsync,
+  replaceImportsInFile,
+};
