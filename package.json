@@ -16,7 +16,9 @@
     "fix:format": "prettier --write '**/*.{js,ts,tsx}'",
     "fix:text": "textlint --fix .",
     "bootstrap": "lerna bootstrap",
-    "build": "lerna run build && npx tsx bin/outputExtensionReplace.ts",
+    "build": "run-s build:*",
+    "build:package": "lerna run build",
+    "build:extensionReplace": "npx tsx bin/outputExtensionReplace.ts",
     "prepare": "is-ci || husky install"
   },
   "devDependencies": {
