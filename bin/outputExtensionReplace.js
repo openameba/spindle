@@ -67,9 +67,7 @@ async function replaceImportsInFile(filePath) {
 async function main() {
   try {
     const directories = await glob(join(__dirname, '../packages/*/dist/**/*.mjs'));
-    await Promise.all(
-      directories.map((filePath) => replaceImportsInFile(filePath)),
-    );
+    await Promise.all(directories.map(replaceImportsInFile));
   } catch (err) {
     console.error('エラーが発生しました', err);
     process.exit(1);
