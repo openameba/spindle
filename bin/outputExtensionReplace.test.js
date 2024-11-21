@@ -1,7 +1,6 @@
 const fs = require('fs').promises;
 const {
   replaceImportsInFile,
-  getMjsFiles,
   replaceAsync,
 } = require('./outputExtensionReplace');
 
@@ -84,24 +83,6 @@ describe('replaceImportsInFile', () => {
       `エラーが発生しました: ${filePath}`,
       new Error('error'),
     );
-  });
-});
-
-describe('getMjsFiles', () => {
-  it('should only return an array of .mjs files', () => {
-    const files = [
-      'packages/spindle-ui/dist/Button/Button.mjs',
-      'bin/outputExtensionReplace.js',
-    ];
-    fs.readdir.mockResolvedValue(files);
-    fs.stat.mockImplementation((path) => {
-      return Promise.resolve({
-        isDirectory: () => path === 'packages/spindle-ui/dist/Button',
-      });
-    });
-    return expect(getMjsFiles('/')).resolves.toEqual([
-      '/packages/spindle-ui/dist/Button/Button.mjs',
-    ]);
   });
 });
 

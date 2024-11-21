@@ -1,27 +1,7 @@
-const { readdir, readFile, writeFile, stat, access } = require('fs').promises;
+const { readFile, writeFile, access } = require('fs').promises;
 const { join, dirname, resolve } = require('path');
 const glob = require('glob-promise');
 const process = require('process');
-
-/**
- * 指定されたディレクトリ配下のすべての.mjsファイルを再帰的に取得する
- * @param {string} dir - ディレクトリのパス
- * @param {string[]} [fileList=[]] - ファイルリスト
- * @return {Promise<string[]>}
- */
-async function getMjsFiles(dir, fileList = []) {
-  const files = await readdir(dir);
-  for (const file of files) {
-    const filePath = join(dir, file);
-    const fileStat = await stat(filePath);
-    if (fileStat.isDirectory()) {
-      await getMjsFiles(filePath, fileList);
-    } else if (filePath.endsWith('.mjs')) {
-      fileList.push(filePath);
-    }
-  }
-  return fileList;
-}
 
 /**
  * 非同期の置換処理を行う関数
@@ -35,7 +15,7 @@ async function replaceAsync(str, regex, asyncFn) {
   str.replace(regex, (match, ...args) => {
     const promise = asyncFn(match, ...args);
     promises.push(promise);
-    return match; // 置換のために必要
+    return match;
   });
   const data = await Promise.all(promises);
   return str.replace(regex, () => data.shift());
@@ -86,13 +66,10 @@ async function replaceImportsInFile(filePath) {
 
 async function main() {
   try {
-    const directories = await glob(join(__dirname, '../packages/*/dist'));
-    for (const dir of directories) {
-      const mjsFiles = await getMjsFiles(dir);
-      await Promise.all(
-        mjsFiles.map((filePath) => replaceImportsInFile(filePath)),
-      );
-    }
+    const directories = await glob(join(__dirname, '../packages/*/dist/**/*.mjs'));
+    await Promise.all(
+      directories.map((filePath) => replaceImportsInFile(filePath)),
+    );
   } catch (err) {
     console.error('エラーが発生しました', err);
     process.exit(1);
@@ -104,7 +81,6 @@ if (require.main === module) {
 }
 
 module.exports = {
-  getMjsFiles,
   replaceAsync,
   replaceImportsInFile,
 };
