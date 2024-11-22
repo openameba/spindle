@@ -1,87 +1,65 @@
-const { readFile, writeFile, access } = require('fs').promises;
-const { join, dirname, resolve } = require('path');
-const glob = require('glob-promise');
-const process = require('process');
+const { access } = require('fs').promises;
+const { dirname, join, resolve } = require('path');
 
-/**
- * 非同期の置換処理を行う関数
- * @param {string} str - 置換対象の文字列
- * @param {RegExp} regex - 正規表現
- * @param {(match: string, ...args: any[]) => Promise<string>} asyncFn - 非同期関数
- * @return {Promise<string>}
- */
-async function replaceAsync(str, regex, asyncFn) {
-  const promises = [];
-  str.replace(regex, (match, ...args) => {
-    const promise = asyncFn(match, ...args);
-    promises.push(promise);
-    return match;
-  });
-  const data = await Promise.all(promises);
-  return str.replace(regex, () => data.shift());
+async function checkFileExists(filePath) {
+  try {
+    await access(filePath);
+    return true;
+  } catch {
+    return false;
+  }
 }
 
+const shouldReplaceExtension = (value) =>
+  (value.startsWith('./') || value.startsWith('../')) &&
+  !value.endsWith('.mjs');
+
 /**
- * 指定されたファイルのimport文を置換する
- * @param {string} filePath - ファイルのパス
- * @return {Promise<void>}
+ *
+ * @param {import('jscodeshift').FileInfo} file
+ * @param {import('jscodeshift').API} api
  */
-async function replaceImportsInFile(filePath) {
-  try {
-    const data = await readFile(filePath, 'utf8');
-    const importRegex =
-      /from\s+['"](\.\/|\.\.\/)(?!.*\.mjs['"])([^'"]+)(['"])/g;
-    const result = await replaceAsync(
-      data,
-      importRegex,
-      async (_match, p1, p2, p3) => {
-        const importPath = resolve(dirname(filePath), p1 + p2);
-        const mjsPath = importPath + '.mjs';
-        const indexPath = join(importPath, 'index.mjs');
-        return await Promise.allSettled([
-          access(mjsPath),
-          access(indexPath),
-        ]).then((results) => {
-          const mjsPathResult = results[0];
-          const indexPathResult = results[1];
-          if (mjsPathResult.status === 'fulfilled') {
-            return `from '${p1}${p2}.mjs${p3}`;
-          } else if (indexPathResult.status === 'fulfilled') {
-            return `from '${p1}${p2}/index.mjs${p3}`;
+module.exports = async function transformer(file, api) {
+  const j = api.jscodeshift;
+  const root = j(file.source);
+  await Promise.all(
+    [
+      j.ImportDeclaration,
+      j.ExportNamedDeclaration,
+      j.ExportAllDeclaration,
+      j.ExportDefaultDeclaration,
+    ]
+      .flatMap((declaration) => root.find(declaration).nodes())
+      .flatMap(async (node) => {
+        const source = node.source;
+        if (!source) {
+          return;
+        }
+        const value = source.value;
+
+        if (shouldReplaceExtension(value)) {
+          const importPath = resolve(dirname(file.path), value);
+          const mjsPath = `${importPath}.mjs`;
+          const indexPath = join(importPath, 'index.mjs');
+
+          const mjsExists = await checkFileExists(mjsPath);
+          const indexExists = await checkFileExists(indexPath);
+
+          if (mjsExists) {
+            node.source.value = `${value}.mjs`;
+          } else if (indexExists) {
+            node.source.value = `${value}/index.mjs`;
           } else {
             console.error(
               `.mjs または /index.mjs が存在しません: ${importPath}`,
             );
-            process.exit(1);
           }
-        });
-      },
-    );
-    await writeFile(filePath, result, 'utf8');
-    if (data !== result) {
-      console.log(`置換処理が完了しました: ${filePath}`);
-    }
-  } catch (err) {
-    console.error(`エラーが発生しました: ${filePath}`, err);
-    process.exit(1);
-  }
-}
+        }
+      }),
+  );
 
-async function main() {
-  try {
-    const directories = await glob(join(__dirname, '../packages/*/dist/**/*.mjs'));
-    await Promise.all(directories.map(replaceImportsInFile));
-  } catch (err) {
-    console.error('エラーが発生しました', err);
-    process.exit(1);
-  }
-}
-
-if (require.main === module) {
-  main();
-}
-
-module.exports = {
-  replaceAsync,
-  replaceImportsInFile,
+  return root.toSource();
 };
+
+module.exports.checkFileExists = checkFileExists;
+module.exports.shouldReplaceExtension = shouldReplaceExtension;

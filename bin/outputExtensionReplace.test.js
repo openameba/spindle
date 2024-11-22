@@ -1,98 +1,36 @@
-const fs = require('fs').promises;
 const {
-  replaceImportsInFile,
-  replaceAsync,
+  checkFileExists,
+  shouldReplaceExtension,
 } = require('./outputExtensionReplace');
 
-jest.mock('fs', () => {
-  const originalModule = jest.requireActual('fs');
-  return {
-    ...originalModule,
-    promises: {
-      readdir: jest.fn(),
-      readFile: jest.fn(),
-      writeFile: jest.fn(),
-      stat: jest.fn(),
-      access: jest.fn(),
-    },
-  };
+describe('checkFileExists', () => {
+  it('should return true if the file exists', async () => {
+    const result = await checkFileExists(__filename);
+    expect(result).toBe(true);
+  });
+
+  it('should return false if the file does not exist', async () => {
+    const filePath = 'non_existent_file.dummy';
+    const result = await checkFileExists(filePath);
+    expect(result).toBe(false);
+  });
 });
 
-describe('replaceImportsInFile', () => {
-  let originalExit;
-  let originalConsoleError;
-  let originalConsoleLog;
-
-  beforeAll(() => {
-    originalExit = process.exit;
-    process.exit = jest.fn();
-    originalConsoleError = console.error;
-    console.error = jest.fn();
-    originalConsoleLog = console.log;
-    console.log = jest.fn();
-  });
-
-  afterAll(() => {
-    process.exit = originalExit;
-    console.error = originalConsoleError;
-    console.log = originalConsoleLog;
-  });
-
-  beforeEach(() => {
-    jest.clearAllMocks();
-  });
-
-  it('should replace imports in a file', async () => {
-    const filePath = '/file.mjs';
-    const fileContent = `
-      import React, { forwardRef } from 'react';
-      import module from './module';
-      import hasIndexDirectory from '../hasIndexDirectory';
-    `;
-    const expectedContent = `
-      import React, { forwardRef } from 'react';
-      import module from './module.mjs';
-      import hasIndexDirectory from '../hasIndexDirectory/index.mjs';
-    `;
-    fs.readFile.mockResolvedValue(fileContent);
-    fs.writeFile.mockResolvedValue();
-    fs.access.mockImplementation((path) => {
-      if (path.endsWith('module.mjs')) {
-        return Promise.resolve();
-      } else if (path.endsWith('hasIndexDirectory/index.mjs')) {
-        return Promise.resolve();
-      }
-      return Promise.reject();
+describe('shouldReplaceExtension', () => {
+  it('should return true if the value starts with ./ or ../ and does not end with .mjs', () => {
+    [
+      { value: './foo', expected: true },
+      { value: '../foo', expected: true },
+      { value: './foo/bar', expected: true },
+      { value: '../foo/bar', expected: true },
+      { value: './foo.mjs', expected: false },
+      { value: '../foo.mjs', expected: false },
+      { value: './foo/bar.mjs', expected: false },
+      { value: '../foo/bar.mjs', expected: false },
+      { value: 'react', expected: false },
+    ].forEach(({ value, expected }) => {
+      const result = shouldReplaceExtension(value);
+      expect(result).toBe(expected);
     });
-    await replaceImportsInFile(filePath);
-    expect(fs.readFile).toHaveBeenCalledWith(filePath, 'utf8');
-    expect(fs.writeFile).toHaveBeenCalledWith(
-      filePath,
-      expectedContent,
-      'utf8',
-    );
-    expect(console.log).toHaveBeenCalledWith(`置換処理が完了しました: ${filePath}`);
-  });
-
-  it('should exit the process if an error occurs', async () => {
-    const filePath = '/file.mjs';
-    fs.readFile.mockRejectedValue(new Error('error'));
-    await replaceImportsInFile(filePath);
-    expect(process.exit).toHaveBeenCalledWith(1);
-    expect(console.error).toHaveBeenCalledWith(
-      `エラーが発生しました: ${filePath}`,
-      new Error('error'),
-    );
-  });
-});
-
-describe('replaceAsync', () => {
-  it('should replace a string asynchronously', async () => {
-    const result = await replaceAsync(
-      "import module from './module",
-      /.\/module/g,
-      async () => './module.mjs',
-    );
-    expect(result).toBe("import module from './module.mjs");
   });
 });
