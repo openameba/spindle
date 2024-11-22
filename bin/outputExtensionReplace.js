@@ -38,20 +38,23 @@ async function replaceImportsInFile(filePath) {
         const importPath = resolve(dirname(filePath), p1 + p2);
         const mjsPath = importPath + '.mjs';
         const indexPath = join(importPath, 'index.mjs');
-        try {
-          await access(mjsPath);
-          return `from '${p1}${p2}.mjs${p3}`;
-        } catch {
-          try {
-            await access(indexPath);
+        return await Promise.allSettled([
+          access(mjsPath),
+          access(indexPath),
+        ]).then((results) => {
+          const mjsPathResult = results[0];
+          const indexPathResult = results[1];
+          if (mjsPathResult.status === 'fulfilled') {
+            return `from '${p1}${p2}.mjs${p3}`;
+          } else if (indexPathResult.status === 'fulfilled') {
             return `from '${p1}${p2}/index.mjs${p3}`;
-          } catch {
+          } else {
             console.error(
               `.mjs または /index.mjs が存在しません: ${importPath}`,
             );
             process.exit(1);
           }
-        }
+        });
       },
     );
     await writeFile(filePath, result, 'utf8');
