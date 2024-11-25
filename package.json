@@ -19,7 +19,7 @@
     "bootstrap": "lerna bootstrap",
     "build": "run-s build:*",
     "build:package": "lerna run build",
-    "build:extensionReplace": "find packages/*/dist -iname '*.mjs' -type f -print | xargs jscodeshift -t ./bin/outputExtensionReplace.js",
+    "build:extensionReplace": "jscodeshift -t ./bin/outputExtensionReplace.js packages/*/dist/** --extensions=mjs",
     "prepare": "is-ci || husky install"
   },
   "devDependencies": {
