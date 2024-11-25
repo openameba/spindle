@@ -51,9 +51,13 @@ module.exports = async function transformer(file, api) {
             node.source.value = `${value}/index.mjs`;
           } else {
             console.error(
-              `.mjs または /index.mjs が存在しません: ${importPath}`,
+              `missing ${mjsPath} and ${indexPath} for ${file.path}`,
             );
+            return;
           }
+          console.info(
+            `change ${value} to ${node.source.value} in ${file.path}`,
+          );
         }
       }),
   );
