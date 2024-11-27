@@ -42,12 +42,9 @@ module.exports = async function transformer(file, api) {
           const mjsPath = `${importPath}.mjs`;
           const indexPath = join(importPath, 'index.mjs');
 
-          const mjsExists = await checkFileExists(mjsPath);
-          const indexExists = await checkFileExists(indexPath);
-
-          if (mjsExists) {
+          if (await checkFileExists(mjsPath)) {
             node.source.value = `${value}.mjs`;
-          } else if (indexExists) {
+          } else if (await checkFileExists(indexPath)) {
             node.source.value = `${value}/index.mjs`;
           } else {
             console.error(
