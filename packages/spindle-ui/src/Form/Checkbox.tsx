@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 
-import { CheckBold } from '../Icon';
+import CheckBold from '../Icon/CheckBold';
 
 interface Props
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'className'> {

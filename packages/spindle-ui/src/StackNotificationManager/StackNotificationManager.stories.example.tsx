@@ -6,7 +6,7 @@ import {
   StackPosition,
 } from './StackNotificationManager';
 import { Button } from '../Button';
-import { Information } from '../Icon';
+import Information from '../Icon/Information';
 import { useRepeatedStackItem } from './hooks';
 
 const usePoliteAnnouncer = (active: boolean, message: string) => {
