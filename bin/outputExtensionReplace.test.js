@@ -17,20 +17,18 @@ describe('checkFileExists', () => {
 });
 
 describe('shouldReplaceExtension', () => {
-  it('should return true if the value starts with ./ or ../ and does not end with .mjs', () => {
-    [
-      { value: './foo', expected: true },
-      { value: '../foo', expected: true },
-      { value: './foo/bar', expected: true },
-      { value: '../foo/bar', expected: true },
-      { value: './foo.mjs', expected: false },
-      { value: '../foo.mjs', expected: false },
-      { value: './foo/bar.mjs', expected: false },
-      { value: '../foo/bar.mjs', expected: false },
-      { value: 'react', expected: false },
-    ].forEach(({ value, expected }) => {
-      const result = shouldReplaceExtension(value);
-      expect(result).toBe(expected);
-    });
+  test.each([
+    ['./foo', true],
+    ['../foo', true],
+    ['./foo/bar', true],
+    ['../foo/bar', true],
+    ['./foo.mjs', false],
+    ['../foo.mjs', false],
+    ['./foo/bar.mjs', false],
+    ['../foo/bar.mjs', false],
+    ['react', false],
+  ])('should return %p if the value is %p', (value, expected) => {
+    const result = shouldReplaceExtension(value);
+    expect(result).toBe(expected);
   });
 });
