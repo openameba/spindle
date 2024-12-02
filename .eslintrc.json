@@ -27,8 +27,5 @@
         "react/prop-types": "off"
       }
     }
-  ],
-  "rules": {
-    "@typescript-eslint/no-var-requires": "off"
-  }
+  ]
 }

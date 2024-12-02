@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { access } = require('fs').promises;
 const { dirname, join, resolve } = require('path');
 
