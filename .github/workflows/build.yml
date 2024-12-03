@@ -28,3 +28,4 @@ jobs:
           yarn lerna run --scope @openameba/spindle-hooks build
           yarn lerna run --scope @openameba/spindle-ui storybook:build
           yarn lerna run --scope @openameba/spindle-ui build
+          yarn build:extensionReplace
