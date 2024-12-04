@@ -3,7 +3,9 @@ import { Description, Meta, Story, Source } from '@storybook/addon-docs/blocks';
 import { actions } from '@storybook/addon-actions';
 import { Toast } from './Toast';
 import { Button } from '../Button';
-import { Information, CheckCircleFill, ExclamationmarkCircleFill } from '../Icon';
+import Information from '../Icon/Information';
+import CheckCircleFill from '../Icon/CheckCircleFill';
+import ExclamationmarkCircleFill from '../Icon/ExclamationmarkCircleFill';
 
 export const usePoliteAnnouncer = (message) => {
   const announcer = useRef(null);
