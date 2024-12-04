@@ -11,7 +11,7 @@ import React, {
   useMemo,
 } from 'react';
 import { useStackNotificationComponent } from '../StackNotificationManager';
-import { CrossBold } from '../Icon';
+import CrossBold from '../Icon/CrossBold';
 import { IconButton } from '../IconButton';
 import { TextLink as SpindleTextLink } from '../TextLink/TextLink';
 import { TextButton as SpindleTextButton } from '../TextButton/TextButton';

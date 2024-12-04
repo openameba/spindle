@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '../Button/Button';
-import { Information } from '../Icon';
+import Information from '../Icon/Information';
 import { InlineNotification } from './InlineNotification';
 
 export function VisiblePropsSample() {

@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import mergeRefs from 'react-merge-refs';
 import { ButtonGroup as Group } from '../ButtonGroup';
-import { CrossBold } from '../Icon';
+import CrossBold from '../Icon/CrossBold';
 import { IconButton } from '../IconButton';
 import { SubtleButton } from '../SubtleButton';
 

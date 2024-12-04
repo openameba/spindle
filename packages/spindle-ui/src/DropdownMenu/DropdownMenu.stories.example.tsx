@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { actions } from '@storybook/addon-actions';
 
 import { Button } from '../Button';
-import { AllFill } from '../Icon';
+import AllFill from '../Icon/AllFill';
 import { DropdownMenu } from './DropdownMenu';
 
 export function Text() {

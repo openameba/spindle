@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ExclamationmarkCircleFill } from '../Icon';
+import ExclamationmarkCircleFill from '../Icon/ExclamationmarkCircleFill';
 
 interface Props
   extends Omit<React.HTMLAttributes<HTMLParagraphElement>, 'className'> {
