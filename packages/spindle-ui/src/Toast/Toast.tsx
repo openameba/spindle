@@ -3,7 +3,7 @@ import {
   ManagedStack,
   useStackNotificationComponent,
 } from '../StackNotificationManager';
-import { CrossBold } from '../Icon';
+import CrossBold from '../Icon/CrossBold';
 import { IconButton } from '../IconButton';
 import { StackNotificationComponentProps } from '../StackNotificationManager/StackNotificationManager';
 

@@ -1,11 +1,9 @@
 import React from 'react';
 import { SnackBar } from './SnackBar';
 import figma from '@figma/code-connect';
-import {
-  CheckCircleFill,
-  ExclamationmarkCircleFill,
-  Information,
-} from 'src/Icon';
+import CheckCircleFill from 'src/Icon/CheckCircleFill';
+import ExclamationmarkCircleFill from 'src/Icon/ExclamationmarkCircleFill';
+import Information from 'src/Icon/Information';
 
 figma.connect(
   SnackBar,

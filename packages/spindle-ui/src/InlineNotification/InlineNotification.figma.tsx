@@ -1,7 +1,8 @@
 import React from 'react';
 import { InlineNotification } from './InlineNotification';
 import figma from '@figma/code-connect';
-import { CrossBold, Information } from 'src/Icon';
+import CrossBold from 'src/Icon/CrossBold';
+import Information from 'src/Icon/Information';
 
 figma.connect(
   InlineNotification,

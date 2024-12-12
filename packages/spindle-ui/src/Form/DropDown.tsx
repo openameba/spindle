@@ -1,7 +1,7 @@
 import React, { forwardRef, useEffect, useRef, useState } from 'react';
 import mergeRefs from 'react-merge-refs';
 
-import { ChevronDownBold } from '../Icon';
+import ChevronDownBold from '../Icon/ChevronDownBold';
 
 interface Props
   extends Omit<React.SelectHTMLAttributes<HTMLSelectElement>, 'className'> {

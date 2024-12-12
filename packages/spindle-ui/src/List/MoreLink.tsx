@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { ChevronRightBold } from '../Icon';
+import ChevronRightBold from '../Icon/ChevronRightBold';
 
 interface Props
   extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'className'> {
