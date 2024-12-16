@@ -50,6 +50,7 @@ describe('<DropdownMenu />', () => {
             triggerButton
           </Button>
           <DropdownMenu.List
+            id="dropdown-menu"
             onClose={onClose}
             open={result.current.open}
             triggerRef={triggerRef}
@@ -76,6 +77,7 @@ describe('<DropdownMenu />', () => {
             triggerButton
           </Button>
           <DropdownMenu.List
+            id="dropdown-menu"
             onClose={onClose}
             open={result.current.open}
             triggerRef={triggerRef}
@@ -109,6 +111,7 @@ describe('<DropdownMenu />', () => {
             triggerButton
           </Button>
           <DropdownMenu.List
+            id="dropdown-menu"
             onClose={result.current.onClose}
             open={result.current.open}
             triggerRef={triggerRef}
@@ -143,6 +146,7 @@ describe('<DropdownMenu />', () => {
             triggerButton
           </Button>
           <DropdownMenu.List
+            id="dropdown-menu"
             onClose={result.current.onClose}
             open={result.current.open}
             triggerRef={triggerRef}
@@ -177,6 +181,7 @@ describe('<DropdownMenu />', () => {
             triggerButton
           </Button>
           <DropdownMenu.List
+            id="dropdown-menu"
             onClose={result.current.onClose}
             open={result.current.open}
             triggerRef={triggerRef}
@@ -215,6 +220,7 @@ describe('<DropdownMenu />', () => {
             triggerButton
           </Button>
           <DropdownMenu.List
+            id="dropdown-menu"
             onClose={result.current.onClose}
             open={result.current.open}
             triggerRef={triggerRef}
@@ -248,6 +254,7 @@ describe('<DropdownMenu />', () => {
             triggerButton
           </Button>
           <DropdownMenu.List
+            id="dropdown-menu"
             onClose={result.current.onClose}
             open={result.current.open}
             triggerRef={triggerRef}
@@ -280,6 +287,7 @@ describe('<DropdownMenu />', () => {
             triggerButton
           </Button>
           <DropdownMenu.List
+            id="dropdown-menu"
             onClose={result.current.onClose}
             open={result.current.open}
             triggerRef={triggerRef}
@@ -313,6 +321,7 @@ describe('<DropdownMenu />', () => {
             triggerButton
           </Button>
           <DropdownMenu.List
+            id="dropdown-menu"
             onClose={result.current.onClose}
             open={result.current.open}
             triggerRef={triggerRef}
@@ -347,6 +356,7 @@ describe('<DropdownMenu />', () => {
             triggerButton
           </Button>
           <DropdownMenu.List
+            id="dropdown-menu"
             onClose={result.current.onClose}
             open={result.current.open}
             triggerRef={triggerRef}

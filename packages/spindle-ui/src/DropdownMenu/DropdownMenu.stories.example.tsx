@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import { actions } from '@storybook/addon-actions';
 
 import { Button } from '../Button';
@@ -6,32 +6,23 @@ import { AllFill } from '../Icon';
 import { DropdownMenu } from './DropdownMenu';
 
 export function Text() {
-  const [open, setOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
-  const onClick = () => {
-    setOpen((prevOpen) => !prevOpen);
-  };
-  const onClose = () => {
-    setOpen(false);
-  };
 
   return (
-    <div style={{ ['--DropdownMenu-z-index']: 2 }}>
+    <div>
       <DropdownMenu.Frame>
         <Button
-          aria-controls="dropdown-menu-example1"
-          aria-expanded={open}
-          onClick={onClick}
           ref={triggerRef}
           size="medium"
           variant="neutral"
+          popoverTarget="dropdown-menu-example1"
+          id="dropdown-menu-example1-anchor"
+          style={{ anchorName: '--dropdown-menu-example1-anchor' }}
         >
           開く
         </Button>
         <DropdownMenu.List
           id="dropdown-menu-example1"
-          onClose={onClose}
-          open={open}
           position="rightTop"
           triggerRef={triggerRef}
           variant="text"
@@ -49,32 +40,23 @@ export function Text() {
 }
 
 export function TextWithIcon() {
-  const [open, setOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
-  const onClick = () => {
-    setOpen((prevOpen) => !prevOpen);
-  };
-  const onClose = () => {
-    setOpen(false);
-  };
 
   return (
-    <div style={{ ['--DropdownMenu-z-index']: 2 }}>
+    <div>
       <DropdownMenu.Frame>
         <Button
-          aria-controls="dropdown-menu-example2"
-          aria-expanded={open}
-          onClick={onClick}
           ref={triggerRef}
           size="medium"
           variant="neutral"
+          popoverTarget="dropdown-menu-example2"
+          id="dropdown-menu-example2-anchor"
+          style={{ anchorName: '--dropdown-menu-example2-anchor' }}
         >
           開く
         </Button>
         <DropdownMenu.List
           id="dropdown-menu-example2"
-          onClose={onClose}
-          open={open}
           position="rightTop"
           triggerRef={triggerRef}
           variant="textWithIcon"
@@ -98,32 +80,24 @@ export function TextWithIcon() {
 }
 
 export function HeadWithIcon() {
-  const [open, setOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
-  const onClick = () => {
-    setOpen((prevOpen) => !prevOpen);
-  };
-  const onClose = () => {
-    setOpen(false);
-  };
 
   return (
-    <div style={{ ['--DropdownMenu-z-index']: 2 }}>
+    <div>
       <DropdownMenu.Frame>
         <Button
-          aria-controls="dropdown-menu-example3"
-          aria-expanded={open}
-          onClick={onClick}
+          onClick={() => {}}
           ref={triggerRef}
           size="medium"
           variant="neutral"
+          popoverTarget="dropdown-menu-example3"
+          id="dropdown-menu-example3-anchor"
+          style={{ anchorName: '--dropdown-menu-example3-anchor' }}
         >
           開く
         </Button>
         <DropdownMenu.List
           id="dropdown-menu-example3"
-          onClose={onClose}
-          open={open}
           position="rightTop"
           triggerRef={triggerRef}
           variant="headWithIcon"
@@ -147,32 +121,24 @@ export function HeadWithIcon() {
 }
 
 export function HeadWithIconAndCaption() {
-  const [open, setOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
-  const onClick = () => {
-    setOpen((prevOpen) => !prevOpen);
-  };
-  const onClose = () => {
-    setOpen(false);
-  };
 
   return (
-    <div style={{ ['--DropdownMenu-z-index']: 2 }}>
+    <div>
       <DropdownMenu.Frame>
         <Button
-          aria-controls="dropdown-menu-example4"
-          aria-expanded={open}
-          onClick={onClick}
+          onClick={() => {}}
           ref={triggerRef}
           size="medium"
           variant="neutral"
+          popoverTarget="dropdown-menu-example4"
+          id="dropdown-menu-example4-anchor"
+          style={{ anchorName: '--dropdown-menu-example4-anchor' }}
         >
           開く
         </Button>
         <DropdownMenu.List
           id="dropdown-menu-example4"
-          onClose={onClose}
-          open={open}
           position="rightTop"
           triggerRef={triggerRef}
           variant="headWithIconAndCaption"
@@ -199,214 +165,387 @@ export function HeadWithIconAndCaption() {
 
 // Storybookでのpositionプロパティのバリエーション確認用
 export function Position() {
-  const triggerRef = useRef<HTMLButtonElement>(null);
+  const triggerRefTopRight = useRef<HTMLButtonElement>(null);
+  const triggerRefTopCenter = useRef<HTMLButtonElement>(null);
+  const triggerRefTopLeft = useRef<HTMLButtonElement>(null);
+  const triggerRefRightTop = useRef<HTMLButtonElement>(null);
+  const triggerRefRightCenter = useRef<HTMLButtonElement>(null);
+  const triggerRefRightBottom = useRef<HTMLButtonElement>(null);
+  const triggerRefBottomRight = useRef<HTMLButtonElement>(null);
+  const triggerRefBottomCenter = useRef<HTMLButtonElement>(null);
+  const triggerRefBottomLeft = useRef<HTMLButtonElement>(null);
+  const triggerRefLeftTop = useRef<HTMLButtonElement>(null);
+  const triggerRefLeftCenter = useRef<HTMLButtonElement>(null);
+  const triggerRefLeftBottom = useRef<HTMLButtonElement>(null);
 
   return (
     <>
       <div
         style={{
-          ['--DropdownMenu-z-index']: 2,
           marginTop: 80,
           marginLeft: 210,
         }}
       >
         <DropdownMenu.Frame>
-          <Button ref={triggerRef} size="medium" variant="neutral">
+          <Button
+            ref={triggerRefTopRight}
+            size="medium"
+            variant="neutral"
+            popoverTarget="dropdown-menu-example-topRight"
+            id="dropdown-menu-example-topRight-anchor"
+            style={{ anchorName: '--dropdown-menu-example-topRight-anchor' }}
+          >
             例
           </Button>
-          <DropdownMenu.Position position="topRight" triggerRef={triggerRef}>
+          <DropdownMenu.List
+            id="dropdown-menu-example-topRight"
+            position="topRight"
+            triggerRef={triggerRefTopRight}
+            open
+            popover="manual"
+          >
             <DropdownMenu.ListItem {...actions('onClick')}>
               <DropdownMenu.Title>position: topRightを指定</DropdownMenu.Title>
             </DropdownMenu.ListItem>
-          </DropdownMenu.Position>
+          </DropdownMenu.List>
         </DropdownMenu.Frame>
       </div>
       <div
         style={{
-          ['--DropdownMenu-z-index']: 2,
           marginTop: 90,
           marginLeft: 105,
         }}
       >
         <DropdownMenu.Frame>
-          <Button ref={triggerRef} size="medium" variant="neutral">
+          <Button
+            ref={triggerRefTopCenter}
+            size="medium"
+            variant="neutral"
+            popoverTarget="dropdown-menu-example-topCenter"
+            id="dropdown-menu-example-topCenter-anchor"
+            style={{
+              anchorName: '--dropdown-menu-example-topCenter-anchor',
+            }}
+          >
             例
           </Button>
-          <DropdownMenu.Position position="topCenter" triggerRef={triggerRef}>
+          <DropdownMenu.List
+            id="dropdown-menu-example-topCenter"
+            open
+            position="topCenter"
+            triggerRef={triggerRefTopCenter}
+            popover="manual"
+          >
             <DropdownMenu.ListItem {...actions('onClick')}>
               <DropdownMenu.Title>position: topCenterを指定</DropdownMenu.Title>
             </DropdownMenu.ListItem>
-          </DropdownMenu.Position>
+          </DropdownMenu.List>
         </DropdownMenu.Frame>
       </div>
-      <div style={{ ['--DropdownMenu-z-index']: 2, marginTop: 90 }}>
+      <div style={{ marginTop: 90 }}>
         <DropdownMenu.Frame>
-          <Button ref={triggerRef} size="medium" variant="neutral">
+          <Button
+            ref={triggerRefTopLeft}
+            size="medium"
+            variant="neutral"
+            popoverTarget="dropdown-menu-example-topLeft"
+            id="dropdown-menu-example-topLeft-anchor"
+            style={{ anchorName: '--dropdown-menu-example-topLeft-anchor' }}
+          >
             例
           </Button>
-          <DropdownMenu.Position position="topLeft" triggerRef={triggerRef}>
+          <DropdownMenu.List
+            id="dropdown-menu-example-topLeft"
+            position="topLeft"
+            triggerRef={triggerRefTopLeft}
+            open
+            popover="manual"
+          >
             <DropdownMenu.ListItem {...actions('onClick')}>
               <DropdownMenu.Title>position: topLeftを指定</DropdownMenu.Title>
             </DropdownMenu.ListItem>
-          </DropdownMenu.Position>
+          </DropdownMenu.List>
         </DropdownMenu.Frame>
       </div>
 
-      <div style={{ ['--DropdownMenu-z-index']: 2, marginTop: 20 }}>
+      <div style={{ marginTop: 20 }}>
         <DropdownMenu.Frame>
-          <Button ref={triggerRef} size="medium" variant="neutral">
+          <Button
+            ref={triggerRefRightTop}
+            size="medium"
+            variant="neutral"
+            popoverTarget="dropdown-menu-example-rightTop"
+            id="dropdown-menu-example-rightTop-anchor"
+            style={{ anchorName: '--dropdown-menu-example-rightTop-anchor' }}
+          >
             例
           </Button>
-          <DropdownMenu.Position position="rightTop" triggerRef={triggerRef}>
+          <DropdownMenu.List
+            id="dropdown-menu-example-rightTop"
+            open
+            position="rightTop"
+            triggerRef={triggerRefRightTop}
+            popover="manual"
+          >
             <DropdownMenu.ListItem {...actions('onClick')}>
               <DropdownMenu.Title>position: rightTopを指定</DropdownMenu.Title>
             </DropdownMenu.ListItem>
-          </DropdownMenu.Position>
+          </DropdownMenu.List>
         </DropdownMenu.Frame>
       </div>
-      <div style={{ ['--DropdownMenu-z-index']: 2, marginTop: 90 }}>
+      <div style={{ marginTop: 90 }}>
         <DropdownMenu.Frame>
-          <Button ref={triggerRef} size="medium" variant="neutral">
+          <Button
+            ref={triggerRefRightCenter}
+            size="medium"
+            variant="neutral"
+            popoverTarget="dropdown-menu-example-rightCenter"
+            id="dropdown-menu-example-rightCenter-anchor"
+            style={{
+              anchorName: '--dropdown-menu-example-rightCenter-anchor',
+            }}
+          >
             例
           </Button>
-          <DropdownMenu.Position position="rightCenter" triggerRef={triggerRef}>
+          <DropdownMenu.List
+            id="dropdown-menu-example-rightCenter"
+            open
+            position="rightCenter"
+            triggerRef={triggerRefRightCenter}
+            popover="manual"
+          >
             <DropdownMenu.ListItem {...actions('onClick')}>
               <DropdownMenu.Title>
                 position: rightCenterを指定
               </DropdownMenu.Title>
             </DropdownMenu.ListItem>
-          </DropdownMenu.Position>
+          </DropdownMenu.List>
         </DropdownMenu.Frame>
       </div>
-      <div style={{ ['--DropdownMenu-z-index']: 2, marginTop: 90 }}>
+      <div style={{ marginTop: 90 }}>
         <DropdownMenu.Frame>
-          <Button ref={triggerRef} size="medium" variant="neutral">
+          <Button
+            ref={triggerRefRightBottom}
+            size="medium"
+            variant="neutral"
+            popoverTarget="dropdown-menu-example-rightBottom"
+            id="dropdown-menu-example-rightBottom-anchor"
+            style={{
+              anchorName: '--dropdown-menu-example-rightBottom-anchor',
+            }}
+          >
             例
           </Button>
-          <DropdownMenu.Position position="rightBottom" triggerRef={triggerRef}>
+          <DropdownMenu.List
+            id="dropdown-menu-example-rightBottom-anchor"
+            open
+            position="rightBottom"
+            triggerRef={triggerRefRightBottom}
+            popover="manual"
+          >
             <DropdownMenu.ListItem {...actions('onClick')}>
               <DropdownMenu.Title>
                 position: rightBottomを指定
               </DropdownMenu.Title>
             </DropdownMenu.ListItem>
-          </DropdownMenu.Position>
+          </DropdownMenu.List>
         </DropdownMenu.Frame>
       </div>
 
       <div
         style={{
-          ['--DropdownMenu-z-index']: 2,
           marginTop: 90,
           marginLeft: 210,
         }}
       >
         <DropdownMenu.Frame>
-          <Button ref={triggerRef} size="medium" variant="neutral">
+          <Button
+            ref={triggerRefBottomRight}
+            size="medium"
+            variant="neutral"
+            popoverTarget="dropdown-menu-example-bottomRight"
+            id="dropdown-menu-example-bottomRight-anchor"
+            style={{
+              anchorName: '--dropdown-menu-example-bottomRight-anchor',
+            }}
+          >
             例
           </Button>
-          <DropdownMenu.Position position="bottomRight" triggerRef={triggerRef}>
+          <DropdownMenu.List
+            id="dropdown-menu-example-bottomRight"
+            open
+            position="bottomRight"
+            triggerRef={triggerRefBottomRight}
+            popover="manual"
+          >
             <DropdownMenu.ListItem {...actions('onClick')}>
               <DropdownMenu.Title>
                 position: bottomRightを指定
               </DropdownMenu.Title>
             </DropdownMenu.ListItem>
-          </DropdownMenu.Position>
+          </DropdownMenu.List>
         </DropdownMenu.Frame>
       </div>
       <div
         style={{
-          ['--DropdownMenu-z-index']: 2,
           marginTop: 90,
           marginLeft: 110,
         }}
       >
         <DropdownMenu.Frame>
-          <Button ref={triggerRef} size="medium" variant="neutral">
+          <Button
+            ref={triggerRefBottomCenter}
+            size="medium"
+            variant="neutral"
+            popoverTarget="dropdown-menu-example-bottomCenter"
+            id="dropdown-menu-example-bottomCenter-anchor"
+            style={{
+              anchorName: '--dropdown-menu-example-bottomCenter-anchor',
+            }}
+          >
             例
           </Button>
-          <DropdownMenu.Position
+          <DropdownMenu.List
+            id="dropdown-menu-example-bottomCenter-anchor"
+            open
             position="bottomCenter"
-            triggerRef={triggerRef}
+            triggerRef={triggerRefBottomCenter}
+            popover="manual"
           >
             <DropdownMenu.ListItem {...actions('onClick')}>
               <DropdownMenu.Title>
                 position: bottomCenterを指定
               </DropdownMenu.Title>
             </DropdownMenu.ListItem>
-          </DropdownMenu.Position>
+          </DropdownMenu.List>
         </DropdownMenu.Frame>
       </div>
-      <div style={{ ['--DropdownMenu-z-index']: 2, marginTop: 90 }}>
+      <div style={{ marginTop: 90 }}>
         <DropdownMenu.Frame>
-          <Button ref={triggerRef} size="medium" variant="neutral">
+          <Button
+            ref={triggerRefBottomLeft}
+            size="medium"
+            variant="neutral"
+            popoverTarget="dropdown-menu-example-bottomLeft"
+            id="dropdown-menu-example-bottomLeft-anchor"
+            style={{
+              anchorName: '--dropdown-menu-example-bottomLeft-anchor',
+            }}
+          >
             例
           </Button>
-          <DropdownMenu.Position position="bottomLeft" triggerRef={triggerRef}>
+          <DropdownMenu.List
+            id="dropdown-menu-example-bottomLeft"
+            open
+            position="bottomLeft"
+            triggerRef={triggerRefBottomLeft}
+            popover="manual"
+          >
             <DropdownMenu.ListItem {...actions('onClick')}>
               <DropdownMenu.Title>
                 position: bottomLeftを指定
               </DropdownMenu.Title>
             </DropdownMenu.ListItem>
-          </DropdownMenu.Position>
+          </DropdownMenu.List>
         </DropdownMenu.Frame>
       </div>
 
       <div
         style={{
-          ['--DropdownMenu-z-index']: 2,
           marginTop: 90,
           marginLeft: 265,
         }}
       >
         <DropdownMenu.Frame>
-          <Button ref={triggerRef} size="medium" variant="neutral">
+          <Button
+            ref={triggerRefLeftTop}
+            size="medium"
+            variant="neutral"
+            popoverTarget="dropdown-menu-example-leftTop"
+            id="dropdown-menu-example-leftTop-anchor"
+            style={{ anchorName: '--dropdown-menu-example-leftTop-anchor' }}
+          >
             例
           </Button>
-          <DropdownMenu.Position position="leftTop" triggerRef={triggerRef}>
+          <DropdownMenu.List
+            id="dropdown-menu-example-leftTop"
+            open
+            position="leftTop"
+            triggerRef={triggerRefLeftTop}
+            popover="manual"
+          >
             <DropdownMenu.ListItem {...actions('onClick')}>
               <DropdownMenu.Title>position: leftTopを指定</DropdownMenu.Title>
             </DropdownMenu.ListItem>
-          </DropdownMenu.Position>
+          </DropdownMenu.List>
         </DropdownMenu.Frame>
       </div>
       <div
         style={{
-          ['--DropdownMenu-z-index']: 2,
           marginTop: 90,
           marginLeft: 265,
         }}
       >
         <DropdownMenu.Frame>
-          <Button ref={triggerRef} size="medium" variant="neutral">
+          <Button
+            ref={triggerRefLeftCenter}
+            size="medium"
+            variant="neutral"
+            popoverTarget="dropdown-menu-example-leftCenter"
+            id="dropdown-menu-example-leftCenter-anchor"
+            style={{
+              anchorName: '--dropdown-menu-example-leftCenter-anchor',
+            }}
+          >
             例
           </Button>
-          <DropdownMenu.Position position="leftCenter" triggerRef={triggerRef}>
+          <DropdownMenu.List
+            id="dropdown-menu-example-leftCenter"
+            open
+            position="leftCenter"
+            triggerRef={triggerRefLeftCenter}
+            popover="manual"
+          >
             <DropdownMenu.ListItem {...actions('onClick')}>
               <DropdownMenu.Title>
                 position: leftCenterを指定
               </DropdownMenu.Title>
             </DropdownMenu.ListItem>
-          </DropdownMenu.Position>
+          </DropdownMenu.List>
         </DropdownMenu.Frame>
       </div>
       <div
         style={{
-          ['--DropdownMenu-z-index']: 2,
           marginTop: 90,
           marginLeft: 265,
         }}
       >
         <DropdownMenu.Frame>
-          <Button ref={triggerRef} size="medium" variant="neutral">
+          <Button
+            ref={triggerRefLeftBottom}
+            size="medium"
+            variant="neutral"
+            popoverTarget="dropdown-menu-example-leftBottom"
+            id="dropdown-menu-example-leftBottom-anchor"
+            style={{
+              anchorName: '--dropdown-menu-example-leftBottom-anchor',
+            }}
+          >
             例
           </Button>
-          <DropdownMenu.Position position="leftBottom" triggerRef={triggerRef}>
+          <DropdownMenu.List
+            id="dropdown-menu-example-leftBottom"
+            open
+            position="leftBottom"
+            triggerRef={triggerRefLeftBottom}
+            popover="manual"
+          >
             <DropdownMenu.ListItem {...actions('onClick')}>
               <DropdownMenu.Title>
                 position: leftBottomを指定
               </DropdownMenu.Title>
             </DropdownMenu.ListItem>
-          </DropdownMenu.Position>
+          </DropdownMenu.List>
         </DropdownMenu.Frame>
       </div>
     </>
