@@ -7,7 +7,7 @@ import React, {
   useState,
 } from 'react';
 import mergeRefs from 'react-merge-refs';
-import { CrossBold } from '../Icon';
+import CrossBold from '../Icon/CrossBold';
 import { IconButton } from '../IconButton';
 
 type Size = 'large' | 'medium' | 'small';
