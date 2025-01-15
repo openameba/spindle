@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/openameba/spindle/compare/@openameba/spindle-syntax-themes@1.1.1...@openameba/spindle-syntax-themes@1.2.0) (2025-01-15)
+
+**Note:** Version bump only for package @openameba/spindle-syntax-themes
+
 ## [1.1.1](https://github.com/openameba/spindle/compare/@openameba/spindle-syntax-themes@1.1.0...@openameba/spindle-syntax-themes@1.1.1) (2024-02-14)
 
 **Note:** Version bump only for package @openameba/spindle-syntax-themes
