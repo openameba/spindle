@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@1.5.1...@openameba/spindle-ui@1.6.0) (2025-01-15)
+
+### Bug Fixes
+
+- **spindle-ui:** 選択肢が長い時にラジオボタンが潰れて見える ([021e64b](https://github.com/openameba/spindle/commit/021e64b71920dd5f1cd35bdda68666807275458c))
+
 ## [1.5.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@1.5.0...@openameba/spindle-ui@1.5.1) (2024-03-25)
 
 ### Bug Fixes
