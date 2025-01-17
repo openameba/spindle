@@ -7,7 +7,7 @@ import Information from '../Icon/Information';
 import CheckCircleFill from '../Icon/CheckCircleFill';
 import Openblank from '../Icon/Openblank';
 import ExclamationmarkCircleFill from '../Icon/ExclamationmarkCircleFill';
-
+import UserNotificationTypes from '../../storybook/UserNotificationTypes.mdx';
 
 export const usePoliteAnnouncer = (message) => {
   const announcer = useRef(null);
@@ -116,21 +116,9 @@ export const MultiActivateButton = ({ offset, icon, position }) => {
 
 <Meta title="SnackBar" component={SnackBar} />
 
-SnackBarコンポーネントは、利用者に一時的なお知らせをする際に利用します。画面上に複数表示できます。SnackBarは自動で消えてしまうため、見落とされても影響のない「重要ではないお知らせ」に用います。利用する際には、その他により適切な手段がないか必ず確認してください。
+SnackBarコンポーネントは、ユーザーの操作を邪魔しないよう**非同期的にシステムやUIのフィードバックをユーザーへ通知する**ために用います。画面のレイアウトや状態に影響を与えないので、特にユーザーへの影響値を最小限にできます。一方で、一定時間で消滅するため、ユーザーが見落としてしまっても同一の内容を確認できる**代替手段がある場合に使う**必要があります。（詳しい事例は「[利用時に注意してほしいこと](#利用時に注意してほしいこと)」参照）
 
-「重要なお知らせ」とは何かは別途まとめる予定です。
-
-## 通知系のComponentの違い
-
-SnackbarとToastは非常に似ているComponentです。また、ユーザーにお知らせをするための他のComponentとしてInlineNotificationもあります。現状下記のように使い分けています。
-
-Component | テキストの長さ | 追加のアクションの有無 | 自動で消える秒数 | 表示位置 | メッセージの内容
-:-- | :-- | :-- | :-- | :-- | :--
-[Toast](/docs/toast--information) | 1行のみ | なし | 4秒 | フローティングで位置固定で表示（画面上下の中央のみ※） | 見落としても支障がない
-Snackbar | 3,4行まで | あり | 10秒 | フローティングで位置固定で表示（画面上下の左・右・中央）| 読んでは欲しい、訴求
-[InlineNotification](/docs/inlinenotification--information) | 制限なし | あり | 消えない | ページに埋め込む必要がありレイアウトに影響を与える | エラー通知など、ユーザーの追加のアクションが必要なもの
-
-※現在は、SPは中央下のみ実装されています。
+<UserNotificationTypes />
 
 <Source
   language="javascript"
@@ -473,11 +461,16 @@ Snackbar | 3,4行まで | あり | 10秒 | フローティングで位置固定�
 
 ## 利用時に注意してほしいこと
 
-- SnackBarは自動で消えてしまうため、見落とされても影響のない、「重要ではないお知らせ」に用います
-- アイコンの設定は利用者に委ねられていますが、基本的には設定します。**`information`のみアイコンを外すことができます。**
+- SnackBarは自動で消えてしまうため、ユーザーが見落としてしまっても同一の内容を確認できる代替手段がある場合に使います
+  - 例：メッセージ送信時、送信フォームが閉じられ、送信完了後に「メッセージを送信しました」のSnackBar通知が表示される。SnackBar上には「確認」ボタンも表示されている。確認ボタンを押すと送信したメッセージの詳細を確認できる
+    - ユーザーは確認ボタンを押さなくてもタスクは完了している
+    - 送信フォームが閉じられ、エラーが表示されないことで成功していることを認知できる（通知の代替手段になり得る）
+    - 送信履歴からユーザーはいつでもメッセージの送信が成功していること、メッセージの詳細内容を確認できる（SnackBar以外の代替手段がある）
+- アイコンの設定は利用者に委ねられていますが、基本的には設定します。**`information`のみアイコンを外せます。**
 - 任意のボタンを設定できます。システム上では制御しませんが、5文字以上を設定してはいけません。またボタンは1つ以上追加しないでください。
 - SnackBarでは最大3行まで表示されます。320px以下の画面では4行まで表示されます。超える部分は切られます。
 - モバイル表示ではbottom-center固定になるので注意してください。
+- 自動的に消えてしまうため、画面内で的確に認知できる必要があります。画面拡大時にもSnackBar内の情報が見切れることのないよう注意してください（参考：[1.4.10 リフローできる - Ameba Accessibility Guidelines](https://a11y-guidelines.ameba.design/1/4/10)）
 - このコンポーネントでは関与しませんが、ライブリージョンをアプリケーションで実装してください（参考：[実装方法 - 4.1.3 コンテンツの変更をユーザーに知らせる - Ameba Accessibility Guidelines](https://a11y-guidelines.ameba.design/4/1/3/#%E5%AE%9F%E8%A3%85%E6%96%B9%E6%B3%95)）
 - ライブリージョンは次のように実装します。 `html` 側に `aria-live="polite"` 及び `role="status"` を持つ要素を予め埋め込んでおき、この要素にコンテンツを動的に挿入することで、スクリーンリーダーが自動でコンテンツを読み上げてくれます。
 
