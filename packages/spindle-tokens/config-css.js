@@ -23,11 +23,32 @@ function makeAnimationTokens(dictionary) {
     .map((token) => `  --${token.name}: ${token.value};`);
 }
 
+function makeShadowTokens(dictionary) {
+  return dictionary.allTokens
+    .filter((token) => {
+      return [
+        'tokens/shadow/drop-shadow.json',
+        'tokens/shadow/shadow.css.json'
+      ].includes(token.filePath);
+    })
+    .map((token) => {
+      if (token.attributes.category === 'size' && token.value !== 0) {
+        token.value = `${token.value}px`;
+      }
+      return token;
+    })
+    .map((token) => `  --${token.name}: ${token.value};`);
+}
+
 module.exports = {
   source: ['tokens/**/*.json'],
   format: {
     cssAnimation: ({ dictionary }) => {
       const tokens = makeAnimationTokens(dictionary);
+      return [':root {', ...tokens, '}', ''].join('\n');
+    },
+    cssShadow: ({ dictionary }) => {
+      const tokens = makeShadowTokens(dictionary);
       return [':root {', ...tokens, '}', ''].join('\n');
     },
   },
@@ -38,6 +59,10 @@ module.exports = {
         {
           destination: 'dist/css/spindle-tokens-animation.css',
           format: 'cssAnimation',
+        },
+        {
+          destination: 'dist/css/spindle-tokens-shadow.css',
+          format: 'cssShadow',
         },
         {
           destination: 'dist/css/spindle-tokens.css',
