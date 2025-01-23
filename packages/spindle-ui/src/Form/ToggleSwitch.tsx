@@ -15,6 +15,9 @@ export const ToggleSwitch = forwardRef<HTMLInputElement, Props>(
           className={`${BLOCK_NAME}-input`}
           id={id}
           ref={ref}
+          // TODO: update this when the switch attribute is supported
+          // eslint-disable-next-line react/no-unknown-property
+          switch="switch"
           type="checkbox"
           {...rest}
         />
