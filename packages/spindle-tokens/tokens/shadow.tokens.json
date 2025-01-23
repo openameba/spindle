@@ -1,0 +1,101 @@
+{
+  "Drop Shadow": {
+    "Lv2": {
+      "Normal": {
+        "$type": "shadow",
+        "$value": {
+          "color": "#08121a1f",
+          "offsetX": "0",
+          "offsetY": "3.25px",
+          "blur": "3.875px",
+          "spread": "0"
+        },
+        "$description": "If you want to use this drop shadow as a box shadow, please double the value of the blur."
+      },
+      "Strong": {
+        "$type": "shadow",
+        "$value": {
+          "color": "#08121a3d",
+          "offsetX": "0",
+          "offsetY": "3.25px",
+          "blur": "3.875px",
+          "spread": "0"
+        }
+      },
+      "Weak": {
+        "$type": "shadow",
+        "$value": {
+          "color": "#08121a0f",
+          "offsetX": "0",
+          "offsetY": "3.25px",
+          "blur": "3.875px",
+          "spread": "0"
+        }
+      }
+    },
+    "Lv4": {
+      "Normal": {
+        "$type": "shadow",
+        "$value": {
+          "color": "#08121a1f",
+          "offsetX": "0",
+          "offsetY": "4.75px",
+          "blur": "7.125px",
+          "spread": "0"
+        }
+      },
+      "Strong": {
+        "$type": "shadow",
+        "$value": {
+          "color": "#08121a3d",
+          "offsetX": "0",
+          "offsetY": "4.75px",
+          "blur": "7.125px",
+          "spread": "0"
+        }
+      },
+      "Weak": {
+        "$type": "shadow",
+        "$value": {
+          "color": "#08121a0f",
+          "offsetX": "0",
+          "offsetY": "4.75px",
+          "blur": "7.125px",
+          "spread": "0"
+        }
+      }
+    },
+    "Lv6": {
+      "Normal": {
+        "$type": "shadow",
+        "$value": {
+          "color": "#08121a1f",
+          "offsetX": "0",
+          "offsetY": "11px",
+          "blur": "14px",
+          "spread": "0"
+        }
+      },
+      "Strong": {
+        "$type": "shadow",
+        "$value": {
+          "color": "#08121a3d",
+          "offsetX": "0",
+          "offsetY": "11px",
+          "blur": "14px",
+          "spread": "0"
+        }
+      },
+      "Weak": {
+        "$type": "shadow",
+        "$value": {
+          "color": "#08121a0f",
+          "offsetX": "0",
+          "offsetY": "11px",
+          "blur": "14px",
+          "spread": "0"
+        }
+      }
+    }
+  }
+}
