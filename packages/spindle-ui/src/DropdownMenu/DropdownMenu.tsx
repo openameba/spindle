@@ -1,4 +1,13 @@
-import React, { useEffect, useCallback, useRef, useState } from 'react';
+/// <reference types="react/canary" />
+
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+
+declare module 'react' {
+  interface CSSProperties {
+    anchorName?: string;
+    positionAnchor?: string;
+  }
+}
 
 type Variant =
   | 'text'
@@ -30,18 +39,16 @@ interface ListItemProps extends DefaultProps {
 }
 
 interface ListProps extends DefaultProps {
-  id?: string;
-  onClose: () => void;
-  open: boolean;
+  id: string;
+  onClose?: (state: 'open' | 'closed') => void;
+  open?: boolean;
+  popover?: 'auto' | 'manual';
   position?: Position;
   triggerRef: React.RefObject<HTMLButtonElement>;
   variant?: Variant;
 }
 
 export const BLOCK_NAME = 'spui-DropdownMenu';
-const FADE_IN_ANIMATION = 'spui-DropdownMenu-fade-in';
-const CLOSE_KEY_LIST = ['ESCAPE', 'ESC'];
-const MENU_WIDTH = 256;
 
 const Caption = ({ children }: DefaultProps) => {
   return <p className={`${BLOCK_NAME}-caption`}>{children}</p>;
@@ -56,131 +63,53 @@ const List = ({
   id,
   onClose,
   open,
+  popover = 'auto',
   position = 'leftTop',
-  triggerRef,
   variant = 'text',
+  triggerRef,
 }: ListProps) => {
-  const menuEl = useRef<HTMLUListElement>(null);
-  const [fadeOut, setFadeOut] = useState(false);
-  const [triggerHeight, setTriggerHeight] = useState(0);
-  const [triggerWidth, setTriggerWidth] = useState(0);
-  const [menuHeight, setMenuHeight] = useState(0);
+  const menuEl = useRef<HTMLUListElement & { showPopover: () => void }>(null);
+  const [anchorName, setAnchorName] = useState('');
 
-  const onClickBody = useCallback(
-    (e: MouseEvent) => {
-      if (!open) return;
-      if (triggerRef.current && e.composedPath().includes(triggerRef.current))
-        return;
-      const menuEl = document.querySelector(`.${BLOCK_NAME}-menu`);
-      if (menuEl && e.composedPath().includes(menuEl)) return;
-
-      setFadeOut(true);
+  // TODO: close with menu item click
+  // NOTE: esc, backdrop click do not fire close event
+  const handleClose = useCallback(
+    (event: React.ToggleEvent) => {
+      onClose?.(event.newState);
     },
-    [open, setFadeOut, triggerRef],
+    [onClose],
   );
 
-  const onClickCloser = useCallback(() => {
-    setFadeOut(true);
-    triggerRef.current?.focus();
-  }, [setFadeOut, triggerRef]);
-
-  const handleKeyDown = useCallback(
-    (e: KeyboardEvent) => {
-      if (CLOSE_KEY_LIST.includes(e.key.toUpperCase())) {
-        onClickCloser();
-      }
-    },
-    [onClickCloser],
-  );
-
-  const handleAnimationEnd = useCallback(
-    (event: AnimationEvent) => {
-      if (event.animationName === FADE_IN_ANIMATION) return;
-
-      onClose();
-      setFadeOut(false);
-    },
-    [onClose, setFadeOut],
-  );
-
-  // Triggerボタンの縦横幅を取得
   useEffect(() => {
-    if (!triggerRef.current) return;
-
-    const { height, width } = triggerRef.current.getBoundingClientRect();
-    setTriggerHeight(height);
-    setTriggerWidth(width);
+    // triggerRef is for backword compatibility, id string is more reliable
+    if (triggerRef.current) {
+      setAnchorName(triggerRef.current.id);
+    }
   }, [triggerRef]);
 
-  // Menuの縦幅を取得
   useEffect(() => {
-    if (!open) return;
-    if (!menuEl.current) return;
-
-    const { height } = menuEl.current.getBoundingClientRect();
-    setMenuHeight(height);
-  }, [open]);
-
-  useEffect(() => {
-    const menu = menuEl.current;
+    // initial state
     if (open) {
-      menu?.addEventListener('animationend', handleAnimationEnd, false);
+      menuEl.current?.showPopover();
     }
-
-    return () =>
-      menu?.removeEventListener('animationend', handleAnimationEnd, false);
-  }, [menuEl, handleAnimationEnd, open]);
-
-  useEffect(() => {
-    if (open) {
-      window.addEventListener('click', onClickBody, false);
-    }
-
-    return () => window.removeEventListener('click', onClickBody, false);
-  }, [onClickBody, open]);
-
-  useEffect(() => {
-    if (open) {
-      window.addEventListener('keydown', handleKeyDown);
-    }
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [handleKeyDown, open]);
-
-  if (!open) {
-    return <></>;
-  }
-
-  let top;
-  let bottom;
-  let left;
-  if (['topLeft', 'topCenter', 'topRight'].includes(position)) {
-    bottom = `${triggerHeight}px`;
-  }
-  if (['topCenter', 'bottomCenter'].includes(position)) {
-    left = `-${(MENU_WIDTH - triggerWidth) / 2}px`;
-  }
-  if (['rightCenter', 'leftCenter'].includes(position)) {
-    top = `-${(menuHeight - triggerHeight) / 2}px`;
-  }
-  if (['bottomLeft', 'bottomCenter', 'bottomRight'].includes(position)) {
-    top = `${triggerHeight}px`;
-  }
+  }, [menuEl, open]);
 
   return (
     <ul
       id={id}
-      onClick={onClickCloser}
       className={[
         `${BLOCK_NAME}-menu`,
         `${BLOCK_NAME}-menu--${variant}`,
         `${BLOCK_NAME}-menu--${position}`,
-        fadeOut && 'is-fade-out',
       ]
         .filter(Boolean)
         .join(' ')}
       ref={menuEl}
       role="menu"
-      style={{ bottom, left, top }}
+      // eslint-disable-next-line react/no-unknown-property
+      popover={popover}
+      style={{ positionAnchor: `--${anchorName}` }}
+      onToggle={handleClose}
     >
       {children}
     </ul>
@@ -198,68 +127,6 @@ const ListItem = ({ children, icon, onClick }: ListItemProps) => {
   );
 };
 
-// Storybookでのpositionプロパティのバリエーション確認用
-const Position = ({
-  children,
-  position = 'leftTop',
-  triggerRef,
-}: Omit<ListProps, 'onClose' | 'open'>) => {
-  const menuEl = useRef<HTMLUListElement>(null);
-  const [triggerHeight, setTriggerHeight] = useState(0);
-  const [triggerWidth, setTriggerWidth] = useState(0);
-  const [menuHeight, setMenuHeight] = useState(0);
-
-  // Triggerボタンの縦横幅を取得
-  useEffect(() => {
-    if (!triggerRef.current) return;
-
-    const { height, width } = triggerRef.current.getBoundingClientRect();
-    setTriggerHeight(height);
-    setTriggerWidth(width);
-  }, [triggerRef]);
-
-  // Menuの縦幅を取得
-  useEffect(() => {
-    if (!menuEl.current) return;
-
-    const { height } = menuEl.current.getBoundingClientRect();
-    setMenuHeight(height);
-  }, []);
-
-  let top;
-  let bottom;
-  let left;
-  if (['topLeft', 'topCenter', 'topRight'].includes(position)) {
-    bottom = `${triggerHeight}px`;
-  }
-  if (['topCenter', 'bottomCenter'].includes(position)) {
-    left = `-${(MENU_WIDTH - triggerWidth) / 2}px`;
-  }
-  if (['rightCenter', 'leftCenter'].includes(position)) {
-    top = `-${(menuHeight - triggerHeight) / 2}px`;
-  }
-  if (['bottomLeft', 'bottomCenter', 'bottomRight'].includes(position)) {
-    top = `${triggerHeight}px`;
-  }
-
-  return (
-    <ul
-      className={[
-        `${BLOCK_NAME}-menu`,
-        `${BLOCK_NAME}-menu--text`,
-        `${BLOCK_NAME}-menu--${position}`,
-      ]
-        .filter(Boolean)
-        .join(' ')}
-      ref={menuEl}
-      role="menu"
-      style={{ bottom, left, top }}
-    >
-      {children}
-    </ul>
-  );
-};
-
 const Title = ({ children }: DefaultProps) => {
   return <p className={`${BLOCK_NAME}-title`}>{children}</p>;
 };
@@ -269,6 +136,5 @@ export const DropdownMenu = {
   Frame,
   List,
   ListItem,
-  Position,
   Title,
 };
