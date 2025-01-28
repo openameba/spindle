@@ -6,6 +6,11 @@
     "declaration-property-value-allowed-list": {
       "/^--animation-easing-/": "/^cubic-bezier\\([\\d.]+, [\\d.]+, [\\d.]+, [\\d.]+\\)/"
     },
-    "color-hex-length": "long"
+    "color-hex-length": "long",
+    "value-keyword-case": ["lower", {
+      "ignoreProperties": [
+        "/^--font-/"
+      ]
+    }]
   }
 }
