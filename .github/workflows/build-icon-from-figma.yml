@@ -41,6 +41,7 @@ jobs:
       - name: Update Icons
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+          FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_TOKEN_CODE_CONNECT }} # This is for Figma Code Connect in spindle-ui
           FILE_KEY: ${{ secrets.FIGMA_ICON_FILE_KEY }}
           NODE_ID: ${{ secrets.FIGMA_ICON_NODE_ID }}
           ICONS: ${{ github.event.inputs.selection }}
