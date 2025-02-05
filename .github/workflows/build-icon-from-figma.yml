@@ -49,7 +49,7 @@ jobs:
           node -p "JSON.stringify({ fileKey: '$FILE_KEY', nodeId: '$NODE_ID', dest: 'dist', iconNames: $ICONS.map(({name}) => name) })" > packages/spindle-icons/figma.json
           yarn lerna run --scope @openameba/spindle-icons build
           yarn lerna run --scope @openameba/spindle-ui icon
-          yarn format
+          yarn fix
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
         with:
