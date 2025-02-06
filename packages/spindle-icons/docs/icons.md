@@ -127,6 +127,8 @@
 | embed | ![](../dist/svg/embed.svg) |
 | emotion_fill | ![](../dist/svg/emotion_fill.svg) |
 | entry_lost | ![](../dist/svg/entry_lost.svg) |
+| eraser | ![](../dist/svg/eraser.svg) |
+| eraser_fill | ![](../dist/svg/eraser_fill.svg) |
 | exclamationmark | ![](../dist/svg/exclamationmark.svg) |
 | exclamationmark_balloon | ![](../dist/svg/exclamationmark_balloon.svg) |
 | exclamationmark_balloon_fill | ![](../dist/svg/exclamationmark_balloon_fill.svg) |
@@ -172,6 +174,8 @@
 | graph_bar | ![](../dist/svg/graph_bar.svg) |
 | gruppo | ![](../dist/svg/gruppo.svg) |
 | hand_wave_fill | ![](../dist/svg/hand_wave_fill.svg) |
+| hashtag | ![](../dist/svg/hashtag.svg) |
+| hashtag_bold | ![](../dist/svg/hashtag_bold.svg) |
 | hatenabookmark | ![](../dist/svg/hatenabookmark.svg) |
 | heart | ![](../dist/svg/heart.svg) |
 | heart_fill | ![](../dist/svg/heart_fill.svg) |
@@ -240,6 +244,7 @@
 | openblank | ![](../dist/svg/openblank.svg) |
 | openblank_fill | ![](../dist/svg/openblank_fill.svg) |
 | ownd | ![](../dist/svg/ownd.svg) |
+| paidmember | ![](../dist/svg/paidmember.svg) |
 | paidplan | ![](../dist/svg/paidplan.svg) |
 | palette_fill | ![](../dist/svg/palette_fill.svg) |
 | paperplane | ![](../dist/svg/paperplane.svg) |
@@ -267,6 +272,7 @@
 | plus_bold | ![](../dist/svg/plus_bold.svg) |
 | plus_circle | ![](../dist/svg/plus_circle.svg) |
 | plus_circle_fill | ![](../dist/svg/plus_circle_fill.svg) |
+| plus_minus | ![](../dist/svg/plus_minus.svg) |
 | premium_fill | ![](../dist/svg/premium_fill.svg) |
 | present | ![](../dist/svg/present.svg) |
 | profilecard | ![](../dist/svg/profilecard.svg) |
@@ -310,6 +316,7 @@
 | star_circle_fill | ![](../dist/svg/star_circle_fill.svg) |
 | star_face_fill | ![](../dist/svg/star_face_fill.svg) |
 | star_fill | ![](../dist/svg/star_fill.svg) |
+| star_half | ![](../dist/svg/star_half.svg) |
 | stop_fill | ![](../dist/svg/stop_fill.svg) |
 | strikethrough | ![](../dist/svg/strikethrough.svg) |
 | sun | ![](../dist/svg/sun.svg) |
@@ -321,6 +328,7 @@
 | thumbsup | ![](../dist/svg/thumbsup.svg) |
 | thumbsup_fill | ![](../dist/svg/thumbsup_fill.svg) |
 | title | ![](../dist/svg/title.svg) |
+| topblogger_medal | ![](../dist/svg/topblogger_medal.svg) |
 | topblogger_ribbon | ![](../dist/svg/topblogger_ribbon.svg) |
 | transcript_off | ![](../dist/svg/transcript_off.svg) |
 | transcript_on | ![](../dist/svg/transcript_on.svg) |

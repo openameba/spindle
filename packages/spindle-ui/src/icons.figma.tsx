@@ -1,353 +1,371 @@
 import figma from '@figma/code-connect';
 
-import Youtube from './Icon/Youtube';
-import Twitter from './Icon/Twitter';
-import Requ from './Icon/Requ';
-import Pigg from './Icon/Pigg';
-import Ownd from './Icon/Ownd';
-import LineSquare from './Icon/LineSquare';
-import LineCircle from './Icon/LineCircle';
-import Koeblog from './Icon/Koeblog';
-import Instagram from './Icon/Instagram';
-import Hatenabookmark from './Icon/Hatenabookmark';
-import Facebook from './Icon/Facebook';
-import Dotmoney from './Icon/Dotmoney';
-import BottomnvavMypageInactive from './Icon/BottomnvavMypageInactive';
-import BottomnavSearchInactive from './Icon/BottomnavSearchInactive';
-import BottomnavSearchActive from './Icon/BottomnavSearchActive';
-import BottomnavMypageActive from './Icon/BottomnavMypageActive';
-import BottomnavHomeInactive from './Icon/BottomnavHomeInactive';
-import BottomnavHomeActive from './Icon/BottomnavHomeActive';
-import BottomnavFollowfeedInactive from './Icon/BottomnavFollowfeedInactive';
-import BottomnavFollowfeedActive from './Icon/BottomnavFollowfeedActive';
-import Abematv from './Icon/Abematv';
-import Abemakun from './Icon/Abemakun';
-import Amebapick from './Icon/Amebapick';
-import X from './Icon/X';
-import Accesslink from './Icon/Accesslink';
-import Accesspage from './Icon/Accesspage';
-import AccesspageFill from './Icon/AccesspageFill';
-import AddressbookFill from './Icon/AddressbookFill';
-import AlbumFill from './Icon/AlbumFill';
-import AlbumAddFill from './Icon/AlbumAddFill';
-import AlignLeft from './Icon/AlignLeft';
-import AllFill from './Icon/AllFill';
-import Amegold from './Icon/Amegold';
-import Amember from './Icon/Amember';
-import PersonTwoFill from './Icon/PersonTwoFill';
-import PersonTwoAddFill from './Icon/PersonTwoAddFill';
-import PersonTwoDeleteFill from './Icon/PersonTwoDeleteFill';
-import PersonTwoDoneFill from './Icon/PersonTwoDoneFill';
-import ArrowDown from './Icon/ArrowDown';
-import ArrowDownBold from './Icon/ArrowDownBold';
-import ArrowLeft from './Icon/ArrowLeft';
-import ArrowLeftBold from './Icon/ArrowLeftBold';
-import ArrowRight from './Icon/ArrowRight';
-import ArrowRightBold from './Icon/ArrowRightBold';
-import ArrowRightCircle from './Icon/ArrowRightCircle';
-import ArrowRightCircleFill from './Icon/ArrowRightCircleFill';
-import ArrowUp from './Icon/ArrowUp';
-import ArrowUpBold from './Icon/ArrowUpBold';
-import ArrowpagingDown from './Icon/ArrowpagingDown';
-import ArrowpagingDownCircle from './Icon/ArrowpagingDownCircle';
-import ArrowpagingLeft from './Icon/ArrowpagingLeft';
-import ArrowpagingLeftCircle from './Icon/ArrowpagingLeftCircle';
-import ArrowpagingRight from './Icon/ArrowpagingRight';
-import ArrowpagingRightCircle from './Icon/ArrowpagingRightCircle';
-import ArrowpagingUp from './Icon/ArrowpagingUp';
-import ArrowpagingUpCircle from './Icon/ArrowpagingUpCircle';
-import Article from './Icon/Article';
-import Astrogy from './Icon/Astrogy';
-import AstrogyFill from './Icon/AstrogyFill';
-import Bbs from './Icon/Bbs';
-import Beginner from './Icon/Beginner';
-import Bell from './Icon/Bell';
-import BellFill from './Icon/BellFill';
-import BellFillSlash from './Icon/BellFillSlash';
-import BellSlash from './Icon/BellSlash';
-import Blog from './Icon/Blog';
-import Sprout from './Icon/Sprout';
-import Book from './Icon/Book';
-import BookFill from './Icon/BookFill';
-import Bookmark from './Icon/Bookmark';
-import BookmarkFill from './Icon/BookmarkFill';
-import Bullets from './Icon/Bullets';
-import Calendar from './Icon/Calendar';
-import CameraFill from './Icon/CameraFill';
-import SwitchingCamera from './Icon/SwitchingCamera';
-import CautionFill from './Icon/CautionFill';
-import Check from './Icon/Check';
-import CheckBold from './Icon/CheckBold';
-import CheckCircle from './Icon/CheckCircle';
-import CheckCircleFill from './Icon/CheckCircleFill';
-import Checklist from './Icon/Checklist';
-import ChevronDown from './Icon/ChevronDown';
-import ChevronDownBold from './Icon/ChevronDownBold';
-import ChevronLeft from './Icon/ChevronLeft';
-import ChevronLeftBold from './Icon/ChevronLeftBold';
-import ChevronRight from './Icon/ChevronRight';
-import ChevronRightBold from './Icon/ChevronRightBold';
-import ChevronUp from './Icon/ChevronUp';
-import ChevronUpBold from './Icon/ChevronUpBold';
-import CircleFill from './Icon/CircleFill';
-import Clock from './Icon/Clock';
-import ClockFill from './Icon/ClockFill';
-import Coin from './Icon/Coin';
-import Comment from './Icon/Comment';
-import CommentFill from './Icon/CommentFill';
-import CommentPen from './Icon/CommentPen';
-import CommentTwoFill from './Icon/CommentTwoFill';
-import CommentTwoSlashFill from './Icon/CommentTwoSlashFill';
-import Community from './Icon/Community';
-import Coupon from './Icon/Coupon';
-import CropDin from './Icon/CropDin';
-import CropLandscape from './Icon/CropLandscape';
-import Cross from './Icon/Cross';
-import CrossBold from './Icon/CrossBold';
-import CrossCircle from './Icon/CrossCircle';
-import CrossCircleFill from './Icon/CrossCircleFill';
-import Dot from './Icon/Dot';
-import FolderTwo from './Icon/FolderTwo';
-import FolderTwoFill from './Icon/FolderTwoFill';
-import Embed from './Icon/Embed';
-import EmotionFill from './Icon/EmotionFill';
-import EntryLost from './Icon/EntryLost';
-import Exclamationmark from './Icon/Exclamationmark';
-import ExclamationmarkBold from './Icon/ExclamationmarkBold';
-import ExclamationmarkCircle from './Icon/ExclamationmarkCircle';
-import ExclamationmarkCircleFill from './Icon/ExclamationmarkCircleFill';
-import Expand from './Icon/Expand';
-import ExpandExit from './Icon/ExpandExit';
-import HandWaveFill from './Icon/HandWaveFill';
-import TagOfficialFill from './Icon/TagOfficialFill';
-import Heart from './Icon/Heart';
-import HeartFill from './Icon/HeartFill';
-import History from './Icon/History';
-import HomeFill from './Icon/HomeFill';
-import Hot from './Icon/Hot';
-import Htmltag from './Icon/Htmltag';
-import ImageFill from './Icon/ImageFill';
-import ImageBanFill from './Icon/ImageBanFill';
-import ImageQuestionFill from './Icon/ImageQuestionFill';
-import File from './Icon/File';
-import FileAdd from './Icon/FileAdd';
-import FileAddFill from './Icon/FileAddFill';
-import FileCircle from './Icon/FileCircle';
-import FileCircleFill from './Icon/FileCircleFill';
-import FileFill from './Icon/FileFill';
-import Filter from './Icon/Filter';
-import ArrowLeftright from './Icon/ArrowLeftright';
-import FlagFill from './Icon/FlagFill';
-import FlagRanking from './Icon/FlagRanking';
-import FlagRankingTrim from './Icon/FlagRankingTrim';
-import FlashAuto from './Icon/FlashAuto';
-import FlashOff from './Icon/FlashOff';
-import Flash from './Icon/Flash';
-import Folder from './Icon/Folder';
-import FolderFill from './Icon/FolderFill';
-import Font from './Icon/Font';
-import Fontstyle from './Icon/Fontstyle';
-import Game from './Icon/Game';
-import GameFill from './Icon/GameFill';
-import Genre from './Icon/Genre';
-import GenreAdd from './Icon/GenreAdd';
-import GenreDone from './Icon/GenreDone';
-import GraphBar from './Icon/GraphBar';
-import Gruppo from './Icon/Gruppo';
-import Information from './Icon/Information';
-import GameKantan from './Icon/GameKantan';
-import Kaomoji from './Icon/Kaomoji';
-import Keyboard from './Icon/Keyboard';
-import KeyboardFill from './Icon/KeyboardFill';
-import Link from './Icon/Link';
-import Loading from './Icon/Loading';
-import LockFill from './Icon/LockFill';
-import Magicwand from './Icon/Magicwand';
-import Mail from './Icon/Mail';
-import MailCheck from './Icon/MailCheck';
-import MailCircle from './Icon/MailCircle';
-import MailCircleFill from './Icon/MailCircleFill';
-import MailFill from './Icon/MailFill';
-import MenuHamburger from './Icon/MenuHamburger';
-import MenuHamburgerBold from './Icon/MenuHamburgerBold';
-import MenuHorizontal from './Icon/MenuHorizontal';
-import MenuVertical from './Icon/MenuVertical';
-import Messageboard from './Icon/Messageboard';
-import Microphone from './Icon/Microphone';
-import MicrophoneFill from './Icon/MicrophoneFill';
-import MovieCameraFill from './Icon/MovieCameraFill';
-import MoviePlay from './Icon/MoviePlay';
-import MoviePlayFill from './Icon/MoviePlayFill';
-import MovieStop from './Icon/MovieStop';
-import MusicFill from './Icon/MusicFill';
-import New from './Icon/New';
-import News from './Icon/News';
-import Nice from './Icon/Nice';
-import NiceDone from './Icon/NiceDone';
-import Nodate from './Icon/Nodate';
-import Now from './Icon/Now';
-import Officialstar from './Icon/Officialstar';
-import OfficialstarFill from './Icon/OfficialstarFill';
-import OnedariFill from './Icon/OnedariFill';
-import OpenCl from './Icon/OpenCl';
-import Openblank from './Icon/Openblank';
-import OpenblankFill from './Icon/OpenblankFill';
-import PaletteFill from './Icon/PaletteFill';
-import Pencil from './Icon/Pencil';
-import PencilAdd from './Icon/PencilAdd';
-import PencilBold from './Icon/PencilBold';
-import Person from './Icon/Person';
-import PersonFill from './Icon/PersonFill';
-import PersonThreeFill from './Icon/PersonThreeFill';
-import Peta from './Icon/Peta';
-import PlayCircle from './Icon/PlayCircle';
-import Plus from './Icon/Plus';
-import PlusBold from './Icon/PlusBold';
-import PlusCircle from './Icon/PlusCircle';
-import PlusCircleFill from './Icon/PlusCircleFill';
-import PremiumFill from './Icon/PremiumFill';
-import Present from './Icon/Present';
-import Profilecard from './Icon/Profilecard';
-import Qr from './Icon/Qr';
-import Question from './Icon/Question';
-import QuestionmarkCircle from './Icon/QuestionmarkCircle';
-import QuestionmarkCircleFill from './Icon/QuestionmarkCircleFill';
-import RankingCrown from './Icon/RankingCrown';
-import RankingCrownFill from './Icon/RankingCrownFill';
-import RankingPlatformFill from './Icon/RankingPlatformFill';
-import Reblog from './Icon/Reblog';
-import ReblogSlash from './Icon/ReblogSlash';
-import Refresh from './Icon/Refresh';
-import ReplyFill from './Icon/ReplyFill';
-import ReplyCircleFill from './Icon/ReplyCircleFill';
-import MenuHamburgerFourline from './Icon/MenuHamburgerFourline';
-import Sad from './Icon/Sad';
-import Saveblog from './Icon/Saveblog';
-import ScreenFull from './Icon/ScreenFull';
-import ScreenInline from './Icon/ScreenInline';
-import Search from './Icon/Search';
-import Service from './Icon/Service';
-import Share from './Icon/Share';
-import ShineFill from './Icon/ShineFill';
-import SidefaceClose from './Icon/SidefaceClose';
-import SidefaceOpen from './Icon/SidefaceOpen';
-import Smartphone from './Icon/Smartphone';
-import SmartphoneFill from './Icon/SmartphoneFill';
-import Sort from './Icon/Sort';
-import SortFeed from './Icon/SortFeed';
-import SortTile from './Icon/SortTile';
-import SpeakerOffFill from './Icon/SpeakerOffFill';
-import SpeakerOnFill from './Icon/SpeakerOnFill';
-import StarFaceFill from './Icon/StarFaceFill';
-import Stampside from './Icon/Stampside';
-import Star from './Icon/Star';
-import StarFill from './Icon/StarFill';
-import StopFill from './Icon/StopFill';
-import Switching from './Icon/Switching';
-import StarCircleFill from './Icon/StarCircleFill';
-import TagFill from './Icon/TagFill';
-import TranscriptOff from './Icon/TranscriptOff';
-import TranscriptOn from './Icon/TranscriptOn';
-import Transmission from './Icon/Transmission';
-import Trashcan from './Icon/Trashcan';
-import Trend from './Icon/Trend';
-import TrendFill from './Icon/TrendFill';
-import TriangleDown from './Icon/TriangleDown';
-import TriangleLeft from './Icon/TriangleLeft';
-import TriangleRight from './Icon/TriangleRight';
-import TriangleUp from './Icon/TriangleUp';
-import TrianglearrowDown from './Icon/TrianglearrowDown';
-import TrianglearrowDownright from './Icon/TrianglearrowDownright';
-import TrianglearrowRight from './Icon/TrianglearrowRight';
-import TrianglearrowUp from './Icon/TrianglearrowUp';
-import TrianglearrowUpright from './Icon/TrianglearrowUpright';
-import TriangleendLeft from './Icon/TriangleendLeft';
-import TriangleendRight from './Icon/TriangleendRight';
-import TrophyFill from './Icon/TrophyFill';
-import TvFill from './Icon/TvFill';
-import Webview from './Icon/Webview';
-import TopbloggerRibbon from './Icon/TopbloggerRibbon';
-import ImageAddFill from './Icon/ImageAddFill';
-import Undo from './Icon/Undo';
-import Redo from './Icon/Redo';
-import UndoBold from './Icon/UndoBold';
-import RedoBold from './Icon/RedoBold';
-import Title from './Icon/Title';
-import Bold from './Icon/Bold';
-import Italic from './Icon/Italic';
-import Strikethrough from './Icon/Strikethrough';
-import Underline from './Icon/Underline';
-import ListNumbered from './Icon/ListNumbered';
-import ListBulleted from './Icon/ListBulleted';
-import AlignCenter from './Icon/AlignCenter';
-import AlignRight from './Icon/AlignRight';
-import Border from './Icon/Border';
-import Thumbsup from './Icon/Thumbsup';
-import ThumbsupFill from './Icon/ThumbsupFill';
-import Amebacoin from './Icon/Amebacoin';
-import Baby from './Icon/Baby';
-import Compass from './Icon/Compass';
-import Dice from './Icon/Dice';
-import Shirt from './Icon/Shirt';
-import Flowervase from './Icon/Flowervase';
-import Cutlery from './Icon/Cutlery';
-import Pawprint from './Icon/Pawprint';
-import Wallet from './Icon/Wallet';
-import ImageFillSlash from './Icon/ImageFillSlash';
-import Beginnermark from './Icon/Beginnermark';
-import Circle from './Icon/Circle';
-import CircleBold from './Icon/CircleBold';
-import Minus from './Icon/Minus';
-import MinusBold from './Icon/MinusBold';
-import Sun from './Icon/Sun';
-import SunFill from './Icon/SunFill';
-import Moon from './Icon/Moon';
-import MoonFill from './Icon/MoonFill';
-import LockOpenFill from './Icon/LockOpenFill';
-import Crop from './Icon/Crop';
-import ArticleSlash from './Icon/ArticleSlash';
-import Gear from './Icon/Gear';
-import GearFill from './Icon/GearFill';
-import Download from './Icon/Download';
-import FilterCheck from './Icon/FilterCheck';
-import PlayFill from './Icon/PlayFill';
-import Bookshelf from './Icon/Bookshelf';
-import BookshelfFill from './Icon/BookshelfFill';
-import Newbook from './Icon/Newbook';
-import NewbookFill from './Icon/NewbookFill';
-import ExclamationmarkBalloon from './Icon/ExclamationmarkBalloon';
-import ExclamationmarkBalloonFill from './Icon/ExclamationmarkBalloonFill';
-import CrossRectangle from './Icon/CrossRectangle';
-import CheckRectangle from './Icon/CheckRectangle';
-import PinFill from './Icon/PinFill';
-import FaceUnhappy from './Icon/FaceUnhappy';
-import DiamondTwo from './Icon/DiamondTwo';
-import Megaphone from './Icon/Megaphone';
-import KeyboardDownFill from './Icon/KeyboardDownFill';
-import Articledesign from './Icon/Articledesign';
-import CircleSlash from './Icon/CircleSlash';
-import Pause from './Icon/Pause';
-import PauseBold from './Icon/PauseBold';
-import Cards from './Icon/Cards';
-import Cart from './Icon/Cart';
-import CartFill from './Icon/CartFill';
-import FreeCircle from './Icon/FreeCircle';
-import FreeCircleFill from './Icon/FreeCircleFill';
-import ChevronUpTwoBold from './Icon/ChevronUpTwoBold';
-import ListBookmarkFill from './Icon/ListBookmarkFill';
-import ArrowUpdown from './Icon/ArrowUpdown';
-import TriangleendLeftBold from './Icon/TriangleendLeftBold';
-import TriangleendRightBold from './Icon/TriangleendRightBold';
-import PersonBan from './Icon/PersonBan';
-import ArrowSubdirectory from './Icon/ArrowSubdirectory';
-import ArrowSubdirectoryBold from './Icon/ArrowSubdirectoryBold';
-import Ad from './Icon/Ad';
-import Bloggersshop from './Icon/Bloggersshop';
-import Paperplane from './Icon/Paperplane';
-import PaperplaneFill from './Icon/PaperplaneFill';
-import ShineTwo from './Icon/ShineTwo';
-import Paidplan from './Icon/Paidplan';
-import DragIndicator from './Icon/DragIndicator';
+import {
+  Youtube,
+  Twitter,
+  Requ,
+  Pigg,
+  Ownd,
+  LineSquare,
+  LineCircle,
+  Koeblog,
+  Instagram,
+  Hatenabookmark,
+  Facebook,
+  Dotmoney,
+  BottomnvavMypageInactive,
+  BottomnavSearchInactive,
+  BottomnavSearchActive,
+  BottomnavMypageActive,
+  BottomnavHomeInactive,
+  BottomnavHomeActive,
+  BottomnavFollowfeedInactive,
+  BottomnavFollowfeedActive,
+  Abematv,
+  Abemakun,
+  Amebapick,
+  X,
+  FabPencilAdd,
+  Accesslink,
+  Accesspage,
+  AccesspageFill,
+  AddressbookFill,
+  AlbumFill,
+  AlbumAddFill,
+  AlignLeft,
+  AllFill,
+  Amegold,
+  Amember,
+  PersonTwoFill,
+  PersonTwoAddFill,
+  PersonTwoDeleteFill,
+  PersonTwoDoneFill,
+  ArrowDown,
+  ArrowDownBold,
+  ArrowLeft,
+  ArrowLeftBold,
+  ArrowRight,
+  ArrowRightBold,
+  ArrowRightCircle,
+  ArrowRightCircleFill,
+  ArrowUp,
+  ArrowUpBold,
+  ArrowpagingDown,
+  ArrowpagingDownCircle,
+  ArrowpagingLeft,
+  ArrowpagingLeftCircle,
+  ArrowpagingRight,
+  ArrowpagingRightCircle,
+  ArrowpagingUp,
+  ArrowpagingUpCircle,
+  Article,
+  Astrogy,
+  AstrogyFill,
+  Bbs,
+  Beginner,
+  Bell,
+  BellFill,
+  BellFillSlash,
+  BellSlash,
+  Blog,
+  Sprout,
+  Book,
+  BookFill,
+  Bookmark,
+  BookmarkFill,
+  Bullets,
+  Calendar,
+  CameraFill,
+  SwitchingCamera,
+  CautionFill,
+  Check,
+  CheckBold,
+  CheckCircle,
+  CheckCircleFill,
+  Checklist,
+  ChevronDown,
+  ChevronDownBold,
+  ChevronLeft,
+  ChevronLeftBold,
+  ChevronRight,
+  ChevronRightBold,
+  ChevronUp,
+  ChevronUpBold,
+  CircleFill,
+  Clock,
+  ClockFill,
+  Coin,
+  Comment,
+  CommentFill,
+  CommentPen,
+  CommentTwoFill,
+  CommentTwoSlashFill,
+  Community,
+  Coupon,
+  CropDin,
+  CropLandscape,
+  Cross,
+  CrossBold,
+  CrossCircle,
+  CrossCircleFill,
+  Dot,
+  FolderTwo,
+  FolderTwoFill,
+  Embed,
+  EmotionFill,
+  EntryLost,
+  Exclamationmark,
+  ExclamationmarkBold,
+  ExclamationmarkCircle,
+  ExclamationmarkCircleFill,
+  Expand,
+  ExpandExit,
+  HandWaveFill,
+  TagOfficialFill,
+  Heart,
+  HeartFill,
+  History,
+  HomeFill,
+  Hot,
+  Htmltag,
+  ImageFill,
+  ImageBanFill,
+  ImageQuestionFill,
+  File,
+  FileAdd,
+  FileAddFill,
+  FileCircle,
+  FileCircleFill,
+  FileFill,
+  Filter,
+  ArrowLeftright,
+  FlagFill,
+  FlagRanking,
+  FlagRankingTrim,
+  FlashAuto,
+  FlashOff,
+  Flash,
+  Folder,
+  FolderFill,
+  Font,
+  Fontstyle,
+  Game,
+  GameFill,
+  Genre,
+  GenreAdd,
+  GenreDone,
+  GraphBar,
+  Gruppo,
+  Information,
+  GameKantan,
+  Kaomoji,
+  Keyboard,
+  KeyboardFill,
+  Link,
+  Loading,
+  LockFill,
+  Magicwand,
+  Mail,
+  MailCheck,
+  MailCircle,
+  MailCircleFill,
+  MailFill,
+  MenuHamburger,
+  MenuHamburgerBold,
+  MenuHorizontal,
+  MenuVertical,
+  Messageboard,
+  Microphone,
+  MicrophoneFill,
+  MovieCameraFill,
+  MoviePlay,
+  MoviePlayFill,
+  MovieStop,
+  MusicFill,
+  New,
+  News,
+  Nice,
+  NiceDone,
+  Nodate,
+  Now,
+  Officialstar,
+  OfficialstarFill,
+  OnedariFill,
+  OpenCl,
+  Openblank,
+  OpenblankFill,
+  PaletteFill,
+  Pencil,
+  PencilAdd,
+  PencilBold,
+  Person,
+  PersonFill,
+  PersonThreeFill,
+  Peta,
+  PlayCircle,
+  Plus,
+  PlusBold,
+  PlusCircle,
+  PlusCircleFill,
+  PremiumFill,
+  Present,
+  Profilecard,
+  Qr,
+  Question,
+  QuestionmarkCircle,
+  QuestionmarkCircleFill,
+  RankingCrown,
+  RankingCrownFill,
+  RankingPlatformFill,
+  Reblog,
+  ReblogSlash,
+  Refresh,
+  ReplyFill,
+  ReplyCircleFill,
+  MenuHamburgerFourline,
+  Sad,
+  Saveblog,
+  ScreenFull,
+  ScreenInline,
+  Search,
+  Service,
+  Share,
+  ShineFill,
+  SidefaceClose,
+  SidefaceOpen,
+  Smartphone,
+  SmartphoneFill,
+  Sort,
+  SortFeed,
+  SortTile,
+  SpeakerOffFill,
+  SpeakerOnFill,
+  StarFaceFill,
+  Stampside,
+  Star,
+  StarFill,
+  StopFill,
+  Switching,
+  StarCircleFill,
+  TagFill,
+  TranscriptOff,
+  TranscriptOn,
+  Transmission,
+  Trashcan,
+  Trend,
+  TrendFill,
+  TriangleDown,
+  TriangleLeft,
+  TriangleRight,
+  TriangleUp,
+  TrianglearrowDown,
+  TrianglearrowDownright,
+  TrianglearrowRight,
+  TrianglearrowUp,
+  TrianglearrowUpright,
+  TriangleendLeft,
+  TriangleendRight,
+  TrophyFill,
+  TvFill,
+  Webview,
+  TopbloggerRibbon,
+  ImageAddFill,
+  RedoDeprecated,
+  Undo,
+  UndoDeprecated,
+  Redo,
+  RedoBoldDeprecated,
+  UndoBold,
+  UndoBoldDeprecated,
+  RedoBold,
+  Title,
+  Bold,
+  Italic,
+  Strikethrough,
+  Underline,
+  ListNumbered,
+  ListBulleted,
+  AlignCenter,
+  AlignRight,
+  Border,
+  Thumbsup,
+  ThumbsupFill,
+  Amebacoin,
+  Baby,
+  Compass,
+  Dice,
+  Shirt,
+  Flowervase,
+  Cutlery,
+  Pawprint,
+  Wallet,
+  ImageFillSlash,
+  Calendardaily,
+  Beginnermark,
+  Circle,
+  CircleBold,
+  Minus,
+  MinusBold,
+  Sun,
+  SunFill,
+  Moon,
+  MoonFill,
+  LockOpenFill,
+  Crop,
+  ArticleSlash,
+  Gear,
+  GearFill,
+  Download,
+  FilterCheck,
+  PlayFill,
+  Bookshelf,
+  BookshelfFill,
+  Newbook,
+  NewbookFill,
+  ExclamationmarkBalloon,
+  ExclamationmarkBalloonFill,
+  CrossRectangle,
+  CheckRectangle,
+  PinFill,
+  CommentBan,
+  FaceUnhappy,
+  DiamondTwo,
+  Megaphone,
+  KeyboardDownFill,
+  Articledesign,
+  CircleSlash,
+  Pause,
+  PauseBold,
+  Cards,
+  Cart,
+  CartFill,
+  FreeCircle,
+  FreeCircleFill,
+  ChevronUpTwoBold,
+  ListBookmarkFill,
+  ArrowUpdown,
+  TriangleendLeftBold,
+  TriangleendRightBold,
+  PersonBan,
+  ArrowSubdirectory,
+  ArrowSubdirectoryBold,
+  Ad,
+  Bloggersshop,
+  Creditcard,
+  Paperplane,
+  PaperplaneFill,
+  ShineTwo,
+  Paidplan,
+  DragIndicator,
+  Eraser,
+  EraserFill,
+  HashtagBold,
+  Hashtag,
+  PlusMinus,
+  StarHalf,
+  TopbloggerMedal,
+  Paidmember,
+} from './Icon';
 
 figma.connect(
   Youtube,
@@ -500,6 +518,11 @@ figma.connect(
   X,
   'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=11174-461',
   { imports: ["import { X } from '@openameba/spindle-ui/Icon';"] },
+);
+figma.connect(
+  FabPencilAdd,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=10060-4286',
+  { imports: ["import { FabPencilAdd } from '@openameba/spindle-ui/Icon';"] },
 );
 figma.connect(
   Accesslink,
@@ -1854,9 +1877,19 @@ figma.connect(
   { imports: ["import { ImageAddFill } from '@openameba/spindle-ui/Icon';"] },
 );
 figma.connect(
+  RedoDeprecated,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=5187-3670',
+  { imports: ["import { RedoDeprecated } from '@openameba/spindle-ui/Icon';"] },
+);
+figma.connect(
   Undo,
   'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=11762-471',
   { imports: ["import { Undo } from '@openameba/spindle-ui/Icon';"] },
+);
+figma.connect(
+  UndoDeprecated,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=5187-3671',
+  { imports: ["import { UndoDeprecated } from '@openameba/spindle-ui/Icon';"] },
 );
 figma.connect(
   Redo,
@@ -1864,9 +1897,27 @@ figma.connect(
   { imports: ["import { Redo } from '@openameba/spindle-ui/Icon';"] },
 );
 figma.connect(
+  RedoBoldDeprecated,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=5187-3672',
+  {
+    imports: [
+      "import { RedoBoldDeprecated } from '@openameba/spindle-ui/Icon';",
+    ],
+  },
+);
+figma.connect(
   UndoBold,
   'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=11762-470',
   { imports: ["import { UndoBold } from '@openameba/spindle-ui/Icon';"] },
+);
+figma.connect(
+  UndoBoldDeprecated,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=5187-3673',
+  {
+    imports: [
+      "import { UndoBoldDeprecated } from '@openameba/spindle-ui/Icon';",
+    ],
+  },
 );
 figma.connect(
   RedoBold,
@@ -1982,6 +2033,11 @@ figma.connect(
   ImageFillSlash,
   'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=5961-0',
   { imports: ["import { ImageFillSlash } from '@openameba/spindle-ui/Icon';"] },
+);
+figma.connect(
+  Calendardaily,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=6178-4019',
+  { imports: ["import { Calendardaily } from '@openameba/spindle-ui/Icon';"] },
 );
 figma.connect(
   Beginnermark,
@@ -2122,6 +2178,11 @@ figma.connect(
   { imports: ["import { PinFill } from '@openameba/spindle-ui/Icon';"] },
 );
 figma.connect(
+  CommentBan,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=7215-4140',
+  { imports: ["import { CommentBan } from '@openameba/spindle-ui/Icon';"] },
+);
+figma.connect(
   FaceUnhappy,
   'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=7420-4144',
   { imports: ["import { FaceUnhappy } from '@openameba/spindle-ui/Icon';"] },
@@ -2259,6 +2320,11 @@ figma.connect(
   { imports: ["import { Bloggersshop } from '@openameba/spindle-ui/Icon';"] },
 );
 figma.connect(
+  Creditcard,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=10172-4303',
+  { imports: ["import { Creditcard } from '@openameba/spindle-ui/Icon';"] },
+);
+figma.connect(
   Paperplane,
   'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=10728-5590',
   { imports: ["import { Paperplane } from '@openameba/spindle-ui/Icon';"] },
@@ -2282,4 +2348,46 @@ figma.connect(
   DragIndicator,
   'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=11333-478',
   { imports: ["import { DragIndicator } from '@openameba/spindle-ui/Icon';"] },
+);
+figma.connect(
+  Eraser,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=12122-483',
+  { imports: ["import { Eraser } from '@openameba/spindle-ui/Icon';"] },
+);
+figma.connect(
+  EraserFill,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=12122-484',
+  { imports: ["import { EraserFill } from '@openameba/spindle-ui/Icon';"] },
+);
+figma.connect(
+  HashtagBold,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=12122-490',
+  { imports: ["import { HashtagBold } from '@openameba/spindle-ui/Icon';"] },
+);
+figma.connect(
+  Hashtag,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=12122-489',
+  { imports: ["import { Hashtag } from '@openameba/spindle-ui/Icon';"] },
+);
+figma.connect(
+  PlusMinus,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=12190-478',
+  { imports: ["import { PlusMinus } from '@openameba/spindle-ui/Icon';"] },
+);
+figma.connect(
+  StarHalf,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=12354-486',
+  { imports: ["import { StarHalf } from '@openameba/spindle-ui/Icon';"] },
+);
+figma.connect(
+  TopbloggerMedal,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=12877-469',
+  {
+    imports: ["import { TopbloggerMedal } from '@openameba/spindle-ui/Icon';"],
+  },
+);
+figma.connect(
+  Paidmember,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=12877-470',
+  { imports: ["import { Paidmember } from '@openameba/spindle-ui/Icon';"] },
 );
