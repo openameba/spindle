@@ -74,6 +74,7 @@
 | bottomnvav_mypage_inactive | ![](../dist/svg/bottomnvav_mypage_inactive.svg) |
 | bullets | ![](../dist/svg/bullets.svg) |
 | calendar | ![](../dist/svg/calendar.svg) |
+| calendardaily | ![](../dist/svg/calendardaily.svg) |
 | camera_fill | ![](../dist/svg/camera_fill.svg) |
 | cards | ![](../dist/svg/cards.svg) |
 | cart | ![](../dist/svg/cart.svg) |
@@ -102,6 +103,7 @@
 | clock_fill | ![](../dist/svg/clock_fill.svg) |
 | coin | ![](../dist/svg/coin.svg) |
 | comment | ![](../dist/svg/comment.svg) |
+| comment_ban | ![](../dist/svg/comment_ban.svg) |
 | comment_fill | ![](../dist/svg/comment_fill.svg) |
 | comment_pen | ![](../dist/svg/comment_pen.svg) |
 | comment_two_fill | ![](../dist/svg/comment_two_fill.svg) |
@@ -109,6 +111,7 @@
 | community | ![](../dist/svg/community.svg) |
 | compass | ![](../dist/svg/compass.svg) |
 | coupon | ![](../dist/svg/coupon.svg) |
+| creditcard | ![](../dist/svg/creditcard.svg) |
 | crop | ![](../dist/svg/crop.svg) |
 | crop_din | ![](../dist/svg/crop_din.svg) |
 | crop_landscape | ![](../dist/svg/crop_landscape.svg) |
@@ -137,6 +140,7 @@
 | exclamationmark_circle_fill | ![](../dist/svg/exclamationmark_circle_fill.svg) |
 | expand | ![](../dist/svg/expand.svg) |
 | expand_exit | ![](../dist/svg/expand_exit.svg) |
+| fab_pencil_add | ![](../dist/svg/fab_pencil_add.svg) |
 | face_unhappy | ![](../dist/svg/face_unhappy.svg) |
 | facebook | ![](../dist/svg/facebook.svg) |
 | file | ![](../dist/svg/file.svg) |
@@ -287,6 +291,8 @@
 | reblog_slash | ![](../dist/svg/reblog_slash.svg) |
 | redo | ![](../dist/svg/redo.svg) |
 | redo_bold | ![](../dist/svg/redo_bold.svg) |
+| redo_bold_deprecated | ![](../dist/svg/redo_bold_deprecated.svg) |
+| redo_deprecated | ![](../dist/svg/redo_deprecated.svg) |
 | refresh | ![](../dist/svg/refresh.svg) |
 | reply_circle_fill | ![](../dist/svg/reply_circle_fill.svg) |
 | reply_fill | ![](../dist/svg/reply_fill.svg) |
@@ -355,6 +361,8 @@
 | underline | ![](../dist/svg/underline.svg) |
 | undo | ![](../dist/svg/undo.svg) |
 | undo_bold | ![](../dist/svg/undo_bold.svg) |
+| undo_bold_deprecated | ![](../dist/svg/undo_bold_deprecated.svg) |
+| undo_deprecated | ![](../dist/svg/undo_deprecated.svg) |
 | wallet | ![](../dist/svg/wallet.svg) |
 | webview | ![](../dist/svg/webview.svg) |
 | x | ![](../dist/svg/x.svg) |
