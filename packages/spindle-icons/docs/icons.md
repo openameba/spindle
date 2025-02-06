@@ -240,6 +240,7 @@
 | openblank | ![](../dist/svg/openblank.svg) |
 | openblank_fill | ![](../dist/svg/openblank_fill.svg) |
 | ownd | ![](../dist/svg/ownd.svg) |
+| paidmember | ![](../dist/svg/paidmember.svg) |
 | paidplan | ![](../dist/svg/paidplan.svg) |
 | palette_fill | ![](../dist/svg/palette_fill.svg) |
 | paperplane | ![](../dist/svg/paperplane.svg) |
@@ -321,6 +322,7 @@
 | thumbsup | ![](../dist/svg/thumbsup.svg) |
 | thumbsup_fill | ![](../dist/svg/thumbsup_fill.svg) |
 | title | ![](../dist/svg/title.svg) |
+| topblogger_medal | ![](../dist/svg/topblogger_medal.svg) |
 | topblogger_ribbon | ![](../dist/svg/topblogger_ribbon.svg) |
 | transcript_off | ![](../dist/svg/transcript_off.svg) |
 | transcript_on | ![](../dist/svg/transcript_on.svg) |

@@ -10,7 +10,7 @@ const SvgMinusBold = (props: SVGProps<SVGSVGElement>) => (
     role="img"
     {...props}
   >
-    <path d="M19.5 13.5h-15c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5h15c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5Z" />
+    <path d="M19.5 13.5h-15c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5h15c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5" />
   </svg>
 );
 export default SvgMinusBold;

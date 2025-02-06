@@ -10,7 +10,7 @@ const SvgPlus = (props: SVGProps<SVGSVGElement>) => (
     role="img"
     {...props}
   >
-    <path d="M20.5 12c0 .6-.4 1-1 1H13v6.5c0 .6-.4 1-1 1s-1-.4-1-1V13H4.5c-.6 0-1-.4-1-1s.4-1 1-1H11V4.5c0-.6.4-1 1-1s1 .4 1 1V11h6.5c.6 0 1 .4 1 1Z" />
+    <path d="M20.5 12c0 .6-.4 1-1 1H13v6.5c0 .6-.4 1-1 1s-1-.4-1-1V13H4.5c-.6 0-1-.4-1-1s.4-1 1-1H11V4.5c0-.6.4-1 1-1s1 .4 1 1V11h6.5c.6 0 1 .4 1 1" />
   </svg>
 );
 export default SvgPlus;

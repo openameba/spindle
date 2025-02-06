@@ -10,7 +10,7 @@ const SvgDot = (props: SVGProps<SVGSVGElement>) => (
     role="img"
     {...props}
   >
-    <path d="M21.15 12a9 9 0 1 1-18.002-.001A9 9 0 0 1 21.15 12Z" />
+    <path d="M21.15 12a9 9 0 1 1-18.002-.001A9 9 0 0 1 21.15 12" />
   </svg>
 );
 export default SvgDot;
