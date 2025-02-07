@@ -24,6 +24,9 @@
     "prepublishOnly": "yarn build"
   },
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/openameba/spindle.git"
