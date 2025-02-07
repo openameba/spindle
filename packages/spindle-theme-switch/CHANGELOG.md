@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/openameba/spindle/compare/@openameba/spindle-theme-switch@1.2.0...@openameba/spindle-theme-switch@2.0.0) (2025-02-07)
+
+**Note:** Version bump only for package @openameba/spindle-theme-switch
+
 # [1.2.0](https://github.com/openameba/spindle/compare/@openameba/spindle-theme-switch@1.1.0...@openameba/spindle-theme-switch@1.2.0) (2025-01-15)
 
 **Note:** Version bump only for package @openameba/spindle-theme-switch

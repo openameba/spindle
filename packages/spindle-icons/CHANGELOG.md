@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/openameba/spindle/compare/@openameba/spindle-icons@1.5.0...@openameba/spindle-icons@2.0.0) (2025-02-07)
+
+- feat(spindle-icons, spindle-ui)!: update icons ([aac6b58](https://github.com/openameba/spindle/commit/aac6b589af567673fd7086c4c85326cab9fc168c))
+
+### Features
+
+- **spindle-icons:** update icons ([0ef2987](https://github.com/openameba/spindle/commit/0ef29871e67f02789c046caa961b7c03af9f0f77))
+
+### BREAKING CHANGES
+
+- The direction of the undo and redo icons has been reversed.
+
 # [1.5.0](https://github.com/openameba/spindle/compare/@openameba/spindle-icons@1.4.0...@openameba/spindle-icons@1.5.0) (2025-01-15)
 
 **Note:** Version bump only for package @openameba/spindle-icons
