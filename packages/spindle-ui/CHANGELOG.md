@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@1.6.0...@openameba/spindle-ui@2.0.0) (2025-02-07)
+
+### Bug Fixes
+
+- small fix ([80b16b8](https://github.com/openameba/spindle/commit/80b16b8962e7b6a17a43fca27693ab06c70bf46f))
+
+- feat(spindle-icons, spindle-ui)!: update icons ([aac6b58](https://github.com/openameba/spindle/commit/aac6b589af567673fd7086c4c85326cab9fc168c))
+
+### Features
+
+- **spindle-icons:** update icons ([0ef2987](https://github.com/openameba/spindle/commit/0ef29871e67f02789c046caa961b7c03af9f0f77))
+- **spindle-ui:** add switch attribute to ToggleSwitch ([489304a](https://github.com/openameba/spindle/commit/489304aec04bc7e2ba09b00e37e8ea556897c05f))
+
+### BREAKING CHANGES
+
+- The direction of the undo and redo icons has been reversed.
+
 # [1.6.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@1.5.1...@openameba/spindle-ui@1.6.0) (2025-01-15)
 
 ### Bug Fixes
