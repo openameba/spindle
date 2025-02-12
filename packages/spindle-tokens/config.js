@@ -33,6 +33,13 @@ const fontFilter = {
   },
 };
 
+const shadowFilter = {
+  name: 'shadow',
+  filter: async (token) => {
+    return token.$type === 'shadow';
+  },
+};
+
 // Using dynamic import until ESM is supported in this repogitory
 import('style-dictionary').then((module) => {
   const StyleDictionary = module.default;
@@ -41,6 +48,7 @@ import('style-dictionary').then((module) => {
   StyleDictionary.registerFilter(themeLightFilter);
   StyleDictionary.registerFilter(themeDarkFilter);
   StyleDictionary.registerFilter(fontFilter);
+  StyleDictionary.registerFilter(shadowFilter);
 });
 
 module.exports = {
@@ -64,6 +72,15 @@ module.exports = {
             outputReferences: true,
           },
           filter: 'font',
+        },
+        {
+          destination: 'dist/css/spindle-tokens-shadow.css',
+          format: 'css/variables',
+          trasform: 'shadow/css/shorthand',
+          options: {
+            outputReferences: true,
+          },
+          filter: 'shadow',
         },
         {
           destination: 'dist/css/spindle-tokens.css',
