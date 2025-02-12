@@ -1,0 +1,18 @@
+{
+  "Font": {
+    "Font Family": {
+      "Basic Version 1": {
+        "$value": "Meiryo, Yu Gothic Medium, system-ui, -apple-system, BlinkMacSystemFont, sans-serif",
+        "$type": "fontFamily"
+      },
+      "Basic Version 2": {
+        "$value": "Helvetica Neue, Helvetica, Arial, Segoe UI, Hiragino Sans, ヒラギノ角ゴ ProN, Hiragino Kaku Gothic ProN, Hiragino Kaku Gothic Pro, メイリオ, Meiryo, Yu Gothic Medium, sans-seri",
+        "$type": "fontFamily"
+      },
+      "Blog Body": {
+        "$value": "-apple-system, BlinkMacSystemFont, sans-serif",
+        "$type": "fontFamily"
+      }
+    }
+  }
+}
