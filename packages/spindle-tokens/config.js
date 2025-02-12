@@ -26,6 +26,13 @@ const themeDarkFilter = {
   },
 };
 
+const fontFilter = {
+  name: 'font',
+  filter: async (token) => {
+    return token.$type === 'fontFamily';
+  },
+};
+
 // Using dynamic import until ESM is supported in this repogitory
 import('style-dictionary').then((module) => {
   const StyleDictionary = module.default;
@@ -33,6 +40,7 @@ import('style-dictionary').then((module) => {
   StyleDictionary.registerFilter(primitiveColorFilter);
   StyleDictionary.registerFilter(themeLightFilter);
   StyleDictionary.registerFilter(themeDarkFilter);
+  StyleDictionary.registerFilter(fontFilter);
 });
 
 module.exports = {
@@ -48,6 +56,14 @@ module.exports = {
             outputReferences: true,
           },
           filter: 'transition',
+        },
+        {
+          destination: 'dist/css/spindle-tokens-font.css',
+          format: 'css/variables',
+          options: {
+            outputReferences: true,
+          },
+          filter: 'font',
         },
         {
           destination: 'dist/css/spindle-tokens.css',
