@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@1.0.0...@openameba/spindle-tokens@1.1.0) (2025-02-13)
+
+### Features
+
+- **spindle-tokens:** create font tokens ([da5f689](https://github.com/openameba/spindle/commit/da5f689ed2009eb74378e5171eba6e07afe1c4d3))
+
 # [1.0.0](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@0.14.0...@openameba/spindle-tokens@1.0.0) (2025-02-07)
 
 **Note:** Version bump only for package @openameba/spindle-tokens
