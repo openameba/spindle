@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@1.1.0...@openameba/spindle-tokens@1.2.0) (2025-02-14)
+
+### Features
+
+- **spindle-tokens:** create shadow tokens ([0204ac7](https://github.com/openameba/spindle/commit/0204ac745f55963c1636ab2c54436f03ea49b8c6))
+
 # [1.1.0](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@1.0.0...@openameba/spindle-tokens@1.1.0) (2025-02-13)
 
 ### Features
