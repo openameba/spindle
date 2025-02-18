@@ -32,6 +32,7 @@
     "build:script:esm": "run-s build:script:esm:*",
     "build:script:esm:js": "tsc -p tsconfig.esm.json",
     "build:script:esm:rename": "npx renamer --find js --replace mjs 'dist/**'",
+    "build:script:esm:extensionReplace": "jscodeshift -t ../../bin/outputExtensionReplace.js dist/** --extensions=mjs",
     "build:style": "postcss src/**/*.css src/*.css --base src -d dist/",
     "preicon": "npx rimraf 'src/Icon/!(*.stories).tsx' && npx cpx '../spindle-icons/dist/svg/!(sprite).svg' icon-tmp",
     "icon": "run-s icon:react icon:connect",
