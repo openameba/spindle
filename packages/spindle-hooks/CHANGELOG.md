@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.1](https://github.com/openameba/spindle/compare/@openameba/spindle-hooks@1.4.0...@openameba/spindle-hooks@1.4.1) (2025-02-21)
+
+**Note:** Version bump only for package @openameba/spindle-hooks
+
 # [1.4.0](https://github.com/openameba/spindle/compare/@openameba/spindle-hooks@1.3.2...@openameba/spindle-hooks@1.4.0) (2025-02-13)
 
 **Note:** Version bump only for package @openameba/spindle-hooks
