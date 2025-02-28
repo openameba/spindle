@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.2](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@1.2.1...@openameba/spindle-tokens@1.2.2) (2025-02-28)
+
+**Note:** Version bump only for package @openameba/spindle-tokens
+
 ## [1.2.1](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@1.2.0...@openameba/spindle-tokens@1.2.1) (2025-02-21)
 
 **Note:** Version bump only for package @openameba/spindle-tokens
