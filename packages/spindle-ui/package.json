@@ -83,7 +83,7 @@
     "@types/jest": "^29.5.13",
     "@types/react": "^18.3.3",
     "autoprefixer": "^10.0.0",
-    "babel-loader": "^9.0.0",
+    "babel-loader": "^10.0.0",
     "bundlewatch": "^0.4.0",
     "cssnano": "^7.0.0",
     "dialog-polyfill": "^0.5.6",
