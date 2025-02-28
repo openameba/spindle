@@ -23,6 +23,7 @@
 
 .spui-DropDown-visual {
   align-items: center;
+  background-color: var(--color-surface-primary);
   border: solid 1px var(--color-border-medium-emphasis);
   border-radius: 8px;
   box-sizing: border-box;
