@@ -82,7 +82,9 @@
 }
 
 .spui-DropDown-label.is-error .spui-DropDown-visual,
-.spui-DropDown-label.is-error .spui-DropDown-icon {
+.spui-DropDown-label.is-error .spui-DropDown-icon,
+.spui-DropDown-label:user-invalid .spui-DropDown-visual,
+.spui-DropDown-label:user-invalid .spui-DropDown-icon {
   background-color: var(--color-surface-caution-light);
   border-color: var(--color-border-caution);
 }

@@ -37,7 +37,8 @@
   box-shadow: none;
 }
 
-.spui-TextArea.is-error {
+.spui-TextArea.is-error,
+.spui-TextArea:user-invalid {
   background-color: var(--color-surface-caution-light);
   border-color: var(--color-border-caution);
 }
