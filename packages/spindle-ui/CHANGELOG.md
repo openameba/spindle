@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.3](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.1.2...@openameba/spindle-ui@2.1.3) (2025-02-28)
+
+### Bug Fixes
+
+- **spindle-ui:** set DropDown background color ([53ef217](https://github.com/openameba/spindle/commit/53ef2175ffa3829db6a57e10e2ffd2d5bbbdc1bb))
+
 ## [2.1.2](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.1.1...@openameba/spindle-ui@2.1.2) (2025-02-21)
 
 ### Features
