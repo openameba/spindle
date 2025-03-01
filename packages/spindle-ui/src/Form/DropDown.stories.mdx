@@ -103,6 +103,8 @@ import { DropDown } from './DropDown';
 
 ## DropDown With Error
 
+<Description>エラー表示にするには`hasError`プロパティを付与してください。また、`:user-invalid`擬似クラスが付与される条件では`hasError`プロパティに関係なくエラー表示になります。</Description>
+
 <Preview withSource="open">
   <Story name="DropDown With Error">
     <DropDown aria-label="期間を選択" hasError name="termWithError" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')}>

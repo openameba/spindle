@@ -44,6 +44,8 @@ import { TextArea } from './TextArea';
 
 ## Text Area With Error
 
+<Description>エラー表示にするには`hasError`プロパティを付与してください。また、`:user-invalid`擬似クラスが付与される条件では`hasError`プロパティに関係なくエラー表示になります。</Description>
+
 <Preview withSource="open">
   <Story name="Text Area With Error">
     <TextArea placeholder="ブログを読んで感じたことを伝えましょう" hasError id="TextAreaWithError" {...actions('onClick', 'onChange', 'onInput', 'onFocus', 'onBlur')}></TextArea>
