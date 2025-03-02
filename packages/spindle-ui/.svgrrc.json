@@ -4,5 +4,12 @@
   "ignoreExisting": true,
   "svgProps": {
     "role": "img"
+  },
+  "svgoConfig": {
+    "plugins": [
+      {
+        "name": "removeXMLNS"
+      }
+    ]
   }
 }
