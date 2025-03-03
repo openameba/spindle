@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.1.3...@openameba/spindle-ui@2.2.0) (2025-03-03)
+
+### Features
+
+- **spindle-ui:** :user-invalid for input errors ([68c43a7](https://github.com/openameba/spindle/commit/68c43a7176789ffae3b78b861246fb827f746c74))
+- **spindle-ui:** xmlnsとxmlns:linkを出力結果から除外するようにした。 ([e46e030](https://github.com/openameba/spindle/commit/e46e030fbe692d436ef0a4fe9dc464aea2073a28))
+
 ## [2.1.3](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.1.2...@openameba/spindle-ui@2.1.3) (2025-02-28)
 
 ### Bug Fixes
