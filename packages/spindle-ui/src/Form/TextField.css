@@ -35,7 +35,8 @@
   box-shadow: none;
 }
 
-.spui-TextField.is-error {
+.spui-TextField.is-error,
+.spui-TextField:user-invalid {
   background-color: var(--color-surface-caution-light);
   border-color: var(--color-border-caution);
 }
