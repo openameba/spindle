@@ -1,12 +1,70 @@
 {
   "name": "@openameba/spindle-ui",
   "version": "2.2.0",
-  "main": "./index.js",
-  "module": "./index.mjs",
-  "types": "./index.d.ts",
+  "source": "src/index.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "style": "./index.css",
   "sideEffects": [
     "*.css"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./package.json": "./package.json",
+    "./Icon/*": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/Icon/*.d.ts"
+    },
+    "./Button": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/Button/index.d.ts"
+    },
+    "./Button/*": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/Button/*.d.ts"
+    },
+    "./Form": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/Form/index.d.ts"
+    },
+    "./Form/*": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/Form/*.d.ts"
+    },
+    "./Breadcrumb": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/Breadcrumb/index.d.ts"
+    },
+    "./DropdownMenu": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/DropdownMenu/index.d.ts"
+    },
+    "./Pagination": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/Pagination/index.d.ts"
+    },
+    "./*": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/*.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "index.css"
   ],
   "scripts": {
     "generate": "scaffdog generate",
@@ -24,15 +82,10 @@
     "test:regression": "reg-suit run",
     "serve": "firebase serve",
     "clean": "npx rimraf dist",
-    "cp": "npx cpx 'dist/**/*' .",
+    "cp": "npx cpx 'dist/index.css' .",
     "prebuild": "yarn clean",
-    "build": "run-p build:*",
-    "build:script": "run-s build:script:esm build:script:cjs",
-    "build:script:cjs": "tsc -p tsconfig.cjs.json",
-    "build:script:esm": "run-s build:script:esm:*",
-    "build:script:esm:js": "tsc -p tsconfig.esm.json",
-    "build:script:esm:rename": "npx renamer --find js --replace mjs 'dist/**'",
-    "build:script:esm:extensionReplace": "jscodeshift -t ../../bin/outputExtensionReplace.js dist/** --extensions=mjs",
+    "build": "run-p build:script build:style",
+    "build:script": "microbundle --jsx React.createElement --jsxFragment React.Fragment --external react,react-dom,@openameba/spindle-hooks --format cjs,esm --no-compress",
     "build:style": "postcss src/**/*.css src/*.css --base src -d dist/",
     "preicon": "npx rimraf 'src/Icon/!(*.stories).tsx' && npx cpx '../spindle-icons/dist/svg/!(sprite).svg' icon-tmp",
     "icon": "run-s icon:react icon:connect",

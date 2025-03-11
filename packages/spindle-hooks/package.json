@@ -1,9 +1,23 @@
 {
   "name": "@openameba/spindle-hooks",
   "version": "1.4.2",
+  "source": "src/index.ts",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./package.json": "./package.json",
+    "./*": {
+      "import": "./dist/*.mjs",
+      "require": "./dist/*.js",
+      "types": "./dist/*.d.ts"
+    }
+  },
   "scripts": {
     "test": "run-p size test:interaction",
     "test:interaction": "jest --passWithNoTests",
@@ -16,12 +30,7 @@
     "size": "bundlewatch --config .bundlewatch.config.js",
     "clean": "npx rimraf dist",
     "prebuild": "yarn clean",
-    "build": "run-s build:esm build:cjs",
-    "build:cjs": "tsc -p tsconfig.cjs.json",
-    "build:esm": "run-s build:esm:*",
-    "build:esm:js": "tsc -p tsconfig.esm.json",
-    "build:esm:rename": "npx renamer --find js --replace mjs 'dist/**'",
-    "build:esm:extensionReplace": "jscodeshift -t ../../bin/outputExtensionReplace.js dist/** --extensions=mjs",
+    "build": "microbundle --jsx React.createElement --jsxFragment React.Fragment --external react,react-dom --format cjs,esm --no-compress",
     "prepublishOnly": "yarn build"
   },
   "license": "MIT",
