@@ -13,13 +13,16 @@
 ```tsx
 <ButtonSwitch
   value="option1" // "option1" or "option2" or null
-  options={[{
-    label: '選択肢1',
-    value: 'option1',
-  }, {
-    label: '選択肢2',
-    value: 'option2',
-  }]}
+  options={[
+    {
+      label: '選択肢1',
+      value: 'option1',
+    },
+    {
+      label: '選択肢2',
+      value: 'option2',
+    },
+  ]}
   onChange={(value) => console.log(value)}
 />
 ```
@@ -48,7 +51,7 @@ type Props = {
     label: string;
     value: string;
   }[];
-  onChange: (value: string | null) => void;
+  onChange: (value: string) => void;
 };
 ```
 
@@ -62,14 +65,16 @@ type Props = {
     type="button"
     aria-pressed="true"
     class="spui-ButtonSwitch--button"
-    data-value="option1">
+    data-value="option1"
+  >
     選択肢1
   </button>
   <button
     type="button"
     aria-pressed="false"
     class="spui-ButtonSwitch--button"
-    data-value="option2">
+    data-value="option2"
+  >
     選択肢2
   </button>
 </div>
@@ -90,10 +95,10 @@ type Props = {
   - [ ] キーボード操作の順序が、見た目の順序と一致している
 - [フォーカスを見えるようにする](https://a11y-guidelines.ameba.design/2/4/7/)
   - [ ] ボタンは、フォーカスの状態が見える
+- [ターゲットのサイズを理解する](https://a11y-guidelines.ameba.design/2/5/5/)
+  - [ ] タップ領域は44px x 44px以上確保している
 - [HTMLを正しく記述する](https://a11y-guidelines.ameba.design/4/1/1/)
   - [ ] HTML仕様に準拠した実装をしている
 - [カスタムコントロールの操作性を担保する](https://a11y-guidelines.ameba.design/4/1/2/)
   - [ ] ボタンスイッチをラップしているdiv要素に`role="group"`、選択中のボタンに`aria-pressed="true"`を付与している
   - [ ] スクリーンリーダーでも機能落ちがなく、読み上げが過不足なく行われている
-
-## リンク集
