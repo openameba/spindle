@@ -23,7 +23,7 @@
       value: 'option2',
     },
   ]}
-  onChange={(value) => console.log(value)}
+  onClick={(value) => console.log(value)}
 />
 ```
 
@@ -38,7 +38,7 @@
 - Surface Tertiary (背景色)
 - Text Medium Emphasis (テキスト色)
 - Surface Quaternary (ホバー時の背景色)
-- Surface Primary (選択時の背景色)
+- Surface Accent Primary (選択時の背景色)
 - Text High Emphasis Inverse (選択時のテキスト色)
 - Border Row Empasis (中央のボーダー色)
 
@@ -51,7 +51,7 @@ type Props = {
     label: string;
     value: string;
   }[];
-  onChange: (value: string) => void;
+  onClick?: (value: string) => void;
 };
 ```
 
