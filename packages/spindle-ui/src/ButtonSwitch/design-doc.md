@@ -37,9 +37,10 @@
 
 - Surface Tertiary (背景色)
 - Text Medium Emphasis (テキスト色)
-- Surface Quaternary (ホバー時の背景色)
+- Hover Neutral Button (ホバー時の背景色)
 - Surface Accent Primary (選択時の背景色)
 - Text High Emphasis Inverse (選択時のテキスト色)
+- Hover Contained Button (ホバー時かつ選択時の背景色)
 - Border Row Empasis (中央のボーダー色)
 
 ### プロパティ
@@ -61,20 +62,10 @@ type Props = {
 
 ```html
 <div class="spui-ButtonSwitch" role="group">
-  <button
-    type="button"
-    aria-pressed="true"
-    class="spui-ButtonSwitch--button"
-    data-value="option1"
-  >
+  <button type="button" aria-pressed="true" class="spui-ButtonSwitch-button">
     選択肢1
   </button>
-  <button
-    type="button"
-    aria-pressed="false"
-    class="spui-ButtonSwitch--button"
-    data-value="option2"
-  >
+  <button type="button" aria-pressed="false" class="spui-ButtonSwitch-button">
     選択肢2
   </button>
 </div>
