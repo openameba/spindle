@@ -1,0 +1,76 @@
+import { useState } from 'react';
+import { Meta, Story, Source } from '@storybook/addon-docs/blocks';
+import { ButtonSwitch } from './ButtonSwitch';
+import { actions } from '@storybook/addon-actions';
+
+export const WrappedButtonSwitch = ({options, defaultValue}) => {
+  const [value, setValue] = useState(defaultValue);
+  return (
+    <div className="preview">
+      <ButtonSwitch 
+        options={options}
+        value={value}
+        onClick={(newValue) => {
+          console.log(newValue)
+          setValue(value === newValue ? null : newValue)}}
+      />
+    </div>
+  );
+};
+
+# ButtonSwitch
+
+<Meta title="ButtonSwitch" component={ ButtonSwitch } />
+
+<Source
+  language='javascript'
+  code={`import { ButtonSwitch } from '@openameba/spindle-ui'`}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/ButtonSwitch/ButtonSwitch.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/ButtonSwitch/ButtonSwitch.css">`}
+/>
+
+## Normal
+
+<Preview withSource="open">
+  <Story name="Normal">
+    <WrappedButtonSwitch
+      defaultValue={"aaa"}
+      options={[
+        {value: "aaa", label: "aaa"}, 
+        {value: "bbb", label: "bbb"}
+      ]}
+    />
+  </Story>
+</Preview>
+
+## Three options
+
+<Preview withSource="open">
+  <Story name="Three options">
+    <WrappedButtonSwitch
+      defaultValue={"aaa"}
+      options={[
+        {value: "aaa", label: "aaa"},
+        {value: "bbb", label: "bbb"},
+        {value: "ccc", label: "ccc"}
+      ]}
+    />
+  </Story>
+</Preview>
+
+<Source
+  code={``}
+/>
+
+<Source
+  language='html'
+  code={``}
+/>

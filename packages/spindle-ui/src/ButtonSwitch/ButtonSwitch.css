@@ -1,0 +1,58 @@
+.spui-ButtonSwitch {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.spui-ButtonSwitch-button {
+  background-color: var(--color-surface-tertiary);
+  border: none;
+  border-radius: 0;
+  color: var(--color-text-medium-emphasis);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s,
+    color 0.3s;
+  white-space: nowrap;
+}
+
+.spui-ButtonSwitch-button:hover {
+  background-color: var(--gray-20-alpha);
+}
+
+.spui-ButtonSwitch-button[aria-pressed='true'] {
+  background-color: var(--color-surface-accent-primary);
+  color: var(--color-text-high-emphasis-inverse);
+}
+
+.spui-ButtonSwitch-button[aria-pressed='true']:hover {
+  background-color: var(--primary-green-100);
+}
+
+.spui-ButtonSwitch-button:first-child {
+  border-radius: 6px 0 0 6px;
+}
+
+.spui-ButtonSwitch-button:last-child {
+  border-radius: 0 6px 6px 0;
+}
+
+.spui-ButtonSwitch-button + .spui-ButtonSwitch-button::after {
+  background-color: var(--color-border-low-emphasis);
+  content: '';
+  height: 100%;
+  left: -0.5px;
+  position: absolute;
+  top: 0;
+  width: 1px;
+}
