@@ -2,7 +2,7 @@
 
 ## 概要・背景
 
-2つの選択肢のうち1つを選択するためのコンポーネントです。スイッチのような操作感を持ち、選択肢を切り替えることができます。どちらも選択していないニュートラルな状態を持つこともできます。
+2つの選択肢のうち1つを選択するためのコンポーネントです。スイッチのような操作感を持ち、選択肢を切り替えることができます。どちらも選択していないニュートラルな状態を持つこともできることが、[Radio](https://ameba-spindle.web.app/?path=/story/form-radio--radio)や[ToggleSwitch](https://ameba-spindle.web.app/?path=/docs/form-toggleswitch--toggle-switch)との違いです。
 
 ## スクリーンショット
 
@@ -40,6 +40,7 @@
 - Hover Neutral Button (ホバー時の背景色)
 - Surface Accent Primary (選択時の背景色)
 - Text High Emphasis Inverse (選択時のテキスト色)
+- Object High Emphasis Inverse (選択時のチェックアイコンの色)
 - Hover Contained Button (ホバー時かつ選択時の背景色)
 - Border Row Empasis (中央のボーダー色)
 
@@ -47,6 +48,7 @@
 
 ```ts
 type Props = {
+  id: string;
   value: string | null;
   options: {
     label: string;
@@ -73,15 +75,18 @@ type Props = {
 
 ## アクセシビリティ
 
+- [画像に代替テキストを提供する](https://a11y-guidelines.ameba.design/1/1/1/)
+  - [ ] チェックアイコンは代替テキストが空になっている
 - [情報や関係性を明確にする](https://a11y-guidelines.ameba.design/1/3/1/)
+  - [ ] label要素と関連付けられている
 - [色だけで伝えない](https://a11y-guidelines.ameba.design/1/4/1/)
   - [ ] 色だけで選択状態を伝えない
 - [テキストや文字画像のコントラストを確保する](https://a11y-guidelines.ameba.design/1/4/3/)
   - [ ] SpindleカラーパレットのTheme Colorsを適切に使い分けている
 - [テキストサイズを拡大縮小できる](https://a11y-guidelines.ameba.design/1/4/4/)
-  - [ ] 画面を200%拡大・文字サイズを2倍に変更しても、適切に文字が折り返される
+  - [ ] 画面を200%拡大・文字サイズを2倍に変更しても、適切に文字が折り返され、チェックアイコンも見切れない
 - [キーボード、タッチデバイスで操作できる](https://a11y-guidelines.ameba.design/2/1/1/)
-  - [ ] Tabキーでフォーカスでき、Enterキーで選択できる
+  - [ ] Tabキーでフォーカスでき、EnterキーまたはSpaceキーで選択できる
 - [適切なフォーカス順序にする](https://a11y-guidelines.ameba.design/2/4/3/)
   - [ ] キーボード操作の順序が、見た目の順序と一致している
 - [フォーカスを見えるようにする](https://a11y-guidelines.ameba.design/2/4/7/)
@@ -91,5 +96,5 @@ type Props = {
 - [HTMLを正しく記述する](https://a11y-guidelines.ameba.design/4/1/1/)
   - [ ] HTML仕様に準拠した実装をしている
 - [カスタムコントロールの操作性を担保する](https://a11y-guidelines.ameba.design/4/1/2/)
-  - [ ] ボタンスイッチをラップしているdiv要素に`role="group"`、選択中のボタンに`aria-pressed="true"`を付与している
-  - [ ] スクリーンリーダーでも機能落ちがなく、読み上げが過不足なく行われている
+  - [ ] ボタンスイッチをラップしているdiv要素に`role="group"`、選択中のボタンに`aria-pressed="true"`、選択されていないボタンに`aria-pressed="false"`を付与している
+  - [ ] スクリーンリーダーでも機能落ちがなく、どのボタンが選択状態かが過不足なく読み上げられている
