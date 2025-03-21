@@ -1,6 +1,8 @@
 import React, { createRef, type RefObject, useCallback, useRef } from 'react';
+import CheckBold from '../Icon/CheckBold';
 
 type Props = {
+  id?: string;
   value: string | null;
   options: {
     label: string;
@@ -11,7 +13,12 @@ type Props = {
 
 const BLOCK_NAME = 'spui-ButtonSwitch';
 
-export const ButtonSwitch: React.FC<Props> = ({ value, options, onClick }) => {
+export const ButtonSwitch: React.FC<Props> = ({
+  id,
+  value,
+  options,
+  onClick,
+}) => {
   const buttonsRef = useRef<RefObject<HTMLButtonElement>[]>([]);
 
   options.forEach((_, index) => {
@@ -63,7 +70,7 @@ export const ButtonSwitch: React.FC<Props> = ({ value, options, onClick }) => {
   );
 
   return (
-    <div className={BLOCK_NAME} role="group">
+    <div id={id} className={BLOCK_NAME} role="group">
       {options.map((option, index) => (
         <button
           type="button"
@@ -75,6 +82,7 @@ export const ButtonSwitch: React.FC<Props> = ({ value, options, onClick }) => {
           onClick={() => onClick && onClick(option.value)}
           ref={buttonsRef.current[index]}
         >
+          {value === option.value && <CheckBold width={12} height={12} />}
           {option.label}
         </button>
       ))}

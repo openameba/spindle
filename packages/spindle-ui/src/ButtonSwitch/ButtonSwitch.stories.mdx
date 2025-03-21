@@ -3,16 +3,17 @@ import { Meta, Story, Source } from '@storybook/addon-docs/blocks';
 import { ButtonSwitch } from './ButtonSwitch';
 import { actions } from '@storybook/addon-actions';
 
-export const WrappedButtonSwitch = ({options, defaultValue}) => {
+export const WrappedButtonSwitch = ({ options, defaultValue }) => {
   const [value, setValue] = useState(defaultValue);
   return (
     <div className="preview">
-      <ButtonSwitch 
+      <ButtonSwitch
+        id="aaa"
         options={options}
         value={value}
         onClick={(newValue) => {
-          console.log(newValue)
-          setValue(value === newValue ? null : newValue)}}
+          setValue(value === newValue ? null : newValue);
+        }}
       />
     </div>
   );
@@ -20,57 +21,68 @@ export const WrappedButtonSwitch = ({options, defaultValue}) => {
 
 # ButtonSwitch
 
-<Meta title="ButtonSwitch" component={ ButtonSwitch } />
+2つの選択肢のうち1つを選択するためのコンポーネントです。
+
+スイッチのような操作感を持ち、選択肢を切り替えることができます。どちらも選択していないニュートラルな状態を持つこともできます。
+
+2つの選択肢のうち1つを選択するためのコンポーネントです。スイッチのような操作感を持ち、選択肢を切り替えることができます。どちらも選択していないニュートラルな状態を持つこともできることが、[Radio](https://ameba-spindle.web.app/?path=/story/form-radio--radio)や[ToggleSwitch](https://ameba-spindle.web.app/?path=/docs/form-toggleswitch--toggle-switch)との違いです。
+
+<Meta title="ButtonSwitch" component={ButtonSwitch} />
 
 <Source
-  language='javascript'
+  language="javascript"
   code={`import { ButtonSwitch } from '@openameba/spindle-ui'`}
 />
 
 <Source
-  language='css'
+  language="css"
   code={`@import './node_modules/@openameba/spindle-ui/ButtonSwitch/ButtonSwitch.css'`}
 />
 
 <Source
-  language='html'
+  language="html"
   code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/ButtonSwitch/ButtonSwitch.css">`}
 />
 
-## Normal
+## 指定できるプロパティ
+
+- `options`(必須): 表示する項目について配列で指定してください。`value`は項目を識別するための値であり、配列内で一意である必要があります。`label`は画面に表示される値です。推奨する最大文字数は5文字です。
+- `value`(必須): `options`プロパティに指定した配列に含まれる`value`のうち初期選択状態とする項目の`value`を指定します。値が`null`の場合、どの項目も選択していない状態になります。
+- `onClick`(任意): 項目がクリックされたときに追加で行いたい処理がある場合は指定してください。
+
+## Total
+
+### Two options
+
+`options`プロパティに指定された配列の項目数に依存します。基本的には2つの選択肢を持つことを推奨しますが、3つ以上の選択肢を持つことも可能です。
 
 <Preview withSource="open">
   <Story name="Normal">
     <WrappedButtonSwitch
-      defaultValue={"aaa"}
+      defaultValue="aaa"
       options={[
-        {value: "aaa", label: "aaa"}, 
-        {value: "bbb", label: "bbb"}
+        { value: 'aaa', label: 'できれば' },
+        { value: 'bbb', label: '必須' },
       ]}
     />
   </Story>
 </Preview>
 
-## Three options
+### Three options
 
 <Preview withSource="open">
   <Story name="Three options">
     <WrappedButtonSwitch
-      defaultValue={"aaa"}
+      defaultValue="aaa"
       options={[
-        {value: "aaa", label: "aaa"},
-        {value: "bbb", label: "bbb"},
-        {value: "ccc", label: "ccc"}
+        { value: 'aaa', label: 'AAA' },
+        { value: 'bbb', label: 'BBB' },
+        { value: 'ccc', label: 'CCC' },
       ]}
     />
   </Story>
 </Preview>
 
-<Source
-  code={``}
-/>
+<Source language="html" code={``} />
 
-<Source
-  language='html'
-  code={``}
-/>
+<Source language="html" code={``} />
