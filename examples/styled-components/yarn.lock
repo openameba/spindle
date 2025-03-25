@@ -472,10 +472,10 @@ ajv@^6.12.5:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-ameba-color-palette.css@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/ameba-color-palette.css/-/ameba-color-palette.css-4.2.0.tgz#e61fb906eb1210368f646b7745f79d1c384c18b4"
-  integrity sha512-5aYbuMY0aXSZjR+ot55SYyLX6cXib5J11AuAiMaMKY+87UawT6515JvPJ3LQxlivxK7/rA14+qnFuLTnLmDFNQ==
+ameba-color-palette.css@^4.14.0:
+  version "4.14.0"
+  resolved "https://registry.yarnpkg.com/ameba-color-palette.css/-/ameba-color-palette.css-4.14.0.tgz#0f437153094e0be7e57a6c024ae8d13c94058f14"
+  integrity sha512-iPUmaWW3EvpQm1TRJ69E3smgeoVNCKskzPjknPjT3aWwbMlRHaT2/dWnLdYsFqz/huNchw5Dp1g01ekkPPjSBQ==
 
 ameba-color-palette.css@openameba/ameba-color-palette.css#v3.0.0-beta.0:
   version "3.0.0-beta.0"
