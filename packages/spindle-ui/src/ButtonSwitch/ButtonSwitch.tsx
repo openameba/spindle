@@ -64,7 +64,7 @@ export const ButtonSwitch: React.FC<Props> = ({
       {options.map((option, index) => (
         <button
           type="button"
-          aria-pressed={value === option.value}
+          aria-pressed={value === option.value ? 'true' : 'false'}
           data-value={option.value}
           onKeyDown={(e) => handleKeydown(e, index)}
           key={option.value}

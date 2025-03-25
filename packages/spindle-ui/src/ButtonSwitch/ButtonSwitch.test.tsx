@@ -24,8 +24,8 @@ describe('<ButtonSwitch />', () => {
   test('Should aria-pressed="true" be set for the currently selected button', () => {
     render(<ButtonSwitch value={options[0].value} options={options} />);
 
-    const button1 = screen.getByText(options[0].label);
-    const button2 = screen.getByText(options[1].label);
+    const button1 = screen.getByRole('button', { name: options[0].label });
+    const button2 = screen.getByRole('button', { name: options[1].label });
 
     expect(button1.getAttribute('aria-pressed')).toEqual('true');
     expect(button2.getAttribute('aria-pressed')).toEqual('false');
@@ -43,7 +43,7 @@ describe('<ButtonSwitch />', () => {
       />,
     );
 
-    await user.click(screen.getByText(options[1].label));
+    await user.click(screen.getByRole('button', { name: options[1].label }));
     expect(onClick).toHaveBeenCalled();
   });
 
@@ -58,10 +58,10 @@ describe('<ButtonSwitch />', () => {
       />,
     );
 
-    await user.click(screen.getByText(options[0].label));
+    await user.click(screen.getByRole('button', { name: options[0].label }));
     expect(result.current.value).toEqual(options[0].value);
 
-    await user.click(screen.getByText(options[1].label));
+    await user.click(screen.getByRole('button', { name: options[1].label }));
     expect(result.current.value).toEqual(options[1].value);
   });
 
@@ -70,15 +70,21 @@ describe('<ButtonSwitch />', () => {
       <ButtonSwitch value={options[0].value} options={options} />,
     );
     expect(
-      screen.getByText(options[0].label).getAttribute('aria-pressed'),
+      screen
+        .getByRole('button', { name: options[0].label })
+        .getAttribute('aria-pressed'),
     ).toEqual('true');
 
     rerender(<ButtonSwitch value={options[1].value} options={options} />);
     expect(
-      screen.getByText(options[0].label).getAttribute('aria-pressed'),
+      screen
+        .getByRole('button', { name: options[0].label })
+        .getAttribute('aria-pressed'),
     ).toEqual('false');
     expect(
-      screen.getByText(options[1].label).getAttribute('aria-pressed'),
+      screen
+        .getByRole('button', { name: options[1].label })
+        .getAttribute('aria-pressed'),
     ).toEqual('true');
   });
 
@@ -87,8 +93,8 @@ describe('<ButtonSwitch />', () => {
 
     render(<ButtonSwitch value={options[0].value} options={options} />);
 
-    const button1 = screen.getByText(options[0].label);
-    const button2 = screen.getByText(options[1].label);
+    const button1 = screen.getByRole('button', { name: options[0].label });
+    const button2 = screen.getByRole('button', { name: options[1].label });
 
     button1.focus();
     expect(button1).toHaveFocus();
