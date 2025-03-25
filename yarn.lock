@@ -7178,10 +7178,10 @@ ajv@^8.0.0, ajv@^8.0.1, ajv@^8.1.0, ajv@^8.11.0, ajv@^8.3.0:
     require-from-string "^2.0.2"
     uri-js "^4.2.2"
 
-ameba-color-palette.css@^4.9.0:
-  version "4.13.0"
-  resolved "https://registry.yarnpkg.com/ameba-color-palette.css/-/ameba-color-palette.css-4.13.0.tgz#94843116c63d89db67c8172daf959ad3279d9cc1"
-  integrity sha512-z0V0kVYd/EHawsFVPRbzjy/Y8Sc5yYTJHbzLv7+g7tQs6nPihLyEC+9106fpHaxwjM131SXP1zqweFxwkapQWA==
+ameba-color-palette.css@^4.14.0:
+  version "4.14.0"
+  resolved "https://registry.yarnpkg.com/ameba-color-palette.css/-/ameba-color-palette.css-4.14.0.tgz#0f437153094e0be7e57a6c024ae8d13c94058f14"
+  integrity sha512-iPUmaWW3EvpQm1TRJ69E3smgeoVNCKskzPjknPjT3aWwbMlRHaT2/dWnLdYsFqz/huNchw5Dp1g01ekkPPjSBQ==
 
 analyze-desumasu-dearu@^4.0.0:
   version "4.0.0"

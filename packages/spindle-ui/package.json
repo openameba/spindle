@@ -60,7 +60,7 @@
   },
   "dependencies": {
     "@openameba/spindle-hooks": "^1.4.2",
-    "ameba-color-palette.css": "^4.9.0",
+    "ameba-color-palette.css": "^4.14.0",
     "react-merge-refs": "^1.1.0"
   },
   "devDependencies": {
