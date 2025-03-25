@@ -1,20 +1,22 @@
 {
   "extends": [
-    "config:base",
-    ":label(renovate)",
+    "local>openameba/renovate-config:main.json5",
+    "local>openameba/renovate-config:npm.json5",
     ":preserveSemverRanges",
-    ":semanticCommitScopeDisabled",
-    ":timezone(Asia/Tokyo)",
-    "group:definitelyTyped",
-    "group:linters",
-    "group:postcss",
-    "group:typescript-eslintMonorepo"
+    ":semanticCommitScopeDisabled"
   ],
-  "reviewers": ["team:spindle-working-group"],
+  "reviewers": [
+    "team:spindle-working-group"
+  ],
   "prConcurrentLimit": 0,
   "packageRules": [
     {
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
       "matchPackagePatterns": [
         "eslint",
         "jest",
