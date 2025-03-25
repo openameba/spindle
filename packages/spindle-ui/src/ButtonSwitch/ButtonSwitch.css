@@ -37,7 +37,7 @@
   font-weight: bold;
 }
 
-.spui-ButtonSwitch-button[aria-pressed='true'] .spui-ButtonSwitch-checked-icon {
+.spui-ButtonSwitch-button[aria-pressed='true'] .spui-ButtonSwitch-icon {
   color: var(--color-object-high-emphasis-inverse);
 }
 
@@ -72,7 +72,7 @@
   width: 1px;
 }
 
-.spui-ButtonSwitch-checked-icon {
+.spui-ButtonSwitch-icon {
   flex-shrink: 0;
 }
 

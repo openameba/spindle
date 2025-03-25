@@ -74,7 +74,7 @@ export const ButtonSwitch: React.FC<Props> = ({
         >
           {value === option.value && (
             <CheckBold
-              className={`${BLOCK_NAME}-checked-icon`}
+              className={`${BLOCK_NAME}-icon`}
               width={12}
               height={12}
             />
