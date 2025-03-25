@@ -2,30 +2,21 @@ import { useState } from 'react';
 import { Meta, Story, Source } from '@storybook/addon-docs/blocks';
 import { ButtonSwitch } from './ButtonSwitch';
 import { actions } from '@storybook/addon-actions';
-
-export const WrappedButtonSwitch = ({ options, defaultValue }) => {
-  const [value, setValue] = useState(defaultValue);
-  return (
-    <div className="preview">
-      <ButtonSwitch
-        id="unique-id"
-        options={options}
-        value={value}
-        onClick={(newValue) => {
-          setValue(value === newValue ? null : newValue);
-        }}
-      />
-    </div>
-  );
-};
+import { ButtonSwitchExample } from './ButtonSwitch.stories.example';
 
 # ButtonSwitch
 
-2つの選択肢のうち1つを選択するためのコンポーネントです。
+<Description>
+  2つの選択肢のうち1つを選択するためのコンポーネントです。
+</Description>
 
-スイッチのような操作感を持ち、選択肢を切り替えることができます。どちらも選択していないニュートラルな状態を持つこともできます。
+<Description>
+  スイッチのような操作感を持ち、選択肢を切り替えることができます。どちらも選択していないニュートラルな状態を持つこともできます。
+</Description>
 
-2つの選択肢のうち1つを選択するためのコンポーネントです。スイッチのような操作感を持ち、選択肢を切り替えることができます。どちらも選択していないニュートラルな状態を持つこともできることが、[Radio](https://ameba-spindle.web.app/?path=/story/form-radio--radio)や[ToggleSwitch](https://ameba-spindle.web.app/?path=/docs/form-toggleswitch--toggle-switch)との違いです。
+<Description>
+  2つの選択肢のうち1つを選択するためのコンポーネントです。スイッチのような操作感を持ち、選択肢を切り替えることができます。どちらも選択していないニュートラルな状態を持つこともできることが、[Radio](https://ameba-spindle.web.app/?path=/story/form-radio--radio)や[ToggleSwitch](https://ameba-spindle.web.app/?path=/docs/form-toggleswitch--toggle-switch)との違いです。
+</Description>
 
 <Meta title="ButtonSwitch" component={ButtonSwitch} />
 
@@ -46,9 +37,18 @@ export const WrappedButtonSwitch = ({ options, defaultValue }) => {
 
 ## 指定できるプロパティ
 
-- `options`(必須): 表示する項目について配列で指定してください。`value`は項目を識別するための値であり、配列内で一意である必要があります。`label`は画面に表示される値です。推奨する最大文字数は5文字です。
-- `value`(必須): `options`プロパティに指定した配列に含まれる`value`のうち初期選択状態とする項目の`value`を指定します。値が`null`の場合、どの項目も選択していない状態になります。
-- `onClick`(任意): 項目がクリックされたときに追加で行いたい処理がある場合は指定してください。
+<Description>
+  - `options`(必須):
+  表示する項目について配列で指定してください。`value`は項目を識別するための値であり、配列内で一意である必要があります。`label`は画面に表示される値です。推奨する最大文字数は5文字です。
+</Description>
+<Description>
+  - `value`(必須):
+  `options`プロパティに指定した配列に含まれる`value`のうちはじめから選択されている状態とする項目の`value`を指定します。値が`null`の場合、どの項目も選択していない状態になります。
+</Description>
+<Description>
+  - `onClick`(任意):
+  項目がクリックされたときに追加で行いたい処理がある場合は指定してください。
+</Description>
 
 ## Total
 
@@ -58,7 +58,7 @@ export const WrappedButtonSwitch = ({ options, defaultValue }) => {
 
 <Preview withSource="open">
   <Story name="Normal">
-    <WrappedButtonSwitch
+    <ButtonSwitchExample
       defaultValue="prefer"
       options={[
         { value: 'prefer', label: 'できれば' },
@@ -72,7 +72,7 @@ export const WrappedButtonSwitch = ({ options, defaultValue }) => {
 
 <Preview withSource="open">
   <Story name="Three options">
-    <WrappedButtonSwitch
+    <ButtonSwitchExample
       defaultValue="one"
       options={[
         { value: 'one', label: 'ひとつ' },
