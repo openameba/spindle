@@ -27,7 +27,6 @@ export const ButtonSwitch: React.FC<Props> = ({
 
   const handleKeydown = useCallback(
     (e: React.KeyboardEvent<HTMLButtonElement>, index: number) => {
-      const targetButton = buttonsRef.current[index].current;
       switch (e.key) {
         case 'ArrowUp':
         case 'ArrowLeft': {
@@ -55,15 +54,6 @@ export const ButtonSwitch: React.FC<Props> = ({
           }
           break;
         }
-        case 'Enter':
-        case 'Space':
-          if (
-            targetButton &&
-            targetButton.getAttribute('aria-pressed') === 'true'
-          ) {
-            e.preventDefault();
-          }
-          break;
       }
     },
     [value, options.length],
@@ -82,8 +72,14 @@ export const ButtonSwitch: React.FC<Props> = ({
           onClick={() => onClick && onClick(option.value)}
           ref={buttonsRef.current[index]}
         >
-          {value === option.value && <CheckBold width={12} height={12} />}
-          {option.label}
+          {value === option.value && (
+            <CheckBold
+              className={`${BLOCK_NAME}-checked-icon`}
+              width={12}
+              height={12}
+            />
+          )}
+          <div className={`${BLOCK_NAME}-label`}>{option.label}</div>
         </button>
       ))}
     </div>

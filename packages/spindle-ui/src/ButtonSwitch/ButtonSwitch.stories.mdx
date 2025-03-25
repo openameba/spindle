@@ -59,10 +59,10 @@ export const WrappedButtonSwitch = ({ options, defaultValue }) => {
 <Preview withSource="open">
   <Story name="Normal">
     <WrappedButtonSwitch
-      defaultValue="aaa"
+      defaultValue="prefer"
       options={[
-        { value: 'aaa', label: 'できれば' },
-        { value: 'bbb', label: '必須' },
+        { value: 'prefer', label: 'できれば' },
+        { value: 'required', label: '必須' },
       ]}
     />
   </Story>
@@ -73,11 +73,11 @@ export const WrappedButtonSwitch = ({ options, defaultValue }) => {
 <Preview withSource="open">
   <Story name="Three options">
     <WrappedButtonSwitch
-      defaultValue="aaa"
+      defaultValue="one"
       options={[
-        { value: 'aaa', label: 'AAA' },
-        { value: 'bbb', label: 'BBB' },
-        { value: 'ccc', label: 'CCC' },
+        { value: 'one', label: 'ひとつ' },
+        { value: 'multiple', label: '複数' },
+        { value: 'all', label: '全部' },
       ]}
     />
   </Story>
