@@ -10,17 +10,19 @@
 
 ### DO
 
+ラベルには「できれば」「必須」「すべて」など、フィルタリングの条件に類する言葉を使用することを想定しています。また、文字数は最大5文字程度を目安とします。
+
 ```tsx
 <ButtonSwitch
-  value="option1" // "option1" or "option2" or null
+  value="prefer" // "prefer" or "required" or null
   options={[
     {
-      label: '選択肢1',
-      value: 'option1',
+      label: 'できれば',
+      value: 'prefer',
     },
     {
-      label: '選択肢2',
-      value: 'option2',
+      label: '必須',
+      value: 'required',
     },
   ]}
   onClick={(value) => console.log(value)}
@@ -28,6 +30,8 @@
 ```
 
 ### DO NOT
+
+ラベルには「送信」「実行」など、直接的なアクションを想起する動詞は使用しないでください。
 
 2つ以上の選択肢を持たせることも可能ですが、レイアウトが崩れやすくなるため推奨しません。
 
