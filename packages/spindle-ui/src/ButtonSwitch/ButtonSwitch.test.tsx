@@ -22,7 +22,14 @@ const useButtonSwitch = (initialValue = options[0].value) => {
 
 describe('<ButtonSwitch />', () => {
   test('Should aria-pressed="true" be set for the currently selected button', () => {
-    render(<ButtonSwitch value={options[0].value} options={options} />);
+    const onClick = jest.fn();
+    render(
+      <ButtonSwitch
+        value={options[0].value}
+        options={options}
+        onClick={onClick}
+      />,
+    );
 
     const button1 = screen.getByRole('button', { name: options[0].label });
     const button2 = screen.getByRole('button', { name: options[1].label });
@@ -66,8 +73,13 @@ describe('<ButtonSwitch />', () => {
   });
 
   test('Should be reflected if the received value changes', async () => {
+    const onClick = jest.fn();
     const { rerender } = render(
-      <ButtonSwitch value={options[0].value} options={options} />,
+      <ButtonSwitch
+        value={options[0].value}
+        options={options}
+        onClick={onClick}
+      />,
     );
     expect(
       screen
@@ -75,7 +87,13 @@ describe('<ButtonSwitch />', () => {
         .getAttribute('aria-pressed'),
     ).toEqual('true');
 
-    rerender(<ButtonSwitch value={options[1].value} options={options} />);
+    rerender(
+      <ButtonSwitch
+        value={options[1].value}
+        options={options}
+        onClick={onClick}
+      />,
+    );
     expect(
       screen
         .getByRole('button', { name: options[0].label })
@@ -89,9 +107,16 @@ describe('<ButtonSwitch />', () => {
   });
 
   test('a11y', async () => {
+    const onClick = jest.fn();
     const user = userEvent.setup();
 
-    render(<ButtonSwitch value={options[0].value} options={options} />);
+    render(
+      <ButtonSwitch
+        value={options[0].value}
+        options={options}
+        onClick={onClick}
+      />,
+    );
 
     const button1 = screen.getByRole('button', { name: options[0].label });
     const button2 = screen.getByRole('button', { name: options[1].label });
