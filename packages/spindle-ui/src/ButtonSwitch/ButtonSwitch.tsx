@@ -8,7 +8,7 @@ type Props = {
     label: string;
     value: string;
   }[];
-  onClick?: (value: string) => void;
+  onClick: (value: string) => void;
 };
 
 const BLOCK_NAME = 'spui-ButtonSwitch';
@@ -64,7 +64,6 @@ export const ButtonSwitch: React.FC<Props> = ({
         <button
           type="button"
           aria-pressed={value === option.value}
-          data-value={option.value}
           onKeyDown={(e) => handleKeydown(e, index)}
           key={option.value}
           className={`${BLOCK_NAME}-button`}
@@ -79,7 +78,7 @@ export const ButtonSwitch: React.FC<Props> = ({
               height={12}
             />
           )}
-          <p className={`${BLOCK_NAME}-label`}>{option.label}</p>
+          <span className={`${BLOCK_NAME}-label`}>{option.label}</span>
         </button>
       ))}
     </div>

@@ -8,9 +8,9 @@ import { ButtonSwitchExample } from './ButtonSwitch.stories.example';
 
 2つの選択肢のうち1つを選択するためのコンポーネントです。
 
-スイッチのような操作感を持ち、選択肢を切り替えることができます。どちらも選択していないニュートラルな状態を持つこともできます。
+スイッチのような操作感を持ち、選択肢を切り替えることができます。
 
-2つの選択肢のうち1つを選択するためのコンポーネントです。スイッチのような操作感を持ち、選択肢を切り替えることができます。どちらも選択していないニュートラルな状態を持つこともできることが、[Radio](https://ameba-spindle.web.app/?path=/story/form-radio--radio)や[ToggleSwitch](https://ameba-spindle.web.app/?path=/docs/form-toggleswitch--toggle-switch)との違いです。
+どちらも選択していないニュートラルな状態を持つこともできることが、[Radio](https://ameba-spindle.web.app/?path=/story/form-radio--radio)や[ToggleSwitch](https://ameba-spindle.web.app/?path=/docs/form-toggleswitch--toggle-switch)との違いです。
 
 <Meta title="ButtonSwitch" component={ButtonSwitch} />
 
@@ -47,7 +47,7 @@ import { ButtonSwitchExample } from './ButtonSwitch.stories.example';
 項目数が1のケースも許容していますが、ToggleSwitchの利用も検討してください。
 
 <Preview withSource="open">
-  <Story name="Normal">
+  <Story name="One option">
     <ButtonSwitchExample
       defaultValue="prefer"
       options={[{ value: 'prefer', label: 'できれば' }]}
@@ -55,10 +55,28 @@ import { ButtonSwitchExample } from './ButtonSwitch.stories.example';
   </Story>
 </Preview>
 
+<Source
+  language="tsx"
+  code={`
+const ButtonSwitchExample = ({ options, defaultValue }) => {
+  const [value, setValue] = useState(defaultValue);
+  return (
+    <ButtonSwitch
+      options={[{ value: 'prefer', label: 'できれば' }]}
+      value={value}
+      onClick={(newValue) => {
+        setValue(value === newValue ? null : newValue);
+      }}
+    />
+  );
+};
+`}
+/>
+
 ### 2つの選択肢
 
 <Preview withSource="open">
-  <Story name="Normal">
+  <Story name="Two options">
     <ButtonSwitchExample
       defaultValue="prefer"
       options={[
@@ -68,6 +86,27 @@ import { ButtonSwitchExample } from './ButtonSwitch.stories.example';
     />
   </Story>
 </Preview>
+
+<Source
+  language="tsx"
+  code={`
+const ButtonSwitchExample = ({ options, defaultValue }) => {
+  const [value, setValue] = useState(defaultValue);
+  return (
+    <ButtonSwitch
+      options={[
+        { value: 'prefer', label: 'できれば' },
+        { value: 'required', label: '必須' },
+      ]}
+      value={value}
+      onClick={(newValue) => {
+        setValue(value === newValue ? null : newValue);
+      }}
+    />
+  );
+};
+`}
+/>
 
 ### 3つの選択肢
 
@@ -84,17 +123,20 @@ import { ButtonSwitchExample } from './ButtonSwitch.stories.example';
   </Story>
 </Preview>
 
-<Source language="tsx" code={`
-import React, { useState } from 'react';
-import { ButtonSwitch } from './ButtonSwitch';
-
-export const ButtonSwitchExample = ({ options, defaultValue }) => {
+<Source
+  language="tsx"
+  code={`
+const ButtonSwitchExample = ({ options, defaultValue }) => {
   const [value, setValue] = useState(defaultValue);
   return (
     <div className="preview">
       <ButtonSwitch
         id="unique-id"
-        options={options}
+        options={[
+          { value: 'one', label: 'ひとつ' },
+          { value: 'multiple', label: '複数' },
+          { value: 'all', label: '全部' },
+        ]}
         value={value}
         onClick={(newValue) => {
           setValue(value === newValue ? null : newValue);
@@ -103,4 +145,5 @@ export const ButtonSwitchExample = ({ options, defaultValue }) => {
     </div>
   );
 };
-`} />
+`}
+/>
