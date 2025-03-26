@@ -27,36 +27,35 @@ export const ButtonSwitch: React.FC<Props> = ({
 
   const handleKeydown = useCallback(
     (e: React.KeyboardEvent<HTMLButtonElement>, index: number) => {
+      const focusButton = (offset: number) => {
+        const buttonRef =
+          buttonsRef.current[
+            (options.length + index + offset) % options.length
+          ];
+        const button = buttonRef.current;
+        button?.focus();
+        if (onClick) {
+          onClick(
+            options[(options.length + index + offset) % options.length].value,
+          );
+        }
+      };
       switch (e.key) {
         case 'ArrowUp':
         case 'ArrowLeft': {
           e.preventDefault();
-          const prevButtonRef =
-            buttonsRef.current[(options.length + index - 1) % options.length];
-          const prevButton = prevButtonRef.current;
-          prevButton?.focus();
-          if (onClick) {
-            onClick(
-              options[(options.length + index - 1) % options.length].value,
-            );
-          }
+          focusButton(-1);
           break;
         }
         case 'ArrowDown':
         case 'ArrowRight': {
           e.preventDefault();
-          const nextButtonRef =
-            buttonsRef.current[(index + 1) % options.length];
-          const nextButton = nextButtonRef.current;
-          nextButton?.focus();
-          if (onClick) {
-            onClick(options[(index + 1) % options.length].value);
-          }
+          focusButton(1);
           break;
         }
       }
     },
-    [value, options.length],
+    [options, onClick],
   );
 
   return (
@@ -64,7 +63,7 @@ export const ButtonSwitch: React.FC<Props> = ({
       {options.map((option, index) => (
         <button
           type="button"
-          aria-pressed={value === option.value ? 'true' : 'false'}
+          aria-pressed={value === option.value}
           data-value={option.value}
           onKeyDown={(e) => handleKeydown(e, index)}
           key={option.value}
@@ -74,12 +73,13 @@ export const ButtonSwitch: React.FC<Props> = ({
         >
           {value === option.value && (
             <CheckBold
+              aria-hidden="true"
               className={`${BLOCK_NAME}-icon`}
               width={12}
               height={12}
             />
           )}
-          <div className={`${BLOCK_NAME}-label`}>{option.label}</div>
+          <p className={`${BLOCK_NAME}-label`}>{option.label}</p>
         </button>
       ))}
     </div>
