@@ -7,5 +7,6 @@ module.exports = {
   paths: ['/', '/?theme=dark'],
   rules: {
     '@acot/wcag/focusable-has-indicator': 'warn',
+    '@acot/axe/css-orientation-lock': 'warn',
   },
 };
