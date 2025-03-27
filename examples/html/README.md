@@ -1,5 +1,0 @@
-# HTML Example
-
-```
-yarn serve
-```

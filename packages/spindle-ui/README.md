@@ -39,22 +39,12 @@ ReactDOM.render(<App />, document.querySelector('#app'));
 
 Spindle UIはmodule版の配信もしています。利用する際には、[導入ガイド](https://github.com/openameba/spindle/pull/175)を参考にしてください。
 
-さらなる詳細は[コンポーネント一覧](#コンポーネント一覧)、[サンプルアプリケーション](#サンプルアプリケーション)を参照してください。
+さらなる詳細は[コンポーネント一覧](#コンポーネント一覧)を参照してください。
 
 > **_NOTE:_**  アイコン利用時は[Spindle IconsのReactコンポーネント](/packages/spindle-icons#react)を読み、注意点を確認してください。
 
 ## コンポーネント一覧
 利用可能なコンポーネントは、[Storybook](https://ameba-spindle.web.app/)で公開されています。各コンポーネントの開発状況は[Spindleサイトのコンポーネントステータスページ](https://spindle.ameba.design/components/status/)をご覧ください。
-
-## サンプルアプリケーション
-Spindle UIは様々なパターンのアプリケーションで利用できます。詳細は各サンプルコードを閲覧してください。
-
-- [React with CSS Modules](/examples/css-modules/)
-- [React with PostCSS](/examples/postcss/)
-- [React with Sass](/examples/sass/)
-- [React with styled-components](/examples/styled-components/)
-- [Preact](/examples/preact/)
-- [HTML](/examples/html/)
 
 ## スタイリング
 Spindle UIのスタイルは、名前空間(`spui`)をもったCSSとして定義されています。これはスタイルを利用時に再定義する必要がないほか、コンポーネント志向のアプリケーションだけでなく、HTMLを中心としたWebページでも利用可能にするためです。
@@ -65,8 +55,6 @@ Spindle UIのスタイルは、名前空間(`spui`)をもったCSSとして定�
 [webpack](https://webpack.js.org/)や[PostCSS](https://postcss.org/)、[Sass](https://sass-lang.com/)などを利用してアプリケーションに必要なスタイルのみをビルドします。生成したファイルは各アプリケーションで利用しているサーバから配信します。
 
 この方法ではCSSファイルのサイズが最小限になり、配信サーバの品質も管理可能なため、できる限りこの方法での利用を推奨します。
-
-導入の際には、サンプルアプリケーション([CSS Modules](/examples/css-modules/)、[PostCSS](/examples/postcss/)、[Sass](/examples/sass/)、[styled-components](/examples/styled-components/))を参考にしてください。
 
 ### CDNから読み込み
 簡易的にSpindle UIのスタイルを試す場合には、CDNから読み込むと便利です。Webページの読み込み速度がそこまで重要でない場合、例えば開発環境や一部のランディングページなどで利用できます。
