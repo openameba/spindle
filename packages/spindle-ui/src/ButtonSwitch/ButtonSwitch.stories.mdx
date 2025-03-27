@@ -44,34 +44,7 @@ import { ButtonSwitchExample } from './ButtonSwitch.stories.example';
 
 ### 1つの選択肢
 
-項目数が1のケースも許容していますが、ToggleSwitchの利用も検討してください。
-
-<Preview withSource="open">
-  <Story name="One option">
-    <ButtonSwitchExample
-      defaultValue="prefer"
-      options={[{ value: 'prefer', label: 'できれば' }]}
-    />
-  </Story>
-</Preview>
-
-<Source
-  language="tsx"
-  code={`
-const ButtonSwitchExample = ({ options, defaultValue }) => {
-  const [value, setValue] = useState(defaultValue);
-  return (
-    <ButtonSwitch
-      options={[{ value: 'prefer', label: 'できれば' }]}
-      value={value}
-      onClick={(newValue) => {
-        setValue(value === newValue ? null : newValue);
-      }}
-    />
-  );
-};
-`}
-/>
+選択肢を1つだけ持つことはできません。
 
 ### 2つの選択肢
 
