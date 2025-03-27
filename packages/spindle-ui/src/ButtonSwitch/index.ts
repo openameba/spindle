@@ -1,1 +1,0 @@
-export { ButtonSwitch } from './ButtonSwitch';

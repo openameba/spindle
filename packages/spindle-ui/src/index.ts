@@ -1,6 +1,5 @@
 export { BreadcrumbItem, BreadcrumbList } from './Breadcrumb';
 export { Button } from './Button';
-export { ButtonSwitch } from './ButtonSwitch';
 export { ButtonGroup } from './ButtonGroup';
 export { Dialog } from './Dialog';
 export * as Form from './Form';

@@ -1,5 +1,5 @@
 import React, { createRef, type RefObject, useCallback, useRef } from 'react';
-import CheckBold from '../Icon/CheckBold';
+import CheckBold from '../../Icon/CheckBold';
 
 type Props = {
   id?: string;

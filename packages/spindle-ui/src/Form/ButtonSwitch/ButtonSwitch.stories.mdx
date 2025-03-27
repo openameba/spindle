@@ -12,7 +12,7 @@ import { ButtonSwitchExample } from './ButtonSwitch.stories.example';
 
 どちらも選択していないニュートラルな状態を持つこともできることが、[Radio](https://ameba-spindle.web.app/?path=/story/form-radio--radio)や[ToggleSwitch](https://ameba-spindle.web.app/?path=/docs/form-toggleswitch--toggle-switch)との違いです。
 
-<Meta title="ButtonSwitch" component={ButtonSwitch} />
+<Meta title="Form/ButtonSwitch" component={ButtonSwitch} />
 
 <Source
   language="javascript"
@@ -36,7 +36,7 @@ import { ButtonSwitchExample } from './ButtonSwitch.stories.example';
   - `value`: 項目を識別するための値です。配列内で一意である必要があります。
   - `label`: 画面に表示される値です。推奨する最大文字数は5文字です。
 - `value`(必須): `options`プロパティに指定した配列に含まれる`value`のうちはじめから選択されている状態とする項目の`value`を指定します。値が`null`の場合、どの項目も選択していない状態になります。
-- `onClick`(任意):項目がクリックされたときに追加で行いたい処理がある場合は指定してください。
+- `onClick`(必須):項目がクリックされたときに追加で行いたい処理がある場合は指定してください。
 
 ## 項目数
 
@@ -102,20 +102,18 @@ const ButtonSwitchExample = ({ options, defaultValue }) => {
 const ButtonSwitchExample = ({ options, defaultValue }) => {
   const [value, setValue] = useState(defaultValue);
   return (
-    <div className="preview">
-      <ButtonSwitch
-        id="unique-id"
-        options={[
-          { value: 'one', label: 'ひとつ' },
-          { value: 'multiple', label: '複数' },
-          { value: 'all', label: '全部' },
-        ]}
-        value={value}
-        onClick={(newValue) => {
-          setValue(value === newValue ? null : newValue);
-        }}
-      />
-    </div>
+    <ButtonSwitch
+      id="unique-id"
+      options={[
+        { value: 'one', label: 'ひとつ' },
+        { value: 'multiple', label: '複数' },
+        { value: 'all', label: '全部' },
+      ]}
+      value={value}
+      onClick={(newValue) => {
+        setValue(value === newValue ? null : newValue);
+      }}
+    />
   );
 };
 `}
