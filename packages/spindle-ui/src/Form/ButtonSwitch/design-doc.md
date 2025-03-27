@@ -52,7 +52,7 @@
 
 ```ts
 type Props = {
-  id: string;
+  id?: string;
   value: string | null;
   options: {
     label: string;
