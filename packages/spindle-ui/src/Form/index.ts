@@ -6,3 +6,4 @@ export { Radio } from './Radio';
 export { TextArea } from './TextArea';
 export { TextField } from './TextField';
 export { ToggleSwitch } from './ToggleSwitch';
+export { ButtonSwitch } from './ButtonSwitch/ButtonSwitch';

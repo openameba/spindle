@@ -1,0 +1,83 @@
+.spui-ButtonSwitch {
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+}
+
+.spui-ButtonSwitch-button {
+  align-items: center;
+  background-color: var(--color-surface-tertiary);
+  border: none;
+  border-radius: 0;
+  color: var(--color-text-medium-emphasis);
+  display: inline-flex;
+  flex: 1;
+  font-size: 0.8125em;
+  gap: 4px;
+  justify-content: center;
+  line-height: 1.3;
+  padding: 8px 4px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    font-weight 0.35s ease,
+    color 0.35s ease,
+    background-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.spui-ButtonSwitch-button:hover {
+  background-color: var(--color-hover-neutral-button);
+}
+
+.spui-ButtonSwitch-button[aria-pressed='true'] {
+  background-color: var(--color-surface-accent-primary);
+  font-weight: bold;
+}
+
+.spui-ButtonSwitch-button[aria-pressed='true'] .spui-ButtonSwitch-icon {
+  color: var(--color-object-high-emphasis-inverse);
+}
+
+.spui-ButtonSwitch-button[aria-pressed='true'] .spui-ButtonSwitch-label {
+  color: var(--color-text-high-emphasis-inverse);
+}
+
+.spui-ButtonSwitch-button[aria-pressed='true']:hover {
+  background-color: var(--color-hover-contained-button);
+}
+
+.spui-ButtonSwitch-button:focus-visible {
+  outline: 2px solid var(--color-focus-clarity);
+  outline-offset: 2px;
+}
+
+.spui-ButtonSwitch-button:first-child {
+  border-bottom-left-radius: 6px;
+  border-top-left-radius: 6px;
+}
+
+.spui-ButtonSwitch-button:last-child {
+  border-bottom-right-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.spui-ButtonSwitch-button + .spui-ButtonSwitch-button::after {
+  background-color: var(--color-border-low-emphasis);
+  content: '';
+  height: 100%;
+  left: -0.5px;
+  position: absolute;
+  top: 0;
+  width: 1px;
+}
+
+.spui-ButtonSwitch-icon {
+  flex-shrink: 0;
+}
+
+.spui-ButtonSwitch-label {
+  margin: 0;
+  white-space: break-spaces;
+}
