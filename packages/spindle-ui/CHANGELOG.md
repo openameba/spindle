@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.2.0...@openameba/spindle-ui@2.3.0) (2025-03-28)
+
+### Bug Fixes
+
+- **spindle-ui:** variable name ([4f1c6de](https://github.com/openameba/spindle/commit/4f1c6de6243a75a792517105a7451fc5b4a03432))
+
+### Features
+
+- **spindle-ui:** ButtonSwitchコンポーネントの実装 ([#1280](https://github.com/openameba/spindle/issues/1280)) ([a4217cd](https://github.com/openameba/spindle/commit/a4217cdd5cf93c0018ef1327b71d9c0888b9f313))
+- **spindle-ui:** update design-doc ([88bcc34](https://github.com/openameba/spindle/commit/88bcc34417924a633f30b2f9c3e4da64e084a642))
+- **spindle-ui:** update design-doc of ButtonSwitch ([231d346](https://github.com/openameba/spindle/commit/231d346fdf3c4982111267e9e35a50c3d7076914))
+- **spindle-ui:** update usage of ButtonSwitch ([0724c21](https://github.com/openameba/spindle/commit/0724c2183f98a76f2c24f4267d4306feb20551b7))
+
 # [2.2.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.1.3...@openameba/spindle-ui@2.2.0) (2025-03-03)
 
 ### Features
