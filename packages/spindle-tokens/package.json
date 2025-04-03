@@ -43,6 +43,6 @@
     "style-dictionary": "^4.0.0",
     "stylelint": "^15.10.2",
     "stylelint-config-standard": "^34.0.0",
-    "ts-jest": "29.3.0"
+    "ts-jest": "29.3.1"
   }
 }
