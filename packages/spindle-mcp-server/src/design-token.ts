@@ -69,11 +69,15 @@ export function getCssDesignToken(tokenType: string): object {
 
 export function getAllCssDesignTokens(): Record<string, object> {
   const cssDir = path.join(__dirname, '../../spindle-tokens/dist/css');
-  const files = fs.readdirSync(cssDir).filter(file => file.startsWith('spindle-tokens-') && file.endsWith('.css'));
+  const files = fs
+    .readdirSync(cssDir)
+    .filter(
+      (file) => file.startsWith('spindle-tokens-') && file.endsWith('.css'),
+    );
 
   const tokens: Record<string, object> = {};
 
-  files.forEach(file => {
+  files.forEach((file) => {
     const tokenType = file.replace('spindle-tokens-', '').replace('.css', '');
     try {
       tokens[tokenType] = getCssDesignToken(tokenType);
@@ -100,8 +104,7 @@ function parseCssCustomProperties(cssContent: string): object {
   return properties;
 }
 
-const amebaColorPaletteCss =
-`
+const amebaColorPaletteCss = `
 /* custom properties https://www.w3.org/TR/css-variables/ */
 :root {
   /**

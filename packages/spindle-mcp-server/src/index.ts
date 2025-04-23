@@ -112,7 +112,9 @@ server.tool(
   'get_css_design_token',
   '指定した種類のCSSデザイントークンを取得する',
   {
-    type: z.enum(['animation', 'font', 'shadow']).describe('CSSデザイントークンの種類'),
+    type: z
+      .enum(['animation', 'font', 'shadow'])
+      .describe('CSSデザイントークンの種類'),
   },
   ({ type }) => ({
     content: [
