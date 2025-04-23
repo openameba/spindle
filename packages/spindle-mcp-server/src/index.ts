@@ -9,7 +9,7 @@ import {
   getAllCssDesignTokens,
   getCssDesignToken,
 } from './design-token.js';
-import { getAllIcons, getIconInfo } from './icon.js';
+import { getAllIcons, getIconInfo, getIconUsage } from './icon.js';
 
 const server = new McpServer({
   name: 'ameba-spindle',
@@ -146,6 +146,20 @@ server.tool(
       {
         type: 'text',
         text: JSON.stringify(await getIconInfo(name), null, 2),
+      },
+    ],
+  }),
+);
+
+server.tool(
+  'get_icon_usage',
+  'アイコンの使用方法を取得します',
+  {},
+  async () => ({
+    content: [
+      {
+        type: 'text',
+        text: await getIconUsage(),
       },
     ],
   }),

@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getAllIcons = getAllIcons;
 exports.getIconInfo = getIconInfo;
+exports.getIconUsage = getIconUsage;
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
 async function getAllIcons() {
@@ -34,4 +35,9 @@ async function getIconInfo(iconName) {
         svgPath: pathMatch[1],
         viewBox: svgMatch[1],
     };
+}
+async function getIconUsage() {
+    const doc = path_1.default.join(__dirname, '../../spindle-icons/README.md');
+    const content = await fs_1.default.promises.readFile(doc, 'utf-8');
+    return content;
 }

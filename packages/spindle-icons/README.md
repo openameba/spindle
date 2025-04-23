@@ -118,7 +118,7 @@ npx svg-sprite --symbol --symbol-dest=. --symbol-sprite=sprite.svg  --shape-tran
 Spindle IconsはReactコンポーネントとして利用できます。利用する際には、[Inline SVG](#inline-svg)と同様に、適切なラベリングを忘れないように注意してください。
 
 ```JavaScript
-import { Clock } from '@openameba/spindle-ui/Icon';
+import Clock from '@openameba/spindle-ui/Icon/Clock';
 
 export function SomeButton() {
   return <button aria-label="時間設定" type="button"><Clock /></button>

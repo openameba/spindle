@@ -41,3 +41,9 @@ export async function getIconInfo(iconName: string): Promise<IconInfo | null> {
     viewBox: svgMatch[1],
   };
 }
+
+export async function getIconUsage(): Promise<string> {
+  const doc = path.join(__dirname, '../../spindle-icons/README.md');
+  const content = await fs.promises.readFile(doc, 'utf-8');
+  return content;
+}
