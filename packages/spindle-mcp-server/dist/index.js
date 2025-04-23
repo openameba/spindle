@@ -57,6 +57,26 @@ server.tool('get_design_token', '指定した種類のデザイントークン�
         },
     ],
 }));
+// CSSで定義されたカラートークンを取得するツール
+server.tool('get_css_design_tokens', 'CSSで定義されたデザイントークンを取得する', {}, () => ({
+    content: [
+        {
+            type: 'text',
+            text: JSON.stringify((0, design_token_js_1.getAllCssDesignTokens)(), null, 2),
+        },
+    ],
+}));
+// 特定のCSSデザイントークンを取得するツール
+server.tool('get_css_design_token', '指定した種類のCSSデザイントークンを取得する', {
+    type: zod_1.z.enum(['animation', 'font', 'shadow']).describe('CSSデザイントークンの種類'),
+}, ({ type }) => ({
+    content: [
+        {
+            type: 'text',
+            text: JSON.stringify((0, design_token_js_1.getCssDesignToken)(type), null, 2),
+        },
+    ],
+}));
 // アイコン一覧を取得するツール
 server.tool('get_icons', 'アイコンの一覧を取得します', {}, async () => ({
     content: [

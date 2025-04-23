@@ -6,6 +6,8 @@ import {
   getAllDesignTokens,
   getDesignToken,
   TokenType,
+  getAllCssDesignTokens,
+  getCssDesignToken,
 } from './design-token.js';
 import { getAllIcons, getIconInfo } from './icon.js';
 
@@ -85,6 +87,38 @@ server.tool(
       {
         type: 'text',
         text: JSON.stringify(getDesignToken(type), null, 2),
+      },
+    ],
+  }),
+);
+
+// CSSで定義されたカラートークンを取得するツール
+server.tool(
+  'get_css_design_tokens',
+  'CSSで定義されたデザイントークンを取得する',
+  {},
+  () => ({
+    content: [
+      {
+        type: 'text',
+        text: JSON.stringify(getAllCssDesignTokens(), null, 2),
+      },
+    ],
+  }),
+);
+
+// 特定のCSSデザイントークンを取得するツール
+server.tool(
+  'get_css_design_token',
+  '指定した種類のCSSデザイントークンを取得する',
+  {
+    type: z.enum(['animation', 'font', 'shadow']).describe('CSSデザイントークンの種類'),
+  },
+  ({ type }) => ({
+    content: [
+      {
+        type: 'text',
+        text: JSON.stringify(getCssDesignToken(type), null, 2),
       },
     ],
   }),
