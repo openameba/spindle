@@ -4,8 +4,6 @@ import path from 'path';
 interface IconInfo {
   name: string;
   path: string;
-  svgPath: string;
-  viewBox: string;
   documentation: string;
 }
 
@@ -59,8 +57,6 @@ export async function getIconInfo(iconName: string): Promise<IconInfo | null> {
   return {
     name: iconName,
     path: iconPath,
-    svgPath: pathMatch[1],
-    viewBox: svgMatch[1],
     documentation: documentation,
   };
 }
