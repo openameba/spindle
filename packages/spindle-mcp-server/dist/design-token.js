@@ -57,9 +57,11 @@ function getCssDesignToken(tokenType) {
 }
 function getAllCssDesignTokens() {
     const cssDir = path_1.default.join(__dirname, '../../spindle-tokens/dist/css');
-    const files = fs_1.default.readdirSync(cssDir).filter(file => file.startsWith('spindle-tokens-') && file.endsWith('.css'));
+    const files = fs_1.default
+        .readdirSync(cssDir)
+        .filter((file) => file.startsWith('spindle-tokens-') && file.endsWith('.css'));
     const tokens = {};
-    files.forEach(file => {
+    files.forEach((file) => {
         const tokenType = file.replace('spindle-tokens-', '').replace('.css', '');
         try {
             tokens[tokenType] = getCssDesignToken(tokenType);

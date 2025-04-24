@@ -68,7 +68,9 @@ server.tool('get_css_design_tokens', 'CSSで定義されたデザイントーク
 }));
 // 特定のCSSデザイントークンを取得するツール
 server.tool('get_css_design_token', '指定した種類のCSSデザイントークンを取得する', {
-    type: zod_1.z.enum(['animation', 'font', 'shadow']).describe('CSSデザイントークンの種類'),
+    type: zod_1.z
+        .enum(['animation', 'font', 'shadow'])
+        .describe('CSSデザイントークンの種類'),
 }, ({ type }) => ({
     content: [
         {

@@ -29,11 +29,13 @@ async function getIconInfo(iconName) {
     if (!svgMatch || !pathMatch) {
         return null;
     }
+    const documentation = await fs_1.default.promises.readFile(path_1.default.join(__dirname, '../../spindle-ui/src/Icon', 'index.stories.mdx'), 'utf-8');
     return {
         name: iconName,
         path: iconPath,
         svgPath: pathMatch[1],
         viewBox: svgMatch[1],
+        documentation: documentation,
     };
 }
 async function getIconUsage() {
