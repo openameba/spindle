@@ -11,7 +11,10 @@ interface ComponentInfo {
     tests?: ComponentFile;
     figma?: ComponentFile;
 }
+interface Components {
+    componentList: string[];
+    documentation: string;
+}
 export declare function getComponentInfo(componentName: string, directory: string): ComponentInfo | null;
-export declare function getAllComponents(): ComponentInfo[];
-export declare function getComponents(): Promise<any>;
+export declare function getComponents(): Promise<Components>;
 export {};

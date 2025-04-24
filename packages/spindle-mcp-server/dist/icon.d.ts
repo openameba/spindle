@@ -1,14 +1,12 @@
 interface IconInfo {
     name: string;
     path: string;
-    svgPath: string;
-    viewBox: string;
     documentation: string;
 }
-export declare function getIcons(): Promise<{
+interface Icons {
     iconList: string[];
     documentation: string;
-}>;
-export declare function getAllIcons(): Promise<string[]>;
+}
+export declare function getIcons(): Promise<Icons>;
 export declare function getIconInfo(iconName: string): Promise<IconInfo | null>;
 export {};

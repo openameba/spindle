@@ -4,19 +4,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getComponentInfo = getComponentInfo;
-exports.getAllComponents = getAllComponents;
 exports.getComponents = getComponents;
 const path_1 = __importDefault(require("path"));
 const fs_1 = __importDefault(require("fs"));
 function getComponentInfo(componentName, directory) {
     const baseDir = path_1.default.join(__dirname, '../../spindle-ui/src');
-    // ディレクトリパスの正規化
     const normalizedDir = directory.split('/').filter(Boolean);
     const componentDir = path_1.default.join(baseDir, ...normalizedDir);
     if (!fs_1.default.existsSync(componentDir)) {
         return null;
     }
-    // 再帰的にコンポーネントを探索する関数
     function findComponentInDirectory(dir) {
         const entries = fs_1.default.readdirSync(dir, { withFileTypes: true });
         const actualComponentName = path_1.default.basename(componentName, '.tsx');

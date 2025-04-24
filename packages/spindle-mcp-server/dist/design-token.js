@@ -3,46 +3,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TokenType = void 0;
-exports.getDesignToken = getDesignToken;
-exports.getAllDesignTokens = getAllDesignTokens;
 exports.getCssDesignToken = getCssDesignToken;
 exports.getAllCssDesignTokens = getAllCssDesignTokens;
 const path_1 = __importDefault(require("path"));
-const zod_1 = require("zod");
 const fs_1 = __importDefault(require("fs"));
-// デザイントークンの種類を定義
-function getTokenTypes() {
-    const tokenDir = path_1.default.join(__dirname, '../../spindle-tokens/tokens');
-    const types = fs_1.default
-        .readdirSync(tokenDir)
-        .filter((file) => file.endsWith('.tokens.json'))
-        .map((file) => file.replace('.tokens.json', ''));
-    if (types.length === 0) {
-        throw new Error('No token files found');
+function parseCssCustomProperties(cssContent) {
+    const properties = {};
+    const regex = /--([^:]+):\s*([^;]+);/g;
+    let match;
+    while ((match = regex.exec(cssContent)) !== null) {
+        const [, name, value] = match;
+        properties[name.trim()] = value.trim();
     }
-    return [types[0], ...types.slice(1)];
-}
-exports.TokenType = zod_1.z.enum(getTokenTypes());
-function getDesignToken(tokenType) {
-    const tokenPath = path_1.default.join(__dirname, '../../spindle-tokens/tokens', `${tokenType}.tokens.json`);
-    if (!fs_1.default.existsSync(tokenPath)) {
-        throw new Error(`Token file for ${tokenType} not found`);
-    }
-    const content = fs_1.default.readFileSync(tokenPath, 'utf-8');
-    return JSON.parse(content);
-}
-function getAllDesignTokens() {
-    const tokens = {};
-    exports.TokenType.options.forEach((tokenType) => {
-        try {
-            tokens[tokenType] = getDesignToken(tokenType);
-        }
-        catch (error) {
-            console.error(`Failed to load ${tokenType} tokens:`, error);
-        }
-    });
-    return tokens;
+    return properties;
 }
 function getCssDesignToken(tokenType) {
     if (tokenType === 'color') {
@@ -50,7 +23,7 @@ function getCssDesignToken(tokenType) {
     }
     const tokenPath = path_1.default.join(__dirname, '../../spindle-tokens/dist/css', `spindle-tokens-${tokenType}.css`);
     if (!fs_1.default.existsSync(tokenPath)) {
-        throw new Error(`CSS token file for ${tokenType} not found`);
+        return null;
     }
     const content = fs_1.default.readFileSync(tokenPath, 'utf-8');
     return parseCssCustomProperties(content);
@@ -64,25 +37,20 @@ function getAllCssDesignTokens() {
     files.forEach((file) => {
         const tokenType = file.replace('spindle-tokens-', '').replace('.css', '');
         try {
-            tokens[tokenType] = getCssDesignToken(tokenType);
+            const token = getCssDesignToken(tokenType);
+            if (token) {
+                tokens[tokenType] = token;
+            }
         }
         catch (error) {
             console.error(`Failed to load CSS ${tokenType} tokens:`, error);
         }
     });
+    // All apps use the ameba color palette instead of the css tokens
     tokens.color = parseCssCustomProperties(amebaColorPaletteCss);
     return tokens;
 }
-function parseCssCustomProperties(cssContent) {
-    const properties = {};
-    const regex = /--([^:]+):\s*([^;]+);/g;
-    let match;
-    while ((match = regex.exec(cssContent)) !== null) {
-        const [, name, value] = match;
-        properties[name.trim()] = value.trim();
-    }
-    return properties;
-}
+// @see https://github.com/openameba/ameba-color-palette.css
 const amebaColorPaletteCss = `
 /* custom properties https://www.w3.org/TR/css-variables/ */
 :root {

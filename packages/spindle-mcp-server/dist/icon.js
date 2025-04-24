@@ -4,13 +4,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getIcons = getIcons;
-exports.getAllIcons = getAllIcons;
 exports.getIconInfo = getIconInfo;
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
+function getIconDocumentation() {
+    return fs_1.default.promises.readFile(path_1.default.join(__dirname, '../../spindle-ui/src/Icon', 'index.stories.mdx'), 'utf-8');
+}
 async function getIcons() {
     const iconList = await getAllIcons();
-    const documentation = await fs_1.default.promises.readFile(path_1.default.join(__dirname, '../../spindle-ui/src/Icon', 'index.stories.mdx'), 'utf-8');
+    const documentation = await getIconDocumentation();
     return {
         iconList,
         documentation,
@@ -37,12 +39,10 @@ async function getIconInfo(iconName) {
     if (!svgMatch || !pathMatch) {
         return null;
     }
-    const documentation = await fs_1.default.promises.readFile(path_1.default.join(__dirname, '../../spindle-ui/src/Icon', 'index.stories.mdx'), 'utf-8');
+    const documentation = await getIconDocumentation();
     return {
         name: iconName,
         path: iconPath,
-        svgPath: pathMatch[1],
-        viewBox: svgMatch[1],
         documentation: documentation,
     };
 }
