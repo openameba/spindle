@@ -13,4 +13,5 @@ interface ComponentInfo {
 }
 export declare function getComponentInfo(componentName: string, directory: string): ComponentInfo | null;
 export declare function getAllComponents(): ComponentInfo[];
+export declare function getComponents(): Promise<any>;
 export {};

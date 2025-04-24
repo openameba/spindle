@@ -140,3 +140,17 @@ export function getAllComponents(): ComponentInfo[] {
   scanDirectory(componentsDir);
   return components;
 }
+
+export async function getComponents(): Promise<any> {
+  const components = await getAllComponents();
+  const componentList = components.map((comp) => comp.name);
+  const documentation = await fs.promises.readFile(
+    path.join(__dirname, '../../spindle-ui/README.md'),
+    'utf-8',
+  );
+
+  return {
+    componentList,
+    documentation,
+  };
+}

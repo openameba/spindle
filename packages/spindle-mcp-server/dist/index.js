@@ -14,11 +14,11 @@ const server = new mcp_js_1.McpServer({
     version: VERSION,
 });
 // コンポーネント一覧を取得するツール
-server.tool('get_components', '利用可能なコンポーネントの一覧を取得する', {}, () => ({
+server.tool('get_components', '利用可能なコンポーネントの一覧を取得する', {}, async () => ({
     content: [
         {
             type: 'text',
-            text: JSON.stringify((0, components_js_1.getAllComponents)().map((comp) => comp.name), null, 2),
+            text: JSON.stringify(await (0, components_js_1.getComponents)(), null, 2),
         },
     ],
 }));

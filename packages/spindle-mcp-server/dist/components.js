@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getComponentInfo = getComponentInfo;
 exports.getAllComponents = getAllComponents;
+exports.getComponents = getComponents;
 const path_1 = __importDefault(require("path"));
 const fs_1 = __importDefault(require("fs"));
 function getComponentInfo(componentName, directory) {
@@ -98,4 +99,13 @@ function getAllComponents() {
     }
     scanDirectory(componentsDir);
     return components;
+}
+async function getComponents() {
+    const components = await getAllComponents();
+    const componentList = components.map((comp) => comp.name);
+    const documentation = await fs_1.default.promises.readFile(path_1.default.join(__dirname, '../../spindle-ui/README.md'), 'utf-8');
+    return {
+        componentList,
+        documentation,
+    };
 }

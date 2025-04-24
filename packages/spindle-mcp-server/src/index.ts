@@ -1,7 +1,7 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { z } from 'zod';
-import { getAllComponents, getComponentInfo } from './components.js';
+import { getComponents, getComponentInfo } from './components.js';
 import { getAllCssDesignTokens, getCssDesignToken } from './design-token.js';
 import { getIconInfo, getIcons } from './icon.js';
 
@@ -19,12 +19,12 @@ server.tool(
   'get_components',
   '利用可能なコンポーネントの一覧を取得する',
   {},
-  () => ({
+  async () => ({
     content: [
       {
         type: 'text',
         text: JSON.stringify(
-          getAllComponents().map((comp) => comp.name),
+          await getComponents(),
           null,
           2,
         ),
