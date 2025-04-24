@@ -9,6 +9,22 @@ interface IconInfo {
   documentation: string;
 }
 
+export async function getIcons(): Promise<{
+  iconList: string[];
+  documentation: string;
+}> {
+  const iconList = await getAllIcons();
+  const documentation = await fs.promises.readFile(
+    path.join(__dirname, '../../spindle-ui/src/Icon', 'index.stories.mdx'),
+    'utf-8',
+  );
+
+  return {
+    iconList,
+    documentation,
+  };
+}
+
 export async function getAllIcons(): Promise<string[]> {
   const iconDir = path.join(__dirname, '../../spindle-ui/src/Icon');
   const files = await fs.promises.readdir(iconDir);
