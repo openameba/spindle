@@ -1,55 +1,20 @@
 import path from 'path';
-import { z } from 'zod';
 import fs from 'fs';
 
-// デザイントークンの種類を定義
-function getTokenTypes(): [string, ...string[]] {
-  const tokenDir = path.join(__dirname, '../../spindle-tokens/tokens');
-  const types = fs
-    .readdirSync(tokenDir)
-    .filter((file) => file.endsWith('.tokens.json'))
-    .map((file) => file.replace('.tokens.json', ''));
+function parseCssCustomProperties(cssContent: string): object {
+  const properties: Record<string, string> = {};
+  const regex = /--([^:]+):\s*([^;]+);/g;
+  let match;
 
-  if (types.length === 0) {
-    throw new Error('No token files found');
+  while ((match = regex.exec(cssContent)) !== null) {
+    const [, name, value] = match;
+    properties[name.trim()] = value.trim();
   }
 
-  return [types[0], ...types.slice(1)] as [string, ...string[]];
+  return properties;
 }
 
-export const TokenType = z.enum(getTokenTypes());
-
-type TokenType = z.infer<typeof TokenType>;
-
-export function getDesignToken(tokenType: TokenType): object {
-  const tokenPath = path.join(
-    __dirname,
-    '../../spindle-tokens/tokens',
-    `${tokenType}.tokens.json`,
-  );
-  if (!fs.existsSync(tokenPath)) {
-    throw new Error(`Token file for ${tokenType} not found`);
-  }
-
-  const content = fs.readFileSync(tokenPath, 'utf-8');
-  return JSON.parse(content);
-}
-
-export function getAllDesignTokens(): Record<TokenType, object> {
-  const tokens: Partial<Record<TokenType, object>> = {};
-
-  TokenType.options.forEach((tokenType) => {
-    try {
-      tokens[tokenType] = getDesignToken(tokenType);
-    } catch (error) {
-      console.error(`Failed to load ${tokenType} tokens:`, error);
-    }
-  });
-
-  return tokens as Record<TokenType, object>;
-}
-
-export function getCssDesignToken(tokenType: string): object {
+export function getCssDesignToken(tokenType: string): object | null {
   if (tokenType === 'color') {
     return parseCssCustomProperties(amebaColorPaletteCss);
   }
@@ -60,7 +25,7 @@ export function getCssDesignToken(tokenType: string): object {
     `spindle-tokens-${tokenType}.css`,
   );
   if (!fs.existsSync(tokenPath)) {
-    throw new Error(`CSS token file for ${tokenType} not found`);
+    return null;
   }
 
   const content = fs.readFileSync(tokenPath, 'utf-8');
@@ -80,30 +45,22 @@ export function getAllCssDesignTokens(): Record<string, object> {
   files.forEach((file) => {
     const tokenType = file.replace('spindle-tokens-', '').replace('.css', '');
     try {
-      tokens[tokenType] = getCssDesignToken(tokenType);
+      const token = getCssDesignToken(tokenType);
+      if (token) {
+        tokens[tokenType] = token;
+      }
     } catch (error) {
       console.error(`Failed to load CSS ${tokenType} tokens:`, error);
     }
   });
 
+  // All apps use the ameba color palette instead of the css tokens
   tokens.color = parseCssCustomProperties(amebaColorPaletteCss);
 
   return tokens;
 }
 
-function parseCssCustomProperties(cssContent: string): object {
-  const properties: Record<string, string> = {};
-  const regex = /--([^:]+):\s*([^;]+);/g;
-  let match;
-
-  while ((match = regex.exec(cssContent)) !== null) {
-    const [, name, value] = match;
-    properties[name.trim()] = value.trim();
-  }
-
-  return properties;
-}
-
+// @see https://github.com/openameba/ameba-color-palette.css
 const amebaColorPaletteCss = `
 /* custom properties https://www.w3.org/TR/css-variables/ */
 :root {

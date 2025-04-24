@@ -7,15 +7,21 @@ interface IconInfo {
   documentation: string;
 }
 
-export async function getIcons(): Promise<{
+interface Icons {
   iconList: string[];
   documentation: string;
-}> {
-  const iconList = await getAllIcons();
-  const documentation = await fs.promises.readFile(
+}
+
+function getIconDocumentation(): Promise<string> {
+  return fs.promises.readFile(
     path.join(__dirname, '../../spindle-ui/src/Icon', 'index.stories.mdx'),
     'utf-8',
   );
+}
+
+export async function getIcons(): Promise<Icons> {
+  const iconList = await getAllIcons();
+  const documentation = await getIconDocumentation();
 
   return {
     iconList,
@@ -23,7 +29,7 @@ export async function getIcons(): Promise<{
   };
 }
 
-export async function getAllIcons(): Promise<string[]> {
+async function getAllIcons(): Promise<string[]> {
   const iconDir = path.join(__dirname, '../../spindle-ui/src/Icon');
   const files = await fs.promises.readdir(iconDir);
   return files
@@ -49,10 +55,7 @@ export async function getIconInfo(iconName: string): Promise<IconInfo | null> {
     return null;
   }
 
-  const documentation = await fs.promises.readFile(
-    path.join(__dirname, '../../spindle-ui/src/Icon', 'index.stories.mdx'),
-    'utf-8',
-  );
+  const documentation = await getIconDocumentation();
 
   return {
     name: iconName,

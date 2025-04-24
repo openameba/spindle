@@ -17,17 +17,13 @@ const server = new McpServer({
 // コンポーネント一覧を取得するツール
 server.tool(
   'get_components',
-  '利用可能なコンポーネントの一覧を取得する',
+  '利用可能なコンポーネントの一覧を取得します',
   {},
   async () => ({
     content: [
       {
         type: 'text',
-        text: JSON.stringify(
-          await getComponents(),
-          null,
-          2,
-        ),
+        text: JSON.stringify(await getComponents(), null, 2),
       },
     ],
   }),
@@ -36,7 +32,7 @@ server.tool(
 // 個別のコンポーネント情報を取得するツール
 server.tool(
   'get_component_info',
-  '指定されたコンポーネントの詳細情報を取得する',
+  '指定されたコンポーネントの詳細情報を取得します',
   {
     name: z.string().describe('コンポーネント名'),
   },
@@ -60,7 +56,7 @@ server.tool(
 // 定義されたデザイントークンを取得するツール
 server.tool(
   'get_design_tokens',
-  '定義されたデザイントークンを取得する',
+  '定義されたデザイントークンを取得します',
   {},
   () => ({
     content: [
@@ -75,7 +71,7 @@ server.tool(
 // 特定のデザイントークンを取得するツール
 server.tool(
   'get_design_token',
-  '指定した種類のデザイントークンを取得する',
+  '指定した種類のデザイントークンを取得します',
   {
     type: z
       .enum(['color', 'animation', 'font', 'shadow'])

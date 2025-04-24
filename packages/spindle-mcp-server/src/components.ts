@@ -16,13 +16,17 @@ interface ComponentInfo {
   figma?: ComponentFile;
 }
 
+interface Components {
+  componentList: string[];
+  documentation: string;
+}
+
 export function getComponentInfo(
   componentName: string,
   directory: string,
 ): ComponentInfo | null {
   const baseDir = path.join(__dirname, '../../spindle-ui/src');
 
-  // ディレクトリパスの正規化
   const normalizedDir = directory.split('/').filter(Boolean);
   const componentDir = path.join(baseDir, ...normalizedDir);
 
@@ -30,7 +34,6 @@ export function getComponentInfo(
     return null;
   }
 
-  // 再帰的にコンポーネントを探索する関数
   function findComponentInDirectory(dir: string): ComponentInfo | null {
     const entries = fs.readdirSync(dir, { withFileTypes: true });
     const actualComponentName = path.basename(componentName, '.tsx');
@@ -104,7 +107,7 @@ export function getComponentInfo(
   return findComponentInDirectory(componentDir);
 }
 
-export function getAllComponents(): ComponentInfo[] {
+function getAllComponents(): ComponentInfo[] {
   const componentsDir = path.join(__dirname, '../../spindle-ui/src');
   const components: ComponentInfo[] = [];
 
@@ -141,7 +144,7 @@ export function getAllComponents(): ComponentInfo[] {
   return components;
 }
 
-export async function getComponents(): Promise<any> {
+export async function getComponents(): Promise<Components> {
   const components = await getAllComponents();
   const componentList = components.map((comp) => comp.name);
   const documentation = await fs.promises.readFile(
