@@ -6,6 +6,7 @@ interface IconInfo {
   path: string;
   svgPath: string;
   viewBox: string;
+  documentation: string;
 }
 
 export async function getAllIcons(): Promise<string[]> {
@@ -34,11 +35,17 @@ export async function getIconInfo(iconName: string): Promise<IconInfo | null> {
     return null;
   }
 
+  const documentation = await fs.promises.readFile(
+    path.join(__dirname, '../../spindle-ui/src/Icon', 'index.stories.mdx'),
+    'utf-8',
+  );
+
   return {
     name: iconName,
     path: iconPath,
     svgPath: pathMatch[1],
     viewBox: svgMatch[1],
+    documentation: documentation,
   };
 }
 
