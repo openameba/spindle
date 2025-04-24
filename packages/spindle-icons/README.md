@@ -5,12 +5,25 @@ SVG and PDF Icons with Spindle (Ameba Design System)
 ![See license in readme.md](https://img.shields.io/npm/l/@openameba/spindle-icons) ![npm](https://img.shields.io/npm/v/@openameba/spindle-icons)
 
 ## インストール
+
+アイコンを画像ファイルとして利用したい場合には、`@openameba/spindle-icons` をインストールしてください。
+
 ```
 npm install @openameba/spindle-icons
 ```
 
 ```
 yarn add @openameba/spindle-icons
+```
+
+アイコンをReactコンポーネントとして利用したい場合には、`@openameba/spindle-ui` をインストールしてください。
+
+```
+npm install @openameba/spindle-ui
+```
+
+```
+yarn add @openameba/spindle-ui
 ```
 
 ## 利用方法
@@ -125,7 +138,17 @@ export function SomeButton() {
 }
 ```
 
-ただし、Reactコンポーネントとして利用する際にはリソースサイズやレンダリングパフォーマンスに注意してください。Spindleで提供しているそれぞれのアイコンは大きなサイズではありません。ただし、たくさんのアイコンを読み込みHTMLやJavaScriptに埋め込まれると、容量が大きくなったりレンダリングに時間がかかったりする可能性があります。そうした場合には、以下の方法を検討してください。
+ただし、アイコンが装飾として利用される場合には`aria-hidden=true`を指定します。
+
+```JavaScript
+import Clock from '@openameba/spindle-ui/Icon/Clock';
+
+export function SomeButton() {
+  return <button type="button"><Clock aria-hidden="true" />時間設定</button>
+}
+```
+
+また、Reactコンポーネントとして利用する際にはリソースサイズやレンダリングパフォーマンスに注意してください。Spindleで提供しているそれぞれのアイコンは大きなサイズではありません。ただし、たくさんのアイコンを読み込みHTMLやJavaScriptに埋め込まれると、容量が大きくなったりレンダリングに時間がかかったりする可能性があります。そうした場合には、以下の方法を検討してください。
 
 - アイコンコンポーネントが挿入される場所を分割
 - コンポーネントを非同期に読み込む
