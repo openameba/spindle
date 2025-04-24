@@ -6,10 +6,12 @@ const zod_1 = require("zod");
 const components_js_1 = require("./components.js");
 const design_token_js_1 = require("./design-token.js");
 const icon_js_1 = require("./icon.js");
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const VERSION = require('../package.json').version;
 const server = new mcp_js_1.McpServer({
     name: 'ameba-spindle',
     description: 'MCP server for Ameba Design System Spindle',
-    version: require('../package.json').version,
+    version: VERSION,
 });
 // コンポーネント一覧を取得するツール
 server.tool('get_components', '利用可能なコンポーネントの一覧を取得する', {}, () => ({
@@ -37,28 +39,8 @@ server.tool('get_component_info', '指定されたコンポーネントの詳細
         ],
     };
 });
-// 全てのデザイントークンを取得するツール
-server.tool('get_design_tokens', '全てのデザイントークンを取得する', {}, () => ({
-    content: [
-        {
-            type: 'text',
-            text: JSON.stringify((0, design_token_js_1.getAllDesignTokens)(), null, 2),
-        },
-    ],
-}));
-// 特定のデザイントークンを取得するツール
-server.tool('get_design_token', '指定した種類のデザイントークンを取得する', {
-    type: design_token_js_1.TokenType.describe('デザイントークンの種類'),
-}, ({ type }) => ({
-    content: [
-        {
-            type: 'text',
-            text: JSON.stringify((0, design_token_js_1.getDesignToken)(type), null, 2),
-        },
-    ],
-}));
-// CSSで定義されたカラートークンを取得するツール
-server.tool('get_css_design_tokens', 'CSSで定義されたデザイントークンを取得する', {}, () => ({
+// 定義されたデザイントークンを取得するツール
+server.tool('get_design_tokens', '定義されたデザイントークンを取得する', {}, () => ({
     content: [
         {
             type: 'text',
@@ -66,11 +48,11 @@ server.tool('get_css_design_tokens', 'CSSで定義されたデザイントーク
         },
     ],
 }));
-// 特定のCSSデザイントークンを取得するツール
-server.tool('get_css_design_token', '指定した種類のCSSデザイントークンを取得する', {
+// 特定のデザイントークンを取得するツール
+server.tool('get_design_token', '指定した種類のデザイントークンを取得する', {
     type: zod_1.z
-        .enum(['animation', 'font', 'shadow'])
-        .describe('CSSデザイントークンの種類'),
+        .enum(['color', 'animation', 'font', 'shadow'])
+        .describe('デザイントークンの種類'),
 }, ({ type }) => ({
     content: [
         {
@@ -84,7 +66,7 @@ server.tool('get_icons', 'アイコンの一覧を取得します', {}, async ()
     content: [
         {
             type: 'text',
-            text: JSON.stringify(await (0, icon_js_1.getAllIcons)(), null, 2),
+            text: JSON.stringify(await (0, icon_js_1.getIcons)(), null, 2),
         },
     ],
 }));

@@ -3,11 +3,20 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.getIcons = getIcons;
 exports.getAllIcons = getAllIcons;
 exports.getIconInfo = getIconInfo;
 exports.getIconUsage = getIconUsage;
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
+async function getIcons() {
+    const iconList = await getAllIcons();
+    const documentation = await fs_1.default.promises.readFile(path_1.default.join(__dirname, '../../spindle-ui/src/Icon', 'index.stories.mdx'), 'utf-8');
+    return {
+        iconList,
+        documentation,
+    };
+}
 async function getAllIcons() {
     const iconDir = path_1.default.join(__dirname, '../../spindle-ui/src/Icon');
     const files = await fs_1.default.promises.readdir(iconDir);
