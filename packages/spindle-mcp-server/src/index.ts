@@ -11,10 +11,13 @@ import {
 } from './design-token.js';
 import { getAllIcons, getIconInfo, getIconUsage } from './icon.js';
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const VERSION = require('../package.json').version;
+
 const server = new McpServer({
   name: 'ameba-spindle',
   description: 'MCP server for Ameba Design System Spindle',
-  version: require('../package.json').version,
+  version: VERSION,
 });
 
 // コンポーネント一覧を取得するツール
