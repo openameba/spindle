@@ -5,16 +5,11 @@ import { Clock } from './index';
 
 <Meta title="Icon" component={Clock} />
 
-<Source
-  language='javascript'
-  code={`import Icon from '@openameba/spindle-ui'`}
-/>
-
 ## Clock Icon
 
 <Source
   language='javascript'
-  code={`import { Clock } from '@openameba/spindle-ui/Icon'`}
+  code={`import Clock from '@openameba/spindle-ui/Icon/Clock'`}
 />
 
 <Preview withSource="open">
@@ -33,7 +28,7 @@ import { Clock } from './index';
 
 <Source
   language='javascript'
-  code={`import { Clock } from '@openameba/spindle-ui/Icon'`}
+  code={`import Clock from '@openameba/spindle-ui/Icon/Clock'`}
 />
 
 <Preview withSource="open">
@@ -56,7 +51,7 @@ import { Clock } from './index';
 
 <Source
   language='javascript'
-  code={`import { Clock } from '@openameba/spindle-ui/Icon'`}
+  code={`import Clock from '@openameba/spindle-ui/Icon/Clock'`}
 />
 
 <Preview withSource="open">
@@ -70,3 +65,7 @@ import { Clock } from './index';
 <Clock aria-label="Clock" height="200" width="200" />
   `}
 />
+
+## Accessibillity
+
+アイコン単体で使われる場合は、`aria-label`を指定してください。装飾としてアイコンが利用される場合は、`aria-hidden`を`true`に指定してください。
