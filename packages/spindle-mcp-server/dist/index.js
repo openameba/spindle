@@ -81,14 +81,6 @@ server.tool('get_icon_info', '指定したアイコンの情報を取得しま�
         },
     ],
 }));
-server.tool('get_icon_usage', 'アイコンの使用方法を取得します', {}, async () => ({
-    content: [
-        {
-            type: 'text',
-            text: await (0, icon_js_1.getIconUsage)(),
-        },
-    ],
-}));
 async function main() {
     const transport = new stdio_js_1.StdioServerTransport();
     await server.connect(transport);

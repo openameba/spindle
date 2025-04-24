@@ -3,7 +3,7 @@ import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
 import { z } from 'zod';
 import { getAllComponents, getComponentInfo } from './components.js';
 import { getAllCssDesignTokens, getCssDesignToken } from './design-token.js';
-import { getIconInfo, getIcons, getIconUsage } from './icon.js';
+import { getIconInfo, getIcons } from './icon.js';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const VERSION = require('../package.json').version;
@@ -113,20 +113,6 @@ server.tool(
       {
         type: 'text',
         text: JSON.stringify(await getIconInfo(name), null, 2),
-      },
-    ],
-  }),
-);
-
-server.tool(
-  'get_icon_usage',
-  'アイコンの使用方法を取得します',
-  {},
-  async () => ({
-    content: [
-      {
-        type: 'text',
-        text: await getIconUsage(),
       },
     ],
   }),
