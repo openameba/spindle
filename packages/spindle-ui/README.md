@@ -30,6 +30,9 @@ import { Button } from '@openameba/spindle-ui';
 // Tree Shakingされない環境下では個別にインポートすることを推奨します
 // 例）`import { Button } from '@openameba/spindle-ui/Button';`
 
+// コンポーネントを利用する際には対応するCSSも読み込みます
+import '@openameba/spindle-ui/Button/Button.css';
+
 function App() {
   return <Button size="large" variant="contained">Spindle</Button>;
 }

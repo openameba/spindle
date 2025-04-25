@@ -11,6 +11,7 @@ Ameba Design System
 - [Spindle UI](packages/spindle-ui) (UI components)
 - [Spindle Hooks](packages/spindle-hooks) (React Hooks)
 - [Spindle Syntax Themes](packages/spindle-syntax-themes) (Syntax themes with Spindle color palette)
+- [Spindle MCS Server](packages/spindle-mcp-server) (MCP Server)
 
 ## License
 
