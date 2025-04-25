@@ -8,8 +8,11 @@ describe('Design token functions', () => {
 
       expect(result).toEqual(
         expect.objectContaining({
-          color: expect.any(Object),
-          animation: expect.any(Object),
+          tokenList: expect.objectContaining({
+            color: expect.any(Object),
+            animation: expect.any(Object),
+          }),
+          documentation: expect.any(String),
         }),
       );
     });
