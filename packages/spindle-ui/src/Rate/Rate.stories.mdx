@@ -1,0 +1,96 @@
+import { Description, Meta, Story, Source } from '@storybook/addon-docs/blocks';
+import { actions } from '@storybook/addon-actions';
+import { Rate } from './Rate';
+
+# Rate
+
+<Meta title="Rate" component={Rate} />
+
+<Source
+  language="javascript"
+  code={`import { Rate } from '@openameba/spindle-ui'`}
+/>
+
+<Source
+  language="css"
+  code={`@import './node_modules/@openameba/spindle-ui/Rate.css'`}
+/>
+
+<Source
+  language="html"
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Rate.css">`}
+/>
+
+<Description>説明文がはいります。</Description>
+
+<Description>ページの前後に移動できます。</Description>
+
+## max 5 value 0
+
+<Preview withSource="open">
+  <Story name="max 5 value 0">
+    <Rate max={5} value={0} />
+  </Story>
+</Preview>
+
+<Source code={`<Rate max={5} value={0} />`} />
+
+## max 5 value 3.5
+
+<Preview withSource="open">
+  <Story name="max 5 value 3.5">
+    <Rate max={5} value={3.5} />
+  </Story>
+</Preview>
+
+<Source code={`<Rate max={5} value={3.5} />`} />
+
+## max 5 value 5
+
+<Preview withSource="open">
+  <Story name="max 5 value 5">
+    <Rate max={5} value={5} />
+  </Story>
+</Preview>
+
+<Source code={`<Rate max={5} value={5} />`} />
+
+## max 10 value 7.5
+
+<Preview withSource="open">
+  <Story name="max 10 value 7.5">
+    <Rate max={10} value={7.5} />
+  </Story>
+</Preview>
+
+<Source code={`<Rate max={10} value={7.5} />`} />
+
+## max 5 value 3 (small size)
+
+<Preview withSource="open">
+  <Story name="max 5 value 3 small size">
+    <Rate max={5} value={3} size="small" />
+  </Story>
+</Preview>
+
+<Source code={`<Rate max={5} value={3} size="small" />`} />
+
+## max 5 value 3 (large size)
+
+<Preview withSource="open">
+  <Story name="max 5 value 3 large size">
+    <Rate max={5} value={3} size="large" />
+  </Story>
+</Preview>
+
+<Source code={`<Rate max={5} value={3} size="large" />`} />
+
+## max 5 value 3 (medium size)
+
+<Preview withSource="open">
+  <Story name="max 5 value 3 medium size">
+    <Rate max={5} value={3} size="medium" />
+  </Story>
+</Preview>
+
+<Source code={`<Rate max={5} value={3} size="medium" />`} />
