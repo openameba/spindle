@@ -21992,10 +21992,10 @@ react-is@^18.0.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
 
-react-merge-refs@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/react-merge-refs/-/react-merge-refs-1.1.0.tgz#73d88b892c6c68cbb7a66e0800faa374f4c38b06"
-  integrity sha512-alTKsjEL0dKH/ru1Iyn7vliS2QRcBp9zZPGoWxUOvRGWPUYgjo+V01is7p04It6KhgrzhJGnIj9GgX8W4bZoCQ==
+react-merge-refs@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-merge-refs/-/react-merge-refs-3.0.0.tgz#9d6c50684f694bd748f04c4c0c8cb8f4e5e0c9f9"
+  integrity sha512-4kvaikemXtgqDPMEGe5tpaV3Ng5eb4W4F5w3/ufLFiq+DNP36EPlwYQsbEAiF0FM1FgEjZt2v7p/YRZE1OWpIg==
 
 react-refresh@^0.11.0:
   version "0.11.0"
