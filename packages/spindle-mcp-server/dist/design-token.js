@@ -33,13 +33,13 @@ function getAllCssDesignTokens() {
     const files = fs_1.default
         .readdirSync(cssDir)
         .filter((file) => file.startsWith('spindle-tokens-') && file.endsWith('.css'));
-    const tokens = {};
+    const tokenList = {};
     files.forEach((file) => {
         const tokenType = file.replace('spindle-tokens-', '').replace('.css', '');
         try {
             const token = getCssDesignToken(tokenType);
             if (token) {
-                tokens[tokenType] = token;
+                tokenList[tokenType] = token;
             }
         }
         catch (error) {
@@ -47,8 +47,58 @@ function getAllCssDesignTokens() {
         }
     });
     // All apps use the ameba color palette instead of the css tokens
-    tokens.color = parseCssCustomProperties(amebaColorPaletteCss);
-    return tokens;
+    tokenList.color = parseCssCustomProperties(amebaColorPaletteCss);
+    const documentation = `
+カラートークンを利用するには、ameba-color-palette.cssを利用してください。
+
+\`\`\`bash
+npm install ameba-color-palette.css
+\`\`\`
+
+\`\`\`css
+@import 'ameba-color-palette.css';
+\`\`\`
+
+\`\`\`javascript
+import 'ameba-color-palette.css/ameba-color-palette.css';
+\`\`\`
+
+\`\`\`HTML
+<link rel="stylesheet" href="https://unpkg.com/ameba-color-palette.css/ameba-color-palette.css">
+\`\`\`
+
+※ 本番環境で利用する際にはセルフホストすることを推奨します。
+
+カラー以外のデザイントークンを利用するには、以下のようにしてください。
+
+\`\`\`bash
+npm install @openameba/spindle-tokens
+\`\`\`
+
+\`\`\`css
+@import '@openameba/spindle-tokens/dist/css/spindle-tokens-animation.css';
+@import '@openameba/spindle-tokens/dist/css/spindle-tokens-font.css';
+@import '@openameba/spindle-tokens/dist/css/spindle-tokens-shadow.css';
+\`\`\`
+
+\`\`\`javascript
+import '@openameba/spindle-tokens/dist/css/spindle-tokens-animation.css';
+import '@openameba/spindle-tokens/dist/css/spindle-tokens-font.css';
+import '@openameba/spindle-tokens/dist/css/spindle-tokens-shadow.css';
+\`\`\`
+
+\`\`\`html
+<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-tokens/dist/css/spindle-tokens-animation.css">
+<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-tokens/dist/css/spindle-tokens-font.css">
+<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-tokens/dist/css/spindle-tokens-shadow.css">
+\`\`\`
+
+※ 本番環境で利用する際にはでセルフホストすることを推奨します。
+  `;
+    return {
+        tokenList,
+        documentation,
+    };
 }
 // @see https://github.com/openameba/ameba-color-palette.css
 const amebaColorPaletteCss = `
