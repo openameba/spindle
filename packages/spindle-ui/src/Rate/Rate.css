@@ -1,8 +1,33 @@
+.spui-Rate {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
 .spui-Rate-list {
   display: flex;
   gap: 2px;
+  line-height: 0;
   margin: 0;
   padding: 0;
+}
+
+.spui-Rate-text {
+  color: var(--color-text-high-emphasis);
+  font-weight: bold;
+  margin: 0;
+}
+
+.spui-Rate-text--large {
+  font-size: 1.25rem;
+}
+
+.spui-Rate-text--medium {
+  font-size: 1rem;
+}
+
+.spui-Rate-text--small {
+  font-size: 0.8125rem;
 }
 
 .spui-Rate-item {
@@ -18,4 +43,16 @@
   left: 0;
   position: absolute;
   top: 0;
+}
+
+.spui-Rate-item-icon--large {
+  font-size: 1.25em;
+}
+
+.spui-Rate-item-icon--medium {
+  font-size: 1em;
+}
+
+.spui-Rate-item-icon--small {
+  font-size: 0.8125em;
 }

@@ -9,6 +9,7 @@ interface Props extends React.HTMLAttributes<HTMLElement> {
   max: number;
   value: number;
   size?: Size;
+  showText?: boolean;
 }
 
 const BLOCK_NAME = 'spui-Rate';
@@ -18,13 +19,17 @@ const convertToValue = (num: number): number => {
 };
 
 export const Rate = (props: Props) => {
-  const { max, value, size = 'medium', ...rest } = props;
+  const { max, value, size = 'medium', showText = false, ...rest } = props;
   const convertedValue = convertToValue(value);
   const iconClass = `${BLOCK_NAME}-item-icon ${BLOCK_NAME}-item-icon--${size}`;
 
   return (
     <div className={BLOCK_NAME} {...rest}>
-      {/* <p>{convertedValue}</p> */}
+      {showText && (
+        <p className={`${BLOCK_NAME}-text ${BLOCK_NAME}-text--${size}`}>
+          {convertedValue}
+        </p>
+      )}
       <ul className={`${BLOCK_NAME}-list`}>
         {Array.from({ length: max }, (_, index: number) => {
           const itemValue = index + 1;
