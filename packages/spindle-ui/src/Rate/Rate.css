@@ -34,25 +34,25 @@
   list-style: none;
 }
 
-.spui-Rate-item-half {
+.spui-Rate-itemHalf {
   display: block;
   position: relative;
 }
 
-.spui-Rate-item-icon + .spui-Rate-item-icon {
+.spui-Rate-itemIcon + .spui-Rate-itemIcon {
   left: 0;
   position: absolute;
   top: 0;
 }
 
-.spui-Rate-item-icon--large {
+.spui-Rate-itemIcon--large {
   font-size: 1.25em;
 }
 
-.spui-Rate-item-icon--medium {
+.spui-Rate-itemIcon--medium {
   font-size: 1em;
 }
 
-.spui-Rate-item-icon--small {
+.spui-Rate-itemIcon--small {
   font-size: 0.8125em;
 }
