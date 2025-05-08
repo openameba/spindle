@@ -102,12 +102,12 @@
     "reg-publish-gcs-plugin": "0.14.4",
     "reg-suit": "0.14.4",
     "scaffdog": "4.1.0",
-    "stylelint": "^15.0.0",
-    "stylelint-config-prettier": "^9.0.0",
-    "stylelint-config-standard": "^34.0.0",
-    "stylelint-order": "^6.0.0",
-    "stylelint-prettier": "^4.0.0",
-    "stylelint-selector-bem-pattern": "^3.0.0",
+    "stylelint": "15.11.0",
+    "stylelint-config-prettier": "9.0.5",
+    "stylelint-config-standard": "34.0.0",
+    "stylelint-order": "6.0.4",
+    "stylelint-prettier": "4.0.2",
+    "stylelint-selector-bem-pattern": "3.0.1",
     "ts-jest": "29.3.2",
     "webpack": "5.94.0"
   }
