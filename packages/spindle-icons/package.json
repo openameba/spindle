@@ -23,7 +23,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@types/cli-progress": "^3.7.0",
+    "@types/cli-progress": "3.7.0",
     "axios": "1.9.0",
     "cli-progress": "3.8.2",
     "figma-api": "1.5.5",

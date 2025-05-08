@@ -6246,7 +6246,14 @@
   resolved "https://registry.yarnpkg.com/@types/caseless/-/caseless-0.12.5.tgz#db9468cb1b1b5a925b8f34822f1669df0c5472f5"
   integrity sha512-hWtVTC2q7hc7xZ/RLbxapMvDMgUnDvKvMOpKal4DrMyfGBUfB1oKaZlIRr6mJL+If3bAP6sV/QneGzF6tJjZDg==
 
-"@types/cli-progress@^3.7.0", "@types/cli-progress@^3.8.0":
+"@types/cli-progress@3.7.0":
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/@types/cli-progress/-/cli-progress-3.7.0.tgz#2c77da02e861699f83cce1f26b4da6cb0e438f04"
+  integrity sha512-h/f9+pomRHSodXOPgBjlLEESWhv2Z34pP5djmruylvEZ7MzTd1pljOmdsBpVh3uCGjTVOzb2ux8ZaXYqyPFgpQ==
+  dependencies:
+    "@types/node" "*"
+
+"@types/cli-progress@^3.8.0":
   version "3.11.6"
   resolved "https://registry.yarnpkg.com/@types/cli-progress/-/cli-progress-3.11.6.tgz#94b334ebe4190f710e51c1bf9b4fedb681fa9e45"
   integrity sha512-cE3+jb9WRlu+uOSAugewNpITJDt1VF8dHOopPO4IABFc3SXYL5WE/+PTz/FCdZRRfIujiWW3n3aMbv1eIGVRWA==
@@ -6405,7 +6412,7 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@^29.5.13":
+"@types/jest@29.5.13":
   version "29.5.13"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-29.5.13.tgz#8bc571659f401e6a719a7bf0dbcb8b78c71a8adc"
   integrity sha512-wd+MVEZCHt23V0/L642O5APvspWply/rGY5BcW4SUETo2UzPU3Z26qr8jC2qxpimI2jjx9h7+2cj2FwIr01bXg==
@@ -6437,7 +6444,7 @@
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.11.tgz#d421b6c527a3037f7c84433fd2c4229e016863d3"
   integrity sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==
 
-"@types/lodash.setwith@^4.3.6":
+"@types/lodash.setwith@4.3.9":
   version "4.3.9"
   resolved "https://registry.yarnpkg.com/@types/lodash.setwith/-/lodash.setwith-4.3.9.tgz#02ce72e68206464db461a282a5cf8123dd67b54f"
   integrity sha512-OQIdB68rvZH6imlOrdVl2svq7mtTSsRaZhDTWIi4vF8TC/ZGMF8FYum9A6Sfa320ACzvqScvpc/7yjjI3iPDHg==
@@ -6528,17 +6535,17 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.0.2.tgz#3452a24edf9fea138b48fad4a0a028a683da1e40"
   integrity sha512-5tabW/i+9mhrfEOUcLDu2xBPsHJ+X5Orqy9FKpale3SjDA17j5AEpYq5vfy3oAeAHGcvANRCO3NV3d2D6q3NiA==
 
-"@types/node@^14.0.10 || ^16.0.0", "@types/node@^14.14.20 || ^16.0.0":
-  version "16.11.41"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.41.tgz#88eb485b1bfdb4c224d878b7832239536aa2f813"
-  integrity sha512-mqoYK2TnVjdkGk8qXAVGc/x9nSaTpSrFaGFm43BUH3IdoBV0nta6hYaGmdOvIMlbHJbUEVen3gvwpwovAZKNdQ==
-
-"@types/node@^20.0.0":
+"@types/node@20.17.30":
   version "20.17.30"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-20.17.30.tgz#1d93f656d3b869dbef7b796568ac457606ba58d0"
   integrity sha512-7zf4YyHA+jvBNfVrk2Gtvs6x7E8V+YDW05bNfG2XkWDJfYRXrTiP/DsB2zSYTaHX0bGIujTBQdMVAhb+j7mwpg==
   dependencies:
     undici-types "~6.19.2"
+
+"@types/node@^14.0.10 || ^16.0.0", "@types/node@^14.14.20 || ^16.0.0":
+  version "16.11.41"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.41.tgz#88eb485b1bfdb4c224d878b7832239536aa2f813"
+  integrity sha512-mqoYK2TnVjdkGk8qXAVGc/x9nSaTpSrFaGFm43BUH3IdoBV0nta6hYaGmdOvIMlbHJbUEVen3gvwpwovAZKNdQ==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
