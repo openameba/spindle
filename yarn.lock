@@ -21792,7 +21792,7 @@ puppeteer-element2selector@^0.0.3:
   dependencies:
     "@medv/finder" "^2.0.0"
 
-puppeteer@^24.1.0:
+puppeteer@24.2.0:
   version "24.2.0"
   resolved "https://registry.yarnpkg.com/puppeteer/-/puppeteer-24.2.0.tgz#552d1e7c3d94c82671269263fc63d68a5fe91316"
   integrity sha512-z8vv7zPEgrilIbOo3WNvM+2mXMnyM9f4z6zdrB88Fzeuo43Oupmjrzk3EpuvuCtyK0A7Lsllfx7Z+4BvEEGJcQ==
