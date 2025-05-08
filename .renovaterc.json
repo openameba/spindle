@@ -2,27 +2,9 @@
   "extends": [
     "local>openameba/renovate-config:main.json5",
     "local>openameba/renovate-config:npm.json5",
-    ":preserveSemverRanges",
-    ":semanticCommitScopeDisabled"
+    "local>openameba/renovate-config:automerge-minor.json5"
   ],
-  "reviewers": ["team:spindle-working-group"],
-  "prConcurrentLimit": 0,
-  "packageRules": [
-    {
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "automerge": true,
-      "matchPackageNames": [
-        "/eslint/",
-        "/jest/",
-        "/^@testing-library/",
-        "/stylelint/",
-        "/^bundlesize$/",
-        "/prettier/",
-        "/textlint/",
-        "/acot/",
-        "/yaml-lint/",
-        "/reg-suit/"
-      ]
-    }
+  "reviewers": [
+    "team:spindle-working-group"
   ]
 }
