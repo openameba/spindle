@@ -102,7 +102,7 @@
     "reg-publish-gcs-plugin": "0.14.4",
     "reg-suit": "0.14.4",
     "scaffdog": "4.1.0",
-    "stylelint": "^15.0.0",
+    "stylelint": "^16.0.0",
     "stylelint-config-prettier": "^9.0.0",
     "stylelint-config-standard": "^34.0.0",
     "stylelint-order": "^6.0.0",
