@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mcp_js_1 = require("@modelcontextprotocol/sdk/server/mcp.js");
 const stdio_js_1 = require("@modelcontextprotocol/sdk/server/stdio.js");
 const zod_1 = require("zod");
+const accessibility_js_1 = require("./accessibility.js");
 const components_js_1 = require("./components.js");
 const design_token_js_1 = require("./design-token.js");
 const icon_js_1 = require("./icon.js");
@@ -78,6 +79,15 @@ server.tool('get_icon_info', '指定したアイコンの情報を取得しま�
         {
             type: 'text',
             text: JSON.stringify(await (0, icon_js_1.getIconInfo)(name), null, 2),
+        },
+    ],
+}));
+// アクセシビリティ関連のドキュメントを取得します
+server.tool('get_accessibility_docs', 'アクセシビリティ関連のドキュメントを取得します', {}, async () => ({
+    content: [
+        {
+            type: 'text',
+            text: JSON.stringify(await (0, accessibility_js_1.getAccessibilityDocs)(), null, 2),
         },
     ],
 }));
