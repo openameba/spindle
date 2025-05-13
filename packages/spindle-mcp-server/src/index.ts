@@ -1,6 +1,7 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { z } from 'zod';
+import { getAccessibilityDocs } from './accessibility.js';
 import { getComponents, getComponentInfo } from './components.js';
 import { getAllCssDesignTokens, getCssDesignToken } from './design-token.js';
 import { getIconInfo, getIcons } from './icon.js';
@@ -109,6 +110,21 @@ server.tool(
       {
         type: 'text',
         text: JSON.stringify(await getIconInfo(name), null, 2),
+      },
+    ],
+  }),
+);
+
+// アクセシビリティ関連のドキュメントを取得します
+server.tool(
+  'get_accessibility_docs',
+  'アクセシビリティ関連のドキュメントを取得します',
+  {},
+  async () => ({
+    content: [
+      {
+        type: 'text',
+        text: JSON.stringify(await getAccessibilityDocs(), null, 2),
       },
     ],
   }),
