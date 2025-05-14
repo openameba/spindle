@@ -1,26 +1,26 @@
 {
   "Primitive Color": {
-    "Brand Color/Ameba Green": {
+    "Brand/Ameba Green": {
       "$type": "color",
       "$value": "#2d8c3c"
     },
-    "Brand Color/Ameba Black": {
+    "Brand/Ameba Black": {
       "$type": "color",
       "$value": "#000000"
     },
-    "Brand Color/Ameba White": {
+    "Brand/Ameba White": {
       "$type": "color",
       "$value": "#ffffff"
     },
-    "Brand Color/Ameba Neutral Gray": {
+    "Brand/Ameba Neutral Gray": {
       "$type": "color",
       "$value": "#f6f6f6"
     },
-    "Brand Color/Ameba Yellow Green": {
+    "Brand/Ameba Yellow Green": {
       "$type": "color",
       "$value": "#82be28"
     },
-    "Brand Color/Ameba Yellow": {
+    "Brand/Ameba Yellow": {
       "$type": "color",
       "$value": "#f5e100"
     },
@@ -196,6 +196,10 @@
       "$type": "color",
       "$value": "#ff6a5933"
     },
+    "Rating/Rating Orange 100": {
+      "$type": "color",
+      "$value": "#ee7b00"
+    },
     "Focus/Focus Blue 100": {
       "$type": "color",
       "$value": "#0091ff"
@@ -252,7 +256,7 @@
       "$type": "color",
       "$value": "#ffffff"
     },
-    "Highlight/HIghlight Yellow 100": {
+    "Highlight/Highlight Yellow 100": {
       "$type": "color",
       "$value": "#f5e100"
     },
