@@ -192,6 +192,7 @@ const amebaColorPaletteCss = `
   --caution-red-vivid-100: #ff6a59;
   --caution-red-vivid-20-alpha: rgba(255, 106, 89, 0.2);
   --caution-red-vivid-5-alpha: rgba(255, 106, 89, 0.05);
+  --rate-orange-100: #ee7b00;
 
   /* Expressive Colors */
   --expressive-blue: #4795c8;
@@ -284,6 +285,7 @@ const amebaColorPaletteCss = `
   --color-object-positive: var(--primary-green-70);
   --color-object-high-emphasis-inverse: var(--white-100);
   --color-object-expressive-pink: var(--expressive-pink);
+  --color-object-rate: var(--rate-orange-100);
 
   /* Overlay Colors */
   --color-overlay-dark: var(--black-80-alpha);
