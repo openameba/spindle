@@ -7,16 +7,17 @@ import {
   transformThemeColor,
 } from '../lib/color-transformer';
 
-const FIGMA_FILE_KEY = 'jbyORMGXjv9Cr770bWEKna';
+const FIGMA_FILE_KEY_PRIMITIVE = 'GIWwD96N0dDLzv0YxKZXTf';
+const FIGMA_FILE_KEY_THEME = 'jbyORMGXjv9Cr770bWEKna';
 const FIGMA_TOKEN = process.env.FIGMA_TOKEN || '';
 
 (async function () {
-  const variables = await fetchLocalVariables<GetLocalVariablesResponse>(
-    FIGMA_FILE_KEY,
+  const variablesPrimitive = await fetchLocalVariables<GetLocalVariablesResponse>(
+    FIGMA_FILE_KEY_PRIMITIVE,
     FIGMA_TOKEN,
   );
 
-  const transformedPrimitiveColor = transformPrimitiveColor(variables);
+  const transformedPrimitiveColor = transformPrimitiveColor(variablesPrimitive);
 
   const primitiveColorResult: { [key: string]: { [key: string]: object } } = {
     'Primitive Color': transformedPrimitiveColor,
@@ -27,7 +28,12 @@ const FIGMA_TOKEN = process.env.FIGMA_TOKEN || '';
     JSON.stringify(primitiveColorResult, null, 2),
   );
 
-  const transformedThemeColor = transformThemeColor(variables);
+  const variablesTheme = await fetchLocalVariables<GetLocalVariablesResponse>(
+    FIGMA_FILE_KEY_THEME,
+    FIGMA_TOKEN,
+  );
+
+  const transformedThemeColor = transformThemeColor(variablesTheme);
 
   fs.writeFileSync(
     path.resolve(__dirname, '../tokens/theme-light.tokens.json'),
