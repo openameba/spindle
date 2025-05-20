@@ -140,6 +140,10 @@
       "$type": "color",
       "$value": "{Primitive Color.Caution/Caution Red 100}"
     },
+    "Object/Rating": {
+      "$type": "color",
+      "$value": "{Primitive Color.Rating/Rating Orange 100}"
+    },
     "Object/Expressive Pink": {
       "$type": "color",
       "$value": "{Primitive Color.Expressive Pink/Expressive Pink 40}"
@@ -198,7 +202,7 @@
     },
     "Brand/Ameba Green": {
       "$type": "color",
-      "$value": "{Primitive Color.Brand Color/Ameba Green}"
+      "$value": "{Primitive Color.Brand/Ameba Green}"
     },
     "Third Party/Facebook Blue": {
       "$type": "color",
@@ -274,23 +278,23 @@
     },
     "Brand/Black": {
       "$type": "color",
-      "$value": "{Primitive Color.Brand Color/Ameba Black}"
+      "$value": "{Primitive Color.Brand/Ameba Black}"
     },
     "Brand/White": {
       "$type": "color",
-      "$value": "{Primitive Color.Brand Color/Ameba White}"
+      "$value": "{Primitive Color.Brand/Ameba White}"
     },
     "Brand/Netural Gray": {
       "$type": "color",
-      "$value": "{Primitive Color.Brand Color/Ameba Neutral Gray}"
+      "$value": "{Primitive Color.Brand/Ameba Neutral Gray}"
     },
     "Brand/Yellow Green": {
       "$type": "color",
-      "$value": "{Primitive Color.Brand Color/Ameba Yellow Green}"
+      "$value": "{Primitive Color.Brand/Ameba Yellow Green}"
     },
     "Brand/Yellow": {
       "$type": "color",
-      "$value": "{Primitive Color.Brand Color/Ameba Yellow}"
+      "$value": "{Primitive Color.Brand/Ameba Yellow}"
     },
     "Focus/Ambiguous": {
       "$type": "color",
@@ -310,7 +314,7 @@
     },
     "Highlight/Yellow": {
       "$type": "color",
-      "$value": "{Primitive Color.Highlight/HIghlight Yellow 100}"
+      "$value": "{Primitive Color.Highlight/Highlight Yellow 100}"
     },
     "Tap Highlight/Base": {
       "$type": "color",
