@@ -24,6 +24,22 @@
       "$type": "color",
       "$value": "#f5e100"
     },
+    "Uranai Brand/Uranai Purple": {
+      "$type": "color",
+      "$value": "#743faa"
+    },
+    "Uranai Brand/Uranai Navy Blue": {
+      "$type": "color",
+      "$value": "#391e66"
+    },
+    "Uranai Brand/Uranai White": {
+      "$type": "color",
+      "$value": "#ffffff"
+    },
+    "Uranai Brand/Uranai Cream": {
+      "$type": "color",
+      "$value": "#fbf8f4"
+    },
     "Primary Green/Primary Green 100": {
       "$type": "color",
       "$value": "#0f5c1f"
@@ -40,9 +56,21 @@
       "$type": "color",
       "$value": "#298737"
     },
+    "Primary Green/Primary Green 60": {
+      "$type": "color",
+      "$value": "#389e46"
+    },
     "Primary Green/Primary Green 50": {
       "$type": "color",
       "$value": "#41ad4f"
+    },
+    "Primary Green/Primary Green 40": {
+      "$type": "color",
+      "$value": "#5eb969"
+    },
+    "Primary Green/Primary Green 30": {
+      "$type": "color",
+      "$value": "#7bc583"
     },
     "Primary Green/Primary Green 20": {
       "$type": "color",
@@ -56,6 +84,14 @@
       "$type": "color",
       "$value": "#e7f5e9"
     },
+    "Seconrady Green/Secondary Green 100": {
+      "$type": "color",
+      "$value": "#366600"
+    },
+    "Seconrady Green/Secondary Green 90": {
+      "$type": "color",
+      "$value": "#427504"
+    },
     "Seconrady Green/Secondary Green 80": {
       "$type": "color",
       "$value": "#477d00"
@@ -63,6 +99,10 @@
     "Seconrady Green/Secondary Green 70": {
       "$type": "color",
       "$value": "#5e9b15"
+    },
+    "Seconrady Green/Secondary Green 60": {
+      "$type": "color",
+      "$value": "#73ae20"
     },
     "Seconrady Green/Secondary Green 50": {
       "$type": "color",
@@ -72,13 +112,77 @@
       "$type": "color",
       "$value": "#95c84d"
     },
+    "Seconrady Green/Secondary Green 30": {
+      "$type": "color",
+      "$value": "#a9d16f"
+    },
+    "Seconrady Green/Secondary Green 20": {
+      "$type": "color",
+      "$value": "#c2de99"
+    },
+    "Seconrady Green/Secondary Green 10": {
+      "$type": "color",
+      "$value": "#daebc1"
+    },
     "Seconrady Green/Secondary Green 5": {
       "$type": "color",
       "$value": "#f0f7e6"
     },
+    "Primary Purple/Primary Purple 100": {
+      "$type": "color",
+      "$value": "#391e66"
+    },
+    "Primary Purple/Primary Purple 90": {
+      "$type": "color",
+      "$value": "#462083"
+    },
+    "Primary Purple/Primary Purple 80": {
+      "$type": "color",
+      "$value": "#562b92"
+    },
+    "Primary Purple/Primary Purple 70": {
+      "$type": "color",
+      "$value": "#61319b"
+    },
+    "Primary Purple/Primary Purple 60": {
+      "$type": "color",
+      "$value": "#6c3aa4"
+    },
+    "Primary Purple/Primary Purple 50": {
+      "$type": "color",
+      "$value": "#743faa"
+    },
+    "Primary Purple/Primary Purple 40": {
+      "$type": "color",
+      "$value": "#885bb7"
+    },
+    "Primary Purple/Primary Purple 30": {
+      "$type": "color",
+      "$value": "#9d79c4"
+    },
+    "Primary Purple/Primary Purple 20": {
+      "$type": "color",
+      "$value": "#b8a0d5"
+    },
+    "Primary Purple/Primary Purple 10": {
+      "$type": "color",
+      "$value": "#d4c6e5"
+    },
+    "Primary Purple/Primary Purple 5": {
+      "$type": "color",
+      "$value": "#eee8f4"
+    },
     "Gray/Gray 100": {
       "$type": "color",
       "$value": "#08121a"
+    },
+    "Gray/Gray 90 alpha": {
+      "$type": "color",
+      "$value": "#08121af2"
+    },
+    "Gray/Gray 80 alpha": {
+      "$type": "color",
+      "$value": "#08121acc"
     },
     "Gray/Gray 70 alpha": {
       "$type": "color",
@@ -87,6 +191,14 @@
     "Gray/Gray 60 alpha": {
       "$type": "color",
       "$value": "#08121a9c"
+    },
+    "Gray/Gray 50 alpha": {
+      "$type": "color",
+      "$value": "#08121a78"
+    },
+    "Gray/Gray 40 alpha": {
+      "$type": "color",
+      "$value": "#08121a66"
     },
     "Gray/Gray 30 alpha": {
       "$type": "color",
@@ -112,6 +224,30 @@
       "$type": "color",
       "$value": "#394148"
     },
+    "Gray/Gray 70": {
+      "$type": "color",
+      "$value": "#464d53"
+    },
+    "Gray/Gray 60": {
+      "$type": "color",
+      "$value": "#686e73"
+    },
+    "Gray/Gray 50": {
+      "$type": "color",
+      "$value": "#8b9093"
+    },
+    "Gray/Gray 40": {
+      "$type": "color",
+      "$value": "#9ca0a3"
+    },
+    "Gray/Gray 30": {
+      "$type": "color",
+      "$value": "#b5b8ba"
+    },
+    "Gray/Gray 20": {
+      "$type": "color",
+      "$value": "#d8d9da"
+    },
     "Gray/Gray 10": {
       "$type": "color",
       "$value": "#ebeced"
@@ -124,9 +260,17 @@
       "$type": "color",
       "$value": "#ffffff"
     },
+    "White/White 90 alpha": {
+      "$type": "color",
+      "$value": "#ffffffe5"
+    },
     "White/White 80 alpha": {
       "$type": "color",
       "$value": "#ffffffcc"
+    },
+    "White/White 70 alpha": {
+      "$type": "color",
+      "$value": "#ffffffb2"
     },
     "White/White 60 alpha": {
       "$type": "color",
@@ -156,13 +300,33 @@
       "$type": "color",
       "$value": "#ffffff0d"
     },
+    "Black/Black 100": {
+      "$type": "color",
+      "$value": "#000000"
+    },
+    "Black/Black 90 alpha": {
+      "$type": "color",
+      "$value": "#000000e5"
+    },
     "Black/Black 80 alpha": {
       "$type": "color",
       "$value": "#000000cc"
     },
+    "Black/Black 70 alpha": {
+      "$type": "color",
+      "$value": "#000000b2"
+    },
     "Black/Black 60 alpha": {
       "$type": "color",
       "$value": "#00000099"
+    },
+    "Black/Black 50 alpha": {
+      "$type": "color",
+      "$value": "#00000080"
+    },
+    "Black/Black 40 alpha": {
+      "$type": "color",
+      "$value": "#00000066"
     },
     "Black/Black 30 alpha": {
       "$type": "color",
@@ -172,9 +336,321 @@
       "$type": "color",
       "$value": "#00000033"
     },
+    "Black/Black 10 alpha": {
+      "$type": "color",
+      "$value": "#0000001a"
+    },
+    "Black/Black ５ alpha": {
+      "$type": "color",
+      "$value": "#0000000d"
+    },
+    "Expressive Blue/Expressive Blue 100": {
+      "$type": "color",
+      "$value": "#203957"
+    },
+    "Expressive Blue/Expressive Blue 90": {
+      "$type": "color",
+      "$value": "#2e527d"
+    },
+    "Expressive Blue/Expressive Blue 80": {
+      "$type": "color",
+      "$value": "#3a71a0"
+    },
+    "Expressive Blue/Expressive Blue 70": {
+      "$type": "color",
+      "$value": "#3f82b4"
+    },
+    "Expressive Blue/Expressive Blue 60": {
+      "$type": "color",
+      "$value": "#4794c8"
+    },
+    "Expressive Blue/Expressive Blue 50": {
+      "$type": "color",
+      "$value": "#4da2d6"
+    },
+    "Expressive Blue/Expressive Blue 40": {
+      "$type": "color",
+      "$value": "#57afdc"
+    },
+    "Expressive Blue/Expressive Blue 30": {
+      "$type": "color",
+      "$value": "#6abde2"
+    },
+    "Expressive Blue/Expressive Blue 20": {
+      "$type": "color",
+      "$value": "#8dcfec"
+    },
+    "Expressive Blue/Expressive Blue 10": {
+      "$type": "color",
+      "$value": "#b8e2f4"
+    },
+    "Expressive Blue/Expressive Blue 5": {
+      "$type": "color",
+      "$value": "#e3f4fa"
+    },
+    "Expressive Green/Expressive Green 100": {
+      "$type": "color",
+      "$value": "#003d2c"
+    },
+    "Expressive Green/Expressive Green 90": {
+      "$type": "color",
+      "$value": "#005b41"
+    },
+    "Expressive Green/Expressive Green 80": {
+      "$type": "color",
+      "$value": "#00775c"
+    },
+    "Expressive Green/Expressive Green 70": {
+      "$type": "color",
+      "$value": "#00886b"
+    },
+    "Expressive Green/Expressive Green 60": {
+      "$type": "color",
+      "$value": "#00987b"
+    },
+    "Expressive Green/Expressive Green 50": {
+      "$type": "color",
+      "$value": "#00a688"
+    },
+    "Expressive Green/Expressive Green 40": {
+      "$type": "color",
+      "$value": "#14b599"
+    },
+    "Expressive Green/Expressive Green 30": {
+      "$type": "color",
+      "$value": "#4ac3ab"
+    },
+    "Expressive Green/Expressive Green 20": {
+      "$type": "color",
+      "$value": "#81d5c3"
+    },
+    "Expressive Green/Expressive Green 10": {
+      "$type": "color",
+      "$value": "#b3e5da"
+    },
+    "Expressive Green/Expressive Green 5": {
+      "$type": "color",
+      "$value": "#e0f5f1"
+    },
+    "Expressive Purple/Expressive Purple 100": {
+      "$type": "color",
+      "$value": "#240099"
+    },
+    "Expressive Purple/Expressive Purple 90": {
+      "$type": "color",
+      "$value": "#4500b4"
+    },
+    "Expressive Purple/Expressive Purple 80": {
+      "$type": "color",
+      "$value": "#7100c1"
+    },
+    "Expressive Purple/Expressive Purple 70": {
+      "$type": "color",
+      "$value": "#8600c8"
+    },
+    "Expressive Purple/Expressive Purple 60": {
+      "$type": "color",
+      "$value": "#9d00cf"
+    },
+    "Expressive Purple/Expressive Purple 50": {
+      "$type": "color",
+      "$value": "#ae00d4"
+    },
+    "Expressive Purple/Expressive Purple 40": {
+      "$type": "color",
+      "$value": "#be2ce0"
+    },
+    "Expressive Purple/Expressive Purple 30": {
+      "$type": "color",
+      "$value": "#ca5ce6"
+    },
+    "Expressive Purple/Expressive Purple 20": {
+      "$type": "color",
+      "$value": "#da8eed"
+    },
+    "Expressive Purple/Expressive Purple 10": {
+      "$type": "color",
+      "$value": "#e9bcf3"
+    },
+    "Expressive Purple/Expressive Purple 5": {
+      "$type": "color",
+      "$value": "#f6e4fa"
+    },
+    "Expressive Lavender/Expressive Lavender 100": {
+      "$type": "color",
+      "$value": "#102aa1"
+    },
+    "Expressive Lavender/Expressive Lavender 90": {
+      "$type": "color",
+      "$value": "#0022bb"
+    },
+    "Expressive Lavender/Expressive Lavender 80": {
+      "$type": "color",
+      "$value": "#192dca"
+    },
+    "Expressive Lavender/Expressive Lavender 70": {
+      "$type": "color",
+      "$value": "#3533d1"
+    },
+    "Expressive Lavender/Expressive Lavender 60": {
+      "$type": "color",
+      "$value": "#4a3bda"
+    },
+    "Expressive Lavender/Expressive Lavender 50": {
+      "$type": "color",
+      "$value": "#5740e1"
+    },
+    "Expressive Lavender/Expressive Lavender 40": {
+      "$type": "color",
+      "$value": "#755ce6"
+    },
+    "Expressive Lavender/Expressive Lavender 30": {
+      "$type": "color",
+      "$value": "#917aeb"
+    },
+    "Expressive Lavender/Expressive Lavender 20": {
+      "$type": "color",
+      "$value": "#b2a1f0"
+    },
+    "Expressive Lavender/Expressive Lavender 10": {
+      "$type": "color",
+      "$value": "#d1c6f5"
+    },
+    "Expressive Lavender/Expressive Lavender 5": {
+      "$type": "color",
+      "$value": "#ede8fb"
+    },
+    "Expressive Orange/Expressive Orange 100": {
+      "$type": "color",
+      "$value": "#8a2701"
+    },
+    "Expressive Orange/Expressive Orange 90": {
+      "$type": "color",
+      "$value": "#a22e01"
+    },
+    "Expressive Orange/Expressive Orange 80": {
+      "$type": "color",
+      "$value": "#ba3b08"
+    },
+    "Expressive Orange/Expressive Orange 70": {
+      "$type": "color",
+      "$value": "#c7420c"
+    },
+    "Expressive Orange/Expressive Orange 60": {
+      "$type": "color",
+      "$value": "#d44811"
+    },
+    "Expressive Orange/Expressive Orange 50": {
+      "$type": "color",
+      "$value": "#de4d14"
+    },
+    "Expressive Orange/Expressive Orange 40": {
+      "$type": "color",
+      "$value": "#e2673a"
+    },
+    "Expressive Orange/Expressive Orange 30": {
+      "$type": "color",
+      "$value": "#e6815c"
+    },
+    "Expressive Orange/Expressive Orange 20": {
+      "$type": "color",
+      "$value": "#eda38a"
+    },
+    "Expressive Orange/Expressive Orange 10": {
+      "$type": "color",
+      "$value": "#f4c7b7"
+    },
+    "Expressive Orange/Expressive Orange 5": {
+      "$type": "color",
+      "$value": "#f6e7e5"
+    },
+    "Expressive Yellow/Expressive Yellow 100": {
+      "$type": "color",
+      "$value": "#b24109"
+    },
+    "Expressive Yellow/Expressive Yellow 90": {
+      "$type": "color",
+      "$value": "#c24f16"
+    },
+    "Expressive Yellow/Expressive Yellow 80": {
+      "$type": "color",
+      "$value": "#cc661e"
+    },
+    "Expressive Yellow/Expressive Yellow 70": {
+      "$type": "color",
+      "$value": "#d37423"
+    },
+    "Expressive Yellow/Expressive Yellow 60": {
+      "$type": "color",
+      "$value": "#da8227"
+    },
+    "Expressive Yellow/Expressive Yellow 50": {
+      "$type": "color",
+      "$value": "#de8c2a"
+    },
+    "Expressive Yellow/Expressive Yellow 40": {
+      "$type": "color",
+      "$value": "#e19c40"
+    },
+    "Expressive Yellow/Expressive Yellow 30": {
+      "$type": "color",
+      "$value": "#e6ad5c"
+    },
+    "Expressive Yellow/Expressive Yellow 20": {
+      "$type": "color",
+      "$value": "#edc488"
+    },
+    "Expressive Yellow/Expressive Yellow 10": {
+      "$type": "color",
+      "$value": "#f4dbb6"
+    },
+    "Expressive Yellow/Expressive Yellow 5": {
+      "$type": "color",
+      "$value": "#faf1e2"
+    },
+    "Expressive Pink/Expressive Pink 100": {
+      "$type": "color",
+      "$value": "#630f33"
+    },
+    "Expressive Pink/Expressive Pink 90": {
+      "$type": "color",
+      "$value": "#831443"
+    },
+    "Expressive Pink/Expressive Pink 80": {
+      "$type": "color",
+      "$value": "#a71e4a"
+    },
+    "Expressive Pink/Expressive Pink 70": {
+      "$type": "color",
+      "$value": "#bb234d"
+    },
+    "Expressive Pink/Expressive Pink 60": {
+      "$type": "color",
+      "$value": "#d02851"
+    },
+    "Expressive Pink/Expressive Pink 50": {
+      "$type": "color",
+      "$value": "#e02c53"
+    },
     "Expressive Pink/Expressive Pink 40": {
       "$type": "color",
       "$value": "#e6456a"
+    },
+    "Expressive Pink/Expressive Pink 30": {
+      "$type": "color",
+      "$value": "#ec6384"
+    },
+    "Expressive Pink/Expressive Pink 20": {
+      "$type": "color",
+      "$value": "#f28fa6"
+    },
+    "Expressive Pink/Expressive Pink 10": {
+      "$type": "color",
+      "$value": "#f8bbc9"
+    },
+    "Expressive Pink/Expressive Pink 5": {
+      "$type": "color",
+      "$value": "#fce4e9"
     },
     "Caution/Caution Red 100": {
       "$type": "color",
@@ -196,9 +672,21 @@
       "$type": "color",
       "$value": "#ff6a5933"
     },
+    "Caution/Caution Red Vivid 5 alpha": {
+      "$type": "color",
+      "$value": "#ff6a590d"
+    },
     "Rating/Rating Orange 100": {
       "$type": "color",
       "$value": "#ee7b00"
+    },
+    "Rating/Rating Orange 20 alpha": {
+      "$type": "color",
+      "$value": "#ee7b0033"
+    },
+    "Rating/Rating Orange 5 alpha": {
+      "$type": "color",
+      "$value": "#ee7b000d"
     },
     "Focus/Focus Blue 100": {
       "$type": "color",

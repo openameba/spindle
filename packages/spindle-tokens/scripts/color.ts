@@ -12,10 +12,11 @@ const FIGMA_FILE_KEY_THEME = 'jbyORMGXjv9Cr770bWEKna';
 const FIGMA_TOKEN = process.env.FIGMA_TOKEN || '';
 
 (async function () {
-  const variablesPrimitive = await fetchLocalVariables<GetLocalVariablesResponse>(
-    FIGMA_FILE_KEY_PRIMITIVE,
-    FIGMA_TOKEN,
-  );
+  const variablesPrimitive =
+    await fetchLocalVariables<GetLocalVariablesResponse>(
+      FIGMA_FILE_KEY_PRIMITIVE,
+      FIGMA_TOKEN,
+    );
 
   const transformedPrimitiveColor = transformPrimitiveColor(variablesPrimitive);
 
