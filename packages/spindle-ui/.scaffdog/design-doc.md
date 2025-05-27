@@ -35,6 +35,8 @@ questions:
 コンポーネントで利用するデザイントークン(色・アニメーションなど)をリストアップします
 https://github.com/openameba/spindle/tree/main/packages/spindle-tokens/tokens
 
+Design Docには以下の形式で記述します (トークン名はCSSカスタムプロパティの形式でも問題ありません)
+
 (例)
 - Surface Primary (背景色)
 - Text Medium Emphasis (本文テキスト色)
@@ -42,7 +44,9 @@ https://github.com/openameba/spindle/tree/main/packages/spindle-tokens/tokens
 
 ### プロパティ
 <!--
-コンポーネントで利用するプロパティ(Props)をリストアップします
+コンポーネントで利用するプロパティ(Props)をリストアップします。
+
+Design Docには以下のように、TypeScript形式で記述します。
 
 (例)
 type Props = {
@@ -56,7 +60,14 @@ type Props = {
 <!-- オプション項目です。大まかなコードを書いたり、複数の実装を比較する際に利用します -->
 
 ## アクセシビリティ
-<!-- 必須項目です。「Ameba Accessibility Checklist」を使って対応する項目をリストアップします。利用方法はお近くのSpindlerにお尋ねください -->
+<!-- 必須項目です。「Ameba Accessibility Checklist」を使って対応する項目をリストアップします。対応する項目を以下の形式で記述します。
+- [項目](ガイドラインURL) [重要度]
+  - [ ] 実装内容
+-->
+
+## テスト方針
+<!-- オプション項目です。コンポーネントはどのようにテストされるのか記載します。SpindleではTesting LibraryでのユニットテストとStorybookでのヴィジュアルリグレッションテストをしているので、それらを使いどのようにテストするとよいか記述するとよいでしょう。
+-->
 
 ## リンク集
 <!-- オプション項目です。ドキュメントや参考にした実装例のURLをリストアップします。非公開のリンクを記載しないように注意してください -->

@@ -7,6 +7,7 @@ const accessibility_js_1 = require("./accessibility.js");
 const components_js_1 = require("./components.js");
 const design_token_js_1 = require("./design-token.js");
 const icon_js_1 = require("./icon.js");
+const design_doc_js_1 = require("./design-doc.js");
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const VERSION = require('../package.json').version;
 const server = new mcp_js_1.McpServer({
@@ -88,6 +89,15 @@ server.tool('get_accessibility_docs', 'アクセシビリティ関連のドキ�
         {
             type: 'text',
             text: JSON.stringify(await (0, accessibility_js_1.getAccessibilityDocs)(), null, 2),
+        },
+    ],
+}));
+// コンポーネント作成用Design Docのテンプレートを取得するツール
+server.tool('get_component_design_doc_templete', 'Design Docのテンプレートを取得します', {}, async () => ({
+    content: [
+        {
+            type: 'text',
+            text: JSON.stringify((0, design_doc_js_1.getComponentDesignDocTemplate)(), null, 2),
         },
     ],
 }));

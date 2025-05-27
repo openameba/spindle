@@ -5,6 +5,7 @@ import { getAccessibilityDocs } from './accessibility.js';
 import { getComponents, getComponentInfo } from './components.js';
 import { getAllCssDesignTokens, getCssDesignToken } from './design-token.js';
 import { getIconInfo, getIcons } from './icon.js';
+import { getComponentDesignDocTemplate } from './design-doc.js';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const VERSION = require('../package.json').version;
@@ -125,6 +126,21 @@ server.tool(
       {
         type: 'text',
         text: JSON.stringify(await getAccessibilityDocs(), null, 2),
+      },
+    ],
+  }),
+);
+
+// コンポーネント作成用Design Docのテンプレートを取得するツール
+server.tool(
+  'get_component_design_doc_templete',
+  'Design Docのテンプレートを取得します',
+  {},
+  async () => ({
+    content: [
+      {
+        type: 'text',
+        text: JSON.stringify(getComponentDesignDocTemplate(), null, 2),
       },
     ],
   }),
