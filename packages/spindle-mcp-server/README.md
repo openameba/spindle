@@ -1,6 +1,6 @@
 # Spindle MCP Server (In Development)
 
-AmebaデザインシステムSpindleに関するデータを[Model Context Provider(MCP)](https://modelcontextprotocol.io/introduction)を通じて提供します。
+AmebaデザインシステムSpindleに関するデータを[Model Context Protocol(MCP)](https://modelcontextprotocol.io/introduction)を通じて提供します。
 
 ## MCPサーバーの設定
 
