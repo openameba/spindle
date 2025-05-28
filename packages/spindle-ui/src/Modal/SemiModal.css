@@ -219,7 +219,7 @@ html.spui-SemiModal--open {
   }
 
   .spui-SemiModal[data-type='sheet'] .spui-SemiModal-frame {
-    max-height: calc(100vh - 200px);
+    max-height: calc(100dvh - 200px);
   }
 
   .spui-SemiModal[data-type='sheet'][data-size='small'] .spui-SemiModal-frame {
@@ -253,7 +253,11 @@ html.spui-SemiModal--open {
 
   .spui-SemiModal[data-type='popup'] .spui-SemiModal-frame,
   .spui-SemiModal[data-type='sheet'] .spui-SemiModal-frame {
-    max-height: calc(100vh - (20px * 2));
+    /*
+     * popup時は上下に20pxずつの余白を持つ
+     * sheet時は上に40pxの余白を持つ
+    */
+    max-height: calc(100dvh - (20px * 2));
   }
 
   .spui-SemiModal[data-type='popup'] {
