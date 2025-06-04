@@ -1,47 +1,49 @@
-# Rate
+# Rating
 
 ## 概要・背景
-Rateは、ユーザーが特定の項目やサービスに対して評価を行うためのコンポーネントです。
+Ratingは、ユーザーが特定の項目やサービスに対して「評価結果を表示する」ためのコンポーネントです。
+本コンポーネントは評価値の表示を想定しており、ユーザーによる評価入力や変更機能は提供しません。
 
 ## スクリーンショット
-![Rateコンポーネントのデザイン](https://github.com/user-attachments/assets/da61a975-3c8a-47a4-a6cf-329ea008470a)
+![Ratingコンポーネントのデザイン](https://github.com/user-attachments/assets/ddce8680-ddba-4510-a65b-b3f82e13db99)
 
 ## 使用例
 
 ### DO
-Rateコンポーネントは、`Rate`に`max`と`value`の`props`を渡して使用することを想定しています。
+Ratingコンポーネントは、`Rating`に`max`と`value`の`props`を渡して使用することを想定しています。
 
 ```tsx
-<Rate max={5} value={3.5} />
+<Rating max={5} value={3.5} />
 ```
 
 ### DO NOT
+以下のようなpropsの渡し方でも描画可能ですが、意図しない表示になる可能性があるため明示的に扱いを設計することを推奨します。
 
 #### 評価値がmaxより大きい
 ```tsx
-<Rate max={5} value={6} />
+<Rating max={5} value={6} />
 ```
 
 #### 負の評価値
 ```tsx
-<Rate max={5} value={-1} />
+<Rating max={5} value={-1} />
 ```
 
 #### maxが0以下
 ```tsx
-<Rate max={0} value={3.5} />
+<Rating max={0} value={3.5} />
 ```
 
 ## 要素
 
 ### Design Tokens
-- Object Medium Emphasis (アイコンのデフォルト色)
-- Object Rate Orang (アイコンのアクティブ色)
-- Color High Emphasis (数字の色)
+- Border Medium Emphasis (アイコンのデフォルト色)
+- Object Rating Orang (アイコンのアクティブ色)
+- Text High Emphasis (数字の色)
 
 ### プロパティ
 
-#### Rate
+#### Rating
 ```ts
 type Props = {
   max: number;
@@ -52,7 +54,7 @@ type Props = {
 ```
 
 #### 評価値の変換処理
-値を0.5刻みに変換する関数です。
+評価値（value）は、0.5刻みで表示されます。小数第1位以下は四捨五入され、0.5単位に変換されます。
 
 ```ts
 const convertToValue = (num: number): number => {
@@ -64,18 +66,18 @@ const convertToValue = (num: number): number => {
 React実装の一例です。
 
 ```tsx
-<Rate max={5} value={3.5} />
+<Rating max={5} value={3.5} />
 ```
 
 上記の実装から書き出されるマークアップです。
 
 ```html
-<ul class="spui-Rate" aria-label="3.5">
-  <li class="spui-Rate-item"><svg></svg></li>
-  <li class="spui-Rate-item"><svg></svg></li>
-  <li class="spui-Rate-item"><svg></svg></li>
-  <li class="spui-Rate-item"><svg></svg></li>
-  <li class="spui-Rate-item"><svg></svg></li>
+<ul class="spui-Rating" aria-label="3.5">
+  <li class="spui-Rating-item"><svg></svg></li>
+  <li class="spui-Rating-item"><svg></svg></li>
+  <li class="spui-Rating-item"><svg></svg></li>
+  <li class="spui-Rating-item"><svg></svg></li>
+  <li class="spui-Rating-item"><svg></svg></li>
 </ul>
 ```
 
