@@ -30,6 +30,9 @@ import '@openameba/spindle-ui/DropdownMenu/DropdownMenu.css';
   code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/DropdownMenu/DropdownMenu.css">`}
 />
 
+## Polyfill
+DropdownMenuは[Popover API](https://developer.mozilla.org/docs/Web/API/Popover_API)と[Anchor Positioning API](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_anchor_positioning)を利用して作られています。非対応ブラウザで表示したい場合には[Popover Polyfill](https://github.com/oddbird/popover-polyfill)、[Anchor Positionin Polyfill](https://github.com/oddbird/css-anchor-positioning)を併用してください。
+
 ## 指定できるプロパティ
 ### DropdownMenu.List
 <Description>

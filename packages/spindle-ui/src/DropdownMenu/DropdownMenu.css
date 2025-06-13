@@ -3,8 +3,8 @@
  * NOTE: Styles can be overridden with "--DropdownMenu-*" variables
 */
 :root {
-  --DropdownMenu-z-index: 1;
   --DropdownMenu-onFocus-outlineColor: var(--color-focus-clarity);
+  --DropdownMenu-menu-gap: 8px;
 }
 
 .spui-DropdownMenu {
@@ -15,67 +15,107 @@
 .spui-DropdownMenu-menu {
   animation: 0.3s spui-DropdownMenu-fade-in;
   background-color: var(--color-surface-primary);
+  border: none;
   border-radius: 12px;
   box-shadow: 0px 11px 28px rgba(8, 18, 26, 0.12);
   box-sizing: border-box;
+  display: none;
   list-style: none;
   margin: 0;
+  opacity: 0;
   padding: 12px 0;
   position: absolute;
+  transition:
+    opacity 300ms,
+    display 300ms allow-discrete,
+    overlay 300ms allow-discrete;
   width: 256px;
-  z-index: var(--DropdownMenu-z-index);
 }
 
-/* stylelint-disable-next-line plugin/selector-bem-pattern */
-.spui-DropdownMenu-menu.is-fade-out {
-  animation: 0.3s spui-DropdownMenu-fade-out;
-  opacity: 0;
+.spui-DropdownMenu-menu:popover-open {
+  display: block;
+  opacity: 1;
+
+  @starting-style {
+    opacity: 0;
+  }
 }
 
-.spui-DropdownMenu-menu--topLeft,
-.spui-DropdownMenu-menu--topCenter,
 .spui-DropdownMenu-menu--topRight {
-  margin-bottom: 8px;
+  inset-area: top span-left;
+  margin: 0 0 var(--DropdownMenu-menu-gap);
 }
 
-.spui-DropdownMenu-menu--bottomLeft,
-.spui-DropdownMenu-menu--bottomCenter,
-.spui-DropdownMenu-menu--bottomRight {
-  margin-top: 8px;
+.spui-DropdownMenu-menu--topCenter {
+  inset-area: top;
+  margin: 0 0 var(--DropdownMenu-menu-gap);
 }
 
-.spui-DropdownMenu-menu--topLeft,
-.spui-DropdownMenu-menu--bottomLeft {
-  left: 0;
+.spui-DropdownMenu-menu--topLeft {
+  inset-area: top span-right;
+  margin: 0 0 var(--DropdownMenu-menu-gap);
 }
 
-.spui-DropdownMenu-menu--topRight,
-.spui-DropdownMenu-menu--bottomRight {
-  right: 0;
+.spui-DropdownMenu-menu--rightTop {
+  inset-area: right span-bottom;
+  margin: 0 0 0 var(--DropdownMenu-menu-gap);
 }
 
-.spui-DropdownMenu-menu--rightTop,
-.spui-DropdownMenu-menu--rightCenter,
+.spui-DropdownMenu-menu--rightCenter {
+  inset-area: right center;
+  margin: 0 0 0 var(--DropdownMenu-menu-gap);
+}
+
 .spui-DropdownMenu-menu--rightBottom {
-  /* Menuの横幅256px + margin8px */
-  right: -264px;
+  inset-area: right span-top;
+  margin: 0 0 0 var(--DropdownMenu-menu-gap);
 }
 
-.spui-DropdownMenu-menu--leftTop,
-.spui-DropdownMenu-menu--leftCenter,
-.spui-DropdownMenu-menu--leftBottom {
-  /* Menuの横幅256px + margin8px */
-  left: -264px;
+.spui-DropdownMenu-menu--bottomRight {
+  inset-area: bottom span-left;
+  margin: var(--DropdownMenu-menu-gap) 0 0;
 }
 
-.spui-DropdownMenu-menu--rightTop,
+.spui-DropdownMenu-menu--bottomCenter {
+  inset-area: bottom;
+  margin: var(--DropdownMenu-menu-gap) 0 0;
+}
+
+.spui-DropdownMenu-menu--bottomLeft {
+  inset-area: bottom span-right;
+  margin: var(--DropdownMenu-menu-gap) 0 0;
+}
+
 .spui-DropdownMenu-menu--leftTop {
-  top: 0;
+  inset-area: left span-bottom;
+  margin: 0 var(--DropdownMenu-menu-gap) 0 0;
 }
 
-.spui-DropdownMenu-menu--rightBottom,
+.spui-DropdownMenu-menu--leftCenter {
+  inset-area: left center;
+  margin: 0 var(--DropdownMenu-menu-gap) 0 0;
+}
+
 .spui-DropdownMenu-menu--leftBottom {
-  bottom: 0;
+  inset-area: left span-top;
+  margin: 0 var(--DropdownMenu-menu-gap) 0 0;
+}
+
+/* TODO: use position-try */
+@media screen and (max-width: 768px) {
+  .spui-DropdownMenu-menu--rightTop,
+  .spui-DropdownMenu-menu--rightCenter,
+  .spui-DropdownMenu-menu--rightBottom {
+    inset-area: bottom span-right;
+    margin: var(--DropdownMenu-menu-gap) 0 0;
+  }
+
+  .spui-DropdownMenu-menu--leftTop,
+  .spui-DropdownMenu-menu--leftCenter,
+  .spui-DropdownMenu-menu--leftBottom {
+    inset-area: bottom span-left;
+    margin: var(--DropdownMenu-menu-gap) 0 0;
+  }
 }
 
 .spui-DropdownMenu-menuButton {
@@ -107,8 +147,8 @@
 }
 
 .spui-DropdownMenu-menuButton:focus-visible {
-  outline: 2px solid var(--DropdownMenu-onFocus-outlineColor);
-  z-index: var(--DropdownMenu-z-index);
+  outline-color: var(--DropdownMenu-onFocus-outlineColor);
+  outline-width: 2px;
 }
 
 .spui-DropdownMenu-menuItem .spui-DropdownMenu-menuButton::before {
@@ -149,52 +189,8 @@
   margin: 4px 0 0;
 }
 
-@keyframes spui-DropdownMenu-fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes spui-DropdownMenu-fade-out {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .spui-DropdownMenu-menu--rightTop,
-  .spui-DropdownMenu-menu--rightCenter,
-  .spui-DropdownMenu-menu--rightBottom {
-    bottom: auto;
-    left: 0;
-    margin-top: 8px;
-    top: auto !important;
-  }
-
-  .spui-DropdownMenu-menu--leftTop,
-  .spui-DropdownMenu-menu--leftCenter,
-  .spui-DropdownMenu-menu--leftBottom {
-    bottom: auto;
-    left: auto;
-    margin-top: 8px;
-    right: 0;
-    top: auto !important;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .spui-DropdownMenu-menu {
-    animation: 0s spui-DropdownMenu-fade-in;
-  }
-
-  /* stylelint-disable-next-line plugin/selector-bem-pattern */
-  .spui-DropdownMenu-menu.is-fade-out {
-    animation: 0s spui-DropdownMenu-fade-out;
+    transition-duration: 0.1s;
   }
 }
