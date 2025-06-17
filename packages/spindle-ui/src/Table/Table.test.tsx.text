@@ -1,0 +1,493 @@
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import { Table } from './Table';
+
+describe('Table Component', () => {
+  describe('Basic Structure', () => {
+    test('renders complete table structure', () => {
+      render(
+        <Table>
+          <Table.Caption>Employee List</Table.Caption>
+          <Table.Header>
+            <Table.Row>
+              <Table.Head>Name</Table.Head>
+              <Table.Head>Age</Table.Head>
+            </Table.Row>
+          </Table.Header>
+          <Table.Body>
+            <Table.Row>
+              <Table.Head scope="row">John</Table.Head>
+              <Table.Cell>25</Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>,
+      );
+
+      expect(screen.getByRole('table')).toBeInTheDocument();
+      expect(screen.getByText('Name')).toBeInTheDocument();
+      expect(screen.getByText('John')).toBeInTheDocument();
+      expect(screen.getByText('Employee List')).toBeInTheDocument();
+    });
+
+    test('renders minimal table structure', () => {
+      render(
+        <Table>
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell>Data</Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>,
+      );
+
+      expect(screen.getByRole('table')).toBeInTheDocument();
+      expect(screen.getByText('Data')).toBeInTheDocument();
+    });
+  });
+
+  describe('Table Props', () => {
+    test('applies correct base class', () => {
+      const { container } = render(
+        <Table>
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell>Test</Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>,
+      );
+
+      const table = container.querySelector('table');
+      expect(table).toHaveClass('spui-Table');
+    });
+
+    test('applies borderPattern horizontal', () => {
+      const { container } = render(
+        <Table borderPattern="horizontal">
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell>Test</Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>,
+      );
+
+      const table = container.querySelector('table');
+      expect(table).toHaveClass('spui-Table--borderPattern-horizontal');
+    });
+
+    test('applies borderPattern vertical', () => {
+      const { container } = render(
+        <Table borderPattern="vertical">
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell>Test</Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>,
+      );
+
+      const table = container.querySelector('table');
+      expect(table).toHaveClass('spui-Table--borderPattern-vertical');
+    });
+
+    test('applies borderPattern inner', () => {
+      const { container } = render(
+        <Table borderPattern="inner">
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell>Test</Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>,
+      );
+
+      const table = container.querySelector('table');
+      expect(table).toHaveClass('spui-Table--borderPattern-inner');
+    });
+
+    test('applies borderPattern outer', () => {
+      const { container } = render(
+        <Table borderPattern="outer">
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell>Test</Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>,
+      );
+
+      const table = container.querySelector('table');
+      expect(table).toHaveClass('spui-Table--borderPattern-outer');
+    });
+
+    test('applies borderPattern all', () => {
+      const { container } = render(
+        <Table borderPattern="all">
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell>Test</Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>,
+      );
+
+      const table = container.querySelector('table');
+      expect(table).toHaveClass('spui-Table--borderPattern-all');
+    });
+
+    test('applies striped variant', () => {
+      const { container } = render(
+        <Table striped>
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell>Test</Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>,
+      );
+
+      const table = container.querySelector('table');
+      expect(table).toHaveClass('spui-Table--striped');
+    });
+
+    test('applies rounded variant', () => {
+      const { container } = render(
+        <Table rounded>
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell>Test</Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>,
+      );
+
+      const table = container.querySelector('table');
+      expect(table).toHaveClass('spui-Table--rounded');
+    });
+
+    test('applies fixed layout', () => {
+      const { container } = render(
+        <Table layout="fixed">
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell>Test</Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>,
+      );
+
+      const table = container.querySelector('table');
+      expect(table).toHaveClass('spui-Table--layout-fixed');
+    });
+  });
+
+  describe('Scrollable Table', () => {
+    test('renders with container when scrollable is true', () => {
+      const { container } = render(
+        <Table scrollable={true}>
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell>Test</Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>,
+      );
+
+      const wrapper = container.firstChild;
+      expect(wrapper).toHaveClass('spui-Table-container');
+      expect(wrapper).toHaveClass('spui-Table-container--scrollable');
+    });
+
+    test('renders without container when scrollable is false', () => {
+      const { container } = render(
+        <Table scrollable={false}>
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell>Test</Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>,
+      );
+
+      expect(container.firstChild?.nodeName).toBe('TABLE');
+    });
+
+    test('applies minCellWidth CSS variable when provided', () => {
+      const { container } = render(
+        <Table scrollable={true} minCellWidth="100px">
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell>Test</Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>,
+      );
+
+      const table = container.querySelector('table');
+      expect(table).toHaveStyle({ '--Table-min-cell-width': '100px' });
+    });
+  });
+
+  describe('Table.Head', () => {
+    test('renders as th element', () => {
+      render(
+        <Table>
+          <Table.Header>
+            <Table.Row>
+              <Table.Head>Header</Table.Head>
+            </Table.Row>
+          </Table.Header>
+        </Table>,
+      );
+
+      const header = screen.getByText('Header');
+      expect(header.tagName).toBe('TH');
+    });
+
+    test('applies align classes', () => {
+      const { container } = render(
+        <Table>
+          <Table.Header>
+            <Table.Row>
+              <Table.Head align="center">Center</Table.Head>
+              <Table.Head align="right">Right</Table.Head>
+            </Table.Row>
+          </Table.Header>
+        </Table>,
+      );
+
+      const centerHeader = screen.getByText('Center');
+      const rightHeader = screen.getByText('Right');
+
+      expect(centerHeader).toHaveClass('spui-Table-head--align-center');
+      expect(rightHeader).toHaveClass('spui-Table-head--align-right');
+    });
+
+    test('applies width and minWidth styles', () => {
+      const { container } = render(
+        <Table>
+          <Table.Header>
+            <Table.Row>
+              <Table.Head width="200px" minWidth="150px">
+                Header
+              </Table.Head>
+            </Table.Row>
+          </Table.Header>
+        </Table>,
+      );
+
+      const header = screen.getByText('Header');
+      expect(header).toHaveStyle({ width: '200px', minWidth: '150px' });
+    });
+  });
+
+  describe('Table.Cell', () => {
+    test('renders as td element', () => {
+      render(
+        <Table>
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell>Data</Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>,
+      );
+
+      const cell = screen.getByText('Data');
+      expect(cell.tagName).toBe('TD');
+    });
+
+    test('applies align classes', () => {
+      const { container } = render(
+        <Table>
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell align="center">Center</Table.Cell>
+              <Table.Cell align="right">Right</Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>,
+      );
+
+      const centerCell = screen.getByText('Center');
+      const rightCell = screen.getByText('Right');
+
+      expect(centerCell).toHaveClass('spui-Table-cell--align-center');
+      expect(rightCell).toHaveClass('spui-Table-cell--align-right');
+    });
+  });
+
+  describe('Table.Caption', () => {
+    test('renders as caption element', () => {
+      render(
+        <Table>
+          <Table.Caption>Table Caption</Table.Caption>
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell>Data</Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>,
+      );
+
+      const caption = screen.getByText('Table Caption');
+      expect(caption.tagName).toBe('CAPTION');
+      expect(caption).toHaveClass('spui-Table-caption');
+    });
+  });
+
+  describe('Table.Header', () => {
+    test('renders as thead element', () => {
+      const { container } = render(
+        <Table>
+          <Table.Header>
+            <Table.Row>
+              <Table.Head>Header</Table.Head>
+            </Table.Row>
+          </Table.Header>
+        </Table>,
+      );
+
+      const thead = container.querySelector('thead');
+      expect(thead).toBeInTheDocument();
+      expect(thead).toHaveClass('spui-Table-header');
+    });
+  });
+
+  describe('Table.Body', () => {
+    test('renders as tbody element', () => {
+      const { container } = render(
+        <Table>
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell>Data</Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>,
+      );
+
+      const tbody = container.querySelector('tbody');
+      expect(tbody).toBeInTheDocument();
+      expect(tbody).toHaveClass('spui-Table-body');
+    });
+  });
+
+  describe('Table.Footer', () => {
+    test('renders as tfoot element', () => {
+      const { container } = render(
+        <Table>
+          <Table.Footer>
+            <Table.Row>
+              <Table.Cell>Footer</Table.Cell>
+            </Table.Row>
+          </Table.Footer>
+        </Table>,
+      );
+
+      const tfoot = container.querySelector('tfoot');
+      expect(tfoot).toBeInTheDocument();
+      expect(tfoot).toHaveClass('spui-Table-footer');
+    });
+  });
+
+  describe('Table.Row', () => {
+    test('renders as tr element', () => {
+      const { container } = render(
+        <Table>
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell>Data</Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>,
+      );
+
+      const tr = container.querySelector('tr');
+      expect(tr).toBeInTheDocument();
+      expect(tr).toHaveClass('spui-Table-row');
+    });
+  });
+
+  describe('HTML Attributes', () => {
+    test('forwards HTML attributes to table element', () => {
+      const { container } = render(
+        <Table id="test-table" data-testid="table">
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell>Data</Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>,
+      );
+
+      const table = container.querySelector('table');
+      expect(table).toHaveAttribute('id', 'test-table');
+      expect(table).toHaveAttribute('data-testid', 'table');
+    });
+
+    test('forwards HTML attributes to cell elements', () => {
+      render(
+        <Table>
+          <Table.Body>
+            <Table.Row>
+              <Table.Head scope="row" id="row-header">
+                Row Header
+              </Table.Head>
+              <Table.Cell colSpan={2} data-testid="cell">
+                Data
+              </Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>,
+      );
+
+      const header = screen.getByText('Row Header');
+      const cell = screen.getByText('Data');
+
+      expect(header).toHaveAttribute('scope', 'row');
+      expect(header).toHaveAttribute('id', 'row-header');
+      expect(cell).toHaveAttribute('colspan', '2');
+      expect(cell).toHaveAttribute('data-testid', 'cell');
+    });
+  });
+
+  describe('Custom className', () => {
+    test('applies custom className to table', () => {
+      const { container } = render(
+        <Table className="custom-table">
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell>Data</Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>,
+      );
+
+      const table = container.querySelector('table');
+      expect(table).toHaveClass('spui-Table');
+      expect(table).toHaveClass('custom-table');
+    });
+
+    test('applies custom className to cells', () => {
+      render(
+        <Table>
+          <Table.Body>
+            <Table.Row>
+              <Table.Head className="custom-header">Header</Table.Head>
+              <Table.Cell className="custom-cell">Data</Table.Cell>
+            </Table.Row>
+          </Table.Body>
+        </Table>,
+      );
+
+      const header = screen.getByText('Header');
+      const cell = screen.getByText('Data');
+
+      expect(header).toHaveClass('spui-Table-head');
+      expect(header).toHaveClass('custom-header');
+      expect(cell).toHaveClass('spui-Table-cell');
+      expect(cell).toHaveClass('custom-cell');
+    });
+  });
+});
