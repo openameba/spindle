@@ -1,0 +1,100 @@
+import { Meta, Primary, Controls, Story, Canvas } from '@storybook/blocks';
+import * as TableStories from './Table.stories';
+
+<Meta of={TableStories} />
+
+# Table
+
+構造化されたデータを表形式で表示するためのコンポーネントです。
+
+<Primary />
+
+<Controls />
+
+## Header Patterns
+
+### No Headers
+
+<Canvas of={TableStories.NoHeaders} />
+
+### Column Headers
+
+<Canvas of={TableStories.ColumnHeaders} />
+
+### Row Headers
+
+<Canvas of={TableStories.RowHeaders} />
+
+### Both Headers
+
+<Canvas of={TableStories.BothHeaders} />
+
+## Border Styles
+
+### Horizontal Borders
+
+<Canvas of={TableStories.HorizontalBorders} />
+
+### Vertical Borders
+
+<Canvas of={TableStories.VerticalBorders} />
+
+### Outline Borders
+
+<Canvas of={TableStories.OutlineBorders} />
+
+### Grid Borders
+
+<Canvas of={TableStories.GridBorders} />
+
+### All Borders
+
+<Canvas of={TableStories.AllBorders} />
+
+## Layout Variations
+
+### Fixed Layout
+
+<Canvas of={TableStories.FixedLayout} />
+
+### Text Alignment
+
+<Canvas of={TableStories.TextAlignment} />
+
+### Scrollable
+
+<Canvas of={TableStories.Scrollable} />
+
+## Style Variations
+
+### Striped
+
+<Canvas of={TableStories.Striped} />
+
+### Rounded
+
+<Canvas of={TableStories.Rounded} />
+
+## Cell Merging Examples
+
+### Column Span
+
+<Canvas of={TableStories.ColumnSpan} />
+
+### Row Span
+
+<Canvas of={TableStories.RowSpan} />
+
+## Semantic Components
+
+### With Caption
+
+<Canvas of={TableStories.WithCaption} />
+
+### With Footer
+
+<Canvas of={TableStories.WithFooter} />
+
+## Custom Theme
+
+<Canvas of={TableStories.CustomTheme} />
