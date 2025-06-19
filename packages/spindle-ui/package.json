@@ -91,7 +91,7 @@
     "figma-api": "1.11.0",
     "firebase-tools": "13.17.0",
     "jest": "29.7.0",
-    "jest-environment-jsdom": "29.0.0",
+    "jest-environment-jsdom": "30.0.1",
     "postcss": "8.4.47",
     "postcss-cli": "11.0.0",
     "postcss-import": "16.1.0",
