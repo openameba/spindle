@@ -1,0 +1,232 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as LinkButtonStories from './LinkButton.stories';
+
+<Meta of={LinkButtonStories} />
+
+# LinkButton
+
+<Source
+  language='javascript'
+  code={`
+import { LinkButton } from '@openameba/spindle-ui';
+import '@openameba/spindle-ui/LinkButton/LinkButton.css';
+  `}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/LinkButton/LinkButton.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/LinkButton/LinkButton.css">`}
+/>
+
+## Large
+
+<Story of={LinkButtonStories.Large} />
+
+<Source
+  code={`
+<LinkButton href="#" size="large" variant="contained">応援を送る</LinkButton>
+<LinkButton href="#" size="large" variant="outlined">ブログを書く</LinkButton>
+<LinkButton href="#" size="large" variant="neutral">詳細を見る</LinkButton>
+<LinkButton href="#" size="large" variant="danger">削除する</LinkButton>
+<LinkButton href="#" size="large" variant="lighted">フォロー中</LinkButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<a class="spui-LinkButton spui-LinkButton--large spui-LinkButton--contained" href="#">応援を送る</a>
+<a class="spui-LinkButton spui-LinkButton--large spui-LinkButton--outlined" href="#">ブログを書く</a>
+<a class="spui-LinkButton spui-LinkButton--large spui-LinkButton--neutral" href="#">詳細を見る</a>
+<a class="spui-LinkButton spui-LinkButton--large spui-LinkButton--danger" href="#">削除する</a>
+<a class="spui-LinkButton spui-LinkButton--large spui-LinkButton--lighted" href="#">フォロー中</a>
+  `}
+/>
+
+## Large Full Width
+
+<Story of={LinkButtonStories.LargeFullWidth} />
+
+<Source
+  code={`
+<LinkButton href="#" layout="fullWidth" size="large" variant="contained">応援を送る</LinkButton>
+<LinkButton href="#" layout="fullWidth" size="large" variant="outlined">ブログを書く</LinkButton>
+<LinkButton href="#" layout="fullWidth" size="large" variant="neutral">詳細を見る</LinkButton>
+<LinkButton href="#" layout="fullWidth" size="large" variant="danger">削除する</LinkButton>
+<LinkButton href="#" layout="fullWidth" size="large" variant="lighted">フォロー中</LinkButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--large spui-LinkButton--contained" href="#">応援を送る</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--large spui-LinkButton--outlined" href="#">ブログを書く</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--large spui-LinkButton--neutral" href="#">詳細を見る</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--large spui-LinkButton--danger" href="#">削除する</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--large spui-LinkButton--lighted" href="#">フォロー中</a>
+  `}
+/>
+
+## Medium
+
+<Story of={LinkButtonStories.Medium} />
+
+<Source
+  code={`
+<LinkButton href="#" size="medium" variant="contained">応援を送る</LinkButton>
+<LinkButton href="#" size="medium" variant="outlined">ブログを書く</LinkButton>
+<LinkButton href="#" size="medium" variant="neutral">詳細を見る</LinkButton>
+<LinkButton href="#" size="medium" variant="danger">削除する</LinkButton>
+<LinkButton href="#" size="medium" variant="lighted">フォロー中</LinkButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<a class="spui-LinkButton spui-LinkButton--medium spui-LinkButton--contained" href="#">応援を送る</a>
+<a class="spui-LinkButton spui-LinkButton--medium spui-LinkButton--outlined" href="#">ブログを書く</a>
+<a class="spui-LinkButton spui-LinkButton--medium spui-LinkButton--neutral" href="#">詳細を見る</a>
+<a class="spui-LinkButton spui-LinkButton--medium spui-LinkButton--danger" href="#">削除する</a>
+<a class="spui-LinkButton spui-LinkButton--medium spui-LinkButton--lighted" href="#">フォロー中</a>
+  `}
+/>
+
+## Medium Full Width
+
+<Story of={LinkButtonStories.MediumFullWidth} />
+
+<Source
+  code={`
+<LinkButton href="#" layout="fullWidth" size="medium" variant="contained">応援を送る</LinkButton>
+<LinkButton href="#" layout="fullWidth" size="medium" variant="outlined">ブログを書く</LinkButton>
+<LinkButton href="#" layout="fullWidth" size="medium" variant="neutral">詳細を見る</LinkButton>
+<LinkButton href="#" layout="fullWidth" size="medium" variant="danger">削除する</LinkButton>
+<LinkButton href="#" layout="fullWidth" size="medium" variant="lighted">フォロー中</LinkButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--medium spui-LinkButton--contained" href="#">応援を送る</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--medium spui-LinkButton--outlined" href="#">ブログを書く</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--medium spui-LinkButton--neutral" href="#">詳細を見る</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--medium spui-LinkButton--danger" href="#">削除する</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--medium spui-LinkButton--lighted" href="#">フォロー中</a>
+  `}
+/>
+
+## Small
+
+<Story of={LinkButtonStories.Small} />
+
+<Source
+  code={`
+<LinkButton href="#" size="small" variant="contained">応援を送る</LinkButton>
+<LinkButton href="#" size="small" variant="outlined">ブログを書く</LinkButton>
+<LinkButton href="#" size="small" variant="neutral">詳細を見る</LinkButton>
+<LinkButton href="#" size="small" variant="danger">削除する</LinkButton>
+<LinkButton href="#" size="small" variant="lighted">フォロー中</LinkButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<a class="spui-LinkButton spui-LinkButton--small spui-LinkButton--contained" href="#">応援を送る</a>
+<a class="spui-LinkButton spui-LinkButton--small spui-LinkButton--outlined" href="#">ブログを書く</a>
+<a class="spui-LinkButton spui-LinkButton--small spui-LinkButton--neutral" href="#">詳細を見る</a>
+<a class="spui-LinkButton spui-LinkButton--small spui-LinkButton--danger" href="#">削除する</a>
+<a class="spui-LinkButton spui-LinkButton--small spui-LinkButton--lighted" href="#">フォロー中</a>
+  `}
+/>
+
+## Small Full Width
+
+<Story of={LinkButtonStories.SmallFullWidth} />
+
+<Source
+  code={`
+<LinkButton href="#" layout="fullWidth" size="small" variant="contained">応援を送る</LinkButton>
+<LinkButton href="#" layout="fullWidth" size="small" variant="outlined">ブログを書く</LinkButton>
+<LinkButton href="#" layout="fullWidth" size="small" variant="neutral">詳細を見る</LinkButton>
+<LinkButton href="#" layout="fullWidth" size="small" variant="danger">削除する</LinkButton>
+<LinkButton href="#" layout="fullWidth" size="small" variant="lighted">フォロー中</LinkButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--small spui-LinkButton--contained" href="#">応援を送る</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--small spui-LinkButton--outlined" href="#">ブログを書く</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--small spui-LinkButton--neutral" href="#">詳細を見る</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--small spui-LinkButton--danger" href="#">削除する</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--small spui-LinkButton--lighted" href="#">フォロー中</a>
+  `}
+/>
+
+## With Icon
+
+<Story of={LinkButtonStories.WithIcon} />
+
+<Source
+  code={`
+<LinkButton href="#" icon={<Present/>} size="large" variant="contained">応援を送る</LinkButton>
+<LinkButton href="#" icon={<PencilAdd/>} size="medium" variant="outlined">ブログを書く</LinkButton>
+<LinkButton href="#" icon={<GraphBar/>} size="small" variant="neutral">詳細を見る</LinkButton>
+<LinkButton href="#" icon={<ChevronDownBold/>} iconPosition="end" size="large" variant="contained">さらに表示</LinkButton>
+<LinkButton href="#" icon={<ChevronDownBold/>} iconPosition="end" size="medium" variant="outlined">もっと見る</LinkButton>
+<LinkButton href="#" icon={<ChevronDownBold/>} iconPosition="end" size="small" variant="neutral">さらに表示</LinkButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<a class="spui-LinkButton spui-LinkButton--intrinsic spui-LinkButton--large spui-LinkButton--contained spui-LinkButton--iconstart" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--large"><svg /></span>応援を送る</a>
+<a class="spui-LinkButton spui-LinkButton--intrinsic spui-LinkButton--medium spui-LinkButton--outlined spui-LinkButton--iconstart" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--medium"><svg /></span>ブログを書く</a>
+<a class="spui-LinkButton spui-LinkButton--intrinsic spui-LinkButton--small spui-LinkButton--neutral spui-LinkButton--iconstart" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--small"><svg /></span>詳細を見る</a>
+<a class="spui-LinkButton spui-LinkButton--intrinsic spui-LinkButton--large spui-LinkButton--contained spui-LinkButton--iconend" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--large"><svg /></span>さらに表示</a>
+<a class="spui-LinkButton spui-LinkButton--intrinsic spui-LinkButton--medium spui-LinkButton--outlined spui-LinkButton--iconend" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--medium"><svg /></span>もっと見る</a>
+<a class="spui-LinkButton spui-LinkButton--intrinsic spui-LinkButton--small spui-LinkButton--neutral spui-LinkButton--iconend" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--small"><svg /></span>さらに表示</a>
+  `}
+/>
+
+## Full Width With Icon
+
+<Story of={LinkButtonStories.FullWidthWithIcon} />
+
+<Source
+  code={`
+<LinkButton href="#" layout="fullWidth" icon={<Present/>} size="large" variant="contained">応援を送る</LinkButton>
+<LinkButton href="#" layout="fullWidth" icon={<PencilAdd/>} size="medium" variant="outlined">ブログを書く</LinkButton>
+<LinkButton href="#" layout="fullWidth" icon={<GraphBar/>} size="small" variant="neutral">詳細を見る</LinkButton>
+<LinkButton href="#" layout="fullWidth" icon={<ChevronDownBold/>} iconPosition="end" size="large" variant="contained">さらに表示</LinkButton>
+<LinkButton href="#" layout="fullWidth" icon={<ChevronDownBold/>} iconPosition="end" size="medium" variant="outlined">もっと見る</LinkButton>
+<LinkButton href="#" layout="fullWidth" icon={<ChevronDownBold/>} iconPosition="end" size="small" variant="neutral">さらに表示</LinkButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--large spui-LinkButton--contained spui-LinkButton--iconstart" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--large"><svg /></span>応援を送る</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--medium spui-LinkButton--outlined spui-LinkButton--iconstart" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--medium"><svg /></span>ブログを書く</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--small spui-LinkButton--neutral spui-LinkButton--iconstart" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--small"><svg /></span>修正する</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--large spui-LinkButton--contained spui-LinkButton--iconend" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--large"><svg /></span>さらに表示</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--medium spui-LinkButton--outlined spui-LinkButton--iconend" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--medium"><svg /></span>もっと見る</a>
+<a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--small spui-LinkButton--neutral spui-LinkButton--iconend" href="#"><span class="spui-LinkButton-icon spui-LinkButton-icon--small"><svg /></span>さらに表示</a>
+  `}
+/>
+
+
+## Browser Compatibility
+active時やhover時など各stateのスタイルは、ブラウザごとに異なります。詳しくは[ButtonのStateパターン変更](https://github.com/openameba/spindle/issues/13)を参照してください。

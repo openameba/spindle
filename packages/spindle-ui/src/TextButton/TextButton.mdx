@@ -1,0 +1,182 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as TextButtonStories from './TextButton.stories';
+
+<Meta of={TextButtonStories} />
+
+# TextButton
+
+<Source
+  language='javascript'
+  code={`
+import { TextButton } from '@openameba/spindle-ui';
+import '@openameba/spindle-ui/TextButton/TextButton.css';
+  `}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/TextButton/TextButton.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/TextButton/TextButton.css">`}
+/>
+
+## Normal
+
+<Story of={TextButtonStories.Normal} />
+
+<Source
+  code={`<TextButton>もっと見る</TextButton>`}
+/>
+
+<Source
+  language='html'
+  code={`<a class="spui-TextButton">もっと見る</a>`}
+/>
+
+## Normal Disabled
+
+<Story of={TextButtonStories.NormalDisabled} />
+
+<Source
+  code={`<TextButton disabled>もっと見る</TextButton>`}
+/>
+
+<Source
+  language='html'
+  code={`<button class="spui-TextButton">もっと見る</button>`}
+/>
+
+## Normal With Icon
+
+<Story of={TextButtonStories.NormalWithIcon} />
+
+<Source
+  code={`<TextButton icon={<PencilAdd aria-hidden="true" />} iconPosition="start">ブログを書く</TextButton>`}
+/>
+
+<Source
+  language='html'
+  code={`<button class="spui-TextButton spui-TextButton--hasIcon spui-TextButton--iconstart"><span class="spui-TextButton-icon"><svg>...</svg></span>ブログを書く</button>`}
+/>
+
+## Normal With Icon Disabled
+
+<Story of={TextButtonStories.NormalWithIconDisabled} />
+
+<Source
+  code={`<TextButton icon={<PencilAdd aria-hidden="true" />} iconPosition="start" disabled>ブログを書く</TextButton>`}
+/>
+
+<Source
+  language='html'
+  code={`<button class="spui-TextButton spui-TextButton--hasIcon spui-TextButton--iconstart" disabled><span class="spui-TextButton-icon"><svg>...</svg></span>ブログを書く</button>`}
+/>
+
+## Subtle
+
+<Story of={TextButtonStories.Subtle} />
+
+<Source
+  code={`<TextButton variant="subtle">もっと見る</TextButton>`}
+/>
+
+<Source
+  language='html'
+  code={`<button class="spui-TextButton spui-TextButton--subtle">もっと見る</button>`}
+/>
+
+## Subtle Disabled
+
+<Story of={TextButtonStories.SubtleDisabled} />
+
+<Source
+  code={`<TextButton variant="subtle" disabled>もっと見る</TextButton>`}
+/>
+
+<Source
+  language='html'
+  code={`<button class="spui-TextButton spui-TextButton--subtle" disabled>もっと見る</button>`}
+/>
+
+## Subtle With Icon
+
+<Story of={TextButtonStories.SubtleWithIcon} />
+
+<Source
+  code={`<TextButton variant="subtle" icon={<ChevronRightBold aria-hidden="true" />} iconPosition="end">もっと見る</TextButton>`}
+/>
+
+<Source
+  language='html'
+  code={`<button class="spui-TextButton spui-TextButton--subtle spui-TextButton--hasIcon spui-TextButton--iconend"><span class="spui-TextButton-icon"><svg>...</svg></span>もっと見る</button>`}
+/>
+
+## Subtle With Icon Disabled
+
+<Story of={TextButtonStories.SubtleWithIconDisabled} />
+
+<Source
+  code={`<TextButton variant="subtle" icon={<ChevronRightBold aria-hidden="true" />} iconPosition="end" disabled>もっと見る</TextButton>`}
+/>
+
+<Source
+  language='html'
+  code={`<button class="spui-TextButton spui-TextButton--subtle spui-TextButton--hasIcon spui-TextButton--iconend" disabled><span class="spui-TextButton-icon"><svg>...</svg></span>もっと見る</button>`}
+/>
+
+## Underline Patterns
+
+テキストのアンダーラインは以下のルールで表示されます。
+
+- 何も指定しない: 初期表示時にunderline表示、hover時にunderline非表示
+- アイコンあり: 初期表示時にunderline非表示、hover時にunderline表示
+- underline=hover: 初期表示時にunderline非表示、hover時にunderline表示
+
+## Underline Hover
+
+<Story of={TextButtonStories.UnderlineHover} />
+
+<Source
+  code={`<TextButton underline="hover">もっと見る</TextButton>`}
+/>
+
+<Source
+  language='html'
+  code={`<button class="spui-TextButton spui-TextButton--underlinehover">もっと見る</button>`}
+/>
+
+## Underline Hover Disabled
+
+<Story of={TextButtonStories.UnderlineHoverDisabled} />
+
+<Source
+  code={`<TextButton underline="hover" disabled>もっと見る</TextButton>`}
+/>
+
+<Source
+  language='html'
+  code={`<button class="spui-TextButton spui-TextButton--underlinehover" disabled>もっと見る</button>`}
+/>
+
+## スタイルの上書き
+`TextButton`を利用する際には、ますデフォルト定義されているスタイルで要件を満たせないか検討してください。ただし、`TextButton`は様々な箇所での利用が想定されるため、以下のようにスタイルを上書きして利用できます。
+
+<Source
+  code={`<style>
+  .container {
+    --TextButton-color: var(--color-text-medium-emphasis);
+    --TextButton-icon-color: var(--color-object-medium-emphasis);
+    --TextButton-fontWeight: normal;
+  }
+</style>
+<div class="container">
+  <ul>
+    <li><button class="spui-TextButton" href="#">もっと見る</button></li>
+  </ul>
+</div>`}
+/>
+
+なおフォントサイズは他のSpindle UIコンポーネントと同様に親要素からのサイズを継承します。

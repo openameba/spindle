@@ -1,0 +1,105 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as SegmentedControlStories from './SegmentedControl.stories';
+
+<Meta of={SegmentedControlStories} />
+
+# SegmentedControl
+
+<Source
+  language="javascript"
+  code={`
+import { SegmentedControl } from '@openameba/spindle-ui';
+import '@openameba/spindle-ui/SegmentedControl/SegmentedControl.css';
+  `}
+/>
+
+<Source
+  language="css"
+  code={`@import './node_modules/@openameba/spindle-ui/SegmentedControl/SegmentedControl.css'`}
+/>
+
+<Source
+  language="html"
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/SegmentedControl/SegmentedControl.css">`}
+/>
+
+## Large
+
+<Story of={SegmentedControlStories.Large} />
+
+<Source
+  code={`
+const options = [
+  { id: 'small', label: '小' },
+  { id: 'medium', label: '中' },
+  { id: 'large', label: '大' },
+];
+const handleClick = useCallback(
+  (event: React.MouseEvent<HTMLButtonElement>, id: string) => {
+    console.log(id);
+  },
+  [],
+);
+return (
+  <SegmentedControl
+    selectedId="small"
+    options={options}
+    onClick={handleClick}
+    size="large"
+  />
+);
+`}
+/>
+
+## Medium
+
+<Story of={SegmentedControlStories.Medium} />
+
+<Source
+  code={`
+const options = [
+  { id: 'small', label: '小' },
+  { id: 'medium', label: '中' },
+  { id: 'large', label: '大' },
+];
+const handleClick = useCallback(
+  (event: React.MouseEvent<HTMLButtonElement>, id: string) => {
+    console.log(id);
+  },
+  [],
+);
+return (
+  <SegmentedControl
+    selectedId="small"
+    options={options}
+    onClick={handleClick}
+    size="medium"
+  />
+);
+`}
+/>
+
+## Total 1
+
+<Story of={SegmentedControlStories.Total1} />
+
+## Total 2
+
+<Story of={SegmentedControlStories.Total2} />
+
+## Total 3
+
+<Story of={SegmentedControlStories.Total3} />
+
+## Total 4
+
+<Story of={SegmentedControlStories.Total4} />
+
+## Total 5
+
+<Story of={SegmentedControlStories.Total5} />
+
+## Wrapped Text
+
+<Story of={SegmentedControlStories.WrappedText} />
+

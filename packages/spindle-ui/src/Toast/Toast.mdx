@@ -1,0 +1,164 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as ToastStories from './Toast.stories';
+
+<Meta of={ToastStories} />
+
+# Toast
+
+Toastコンポーネントは、ユーザーの操作を邪魔しないよう**非同期的にシステムやUIのフィードバックをユーザーへ通知する**ために用います。画面のレイアウトや状態に影響を与えないので、特にユーザーへの影響値を最小限にできます。一方で、一定時間で消滅するため、ユーザーが見落としてしまっても同一の内容を確認できる**代替手段がある場合に使う**必要があります。
+
+<Source
+  language="javascript"
+  code={`
+import { Toast } from '@openameba/spindle-ui';
+import '@openameba/spindle-ui/Toast/Toast.css';
+  `}
+/>
+
+<Source
+  language="css"
+  code={`@import './node_modules/@openameba/spindle-ui/Toast/Toast.css'`}
+/>
+
+<Source
+  language="html"
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Toast/Toast.css">`}
+/>
+
+## Information
+
+<Story of={ToastStories.InformationToast} />
+
+<Source
+  code={`<Toast active={true} variant="information" icon={<Information />}>メッセージが届きました</Toast>`}
+/>
+
+## Information without info icon
+
+<Story of={ToastStories.InformationWithoutInfoIconToast} />
+
+<Source
+  code={`<Toast active={true} variant="information" hideInfoIcon>メッセージが届きました</Toast>`}
+/>
+
+## Confirmation
+
+<Story of={ToastStories.ConfirmationToast} />
+
+<Source
+  code={`<Toast active={true} variant="confirmation" icon={<CheckCircleFill />}>メッセージが届きました</Toast>`}
+/>
+
+## Error
+
+<Story of={ToastStories.ErrorToast} />
+
+<Source
+  code={`<Toast active={true} variant="error" icon={<ExclamationmarkCircleFill />}>メッセージが届きました</Toast>`}
+/>
+
+## Position Bottom
+
+<Story of={ToastStories.PositionBottom} />
+
+<Source
+  code={`<Toast active={true} position="bottomCenter" icon={<Information />}>メッセージが届きました</Toast>`}
+/>
+
+## Long Content
+
+<Story of={ToastStories.LongContentToast} />
+
+<Source
+  code={`<Toast active={true} icon={<Information />}>長いコンテンツは1行で切られるので注意が必要です。</Toast>`}
+/>
+
+## Multiple
+
+<Story of={ToastStories.MultipleToast} />
+
+<Source
+  code={`<Toast active={true} offset={{ top: 30 }}>メッセージが届きました</Toast>
+<Toast active={true} offset={{ top: 30 }}>今何してる？</Toast>`}
+/>
+
+## Multiple bottom
+
+<Story of={ToastStories.MultipleBottomToast} />
+
+<Source
+  code={`<Toast active={true} offset={{ bottom: 30 }} position="bottomCenter">メッセージが届きました</Toast>
+<Toast active={true} offset={{ bottom: 30 }} position="bottomCenter">今何してる？</Toast>`}
+/>
+
+## このコンポーネントでやっていること
+
+- reduced motionが指定された時に、トランジッションを短くします
+- hover、focusされている時には、時間制限を停止します。フォーカスが離れたのち、再度0秒から計測します
+- モードを奪うことになるため、自動的にfocusはしません
+- デバイスのorientationに追従して表示位置・サイズを変更します
+
+## 利用時に注意してほしいこと
+
+- Toastは自動で消えてしまうため、ユーザーが見落としてしまっても同一の内容を確認できる代替手段がある場合に使います
+  - 例：「URLをコピーしました」のToast通知と並行して、コピーボタンのマークがチェックマーク付きのアイコンに切り替わっている
+    - ボタンの表示が切り替わることで、完了を認知できる（通知の代替手段になり得る）
+- アイコンの設定は利用者に委ねられていますが、基本的には設定します。**`information`のみアイコンを外すことができます**
+- `z-index`はdefaultでは`1`になっていますが、必要に応じて`--Toast-z-index`を設定してください
+- 自動的に消えてしまうため、画面内で的確に認知できる必要があります。画面拡大時にもToast内の情報が見切れることのないよう注意してください（参考：[1.4.10 リフローできる - Ameba Accessibility Guidelines](https://a11y-guidelines.ameba.design/1/4/10)）
+- このコンポーネントでは関与しませんが、ライブリージョンをアプリケーションで実装してください（参考：[実装方法 - 4.1.3 コンテンツの変更をユーザーに知らせる - Ameba Accessibility Guidelines](https://a11y-guidelines.ameba.design/4/1/3/#%E5%AE%9F%E8%A3%85%E6%96%B9%E6%B3%95)）
+- ライブリージョンは次のように実装します。 `html` 側に `aria-live="polite"` 及び `role="status"` を持つ要素を予め埋め込んでおき、この要素にコンテンツを動的に挿入することで、スクリーンリーダーが自動でコンテンツを読み上げてくれます
+
+<Source
+  code={`<html>
+  <body>
+    ...
+    <div
+      aria-live="polite"
+      id="polite-announcer"
+      role="status"
+      class="visually-hidden"
+    ></div>
+    ...
+  </body>
+</html>`}
+/>
+
+<Source
+  code={`const usePoliteAnnouncer = (message) => {
+  const announcer = useRef(null);
+  useEffect(() => {
+    announcer.current = document.getElementById('polite-announcer');
+    return () => {
+      announcer.current = null;
+    };
+  }, []);
+  useEffect(() => {
+    const announcerContent = announcer.current;
+    if (announcerContent && message) {
+      announcerContent.textContent = message;
+    }
+    return () => {
+      if(message) {
+        announcerContent.textContent = '';
+      }
+    };
+  }, [message]);
+};`}
+/>
+
+<Source
+  code={`.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  clip: rect(1px, 1px, 1px, 1px);
+}`}
+/>
+
+## スタック機能
+
+StackNotificationManagerを使用することでToastやSnackBarをスタックして複数表示できます。
+詳しくは[StackNotificationManager のドキュメント](?path=/docs/stacknotificationmanager--docs)を参照してください。

@@ -1,0 +1,233 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as InlineNotificationStories from './InlineNotification.stories';
+
+<Meta of={InlineNotificationStories} />
+
+# InlineNotification
+
+InlineNotificationコンポーネントは、ユーザーの操作を中断せず、システムやUIの状態を簡易的にユーザーへ連絡するために用います。重要なメッセージや、告知や新機能リリースなど、その画面の目的とは異なる簡易的なお知らせなどに役立ちます。
+
+
+ユーザーのアクションに対してお知らせをする際に利用します。Toast, SnackBarのようにコンテンツに重ねての表示ではなく、コンテンツと同じ階層での表示になります。
+
+また、エラー内容を表示するForm/InvalidMessageコンポーネントとは異なり、フォームに紐づかない形で提供されます。
+
+<Source
+  language='javascript'
+  code={`
+import { InlineNotification } from '@openameba/spindle-ui';
+import '@openameba/spindle-ui/InlineNotification/InlineNotification.css';
+  `}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/InlineNotification/InlineNotification.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/InlineNotification/InlineNotification.css">`}
+/>
+
+import UserNotificationTypes from '../../storybook/UserNotificationTypes.mdx';
+
+<UserNotificationTypes />
+
+## 指定できる要素
+- `<InlineNotification.Frame>`: 大枠です
+- `<InlineNotification.Icon>`: 本文に対して左側に表示されるアイコンです
+- `<InlineNotification.Avatar>`: 本文に対して左側に表示される画像です
+- `<InlineNotification.Text>`: 本文です
+- `<InlineNotification.IconButton>`: 本文に対して右側に表示されるアイコンボタンです
+- `<InlineNotification.TextButton>`: 本文に対して右側に表示されるテキストボタンです
+- `<InlineNotification.Button>`: 本文に対して右側に表示されるボタンです
+
+## アクセシビリティ
+コンポーネントからはアプリケーション内での使われ方や重要度がわからないため、aria-*属性やrole属性は付与していません。そのため、コンポーネント利用時には適宜付与して支援技術に通知してください。
+
+<Source
+  code={`
+<InlineNotification.Frame role="alert" variant='error' visible>
+  <InlineNotification.Icon><ExclamationmarkCircleFill aria-hidden="true"/></InlineNotification.Icon>
+  <InlineNotification.Text>ファイル形式が正しくありません</InlineNotification.Text>
+</InlineNotification.Frame>
+  `}
+/>
+
+Avatar画像に関してはalt属性をPropsとして提供しているため、必要に応じて指定してください。何も指定しなかった場合は`alt=""`が設定されます。
+
+## Variant
+通知の内容によって、`variant`3種類と`emphasis`2種類を組み合せて使用してください。variantの初期値は`information`、emphasisの初期値は`false`です。
+
+### Information
+システム上で処理が実行された事を報告するときに使用します。必ずしも情報がユーザーにとって喜ばしくない状況で使用することが多いです。
+
+## Information
+
+<Story of={InlineNotificationStories.InformationNotification} />
+
+<Source
+  code={`
+<InlineNotification.Frame variant='information' visible>
+  <InlineNotification.Icon><Information aria-hidden="true"/></InlineNotification.Icon>
+  <InlineNotification.Text>ブログの管理者が承認するまで、コメントが反映されない場合があります</InlineNotification.Text>
+</InlineNotification.Frame>
+<InlineNotification.Frame variant='information' emphasis visible>
+  <InlineNotification.Icon><Information aria-hidden="true"/></InlineNotification.Icon>
+  <InlineNotification.Text>ブログの管理者が承認するまで、コメントが反映されない場合があります</InlineNotification.Text>
+</InlineNotification.Frame>
+  `}
+/>
+
+<Story of={InlineNotificationStories.InformationEmphasis} />
+
+### Confirmation
+主にユーザーが行なったアクションに対して実行が成功した時などに使用します。情報がユーザーにとって喜ばしい状況で使用します。
+
+<Story of={InlineNotificationStories.ConfirmationNotification} />
+
+<Source
+  code={`
+<InlineNotification.Frame variant='confirmation' visible>
+  <InlineNotification.Icon><Information aria-hidden="true"/></InlineNotification.Icon>
+  <InlineNotification.Text>コメントが投稿されました</InlineNotification.Text>
+</InlineNotification.Frame>
+<InlineNotification.Frame variant='confirmation' emphasis visible>
+  <InlineNotification.Icon><Information aria-hidden="true"/></InlineNotification.Icon>
+  <InlineNotification.Text>コメントが投稿されました</InlineNotification.Text>
+</InlineNotification.Frame>
+  `}
+/>
+
+<Story of={InlineNotificationStories.ConfirmationEmphasis} />
+
+### Error
+システム上で処理が実行された際に、ユーザーの想定外のエラーが起きた時に使用します。エラー以外の否定的な動作には`Error`は使わずに、`Information`を使用してください。
+
+<Story of={InlineNotificationStories.ErrorNotification} />
+
+<Source
+  code={`
+<InlineNotification.Frame variant='error' visible>
+  <InlineNotification.Icon><ExclamationmarkCircleFill aria-hidden="true"/></InlineNotification.Icon>
+  <InlineNotification.Text>ファイル形式が正しくありません</InlineNotification.Text>
+</InlineNotification.Frame>
+<InlineNotification.Frame variant='error' emphasis visible>
+  <InlineNotification.Icon><ExclamationmarkCircleFill aria-hidden="true"/></InlineNotification.Icon>
+  <InlineNotification.Text>ファイル形式が正しくありません</InlineNotification.Text>
+</InlineNotification.Frame>
+  `}
+/>
+
+<Story of={InlineNotificationStories.ErrorEmphasis} />
+
+## Layout
+状況によって、`layout`2種類の形状を使い分けて使用してください。初期値は`inset`です。
+
+### Inset
+お知らせをコンテンツの間に挿入する時に使用します。最大幅はコンテンツ幅に合わせます。
+
+<Story of={InlineNotificationStories.Inset} />
+
+<Source
+  code={`
+<InlineNotification.Frame variant='information' layout='inset' visible>
+  <InlineNotification.Icon><Information aria-hidden="true"/></InlineNotification.Icon>
+  <InlineNotification.Text>ブログの管理者が承認するまで、コメントが反映されない場合があります</InlineNotification.Text>
+</InlineNotification.Frame>
+  `}
+/>
+
+### Full
+そのview全体に影響を及ぼすお知らせや留意事項に使用します。コンテナ幅いっぱいに広がって表示されます。
+
+<Story of={InlineNotificationStories.Full} />
+
+<Source
+  code={`
+<InlineNotification.Frame variant='information' layout='full' visible>
+  <InlineNotification.Icon><Information aria-hidden="true"/></InlineNotification.Icon>
+  <InlineNotification.Text>ブログの管理者が承認するまで、コメントが反映されない場合があります</InlineNotification.Text>
+</InlineNotification.Frame>
+  `}
+/>
+
+## InlineNotification with Icon
+本文に対して左側に表示されるアイコンです。お知らせの種類を、ユーザーが把握しやすくするために使用してください。
+
+<Story of={InlineNotificationStories.InlineNotificationwithIcon} />
+
+<Source
+  code={`
+<InlineNotification.Frame variant='information' visible>
+  <InlineNotification.Icon><Information aria-hidden="true"/></InlineNotification.Icon>
+  <InlineNotification.Text>ブログの管理者が承認するまで、コメントが反映されない場合があります</InlineNotification.Text>
+</InlineNotification.Frame>
+  `}
+/>
+
+## InlineNotification with Avatar
+本文に対して左側に表示される画像です。お知らせの種類を、ユーザーが把握しやすくするために使用してください。
+
+<Story of={InlineNotificationStories.InlineNotificationwithAvatar} />
+
+<Source
+  code={`
+<InlineNotification.Frame variant='information' visible>
+  <InlineNotification.Avatar src="/avatar.png" alt=""/>
+  <InlineNotification.Text>Ameba運営局よりメッセージが届きました</InlineNotification.Text>
+</InlineNotification.Frame>
+  `}
+/>
+
+## InlineNotification with IconButton
+本文に対して右側に表示されるアイコンボタンです。
+
+<Story of={InlineNotificationStories.InlineNotificationwithIconButton} />
+
+<Source
+  code={`
+<InlineNotification.Frame variant='information' visible>
+  <InlineNotification.Icon><Information aria-hidden="true"/></InlineNotification.Icon>
+  <InlineNotification.Text>ブログの管理者が承認するまで、コメントが反映されない場合があります</InlineNotification.Text>
+  <InlineNotification.IconButton><CrossBold aria-label="とじる"/></InlineNotification.IconButton>
+</InlineNotification.Frame>
+  `}
+/>
+
+## InlineNotification with TextButton
+本文に対して右側に表示されるテキストボタンです。ユニークな文字列を入れる必要がある時に使用します。
+
+<Story of={InlineNotificationStories.InlineNotificationwithTextButton} />
+
+<Source
+  code={`
+<InlineNotification.Frame variant='information' visible>
+  <InlineNotification.Icon><Information aria-hidden="true"/></InlineNotification.Icon>
+  <InlineNotification.Text>ブログの管理者が承認するまで、コメントが反映されない場合があります</InlineNotification.Text>
+  <InlineNotification.TextButton>とじる</InlineNotification.TextButton>
+</InlineNotification.Frame>
+  `}
+/>
+
+## InlineNotification with Button
+本文に対して右側に表示されるボタンです。強調したい重要な導線がある時に使用します。
+
+<Story of={InlineNotificationStories.InlineNotificationwithButton} />
+
+<Source
+  code={`
+<InlineNotification.Frame variant='information' visible>
+  <InlineNotification.Icon><Information aria-hidden="true"/></InlineNotification.Icon>
+  <InlineNotification.Text>ブログの管理者が承認するまで、コメントが反映されない場合があります</InlineNotification.Text>
+  <InlineNotification.Button>確認</InlineNotification.Button>
+</InlineNotification.Frame>
+  `}
+/>
+
+## Visible
+`visible`プロパティによって表示・非表示を切り替えます。表示の仕方によってはレイアウトシフトを起こしてしまうので、注意して使用してください。
+
+<Story of={InlineNotificationStories.Visible} />
+

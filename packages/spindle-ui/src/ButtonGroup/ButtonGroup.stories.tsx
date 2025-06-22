@@ -1,0 +1,136 @@
+import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
+import { ButtonGroup } from './ButtonGroup';
+import { Button } from '../Button/Button';
+import { SubtleButton } from '../SubtleButton/SubtleButton';
+
+const meta: Meta<typeof ButtonGroup> = {
+  title: 'ButtonGroup',
+  component: ButtonGroup,
+};
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const RowDirectionwithLargeButtons: Story = {
+  render: () => (
+    <>
+      <ButtonGroup direction="row" size="large">
+        <Button size="large" variant="contained">
+          新規登録
+        </Button>
+        <Button size="large" variant="outlined">
+          ログイン
+        </Button>
+      </ButtonGroup>
+    </>
+  ),
+};
+
+export const ColumnDirectionwithLargeButtons: Story = {
+  render: () => (
+    <>
+      <ButtonGroup direction="column" size="large">
+        <Button variant="contained">新規登録</Button>
+        <Button variant="outlined">ログイン</Button>
+      </ButtonGroup>
+    </>
+  ),
+};
+
+export const RowDirectionwithMediumButtons: Story = {
+  render: () => (
+    <>
+      <ButtonGroup direction="row" size="medium">
+        <Button size="medium" variant="contained">
+          新規登録
+        </Button>
+        <Button size="medium" variant="outlined">
+          ログイン
+        </Button>
+      </ButtonGroup>
+    </>
+  ),
+};
+
+export const ColumnDirectionwithMediumButtons: Story = {
+  render: () => (
+    <>
+      <ButtonGroup direction="column" size="medium">
+        <Button size="medium" variant="contained">
+          新規登録
+        </Button>
+        <Button size="medium" variant="outlined">
+          ログイン
+        </Button>
+      </ButtonGroup>
+    </>
+  ),
+};
+
+export const RowDirectionwithSmallButtons: Story = {
+  render: () => (
+    <>
+      <ButtonGroup direction="row" size="small">
+        <Button size="small" variant="contained">
+          新規登録
+        </Button>
+        <Button size="small" variant="outlined">
+          ログイン
+        </Button>
+      </ButtonGroup>
+    </>
+  ),
+};
+
+export const ColumnDirectionwithSmallButtons: Story = {
+  render: () => (
+    <>
+      <ButtonGroup direction="column" size="small">
+        <Button size="small" variant="contained">
+          新規登録
+        </Button>
+        <Button size="small" variant="outlined">
+          ログイン
+        </Button>
+      </ButtonGroup>
+    </>
+  ),
+};
+
+export const ColumnDirectionwithLargeSubtleButton: Story = {
+  render: () => (
+    <>
+      <ButtonGroup direction="column" size="large">
+        <Button variant="contained">申請する</Button>
+        <SubtleButton size="large">とじる</SubtleButton>
+      </ButtonGroup>
+    </>
+  ),
+};
+
+export const ColumnDirectionwithMediumSubtleButton: Story = {
+  render: () => (
+    <>
+      <ButtonGroup direction="column" size="medium">
+        <Button size="medium" variant="contained">
+          申請する
+        </Button>
+        <SubtleButton size="medium">とじる</SubtleButton>
+      </ButtonGroup>
+    </>
+  ),
+};
+
+export const ColumnDirectionwithSmallSubtleButton: Story = {
+  render: () => (
+    <>
+      <ButtonGroup direction="column" size="small">
+        <Button size="small" variant="contained">
+          申請する
+        </Button>
+        <SubtleButton size="small">とじる</SubtleButton>
+      </ButtonGroup>
+    </>
+  ),
+};

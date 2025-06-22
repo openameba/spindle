@@ -1,0 +1,93 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as TextFieldStories from './TextField.stories';
+
+<Meta of={TextFieldStories} />
+
+# Form/TextField
+
+<Source
+  language='javascript'
+  code={`
+import { TextField } from '@openameba/spindle-ui/Form';
+import '@openameba/spindle-ui/Form/TextField.css';
+  `}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/Form/TextField.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Form/TextField.css">`}
+/>
+
+## Large
+
+<Story of={TextFieldStories.Large} />
+
+<Source
+  code={`
+<TextField placeholder="ameba-blog" id="TextField" variant="large" />
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<input placeholder="ameba-blog" class="spui-TextField spui-TextField--large" id="TextField" />
+  `}
+/>
+
+## Large With Error
+
+<Story of={TextFieldStories.LargeWithError} />
+
+<Source
+  code={`
+<TextField placeholder="ameba-blog" hasError id="TextFieldWithError" variant="large" />
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<input placeholder="ameba-blog" class="spui-TextField spui-TextField--large is-error" id="TextFieldWithError" />
+  `}
+/>
+
+## Medium
+
+<Story of={TextFieldStories.Medium} />
+
+<Source
+  code={`
+<TextField placeholder="ameba-blog" id="TextField" variant="medium" />
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<input placeholder="ameba-blog" class="spui-TextField spui-TextField--medium" id="TextField" />
+  `}
+/>
+
+## Medium With Error
+
+<Story of={TextFieldStories.MediumWithError} />
+
+<Source
+  code={`
+<TextField placeholder="ameba-blog" hasError id="TextFieldWithError" variant="medium" />
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<input placeholder="ameba-blog" class="spui-TextField spui-TextField--medium is-error" id="TextFieldWithError" />
+  `}
+/>
+

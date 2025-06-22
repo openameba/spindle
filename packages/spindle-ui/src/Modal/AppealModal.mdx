@@ -1,0 +1,296 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as AppealModalStories from './AppealModal.stories';
+
+<Meta of={AppealModalStories} />
+
+# Modal/AppealModal
+
+<Source
+  language='javascript'
+  code={`
+import { AppealModal } from '@openameba/spindle-ui/Modal';
+import '@openameba/spindle-ui/Modal/AppealModal.css';
+  `}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/Modal/AppealModal.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Modal/AppealModal.css">`}
+/>
+
+## Appeal Modal
+
+Appeal Modalは、利用者に何かお知らせをする用途で利用されます。Appeal Modalは特定用途での利用を想定しているため、カスタマイズ性は低くなっています。以下の点に注意して利用してください。
+
+- タイトルや画像など各要素を指定する際には`<AppealModal.Title>`、`<AppealModal.Image>`など定義された要素を利用してください
+- レイアウトは画面サイズにより自動的に変更されます
+
+### 指定できる要素
+
+- `<AppealModal.Frame>` 大枠(dialog要素)です
+- `<AppealModal.StyleOnly>` [HTMLDialogElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement)を利用しない場合に、`<AppealModal.Frame>`の代わりに利用します
+- `<AppealModal.Title>` タイトルを指定します
+- `<AppealModal.Image>` 画像を指定します。内部にはimg要素単体もしくはpicture要素に囲われたimg要素を指定します。また、表示したい内容に応じたアスペクト比の指定、レスポンシブ対応を利用時にしてください
+- `<AppealModal.Body>` 本文を指定します
+- `<AppealModal.ButtonGroup>` ボタンを指定します。なお、閉じるボタンは自動的に表示されるため、指定する必要はありません
+
+利用方法は、各サンプルコードを参照してください。
+
+### Dialog実装
+
+Spindle UIのAppeal Modalは[HTMLDialogElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement)を利用して作られています。[非対応ブラウザ](https://caniuse.com/dialog)には[dialog polyfill](https://github.com/GoogleChrome/dialog-polyfill)と併用してください。また、Appeal Modal内の`<dialog>`要素には`<form method="dialog">`要素が内包されているため、以下の動作が想定されています。
+
+- `type`属性を指定されていない`<Button>`は、ダイアログを閉じるボタンになります
+- `<Button>`に固有の処理を追加したい場合には`type="button"`や`type="reset"`などの属性を指定してください
+- `<AppealModal>`は`open`プロパティの値を見て、開く・閉じるの動作をします。`onClose`や`onCancel`のタイミングで`open`プロパティに`false`を指定し、ダイアログを閉じます
+  - `onCancel`イベントはEscapeキーを押されたなどデバイスや支援技術から伝達されます。特にそれらの動作を無効にする必要がない場合、通常は`open`プロパティを`false`にしてダイアログを閉じる動作を指定してください
+
+## Normal
+
+<Story of={AppealModalStories.Normal} />
+
+<Source
+  code={`
+function AppealModalExample() {
+  const [open, setOpen] = useState(false);
+  const dialogRef = useRef(null);
+  const handleOpenButtonClick = () => setOpen(true);
+  const handleDialogCancel = () => setOpen(false);
+  const handleDialogClose = () => setOpen(false);
+  useEffect(() => {
+    if (dialogRef.current) {
+      dialogPolyfill.registerDialog(dialogRef.current);
+    }
+  }, [dialogRef]);
+  return (
+    <>
+      <Button aria-haspopup="true" size="medium" variant="neutral" onClick={handleOpenButtonClick}>
+        開く
+      </Button>
+      <AppealModal.Frame
+        aria-describedby="dialog-description"
+        aria-labelledby="dialog-title"
+        ref={dialogRef}
+        open={open}
+        size="medium"
+        onCancel={handleDialogCancel}
+        onClose={handleDialogClose}
+      >
+        <AppealModal.Image>
+          <picture>
+            <source
+              srcSet="https://images.microcms-assets.io/assets/24995dc41d5c40808fe4a9e3f6fb2b20/4d28a6ed12194558a76ee4adfbab4e3b/ogp.png?w=1280&h=672&fm=webp&q=85"
+              media="(min-width: 768px)"
+            ></source>
+            <img
+              style={{ height: 'auto', width: '100%' }}
+              width="640"
+              height="336"
+              src="https://images.microcms-assets.io/assets/24995dc41d5c40808fe4a9e3f6fb2b20/e2526e7bfa494168a2e547cfe55ac89f/top_mv.jpg?w=640&h=336&fit=clamp&fm=webp&q=85"
+            />
+          </picture>
+        </AppealModal.Image>
+        <AppealModal.Title id="dialog-title">About Ameba</AppealModal.Title>
+        <AppealModal.Body id="dialog-description">
+          AmebaはAmebaブログをはじめ、最新の芸能人ニュースやマンガ・占いなど生きたコンテンツが集結した月間7,500万人が利用する国民的メディアサービスです。
+        </AppealModal.Body>
+        <AppealModal.ButtonGroup>
+          <LinkButton
+            href="https://about.ameba.jp/"
+            layout="fullWidth"
+            size="medium"
+          >
+            サイトを見る
+          </LinkButton>
+        </AppealModal.ButtonGroup>
+      </AppealModal.Frame>
+    </>
+  );
+}
+  `}
+/>
+
+## StyleOnly (Large)
+
+[HTMLDialogElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement)を利用しない場合には、`<AppealModal.StyleOnly>`を利用しSpindleで定義されたスタイルを流用できます。ダイアログの動作を独自で定義したい場合や他ライブラリの利用等でスタイルだけ使いたい場合を想定しています。
+
+<Story of={AppealModalStories.StyleOnlyLargeSize} />
+
+<Source
+  code={`
+<AppealModal.StyleOnly
+  aria-describedby="styleonly-description"
+  aria-labelledby="styleonly-title"
+>
+  <AppealModal.Image>
+    <img
+      style={{ height: 'auto', width: '100%' }}
+      width="640"
+      height="336"
+      src="https://images.microcms-assets.io/assets/24995dc41d5c40808fe4a9e3f6fb2b20/e2526e7bfa494168a2e547cfe55ac89f/top_mv.jpg?w=640&h=336&fit=crop&fm=webp&q=85"
+    />
+  </AppealModal.Image>
+  <AppealModal.Title id="styleonly-title">About Ameba</AppealModal.Title>
+  <AppealModal.Body id="styleonly-description">
+    AmebaはAmebaブログをはじめ、最新の芸能人ニュースやマンガ・占いなど生きたコンテンツが集結した月間7,500万人が利用する国民的メディアサービスです。
+  </AppealModal.Body>
+  <AppealModal.ButtonGroup>
+    <LinkButton
+      href="https://about.ameba.jp/"
+      layout="fullWidth"
+      size="medium"
+    >
+      サイトを見る
+    </LinkButton>
+  </AppealModal.ButtonGroup>
+</AppealModal.StyleOnly>
+  `}
+/>
+
+<Source
+  code={`
+<div class="spui-AppealModal spui-AppealModal--large" aria-describedby="styleonly-description" aria-labelledby="styleonly-title">
+  <div class="spui-AppealModal-frame">
+    <div class="spui-AppealModal-closeIconButton">
+      <button class="spui-IconButton spui-IconButton--large spui-IconButton--neutral" aria-label="閉じる"><svg width="1em" height="1em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" aria-hidden="true"><path d="M18.72 16.6c.59.59.59 1.54 0 2.12-.29.29-.68.44-1.06.44s-.77-.15-1.06-.44l-4.6-4.6-4.6 4.6c-.29.29-.68.44-1.06.44s-.77-.15-1.06-.44a1.49 1.49 0 0 1 0-2.12l4.6-4.6-4.6-4.6a1.49 1.49 0 0 1 0-2.12c.59-.58 1.54-.59 2.12 0l4.6 4.6 4.6-4.6a1.49 1.49 0 0 1 2.12 0c.58.59.59 1.54 0 2.12l-4.6 4.6 4.6 4.6z"></path></svg></button>
+    </div>
+    <div class="spui-AppealModal-image"><img width="640" height="336" src="https://images.microcms-assets.io/assets/24995dc41d5c40808fe4a9e3f6fb2b20/e2526e7bfa494168a2e547cfe55ac89f/top_mv.jpg?w=640&amp;h=336&amp;fit=crop&amp;fm=webp&amp;q=85" style="height: auto; width: 100%;"></div>
+    <p class="spui-AppealModal-title" id="styleonly-title">About Ameba</p>
+    <p class="spui-AppealModal-body" id="styleonly-description">AmebaはAmebaブログをはじめ、最新の芸能人ニュースやマンガ・占いなど生きたコンテンツが集結した月間7,500万人が利用する国民的メディアサービスです。</p>
+    <div class="spui-ButtonGroup spui-ButtonGroup--column spui-ButtonGroup--medium spui-AppealModal-buttonGroup">
+      <a class="spui-LinkButton spui-LinkButton--fullWidth spui-LinkButton--medium spui-LinkButton--contained" href="https://about.ameba.jp/">サイトを見る</a>
+    </div>
+    <div class="spui-AppealModal-closeTextButton"><button class="spui-SubtleButton spui-SubtleButton--large">とじる</button></div>
+  </div>
+</div>
+  `}
+/>
+
+## StyleOnly (Medium)
+
+<Story of={AppealModalStories.StyleOnlyMediumSize} />
+
+<Source
+  code={`
+<AppealModal.StyleOnly
+  aria-describedby="styleonlymedium-description"
+  aria-labelledby="styleonlymedium-title"
+  size="medium"
+>
+  <AppealModal.Image>
+    <img
+      style={{ height: 'auto', width: '100%' }}
+      width="640"
+      height="336"
+      src="https://images.microcms-assets.io/assets/24995dc41d5c40808fe4a9e3f6fb2b20/e2526e7bfa494168a2e547cfe55ac89f/top_mv.jpg?w=640&h=336&fit=crop&fm=webp&q=85"
+    />
+  </AppealModal.Image>
+  <AppealModal.Title id="styleonlymedium-title">
+    About Ameba
+  </AppealModal.Title>
+  <AppealModal.Body id="styleonlymedium-description">
+    AmebaはAmebaブログをはじめ、最新の芸能人ニュースやマンガ・占いなど生きたコンテンツが集結した月間7,500万人が利用する国民的メディアサービスです。
+  </AppealModal.Body>
+  <AppealModal.ButtonGroup>
+    <LinkButton
+      href="https://about.ameba.jp/"
+      layout="fullWidth"
+      size="medium"
+    >
+      サイトを見る
+    </LinkButton>
+  </AppealModal.ButtonGroup>
+</AppealModal.StyleOnly>
+  `}
+/>
+
+## StyleOnly (Small)
+
+<Story of={AppealModalStories.StyleOnlySmallSize} />
+
+<Source
+  code={`
+<AppealModal.StyleOnly
+  aria-describedby="styleonlysmall-description"
+  aria-labelledby="styleonlysmall-title"
+  size="small"
+>
+  <AppealModal.Image>
+    <img
+      style={{ height: 'auto', width: '100%' }}
+      width="640"
+      height="336"
+      src="https://images.microcms-assets.io/assets/24995dc41d5c40808fe4a9e3f6fb2b20/e2526e7bfa494168a2e547cfe55ac89f/top_mv.jpg?w=640&h=336&fit=crop&fm=webp&q=85"
+    />
+  </AppealModal.Image>
+  <AppealModal.Title id="styleonlysmall-title">
+    About Ameba
+  </AppealModal.Title>
+  <AppealModal.Body id="styleonlysmall-description">
+    AmebaはAmebaブログをはじめ、最新の芸能人ニュースやマンガ・占いなど生きたコンテンツが集結した月間7,500万人が利用する国民的メディアサービスです。
+  </AppealModal.Body>
+  <AppealModal.ButtonGroup>
+    <LinkButton
+      href="https://about.ameba.jp/"
+      layout="fullWidth"
+      size="medium"
+    >
+      サイトを見る
+    </LinkButton>
+  </AppealModal.ButtonGroup>
+</AppealModal.StyleOnly>
+  `}
+/>
+
+## StyleOnly (Medium & Customized)
+
+AppealModalで定義されていない要素は利用時に追加してカスタマイズできます。
+
+<Story of={AppealModalStories.StyleOnlyCustomizedVersion} />
+
+<Source
+  code={`
+<AppealModal.StyleOnly
+  aria-describedby="styleonlycustomized-description"
+  aria-labelledby="styleonlycustomized-title"
+  size="medium"
+>
+  <AppealModal.Image>
+    <img
+      style={{ height: 'auto', width: '100%' }}
+      width="640"
+      height="336"
+      src="https://images.microcms-assets.io/assets/24995dc41d5c40808fe4a9e3f6fb2b20/e2526e7bfa494168a2e547cfe55ac89f/top_mv.jpg?w=640&h=336&fit=crop&fm=webp&q=85"
+    />
+  </AppealModal.Image>
+  <AppealModal.Title id="styleonlycustomized-title">
+    About Ameba
+  </AppealModal.Title>
+  <AppealModal.Body id="styleonlycustomized-description">
+    AmebaはAmebaブログをはじめ、最新の芸能人ニュースやマンガ・占いなど生きたコンテンツが集結した月間7,500万人が利用する国民的メディアサービスです。
+  </AppealModal.Body>
+  <AppealModal.ButtonGroup>
+    <LinkButton
+      href="https://about.ameba.jp/"
+      layout="fullWidth"
+      size="medium"
+    >
+      サイトを見る
+    </LinkButton>
+    <p
+      style={{ alignItems: 'center', display: 'flex', margin: '24px 0 0' }}
+    >
+      <Checkbox id="nodisplay" />
+      <label htmlFor="nodisplay" style={{ marginLeft: '8px' }}>
+        次回から表示しない
+      </label>
+    </p>
+  </AppealModal.ButtonGroup>
+</AppealModal.StyleOnly>
+  `}
+/>

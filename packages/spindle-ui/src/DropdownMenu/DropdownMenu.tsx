@@ -147,7 +147,7 @@ const List = ({
   }, [handleKeyDown, open]);
 
   if (!open) {
-    return <></>;
+    return null;
   }
 
   let top;

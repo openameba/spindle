@@ -1,0 +1,185 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as UnderlineTabStories from './UnderlineTab.stories';
+
+<Meta of={UnderlineTabStories} />
+
+# NavigationTab/UnderlineTab
+
+NavigationTabは表示内容を伝え、切り替える事を目的としたコンポーネントです。ページ上部に配置し、ナビゲーション（Header）的役割を担うことを想定しています。
+
+<Source
+  language="javascript"
+  code={`
+import { UnderlineTab } from '@openameba/spindle-ui/NavigationTab';
+import '@openameba/spindle-ui/NavigationTab/UnderlineTab/UnderlineTab.css';
+  `}
+/>
+
+<Source
+  language="css"
+  code={`@import './node_modules/@openameba/spindle-ui/NavigationTab/UnderlineTab/UnderlineTab.css'`}
+/>
+
+<Source
+  language="html"
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/NavigationTab/UnderlineTab/UnderlineTab.css">`}
+/>
+
+## NavigationTabの種類
+NavigationTabには、Underline/Capsule/Inlineの3種類が存在します（※CapsuleとInlineはこれから実装予定です）
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>用途</th>
+      <th>数字バッチを表示できるか</th>
+      <th>区切り線を表示できるか</th>
+      <th>横スクロールできるか</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>UnderlineTab</td>
+      <td>最も汎用的なコンポーネントです。よりHeaderらしく使いたい時に利用してください。また、表示内容が類推し易い時に利用してください。</td>
+      <td>○</td>
+      <td>○</td>
+      <td>○</td>
+    </tr>
+    <tr>
+      <td>CapsuleTab</td>
+      <td>UnderlineTabより象徴的に使ったり、目立たせたい時に利用してください。UnderlineTabと併用してサブナビゲーション的に利用することも可能です。</td>
+      <td>×</td>
+      <td>○</td>
+      <td>○</td>
+    </tr>
+    <tr>
+      <td>InlineTab</td>
+      <td>NavigationTabのいずれかと並列に配置したい時に利用してください。ただし、横スクロールできないため項目数が少ない時のみ利用してください。</td>
+      <td>×</td>
+      <td>×</td>
+      <td>×</td>
+    </tr>
+  </tbody>
+</table>
+
+## 指定できるプロパティ
+- `defaultSelectedId`(必須): 初期の選択状態にしたい項目の`id`を指定します。この`id`は`options`内のいずれかの`id`と一致している必要があります。
+- `options`(必須): 各項目の情報を指定します。`id`（必須）は各項目を識別するためのもので、配列内で一意である必要があります。`label`（必須）はUnderlineTabに表示されるラベルです。`countBadge`（任意）は`label`右横に数字バッチを表示したい時に指定してください。
+- `hasBorder`(任意): コンポーネント下に区切り線を表示するかどうかを指定します。デフォルトは`false`です。
+- `variant`(任意): UnderlineTabの種類を指定します。デフォルトは`fixed`で、その他に`scrollable`を指定することもできます。
+- `onClick`(任意): 各項目をクリックした際に追加で行いたい処理がある場合は指定します。第2引数の`id`には、選択された項目の`id`が渡されます。
+
+## アクセシビリティ
+UnderlineTab内の各項目は`tab`roleを持ち、`id`には`options`の`id`が設定されます。また、`aria-controls`には`options`の`id`に`-tabpanel`を付与したものが設定されます。（例：`id`が`all`の場合、`id`には`all`、`aria-controls`には`all-tabpanel`が設定されます）
+
+上記を用いて、各項目と表示内容を関連付けてください。
+
+<Source
+  code={`<UnderlineTab
+  defaultSelectedId={'all'}
+  options={[
+    { id: 'all', label: 'すべて' },
+    { id: 'follow', label: 'フォロー' },
+    { id: 'follower', label: 'フォロワー' },
+  ]}
+/>
+<div id="all-tabpanel" role="tabpanel" aria-labelledby="all">
+  <p>「すべて」選択時の表示内容</p>
+</div>
+<div id="follow-tabpanel" role="tabpanel" aria-labelledby="follow">
+  <p>「フォロー」選択時の表示内容</p>
+</div>
+<div id="follower-tabpanel" role="tabpanel" aria-labelledby="follower">
+  <p>「フォロワー」選択時の表示内容</p>
+</div>`}
+/>
+
+## Variant（fixed）
+
+`variant: fixed`を指定した場合、各項目の幅は項目数で等分した長さになります。`fixed`を指定している場合、長い項目名（`label`）や多数の項目が設定されることは期待していません。そのため、`variant: fixed`指定時は項目名を最大7文字程度に収めることを推奨しており、長い項目名や多数の項目を設定したい場合は`variant: scrollable`の利用を検討してください。
+
+<Story of={UnderlineTabStories.VariantFixed} />
+
+<Source
+  code={`<div class="spui-UnderlineTab spui-UnderlineTab--fixed">
+  <div class="spui-UnderlineTab-container" role="tablist">
+    <button aria-controls="fixed-all-tabpanel" aria-selected="true" class="spui-UnderlineTab-button" id="fixed-all" tabindex="0" type="button" role="tab" style="max-width: calc(33.3333%);">
+      <span class="spui-UnderlineTab-labelWrapper">
+        <span class="spui-UnderlineTab-label">すべて</span>
+      </span>
+    </button>
+    <button aria-controls="fixed-follow-tabpanel" aria-selected="false" class="spui-UnderlineTab-button" id="fixed-follow" tabindex="-1" type="button" role="tab" style="max-width: calc(33.3333%);">
+      <span class="spui-UnderlineTab-labelWrapper">
+        <span class="spui-UnderlineTab-label">フォロー</span>
+      </span>
+    </button>
+    <button aria-controls="fixed-follower-tabpanel" aria-selected="false" class="spui-UnderlineTab-button" id="fixed-follower" tabindex="-1" type="button" role="tab" style="max-width: calc(33.3333%);">
+      <span class="spui-UnderlineTab-labelWrapper">
+        <span class="spui-UnderlineTab-label">フォロワー</span>
+      </span>
+    </button>
+  </div>
+</div>`}
+/>
+
+## Variant（scrollable）
+
+`variant: scrollable`を指定した場合、各項目の幅は項目名（`label`）の長さと同等になります。（項目名が長くても省略されることはありません）UnderlineTabの全体が表示領域内に収まらなくなった瞬間から、横スクロール可能になります。
+
+<Story of={UnderlineTabStories.VariantScrollable} />
+
+<Source
+  code={`<div class="spui-UnderlineTab spui-UnderlineTab--scrollable">
+  <div class="spui-UnderlineTab-arrow spui-UnderlineTab-arrow--left">
+    <button class="spui-UnderlineTab-arrowButton" type="button">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" role="img" aria-label="左に移動"><path d="M13.49 21.06 6.2 13.77c-.97-.97-.97-2.56 0-3.54l7.29-7.29a1.49 1.49 0 0 1 2.12 0c.59.59.59 1.54 0 2.12L8.67 12l6.94 6.94c.59.59.59 1.54 0 2.12-.29.29-.68.44-1.06.44s-.77-.15-1.06-.44Z"></path></svg>
+    </button>
+  </div>
+  <div class="spui-UnderlineTab-container" role="tablist">
+    <button aria-controls="scrollable-all-tabpanel" aria-selected="false" class="spui-UnderlineTab-button" id="scrollable-all" tabindex="-1" type="button" role="tab" style="max-width: fit-content;">
+      <span class="spui-UnderlineTab-labelWrapper">
+        <span class="spui-UnderlineTab-label">すべて</span>
+      </span>
+    </button>
+    <button aria-controls="scrollable-follow-tabpanel" aria-selected="true" class="spui-UnderlineTab-button" id="scrollable-follow" tabindex="0" type="button" role="tab" style="max-width: fit-content;">
+      <span class="spui-UnderlineTab-labelWrapper">
+        <span class="spui-UnderlineTab-label">フォロー</span>
+      </span>
+    </button>
+    <button aria-controls="scrollable-follower-tabpanel" aria-selected="false" class="spui-UnderlineTab-button" id="scrollable-follower" tabindex="-1" type="button" role="tab" style="max-width: fit-content;">
+      <span class="spui-UnderlineTab-labelWrapper">
+        <span class="spui-UnderlineTab-label">フォロワー</span>
+      </span>
+    </button>
+    <button aria-controls="scrollable-others-tabpanel" aria-selected="false" class="spui-UnderlineTab-button" id="scrollable-others" tabindex="-1" type="button" role="tab" style="max-width: fit-content;">
+      <span class="spui-UnderlineTab-labelWrapper">
+        <span class="spui-UnderlineTab-label">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span>
+      </span>
+    </button>
+  </div>
+  <div class="spui-UnderlineTab-arrow spui-UnderlineTab-arrow--right is-showed">
+    <button class="spui-UnderlineTab-arrowButton" type="button">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" role="img" aria-label="右に移動"><path d="M9.41 21.5c-.38 0-.77-.15-1.06-.44a1.49 1.49 0 0 1 0-2.12L15.29 12 8.35 5.06a1.49 1.49 0 0 1 0-2.12c.59-.58 1.54-.59 2.12 0l7.29 7.29c.97.97.97 2.56 0 3.54l-7.29 7.29c-.29.29-.67.44-1.06.44Z"></path></svg>
+    </button>
+  </div>
+</div>`}
+/>
+
+## Variant（scrollable with short label）
+
+UnderlineTabの全体が表示領域内に収まっている場合は、特にスクロールはしません。
+
+<Story of={UnderlineTabStories.VariantScrollablewithshortlabel} />
+
+## HasBorder（true）
+
+コンポーネント下に区切り線を表示するかどうかを指定します。デフォルトは`false`ですが、`true`を指定すれば表示できます。
+
+<Story of={UnderlineTabStories.HasBorderTrue} />
+
+## CountBadge
+
+`label`右横に数字バッチを表示したい時に指定してください。数字バッチの省略処理（例: `countBadge: 100`の場合に`99+`と表示）はコンポーネント内では特に行っていないので、必要に応じて利用元で処理してから指定してください。
+
+<Story of={UnderlineTabStories.CountBadge} />

@@ -1,0 +1,40 @@
+import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import { InlineDropDown } from './InlineDropDown';
+
+const meta: Meta<typeof InlineDropDown> = {
+  title: 'Form/InlineDropDown',
+  component: InlineDropDown,
+  args: {
+    onClick: action('clicked'),
+    onMouseOver: action('action'),
+  },
+};
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Medium: Story = {
+  render: () => (
+    <>
+      <InlineDropDown aria-label="期間を選択" name="term">
+        <option value="today">今日</option>
+        <option value="seven_days">7日間</option>
+        <option value="thirty_days">30日間</option>
+      </InlineDropDown>
+    </>
+  ),
+};
+
+export const Small: Story = {
+  render: () => (
+    <>
+      <InlineDropDown visualSize="small" aria-label="期間を選択" name="term">
+        <option value="today">今日</option>
+        <option value="seven_days">7日間</option>
+        <option value="thirty_days">30日間</option>
+      </InlineDropDown>
+    </>
+  ),
+};

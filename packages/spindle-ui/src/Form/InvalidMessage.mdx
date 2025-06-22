@@ -1,0 +1,45 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as InvalidMessageStories from './InvalidMessage.stories';
+
+<Meta of={InvalidMessageStories} />
+
+# Form/InvalidMessage
+
+<Source
+  language='javascript'
+  code={`
+import { InvalidMessage } from '@openameba/spindle-ui/Form';
+import '@openameba/spindle-ui/Form/InvalidMessage.css';
+  `}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/Form/InvalidMessage.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Form/InvalidMessage.css">`}
+/>
+
+## Invalid Message
+
+<Story of={InvalidMessageStories.InvalidMessageStory} />
+
+<Source
+  code={`
+<InvalidMessage visible>ファイル形式が正しくありません</InvalidMessage>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<p class="spui-InvalidMessage">
+  <span class="spui-InvalidMessage-icon"><svg>...</svg></span>
+  <span class="spui-InvalidMessage-body">ファイル形式が正しくありません</span>
+</p>
+  `}
+/>
+

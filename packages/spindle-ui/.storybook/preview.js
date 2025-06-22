@@ -1,3 +1,5 @@
+import '../src/index.css';
+
 export const parameters = {
   backgrounds: {
     default: 'Surface Primary',
@@ -21,3 +23,4 @@ export const parameters = {
     ],
   },
 };
+export const tags = ['autodocs'];

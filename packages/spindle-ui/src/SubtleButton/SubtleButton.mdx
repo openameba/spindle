@@ -1,0 +1,76 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as SubtleButtonStories from './SubtleButton.stories';
+
+<Meta of={SubtleButtonStories} />
+
+# SubtleButton
+
+<Source
+  language='javascript'
+  code={`
+import { SubtleButton } from '@openameba/spindle-ui';
+import '@openameba/spindle-ui/SubtleButton/SubtleButton.css';
+  `}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/SubtleButton/SubtleButton.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/SubtleButton/SubtleButton.css">`}
+/>
+
+## Large
+
+<Story of={SubtleButtonStories.Large} />
+
+<Source
+  code={`
+<SubtleButton size="large">とじる</SubtleButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-SubtleButton spui-SubtleButton--large">とじる</button>
+  `}
+/>
+
+## Medium
+
+<Story of={SubtleButtonStories.Medium} />
+
+<Source
+  code={`
+<SubtleButton size="medium">とじる</SubtleButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-SubtleButton spui-SubtleButton--medium">とじる</button>
+  `}
+/>
+
+## Small
+
+<Story of={SubtleButtonStories.Small} />
+
+<Source
+  code={`
+<SubtleButton size="small">とじる</SubtleButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-SubtleButton spui-SubtleButton--small">とじる</button>
+  `}
+/>
+

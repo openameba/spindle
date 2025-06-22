@@ -1,0 +1,67 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as ToggleSwitchStories from './ToggleSwitch.stories';
+
+<Meta of={ToggleSwitchStories} />
+
+# Form/ToggleSwitch
+
+<Source
+  language='javascript'
+  code={`
+import { ToggleSwitch } from '@openameba/spindle-ui/Form';
+import '@openameba/spindle-ui/Form/ToggleSwitch.css';
+  `}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/Form/ToggleSwitch.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Form/ToggleSwitch.css">`}
+/>
+
+## Toggle Switch
+
+<Story of={ToggleSwitchStories.ToggleSwitchStory} />
+
+<Source
+  code={`
+<ToggleSwitch aria-label="自動で挿入する" id="toggle" />
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<label class="spui-ToggleSwitch">
+  <input aria-label="自動で挿入する" class="spui-ToggleSwitch-input" id="toggle" type="checkbox">
+  <span class="spui-ToggleSwitch-visual"></span>
+  <span class="spui-ToggleSwitch-outline"></span>
+</label>
+  `}
+/>
+
+## Toggle Switch Disabled
+
+<Story of={ToggleSwitchStories.ToggleSwitchDisabled} />
+
+<Source
+  code={`
+<ToggleSwitch aria-label="自動で挿入する" disabled id="toggleDisabled" />
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<label class="spui-ToggleSwitch">
+  <input aria-label="自動で挿入する" class="spui-ToggleSwitch-input" disabled id="toggle" type="checkbox">
+  <span class="spui-ToggleSwitch-visual"></span>
+  <span class="spui-ToggleSwitch-outline"></span>
+</label>
+  `}
+/>
+

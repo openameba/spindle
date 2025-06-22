@@ -1,0 +1,59 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as TextAreaStories from './TextArea.stories';
+
+<Meta of={TextAreaStories} />
+
+# Form/TextArea
+
+<Source
+  language='javascript'
+  code={`
+import { TextArea } from '@openameba/spindle-ui/Form';
+import '@openameba/spindle-ui/Form/TextArea.css';
+  `}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/Form/TextArea.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Form/TextArea.css">`}
+/>
+
+## Text Area
+
+<Story of={TextAreaStories.TextAreaStory} />
+
+<Source
+  code={`
+<TextArea placeholder="ブログを読んで感じたことを伝えましょう" id="TextArea"></TextArea>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<textarea placeholder="ブログを読んで感じたことを伝えましょう" class="spui-TextArea" id="TextArea"></textarea>
+  `}
+/>
+
+## Text Area With Error
+
+<Story of={TextAreaStories.TextAreaWithError} />
+
+<Source
+  code={`
+<TextArea placeholder="ブログを読んで感じたことを伝えましょう" hasError id="TextAreaWithError"></TextArea>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<textarea placeholder="ブログを読んで感じたことを伝えましょう" class="spui-TextArea is-error" id="TextAreaWithError"></textarea>
+  `}
+/>
+
