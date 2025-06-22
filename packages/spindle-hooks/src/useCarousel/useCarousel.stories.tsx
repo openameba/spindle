@@ -1,9 +1,10 @@
 import React, { useCallback } from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { useCarousel } from './useCarousel';
 
-export const ITEM_LINK_CLASS_NAME = 'js-auto-play-carousel-item-link';
+const ITEM_LINK_CLASS_NAME = 'js-auto-play-carousel-item-link';
 
-export const carouselList = [
+const carouselList = [
   {
     title: '1. 生きたコンテンツをつむぐ',
     imageUrl:
@@ -36,13 +37,13 @@ export const carouselList = [
   },
 ];
 
-export const HeroCarouselItem = ({
-  carouselItem,
-  isLinkClicked,
-  itemLinkClassName,
-}) => {
+const HeroCarouselItem: React.FC<{
+  carouselItem: { title: string; imageUrl: string; link: string };
+  isLinkClicked: boolean;
+  itemLinkClassName: string;
+}> = ({ carouselItem, isLinkClicked, itemLinkClassName }) => {
   const handleLinkClick = useCallback(
-    (e) => {
+    (e: React.MouseEvent<HTMLAnchorElement>) => {
       if (!isLinkClicked) {
         e.preventDefault();
       }
@@ -68,7 +69,7 @@ export const HeroCarouselItem = ({
               height: '30em',
               width: '100%',
               background: '#eee',
-              objectFit: 'cover',
+              objectFit: 'cover' as const,
             }}
             src={carouselItem.imageUrl}
           />
@@ -81,7 +82,7 @@ export const HeroCarouselItem = ({
   );
 };
 
-export const HeroCarousel = () => {
+const HeroCarousel = () => {
   const {
     handleSlideToPrev,
     handleSlideToNext,
@@ -161,4 +162,16 @@ export const HeroCarousel = () => {
       </div>
     </div>
   );
+};
+
+const meta: Meta<typeof HeroCarousel> = {
+  title: 'useCarousel',
+  component: HeroCarousel,
+};
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Normal: Story = {
+  args: {},
 };

@@ -4974,7 +4974,7 @@
 
 "@storybook/addon-webpack5-compiler-swc@3.0.0":
   version "3.0.0"
-  resolved "https://registry.npmjs.org/@storybook/addon-webpack5-compiler-swc/-/addon-webpack5-compiler-swc-3.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-webpack5-compiler-swc/-/addon-webpack5-compiler-swc-3.0.0.tgz#78388c5d8a8375fe99f3b964057bc0402274e7d5"
   integrity sha512-qkQwQEvHlxwPCHz/xakGfXJusEa1gKMw7enELh6QGopblfN3rMiV084boqiIqBReqWTasSwHOqvuElAu0NQ+8w==
   dependencies:
     "@swc/core" "^1.10.8"

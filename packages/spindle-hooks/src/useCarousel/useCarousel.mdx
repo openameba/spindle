@@ -1,18 +1,13 @@
-import { useCallback } from 'react';
-import { Description, Meta, Story, Source } from '@storybook/addon-docs/blocks';
-import { actions } from '@storybook/addon-actions';
-import { useCarousel } from './useCarousel';
-import { HeroCarousel } from './useCarousel.stories';
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as useCarouselStories from './useCarousel.stories';
+
+<Meta of={useCarouselStories} />
 
 # useCarousel
 
-<Meta title="useCarousel" component={HeroCarousel} />
+Carouselの機能をまとめたHooksです。
 
-<Description>Carouselの機能をまとめたHooksです。</Description>
-
-<Description>
-  マークアップ部分のアクセシビリティ周りは担保できないので下の例を参考に実装してください。
-</Description>
+マークアップ部分のアクセシビリティ周りは担保できないので下の例を参考に実装してください。
 
 <Source
   language="javascript"
@@ -21,11 +16,7 @@ import { HeroCarousel } from './useCarousel.stories';
 
 ## Normal
 
-<Preview withSource="open">
-  <Story name="Normal">
-    <HeroCarousel />
-  </Story>
-</Preview>
+<Story of={useCarouselStories.Normal} />
 
 <Source
   code={`
@@ -168,12 +159,6 @@ const HeroCarousel = () => {
 
 ## このHooksでやっていること
 
-<Description>
-  - スライドの自動再生を停止/再開、前後のスライドに移動する機能を持ちます。
-</Description>
-<Description>
-  - キーボード・フォーカスがスライドに入っているとき、自動再生は止まります。また、スライドにマウス・ホバーしているときも止まります。
-</Description>
-<Description>
-  - reduced motionが指定された時に、アニメーションを軽減または削除します
-</Description>
+- スライドの自動再生を停止/再開、前後のスライドに移動する機能を持ちます。
+- キーボード・フォーカスがスライドに入っているとき、自動再生は止まります。また、スライドにマウス・ホバーしているときも止まります。
+- reduced motionが指定された時に、アニメーションを軽減または削除します

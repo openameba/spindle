@@ -15,7 +15,6 @@
     "src"
   ],
   "exclude": [
-    "src/**/*.test.*",
-    "src/**/*.stories.*"
+    "src/**/*.test.*"
   ]
 }
