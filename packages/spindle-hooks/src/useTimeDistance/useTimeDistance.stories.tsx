@@ -2,7 +2,13 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { useTimeDistance } from './useTimeDistance';
 
-const Time = ({ date, options }: { date: string; options?: { relativeDate?: Date; locale?: 'ja'; interval?: number } }) => {
+const Time = ({
+  date,
+  options,
+}: {
+  date: string;
+  options?: { relativeDate?: Date; locale?: 'ja'; interval?: number };
+}) => {
   const [dateString] = useTimeDistance(date, options);
   return <time dateTime={date}>{dateString}</time>;
 };

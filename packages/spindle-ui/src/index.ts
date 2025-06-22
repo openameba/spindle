@@ -14,3 +14,15 @@ export { DropdownMenu } from './DropdownMenu';
 export { SnackBar } from './SnackBar';
 export { InlineNotification } from './InlineNotification';
 export { SegmentedControl } from './SegmentedControl';
+export {
+  StackNotificationManagerProvider,
+  useStackNotificationManagerContext,
+} from './StackNotificationManager';
+export type {
+  StackPosition,
+  StackOffset,
+  StackPositionOffset,
+  ManagedStack,
+  StackNotificationManagerProps,
+  StackNotificationComponentProps,
+} from './StackNotificationManager';
