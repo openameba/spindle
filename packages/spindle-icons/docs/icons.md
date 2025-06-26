@@ -15,6 +15,8 @@
 | align_left | ![](../dist/svg/align_left.svg) |
 | align_right | ![](../dist/svg/align_right.svg) |
 | all_fill | ![](../dist/svg/all_fill.svg) |
+| alt | ![](../dist/svg/alt.svg) |
+| alt_fill | ![](../dist/svg/alt_fill.svg) |
 | amebacoin | ![](../dist/svg/amebacoin.svg) |
 | amebapick | ![](../dist/svg/amebapick.svg) |
 | amegold | ![](../dist/svg/amegold.svg) |
@@ -329,6 +331,7 @@
 | sun_fill | ![](../dist/svg/sun_fill.svg) |
 | switching | ![](../dist/svg/switching.svg) |
 | switching_camera | ![](../dist/svg/switching_camera.svg) |
+| table | ![](../dist/svg/table.svg) |
 | tag_fill | ![](../dist/svg/tag_fill.svg) |
 | tag_official_fill | ![](../dist/svg/tag_official_fill.svg) |
 | thumbsup | ![](../dist/svg/thumbsup.svg) |
