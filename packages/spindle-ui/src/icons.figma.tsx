@@ -365,6 +365,9 @@ import {
   StarHalf,
   TopbloggerMedal,
   Paidmember,
+  AltFill,
+  Alt,
+  Table,
 } from './Icon';
 
 figma.connect(
@@ -2390,4 +2393,19 @@ figma.connect(
   Paidmember,
   'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=12877-470',
   { imports: ["import { Paidmember } from '@openameba/spindle-ui/Icon';"] },
+);
+figma.connect(
+  AltFill,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=13653-494',
+  { imports: ["import { AltFill } from '@openameba/spindle-ui/Icon';"] },
+);
+figma.connect(
+  Alt,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=13653-493',
+  { imports: ["import { Alt } from '@openameba/spindle-ui/Icon';"] },
+);
+figma.connect(
+  Table,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=13653-495',
+  { imports: ["import { Table } from '@openameba/spindle-ui/Icon';"] },
 );
