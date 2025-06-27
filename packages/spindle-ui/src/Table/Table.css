@@ -21,8 +21,8 @@
 
   /* Border・ボーダー関連 */
   --Table-outlineColor: var(--color-border-strong-emphasis);
-  --Table-head-borderColor: var(--color-border-low-emphasis);
   --Table-cell-borderColor: var(--color-border-low-emphasis);
+  --Table-footer-separatorColor: var(--color-border-medium-emphasis);
   --Table-borderRadius: 16px;
 
   /* Layout・レイアウト関連 */
@@ -36,6 +36,14 @@
   --Table-caption-fontSize: 12px;
   --Table-caption-lineHeight: 1.6;
   --Table-caption-fontWeight: normal;
+
+  /* Footer・フッター関連 */
+  --Table-footer-backgroundColor: var(--Table-cell-backgroundColor);
+  --Table-footer-color: var(--Table-cell-color);
+  --Table-footer-fontWeight: normal;
+  --Table-footer-fontSize: var(--Table-cell-fontSize);
+  --Table-footer-lineHeight: var(--Table-cell-lineHeight);
+  --Table-footer-padding: var(--Table-cell-padding);
 }
 
 /*
@@ -55,156 +63,193 @@
  */
 .spui-Table {
   background-color: var(--Table-backgroundColor);
-  border-collapse: collapse;
   border-spacing: 0;
   font-family: inherit;
   table-layout: auto;
   width: 100%;
 }
 
-.spui-Table--layoutFixed {
+.spui-Table--fixed {
   table-layout: fixed;
 }
 
-/* minCellWidth support for scrollable tables */
+.spui-Table--scrollable {
+  min-width: 100%;
+  width: 100%;
+}
+
+/* Responsive layout support */
 .spui-Table-container--scrollable .spui-Table {
   min-width: max-content;
 }
 
-.spui-Table-container--scrollable .spui-Table .spui-Table-head,
-.spui-Table-container--scrollable .spui-Table .spui-Table-cell {
+/* minCellWidth をすべてのセルに適用 */
+.spui-Table-head,
+.spui-Table-cell {
   min-width: var(--Table-min-cell-width, auto);
 }
 
+/* スクロール時の追加スタイル */
+.spui-Table-container--scrollable .spui-Table-head,
+.spui-Table-container--scrollable .spui-Table-cell {
+  white-space: nowrap;
+}
+
 /*
- * Border patterns
+ * Border patterns - Array-based system
  */
 
-/* none: ボーダーなし（デフォルト） */
-.spui-Table--borderPatternNone {
-  /* No borders */
-}
-
-/* horizontal: 水平線のみ */
-.spui-Table--borderPatternHorizontal .spui-Table-head,
-.spui-Table--borderPatternHorizontal .spui-Table-cell {
+/* horizontal: 水平線 */
+.spui-Table--horizontal .spui-Table-head,
+.spui-Table--horizontal .spui-Table-cell {
   border-bottom: 1px solid var(--Table-cell-borderColor);
 }
 
-.spui-Table--borderPatternHorizontal
+/* tbody の最後の行のみ bottom border を削除 */
+.spui-Table--horizontal
   .spui-Table-body
   .spui-Table-row:last-child
   .spui-Table-head,
-.spui-Table--borderPatternHorizontal
+.spui-Table--horizontal
   .spui-Table-body
   .spui-Table-row:last-child
-  .spui-Table-cell,
-.spui-Table--borderPatternHorizontal
+  .spui-Table-cell {
+  border-bottom: none;
+}
+
+/* footer の最初の行に強調された区切り線 */
+.spui-Table--horizontal
+  .spui-Table-footer
+  .spui-Table-row:first-child
+  .spui-Table-head,
+.spui-Table--horizontal
+  .spui-Table-footer
+  .spui-Table-row:first-child
+  .spui-Table-cell {
+  border-top: 2px solid var(--Table-footer-separatorColor);
+}
+
+/* footer の最後の行のみ bottom border を削除 */
+.spui-Table--horizontal
   .spui-Table-footer
   .spui-Table-row:last-child
   .spui-Table-head,
-.spui-Table--borderPatternHorizontal
+.spui-Table--horizontal
   .spui-Table-footer
   .spui-Table-row:last-child
   .spui-Table-cell {
   border-bottom: none;
 }
 
-/* vertical: 垂直線のみ */
-.spui-Table--borderPatternVertical .spui-Table-head,
-.spui-Table--borderPatternVertical .spui-Table-cell {
+/* vertical: 垂直線 */
+.spui-Table--vertical .spui-Table-head,
+.spui-Table--vertical .spui-Table-cell {
   border-right: 1px solid var(--Table-cell-borderColor);
 }
 
-.spui-Table--borderPatternVertical .spui-Table-head:last-child,
-.spui-Table--borderPatternVertical .spui-Table-cell:last-child {
+.spui-Table--vertical .spui-Table-head:last-child,
+.spui-Table--vertical .spui-Table-cell:last-child {
   border-right: none;
 }
 
-/* inner: 内側の線のみ */
-.spui-Table--borderPatternInner .spui-Table-head,
-.spui-Table--borderPatternInner .spui-Table-cell {
-  border-bottom: 1px solid var(--Table-cell-borderColor);
-  border-right: 1px solid var(--Table-cell-borderColor);
-}
-
-.spui-Table--borderPatternInner .spui-Table-head:last-child,
-.spui-Table--borderPatternInner .spui-Table-cell:last-child {
-  border-right: none;
-}
-
-.spui-Table--borderPatternInner
-  .spui-Table-body
-  .spui-Table-row:last-child
-  .spui-Table-head,
-.spui-Table--borderPatternInner
-  .spui-Table-body
-  .spui-Table-row:last-child
-  .spui-Table-cell,
-.spui-Table--borderPatternInner
-  .spui-Table-footer
-  .spui-Table-row:last-child
-  .spui-Table-head,
-.spui-Table--borderPatternInner
-  .spui-Table-footer
-  .spui-Table-row:last-child
-  .spui-Table-cell {
-  border-bottom: none;
-}
-
-/* outer: 外枠のみ */
-.spui-Table--borderPatternOuter {
+/* outlined: 外枠 */
+.spui-Table--outlined {
   border: 1px solid var(--Table-outlineColor);
 }
 
-/* all: 全ての線 */
-.spui-Table--borderPatternAll {
-  border: 1px solid var(--Table-outlineColor);
+/*
+ * Footer 固有のスタイル
+ * フッターは合計・集計行として目立たせる
+ */
+.spui-Table-footer .spui-Table-cell {
+  background-color: var(--Table-footer-backgroundColor);
+  color: var(--Table-footer-color);
+  font-size: var(--Table-footer-fontSize);
+  font-weight: var(--Table-footer-fontWeight);
+  line-height: var(--Table-footer-lineHeight);
+  padding: var(--Table-footer-padding);
 }
 
-.spui-Table--borderPatternAll .spui-Table-head,
-.spui-Table--borderPatternAll .spui-Table-cell {
-  border-bottom: 1px solid var(--Table-cell-borderColor);
-  border-right: 1px solid var(--Table-cell-borderColor);
-}
-
-.spui-Table--borderPatternAll .spui-Table-head:last-child,
-.spui-Table--borderPatternAll .spui-Table-cell:last-child {
-  border-right: none;
-}
-
-.spui-Table--borderPatternAll
-  .spui-Table-body
-  .spui-Table-row:last-child
-  .spui-Table-head,
-.spui-Table--borderPatternAll
-  .spui-Table-body
-  .spui-Table-row:last-child
-  .spui-Table-cell,
-.spui-Table--borderPatternAll
-  .spui-Table-footer
-  .spui-Table-row:last-child
-  .spui-Table-head,
-.spui-Table--borderPatternAll
-  .spui-Table-footer
-  .spui-Table-row:last-child
-  .spui-Table-cell {
-  border-bottom: none;
+.spui-Table-footer .spui-Table-head {
+  color: var(--Table-footer-color);
+  font-size: var(--Table-footer-fontSize);
+  font-weight: var(--Table-footer-fontWeight);
+  line-height: var(--Table-footer-lineHeight);
+  padding: var(--Table-footer-padding);
 }
 
 /*
  * Rounded corners
  */
 .spui-Table--rounded {
+  border-collapse: separate;
   border-radius: var(--Table-borderRadius);
-  overflow: hidden;
+  border-spacing: 0;
 }
 
-.spui-Table--rounded.spui-Table--borderPatternNone,
-.spui-Table--rounded.spui-Table--borderPatternHorizontal,
-.spui-Table--rounded.spui-Table--borderPatternVertical,
-.spui-Table--rounded.spui-Table--borderPatternInner {
-  border: 1px solid var(--Table-outlineColor);
+/* rounded + outlined の組み合わせでborder-radiusを適用 */
+.spui-Table--rounded.spui-Table--outlined {
+  border-radius: var(--Table-borderRadius);
+}
+
+/* 内部要素の角丸処理 */
+.spui-Table--rounded
+  .spui-Table-header
+  .spui-Table-row:first-child
+  .spui-Table-head:first-child {
+  border-top-left-radius: calc(var(--Table-borderRadius) - 1px);
+}
+
+.spui-Table--rounded
+  .spui-Table-header
+  .spui-Table-row:first-child
+  .spui-Table-head:last-child {
+  border-top-right-radius: calc(var(--Table-borderRadius) - 1px);
+}
+
+.spui-Table--rounded
+  .spui-Table-body
+  .spui-Table-row:last-child
+  .spui-Table-head:first-child,
+.spui-Table--rounded
+  .spui-Table-body
+  .spui-Table-row:last-child
+  .spui-Table-cell:first-child {
+  border-bottom-left-radius: calc(var(--Table-borderRadius) - 1px);
+}
+
+.spui-Table--rounded
+  .spui-Table-body
+  .spui-Table-row:last-child
+  .spui-Table-head:last-child,
+.spui-Table--rounded
+  .spui-Table-body
+  .spui-Table-row:last-child
+  .spui-Table-cell:last-child {
+  border-bottom-right-radius: calc(var(--Table-borderRadius) - 1px);
+}
+
+/* footerがある場合の角丸処理 */
+.spui-Table--rounded
+  .spui-Table-footer
+  .spui-Table-row:last-child
+  .spui-Table-head:first-child,
+.spui-Table--rounded
+  .spui-Table-footer
+  .spui-Table-row:last-child
+  .spui-Table-cell:first-child {
+  border-bottom-left-radius: calc(var(--Table-borderRadius) - 1px);
+}
+
+.spui-Table--rounded
+  .spui-Table-footer
+  .spui-Table-row:last-child
+  .spui-Table-head:last-child,
+.spui-Table--rounded
+  .spui-Table-footer
+  .spui-Table-row:last-child
+  .spui-Table-cell:last-child {
+  border-bottom-right-radius: calc(var(--Table-borderRadius) - 1px);
 }
 
 /*
@@ -295,25 +340,6 @@
 
 .spui-Table-cell--alignRight {
   text-align: right;
-}
-
-/*
- * セル結合時のボーダー調整用ヘルパークラス
- */
-.spui-Table-head--borderRight {
-  border-right: 1px solid var(--Table-cell-borderColor);
-}
-
-.spui-Table-head--borderBottom {
-  border-bottom: 1px solid var(--Table-cell-borderColor);
-}
-
-.spui-Table-cell--borderRight {
-  border-right: 1px solid var(--Table-cell-borderColor);
-}
-
-.spui-Table-cell--borderBottom {
-  border-bottom: 1px solid var(--Table-cell-borderColor);
 }
 
 /*

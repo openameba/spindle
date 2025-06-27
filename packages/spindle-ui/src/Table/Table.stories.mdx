@@ -52,170 +52,41 @@ import { Table } from './Table';
   </Story>
 </Canvas>
 
-## With Caption
+## Border Types
 
-<Canvas>
-  <Story name="With Caption">
-    <Table borderPattern="horizontal">
-      <Table.Header>
-        <Table.Row>
-          <Table.Head>商品名</Table.Head>
-          <Table.Head align="right">売上（円）</Table.Head>
-          <Table.Head align="center">前年比</Table.Head>
-        </Table.Row>
-      </Table.Header>
-      <Table.Body>
-        <Table.Row>
-          <Table.Head scope="row">商品A</Table.Head>
-          <Table.Cell align="right">1,200,000</Table.Cell>
-          <Table.Cell align="center">+12%</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Head scope="row">商品B</Table.Head>
-          <Table.Cell align="right">980,000</Table.Cell>
-          <Table.Cell align="center">-3%</Table.Cell>
-        </Table.Row>
-      </Table.Body>
-      <Table.Caption>売上データ（2023年第4四半期）</Table.Caption>
-    </Table>
-  </Story>
-</Canvas>
-
-## 見出しパターン
-
-### 見出しなし
-
-<Canvas>
-  <Story name="No Headers">
-    <Table borderPattern="horizontal">
-      <Table.Body>
-        <Table.Row>
-          <Table.Cell>商品A</Table.Cell>
-          <Table.Cell>1,200,000</Table.Cell>
-          <Table.Cell>+12%</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>商品B</Table.Cell>
-          <Table.Cell>980,000</Table.Cell>
-          <Table.Cell>-3%</Table.Cell>
-        </Table.Row>
-      </Table.Body>
-    </Table>
-  </Story>
-</Canvas>
-
-### 列見出しのみ
-
-<Canvas>
-  <Story name="Column Headers Only">
-    <Table borderPattern="horizontal">
-      <Table.Header>
-        <Table.Row>
-          <Table.Head>商品名</Table.Head>
-          <Table.Head align="right">売上（円）</Table.Head>
-          <Table.Head align="center">前年比</Table.Head>
-        </Table.Row>
-      </Table.Header>
-      <Table.Body>
-        <Table.Row>
-          <Table.Cell>商品A</Table.Cell>
-          <Table.Cell align="right">1,200,000</Table.Cell>
-          <Table.Cell align="center">+12%</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>商品B</Table.Cell>
-          <Table.Cell align="right">980,000</Table.Cell>
-          <Table.Cell align="center">-3%</Table.Cell>
-        </Table.Row>
-      </Table.Body>
-    </Table>
-  </Story>
-</Canvas>
-
-### 行見出しのみ
-
-<Canvas>
-  <Story name="Row Headers Only">
-    <Table borderPattern="horizontal">
-      <Table.Body>
-        <Table.Row>
-          <Table.Head scope="row">商品A</Table.Head>
-          <Table.Cell>1,200,000</Table.Cell>
-          <Table.Cell>+12%</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Head scope="row">商品B</Table.Head>
-          <Table.Cell>980,000</Table.Cell>
-          <Table.Cell>-3%</Table.Cell>
-        </Table.Row>
-      </Table.Body>
-    </Table>
-  </Story>
-</Canvas>
-
-### 行列見出し
-
-<Canvas>
-  <Story name="Row and Column Headers">
-    <Table borderPattern="horizontal">
-      <Table.Header>
-        <Table.Row>
-          <Table.Head>商品名</Table.Head>
-          <Table.Head align="right">売上（円）</Table.Head>
-          <Table.Head align="center">前年比</Table.Head>
-        </Table.Row>
-      </Table.Header>
-      <Table.Body>
-        <Table.Row>
-          <Table.Head scope="row">商品A</Table.Head>
-          <Table.Cell align="right">1,200,000</Table.Cell>
-          <Table.Cell align="center">+12%</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Head scope="row">商品B</Table.Head>
-          <Table.Cell align="right">980,000</Table.Cell>
-          <Table.Cell align="center">-3%</Table.Cell>
-        </Table.Row>
-      </Table.Body>
-    </Table>
-  </Story>
-</Canvas>
-
-## Border Type
-
-### Horizontal
+### Horizontal Borders
 
 <Canvas>
   <Story name="Horizontal Borders">
-    <Table borderPattern="horizontal">
+    <Table borderType={['horizontal']}>
       <Table.Header>
         <Table.Row>
           <Table.Head>商品名</Table.Head>
-          <Table.Head>売上</Table.Head>
-          <Table.Head>前年比</Table.Head>
+          <Table.Head align="right">売上（円）</Table.Head>
+          <Table.Head align="center">前年比</Table.Head>
         </Table.Row>
       </Table.Header>
       <Table.Body>
         <Table.Row>
           <Table.Head scope="row">商品A</Table.Head>
-          <Table.Cell>1,200,000</Table.Cell>
-          <Table.Cell>+12%</Table.Cell>
+          <Table.Cell align="right">1,200,000</Table.Cell>
+          <Table.Cell align="center">+12%</Table.Cell>
         </Table.Row>
         <Table.Row>
           <Table.Head scope="row">商品B</Table.Head>
-          <Table.Cell>980,000</Table.Cell>
-          <Table.Cell>-3%</Table.Cell>
+          <Table.Cell align="right">980,000</Table.Cell>
+          <Table.Cell align="center">-3%</Table.Cell>
         </Table.Row>
       </Table.Body>
     </Table>
   </Story>
 </Canvas>
 
-### Vertical
+### Vertical Borders
 
 <Canvas>
   <Story name="Vertical Borders">
-    <Table borderPattern="vertical">
+    <Table borderType={['vertical']}>
       <Table.Header>
         <Table.Row>
           <Table.Head>商品名</Table.Head>
@@ -239,11 +110,11 @@ import { Table } from './Table';
   </Story>
 </Canvas>
 
-### Inner
+### Outlined
 
 <Canvas>
-  <Story name="Inner Borders">
-    <Table borderPattern="inner">
+  <Story name="Outlined">
+    <Table borderType={['outlined']}>
       <Table.Header>
         <Table.Row>
           <Table.Head>商品名</Table.Head>
@@ -267,39 +138,11 @@ import { Table } from './Table';
   </Story>
 </Canvas>
 
-### Outer
-
-<Canvas>
-  <Story name="Outer Borders">
-    <Table borderPattern="outer">
-      <Table.Header>
-        <Table.Row>
-          <Table.Head>商品名</Table.Head>
-          <Table.Head>売上</Table.Head>
-          <Table.Head>前年比</Table.Head>
-        </Table.Row>
-      </Table.Header>
-      <Table.Body>
-        <Table.Row>
-          <Table.Head scope="row">商品A</Table.Head>
-          <Table.Cell>1,200,000</Table.Cell>
-          <Table.Cell>+12%</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Head scope="row">商品B</Table.Head>
-          <Table.Cell>980,000</Table.Cell>
-          <Table.Cell>-3%</Table.Cell>
-        </Table.Row>
-      </Table.Body>
-    </Table>
-  </Story>
-</Canvas>
-
-### All
+### All Borders
 
 <Canvas>
   <Story name="All Borders">
-    <Table borderPattern="all">
+    <Table borderType={['horizontal', 'vertical']}>
       <Table.Header>
         <Table.Row>
           <Table.Head>商品名</Table.Head>
@@ -317,6 +160,149 @@ import { Table } from './Table';
           <Table.Head scope="row">商品B</Table.Head>
           <Table.Cell>980,000</Table.Cell>
           <Table.Cell>-3%</Table.Cell>
+        </Table.Row>
+      </Table.Body>
+    </Table>
+  </Story>
+</Canvas>
+
+### Full Grid
+
+<Canvas>
+  <Story name="Full Grid">
+    <Table borderType={['horizontal', 'vertical', 'outlined']}>
+      <Table.Header>
+        <Table.Row>
+          <Table.Head>商品名</Table.Head>
+          <Table.Head>売上</Table.Head>
+          <Table.Head>前年比</Table.Head>
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        <Table.Row>
+          <Table.Head scope="row">商品A</Table.Head>
+          <Table.Cell>1,200,000</Table.Cell>
+          <Table.Cell>+12%</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Head scope="row">商品B</Table.Head>
+          <Table.Cell>980,000</Table.Cell>
+          <Table.Cell>-3%</Table.Cell>
+        </Table.Row>
+      </Table.Body>
+    </Table>
+  </Story>
+</Canvas>
+
+## Layout Variations
+
+### Fixed Layout
+
+<Canvas>
+  <Story name="Fixed Layout">
+    <Table borderType={['horizontal']} layout="fixed">
+      <Table.Header>
+        <Table.Row>
+          <Table.Head width="30%">商品名</Table.Head>
+          <Table.Head width="50%">説明</Table.Head>
+          <Table.Head width="20%">価格</Table.Head>
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        <Table.Row>
+          <Table.Head scope="row">商品A</Table.Head>
+          <Table.Cell>
+            高品質な商品Aの詳細説明文です。長いテキストも固定幅で表示されます。
+          </Table.Cell>
+          <Table.Cell>¥1,200,000</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Head scope="row">商品B</Table.Head>
+          <Table.Cell>商品Bの説明文</Table.Cell>
+          <Table.Cell>¥980,000</Table.Cell>
+        </Table.Row>
+      </Table.Body>
+    </Table>
+  </Story>
+</Canvas>
+
+### Text Alignment
+
+<Canvas>
+  <Story name="Text Alignment">
+    <Table borderType={['horizontal', 'vertical']}>
+      <Table.Header>
+        <Table.Row>
+          <Table.Head>商品名</Table.Head>
+          <Table.Head align="center">ステータス</Table.Head>
+          <Table.Head align="right">価格</Table.Head>
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        <Table.Row>
+          <Table.Head scope="row">商品A</Table.Head>
+          <Table.Cell align="center">販売中</Table.Cell>
+          <Table.Cell align="right">¥1,200,000</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Head scope="row">商品B</Table.Head>
+          <Table.Cell align="center">準備中</Table.Cell>
+          <Table.Cell align="right">¥980,000</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Head scope="row">商品C</Table.Head>
+          <Table.Cell align="center">完売</Table.Cell>
+          <Table.Cell align="right">¥1,500</Table.Cell>
+        </Table.Row>
+      </Table.Body>
+    </Table>
+  </Story>
+</Canvas>
+
+### Scrollable
+
+<Canvas>
+  <Story name="Scrollable">
+    <Table
+      borderType={['horizontal', 'vertical']}
+      layout="scroll"
+      minCellWidth="120px"
+    >
+      <Table.Header>
+        <Table.Row>
+          <Table.Head width="150px">商品名</Table.Head>
+          <Table.Head>Q1売上</Table.Head>
+          <Table.Head>Q2売上</Table.Head>
+          <Table.Head>Q3売上</Table.Head>
+          <Table.Head>Q4売上</Table.Head>
+          <Table.Head>年間合計</Table.Head>
+          <Table.Head>前年比</Table.Head>
+          <Table.Head>カテゴリ</Table.Head>
+          <Table.Head>備考</Table.Head>
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        <Table.Row>
+          <Table.Head scope="row">スマートフォン</Table.Head>
+          <Table.Cell>3,000,000</Table.Cell>
+          <Table.Cell>3,500,000</Table.Cell>
+          <Table.Cell>3,200,000</Table.Cell>
+          <Table.Cell>4,000,000</Table.Cell>
+          <Table.Cell>13,700,000</Table.Cell>
+          <Table.Cell>+12%</Table.Cell>
+          <Table.Cell>電子機器</Table.Cell>
+          <Table.Cell>好調</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Head scope="row">タブレット</Table.Head>
+          <Table.Cell>2,800,000</Table.Cell>
+          <Table.Cell>3,100,000</Table.Cell>
+          <Table.Cell>2,900,000</Table.Cell>
+          <Table.Cell>3,500,000</Table.Cell>
+          <Table.Cell>12,300,000</Table.Cell>
+          <Table.Cell>-3%</Table.Cell>
+          <Table.Cell>電子機器</Table.Cell>
+          <Table.Cell>やや減少</Table.Cell>
         </Table.Row>
       </Table.Body>
     </Table>
@@ -329,7 +315,7 @@ import { Table } from './Table';
 
 <Canvas>
   <Story name="Striped">
-    <Table borderPattern="horizontal" striped>
+    <Table borderType={['horizontal']} striped>
       <Table.Header>
         <Table.Row>
           <Table.Head>商品名</Table.Head>
@@ -372,7 +358,7 @@ import { Table } from './Table';
 
 <Canvas>
   <Story name="Rounded">
-    <Table borderPattern="outer" rounded>
+    <Table borderType={['outlined']} rounded>
       <Table.Header>
         <Table.Row>
           <Table.Head>商品名</Table.Head>
@@ -396,119 +382,13 @@ import { Table } from './Table';
   </Story>
 </Canvas>
 
-## Text Alignment
-
-<Canvas>
-  <Story name="Text Alignment">
-    <Table borderPattern="inner">
-      <Table.Header>
-        <Table.Row>
-          <Table.Head>商品名</Table.Head>
-          <Table.Head align="right">価格（円）</Table.Head>
-          <Table.Head align="center">在庫</Table.Head>
-          <Table.Head align="right">売上（円）</Table.Head>
-        </Table.Row>
-      </Table.Header>
-      <Table.Body>
-        <Table.Row>
-          <Table.Head scope="row">スマートフォン</Table.Head>
-          <Table.Cell align="right">98,000</Table.Cell>
-          <Table.Cell align="center">○</Table.Cell>
-          <Table.Cell align="right">1,200,000</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Head scope="row">タブレット</Table.Head>
-          <Table.Cell align="right">45,000</Table.Cell>
-          <Table.Cell align="center">△</Table.Cell>
-          <Table.Cell align="right">980,000</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Head scope="row">ノートPC</Table.Head>
-          <Table.Cell align="right">120,000</Table.Cell>
-          <Table.Cell align="center">×</Table.Cell>
-          <Table.Cell align="right">750,000</Table.Cell>
-        </Table.Row>
-      </Table.Body>
-    </Table>
-  </Story>
-</Canvas>
-
-## Responsive
-
-### Scrollable
-
-<Canvas>
-  <Story name="Scrollable">
-    <Table borderPattern="inner" scrollable={true} minCellWidth="100px">
-      <Table.Header>
-        <Table.Row>
-          <Table.Head width="150px">商品名</Table.Head>
-          <Table.Head>Q1</Table.Head>
-          <Table.Head>Q2</Table.Head>
-          <Table.Head>Q3</Table.Head>
-          <Table.Head>Q4</Table.Head>
-          <Table.Head width="100px">合計</Table.Head>
-        </Table.Row>
-      </Table.Header>
-      <Table.Body>
-        <Table.Row>
-          <Table.Head scope="row">商品A</Table.Head>
-          <Table.Cell>300</Table.Cell>
-          <Table.Cell>350</Table.Cell>
-          <Table.Cell>320</Table.Cell>
-          <Table.Cell>400</Table.Cell>
-          <Table.Cell>1,370</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Head scope="row">商品B</Table.Head>
-          <Table.Cell>280</Table.Cell>
-          <Table.Cell>310</Table.Cell>
-          <Table.Cell>290</Table.Cell>
-          <Table.Cell>350</Table.Cell>
-          <Table.Cell>1,230</Table.Cell>
-        </Table.Row>
-      </Table.Body>
-    </Table>
-  </Story>
-</Canvas>
-
-### Fixed Layout
-
-<Canvas>
-  <Story name="Fixed Layout">
-    <Table borderPattern="horizontal" layout="fixed">
-      <Table.Header>
-        <Table.Row>
-          <Table.Head width="30%">商品名</Table.Head>
-          <Table.Head width="50%">説明</Table.Head>
-          <Table.Head width="20%">価格</Table.Head>
-        </Table.Row>
-      </Table.Header>
-      <Table.Body>
-        <Table.Row>
-          <Table.Head scope="row">商品A</Table.Head>
-          <Table.Cell>
-            高品質な商品Aの詳細説明文です。長いテキストも固定幅で表示されます。
-          </Table.Cell>
-          <Table.Cell>¥1,200,000</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Head scope="row">商品B</Table.Head>
-          <Table.Cell>商品Bの説明文</Table.Cell>
-          <Table.Cell>¥980,000</Table.Cell>
-        </Table.Row>
-      </Table.Body>
-    </Table>
-  </Story>
-</Canvas>
-
-## Cell Merging
+## Cell Merging Examples
 
 ### Column Span
 
 <Canvas>
   <Story name="Column Span">
-    <Table borderPattern="all">
+    <Table borderType={['horizontal', 'vertical', 'outlined']}>
       <Table.Header>
         <Table.Row>
           <Table.Head colSpan={2}>上半期</Table.Head>
@@ -543,7 +423,7 @@ import { Table } from './Table';
 
 <Canvas>
   <Story name="Row Span">
-    <Table borderPattern="all">
+    <Table borderType={['horizontal', 'vertical', 'outlined']}>
       <Table.Header>
         <Table.Row>
           <Table.Head>カテゴリ</Table.Head>
@@ -553,11 +433,7 @@ import { Table } from './Table';
       </Table.Header>
       <Table.Body>
         <Table.Row>
-          <Table.Head
-            scope="row"
-            rowSpan={2}
-            className="spui-Table-head--borderBottom"
-          >
+          <Table.Head scope="row" rowSpan={2}>
             電子機器
           </Table.Head>
           <Table.Cell>スマートフォン</Table.Cell>
@@ -568,11 +444,7 @@ import { Table } from './Table';
           <Table.Cell>980,000</Table.Cell>
         </Table.Row>
         <Table.Row>
-          <Table.Head
-            scope="row"
-            rowSpan={2}
-            className="spui-Table-head--borderBottom"
-          >
+          <Table.Head scope="row" rowSpan={2}>
             家電
           </Table.Head>
           <Table.Cell>冷蔵庫</Table.Cell>
@@ -583,6 +455,77 @@ import { Table } from './Table';
           <Table.Cell>650,000</Table.Cell>
         </Table.Row>
       </Table.Body>
+    </Table>
+  </Story>
+</Canvas>
+
+## Semantic Components
+
+### With Caption
+
+<Canvas>
+  <Story name="With Caption">
+    <Table borderType={['horizontal']}>
+      <Table.Caption>売上データ（2023年第4四半期）</Table.Caption>
+      <Table.Header>
+        <Table.Row>
+          <Table.Head>商品名</Table.Head>
+          <Table.Head align="right">売上（円）</Table.Head>
+          <Table.Head align="center">前年比</Table.Head>
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        <Table.Row>
+          <Table.Head scope="row">商品A</Table.Head>
+          <Table.Cell align="right">1,200,000</Table.Cell>
+          <Table.Cell align="center">+12%</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Head scope="row">商品B</Table.Head>
+          <Table.Cell align="right">980,000</Table.Cell>
+          <Table.Cell align="center">-3%</Table.Cell>
+        </Table.Row>
+      </Table.Body>
+    </Table>
+  </Story>
+</Canvas>
+
+### With Footer
+
+<Canvas>
+  <Story name="With Footer">
+    <Table borderType={['horizontal']}>
+      <Table.Header>
+        <Table.Row>
+          <Table.Head>商品名</Table.Head>
+          <Table.Head align="right">売上（円）</Table.Head>
+          <Table.Head align="center">前年比</Table.Head>
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        <Table.Row>
+          <Table.Head scope="row">商品A</Table.Head>
+          <Table.Cell align="right">1,200,000</Table.Cell>
+          <Table.Cell align="center">+12%</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Head scope="row">商品B</Table.Head>
+          <Table.Cell align="right">980,000</Table.Cell>
+          <Table.Cell align="center">-3%</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Head scope="row">商品C</Table.Head>
+          <Table.Cell align="right">750,000</Table.Cell>
+          <Table.Cell align="center">+5%</Table.Cell>
+        </Table.Row>
+      </Table.Body>
+      <Table.Footer>
+        <Table.Row>
+          <Table.Head>合計</Table.Head>
+          <Table.Cell align="right">2,930,000</Table.Cell>
+          <Table.Cell align="center">+4.7%</Table.Cell>
+        </Table.Row>
+      </Table.Footer>
     </Table>
   </Story>
 </Canvas>
@@ -598,7 +541,7 @@ import { Table } from './Table';
         '--Table-cell-borderColor': 'var(--color-border-accent-primary)',
       }}
     >
-      <Table borderPattern="outer" rounded>
+      <Table borderType={['outlined']} rounded>
         <Table.Header>
           <Table.Row>
             <Table.Head>商品名</Table.Head>

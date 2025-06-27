@@ -1,29 +1,16 @@
 import React, { forwardRef, ReactNode } from 'react';
 
+import { CSSProperties } from 'react';
+
 // Main Table component
 type TableProps = {
-  borderPattern?:
-    | 'none'
-    | 'horizontal'
-    | 'vertical'
-    | 'inner'
-    | 'outer'
-    | 'all';
+  borderType?: Array<'horizontal' | 'vertical' | 'outlined'>;
   rounded?: boolean;
   striped?: boolean;
-  layout?: 'auto' | 'fixed';
+  layout?: 'auto' | 'fixed' | 'scroll';
+  minCellWidth?: CSSProperties['minWidth'];
   children?: ReactNode;
-} & React.TableHTMLAttributes<HTMLTableElement> &
-  (
-    | {
-        scrollable?: true;
-        minCellWidth?: string;
-      }
-    | {
-        scrollable: false;
-        minCellWidth?: never;
-      }
-  );
+} & React.TableHTMLAttributes<HTMLTableElement>;
 
 // Table.Caption
 interface TableCaptionProps
@@ -56,8 +43,8 @@ interface TableRowProps extends React.HTMLAttributes<HTMLTableRowElement> {
 // Table.Head
 interface TableHeadProps extends React.ThHTMLAttributes<HTMLTableCellElement> {
   align?: 'left' | 'center' | 'right';
-  width?: string;
-  minWidth?: string;
+  width?: CSSProperties['width'];
+  minWidth?: CSSProperties['minWidth'];
   children?: ReactNode;
 }
 
@@ -72,11 +59,10 @@ const BLOCK_NAME = 'spui-Table';
 // Main Table component
 const Table = forwardRef<HTMLTableElement, TableProps>(function Table(
   {
-    borderPattern = 'none',
+    borderType = [],
     rounded = false,
     striped = false,
     layout = 'auto',
-    scrollable = false,
     minCellWidth,
     children,
     className,
@@ -85,29 +71,32 @@ const Table = forwardRef<HTMLTableElement, TableProps>(function Table(
   },
   ref,
 ) {
-  const getBorderClassName = (pattern: string) => {
-    switch (pattern) {
-      case 'horizontal':
-        return `${BLOCK_NAME}--borderPatternHorizontal`;
-      case 'vertical':
-        return `${BLOCK_NAME}--borderPatternVertical`;
-      case 'inner':
-        return `${BLOCK_NAME}--borderPatternInner`;
-      case 'outer':
-        return `${BLOCK_NAME}--borderPatternOuter`;
-      case 'all':
-        return `${BLOCK_NAME}--borderPatternAll`;
-      default:
-        return `${BLOCK_NAME}--borderPatternNone`;
-    }
+  const getBorderClassNames = (
+    borderTypes: Array<'horizontal' | 'vertical' | 'outlined'>,
+  ) => {
+    return borderTypes
+      .map((type) => {
+        switch (type) {
+          case 'horizontal':
+            return `${BLOCK_NAME}--horizontal`;
+          case 'vertical':
+            return `${BLOCK_NAME}--vertical`;
+          case 'outlined':
+            return `${BLOCK_NAME}--outlined`;
+          default:
+            return null;
+        }
+      })
+      .filter(Boolean);
   };
 
   const classes = [
     BLOCK_NAME,
-    getBorderClassName(borderPattern),
+    ...getBorderClassNames(borderType),
     rounded && `${BLOCK_NAME}--rounded`,
     striped && `${BLOCK_NAME}--striped`,
-    layout === 'fixed' && `${BLOCK_NAME}--layoutFixed`,
+    layout === 'fixed' && `${BLOCK_NAME}--fixed`,
+    layout === 'scroll' && `${BLOCK_NAME}--scrollable`,
     className,
   ]
     .filter(Boolean)
@@ -115,7 +104,7 @@ const Table = forwardRef<HTMLTableElement, TableProps>(function Table(
 
   const containerClasses = [
     `${BLOCK_NAME}-container`,
-    scrollable && `${BLOCK_NAME}-container--scrollable`,
+    layout === 'scroll' && `${BLOCK_NAME}-container--scrollable`,
   ]
     .filter(Boolean)
     .join(' ');
@@ -132,8 +121,8 @@ const Table = forwardRef<HTMLTableElement, TableProps>(function Table(
     </table>
   );
 
-  // Wrap in container if scrollable
-  if (scrollable) {
+  // Wrap in container if layout is scroll
+  if (layout === 'scroll') {
     return <div className={containerClasses}>{tableElement}</div>;
   }
 
@@ -295,7 +284,6 @@ const Cell = forwardRef<HTMLTableCellElement, TableCellProps>(
   },
 );
 
-// Create compound component
 const TableWithSubComponents = Object.assign(Table, {
   Caption,
   Header,
