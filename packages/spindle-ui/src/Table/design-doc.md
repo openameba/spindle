@@ -2,13 +2,12 @@
 
 ## 概要・背景
 
-構造化されたデータを表形式で表示するためのコンポーネントです。Web標準の`<table>`要素をベースとしたwrapperコンポーネントとして設計されており、Spindleデザインシステムに準拠した基本スタイリングを提供しつつ、高い拡張性を持つことが特徴です。
+構造化されたデータを表形式で表示するためのコンポーネントです。Web標準の`<table>`要素をベースとしたwrapperコンポーネントとして設計されており、デザインシステムSpindleに準拠した基本スタイリングを提供しつつ、高い拡張性を持つことが特徴です。
 
 他のSpindleコンポーネントと異なり、CSS VariablesによるスタイルオーバーライドやclassNameでのカスタマイズが可能で、プロダクト固有の要件に柔軟に対応できます。
 
 また、Storybookを通じて豊富な実装例を提供し、セマンティックでアクセシブルなTable実装をサポートします。
 
-将来的には、ソート、もっと見るなどのTable特有の機能の提供を予定しています。
 
 ## スクリーンショット
 <img width="803" alt="Striped Tableのイメージ画像" src="https://github.com/user-attachments/assets/74355f94-d2ec-4613-9ff6-37d0cb74162b" />
@@ -19,7 +18,7 @@
 ### 基本的な使用方法
 
 ```tsx
-<Table borderPattern="horizontal" striped>
+<Table borderType={['horizontal']} striped>
   <Table.Caption>売上データ（2023年第4四半期）</Table.Caption>
   <Table.Header>
     <Table.Row>
@@ -47,8 +46,8 @@
 
 ```tsx
 <Table
-  borderPattern="inner"
-  scrollable={true}
+  borderType={['horizontal', 'vertical']}
+  layout="scroll"
   minCellWidth="100px"
 >
   <Table.Header>
@@ -82,7 +81,7 @@
   '--Table-head-color': 'var(--color-text-high-emphasis-inverse)',
   '--Table-cell-borderColor': 'var(--color-border-accent-primary)'
 }}>
-  <Table borderPattern="outer" rounded>
+  <Table borderType={['outlined']} rounded>
     ...
   </Table>
 </div>
@@ -90,7 +89,7 @@
 
 ### DO
 
-**適切な構造とセマンティクスを使用する**
+#### 適切な構造とセマンティクスを使用する
 ```tsx
 // ✅ Good: 明確な構造と適切なセマンティクス
 <Table.Header>
@@ -107,7 +106,7 @@
 </Table.Body>
 ```
 
-**CSS Variablesでテーマ統一する**
+#### CSS Variablesでテーマ統一する
 ```tsx
 // ✅ Good: :rootでプロダクト全体の一貫性を保つ
 // styles.css
@@ -117,14 +116,14 @@
 }
 
 // Component
-<Table borderPattern="horizontal">
+<Table borderType={['horizontal']}>
   ...
 </Table>
 ```
 
 ### DO NOT
 
-**レイアウト目的での使用を避ける**
+#### レイアウト目的での使用を避ける
 ```tsx
 // ❌ Bad: フォームレイアウトでのテーブル使用
 <Table>
@@ -143,7 +142,7 @@
 </div>
 ```
 
-**個別セルでのボーダー指定**
+#### 個別セルでのボーダー指定
 ```tsx
 // ❌ Bad: 通常のテーブルで個別セルにボーダーを指定
 <Table>
@@ -154,8 +153,8 @@
   </Table.Body>
 </Table>
 
-// ✅ Good: borderPattern propを使用
-<Table borderPattern="horizontal">
+// ✅ Good: borderType propを使用
+<Table borderType={['horizontal']}>
   <Table.Body>
     <Table.Row>
       <Table.Cell>データ</Table.Cell>
@@ -164,7 +163,7 @@
 </Table>
 
 // ✅ Good: セル結合時は個別調整も可能
-<Table borderPattern="inner">
+<Table borderType={['horizontal', 'vertical']}>
   <Table.Body>
     <Table.Row>
       <Table.Cell colSpan={2} className="merged-cell">結合セル</Table.Cell>
@@ -173,7 +172,7 @@
 </Table>
 ```
 
-**アクセシビリティ要素の省略**
+#### セマンティクスの適切な使用
 ```tsx
 // ❌ Bad: 行見出しの未指定
 <Table.Cell>商品名</Table.Cell>
@@ -185,47 +184,32 @@
 ## 要素
 
 ### Design Tokens
-- Surface Primary (背景色)
-- Surface Tertiary (ヘッダー背景色)
-- Text High Emphasis (テキスト・見出し）
-- Border Low Emphasis (罫線）
+
+Tableコンポーネントで使用しているDesign Tokensは、CSS Variablesセクションを参照してください。全てのデザイントークンはCSS Variablesとして定義され、カスタマイズ可能です。
 
 ### プロパティ
 
 #### Table
 ```typescript
 type TableProps = {
-  borderPattern?: 'none' | 'horizontal' | 'vertical' | 'inner' | 'outer' | 'all';
+  borderType?: Array<'horizontal' | 'vertical' | 'outlined'>;
   rounded?: boolean;
   striped?: boolean;
-  layout?: 'auto' | 'fixed';
+  layout?: 'auto' | 'fixed' | 'scroll';
+  minCellWidth?: CSSProperties['minWidth'];
   children?: ReactNode;
-} & React.TableHTMLAttributes<HTMLTableElement> & (
-  | {
-      scrollable?: true;
-      minCellWidth?: string;
-    }
-  | {
-      scrollable: false;
-      minCellWidth?: never;
-    }
-);
+} & React.TableHTMLAttributes<HTMLTableElement>;
 ```
 
-##### scrollable
-- `true`: 横スクロール許可（列数が多い場合に有効）
-- `false`: セル縮小してコンテナ幅に収める（デフォルト）
-
-##### minCellWidth
-`scrollable=true`時のみ指定可能。セルの最小幅を制御します。
-
 ##### layout
-- `auto`: 内容に基づいて列幅を自動計算（デフォルト）
-- `fixed`: 最初の行の指定に基づいて列幅を固定
+- `auto`: 内容に基づいて列幅を自動計算、コンテナ幅に収める（デフォルト）
+- `fixed`: 最初の行の指定に基づいて列幅を固定、コンテナ幅に収める
+- `scroll`: 横スクロール許可、列数が多い場合に有効
 
-**layoutとscrollableの組み合わせ**:
-- `layout='fixed'` + `scrollable=true`: 固定列幅で横スクロール
-- `layout='auto'` + `scrollable=false`: 内容に基づく自動縮小
+#### ベストプラクティス
+- 列幅を固定したい場合: `<Table.Head width="150px">`で指定
+- 最小幅を保証したい場合: `<Table.Head minWidth="100px">`で指定
+- 横スクロール対応: `layout='scroll'`と`minCellWidth`を組み合わせる
 
 #### Table.Head
 ```typescript
@@ -237,11 +221,11 @@ interface TableHeadProps extends React.ThHTMLAttributes<HTMLTableCellElement> {
 }
 ```
 
-**使用パターン**:
+#### 使用パターン
 - **列見出し**: `<Table.Head>名前</Table.Head>`
 - **行見出し**: `<Table.Head scope="row">商品A</Table.Head>`
 
-**alignプロパティの提供理由**
+#### alignプロパティの提供理由
 
 スタイリング用途で`align`プロパティのみを提供している理由：
 - **使用頻度の高さ**: テキスト配置は最も頻繁に必要とされるスタイル調整
@@ -257,33 +241,41 @@ interface TableCellProps extends React.TdHTMLAttributes<HTMLTableCellElement> {
 }
 ```
 
+### Table.Footer
+`<tfoot>`要素として出力。テーブルのフッター情報（合計、集計など）を格納。
+```typescript
+interface TableFooterProps extends React.HTMLAttributes<HTMLTableSectionElement> {
+  children?: ReactNode;
+}
+```
+
 ## 実装例
-上記のプロパティを使って生成されるマークアップです。
+実際に書き出されるマークアップの例です。
 
 ```html
 <div class="spui-Table-container spui-Table-container--scrollable">
   <table
-    class="spui-Table spui-Table--borderPattern-horizontal spui-Table--striped"
+    class="spui-Table spui-Table--horizontal spui-Table--striped"
     style="--Table-min-cell-width: 80px;"
   >
     <caption class="spui-Table-caption">売上データ（2023年第4四半期）</caption>
     <thead class="spui-Table-header">
       <tr class="spui-Table-row">
         <th class="spui-Table-head">商品名</th>
-        <th class="spui-Table-head spui-Table-head--align-right">売上（円）</th>
-        <th class="spui-Table-head spui-Table-head--align-center">前年比</th>
+        <th class="spui-Table-head spui-Table-head--alignRight">売上（円）</th>
+        <th class="spui-Table-head spui-Table-head--alignCenter">前年比</th>
       </tr>
     </thead>
     <tbody class="spui-Table-body">
       <tr class="spui-Table-row">
         <th class="spui-Table-head" scope="row">商品A</th>
-        <td class="spui-Table-cell spui-Table-cell--align-right">1,200,000</td>
-        <td class="spui-Table-cell spui-Table-cell--align-center">+12%</td>
+        <td class="spui-Table-cell spui-Table-cell--alignRight">1,200,000</td>
+        <td class="spui-Table-cell spui-Table-cell--alignCenter">+12%</td>
       </tr>
       <tr class="spui-Table-row">
         <th class="spui-Table-head" scope="row">商品B</th>
-        <td class="spui-Table-cell spui-Table-cell--align-right">980,000</td>
-        <td class="spui-Table-cell spui-Table-cell--align-center">-3%</td>
+        <td class="spui-Table-cell spui-Table-cell--alignRight">980,000</td>
+        <td class="spui-Table-cell spui-Table-cell--alignCenter">-3%</td>
       </tr>
     </tbody>
   </table>
@@ -294,9 +286,9 @@ interface TableCellProps extends React.TdHTMLAttributes<HTMLTableCellElement> {
 
 ### スタイルの上書き
 
-Tableコンポーネントは基本的なスタイルを提供しますが、プロダクト固有の要件がある場合は以下の方法でカスタマイズできます。
+Tableコンポーネントは基本的なスタイルを提供しますが、プロダクト内で個別の要件がある場合は以下の方法でカスタマイズできます。
 
-**プロダクト全体での統一**
+#### プロダクト全体での統一
 ```css
 /* styles.css - プロダクト全体に適用 */
 :root {
@@ -306,7 +298,7 @@ Tableコンポーネントは基本的なスタイルを提供しますが、プ
 }
 ```
 
-**個別カスタマイズ**
+#### 個別カスタマイズ
 ```css
 .custom-table {
   --Table-head-backgroundColor: var(--color-surface-tertiary);
@@ -317,7 +309,7 @@ Tableコンポーネントは基本的なスタイルを提供しますが、プ
 
 ```tsx
 <div className="custom-table">
-  <Table borderPattern="outer" rounded>
+  <Table borderType={['outlined']} rounded>
     {/* テーブル内容 */}
   </Table>
 </div>
@@ -346,7 +338,8 @@ Tableコンポーネントは基本的なスタイルを提供しますが、プ
 
 ### CSS Variables（デフォルト値）
 
-**Surface・背景関連**
+#### Surface・背景関連
+
 | 変数名                              | デフォルト値                  | 用途                 |
 | :---------------------------------- | :---------------------------- | :------------------- |
 | --Table-backgroundColor             | var(--color-surface-primary)  | テーブル全体の背景色 |
@@ -355,7 +348,8 @@ Tableコンポーネントは基本的なスタイルを提供しますが、プ
 | --Table-row-striped-backgroundColor | var(--color-background)       | ストライプ行背景色   |
 | --Table-row-hover-backgroundColor   | var(--color-surface-secondary) | 行ホバー時背景色     |
 
-**Text・テキスト関連**
+#### Text・テキスト関連
+
 | 変数名                  | デフォルト値                    | 用途                   |
 | :---------------------- | :------------------------------ | :--------------------- |
 | --Table-head-color      | var(--color-text-high-emphasis) | ヘッダーテキスト色     |
@@ -366,15 +360,17 @@ Tableコンポーネントは基本的なスタイルを提供しますが、プ
 | --Table-head-lineHeight | 1.4                             | ヘッダー行間           |
 | --Table-cell-lineHeight | 1.4                             | セル行間               |
 
-**Border・ボーダー関連**
-| 変数名                   | デフォルト値                        | 用途           |
-| :----------------------- | :---------------------------------- | :------------- |
-| --Table-outlineColor     | var(--color-border-strong-emphasis) | アウトライン色 |
-| --Table-head-borderColor | var(--color-border-low-emphasis)    | ヘッダー罫線色 |
-| --Table-cell-borderColor | var(--color-border-low-emphasis)    | セル罫線色     |
-| --Table-borderRadius     | 16px                                | 外枠の角丸     |
+#### Border・ボーダー関連
 
-**Layout・レイアウト関連**
+| 変数名                        | デフォルト値                        | 用途                 |
+| :---------------------------- | :---------------------------------- | :------------------- |
+| --Table-outlineColor          | var(--color-border-strong-emphasis) | アウトライン色       |
+| --Table-cell-borderColor      | var(--color-border-low-emphasis)    | セル罫線色           |
+| --Table-footer-separatorColor | var(--color-border-medium-emphasis) | フッター上部区切り線 |
+| --Table-borderRadius          | 16px                                | 外枠の角丸           |
+
+#### Layout・レイアウト関連
+
 | 変数名                 | デフォルト値                 | 用途               |
 | :--------------------- | :--------------------------- | :----------------- |
 | --Table-head-padding   | 8px 12px                     | ヘッダーパディング |
@@ -382,48 +378,89 @@ Tableコンポーネントは基本的なスタイルを提供しますが、プ
 | --Table-sticky-shadow  | var(--box-shadow-lv2-normal) | 固定列の影         |
 | --Table-sticky-z-index | 1                            | 固定列のz-index    |
 
+#### Caption・キャプション関連
+
+| 変数名                     | デフォルト値                  | 用途                   |
+| :------------------------- | :---------------------------- | :--------------------- |
+| --Table-caption-color      | var(--color-text-low-emphasis) | キャプションテキスト色 |
+| --Table-caption-fontSize   | 12px                          | キャプションフォントサイズ |
+| --Table-caption-lineHeight | 1.6                           | キャプション行間       |
+| --Table-caption-fontWeight | normal                        | キャプションフォント太さ |
+
+#### Footer・フッター関連
+
+| 変数名                          | デフォルト値                          | 用途                   |
+| :------------------------------ | :------------------------------------ | :--------------------- |
+| --Table-footer-backgroundColor  | var(--Table-cell-backgroundColor)     | フッター背景色（td）   |
+| --Table-footer-color            | var(--Table-cell-color)               | フッターテキスト色     |
+| --Table-footer-fontWeight       | normal                                  | フッターフォント太さ   |
+| --Table-footer-fontSize         | var(--Table-cell-fontSize)            | フッターフォントサイズ |
+| --Table-footer-lineHeight       | var(--Table-cell-lineHeight)          | フッター行間           |
+| --Table-footer-padding          | var(--Table-cell-padding)             | フッターパディング     |
+
 ## 設計判断
 
 ### HTML属性の継承方針
 
 他の多くのSpindleコンポーネントではpropに`className`を許可していませんが、Tableでは標準HTML属性をそのまま継承しています。
 
-**継承理由**:
+#### 継承理由
 - **セル結合時の調整**: `colSpan`、`rowSpan`などの標準属性が必要
 - **アクセシビリティ**: `scope`、`headers`、`id`などの属性が重要
 - **柔軟なスタイリング**: セル結合時のボーダー調整など、`className`での対応が必要
 
-**方針**:
+#### 方針
 - 標準HTML属性を制限せず、Web標準に準拠した使用を推奨
 - ただし、コンポーネントの基本動作を壊さない範囲での使用を想定
+
+### borderTypeの設計
+
+`borderType`は配列形式で複数のボーダーパターンを組み合わせて指定できます。これにより、実装パターンを削減し、柔軟なボーダー設定が可能です。
+
+#### 使用例
+```tsx
+// 横罫線のみ
+<Table borderType={['horizontal']}>
+
+// 縦横罫線
+<Table borderType={['horizontal', 'vertical']}>
+
+// 外枠付き
+<Table borderType={['outlined']}>
+
+// 全てのボーダー
+<Table borderType={['horizontal', 'vertical', 'outlined']}>
+```
+
+※ セル結合時のボーダー調整はTableコンポーネントの責務の対象外とします。
 
 ### CSS Variables中心の設計
 
 他のSpindleコンポーネントと異なり、Tableは多様なスタイリング要求があるため、CSS Variablesを中心とした設計を採用しています。
 
-**採用理由**:
+#### 採用理由
 - TextLinkコンポーネントと同じ設計方針
 - プロダクト全体でのテーブルスタイル統一が容易
 - 個別要件への柔軟な対応が可能
 
-**検討した他の選択肢**:
+#### 検討した他の選択肢
 - **個別プロパティ（fontSize、color等）**: プロパティ数が膨大になり、複雑化
 
 ### セル結合への対応方針
 
 セル結合時のボーダー調整は利用側で対応してください。コンポーネント側では全ての結合パターンに対して適切なボーダーを提供することが技術的に困難なためです。
 
-**技術的困難な理由**:
+#### 技術的困難な理由
 - セル結合の組み合わせが無数に存在する
-- `borderPattern`との相互作用が複雑になる
+- `borderType`との相互作用が複雑になる
 
-**検討した専用プロパティ**:
+#### 検討した専用プロパティ
 - **`hasCellMerge`プロパティ**: セル結合の有無を事前に宣言
   - **不採用理由**: 実装時の制約が多く、柔軟性に欠ける
 - **`verticalHeader`プロパティ**: 縦見出しの専用制御
   - **不採用理由**: 実装時の制約が多く、柔軟性に欠ける。また特別なユースケースのためにpatternを提供したくない。
 
-**推奨する対応方法**:
+#### 推奨する対応方法
 ```tsx
 // 標準HTML属性でセル結合
 <Table.Cell colSpan={2} className="merged-cell">
@@ -435,6 +472,13 @@ Tableコンポーネントは基本的なスタイルを提供しますが、プ
   border-right: 1px solid var(--Table-cell-borderColor);
 }
 ```
+
+## 今後の提供予定機能
+
+将来的には、以下の機能の提供を予定しています：
+- ソート機能
+- ページネーション（もっと見る）
+- 列の固定・非表示
 
 この方針により、HTML標準に準拠しつつ、各プロダクトの要件に応じた柔軟な調整が可能です。
 
