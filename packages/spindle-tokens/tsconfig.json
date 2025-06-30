@@ -8,8 +8,5 @@
   "include": [
     "scripts/**/*.ts",
     "lib/**/*.ts",
-  ],
-  "exclude": [
-    "./scripts/**/*.test.*"
   ]
 }

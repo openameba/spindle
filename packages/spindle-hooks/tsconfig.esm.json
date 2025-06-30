@@ -4,5 +4,9 @@
     "target": "ESNext",
     "outDir": "dist",
     "moduleResolution": "node"
-  }
+  },
+  "exclude": [
+    "src/**/*.test.*",
+    "src/**/*.stories.*",
+  ]
 }

@@ -5,13 +5,10 @@
       "DOM"
     ],
     "baseUrl": ".",
-    "types": ["node", "jest", "@testing-library/jest-dom"],
-    "jsx": "react"
+    "jsx": "react",
+    "skipLibCheck": true
   },
   "include": [
     "src"
-  ],
-  "exclude": [
-    "src/**/*.test.*"
   ]
 }

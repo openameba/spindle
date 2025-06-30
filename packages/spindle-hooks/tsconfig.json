@@ -1,20 +1,14 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "lib": [
-      "DOM"
-    ],
+    "lib": ["DOM", "ES2022"],
     "baseUrl": ".",
     "paths": {
       "react": ["./node_modules/@types/react"]
     },
-    "types": ["node", "jest", "@testing-library/jest-dom"],
-    "jsx": "react"
+    "types": ["jest", "@testing-library/jest-dom"],
+    "jsx": "react",
+    "skipLibCheck": true
   },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "src/**/*.test.*"
-  ]
+  "include": ["src"]
 }
