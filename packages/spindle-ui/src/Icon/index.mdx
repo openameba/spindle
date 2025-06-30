@@ -1,0 +1,63 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as indexStories from './index.stories';
+
+<Meta of={indexStories} />
+
+# Icon
+
+<Source
+  language='javascript'
+  code={`import ICON_NAME from '@openameba/spindle-ui/Icon/{ICON_NAME}'`}
+/>
+
+<Source
+  language='javascript'
+  code={`import Clock from '@openameba/spindle-ui/Icon/Clock'`}
+/>
+
+<Source
+  language='javascript'
+  code={`import Clock from '@openameba/spindle-ui/Icon/Clock'`}
+/>
+
+<Source
+  language='javascript'
+  code={`import Clock from '@openameba/spindle-ui/Icon/Clock'`}
+/>
+
+## Clock Icon
+
+<Story of={indexStories.ClockIcon} />
+
+<Source
+  language='javascript'
+  code={`import Clock from '@openameba/spindle-ui/Icon/Clock'`}
+/>
+
+<Source
+  code={`
+<Clock aria-label="Clock" />
+  `}
+/>
+
+## Clock Icon Overriding Color
+
+<Story of={indexStories.ClockIconOverridingColor} />
+
+<Source
+  language='javascript'
+  code={`import Clock from '@openameba/spindle-ui/Icon/Clock'`}
+/>
+
+<Source
+  code={`
+<p style={{ color: 'green' }}>
+  <Clock aria-label="Clock" />
+</p>
+  `}
+/>
+
+## Clock Icon Overriding Size
+
+<Story of={indexStories.ClockIconOverridingSize} />
+

@@ -1,0 +1,194 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as StackNotificationManagerStories from './StackNotificationManager.stories';
+
+<Meta of={StackNotificationManagerStories} />
+
+# StackNotificationManager
+
+<Source
+  language="javascript"
+  code={`import { StackNotificationManager } from '@openameba/spindle-ui'`}
+/>
+
+<Source
+  language="javascript"
+  code={`
+const SnackBarExample = ({ id, position, icon, text, variant, onHide, ...rest }) => {
+  const { stackProps } = useStackNotificationManager({
+    id,
+    position,
+  });
+  const handleOnHide = useCallback(() => {
+    onHide(id);
+  }, [onHide]);
+  usePoliteAnnouncer(!!stackProps.active, text);
+  return (
+    <>
+      {stackProps.active && (
+        <SnackBar.Frame
+          variant={variant}
+          onHide={handleOnHide}
+          {...rest}
+          {...stackProps}
+        >
+          {icon && <SnackBar.Icon>{icon}</SnackBar.Icon>}
+          <SnackBar.Text>{text}</SnackBar.Text>
+          <SnackBar.TextButton>取り消し</SnackBar.TextButton>
+        </SnackBar.Frame>
+      )}
+    </>
+  );
+};
+const SnackBarWithButtonExample = ({ id, position, text, variant, ...rest }) => {
+  const { idList, append, onHide } = useRepeatedStackItem({ id, position });
+  return (
+    <>
+      <Button size="medium" variant="outlined" onClick={handleOnClick}>
+        {text}を開く(連続で開きます)
+      </Button>
+      {idList.map((id) => (
+        <SnackBarExample
+          key={id}
+          id={id}
+          variant={variant}
+          position={position}
+          text={text}
+          onHide={handleOnHide}
+          {...rest}
+        />
+      ))}
+    </>
+  );
+};
+render(<StackNotificationManagerProvider>
+  <SnackBarContainer
+    id="snackbar-id"
+    position="topCenter"
+    text="メッセージが届きました"
+  />
+</StackNotificationManagerProvider>);
+`}
+/>
+
+<Source
+  language="javascript"
+  code={`
+const usePoliteAnnouncer = (message) => {
+  const announcer = useRef(null);
+  useEffect(() => {
+    announcer.current = document.getElementById('polite-announcer');
+    return () => {
+      announcer.current = null;
+    };
+  }, []);
+  useEffect(() => {
+    const announcerContent = announcer.current;
+    if (announcerContent && message) {
+      announcerContent.textContent = message;
+    }
+    return () => {
+      if(message) {
+        announcerContent.textContent = '';
+      }
+    };
+  }, [message]);
+};
+  `}
+/>
+
+<Source
+  language="css"
+  code={`
+  .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  clip: rect(1px, 1px, 1px, 1px);
+}
+  `}
+/>
+
+<Source
+  language="html"
+  code={`
+<html>
+  <body>
+    ...
+    <div
+      aria-live="polite"
+      id="polite-announcer"
+      role="status"
+      class="visually-hidden"
+    ></div>
+    ...
+  </body>
+</html>
+  `}
+/>
+
+## Normal
+
+<Story of={StackNotificationManagerStories.Normal} />
+
+<Source
+  language="javascript"
+  code={`
+const SnackBarExample = ({ id, position, icon, text, variant, onHide, ...rest }) => {
+  const { stackProps } = useStackNotificationManager({
+    id,
+    position,
+  });
+  const handleOnHide = useCallback(() => {
+    onHide(id);
+  }, [onHide]);
+  usePoliteAnnouncer(!!stackProps.active, text);
+  return (
+    <>
+      {stackProps.active && (
+        <SnackBar.Frame
+          variant={variant}
+          onHide={handleOnHide}
+          {...rest}
+          {...stackProps}
+        >
+          {icon && <SnackBar.Icon>{icon}</SnackBar.Icon>}
+          <SnackBar.Text>{text}</SnackBar.Text>
+          <SnackBar.TextButton>取り消し</SnackBar.TextButton>
+        </SnackBar.Frame>
+      )}
+    </>
+  );
+};
+const SnackBarWithButtonExample = ({ id, position, text, variant, ...rest }) => {
+  const { idList, append, onHide } = useRepeatedStackItem({ id, position });
+  return (
+    <>
+      <Button size="medium" variant="outlined" onClick={handleOnClick}>
+        {text}を開く(連続で開きます)
+      </Button>
+      {idList.map((id) => (
+        <SnackBarExample
+          key={id}
+          id={id}
+          variant={variant}
+          position={position}
+          text={text}
+          onHide={handleOnHide}
+          {...rest}
+        />
+      ))}
+    </>
+  );
+};
+render(<StackNotificationManagerProvider>
+  <SnackBarContainer
+    id="snackbar-id"
+    position="topCenter"
+    text="メッセージが届きました"
+  />
+</StackNotificationManagerProvider>);
+`}
+/>
+

@@ -1,14 +1,15 @@
 import React, {
   createContext,
-  Dispatch,
-  FC,
-  MutableRefObject,
-  ReactNode,
-  SetStateAction,
   useCallback,
+  useContext,
   useReducer,
   useRef,
   useState,
+  type Dispatch,
+  type FC,
+  type MutableRefObject,
+  type ReactNode,
+  type SetStateAction,
 } from 'react';
 
 export type ManagedStackItem = {
@@ -103,7 +104,7 @@ const StackNotificationManagerContext =
   createContext<StackNotificationManagerContextValue | null>(null);
 
 export const useStackNotificationManagerContext = () => {
-  const context = React.useContext(StackNotificationManagerContext);
+  const context = useContext(StackNotificationManagerContext);
   if (context === null) {
     throw new Error(
       'useStackNotificationManagerContext must be used within a StackNotificationManagerProvider',
@@ -118,7 +119,7 @@ type StackNotificationManagerProviderProps = {
 
 export const StackNotificationManagerProvider: FC<
   StackNotificationManagerProviderProps
-> = ({ children }) => {
+> = ({ children }: StackNotificationManagerProviderProps) => {
   // To clear unnecessary stack items in unmount process, we need to use useRef.
   const [, forceRender] = useReducer(() => ({}), {});
   const stackRef = useRef<ManagedStack>({});

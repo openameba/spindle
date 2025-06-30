@@ -1,0 +1,300 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as PaginationStories from './Pagination.stories';
+
+<Meta of={PaginationStories} />
+
+# Pagination
+
+<Source
+  language="javascript"
+  code={`
+import { Pagination } from '@openameba/spindle-ui';
+import '@openameba/spindle-ui/Pagination.css';
+  `}
+/>
+
+<Source
+  language="css"
+  code={`@import './node_modules/@openameba/spindle-ui/Pagination.css'`}
+/>
+
+<Source
+  language="html"
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Pagination.css">`}
+/>
+
+Paginationはページの移動を目的として利用します。
+
+ページの前後に移動できます。
+
+## 指定できるプロパティ
+
+- `current`(必須): 現在のページ数を指定してください。
+- `total`(必須): 総ページ数を指定してください。
+- `linkFollowType`(必須): リンクのrelに設定する値を`all`, `none`, `firstPage`から選択できます。詳しくは[linkFollowTypeの設定](#link-follow-type-settings)を参照してください。
+- `createUrl`(必須): 関数を渡すことでリンクのhrefとなる値を生成することが可能です。
+- `showTotal`(任意): 現在のページ数と総ページ数を表示します。デフォルト値はfalseです。
+- `onPageChange`(任意): リンクをクリック後に処理をしたい場合に利用できます。
+
+## ページ総数が表示できる最大数以下の場合
+
+基本的に全てのページ番号を表示します。前後のページへ移動できるナビゲーションが配置されます。
+
+### total 1
+
+<Source
+  code={'<Pagination total={1} current={1} linkFollowType="all" createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+/>
+
+#### current 1
+
+<Story of={PaginationStories.current1total1} />
+
+### total 2
+
+<Source
+  code={'<Pagination total={2} current={1} linkFollowType="all" createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+/>
+
+#### current 1
+
+<Story of={PaginationStories.current1total2} />
+
+#### current 2
+
+<Story of={PaginationStories.current2total2} />
+
+### total 3
+
+<Source
+  code={'<Pagination total={3} current={1} linkFollowType="all" createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+/>
+
+#### current 1
+
+<Story of={PaginationStories.current1total3} />
+
+#### current 2
+
+<Story of={PaginationStories.current2total3} />
+
+#### current 3
+
+<Story of={PaginationStories.current3total3} />
+
+### total 4
+
+<Source
+  code={'<Pagination total={4} current={1} linkFollowType="all" createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+/>
+
+#### current 1
+
+<Story of={PaginationStories.current1total4} />
+
+#### current 2
+
+<Story of={PaginationStories.current2total4} />
+
+#### current 3
+
+<Story of={PaginationStories.current3total4} />
+
+#### current 4
+
+<Story of={PaginationStories.current4total4} />
+
+### total 5
+
+<Source
+  code={'<Pagination total={5} current={1} linkFollowType="all" createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+/>
+
+#### current 1
+
+<Story of={PaginationStories.current1total5} />
+
+#### current 2
+
+<Story of={PaginationStories.current2total5} />
+
+#### current 3
+
+<Story of={PaginationStories.current3total5} />
+
+#### current 4
+
+<Story of={PaginationStories.current4total5} />
+
+#### current 5
+
+<Story of={PaginationStories.current5total5} />
+
+## ページ総数が最大表示数より大きい場合
+
+可能な限り現在のページ番号を中央に配置しつつ前後のページ数を含めて表示します。前後のページへ移動できるナビゲーションが配置されます。
+
+### total 6
+
+<Source
+  code={'<Pagination total={6} current={1} linkFollowType="all" createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+/>
+
+#### current 1
+
+<Story of={PaginationStories.current1total6} />
+
+#### current 2
+
+<Story of={PaginationStories.current2total6} />
+
+#### current 3
+
+<Story of={PaginationStories.current3total6} />
+
+#### current 4
+
+<Story of={PaginationStories.current4total6} />
+
+#### current 5
+
+<Story of={PaginationStories.current5total6} />
+
+#### current 6
+
+<Story of={PaginationStories.current6total6} />
+
+### total 7
+
+<Source
+  code={'<Pagination total={7} current={1} linkFollowType="all" createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+/>
+
+#### current 1
+
+<Story of={PaginationStories.current1total7} />
+
+#### current 2
+
+<Story of={PaginationStories.current2total7} />
+
+#### current 3
+
+<Story of={PaginationStories.current3total7} />
+
+#### current 4
+
+<Story of={PaginationStories.current4total7} />
+
+#### current 5
+
+<Story of={PaginationStories.current5total7} />
+
+#### current 6
+
+<Story of={PaginationStories.current6total7} />
+
+#### current 7
+
+<Story of={PaginationStories.current7total7} />
+
+## ページ総数が100件を超える場合
+
+可能な限り現在のページ番号を中央に配置しつつ前後のページ数を含めて表示します。最初と最後のページへ移動できるナビゲーションが配置されます。
+
+<Source
+  code={'<Pagination total={1000} current={1} linkFollowType="all" createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+/>
+
+### current 1
+
+<Story of={PaginationStories.current1total1000} />
+
+### current 2
+
+<Story of={PaginationStories.current2total1000} />
+
+### current 3
+
+<Story of={PaginationStories.current3total1000} />
+
+### current 4
+
+<Story of={PaginationStories.current4total1000} />
+
+### current 5
+
+<Story of={PaginationStories.current5total1000} />
+
+### current 200
+
+<Story of={PaginationStories.current200total1000} />
+
+### current 998
+
+<Story of={PaginationStories.current998total1000} />
+
+### current 999
+
+<Story of={PaginationStories.current999total1000} />
+
+### current 1000
+
+<Story of={PaginationStories.current1000total1000} />
+
+## ページ総数の表示
+
+`showTotal`を`true`にすることで、ページ総数と現在のページ番号を表示できます。
+
+<Story of={PaginationStories.showTotalpropstrue} />
+
+<Source
+  code={'<Pagination total={20} current={8} linkFollowType="all" showTotal={true} createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+/>
+
+## onPageChangeの利用
+
+遷移時の処理を独自に記述したい場合はonPageChangeを利用してください。
+
+<Story of={PaginationStories.onpagechangefunction} />
+
+<Source
+  code={`const handleClick = (event, pageNumber) => {
+  event.preventDefault();
+  // router.push などで遷移処理を記述
+};
+
+<Pagination total={20} current={8} linkFollowType="all" createUrl={(pageNumber) => \`/detail/\${pageNumber}.html\`} onPageChange={(event, pageNumber) => { handleClick(event, pageNumber); }} />`}
+/>
+
+<h2 id="link-follow-type-settings">linkFollowTypeの設定</h2>
+
+### 全てのリンクをdofollowにする
+
+linkFollowTypeをallに指定することで、全てのページ遷移リンクにrel属性が設定されません。全てのページをクロールして欲しい場合に指定します。
+
+<Story of={PaginationStories.linkFollowTypeall} />
+
+<Source
+  code={'<Pagination total={7} current={2} linkFollowType="all" createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+/>
+
+### 全てのリンクをnofollowにする
+
+linkFollowTypeをnoneに指定することで、全てのページ遷移リンクのrel属性にnofollowが設定されます。いずれのページもクロールして欲しくない場合に指定します。
+
+<Story of={PaginationStories.linkFollowTypenone} />
+
+<Source
+  code={'<Pagination total={7} current={2} linkFollowType="none" createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+/>
+
+### 1ページ目のリンク以外をnofollowにする
+
+linkFollowTypeをfirstPageに指定することで、1ページ目への遷移リンク以外のrel属性にnofollowが設定されます。1ページ目のみをクロールして欲しい場合に指定します。
+
+<Story of={PaginationStories.linkFollowTypefirstPage} />
+
+<Source
+  code={'<Pagination total={7} current={2} linkFollowType="firstPage" createUrl={(pageNumber) => `/detail/${pageNumber}.html`} />'}
+/>

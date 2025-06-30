@@ -1,0 +1,42 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as MoreLinkStories from './MoreLink.stories';
+
+<Meta of={MoreLinkStories} />
+
+# List/MoreLink
+
+<Source
+  language='javascript'
+  code={`
+import { MoreLink } from '@openameba/spindle-ui/List';
+import '@openameba/spindle-ui/List/MoreLink.css';
+  `}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/List/MoreLink.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/List/MoreLink.css">`}
+/>
+
+## More Link
+
+<Story of={MoreLinkStories.Default} />
+
+<Source
+  code={`
+<MoreLink href="#">もっと見る</MoreLink>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<a class="spui-MoreLink" href="#">もっと見る<span class="spui-MoreLink-icon"><svg>...</svg></span></a>
+  `}
+/>
+

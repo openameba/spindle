@@ -8,7 +8,7 @@ exports.getIconInfo = getIconInfo;
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
 function getIconDocumentation() {
-    return fs_1.default.promises.readFile(path_1.default.join(__dirname, '../../spindle-ui/src/Icon', 'index.stories.mdx'), 'utf-8');
+    return fs_1.default.promises.readFile(path_1.default.join(__dirname, '../../spindle-ui/src/Icon', 'index.mdx'), 'utf-8');
 }
 async function getIcons() {
     const iconList = await getAllIcons();

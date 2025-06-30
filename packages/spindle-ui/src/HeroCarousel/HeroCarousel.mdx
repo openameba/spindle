@@ -1,0 +1,35 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as HeroCarouselStories from './HeroCarousel.stories';
+
+<Meta of={HeroCarouselStories} />
+
+# HeroCarousel
+
+<Source
+  language="javascript"
+  code={`
+import { HeroCarousel } from '@openameba/spindle-ui';
+import '@openameba/spindle-ui/HeroCarousel/HeroCarousel.css';
+  `}
+/>
+
+<Source
+  language="css"
+  code={`@import './node_modules/@openameba/spindle-ui/HeroCarousel/HeroCarousel.css'`}
+/>
+
+<Source
+  language="html"
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/HeroCarousel/HeroCarousel.css">`}
+/>
+
+## Normal
+
+<Story of={HeroCarouselStories.Normal} />
+
+<Source
+  code={`
+<HeroCarousel carouselList={carouselList} />
+  `}
+/>
+

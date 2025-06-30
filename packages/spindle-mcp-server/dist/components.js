@@ -37,7 +37,7 @@ function getComponentInfo(componentName, directory) {
             // 関連ファイルを探す
             const fileTypes = [
                 { key: 'styles', ext: '.css' },
-                { key: 'documentation', ext: '.stories.mdx' },
+                { key: 'documentation', ext: '.mdx' },
                 { key: 'tests', ext: '.test.tsx' },
                 { key: 'figma', ext: '.figma.tsx' },
             ];

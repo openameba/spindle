@@ -14,7 +14,7 @@ interface Icons {
 
 function getIconDocumentation(): Promise<string> {
   return fs.promises.readFile(
-    path.join(__dirname, '../../spindle-ui/src/Icon', 'index.stories.mdx'),
+    path.join(__dirname, '../../spindle-ui/src/Icon', 'index.mdx'),
     'utf-8',
   );
 }

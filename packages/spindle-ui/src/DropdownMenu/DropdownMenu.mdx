@@ -1,0 +1,241 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as DropdownMenuStories from './DropdownMenu.stories';
+
+<Meta of={DropdownMenuStories} />
+
+# DropdownMenu
+
+<Source
+  language='javascript'
+  code={`
+import { DropdownMenu } from '@openameba/spindle-ui';
+import '@openameba/spindle-ui/DropdownMenu/DropdownMenu.css';
+  `}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/DropdownMenu/DropdownMenu.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/DropdownMenu/DropdownMenu.css">`}
+/>
+
+## Text
+
+<Story of={DropdownMenuStories.Text} />
+
+<Source
+  code={`
+const [open, setOpen] = useState(false);
+const triggerRef = useRef<HTMLButtonElement>(null);
+const onClick = () => {
+  setOpen((prevOpen) => !prevOpen);
+};
+const onClose = () => {
+  setOpen(false);
+};
+return (
+  <>
+    <DropdownMenu.Frame>
+      <Button
+        aria-controls="dropdown-menu-example1"
+        aria-expanded={open}
+        onClick={onClick}
+        ref={triggerRef}
+        size="medium"
+        variant="neutral"
+      >
+        開く
+      </Button>
+      <DropdownMenu.List
+        id="dropdown-menu-example1"
+        onClose={onClose}
+        open={open}
+        position="rightTop"
+        triggerRef={triggerRef}
+        variant="text"
+      >
+        <DropdownMenu.ListItem {...actions('onClick')}>
+          <DropdownMenu.Title>タイトルですよ</DropdownMenu.Title>
+        </DropdownMenu.ListItem>
+        <DropdownMenu.ListItem {...actions('onClick')}>
+          <DropdownMenu.Title>タイトルですよ</DropdownMenu.Title>
+        </DropdownMenu.ListItem>
+      </DropdownMenu.List>
+    </DropdownMenu.Frame>
+  </>
+);
+  `}
+/>
+
+## Text With Icon
+
+<Story of={DropdownMenuStories.TextWithIcon} />
+
+<Source
+  code={`
+const [open, setOpen] = useState(false);
+const triggerRef = useRef<HTMLButtonElement>(null);
+const onClick = () => {
+  setOpen((prevOpen) => !prevOpen);
+};
+const onClose = () => {
+  setOpen(false);
+};
+return (
+  <>
+    <DropdownMenu.Frame>
+      <Button
+        aria-controls="dropdown-menu-example2"
+        aria-expanded={open}
+        onClick={onClick}
+        ref={triggerRef}
+        size="medium"
+        variant="neutral"
+      >
+        開く
+      </Button>
+      <DropdownMenu.List
+        id="dropdown-menu-example2"
+        onClose={onClose}
+        open={open}
+        position="rightTop"
+        triggerRef={triggerRef}
+        variant="textWithIcon"
+      >
+        <DropdownMenu.ListItem
+          icon={<AllFill aria-hidden="true" />}
+          {...actions('onClick')}
+        >
+          <DropdownMenu.Title>タイトルですよ</DropdownMenu.Title>
+        </DropdownMenu.ListItem>
+        <DropdownMenu.ListItem
+          icon={<AllFill aria-hidden="true" />}
+          {...actions('onClick')}
+        >
+          <DropdownMenu.Title>タイトルですよ</DropdownMenu.Title>
+        </DropdownMenu.ListItem>
+      </DropdownMenu.List>
+    </DropdownMenu.Frame>
+  </>
+);
+  `}
+/>
+
+## Head With Icon
+
+<Story of={DropdownMenuStories.HeadWithIcon} />
+
+<Source
+  code={`
+const [open, setOpen] = useState(false);
+const triggerRef = useRef<HTMLButtonElement>(null);
+const onClick = () => {
+  setOpen((prevOpen) => !prevOpen);
+};
+const onClose = () => {
+  setOpen(false);
+};
+return (
+  <>
+    <DropdownMenu.Frame>
+      <Button
+        aria-controls="dropdown-menu-example3"
+        aria-expanded={open}
+        onClick={onClick}
+        ref={triggerRef}
+        size="medium"
+        variant="neutral"
+      >
+        開く
+      </Button>
+      <DropdownMenu.List
+        id="dropdown-menu-example3"
+        onClose={onClose}
+        open={open}
+        position="rightTop"
+        triggerRef={triggerRef}
+        variant="headWithIcon"
+      >
+        <DropdownMenu.ListItem
+          icon={<AllFill aria-hidden="true" />}
+          {...actions('onClick')}
+        >
+          <DropdownMenu.Title>タイトルですよ</DropdownMenu.Title>
+        </DropdownMenu.ListItem>
+        <DropdownMenu.ListItem
+          icon={<AllFill aria-hidden="true" />}
+          {...actions('onClick')}
+        >
+          <DropdownMenu.Title>タイトルですよ</DropdownMenu.Title>
+        </DropdownMenu.ListItem>
+      </DropdownMenu.List>
+    </DropdownMenu.Frame>
+  </>
+);
+  `}
+/>
+
+## Head With Icon And Caption
+
+<Story of={DropdownMenuStories.HeadWithIconAndCaption} />
+
+<Source
+  code={`
+const [open, setOpen] = useState(false);
+const triggerRef = useRef<HTMLButtonElement>(null);
+const onClick = () => {
+  setOpen((prevOpen) => !prevOpen);
+};
+const onClose = () => {
+  setOpen(false);
+};
+return (
+  <>
+    <DropdownMenu.Frame>
+      <Button
+        aria-controls="dropdown-menu-example4"
+        aria-expanded={open}
+        onClick={onClick}
+        ref={triggerRef}
+        size="medium"
+        variant="neutral"
+      >
+        開く
+      </Button>
+      <DropdownMenu.List
+        id="dropdown-menu-example4"
+        onClose={onClose}
+        open={open}
+        position="rightTop"
+        triggerRef={triggerRef}
+        variant="headWithIconAndCaption"
+      >
+        <DropdownMenu.ListItem
+          icon={<AllFill aria-hidden="true" />}
+          {...actions('onClick')}
+        >
+          <DropdownMenu.Title>タイトルですよ</DropdownMenu.Title>
+          <DropdownMenu.Caption>キャプションですよ</DropdownMenu.Caption>
+        </DropdownMenu.ListItem>
+        <DropdownMenu.ListItem
+          icon={<AllFill aria-hidden="true" />}
+          {...actions('onClick')}
+        >
+          <DropdownMenu.Title>タイトルですよ</DropdownMenu.Title>
+          <DropdownMenu.Caption>キャプションですよ</DropdownMenu.Caption>
+        </DropdownMenu.ListItem>
+      </DropdownMenu.List>
+    </DropdownMenu.Frame>
+  </>
+);
+  `}
+/>
+
+## Position
+
+<Story of={DropdownMenuStories.Position} />
+

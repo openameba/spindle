@@ -1,0 +1,91 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as InlineDropDownStories from './InlineDropDown.stories';
+
+<Meta of={InlineDropDownStories} />
+
+# Form/InlineDropDown
+
+<Source
+  language="javascript"
+  code={`
+import { InlineDropDown } from '@openameba/spindle-ui/Form';
+import '@openameba/spindle-ui/Form/InlineDropDown.css';
+  `}
+/>
+
+<Source
+  language="css"
+  code={`@import './node_modules/@openameba/spindle-ui/Form/InlineDropDown.css'`}
+/>
+
+<Source
+  language="html"
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Form/InlineDropDown.css">`}
+/>
+
+## Medium
+
+<Story of={InlineDropDownStories.Medium} />
+
+<Source
+  code={`
+<InlineDropDown aria-label="期間を選択" name="term">
+  <option value="today">今日</option>
+  <option value="seven_days">7日間</option>
+  <option value="thirty_days">30日間</option>
+</InlineDropDown>
+`}
+/>
+
+<Source
+  language="html"
+  code={`
+<label class="spui-InlineDropDown-label is-active">
+  <span class="spui-InlineDropDown-visual">
+    <span class="spui-InlineDropDown-text spui-InlineDropDown-text--medium">今日</span>
+    <span class="spui-InlineDropDown-icon spui-InlineDropDown-icon--medium"><svg/></span>
+  </span>
+  <select class="spui-InlineDropDown-select spui-InlineDropDown-select--medium" aria-label="期間を選択" name="term"
+  >
+    <option value="today">今日</option>
+    <option value="seven_days">7日間</option>
+    <option value="thirty_days">30日間</option>
+  </select>
+  <span class="spui-InlineDropDown-outline"></span>
+</label>
+  `}
+/>
+
+## Small
+
+<Story of={InlineDropDownStories.Small} />
+
+<Source
+  code={`
+<InlineDropDown visualSize="small" aria-label="期間を選択" name="term">
+  <option value="today">今日</option>
+  <option value="seven_days">7日間</option>
+  <option value="thirty_days">30日間</option>
+</InlineDropDown>
+`}
+/>
+
+<Source
+  language="html"
+  code={`
+<label class="spui-InlineDropDown-label is-active">
+  <span class="spui-InlineDropDown-visual">
+    <span class="spui-InlineDropDown-text spui-InlineDropDown-text--small">今日</span>
+    <span class="spui-InlineDropDown-icon spui-InlineDropDown-icon--small"><svg/></span>
+  </span>
+  <select class="spui-InlineDropDown-select spui-InlineDropDown-select--small" aria-label="期間を選択" name="term"
+  >
+    <option value="today">今日</option>
+    <option value="seven_days">7日間</option>
+    <option value="thirty_days">30日間</option>
+  </select>
+  <span class="spui-InlineDropDown-outline"></span>
+</label>
+  `}
+/>
+

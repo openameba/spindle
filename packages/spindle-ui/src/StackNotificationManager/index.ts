@@ -1,5 +1,8 @@
 export {
   StackNotificationManagerProvider,
+  useStackNotificationManagerContext,
+} from './StackNotificationManager';
+export type {
   StackPosition,
   StackOffset,
   StackPositionOffset,

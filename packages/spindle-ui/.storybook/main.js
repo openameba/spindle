@@ -1,6 +1,7 @@
 module.exports = {
-  stories: ['../src/**/*.stories.@(ts|tsx|mdx)'],
+  stories: ['../src/**/*.@(mdx|stories.@(ts|tsx))'],
   addons: [
+    '@storybook/addon-webpack5-compiler-swc',
     '@storybook/addon-actions',
     '@storybook/addon-a11y',
     '@storybook/addon-backgrounds',
@@ -8,26 +9,20 @@ module.exports = {
     '@storybook/addon-viewport',
   ],
   staticDirs: ['../assets'],
-  core: {
-    builder: 'webpack5',
-  },
   webpackFinal: async (config) => {
-    return {
-      ...config,
-      target: 'web',
-      module: {
-        ...config.module,
-        rules: [
-          ...config.module.rules,
-          {
-            test: /\.mjs$/,
-            type: 'javascript/auto',
-            resolve: {
-              fullySpecified: false,
-            },
-          },
-        ],
+    config.module.rules.push({
+      test: /\.mjs$/,
+      type: 'javascript/auto',
+      resolve: {
+        fullySpecified: false,
       },
-    };
+    });
+    return config;
+  },
+  framework: {
+    name: '@storybook/react-webpack5',
+  },
+  typescript: {
+    reactDocgen: false,
   },
 };

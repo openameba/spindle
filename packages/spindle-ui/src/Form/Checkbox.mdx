@@ -1,0 +1,89 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as CheckboxStories from './Checkbox.stories';
+
+<Meta of={CheckboxStories} />
+
+# Form/Checkbox
+
+<Source
+  language='javascript'
+  code={`
+import { Checkbox } from '@openameba/spindle-ui/Form';
+import '@openameba/spindle-ui/Form/Checkbox.css';
+  `}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/Form/Checkbox.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Form/Checkbox.css">`}
+/>
+
+## Checkbox
+
+<Story of={CheckboxStories.Checkbox} />
+
+<Source
+  code={`
+<Checkbox aria-label="Amebaブログ" name="blog" value="amebaBlog" />
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<label class="spui-Checkbox-label">
+  <input aria-label="Amebaブログ" class="spui-Checkbox-input" type="checkbox" name="blog" value="amebaBlog">
+  <span class="spui-Checkbox-icon"></span>
+  <span class="spui-Checkbox-outline"></span>
+</label>
+  `}
+/>
+
+## Checkbox Disabled
+
+<Story of={CheckboxStories.CheckboxDisabled} />
+
+<Source
+  code={`
+<Checkbox aria-label="Amebaブログ" disabled name="blog" value="amebaBlog" />
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<label class="spui-Checkbox-label">
+  <input aria-label="Amebaブログ" class="spui-Checkbox-input" disabled type="checkbox" name="blog" value="amebaBlog">
+  <span class="spui-Checkbox-icon"></span>
+  <span class="spui-Checkbox-outline"></span>
+</label>
+  `}
+/>
+
+## Checkbox With Text
+
+<Story of={CheckboxStories.CheckboxWithText} />
+
+<Source
+  code={`
+<Checkbox name="blog" value="amebaBlog">Amebaブログ</Checkbox>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<label class="spui-Checkbox-label">
+  <input class="spui-Checkbox-input" type="checkbox" name="blog" value="amebaBlog">
+  <span class="spui-Checkbox-icon"></span>
+  <span class="spui-Checkbox-outline"></span>
+  <span class="spui-Checkbox-text">Amebaブログ</span>
+</label>
+  `}
+/>
+
