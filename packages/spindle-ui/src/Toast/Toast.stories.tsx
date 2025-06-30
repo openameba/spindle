@@ -119,7 +119,6 @@ const MultiActivateButton: React.FC<MultiActivateButtonProps> = ({
 
 const meta: Meta<typeof Toast> = {
   title: 'Toast',
-  component: Toast,
 };
 
 export default meta;

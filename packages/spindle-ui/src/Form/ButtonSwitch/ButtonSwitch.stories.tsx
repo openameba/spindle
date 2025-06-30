@@ -5,7 +5,6 @@ import { ButtonSwitchExample } from './ButtonSwitch.stories.example';
 
 const meta: Meta<typeof ButtonSwitch> = {
   title: 'Form/ButtonSwitch',
-  component: ButtonSwitch,
 };
 
 export default meta;

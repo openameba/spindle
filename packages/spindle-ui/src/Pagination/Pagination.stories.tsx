@@ -5,7 +5,6 @@ import { Pagination } from './Pagination';
 
 const meta: Meta<typeof Pagination> = {
   title: 'Pagination',
-  component: Pagination,
   args: {
     onClick: action('clicked'),
     onMouseOver: action('action'),

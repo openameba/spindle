@@ -6,7 +6,6 @@ import { PlusBold } from '../Icon';
 
 const meta: Meta<typeof IconButton> = {
   title: 'IconButton',
-  component: IconButton,
   args: {
     onClick: action('clicked'),
     onMouseOver: action('action'),

@@ -5,7 +5,6 @@ import { SegmentedControl } from './SegmentedControl';
 
 const meta: Meta<typeof SegmentedControl> = {
   title: 'SegmentedControl',
-  component: SegmentedControl,
   args: {
     onClick: action('clicked'),
   },

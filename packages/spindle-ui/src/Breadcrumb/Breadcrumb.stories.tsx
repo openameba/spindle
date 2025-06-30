@@ -5,7 +5,6 @@ import { BreadcrumbItem } from './BreadcrumbItem';
 
 const meta: Meta<typeof BreadcrumbListComponent> = {
   title: 'Breadcrumb',
-  component: BreadcrumbListComponent,
 };
 
 export default meta;

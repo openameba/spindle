@@ -17,78 +17,80 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
-  render: () => <TextButton>もっと見る</TextButton>,
+  args: {
+    children: 'もっと見る',
+  },
 };
 
 export const NormalDisabled: Story = {
-  render: () => <TextButton disabled>もっと見る</TextButton>,
+  args: {
+    children: 'もっと見る',
+    disabled: true,
+  },
 };
 
 export const NormalWithIcon: Story = {
-  render: () => (
-    <TextButton icon={<PencilAdd aria-hidden="true" />} iconPosition="start">
-      ブログを書く
-    </TextButton>
-  ),
+  args: {
+    children: 'ブログを書く',
+    icon: <PencilAdd aria-hidden="true" />,
+    iconPosition: 'start',
+  },
 };
 
 export const NormalWithIconDisabled: Story = {
-  render: () => (
-    <TextButton
-      icon={<PencilAdd aria-hidden="true" />}
-      iconPosition="start"
-      disabled
-    >
-      ブログを書く
-    </TextButton>
-  ),
+  args: {
+    children: 'ブログを書く',
+    icon: <PencilAdd aria-hidden="true" />,
+    iconPosition: 'start',
+    disabled: true,
+  },
 };
 
 export const Subtle: Story = {
-  render: () => <TextButton variant="subtle">もっと見る</TextButton>,
+  args: {
+    children: 'もっと見る',
+    variant: 'subtle',
+  },
 };
 
 export const SubtleDisabled: Story = {
-  render: () => (
-    <TextButton variant="subtle" disabled>
-      もっと見る
-    </TextButton>
-  ),
+  args: {
+    children: 'もっと見る',
+    variant: 'subtle',
+    disabled: true,
+  },
 };
 
 export const SubtleWithIcon: Story = {
-  render: () => (
-    <TextButton
-      variant="subtle"
-      icon={<ChevronRightBold aria-hidden="true" />}
-      iconPosition="end"
-    >
-      もっと見る
-    </TextButton>
-  ),
+  args: {
+    children: 'もっと見る',
+    variant: 'subtle',
+    icon: <ChevronRightBold aria-hidden="true" />,
+    iconPosition: 'end',
+  },
 };
 
 export const SubtleWithIconDisabled: Story = {
-  render: () => (
-    <TextButton
-      variant="subtle"
-      icon={<ChevronRightBold aria-hidden="true" />}
-      iconPosition="end"
-      disabled
-    >
-      もっと見る
-    </TextButton>
-  ),
+  args: {
+    children: 'もっと見る',
+    variant: 'subtle',
+    icon: <ChevronRightBold aria-hidden="true" />,
+    iconPosition: 'end',
+    disabled: true,
+  },
 };
 
 export const UnderlineHover: Story = {
-  render: () => <TextButton underline="hover">もっと見る</TextButton>,
+  args: {
+    children: 'もっと見る',
+    underline: 'hover',
+  },
 };
 
 export const UnderlineHoverDisabled: Story = {
-  render: () => (
-    <TextButton underline="hover" disabled>
-      もっと見る
-    </TextButton>
-  ),
+  args: {
+    children: 'もっと見る',
+    underline: 'hover',
+    disabled: true,
+  },
 };

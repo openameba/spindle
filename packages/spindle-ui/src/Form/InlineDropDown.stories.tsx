@@ -5,7 +5,6 @@ import { InlineDropDown } from './InlineDropDown';
 
 const meta: Meta<typeof InlineDropDown> = {
   title: 'Form/InlineDropDown',
-  component: InlineDropDown,
   args: {
     onClick: action('clicked'),
     onMouseOver: action('action'),

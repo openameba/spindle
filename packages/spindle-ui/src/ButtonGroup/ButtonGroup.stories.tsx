@@ -6,7 +6,6 @@ import { SubtleButton } from '../SubtleButton/SubtleButton';
 
 const meta: Meta<typeof ButtonGroup> = {
   title: 'ButtonGroup',
-  component: ButtonGroup,
 };
 
 export default meta;

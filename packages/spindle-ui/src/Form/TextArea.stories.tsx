@@ -5,7 +5,6 @@ import { TextArea as TextAreaComponent } from './TextArea';
 
 const meta: Meta<typeof TextAreaComponent> = {
   title: 'Form/TextArea',
-  component: TextAreaComponent,
   args: {
     onClick: action('clicked'),
     onMouseOver: action('action'),

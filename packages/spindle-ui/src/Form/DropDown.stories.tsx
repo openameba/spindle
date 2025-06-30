@@ -5,7 +5,6 @@ import { DropDown as DropDownComponent } from './DropDown';
 
 const meta: Meta<typeof DropDownComponent> = {
   title: 'Form/DropDown',
-  component: DropDownComponent,
   args: {
     onClick: action('clicked'),
     onMouseOver: action('action'),

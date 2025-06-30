@@ -6,7 +6,6 @@ import { GraphBar, Present, PencilAdd, ChevronDownBold } from '../Icon';
 
 const meta: Meta<typeof LinkButton> = {
   title: 'LinkButton',
-  component: LinkButton,
   args: {
     onClick: action('clicked'),
     onMouseOver: action('action'),

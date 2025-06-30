@@ -17,46 +17,43 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
-  render: () => <TextLink href="#">もっと見る</TextLink>,
+  args: {
+    href: '#',
+    children: 'もっと見る',
+  },
 };
 
 export const NormalWithIcon: Story = {
-  render: () => (
-    <TextLink
-      href="#"
-      icon={<PencilAdd aria-hidden="true" />}
-      iconPosition="start"
-    >
-      ブログを書く
-    </TextLink>
-  ),
+  args: {
+    href: '#',
+    children: 'ブログを書く',
+    icon: <PencilAdd aria-hidden="true" />,
+    iconPosition: 'start',
+  },
 };
 
 export const Subtle: Story = {
-  render: () => (
-    <TextLink href="#" variant="subtle">
-      もっと見る
-    </TextLink>
-  ),
+  args: {
+    href: '#',
+    children: 'もっと見る',
+    variant: 'subtle',
+  },
 };
 
 export const SubtleWithIcon: Story = {
-  render: () => (
-    <TextLink
-      href="#"
-      variant="subtle"
-      icon={<ChevronRightBold aria-hidden="true" />}
-      iconPosition="end"
-    >
-      もっと見る
-    </TextLink>
-  ),
+  args: {
+    href: '#',
+    children: 'もっと見る',
+    variant: 'subtle',
+    icon: <ChevronRightBold aria-hidden="true" />,
+    iconPosition: 'end',
+  },
 };
 
 export const UnderlineHover: Story = {
-  render: () => (
-    <TextLink href="#" underline="hover">
-      もっと見る
-    </TextLink>
-  ),
+  args: {
+    href: '#',
+    children: 'もっと見る',
+    underline: 'hover',
+  },
 };

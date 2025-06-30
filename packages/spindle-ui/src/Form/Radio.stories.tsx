@@ -16,20 +16,20 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Radio: Story = {
-  render: () => (
-    <RadioComponent aria-label="Amebaブログ" id="normal" name="blog" />
-  ),
+  args: {
+    'aria-label': 'Amebaブログ',
+    id: 'normal',
+    name: 'blog',
+  },
 };
 
 export const RadioDisabled: Story = {
-  render: () => (
-    <RadioComponent
-      aria-label="Amebaブログ"
-      disabled
-      id="disabled"
-      name="blog"
-    />
-  ),
+  args: {
+    'aria-label': 'Amebaブログ',
+    disabled: true,
+    id: 'disabled',
+    name: 'blog',
+  },
 };
 
 export const RadioWithText: Story = {
