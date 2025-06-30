@@ -8,7 +8,6 @@ const meta: Meta<typeof SegmentedControl> = {
   component: SegmentedControl,
   args: {
     onClick: action('clicked'),
-    onMouseOver: action('action'),
   },
 };
 

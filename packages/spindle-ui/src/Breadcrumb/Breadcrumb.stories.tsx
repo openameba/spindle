@@ -1,26 +1,26 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { BreadcrumbList } from './BreadcrumbList';
+import { BreadcrumbList as BreadcrumbListComponent } from './BreadcrumbList';
 import { BreadcrumbItem } from './BreadcrumbItem';
 
-const meta: Meta<typeof BreadcrumbList> = {
+const meta: Meta<typeof BreadcrumbListComponent> = {
   title: 'Breadcrumb',
-  component: BreadcrumbList,
+  component: BreadcrumbListComponent,
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const BreadcrumbListStory: Story = {
+export const BreadcrumbList: Story = {
   render: () => (
     <>
-      <BreadcrumbList variant="emphasized">
+      <BreadcrumbListComponent variant="emphasized">
         <BreadcrumbItem href="#">Top</BreadcrumbItem>
         <BreadcrumbItem href="#">Team</BreadcrumbItem>
         <BreadcrumbItem href="#" current>
           Amebaとは
         </BreadcrumbItem>
-      </BreadcrumbList>
+      </BreadcrumbListComponent>
     </>
   ),
 };
@@ -28,13 +28,13 @@ export const BreadcrumbListStory: Story = {
 export const BreadcrumbListWithoutBreadcrumbItem: Story = {
   render: () => (
     <>
-      <BreadcrumbList variant="emphasized">
+      <BreadcrumbListComponent variant="emphasized">
         <a href="#">Top</a>
         <a href="#">Team</a>
         <a href="#" aria-current="page">
           Amebaとは
         </a>
-      </BreadcrumbList>
+      </BreadcrumbListComponent>
     </>
   ),
 };
@@ -42,11 +42,11 @@ export const BreadcrumbListWithoutBreadcrumbItem: Story = {
 export const NoHref: Story = {
   render: () => (
     <>
-      <BreadcrumbList variant="emphasized">
+      <BreadcrumbListComponent variant="emphasized">
         <a href="#">Top</a>
         <a href="#">Team</a>
         <a aria-current="page">Amebaとは</a>
-      </BreadcrumbList>
+      </BreadcrumbListComponent>
     </>
   ),
 };
@@ -54,13 +54,13 @@ export const NoHref: Story = {
 export const Standard: Story = {
   render: () => (
     <>
-      <BreadcrumbList variant="standard">
+      <BreadcrumbListComponent variant="standard">
         <BreadcrumbItem href="#">Top</BreadcrumbItem>
         <BreadcrumbItem href="#">Team</BreadcrumbItem>
         <BreadcrumbItem href="#" current>
           Amebaとは
         </BreadcrumbItem>
-      </BreadcrumbList>
+      </BreadcrumbListComponent>
     </>
   ),
 };
@@ -68,13 +68,13 @@ export const Standard: Story = {
 export const Emphasized: Story = {
   render: () => (
     <>
-      <BreadcrumbList variant="emphasized">
+      <BreadcrumbListComponent variant="emphasized">
         <BreadcrumbItem href="#">Top</BreadcrumbItem>
         <BreadcrumbItem href="#">Team</BreadcrumbItem>
         <BreadcrumbItem href="#" current>
           Amebaとは
         </BreadcrumbItem>
-      </BreadcrumbList>
+      </BreadcrumbListComponent>
     </>
   ),
 };
@@ -82,14 +82,14 @@ export const Emphasized: Story = {
 export const Wrap: Story = {
   render: () => (
     <>
-      <BreadcrumbList variant="standard" wrap="wrap">
+      <BreadcrumbListComponent variant="standard" wrap="wrap">
         <BreadcrumbItem href="#">Amebaとは</BreadcrumbItem>
         <BreadcrumbItem href="#">Ameヨコ (アメヨコ)</BreadcrumbItem>
         <BreadcrumbItem href="#">福利厚生・社内制度</BreadcrumbItem>
         <BreadcrumbItem href="#" current>
           「わたしたち、育休取得した経営陣です！」育休が2秒で快諾される、&quot;取るのが当たり前&quot;な環境とは
         </BreadcrumbItem>
-      </BreadcrumbList>
+      </BreadcrumbListComponent>
     </>
   ),
 };
@@ -97,14 +97,14 @@ export const Wrap: Story = {
 export const StandardOverflow: Story = {
   render: () => (
     <>
-      <BreadcrumbList variant="standard">
+      <BreadcrumbListComponent variant="standard">
         <BreadcrumbItem href="#">Amebaとは</BreadcrumbItem>
         <BreadcrumbItem href="#">Ameヨコ (アメヨコ)</BreadcrumbItem>
         <BreadcrumbItem href="#">福利厚生・社内制度</BreadcrumbItem>
         <BreadcrumbItem href="#" current>
           「わたしたち、育休取得した経営陣です！」育休が2秒で快諾される、&quot;取るのが当たり前&quot;な環境とは
         </BreadcrumbItem>
-      </BreadcrumbList>
+      </BreadcrumbListComponent>
     </>
   ),
 };
@@ -112,7 +112,7 @@ export const StandardOverflow: Story = {
 export const StandardOverflowMiddleItem: Story = {
   render: () => (
     <>
-      <BreadcrumbList variant="standard">
+      <BreadcrumbListComponent variant="standard">
         <BreadcrumbItem href="#">Amebaとは</BreadcrumbItem>
         <BreadcrumbItem href="#" current>
           Ameヨコ (アメヨコ)
@@ -121,7 +121,7 @@ export const StandardOverflowMiddleItem: Story = {
         <BreadcrumbItem href="#">
           「わたしたち、育休取得した経営陣です！」育休が2秒で快諾される、&quot;取るのが当たり前&quot;な環境とは
         </BreadcrumbItem>
-      </BreadcrumbList>
+      </BreadcrumbListComponent>
     </>
   ),
 };

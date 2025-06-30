@@ -9,9 +9,8 @@ import {
   StyleOnlyCustomized,
 } from './AppealModal.stories.example';
 
-const meta: Meta<typeof AppealModal> = {
+const meta: Meta<typeof AppealModal.Frame> = {
   title: 'Modal/AppealModal',
-  component: AppealModal,
 };
 
 export default meta;

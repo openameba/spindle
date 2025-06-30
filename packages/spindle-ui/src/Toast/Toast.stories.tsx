@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Toast } from './Toast';
 import { Button } from '../Button';
 import {
-  Information,
+  Information as InformationIcon,
   CheckCircleFill,
   ExclamationmarkCircleFill,
 } from '../Icon';
@@ -125,21 +125,23 @@ const meta: Meta<typeof Toast> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const InformationToast: Story = {
-  render: () => <ActivateButton variant="information" icon={<Information />} />,
+export const Information: Story = {
+  render: () => (
+    <ActivateButton variant="information" icon={<InformationIcon />} />
+  ),
 };
 
-export const InformationWithoutInfoIconToast: Story = {
+export const InformationWithoutInfoIcon: Story = {
   render: () => <ActivateButton variant="information" />,
 };
 
-export const ConfirmationToast: Story = {
+export const Confirmation: Story = {
   render: () => (
     <ActivateButton variant="confirmation" icon={<CheckCircleFill />} />
   ),
 };
 
-export const ErrorToast: Story = {
+export const Error: Story = {
   render: () => (
     <ActivateButton variant="error" icon={<ExclamationmarkCircleFill />} />
   ),
@@ -148,34 +150,34 @@ export const ErrorToast: Story = {
 export const PositionBottom: Story = {
   render: () => (
     <ActivateButton
-      icon={<Information />}
+      icon={<InformationIcon />}
       position="bottomCenter"
       message="下部に表示されます"
     />
   ),
 };
 
-export const LongContentToast: Story = {
+export const LongContent: Story = {
   render: () => (
     <ActivateButton
-      icon={<Information />}
+      icon={<InformationIcon />}
       message="長いコンテンツは1行で切られるので注意が必要です。"
     />
   ),
 };
 
-export const MultipleToast: Story = {
+export const Multiple: Story = {
   render: () => (
-    <MultiActivateButton offset={{ top: 30 }} icon={<Information />} />
+    <MultiActivateButton offset={{ top: 30 }} icon={<InformationIcon />} />
   ),
 };
 
-export const MultipleBottomToast: Story = {
+export const MultipleBottom: Story = {
   render: () => (
     <MultiActivateButton
       offset={{ bottom: 30 }}
       position="bottomCenter"
-      icon={<Information />}
+      icon={<InformationIcon />}
     />
   ),
 };

@@ -9,9 +9,8 @@ import {
   Position as PositionExample,
 } from './DropdownMenu.stories.example';
 
-const meta: Meta<typeof DropdownMenu> = {
+const meta: Meta<typeof DropdownMenu.Frame> = {
   title: 'DropdownMenu',
-  component: DropdownMenu,
 };
 
 export default meta;

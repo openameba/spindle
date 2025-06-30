@@ -14,7 +14,7 @@ type Story = StoryObj<typeof meta>;
 export const FixedPosition: Story = {
   render: () => (
     <>
-      <div style={{ ['--BottomButton-z-index']: 2 }}>
+      <div>
         <BottomButton position="fixed">
           <Button size="large" variant="contained" layout="fullWidth">
             新規登録

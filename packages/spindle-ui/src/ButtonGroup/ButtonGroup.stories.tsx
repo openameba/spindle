@@ -12,7 +12,7 @@ const meta: Meta<typeof ButtonGroup> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const RowDirectionwithLargeButtons: Story = {
+export const RowDirectionWithLargeButtons: Story = {
   render: () => (
     <>
       <ButtonGroup direction="row" size="large">
@@ -27,7 +27,7 @@ export const RowDirectionwithLargeButtons: Story = {
   ),
 };
 
-export const ColumnDirectionwithLargeButtons: Story = {
+export const ColumnDirectionWithLargeButtons: Story = {
   render: () => (
     <>
       <ButtonGroup direction="column" size="large">
@@ -38,7 +38,7 @@ export const ColumnDirectionwithLargeButtons: Story = {
   ),
 };
 
-export const RowDirectionwithMediumButtons: Story = {
+export const RowDirectionWithMediumButtons: Story = {
   render: () => (
     <>
       <ButtonGroup direction="row" size="medium">
@@ -53,7 +53,7 @@ export const RowDirectionwithMediumButtons: Story = {
   ),
 };
 
-export const ColumnDirectionwithMediumButtons: Story = {
+export const ColumnDirectionWithMediumButtons: Story = {
   render: () => (
     <>
       <ButtonGroup direction="column" size="medium">
@@ -68,7 +68,7 @@ export const ColumnDirectionwithMediumButtons: Story = {
   ),
 };
 
-export const RowDirectionwithSmallButtons: Story = {
+export const RowDirectionWithSmallButtons: Story = {
   render: () => (
     <>
       <ButtonGroup direction="row" size="small">
@@ -83,7 +83,7 @@ export const RowDirectionwithSmallButtons: Story = {
   ),
 };
 
-export const ColumnDirectionwithSmallButtons: Story = {
+export const ColumnDirectionWithSmallButtons: Story = {
   render: () => (
     <>
       <ButtonGroup direction="column" size="small">
@@ -98,7 +98,7 @@ export const ColumnDirectionwithSmallButtons: Story = {
   ),
 };
 
-export const ColumnDirectionwithLargeSubtleButton: Story = {
+export const ColumnDirectionWithLargeSubtleButton: Story = {
   render: () => (
     <>
       <ButtonGroup direction="column" size="large">
@@ -109,7 +109,7 @@ export const ColumnDirectionwithLargeSubtleButton: Story = {
   ),
 };
 
-export const ColumnDirectionwithMediumSubtleButton: Story = {
+export const ColumnDirectionWithMediumSubtleButton: Story = {
   render: () => (
     <>
       <ButtonGroup direction="column" size="medium">
@@ -122,7 +122,7 @@ export const ColumnDirectionwithMediumSubtleButton: Story = {
   ),
 };
 
-export const ColumnDirectionwithSmallSubtleButton: Story = {
+export const ColumnDirectionWithSmallSubtleButton: Story = {
   render: () => (
     <>
       <ButtonGroup direction="column" size="small">

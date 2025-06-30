@@ -1,15 +1,17 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { InputLabel } from './InputLabel';
+import { InputLabel as InputLabelComponent } from './InputLabel';
 
-const meta: Meta<typeof InputLabel> = {
+const meta: Meta<typeof InputLabelComponent> = {
   title: 'Form/InputLabel',
-  component: InputLabel,
+  component: InputLabelComponent,
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const InputLabelStory: Story = {
-  render: () => <InputLabel id="comment">コメントを入力</InputLabel>,
+export const InputLabel: Story = {
+  render: () => (
+    <InputLabelComponent id="comment">コメントを入力</InputLabelComponent>
+  ),
 };

@@ -8,7 +8,6 @@ const meta: Meta<typeof UnderlineTab> = {
   component: UnderlineTab,
   args: {
     onClick: action('clicked'),
-    onMouseOver: action('action'),
   },
 };
 
@@ -86,7 +85,7 @@ export const VariantScrollable: Story = {
   ),
 };
 
-export const VariantScrollablewithshortlabel: Story = {
+export const VariantScrollableWithShortLabel: Story = {
   render: () => (
     <>
       <UnderlineTab

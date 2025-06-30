@@ -12,9 +12,8 @@ import {
   StyleOnlySheetLarge,
 } from './SemiModal.stories.example';
 
-const meta: Meta<typeof SemiModal> = {
+const meta: Meta<typeof SemiModal.Frame> = {
   title: 'Modal/SemiModal',
-  component: SemiModal,
 };
 
 export default meta;

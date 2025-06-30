@@ -165,9 +165,8 @@ const MultiActivateButton: React.FC<MultiActivateButtonProps> = ({
   );
 };
 
-const meta: Meta<typeof SnackBar> = {
+const meta: Meta<typeof SnackBar.Frame> = {
   title: 'SnackBar',
-  component: SnackBar,
 };
 
 export default meta;
@@ -257,7 +256,7 @@ export const MultipleBottomSnackBar: Story = {
   ),
 };
 
-export const Custombuttonwithicon: Story = {
+export const CustomButtonWithIcon: Story = {
   render: () => (
     <ActivateButton
       icon={<Information />}
@@ -268,7 +267,7 @@ export const Custombuttonwithicon: Story = {
   ),
 };
 
-export const Customlinkwithinformation: Story = {
+export const CustomLinkWithInformation: Story = {
   render: () => (
     <ActivateButton
       icon={<Information />}
@@ -279,7 +278,7 @@ export const Customlinkwithinformation: Story = {
   ),
 };
 
-export const Customlinkwithconfirmation: Story = {
+export const CustomLinkWithConfirmation: Story = {
   render: () => (
     <ActivateButton
       icon={<CheckCircleFill />}
@@ -291,7 +290,7 @@ export const Customlinkwithconfirmation: Story = {
   ),
 };
 
-export const Customlinkwitherror: Story = {
+export const CustomLinkWithError: Story = {
   render: () => (
     <ActivateButton
       icon={<ExclamationmarkCircleFill />}

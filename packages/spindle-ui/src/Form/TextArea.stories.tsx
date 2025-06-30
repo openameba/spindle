@@ -1,11 +1,11 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { TextArea } from './TextArea';
+import { TextArea as TextAreaComponent } from './TextArea';
 
-const meta: Meta<typeof TextArea> = {
+const meta: Meta<typeof TextAreaComponent> = {
   title: 'Form/TextArea',
-  component: TextArea,
+  component: TextAreaComponent,
   args: {
     onClick: action('clicked'),
     onMouseOver: action('action'),
@@ -15,21 +15,21 @@ const meta: Meta<typeof TextArea> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const TextAreaStory: Story = {
+export const TextArea: Story = {
   render: () => (
-    <TextArea
+    <TextAreaComponent
       id="TextArea"
       placeholder="ブログを読んで感じたことを伝えましょう"
-    ></TextArea>
+    ></TextAreaComponent>
   ),
 };
 
 export const TextAreaWithError: Story = {
   render: () => (
-    <TextArea
+    <TextAreaComponent
       placeholder="ブログを読んで感じたことを伝えましょう"
       hasError
       id="TextAreaWithError"
-    ></TextArea>
+    ></TextAreaComponent>
   ),
 };

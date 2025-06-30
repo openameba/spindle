@@ -1,17 +1,19 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { InvalidMessage } from './InvalidMessage';
+import { InvalidMessage as InvalidMessageComponent } from './InvalidMessage';
 
-const meta: Meta<typeof InvalidMessage> = {
+const meta: Meta<typeof InvalidMessageComponent> = {
   title: 'Form/InvalidMessage',
-  component: InvalidMessage,
+  component: InvalidMessageComponent,
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const InvalidMessageStory: Story = {
+export const InvalidMessage: Story = {
   render: () => (
-    <InvalidMessage visible>ファイル形式が正しくありません</InvalidMessage>
+    <InvalidMessageComponent visible>
+      ファイル形式が正しくありません
+    </InvalidMessageComponent>
   ),
 };

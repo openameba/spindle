@@ -3,15 +3,14 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Dialog } from './Dialog';
 import {
   DialogExample,
-  StyleOnly,
-  ButtonRow,
-  ButtonColumn,
-  ButtonColumnWithSubtleButton,
+  StyleOnly as StyleOnlyComponent,
+  ButtonRow as ButtonRowComponent,
+  ButtonColumn as ButtonColumnComponent,
+  ButtonColumnWithSubtleButton as ButtonColumnWithSubtleButtonComponent,
 } from './DialogExample';
 
-const meta: Meta<typeof Dialog> = {
+const meta: Meta<typeof Dialog.Frame> = {
   title: 'Dialog',
-  component: Dialog,
 };
 
 export default meta;
@@ -21,18 +20,18 @@ export const Normal: Story = {
   render: () => <DialogExample />,
 };
 
-export const StyleOnlyStory: Story = {
-  render: () => <StyleOnly />,
+export const StyleOnly: Story = {
+  render: () => <StyleOnlyComponent />,
 };
 
-export const ButtonRowStory: Story = {
-  render: () => <ButtonRow />,
+export const ButtonRow: Story = {
+  render: () => <ButtonRowComponent />,
 };
 
-export const ButtonColumnStory: Story = {
-  render: () => <ButtonColumn />,
+export const ButtonColumn: Story = {
+  render: () => <ButtonColumnComponent />,
 };
 
-export const ButtonColumnWithSubtleButtonStory: Story = {
-  render: () => <ButtonColumnWithSubtleButton />,
+export const ButtonColumnWithSubtleButton: Story = {
+  render: () => <ButtonColumnWithSubtleButtonComponent />,
 };

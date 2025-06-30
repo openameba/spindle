@@ -24,5 +24,5 @@ export const Medium: Story = {
 };
 
 export const Small: Story = {
-  render: () => <SubtleButton size="Small">とじる</SubtleButton>,
+  render: () => <SubtleButton size="small">とじる</SubtleButton>,
 };
