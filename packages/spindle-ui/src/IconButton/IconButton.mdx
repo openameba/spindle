@@ -5,6 +5,8 @@ import * as IconButtonStories from './IconButton.stories';
 
 # IconButton
 
+アイコン単体でボタンとするケースで使用します。アイコンは特異なものは避け、ひと目見ただけでアクションが想起される理解しやすいものを選んでください。
+
 <Source
   language='javascript'
   code={`
@@ -21,6 +23,21 @@ import '@openameba/spindle-ui/IconButton/IconButton.css';
 <Source
   language='html'
   code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/IconButton/IconButton.css">`}
+/>
+
+## 指定できるプロパティ
+
+- `size`(任意): IconButtonのサイズを指定します。デフォルトは`large`で、その他に`medium`, `small`, `exSmall`を指定することもできます。
+- `variant`(任意): IconButtonの種類を指定します。デフォルトは`contained`で、その他に`outlined`, `lighted`, `neutral`, `danger`を指定することもできます。
+
+## アクセシビリティ
+
+アクションの内容が伝わるような不可視ラベルを設定してください。
+
+<Source
+  code={`
+<IconButton size="large" variant="contained"><PlusBold aria-label="追加" /></IconButton>
+  `}
 />
 
 ## Large
@@ -98,9 +115,30 @@ import '@openameba/spindle-ui/IconButton/IconButton.css';
   `}
 />
 
-## ExSmall
+## Ex Small
 
 <Story of={IconButtonStories.ExSmall} />
+
+<Source
+  code={`
+<IconButton size="exSmall" variant="contained"><PlusBold aria-label="追加" /></IconButton>
+<IconButton size="exSmall" variant="outlined"><PlusBold aria-label="追加" /></IconButton>
+<IconButton size="exSmall" variant="neutral"><PlusBold aria-label="追加" /></IconButton>
+<IconButton size="exSmall" variant="danger"><PlusBold aria-label="追加" /></IconButton>
+<IconButton size="exSmall" variant="lighted"><PlusBold aria-label="追加" /></IconButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-IconButton spui-IconButton--exSmall spui-IconButton--contained"><svg aria-label="追加" /></button>
+<button class="spui-IconButton spui-IconButton--exSmall spui-IconButton--outlined"><svg aria-label="追加" /></button>
+<button class="spui-IconButton spui-IconButton--exSmall spui-IconButton--neutral"><svg aria-label="追加" /></button>
+<button class="spui-IconButton spui-IconButton--exSmall spui-IconButton--danger"><svg aria-label="追加" /></button>
+<button class="spui-IconButton spui-IconButton--exSmall spui-IconButton--lighted"><svg aria-label="追加" /></button>
+  `}
+/>
 
 ## Disabled
 
@@ -129,4 +167,5 @@ import '@openameba/spindle-ui/IconButton/IconButton.css';
 
 
 ## Browser Compatibility
+
 active時やhover時など各stateのスタイルは、ブラウザごとに異なります。詳しくは[ButtonのStateパターン変更](https://github.com/openameba/spindle/issues/13)を参照してください。

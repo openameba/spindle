@@ -5,127 +5,16 @@ import * as StackNotificationManagerStories from './StackNotificationManager.sto
 
 # StackNotificationManager
 
+StackNotificationManagerコンポーネントは、利用者に一時的なお知らせをする際に利用します。画面上に複数表示できます。StackNotificationManagerは自動で消えてしまうため、見落とされても影響のない「重要ではないお知らせ」に用います。利用する際には、その他により適切な手段がないか必ず確認してください。
+
+「重要なお知らせ」とは何か、他のnotification系のコンポーネントとの違いは別途まとめる予定です。
+
+基本的にNotification系のコンポーネントを使用する際にはStackNotificationManagerを一緒に使用する必要があります。
+Notificationは処理が終了したことに対する通知です。該当の処理を複数回実行する可能性があれば、StackNotificationManagerを使用して複数表示をサポートする必要があります。
+
 <Source
   language="javascript"
   code={`import { StackNotificationManager } from '@openameba/spindle-ui'`}
-/>
-
-<Source
-  language="javascript"
-  code={`
-const SnackBarExample = ({ id, position, icon, text, variant, onHide, ...rest }) => {
-  const { stackProps } = useStackNotificationManager({
-    id,
-    position,
-  });
-  const handleOnHide = useCallback(() => {
-    onHide(id);
-  }, [onHide]);
-  usePoliteAnnouncer(!!stackProps.active, text);
-  return (
-    <>
-      {stackProps.active && (
-        <SnackBar.Frame
-          variant={variant}
-          onHide={handleOnHide}
-          {...rest}
-          {...stackProps}
-        >
-          {icon && <SnackBar.Icon>{icon}</SnackBar.Icon>}
-          <SnackBar.Text>{text}</SnackBar.Text>
-          <SnackBar.TextButton>取り消し</SnackBar.TextButton>
-        </SnackBar.Frame>
-      )}
-    </>
-  );
-};
-const SnackBarWithButtonExample = ({ id, position, text, variant, ...rest }) => {
-  const { idList, append, onHide } = useRepeatedStackItem({ id, position });
-  return (
-    <>
-      <Button size="medium" variant="outlined" onClick={handleOnClick}>
-        {text}を開く(連続で開きます)
-      </Button>
-      {idList.map((id) => (
-        <SnackBarExample
-          key={id}
-          id={id}
-          variant={variant}
-          position={position}
-          text={text}
-          onHide={handleOnHide}
-          {...rest}
-        />
-      ))}
-    </>
-  );
-};
-render(<StackNotificationManagerProvider>
-  <SnackBarContainer
-    id="snackbar-id"
-    position="topCenter"
-    text="メッセージが届きました"
-  />
-</StackNotificationManagerProvider>);
-`}
-/>
-
-<Source
-  language="javascript"
-  code={`
-const usePoliteAnnouncer = (message) => {
-  const announcer = useRef(null);
-  useEffect(() => {
-    announcer.current = document.getElementById('polite-announcer');
-    return () => {
-      announcer.current = null;
-    };
-  }, []);
-  useEffect(() => {
-    const announcerContent = announcer.current;
-    if (announcerContent && message) {
-      announcerContent.textContent = message;
-    }
-    return () => {
-      if(message) {
-        announcerContent.textContent = '';
-      }
-    };
-  }, [message]);
-};
-  `}
-/>
-
-<Source
-  language="css"
-  code={`
-  .visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  clip: rect(1px, 1px, 1px, 1px);
-}
-  `}
-/>
-
-<Source
-  language="html"
-  code={`
-<html>
-  <body>
-    ...
-    <div
-      aria-live="polite"
-      id="polite-announcer"
-      role="status"
-      class="visually-hidden"
-    ></div>
-    ...
-  </body>
-</html>
-  `}
 />
 
 ## Normal
@@ -192,3 +81,133 @@ render(<StackNotificationManagerProvider>
 `}
 />
 
+## このコンポーネントでやっていること
+
+- ToastまたはSnack Barどちらにも使用できます
+- 複数のToastやSnack Barを表示したいときに、表示数や表示順序などを管理するためのコンポーネントです
+
+## 利用時に注意してほしいこと
+
+- スタック機能はあくまで補足的な用途で使い、stack自体がメインになるような使い方はしません。
+- 最大スタック数はPCでは4つまでで、SPでは3つまでです。これをこえる場合は古い要素が自動で消えます。
+- 基本的にモーダルのように要素をグローバルに持たせる必要はありません。
+- このコンポーネントでは関与しませんが、ライブリージョンをアプリケーションで実装してください（参考：[実装方法 - 4.1.3 コンテンツの変更をユーザーに知らせる - Ameba Accessibility Guidelines](https://a11y-guidelines.ameba.design/4/1/3/#%E5%AE%9F%E8%A3%85%E6%96%B9%E6%B3%95)）
+- ライブリージョンは次のように実装します。 `html` 側に `aria-live="polite"` 及び `role="status"` を持つ要素を予め埋め込んでおき、この要素にコンテンツを動的に挿入することで、スクリーンリーダーが自動でコンテンツを読み上げてくれます。
+  - `aria-live`を指定した要素に複数の要素を追加すると重複して読み上げられてしまうので、最新の通知で上書きします。
+
+<Source
+  language="html"
+  code={`
+<html>
+  <body>
+    ...
+    <div
+      aria-live="polite"
+      id="polite-announcer"
+      role="status"
+      class="visually-hidden"
+    ></div>
+    ...
+  </body>
+</html>
+  `}
+/>
+
+<Source
+  language="javascript"
+  code={`
+const usePoliteAnnouncer = (message) => {
+  const announcer = useRef(null);
+  useEffect(() => {
+    announcer.current = document.getElementById('polite-announcer');
+    return () => {
+      announcer.current = null;
+    };
+  }, []);
+  useEffect(() => {
+    const announcerContent = announcer.current;
+    if (announcerContent && message) {
+      announcerContent.textContent = message;
+    }
+    return () => {
+      if(message) {
+        announcerContent.textContent = '';
+      }
+    };
+  }, [message]);
+};
+  `}
+/>
+
+<Source
+  language="css"
+  code={`
+  .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  clip: rect(1px, 1px, 1px, 1px);
+}
+  `}
+/>
+
+## Hooks
+
+以下のHooksをあわせて使用します。
+
+- useStackNotificationManager ... 一意のIDとpositionを指定することで、スタックを管理するためのHookです。
+- useRepeatedStackItem ... 同じ要素が何度もスタックする場合に必要な処理をまとめたHookです。
+- useStackInteraction ... 直接IDとpositionを指定してactiveやoffsetを操作したい時に使用します。
+
+### useStackNotificationManager
+
+引数には以下を指定します。
+
+- `id`: `string` ... スタックに追加する要素のIDです。
+- `position`: `${'top' | 'bottom'}${'Left' | 'Center' | 'Right'}` ... 要素を表示する位置を指定します。
+
+返り値は以下の通りです。
+
+- `stackProps`: `object` ... 基本的には`<Toast {...stackProps}/>`のようにして`Toast`や`SnackBar`に渡します。
+- `setActive`: `(active: boolean) => void` ... スタックに追加している要素をアクティブにするための関数です。
+- `setOffset`: `(offset: { top: number, bottom: number, right: number, left: number ] }) => void` ... スタックに追加している要素のoffsetを変更するための関数です。
+
+```ts
+const { stackProps } = useStackNotificationManager({
+  id,
+  position,
+});
+```
+
+### useRepeatedStackItem
+
+引数には以下を指定します。
+
+- `id`: `string` ... スタックに追加する要素のIDです。
+- `position`: `${'top' | 'bottom'}${'Left' | 'Center' | 'Right'}` ... 要素を表示する位置を指定します。
+
+返り値は以下の通りです。
+
+- `idList`: `string[]` ... スタックされている同一要素のIDです。
+- `append`: `() => void` ... 同一要素をスタック追加したい時に呼び出すとIdListに新しいidが追加されます。
+- `onHide`: `(id: string) => void` ... スタックされている同一要素を非表示にするための関数です。
+
+```ts
+const { idList, append, onHide } = useRepeatedStackItem({ id, position });
+```
+
+### useStackInteraction
+
+引数には何も指定しません。
+
+返り値は以下の通りです。
+
+- `setActive`: `({ id: string; active: boolean; position: StackPosition }) => void` ... 明示的にIDとpositionを指定して要素をアクティブにするための関数です。
+- `setOffset`: `({ offset: StackOffset; position: StackPosition }) => void` ... 明示的にIDとpositionを指定してoffsetを設定するための関数です。
+- `setContentHeight`: `({ id: string; height: number; position: StackPosition; }) => void` ... 明示的にIDとpositionを指定してスタックの高さを設定するための関数です。
+
+```ts
+const { setActive, setOffset, setContentHeight } = useStackInteraction();
+```

@@ -5,7 +5,70 @@ import * as ToastStories from './Toast.stories';
 
 # Toast
 
-Toastコンポーネントは、ユーザーの操作を邪魔しないよう**非同期的にシステムやUIのフィードバックをユーザーへ通知する**ために用います。画面のレイアウトや状態に影響を与えないので、特にユーザーへの影響値を最小限にできます。一方で、一定時間で消滅するため、ユーザーが見落としてしまっても同一の内容を確認できる**代替手段がある場合に使う**必要があります。
+Toastコンポーネントは、ユーザーの操作を邪魔しないよう**非同期的にシステムやUIのフィードバックをユーザーへ通知する**ために用います。画面のレイアウトや状態に影響を与えないので、特にユーザーへの影響値を最小限にできます。一方で、一定時間で消滅するため、ユーザーが見落としてしまっても同一の内容を確認できる**代替手段がある場合に使う**必要があります。（詳しい事例は「[利用時に注意してほしいこと](#利用時に注意してほしいこと)」参照）
+
+## ユーザーへの通知の種別
+
+ユーザーに画面内で通知する手段としてToast、SnackBar、InlineNotification、Dialogコンポーネントがあります。画面内で完結せず、遷移させるべき状況もあります。現状下記のように使い分けています。
+
+なお、ToastとSnackBarは自動で消えてしまうため、**その通知内容を確認できる他の手段がある場合にのみ**利用できます。「コンテンツの確実な伝達」ではなく「ユーザーの行動を中断することなく示唆する」ことを目的として用います。
+
+<table>
+  <thead>
+    <tr>
+      <th>選択肢</th>
+      <th>用途</th>
+      <th>テキストの長さ</th>
+      <th>追加のアクション</th>
+      <th>自動で消える秒数</th>
+      <th>表示位置</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="/docs/toast--information">Toast</a></td>
+      <td>完了<strong>タイミングに気づくための</strong>最低限のフィードバック（更新処理の成功など<sup id="footnote-ref-1"><a href="#footnote-1">1</a></sup>）</td>
+      <td>1行</td>
+      <td>なし</td>
+      <td>4秒</td>
+      <td>フローティング<br />（画面上下の中央のみ）</td>
+    </tr>
+    <tr>
+      <td><a href="/docs/snackbar--information">SnackBar</a></td>
+      <td>ユーザーにとって読む価値があるもの<br />ユーザーが追加のアクションを実行しなくても完結するもの</td>
+      <td>3行まで</td>
+      <td>あり</td>
+      <td>10秒</td>
+      <td>フローティング<br />（画面上下の左・右・中央）</td>
+    </tr>
+    <tr>
+      <td><a href="/docs/inlinenotification--information">InlineNotification</a></td>
+      <td>ユーザーが追加のアクションを実行すると通知の役割を果たすもの（更新処理の失敗時など<sup><a href="#footnote-1">1</a></sup>）</td>
+      <td>制限なし</td>
+      <td>あり</td>
+      <td>消えない</td>
+      <td>ページに埋め込む必要があり、レイアウトに影響を与える</td>
+    </tr>
+    <tr>
+      <td><a href="/docs/dialog--normal">Dialog</a></td>
+      <td>ユーザーのメインタスクを中断して確認してもらうべき重要な通知</td>
+      <td>制限なし</td>
+      <td>あり</td>
+      <td>消えない</td>
+      <td>モーダル</td>
+    </tr>
+    <tr>
+      <td>画面外へ遷移させる</td>
+      <td>一連の動作にゴールがある（登録時の完了画面など）<br />「元の画面に戻る」動作をさせたい時</td>
+      <td>制限なし</td>
+      <td>制限なし</td>
+      <td>消えない</td>
+      <td>別ページ</td>
+    </tr>
+  </tbody>
+</table>
+
+<p id="footnote-1"><sup>1</sup> 更新処理の失敗通知は、ユーザーが追加のアクションをする必要があり、見落とした場合の不利益が大きくなります。ToastではなくInlineNotificationの利用を推奨します。<a href="#footnote-ref-1">↩</a></p>
 
 <Source
   language="javascript"
@@ -161,4 +224,4 @@ import '@openameba/spindle-ui/Toast/Toast.css';
 ## スタック機能
 
 StackNotificationManagerを使用することでToastやSnackBarをスタックして複数表示できます。
-詳しくは[StackNotificationManager のドキュメント](?path=/docs/stacknotificationmanager--docs)を参照してください。
+詳しくは[StackNotificationManager のドキュメント](/docs/stacknotificationmanager--normal)を参照してください。

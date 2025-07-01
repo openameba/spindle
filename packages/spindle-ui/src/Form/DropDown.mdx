@@ -23,6 +23,8 @@ import '@openameba/spindle-ui/Form/DropDown.css';
   code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Form/DropDown.css">`}
 />
 
+このコンポーネントの利用にはJavaScriptでの処理が必要なため、HTMLのみでは正常に動作しません。[React版](https://github.com/openameba/spindle/tree/main/packages/spindle-ui/src/Form/DropDown.tsx)を参考に実装してください。
+
 ## DropDown
 
 <Story of={DropDownStories.DropDown} />
@@ -113,3 +115,29 @@ import '@openameba/spindle-ui/Form/DropDown.css';
   `}
 />
 
+## Accessibility
+
+aria-label属性やlabel要素で適切なラベリングをしてください。
+
+<Source
+  code={`
+<DropDown aria-label="期間を選択" id="term-selection" name="term" placeholder="期間を選択">
+  <option value="today">今日</option>
+  <option value="seven_days">7日間</option>
+  <option value="thirty_days">30日間</option>
+</DropDown>
+  `}
+/>
+
+<Source
+  code={`
+<>
+  <InputLabel id="term-selection">期間を選択</InputLabel>
+  <DropDown id="term-selection" name="term" placeholder="期間を選択">
+    <option value="today">今日</option>
+    <option value="seven_days">7日間</option>
+    <option value="thirty_days">30日間</option>
+  </DropDown>
+</>
+  `}
+/>
