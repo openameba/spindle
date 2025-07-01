@@ -19,7 +19,7 @@
 ### 基本的な使用方法
 
 ```tsx
-<Table borderType={['horizontal']} striped>
+<Table borderTypes={['horizontal']} striped>
   <Table.Caption>売上データ（2023年第4四半期）</Table.Caption>
   <Table.Header>
     <Table.Row>
@@ -47,9 +47,8 @@
 
 ```tsx
 <Table
-  borderType={['horizontal', 'vertical']}
+  borderTypes={['horizontal', 'vertical']}
   layout="scrollable"
-  minCellWidth="100px"
 >
   <Table.Header>
     <Table.Row>
@@ -82,7 +81,7 @@
   '--Table-head-color': 'var(--color-text-high-emphasis-inverse)',
   '--Table-cell-borderColor': 'var(--color-border-accent-primary)'
 }}>
-  <Table borderType={['outlined']} rounded>
+  <Table borderTypes={['outlined']} rounded>
     ...
   </Table>
 </div>
@@ -115,7 +114,7 @@
 }
 
 // Component
-<Table borderType={['horizontal']}>
+<Table borderTypes={['horizontal']}>
   ...
 </Table>
 ```
@@ -152,8 +151,8 @@
   </Table.Body>
 </Table>
 
-// ✅ Good: borderType propを使用
-<Table borderType={['horizontal']}>
+// ✅ Good: borderTypes propを使用
+<Table borderTypes={['horizontal']}>
   <Table.Body>
     <Table.Row>
       <Table.Cell>データ</Table.Cell>
@@ -162,7 +161,7 @@
 </Table>
 
 // ✅ Good: セル結合時は個別調整も可能
-<Table borderType={['horizontal', 'vertical']}>
+<Table borderTypes={['horizontal', 'vertical']}>
   <Table.Body>
     <Table.Row>
       <Table.Cell colSpan={2} className="merged-cell">結合セル</Table.Cell>
@@ -195,11 +194,10 @@ Tableコンポーネントで使用しているDesign Tokensは、CSS Variables�
 #### Table
 ```typescript
 type TableProps = {
-  borderType?: Array<'horizontal' | 'vertical' | 'outlined'>;
+  borderTypes?: Array<'horizontal' | 'vertical' | 'outlined'>;
   rounded?: boolean;
   striped?: boolean;
   layout?: 'auto' | 'fixed' | 'scrollable';
-  minCellWidth?: CSSProperties['minWidth'];
   children?: ReactNode;
 } & Omit<React.TableHTMLAttributes<HTMLTableElement>, 'style'>;
 ```
@@ -310,7 +308,7 @@ Tableコンポーネントは基本的なスタイルを提供しますが、プ
 
 ```tsx
 <div className="custom-table">
-  <Table borderType={['outlined']} rounded>
+  <Table borderTypes={['outlined']} rounded>
     {/* テーブル内容 */}
   </Table>
 </div>
@@ -416,23 +414,23 @@ Tableコンポーネントでは、Web標準のtable要素の機能を最大限�
 - 個別要件には`className`での対応も可能
 - セル結合など、テーブル特有の機能を制限しない
 
-### borderTypeの設計
+### borderTypesの設計
 
-`borderType`は配列形式で複数のボーダーパターンを組み合わせて指定できます。これにより柔軟なボーダー設定が可能です。
+`borderTypes`は配列形式で複数のボーダーパターンを組み合わせて指定できます。これにより柔軟なボーダー設定が可能です。
 
 #### 使用例
 ```tsx
 // 横罫線のみ
-<Table borderType={['horizontal']}>
+<Table borderTypes={['horizontal']}>
 
 // 縦横罫線
-<Table borderType={['horizontal', 'vertical']}>
+<Table borderTypes={['horizontal', 'vertical']}>
 
 // 外枠付き
-<Table borderType={['outlined']}>
+<Table borderTypes={['outlined']}>
 
 // 全てのボーダー
-<Table borderType={['horizontal', 'vertical', 'outlined']}>
+<Table borderTypes={['horizontal', 'vertical', 'outlined']}>
 ```
 
 ### CSS Variables中心の設計
@@ -453,7 +451,7 @@ Tableコンポーネントでは、Web標準のtable要素の機能を最大限�
 
 #### 技術的困難な理由
 - セル結合の組み合わせが無数に存在する
-- `borderType`との相互作用が複雑になる
+- `borderTypes`との相互作用が複雑になる
 
 #### 検討した専用プロパティ
 - **`hasCellMerge`プロパティ**: セル結合の有無を事前に宣言
