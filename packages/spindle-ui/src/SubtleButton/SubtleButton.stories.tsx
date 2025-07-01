@@ -7,7 +7,7 @@ const meta: Meta<typeof SubtleButton> = {
   component: SubtleButton,
   args: {
     onClick: action('clicked'),
-    onMouseOver: action('action'),
+    onMouseOver: action('mouse-over'),
   },
 };
 

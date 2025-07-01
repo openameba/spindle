@@ -14,7 +14,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const VariantFixed: Story = {
-  render: () => (
+  render: (args) => (
     <>
       <UnderlineTab
         defaultSelectedId={'fixed-all'}
@@ -23,6 +23,7 @@ export const VariantFixed: Story = {
           { id: 'fixed-follow', label: 'フォロー' },
           { id: 'fixed-follower', label: 'フォロワー' },
         ]}
+        {...args}
       />
       <div
         id="fixed-all-tabpanel"
@@ -44,7 +45,7 @@ export const VariantFixed: Story = {
 };
 
 export const VariantScrollable: Story = {
-  render: () => (
+  render: (args) => (
     <>
       <UnderlineTab
         defaultSelectedId={'scrollable-follow'}
@@ -59,6 +60,7 @@ export const VariantScrollable: Story = {
           },
         ]}
         variant="scrollable"
+        {...args}
       />
       <div
         id="scrollable-all-tabpanel"
@@ -85,7 +87,7 @@ export const VariantScrollable: Story = {
 };
 
 export const VariantScrollableWithShortLabel: Story = {
-  render: () => (
+  render: (args) => (
     <>
       <UnderlineTab
         defaultSelectedId={'scrollable-short-follower'}
@@ -95,6 +97,7 @@ export const VariantScrollableWithShortLabel: Story = {
           { id: 'scrollable-short-follower', label: 'フォロワー' },
         ]}
         variant="scrollable"
+        {...args}
       />
       <div
         id="scrollable-short-all-tabpanel"
@@ -116,7 +119,7 @@ export const VariantScrollableWithShortLabel: Story = {
 };
 
 export const HasBorderTrue: Story = {
-  render: () => (
+  render: (args) => (
     <>
       <UnderlineTab
         defaultSelectedId={'hasBorder-all'}
@@ -126,6 +129,7 @@ export const HasBorderTrue: Story = {
           { id: 'hasBorder-follow', label: 'フォロー' },
           { id: 'hasBorder-follower', label: 'フォロワー' },
         ]}
+        {...args}
       />
       <div
         id="hasBorder-all-tabpanel"
@@ -147,7 +151,7 @@ export const HasBorderTrue: Story = {
 };
 
 export const CountBadge: Story = {
-  render: () => (
+  render: (args) => (
     <>
       <UnderlineTab
         defaultSelectedId={'countBadge-follow'}
@@ -157,6 +161,7 @@ export const CountBadge: Story = {
           { id: 'countBadge-follower', label: 'フォロワー', countBadge: '100' },
         ]}
         variant="scrollable"
+        {...args}
       />
       <div
         id="countBadge-all-tabpanel"

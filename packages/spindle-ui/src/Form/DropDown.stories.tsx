@@ -7,7 +7,10 @@ const meta: Meta<typeof DropDownComponent> = {
   title: 'Form/DropDown',
   args: {
     onClick: action('clicked'),
-    onMouseOver: action('action'),
+    onChange: action('changed'),
+    onInput: action('input'),
+    onFocus: action('focused'),
+    onBlur: action('blurred'),
   },
 };
 
@@ -15,9 +18,9 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const DropDown: Story = {
-  render: () => (
+  render: (args) => (
     <>
-      <DropDownComponent aria-label="期間を選択" name="term">
+      <DropDownComponent {...args} aria-label="期間を選択" name="term">
         <option value="today">今日</option>
         <option value="seven_days">7日間</option>
         <option value="thirty_days">30日間</option>
@@ -27,9 +30,9 @@ export const DropDown: Story = {
 };
 
 export const DropDownWithSelectedAndDisabled: Story = {
-  render: () => (
+  render: (args) => (
     <>
-      <DropDownComponent aria-label="期間を選択" name="term">
+      <DropDownComponent {...args} aria-label="期間を選択" name="term">
         <option value="today">今日</option>
         <option value="seven_days" selected disabled>
           7日間
@@ -41,9 +44,14 @@ export const DropDownWithSelectedAndDisabled: Story = {
 };
 
 export const DropDownWithError: Story = {
-  render: () => (
+  render: (args) => (
     <>
-      <DropDownComponent aria-label="期間を選択" hasError name="termWithError">
+      <DropDownComponent
+        {...args}
+        aria-label="期間を選択"
+        hasError
+        name="termWithError"
+      >
         <option value="today">今日</option>
         <option value="seven_days">7日間</option>
         <option value="thirty_days">30日間</option>

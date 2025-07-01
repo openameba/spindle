@@ -15,5 +15,9 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  render: () => <MoreLink href="#">もっと見る</MoreLink>,
+  render: (args) => (
+    <MoreLink href="#" {...args}>
+      もっと見る
+    </MoreLink>
+  ),
 };

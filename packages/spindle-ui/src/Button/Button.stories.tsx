@@ -8,7 +8,7 @@ const meta: Meta<typeof Button> = {
   title: 'Button',
   args: {
     onClick: action('clicked'),
-    onMouseOver: action('action'),
+    onMouseOver: action('mouse-over'),
   },
 };
 
@@ -16,21 +16,21 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Large: Story = {
-  render: () => (
+  render: (args) => (
     <>
-      <Button size="large" variant="contained">
+      <Button {...args} size="large" variant="contained">
         申請する
       </Button>
-      <Button size="large" variant="outlined">
+      <Button {...args} size="large" variant="outlined">
         選択する
       </Button>
-      <Button size="large" variant="neutral">
+      <Button {...args} size="large" variant="neutral">
         修正する
       </Button>
-      <Button size="large" variant="danger">
+      <Button {...args} size="large" variant="danger">
         削除する
       </Button>
-      <Button size="large" variant="lighted">
+      <Button {...args} size="large" variant="lighted">
         フォロー中
       </Button>
     </>
@@ -38,21 +38,21 @@ export const Large: Story = {
 };
 
 export const LargeFullWidth: Story = {
-  render: () => (
+  render: (args) => (
     <>
-      <Button layout="fullWidth" size="large" variant="contained">
+      <Button {...args} layout="fullWidth" size="large" variant="contained">
         申請する
       </Button>
-      <Button layout="fullWidth" size="large" variant="outlined">
+      <Button {...args} layout="fullWidth" size="large" variant="outlined">
         選択する
       </Button>
-      <Button layout="fullWidth" size="large" variant="neutral">
+      <Button {...args} layout="fullWidth" size="large" variant="neutral">
         修正する
       </Button>
-      <Button layout="fullWidth" size="large" variant="danger">
+      <Button {...args} layout="fullWidth" size="large" variant="danger">
         削除する
       </Button>
-      <Button layout="fullWidth" size="large" variant="lighted">
+      <Button {...args} layout="fullWidth" size="large" variant="lighted">
         フォロー中
       </Button>
     </>
@@ -60,21 +60,21 @@ export const LargeFullWidth: Story = {
 };
 
 export const Medium: Story = {
-  render: () => (
+  render: (args) => (
     <>
-      <Button size="medium" variant="contained">
+      <Button {...args} size="medium" variant="contained">
         申請する
       </Button>
-      <Button size="medium" variant="outlined">
+      <Button {...args} size="medium" variant="outlined">
         選択する
       </Button>
-      <Button size="medium" variant="neutral">
+      <Button {...args} size="medium" variant="neutral">
         修正する
       </Button>
-      <Button size="medium" variant="danger">
+      <Button {...args} size="medium" variant="danger">
         削除する
       </Button>
-      <Button size="medium" variant="lighted">
+      <Button {...args} size="medium" variant="lighted">
         フォロー中
       </Button>
     </>
@@ -82,21 +82,21 @@ export const Medium: Story = {
 };
 
 export const MediumFullWidth: Story = {
-  render: () => (
+  render: (args) => (
     <>
-      <Button layout="fullWidth" size="medium" variant="contained">
+      <Button {...args} layout="fullWidth" size="medium" variant="contained">
         申請する
       </Button>
-      <Button layout="fullWidth" size="medium" variant="outlined">
+      <Button {...args} layout="fullWidth" size="medium" variant="outlined">
         選択する
       </Button>
-      <Button layout="fullWidth" size="medium" variant="neutral">
+      <Button {...args} layout="fullWidth" size="medium" variant="neutral">
         修正する
       </Button>
-      <Button layout="fullWidth" size="medium" variant="danger">
+      <Button {...args} layout="fullWidth" size="medium" variant="danger">
         削除する
       </Button>
-      <Button layout="fullWidth" size="medium" variant="lighted">
+      <Button {...args} layout="fullWidth" size="medium" variant="lighted">
         フォロー中
       </Button>
     </>
@@ -104,21 +104,21 @@ export const MediumFullWidth: Story = {
 };
 
 export const Small: Story = {
-  render: () => (
+  render: (args) => (
     <>
-      <Button size="small" variant="contained">
+      <Button {...args} size="small" variant="contained">
         申請する
       </Button>
-      <Button size="small" variant="outlined">
+      <Button {...args} size="small" variant="outlined">
         選択する
       </Button>
-      <Button size="small" variant="neutral">
+      <Button {...args} size="small" variant="neutral">
         修正する
       </Button>
-      <Button size="small" variant="danger">
+      <Button {...args} size="small" variant="danger">
         削除する
       </Button>
-      <Button size="small" variant="lighted">
+      <Button {...args} size="small" variant="lighted">
         フォロー中
       </Button>
     </>
@@ -126,21 +126,21 @@ export const Small: Story = {
 };
 
 export const SmallFullWidth: Story = {
-  render: () => (
+  render: (args) => (
     <>
-      <Button layout="fullWidth" size="small" variant="contained">
+      <Button {...args} layout="fullWidth" size="small" variant="contained">
         申請する
       </Button>
-      <Button layout="fullWidth" size="small" variant="outlined">
+      <Button {...args} layout="fullWidth" size="small" variant="outlined">
         選択する
       </Button>
-      <Button layout="fullWidth" size="small" variant="neutral">
+      <Button {...args} layout="fullWidth" size="small" variant="neutral">
         修正する
       </Button>
-      <Button layout="fullWidth" size="small" variant="danger">
+      <Button {...args} layout="fullWidth" size="small" variant="danger">
         削除する
       </Button>
-      <Button layout="fullWidth" size="small" variant="lighted">
+      <Button {...args} layout="fullWidth" size="small" variant="lighted">
         フォロー中
       </Button>
     </>
@@ -148,21 +148,21 @@ export const SmallFullWidth: Story = {
 };
 
 export const Disabled: Story = {
-  render: () => (
+  render: (args) => (
     <>
-      <Button disabled size="medium" variant="contained">
+      <Button {...args} disabled size="medium" variant="contained">
         申請する
       </Button>
-      <Button disabled size="medium" variant="outlined">
+      <Button {...args} disabled size="medium" variant="outlined">
         選択する
       </Button>
-      <Button disabled size="medium" variant="neutral">
+      <Button {...args} disabled size="medium" variant="neutral">
         修正する
       </Button>
-      <Button disabled size="medium" variant="danger">
+      <Button {...args} disabled size="medium" variant="danger">
         削除する
       </Button>
-      <Button disabled size="medium" variant="lighted">
+      <Button {...args} disabled size="medium" variant="lighted">
         フォロー中
       </Button>
     </>
@@ -170,21 +170,51 @@ export const Disabled: Story = {
 };
 
 export const DisabledFullWidth: Story = {
-  render: () => (
+  render: (args) => (
     <>
-      <Button layout="fullWidth" disabled size="medium" variant="contained">
+      <Button
+        {...args}
+        layout="fullWidth"
+        disabled
+        size="medium"
+        variant="contained"
+      >
         申請する
       </Button>
-      <Button layout="fullWidth" disabled size="medium" variant="outlined">
+      <Button
+        {...args}
+        layout="fullWidth"
+        disabled
+        size="medium"
+        variant="outlined"
+      >
         選択する
       </Button>
-      <Button layout="fullWidth" disabled size="medium" variant="neutral">
+      <Button
+        {...args}
+        layout="fullWidth"
+        disabled
+        size="medium"
+        variant="neutral"
+      >
         修正する
       </Button>
-      <Button layout="fullWidth" disabled size="medium" variant="danger">
+      <Button
+        {...args}
+        layout="fullWidth"
+        disabled
+        size="medium"
+        variant="danger"
+      >
         削除する
       </Button>
-      <Button layout="fullWidth" disabled size="medium" variant="lighted">
+      <Button
+        {...args}
+        layout="fullWidth"
+        disabled
+        size="medium"
+        variant="lighted"
+      >
         フォロー中
       </Button>
     </>
@@ -192,18 +222,19 @@ export const DisabledFullWidth: Story = {
 };
 
 export const WithIcon: Story = {
-  render: () => (
+  render: (args) => (
     <>
-      <Button icon={<FileAdd />} size="large" variant="contained">
+      <Button {...args} icon={<FileAdd />} size="large" variant="contained">
         ファイルを選択する
       </Button>
-      <Button icon={<Link />} size="medium" variant="outlined">
+      <Button {...args} icon={<Link />} size="medium" variant="outlined">
         リンクをコピーする
       </Button>
-      <Button icon={<PlusBold />} size="small" variant="neutral">
+      <Button {...args} icon={<PlusBold />} size="small" variant="neutral">
         フォロー
       </Button>
       <Button
+        {...args}
         icon={<ChevronDownBold />}
         iconPosition="end"
         size="large"
@@ -212,6 +243,7 @@ export const WithIcon: Story = {
         さらに表示
       </Button>
       <Button
+        {...args}
         icon={<ChevronDownBold />}
         iconPosition="end"
         size="medium"
@@ -220,6 +252,7 @@ export const WithIcon: Story = {
         もっと見る
       </Button>
       <Button
+        {...args}
         icon={<ChevronDownBold />}
         iconPosition="end"
         size="small"
@@ -232,9 +265,10 @@ export const WithIcon: Story = {
 };
 
 export const FullWidthWithIcon: Story = {
-  render: () => (
+  render: (args) => (
     <>
       <Button
+        {...args}
         layout="fullWidth"
         icon={<FileAdd />}
         size="large"
@@ -243,6 +277,7 @@ export const FullWidthWithIcon: Story = {
         ファイルを選択する
       </Button>
       <Button
+        {...args}
         layout="fullWidth"
         icon={<Link />}
         size="medium"
@@ -251,6 +286,7 @@ export const FullWidthWithIcon: Story = {
         リンクをコピーする
       </Button>
       <Button
+        {...args}
         layout="fullWidth"
         icon={<PlusBold />}
         size="small"
@@ -259,6 +295,7 @@ export const FullWidthWithIcon: Story = {
         フォロー
       </Button>
       <Button
+        {...args}
         layout="fullWidth"
         icon={<ChevronDownBold />}
         iconPosition="end"
@@ -268,6 +305,7 @@ export const FullWidthWithIcon: Story = {
         さらに表示
       </Button>
       <Button
+        {...args}
         layout="fullWidth"
         icon={<ChevronDownBold />}
         iconPosition="end"
@@ -277,6 +315,7 @@ export const FullWidthWithIcon: Story = {
         もっと見る
       </Button>
       <Button
+        {...args}
         layout="fullWidth"
         icon={<ChevronDownBold />}
         iconPosition="end"

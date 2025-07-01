@@ -7,7 +7,10 @@ const meta: Meta<typeof CheckboxComponent> = {
   component: CheckboxComponent,
   args: {
     onClick: action('clicked'),
-    onMouseOver: action('action'),
+    onChange: action('changed'),
+    onInput: action('input'),
+    onFocus: action('focused'),
+    onBlur: action('blurred'),
   },
 };
 

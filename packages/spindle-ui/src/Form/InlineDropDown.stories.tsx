@@ -7,7 +7,10 @@ const meta: Meta<typeof InlineDropDown> = {
   title: 'Form/InlineDropDown',
   args: {
     onClick: action('clicked'),
-    onMouseOver: action('action'),
+    onChange: action('changed'),
+    onInput: action('input'),
+    onFocus: action('focused'),
+    onBlur: action('blurred'),
   },
 };
 
@@ -15,9 +18,9 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Medium: Story = {
-  render: () => (
+  render: (args) => (
     <>
-      <InlineDropDown aria-label="期間を選択" name="term">
+      <InlineDropDown {...args} aria-label="期間を選択" name="term">
         <option value="today">今日</option>
         <option value="seven_days">7日間</option>
         <option value="thirty_days">30日間</option>
@@ -27,9 +30,14 @@ export const Medium: Story = {
 };
 
 export const Small: Story = {
-  render: () => (
+  render: (args) => (
     <>
-      <InlineDropDown visualSize="small" aria-label="期間を選択" name="term">
+      <InlineDropDown
+        {...args}
+        visualSize="small"
+        aria-label="期間を選択"
+        name="term"
+      >
         <option value="today">今日</option>
         <option value="seven_days">7日間</option>
         <option value="thirty_days">30日間</option>

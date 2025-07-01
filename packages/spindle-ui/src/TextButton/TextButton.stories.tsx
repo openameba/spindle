@@ -9,7 +9,7 @@ const meta: Meta<typeof TextButton> = {
   component: TextButton,
   args: {
     onClick: action('clicked'),
-    onMouseOver: action('action'),
+    onMouseOver: action('mouse-over'),
   },
 };
 

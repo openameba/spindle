@@ -7,7 +7,10 @@ const meta: Meta<typeof TextField> = {
   title: 'Form/TextField',
   args: {
     onClick: action('clicked'),
-    onMouseOver: action('action'),
+    onChange: action('changed'),
+    onInput: action('input'),
+    onFocus: action('focused'),
+    onBlur: action('blurred'),
   },
 };
 
@@ -15,14 +18,20 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Large: Story = {
-  render: () => (
-    <TextField id="TextField" placeholder="ameba-blog" variant="large" />
+  render: (args) => (
+    <TextField
+      {...args}
+      id="TextField"
+      placeholder="ameba-blog"
+      variant="large"
+    />
   ),
 };
 
 export const LargeWithError: Story = {
-  render: () => (
+  render: (args) => (
     <TextField
+      {...args}
       placeholder="ameba-blog"
       hasError
       id="TextFieldWithError"
@@ -32,14 +41,20 @@ export const LargeWithError: Story = {
 };
 
 export const Medium: Story = {
-  render: () => (
-    <TextField placeholder="ameba-blog" id="TextField" variant="medium" />
+  render: (args) => (
+    <TextField
+      {...args}
+      placeholder="ameba-blog"
+      id="TextField"
+      variant="medium"
+    />
   ),
 };
 
 export const MediumWithError: Story = {
-  render: () => (
+  render: (args) => (
     <TextField
+      {...args}
       placeholder="ameba-blog"
       hasError
       id="TextFieldWithError"

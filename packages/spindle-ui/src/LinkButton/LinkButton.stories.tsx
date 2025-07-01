@@ -8,7 +8,7 @@ const meta: Meta<typeof LinkButton> = {
   title: 'LinkButton',
   args: {
     onClick: action('clicked'),
-    onMouseOver: action('action'),
+    onMouseOver: action('mouse-over'),
   },
 };
 
@@ -16,21 +16,21 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Large: Story = {
-  render: () => (
+  render: (args) => (
     <>
-      <LinkButton href="#" size="large" variant="contained">
+      <LinkButton {...args} href="#" size="large" variant="contained">
         応援を送る
       </LinkButton>
-      <LinkButton href="#" size="large" variant="outlined">
+      <LinkButton {...args} href="#" size="large" variant="outlined">
         ブログを書く
       </LinkButton>
-      <LinkButton href="#" size="large" variant="neutral">
+      <LinkButton {...args} href="#" size="large" variant="neutral">
         詳細を見る
       </LinkButton>
-      <LinkButton href="#" size="large" variant="danger">
+      <LinkButton {...args} href="#" size="large" variant="danger">
         削除する
       </LinkButton>
-      <LinkButton href="#" size="large" variant="lighted">
+      <LinkButton {...args} href="#" size="large" variant="lighted">
         フォロー中
       </LinkButton>
     </>
@@ -38,21 +38,51 @@ export const Large: Story = {
 };
 
 export const LargeFullWidth: Story = {
-  render: () => (
+  render: (args) => (
     <>
-      <LinkButton href="#" layout="fullWidth" size="large" variant="contained">
+      <LinkButton
+        {...args}
+        href="#"
+        layout="fullWidth"
+        size="large"
+        variant="contained"
+      >
         応援を送る
       </LinkButton>
-      <LinkButton href="#" layout="fullWidth" size="large" variant="outlined">
+      <LinkButton
+        {...args}
+        href="#"
+        layout="fullWidth"
+        size="large"
+        variant="outlined"
+      >
         ブログを書く
       </LinkButton>
-      <LinkButton href="#" layout="fullWidth" size="large" variant="neutral">
+      <LinkButton
+        {...args}
+        href="#"
+        layout="fullWidth"
+        size="large"
+        variant="neutral"
+      >
         詳細を見る
       </LinkButton>
-      <LinkButton href="#" layout="fullWidth" size="large" variant="danger">
+      <LinkButton
+        {...args}
+        href="#"
+        layout="fullWidth"
+        size="large"
+        variant="danger"
+      >
         削除する
       </LinkButton>
-      <LinkButton href="#" layout="fullWidth" size="large" variant="lighted">
+      <LinkButton
+        {...args}
+        href="#"
+        layout="fullWidth"
+        size="large"
+        variant="lighted"
+      >
         フォロー中
       </LinkButton>
     </>
@@ -60,21 +90,21 @@ export const LargeFullWidth: Story = {
 };
 
 export const Medium: Story = {
-  render: () => (
+  render: (args) => (
     <>
-      <LinkButton href="#" size="medium" variant="contained">
+      <LinkButton {...args} href="#" size="medium" variant="contained">
         応援を送る
       </LinkButton>
-      <LinkButton href="#" size="medium" variant="outlined">
+      <LinkButton {...args} href="#" size="medium" variant="outlined">
         ブログを書く
       </LinkButton>
-      <LinkButton href="#" size="medium" variant="neutral">
+      <LinkButton {...args} href="#" size="medium" variant="neutral">
         詳細を見る
       </LinkButton>
-      <LinkButton href="#" size="medium" variant="danger">
+      <LinkButton {...args} href="#" size="medium" variant="danger">
         削除する
       </LinkButton>
-      <LinkButton href="#" size="medium" variant="lighted">
+      <LinkButton {...args} href="#" size="medium" variant="lighted">
         フォロー中
       </LinkButton>
     </>
@@ -82,21 +112,51 @@ export const Medium: Story = {
 };
 
 export const MediumFullWidth: Story = {
-  render: () => (
+  render: (args) => (
     <>
-      <LinkButton href="#" layout="fullWidth" size="medium" variant="contained">
+      <LinkButton
+        {...args}
+        href="#"
+        layout="fullWidth"
+        size="medium"
+        variant="contained"
+      >
         応援を送る
       </LinkButton>
-      <LinkButton href="#" layout="fullWidth" size="medium" variant="outlined">
+      <LinkButton
+        {...args}
+        href="#"
+        layout="fullWidth"
+        size="medium"
+        variant="outlined"
+      >
         ブログを書く
       </LinkButton>
-      <LinkButton href="#" layout="fullWidth" size="medium" variant="neutral">
+      <LinkButton
+        {...args}
+        href="#"
+        layout="fullWidth"
+        size="medium"
+        variant="neutral"
+      >
         詳細を見る
       </LinkButton>
-      <LinkButton href="#" layout="fullWidth" size="medium" variant="danger">
+      <LinkButton
+        {...args}
+        href="#"
+        layout="fullWidth"
+        size="medium"
+        variant="danger"
+      >
         削除する
       </LinkButton>
-      <LinkButton href="#" layout="fullWidth" size="medium" variant="lighted">
+      <LinkButton
+        {...args}
+        href="#"
+        layout="fullWidth"
+        size="medium"
+        variant="lighted"
+      >
         フォロー中
       </LinkButton>
     </>
@@ -104,21 +164,21 @@ export const MediumFullWidth: Story = {
 };
 
 export const Small: Story = {
-  render: () => (
+  render: (args) => (
     <>
-      <LinkButton href="#" size="small" variant="contained">
+      <LinkButton {...args} href="#" size="small" variant="contained">
         応援を送る
       </LinkButton>
-      <LinkButton href="#" size="small" variant="outlined">
+      <LinkButton {...args} href="#" size="small" variant="outlined">
         ブログを書く
       </LinkButton>
-      <LinkButton href="#" size="small" variant="neutral">
+      <LinkButton {...args} href="#" size="small" variant="neutral">
         詳細を見る
       </LinkButton>
-      <LinkButton href="#" size="small" variant="danger">
+      <LinkButton {...args} href="#" size="small" variant="danger">
         削除する
       </LinkButton>
-      <LinkButton href="#" size="small" variant="lighted">
+      <LinkButton {...args} href="#" size="small" variant="lighted">
         フォロー中
       </LinkButton>
     </>
@@ -126,21 +186,51 @@ export const Small: Story = {
 };
 
 export const SmallFullWidth: Story = {
-  render: () => (
+  render: (args) => (
     <>
-      <LinkButton href="#" layout="fullWidth" size="small" variant="contained">
+      <LinkButton
+        {...args}
+        href="#"
+        layout="fullWidth"
+        size="small"
+        variant="contained"
+      >
         応援を送る
       </LinkButton>
-      <LinkButton href="#" layout="fullWidth" size="small" variant="outlined">
+      <LinkButton
+        {...args}
+        href="#"
+        layout="fullWidth"
+        size="small"
+        variant="outlined"
+      >
         ブログを書く
       </LinkButton>
-      <LinkButton href="#" layout="fullWidth" size="small" variant="neutral">
+      <LinkButton
+        {...args}
+        href="#"
+        layout="fullWidth"
+        size="small"
+        variant="neutral"
+      >
         詳細を見る
       </LinkButton>
-      <LinkButton href="#" layout="fullWidth" size="small" variant="danger">
+      <LinkButton
+        {...args}
+        href="#"
+        layout="fullWidth"
+        size="small"
+        variant="danger"
+      >
         削除する
       </LinkButton>
-      <LinkButton href="#" layout="fullWidth" size="small" variant="lighted">
+      <LinkButton
+        {...args}
+        href="#"
+        layout="fullWidth"
+        size="small"
+        variant="lighted"
+      >
         フォロー中
       </LinkButton>
     </>
@@ -148,12 +238,19 @@ export const SmallFullWidth: Story = {
 };
 
 export const WithIcon: Story = {
-  render: () => (
+  render: (args) => (
     <>
-      <LinkButton href="#" icon={<Present />} size="large" variant="contained">
+      <LinkButton
+        {...args}
+        href="#"
+        icon={<Present />}
+        size="large"
+        variant="contained"
+      >
         応援を送る
       </LinkButton>
       <LinkButton
+        {...args}
         href="#"
         icon={<PencilAdd />}
         size="medium"
@@ -161,10 +258,17 @@ export const WithIcon: Story = {
       >
         ブログを書く
       </LinkButton>
-      <LinkButton href="#" icon={<GraphBar />} size="small" variant="neutral">
+      <LinkButton
+        {...args}
+        href="#"
+        icon={<GraphBar />}
+        size="small"
+        variant="neutral"
+      >
         詳細を見る
       </LinkButton>
       <LinkButton
+        {...args}
         href="#"
         icon={<ChevronDownBold />}
         iconPosition="end"
@@ -174,6 +278,7 @@ export const WithIcon: Story = {
         さらに表示
       </LinkButton>
       <LinkButton
+        {...args}
         href="#"
         icon={<ChevronDownBold />}
         iconPosition="end"
@@ -183,6 +288,7 @@ export const WithIcon: Story = {
         もっと見る
       </LinkButton>
       <LinkButton
+        {...args}
         href="#"
         icon={<ChevronDownBold />}
         iconPosition="end"
@@ -196,9 +302,10 @@ export const WithIcon: Story = {
 };
 
 export const FullWidthWithIcon: Story = {
-  render: () => (
+  render: (args) => (
     <>
       <LinkButton
+        {...args}
         href="#"
         layout="fullWidth"
         icon={<Present />}
@@ -208,6 +315,7 @@ export const FullWidthWithIcon: Story = {
         応援を送る
       </LinkButton>
       <LinkButton
+        {...args}
         href="#"
         layout="fullWidth"
         icon={<PencilAdd />}
@@ -217,6 +325,7 @@ export const FullWidthWithIcon: Story = {
         ブログを書く
       </LinkButton>
       <LinkButton
+        {...args}
         href="#"
         layout="fullWidth"
         icon={<GraphBar />}
@@ -226,6 +335,7 @@ export const FullWidthWithIcon: Story = {
         詳細を見る
       </LinkButton>
       <LinkButton
+        {...args}
         href="#"
         layout="fullWidth"
         icon={<ChevronDownBold />}
@@ -236,6 +346,7 @@ export const FullWidthWithIcon: Story = {
         さらに表示
       </LinkButton>
       <LinkButton
+        {...args}
         href="#"
         layout="fullWidth"
         icon={<ChevronDownBold />}
@@ -246,6 +357,7 @@ export const FullWidthWithIcon: Story = {
         もっと見る
       </LinkButton>
       <LinkButton
+        {...args}
         href="#"
         layout="fullWidth"
         icon={<ChevronDownBold />}

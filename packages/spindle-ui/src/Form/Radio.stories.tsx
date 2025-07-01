@@ -8,7 +8,10 @@ const meta: Meta<typeof RadioComponent> = {
   component: RadioComponent,
   args: {
     onClick: action('clicked'),
-    onMouseOver: action('action'),
+    onChange: action('changed'),
+    onInput: action('input'),
+    onFocus: action('focused'),
+    onBlur: action('blurred'),
   },
 };
 
@@ -33,16 +36,16 @@ export const RadioDisabled: Story = {
 };
 
 export const RadioWithText: Story = {
-  render: () => (
+  render: (args) => (
     <>
       <div style={{ display: 'flex', gap: '20px', flexDirection: 'column' }}>
-        <RadioComponent id="withText1" name="select">
+        <RadioComponent {...args} id="withText1" name="select">
           選択肢１
         </RadioComponent>
-        <RadioComponent id="withText2" name="select">
+        <RadioComponent {...args} id="withText2" name="select">
           選択肢２：文言が長い時の表示を確認するための選択肢です。基本的にはここまで長い文言は推奨されませんが表示の確認用です
         </RadioComponent>
-        <RadioComponent id="withText3" name="select">
+        <RadioComponent {...args} id="withText3" name="select">
           選択肢３
         </RadioComponent>
       </div>

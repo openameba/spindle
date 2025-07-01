@@ -8,7 +8,7 @@ const meta: Meta<typeof IconButton> = {
   title: 'IconButton',
   args: {
     onClick: action('clicked'),
-    onMouseOver: action('action'),
+    onMouseOver: action('mouse-over'),
   },
 };
 
@@ -16,21 +16,21 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Large: Story = {
-  render: () => (
+  render: (args) => (
     <>
-      <IconButton size="large" variant="contained">
+      <IconButton {...args} size="large" variant="contained">
         <PlusBold aria-label="追加" />
       </IconButton>
-      <IconButton size="large" variant="outlined">
+      <IconButton {...args} size="large" variant="outlined">
         <PlusBold aria-label="追加" />
       </IconButton>
-      <IconButton size="large" variant="neutral">
+      <IconButton {...args} size="large" variant="neutral">
         <PlusBold aria-label="追加" />
       </IconButton>
-      <IconButton size="large" variant="danger">
+      <IconButton {...args} size="large" variant="danger">
         <PlusBold aria-label="追加" />
       </IconButton>
-      <IconButton size="large" variant="lighted">
+      <IconButton {...args} size="large" variant="lighted">
         <PlusBold aria-label="追加" />
       </IconButton>
     </>
@@ -38,21 +38,21 @@ export const Large: Story = {
 };
 
 export const Medium: Story = {
-  render: () => (
+  render: (args) => (
     <>
-      <IconButton size="medium" variant="contained">
+      <IconButton {...args} size="medium" variant="contained">
         <PlusBold aria-label="追加" />
       </IconButton>
-      <IconButton size="medium" variant="outlined">
+      <IconButton {...args} size="medium" variant="outlined">
         <PlusBold aria-label="追加" />
       </IconButton>
-      <IconButton size="medium" variant="neutral">
+      <IconButton {...args} size="medium" variant="neutral">
         <PlusBold aria-label="追加" />
       </IconButton>
-      <IconButton size="medium" variant="danger">
+      <IconButton {...args} size="medium" variant="danger">
         <PlusBold aria-label="追加" />
       </IconButton>
-      <IconButton size="medium" variant="lighted">
+      <IconButton {...args} size="medium" variant="lighted">
         <PlusBold aria-label="追加" />
       </IconButton>
     </>
@@ -60,21 +60,21 @@ export const Medium: Story = {
 };
 
 export const Small: Story = {
-  render: () => (
+  render: (args) => (
     <>
-      <IconButton size="small" variant="contained">
+      <IconButton {...args} size="small" variant="contained">
         <PlusBold aria-label="追加" />
       </IconButton>
-      <IconButton size="small" variant="outlined">
+      <IconButton {...args} size="small" variant="outlined">
         <PlusBold aria-label="追加" />
       </IconButton>
-      <IconButton size="small" variant="neutral">
+      <IconButton {...args} size="small" variant="neutral">
         <PlusBold aria-label="追加" />
       </IconButton>
-      <IconButton size="small" variant="danger">
+      <IconButton {...args} size="small" variant="danger">
         <PlusBold aria-label="追加" />
       </IconButton>
-      <IconButton size="small" variant="lighted">
+      <IconButton {...args} size="small" variant="lighted">
         <PlusBold aria-label="追加" />
       </IconButton>
     </>
@@ -82,21 +82,21 @@ export const Small: Story = {
 };
 
 export const ExSmall: Story = {
-  render: () => (
+  render: (args) => (
     <>
-      <IconButton size="exSmall" variant="contained">
+      <IconButton {...args} size="exSmall" variant="contained">
         <PlusBold aria-label="追加" />
       </IconButton>
-      <IconButton size="exSmall" variant="outlined">
+      <IconButton {...args} size="exSmall" variant="outlined">
         <PlusBold aria-label="追加" />
       </IconButton>
-      <IconButton size="exSmall" variant="neutral">
+      <IconButton {...args} size="exSmall" variant="neutral">
         <PlusBold aria-label="追加" />
       </IconButton>
-      <IconButton size="exSmall" variant="danger">
+      <IconButton {...args} size="exSmall" variant="danger">
         <PlusBold aria-label="追加" />
       </IconButton>
-      <IconButton size="exSmall" variant="lighted">
+      <IconButton {...args} size="exSmall" variant="lighted">
         <PlusBold aria-label="追加" />
       </IconButton>
     </>
@@ -104,21 +104,21 @@ export const ExSmall: Story = {
 };
 
 export const Disabled: Story = {
-  render: () => (
+  render: (args) => (
     <>
-      <IconButton disabled size="medium" variant="contained">
+      <IconButton {...args} disabled size="medium" variant="contained">
         <PlusBold aria-label="追加" />
       </IconButton>
-      <IconButton disabled size="medium" variant="outlined">
+      <IconButton {...args} disabled size="medium" variant="outlined">
         <PlusBold aria-label="追加" />
       </IconButton>
-      <IconButton disabled size="medium" variant="neutral">
+      <IconButton {...args} disabled size="medium" variant="neutral">
         <PlusBold aria-label="追加" />
       </IconButton>
-      <IconButton disabled size="medium" variant="danger">
+      <IconButton {...args} disabled size="medium" variant="danger">
         <PlusBold aria-label="追加" />
       </IconButton>
-      <IconButton disabled size="medium" variant="lighted">
+      <IconButton {...args} disabled size="medium" variant="lighted">
         <PlusBold aria-label="追加" />
       </IconButton>
     </>

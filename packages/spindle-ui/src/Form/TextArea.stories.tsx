@@ -7,7 +7,10 @@ const meta: Meta<typeof TextAreaComponent> = {
   title: 'Form/TextArea',
   args: {
     onClick: action('clicked'),
-    onMouseOver: action('action'),
+    onChange: action('changed'),
+    onInput: action('input'),
+    onFocus: action('focused'),
+    onBlur: action('blurred'),
   },
 };
 
@@ -15,8 +18,9 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const TextArea: Story = {
-  render: () => (
+  render: (args) => (
     <TextAreaComponent
+      {...args}
       id="TextArea"
       placeholder="ブログを読んで感じたことを伝えましょう"
     ></TextAreaComponent>
@@ -24,8 +28,9 @@ export const TextArea: Story = {
 };
 
 export const TextAreaWithError: Story = {
-  render: () => (
+  render: (args) => (
     <TextAreaComponent
+      {...args}
       placeholder="ブログを読んで感じたことを伝えましょう"
       hasError
       id="TextAreaWithError"
