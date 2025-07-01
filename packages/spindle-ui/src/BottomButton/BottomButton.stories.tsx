@@ -12,26 +12,22 @@ type Story = StoryObj<typeof meta>;
 
 export const FixedPosition: Story = {
   render: () => (
-    <>
-      <div>
-        <BottomButton position="fixed">
-          <Button size="large" variant="contained" layout="fullWidth">
-            新規登録
-          </Button>
-        </BottomButton>
-      </div>
-    </>
+    <div style={{ '--BottomButton-z-index': 2 }}>
+      <BottomButton position="fixed">
+        <Button size="large" variant="contained" layout="fullWidth">
+          新規登録
+        </Button>
+      </BottomButton>
+    </div>
   ),
 };
 
 export const StickyPosition: Story = {
   render: () => (
-    <>
-      <BottomButton position="sticky">
-        <Button size="large" variant="contained" layout="fullWidth">
-          新規登録
-        </Button>
-      </BottomButton>
-    </>
+    <BottomButton position="sticky">
+      <Button size="large" variant="contained" layout="fullWidth">
+        新規登録
+      </Button>
+    </BottomButton>
   ),
 };
