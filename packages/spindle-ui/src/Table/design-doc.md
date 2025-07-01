@@ -146,7 +146,7 @@
 <Table>
   <Table.Body>
     <Table.Row>
-      <Table.Cell style={{ border: '1px solid red' }}>データ</Table.Cell>
+      <Table.Cell className="border-red">データ</Table.Cell>
     </Table.Row>
   </Table.Body>
 </Table>
