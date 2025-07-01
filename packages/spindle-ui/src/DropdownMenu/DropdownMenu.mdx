@@ -23,7 +23,21 @@ import '@openameba/spindle-ui/DropdownMenu/DropdownMenu.css';
   code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/DropdownMenu/DropdownMenu.css">`}
 />
 
+## 指定できるプロパティ
+### DropdownMenu.List
+- `open`(必須): DropdownMenuの開閉状態です。DropdownMenuは`open`プロパティの値を見て開閉を行うため、`onClick`や`onClose`内で`open`プロパティを変更してください。
+- `triggerRef`（必須）: Triggerボタンのrefを指定してください。
+- `onClose`（必須）: `open`プロパティをfalseにするための処理を指定してください。
+- `position`（任意）: DropdownMenuをボタンに対してどの位置に開くかを指定します。デフォルトは`leftTop`で、その他にも`topLeft`, `topCenter`, `topRight`, `rightTop`, `rightCenter`, `rightBottom`, `bottomLeft`, `bottomCenter`, `bottomRight`, `leftTop`, `leftCenter`, `leftBottom`を指定することができます。
+- `variant`（任意）: DropdownMenuの種類を指定します。デフォルトは`text`で、その他にも`textWithIcon`, `headWithIcon`, `headWithIconAndCaption`を指定することができます。
+- `id`（任意）: idを指定することができます。
+
+### DropdownMenu.ListItem
+- `onClick`（必須）: 各要素をクリックした際に実行したい処理を指定してください。
+- `icon`（任意）: DropdownMenu内にアイコンを表示したい場合は、指定することができます。
+
 ## Text
+テキストのみのDropdownMenuです
 
 <Story of={DropdownMenuStories.Text} />
 
@@ -71,7 +85,8 @@ return (
   `}
 />
 
-## Text With Icon
+## Text With Icon（1line 44px）
+各アイテムの高さが44pxのアイコン付きDropdownMenuです
 
 <Story of={DropdownMenuStories.TextWithIcon} />
 
@@ -125,7 +140,8 @@ return (
   `}
 />
 
-## Head With Icon
+## Head With Icon（1line 56px）
+各アイテムの高さが56pxのアイコン付きDropdownMenuです
 
 <Story of={DropdownMenuStories.HeadWithIcon} />
 
@@ -180,6 +196,7 @@ return (
 />
 
 ## Head With Icon And Caption
+アイコンとキャプション付きDropdownMenuです
 
 <Story of={DropdownMenuStories.HeadWithIconAndCaption} />
 
@@ -236,6 +253,9 @@ return (
 />
 
 ## Position
+positionプロパティのバリエーション確認用です
+
+デフォルトはleftTopで、その他にもtopLeft, topCenter, topRight, rightTop, rightCenter, rightBottom, bottomLeft, bottomCenter, bottomRight, leftTop, leftCenter, leftBottomを指定できます
 
 <Story of={DropdownMenuStories.Position} />
 

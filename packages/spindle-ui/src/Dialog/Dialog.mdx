@@ -5,16 +5,6 @@ import * as DialogStories from './Dialog.stories';
 
 # Dialog
 
-Dialogは、利用者に重要な意思決定を促す時に利用されます。Spindle UIのDialogは[HTMLDialogElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement)を利用して作られています。[非対応ブラウザ](https://caniuse.com/dialog)には[dialog polyfill](https://github.com/GoogleChrome/dialog-polyfill)と併用してください。
-
-また、`<dialog>`要素には`<form method="dialog">`要素が内包されているため、以下の動作が想定されています。
-
-- `type`属性を指定されていない`<Button>`は、ダイアログを閉じるボタンになります
-- `<Button>`に固有の処理を追加したい場合には`type="button"`や`type="reset"`などの属性を指定してください
-- `<Dialog>`は`open`プロパティの値を見て、開く・閉じるの動作をします。`onClose`や`onCancel`のタイミングで`open`プロパティに`false`を指定し、ダイアログを閉じます
-  - `onCancel`イベントはEscapeキーを押されたなどデバイスや支援技術から伝達されます。特にそれらの動作を無効にする必要がない場合、通常は`open`プロパティを`false`にしてダイアログを閉じる動作を指定してください
-- ダイアログ起動時にフォーカスさせたい要素には、可能な限り`autofocus`属性を指定してください。これにより、ユーザーエージェントの差異なく指定の要素に自動的にフォーカスされ、動作に一貫性をもたせることができます
-
 <Source
   language='javascript'
   code={`
@@ -34,6 +24,16 @@ import '@openameba/spindle-ui/Dialog/Dialog.css';
 />
 
 ## Dialog
+
+Dialogは、利用者に重要な意思決定を促す時に利用されます。Spindle UIのDialogは[HTMLDialogElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement)を利用して作られています。[非対応ブラウザ](https://caniuse.com/dialog)には[dialog polyfill](https://github.com/GoogleChrome/dialog-polyfill)と併用してください。
+
+また、`<dialog>`要素には`<form method="dialog">`要素が内包されているため、以下の動作が想定されています。
+
+- `type`属性を指定されていない`<Button>`は、ダイアログを閉じるボタンになります
+- `<Button>`に固有の処理を追加したい場合には`type="button"`や`type="reset"`などの属性を指定してください
+- `<Dialog>`は`open`プロパティの値を見て、開く・閉じるの動作をします。`onClose`や`onCancel`のタイミングで`open`プロパティに`false`を指定し、ダイアログを閉じます
+  - `onCancel`イベントはEscapeキーを押されたなどデバイスや支援技術から伝達されます。特にそれらの動作を無効にする必要がない場合、通常は`open`プロパティを`false`にしてダイアログを閉じる動作を指定してください
+- ダイアログ起動時にフォーカスさせたい要素には、可能な限り`autofocus`属性を指定してください。これにより、ユーザーエージェントの差異なく指定の要素に自動的にフォーカスされ、動作に一貫性をもたせることができます
 
 <Story of={DialogStories.Normal} />
 
