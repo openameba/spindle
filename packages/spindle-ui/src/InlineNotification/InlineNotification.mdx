@@ -119,13 +119,12 @@ Avatar画像に関してはalt属性をPropsとして提供しているため、
 ## Variant
 通知の内容によって、`variant`3種類と`emphasis`2種類を組み合せて使用してください。variantの初期値は`information`、emphasisの初期値は`false`です。
 
-### Information
-システム上で処理が実行された事を報告するときに使用します。必ずしも情報がユーザーにとって喜ばしくない状況で使用することが多いです。
-
 ## Information
 
-<Story of={InlineNotificationStories.InformationNotification} />
+システム上で処理が実行された事を報告するときに使用します。必ずしも情報がユーザーにとって喜ばしくない状況で使用することが多いです。
 
+<Story of={InlineNotificationStories.InformationNotification} />
+<Story of={InlineNotificationStories.InformationEmphasis} />
 <Source
   code={`
 <InlineNotification.Frame variant='information' visible>
@@ -138,8 +137,6 @@ Avatar画像に関してはalt属性をPropsとして提供しているため、
 </InlineNotification.Frame>
   `}
 />
-
-<Story of={InlineNotificationStories.InformationEmphasis} />
 
 ### Confirmation
 主にユーザーが行なったアクションに対して実行が成功した時などに使用します。情報がユーザーにとって喜ばしい状況で使用します。
