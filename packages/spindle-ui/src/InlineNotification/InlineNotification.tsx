@@ -3,9 +3,11 @@ import React, {
   FC,
   Children,
   cloneElement,
-  ReactElement,
   HTMLAttributes,
   useMemo,
+  Fragment,
+  useCallback,
+  isValidElement,
 } from 'react';
 import { Button as SpindleButton } from '../Button/Button';
 import { TextButton as SpindleTextButton } from '../TextButton/TextButton';
@@ -15,7 +17,7 @@ type Variant = 'information' | 'confirmation' | 'error';
 type Layout = 'inset' | 'full';
 
 type Props = {
-  children?: ReactElement;
+  children?: ReactNode;
   variant?: Variant;
   emphasis?: boolean;
   layout?: Layout;
@@ -50,6 +52,27 @@ const Frame: FC<Props> = ({
   visible = DEFAULT_VISIBLE,
   ...rest
 }) => {
+  const processChildren = useCallback(
+    (children: ReactNode): ReactNode =>
+      Children.map(children, (child) => {
+        if (!isValidElement(child)) {
+          return child;
+        }
+        if (child.type === Fragment) {
+          const fragmentChildren = child.props.children;
+          return processChildren(fragmentChildren);
+        }
+        const additionalProps = { variant, emphasis };
+        return cloneElement(child, additionalProps);
+      }),
+    [variant, emphasis],
+  );
+
+  const processedChildren = useMemo(
+    () => processChildren(children),
+    [processChildren, children],
+  );
+
   return (
     <div
       className={[
@@ -63,11 +86,7 @@ const Frame: FC<Props> = ({
       hidden={!visible}
       {...rest}
     >
-      <div className={`${BLOCK_NAME}-content`}>
-        {Children.map(children, (child) =>
-          child ? cloneElement(child, { variant, emphasis }) : child,
-        )}
-      </div>
+      <div className={`${BLOCK_NAME}-content`}>{processedChildren}</div>
     </div>
   );
 };
