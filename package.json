@@ -53,9 +53,7 @@
       "**/@testing-library/**",
       "**/@storybook/**",
       "**/@types/**",
-      "**/webpack/**",
-      "**/babel-*/**",
-      "**/@babel/**"
+      "**/webpack/**"
     ]
   }
 }

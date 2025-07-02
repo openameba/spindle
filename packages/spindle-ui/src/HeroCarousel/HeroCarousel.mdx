@@ -1,0 +1,48 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as HeroCarouselStories from './HeroCarousel.stories';
+
+<Meta of={HeroCarouselStories} />
+
+# HeroCarousel
+
+<Source
+  language="javascript"
+  code={`
+import { HeroCarousel } from '@openameba/spindle-ui';
+import '@openameba/spindle-ui/HeroCarousel/HeroCarousel.css';
+  `}
+/>
+
+<Source
+  language="css"
+  code={`@import './node_modules/@openameba/spindle-ui/HeroCarousel/HeroCarousel.css'`}
+/>
+
+<Source
+  language="html"
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/HeroCarousel/HeroCarousel.css">`}
+/>
+
+## Normal
+
+<Story of={HeroCarouselStories.Normal} />
+
+<Source
+  code={`
+<HeroCarousel carouselList={carouselList} />
+  `}
+/>
+
+carouselListはlink, imageUrl, titleの3つからなります。titleが2行以上になる場合は三点リーダーで省略されます。
+
+## このコンポーネントでやっていること
+
+- スライドの自動再生を停止/再開するボタンが配置されています。また、前後のスライドに移動するボタンも配置されています
+- キーボード・フォーカスがスライドに入っているとき、自動再生は止まります。また、スライドにマウス・ホバーしているときも止まります
+- reduced motionが指定された時に、アニメーションを軽減または削除します
+
+## 利用時に注意してほしいこと
+
+- HeroCarouselは、表示するコンテンツが複数存在する前提で実装されています。そのため、1つのコンテンツに対して使用することは避けてください
+- コンテンツが1つもない場合、HeroCarouselは表示されません
+

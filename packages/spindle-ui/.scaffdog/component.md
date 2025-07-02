@@ -35,15 +35,34 @@ export const {{ inputs.name | pascal }}: React.FC<Props> = ({}) => {
 .spui-{{ inputs.name | pascal }} {}
 ```
 
-# `{{ inputs.name | pascal }}/{{ inputs.name | pascal }}.stories.mdx`
+# `{{ inputs.name | pascal }}/{{ inputs.name | pascal }}.stories.tsx`
 
-```
-import { Meta, Story, Source } from '@storybook/addon-docs/blocks';
+```typescript
+import type { Meta, StoryObj } from '@storybook/react';
 import { {{ inputs.name | pascal }} } from './{{ inputs.name | pascal }}';
 
-# {{ inputs.name | pascal }}
+const meta: Meta<typeof {{ inputs.name | pascal }}> = {
+  title: '{{ inputs.name | pascal }}',
+  component: {{ inputs.name | pascal }},
+};
 
-<Meta title="{{ inputs.name | pascal }}" component={ {{ inputs.name | pascal }} } />
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Normal: Story = {
+  args: {},
+};
+```
+
+# `{{ inputs.name | pascal }}/{{ inputs.name | pascal }}.mdx`
+
+```mdx
+import { Meta, Primary, Controls, Story, Source } from '@storybook/blocks';
+import * as {{ inputs.name | pascal }}Stories from './{{ inputs.name | pascal }}.stories';
+
+<Meta of={{ "{" }}{{ inputs.name | pascal }}Stories{{ "}" }} />
+
+# {{ inputs.name | pascal }}
 
 <Source
   language='javascript'
@@ -60,22 +79,13 @@ import { {{ inputs.name | pascal }} } from './{{ inputs.name | pascal }}';
   code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/{{ inputs.name | pascal }}/{{ inputs.name | pascal }}.css">`}
 />
 
+## Interface
+
+<Controls />
+
 ## Normal
 
-<Preview withSource="open">
-  <Story name="Normal">
-    <{{ inputs.name | pascal }} />
-  </Story>
-</Preview>
-
-<Source
-  code={``}
-/>
-
-<Source
-  language='html'
-  code={``}
-/>
+<Story of={{ "{" }}{{ inputs.name | pascal }}Stories.Normal{{ "}" }} />
 ```
 
 # `{{ inputs.name | pascal }}/{{ inputs.name | pascal }}.test.tsx`

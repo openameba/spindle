@@ -1,0 +1,71 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as BottomButtonStories from './BottomButton.stories';
+
+<Meta of={BottomButtonStories} />
+
+# BottomButton
+
+<Source
+  language='javascript'
+  code={`
+import { BottomButton } from '@openameba/spindle-ui';
+import '@openameba/spindle-ui/BottomButton/BottomButton.css';
+  `}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/BottomButton/BottomButton.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/BottomButton/BottomButton.css">`}
+/>
+
+## Fixed Position
+
+<Story of={BottomButtonStories.FixedPosition} />
+
+<Source
+  code={`
+<BottomButton position="fixed">
+  <Button size="large" variant="contained" layout="fullWidth">新規登録</Button>
+</BottomButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<div class="spui-BottomButton spui-BottomButton--fixed">
+  <div class="spui-BottomButton-wrap">
+    <button class="spui-Button spui-Button--large spui-Button--contained">新規登録</button>
+  </div>
+</div>
+  `}
+/>
+
+## Sticky Position
+
+<Story of={BottomButtonStories.StickyPosition} />
+
+<Source
+  code={`
+<BottomButton position="sticky">
+  <Button size="large" variant="contained" layout="fullWidth">新規登録</Button>
+</BottomButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<div class="spui-BottomButton spui-BottomButton--sticky">
+  <div class="spui-BottomButton-wrap">
+    <button class="spui-Button spui-Button--fullWidth spui-Button--large spui-Button--contained">新規登録</button>
+  </div>
+</div>
+  `}
+/>
+

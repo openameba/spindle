@@ -58,9 +58,11 @@ const SnackBarExample: React.FC<
         {...rest}
         {...stackProps}
       >
-        {icon && <SnackBar.Icon>{icon}</SnackBar.Icon>}
-        <SnackBar.Text>{text}</SnackBar.Text>
-        <SnackBar.TextButton>取り消し</SnackBar.TextButton>
+        <>
+          {icon && <SnackBar.Icon>{icon}</SnackBar.Icon>}
+          <SnackBar.Text>{text}</SnackBar.Text>
+          <SnackBar.TextButton>取り消し</SnackBar.TextButton>
+        </>
       </SnackBar.Frame>
     </>
   );

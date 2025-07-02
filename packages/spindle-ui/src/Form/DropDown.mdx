@@ -1,0 +1,143 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as DropDownStories from './DropDown.stories';
+
+<Meta of={DropDownStories} />
+
+# Form/DropDown
+
+<Source
+  language='javascript'
+  code={`
+import { DropDown } from '@openameba/spindle-ui/Form';
+import '@openameba/spindle-ui/Form/DropDown.css';
+  `}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/Form/DropDown.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Form/DropDown.css">`}
+/>
+
+このコンポーネントの利用にはJavaScriptでの処理が必要なため、HTMLのみでは正常に動作しません。[React版](https://github.com/openameba/spindle/tree/main/packages/spindle-ui/src/Form/DropDown.tsx)を参考に実装してください。
+
+## DropDown
+
+<Story of={DropDownStories.DropDown} />
+
+<Source
+  code={`
+<DropDown aria-label="期間を選択" name="term">
+  <option value="today">今日</option>
+  <option value="seven_days">7日間</option>
+  <option value="thirty_days">30日間</option>
+</DropDown>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<label class="spui-DropDown-label is-active">
+  <span class="spui-DropDown-visual">7日間</span>
+  <span class="spui-DropDown-icon"><svg>...</svg></span>
+  <select aria-label="期間を選択" class="spui-DropDown-select" name="term">
+    <option value="today">今日</option>
+    <option value="seven_days">7日間</option>
+    <option value="thirty_days">30日間</option>
+  </select>
+  <span class="spui-DropDown-outline"></span>
+</label>
+  `}
+/>
+
+## DropDown With Selected And Disabled
+
+<Story of={DropDownStories.DropDownWithSelectedAndDisabled} />
+
+<Source
+  code={`
+<DropDown aria-label="期間を選択" name="term">
+  <option value="today">今日</option>
+  <option value="seven_days" selected disabled>7日間</option>
+  <option value="thirty_days">30日間</option>
+</DropDown>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<label class="spui-DropDown-label">
+  <span class="spui-DropDown-visual">7日間</span>
+  <span class="spui-DropDown-icon"><svg>...</svg></span>
+  <select aria-label="期間を選択" class="spui-DropDown-select" name="term">
+    <option value="today">今日</option>
+    <option value="seven_days" selected disabled>7日間</option>
+    <option value="thirty_days">30日間</option>
+  </select>
+  <span class="spui-DropDown-outline"></span>
+</label>
+  `}
+/>
+
+## DropDown With Error
+
+<Story of={DropDownStories.DropDownWithError} />
+
+<Source
+  code={`
+<DropDown aria-label="期間を選択" hasError name="term">
+  <option value="today">今日</option>
+  <option value="seven_days">7日間</option>
+  <option value="thirty_days">30日間</option>
+</DropDown>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<label class="spui-DropDown-label is-active is-error">
+  <span class="spui-DropDown-visual">7日間</span>
+  <span class="spui-DropDown-icon"><svg>...</svg></span>
+  <select aria-label="期間を選択" class="spui-DropDown-select" name="term">
+    <option value="today">今日</option>
+    <option value="seven_days">7日間</option>
+    <option value="thirty_days">30日間</option>
+  </select>
+  <span class="spui-DropDown-outline"></span>
+</label>
+  `}
+/>
+
+## Accessibility
+
+aria-label属性やlabel要素で適切なラベリングをしてください。
+
+<Source
+  code={`
+<DropDown aria-label="期間を選択" id="term-selection" name="term" placeholder="期間を選択">
+  <option value="today">今日</option>
+  <option value="seven_days">7日間</option>
+  <option value="thirty_days">30日間</option>
+</DropDown>
+  `}
+/>
+
+<Source
+  code={`
+<>
+  <InputLabel id="term-selection">期間を選択</InputLabel>
+  <DropDown id="term-selection" name="term" placeholder="期間を選択">
+    <option value="today">今日</option>
+    <option value="seven_days">7日間</option>
+    <option value="thirty_days">30日間</option>
+  </DropDown>
+</>
+  `}
+/>

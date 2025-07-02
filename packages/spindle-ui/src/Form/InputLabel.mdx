@@ -1,0 +1,42 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as InputLabelStories from './InputLabel.stories';
+
+<Meta of={InputLabelStories} />
+
+# Form/InputLabel
+
+<Source
+  language='javascript'
+  code={`
+import { InputLabel } from '@openameba/spindle-ui/Form';
+import '@openameba/spindle-ui/Form/InputLabel.css';
+  `}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/Form/InputLabel.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Form/InputLabel.css">`}
+/>
+
+## Input Label
+
+<Story of={InputLabelStories.InputLabel} />
+
+<Source
+  code={`
+<InputLabel id="comment">コメントを入力</InputLabel>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<label class="spui-InputLabel" for="comment">コメントを入力</label>
+  `}
+/>
+

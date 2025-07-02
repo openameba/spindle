@@ -1,0 +1,232 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as ButtonGroupStories from './ButtonGroup.stories';
+
+<Meta of={ButtonGroupStories} />
+
+# ButtonGroup
+
+<Source
+  language='javascript'
+  code={`
+import { ButtonGroup } from '@openameba/spindle-ui';
+import '@openameba/spindle-ui/ButtonGroup/ButtonGroup.css';
+  `}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/ButtonGroup/ButtonGroup.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/ButtonGroup/ButtonGroup.css">`}
+/>
+
+## Row Direction with Large Buttons
+
+<Story of={ButtonGroupStories.RowDirectionWithLargeButtons} />
+
+<Source
+  code={`
+<ButtonGroup direction="row" size="large">
+  <Button size="large" variant="contained">新規登録</Button>
+  <Button size="large" variant="outlined">ログイン</Button>
+</ButtonGroup>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<div class="spui-ButtonGroup spui-ButtonGroup--row spui-ButtonGroup--large">
+  <button class="spui-Button spui-Button--large spui-Button--contained">新規登録</button>
+  <button class="spui-Button spui-Button--large spui-Button--outlined">ログイン</button>
+</div>
+  `}
+/>
+
+## Column Direction with Large Buttons
+
+<Story of={ButtonGroupStories.ColumnDirectionWithLargeButtons} />
+
+<Source
+  code={`
+<ButtonGroup direction="column" size="large">
+  <Button size="large" variant="contained">新規登録</Button>
+  <Button size="large" variant="outlined">ログイン</Button>
+</ButtonGroup>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<div class="spui-ButtonGroup spui-ButtonGroup--column spui-ButtonGroup--large">
+  <button class="spui-Button spui-Button--large spui-Button--contained">新規登録</button>
+  <button class="spui-Button spui-Button--large spui-Button--outlined">ログイン</button>
+</div>
+  `}
+/>
+
+## Row Direction with Medium Buttons
+
+<Story of={ButtonGroupStories.RowDirectionWithMediumButtons} />
+
+<Source
+  code={`
+<ButtonGroup direction="row" size="medium">
+  <Button size="medium" variant="contained">新規登録</Button>
+  <Button size="medium" variant="outlined">ログイン</Button>
+</ButtonGroup>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<div class="spui-ButtonGroup spui-ButtonGroup--row spui-ButtonGroup--medium">
+  <button class="spui-Button spui-Button--medium spui-Button--contained">新規登録</button>
+  <button class="spui-Button spui-Button--medium spui-Button--outlined">ログイン</button>
+</div>
+  `}
+/>
+
+## Column Direction with Medium Buttons
+
+<Story of={ButtonGroupStories.ColumnDirectionWithMediumButtons} />
+
+<Source
+  code={`
+<ButtonGroup direction="column" size="medium">
+  <Button size="medium" variant="contained">新規登録</Button>
+  <Button size="medium" variant="outlined">ログイン</Button>
+</ButtonGroup>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<div class="spui-ButtonGroup spui-ButtonGroup--column spui-ButtonGroup--medium">
+  <button class="spui-Button spui-Button--medium spui-Button--contained">新規登録</button>
+  <button class="spui-Button spui-Button--medium spui-Button--outlined">ログイン</button>
+</div>
+  `}
+/>
+
+## Row Direction with Small Buttons
+
+<Story of={ButtonGroupStories.RowDirectionWithSmallButtons} />
+
+<Source
+  code={`
+<ButtonGroup direction="row" size="small">
+  <Button size="small" variant="contained">新規登録</Button>
+  <Button size="small" variant="outlined">ログイン</Button>
+</ButtonGroup>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<div class="spui-ButtonGroup spui-ButtonGroup--row spui-ButtonGroup--small">
+  <button class="spui-Button spui-Button--small spui-Button--contained">新規登録</button>
+  <button class="spui-Button spui-Button--small spui-Button--outlined">ログイン</button>
+</div>
+  `}
+/>
+
+## Column Direction with Small Buttons
+
+<Story of={ButtonGroupStories.ColumnDirectionWithSmallButtons} />
+
+<Source
+  code={`
+<ButtonGroup direction="column" size="small">
+  <Button size="small" variant="contained">新規登録</Button>
+  <Button size="small" variant="outlined">ログイン</Button>
+</ButtonGroup>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<div class="spui-ButtonGroup spui-ButtonGroup--column spui-ButtonGroup--small">
+  <button class="spui-Button spui-Button--small spui-Button--contained">新規登録</button>
+  <button class="spui-Button spui-Button--small spui-Button--outlined">ログイン</button>
+</div>
+  `}
+/>
+
+## Column Direction with Large Subtle Button
+
+<Story of={ButtonGroupStories.ColumnDirectionWithLargeSubtleButton} />
+
+<Source
+  code={`
+<ButtonGroup direction="column" size="large">
+  <Button size="large" variant="contained">申請する</Button>
+  <SubtleButton size="large">とじる</SubtleButton>
+</ButtonGroup>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<div class="spui-ButtonGroup spui-ButtonGroup--column spui-ButtonGroup--large">
+  <button class="spui-Button spui-Button--large spui-Button--contained">申請する</button>
+  <button class="spui-SubtleButton spui-SubtleButton--large">とじる</button>
+</div>
+  `}
+/>
+
+## Column Direction with Medium Subtle Button
+
+<Story of={ButtonGroupStories.ColumnDirectionWithMediumSubtleButton} />
+
+<Source
+  code={`
+<ButtonGroup direction="column" size="medium">
+  <Button size="medium" variant="contained">申請する</Button>
+  <SubtleButton size="medium">とじる</SubtleButton>
+</ButtonGroup>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<div class="spui-ButtonGroup spui-ButtonGroup--column spui-ButtonGroup--medium">
+  <button class="spui-Button spui-Button--medium spui-Button--contained">申請する</button>
+  <button class="spui-SubtleButton spui-SubtleButton--medium">とじる</button>
+</div>
+  `}
+/>
+
+## Column Direction with Small Subtle Button
+
+<Story of={ButtonGroupStories.ColumnDirectionWithSmallSubtleButton} />
+
+<Source
+  code={`
+<ButtonGroup direction="column" size="small">
+  <Button size="small" variant="contained">申請する</Button>
+  <SubtleButton size="small">とじる</SubtleButton>
+</ButtonGroup>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<div class="spui-ButtonGroup spui-ButtonGroup--column spui-ButtonGroup--small">
+  <button class="spui-Button spui-Button--small spui-Button--contained">申請する</button>
+  <button class="spui-SubtleButton spui-SubtleButton--small">とじる</button>
+</div>
+  `}
+/>
+

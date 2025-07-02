@@ -5,6 +5,11 @@
     "outDir": "dist",
     "sourceMap": true,
     "declaration": true,
-    "declarationMap": true
-  }
+    "declarationMap": true,
+    "skipLibCheck": true
+  },
+  "exclude": [
+    "src/**/*.test.*",
+    "src/**/*.stories.*"
+  ]
 }

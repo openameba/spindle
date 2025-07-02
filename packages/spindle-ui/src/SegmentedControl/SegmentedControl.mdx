@@ -1,0 +1,128 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as SegmentedControlStories from './SegmentedControl.stories';
+
+<Meta of={SegmentedControlStories} />
+
+# SegmentedControl
+
+SegmentedControlコンポーネントは、ページ内で機能やモードを切り替える際に利用します。
+
+基本的にラジオボタンと同様の機能をもっており、単一の項目のみを選択できます。フォーム内での利用を想定しておらず、１つの機能やモードに対して複数の状態を切り替えることが特徴です。
+
+<Source
+  language="javascript"
+  code={`
+import { SegmentedControl } from '@openameba/spindle-ui';
+import '@openameba/spindle-ui/SegmentedControl/SegmentedControl.css';
+  `}
+/>
+
+<Source
+  language="css"
+  code={`@import './node_modules/@openameba/spindle-ui/SegmentedControl/SegmentedControl.css'`}
+/>
+
+<Source
+  language="html"
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/SegmentedControl/SegmentedControl.css">`}
+/>
+
+## 指定できるプロパティ
+
+- `options`(必須): 表示する項目について配列で指定してください。`id`は項目を識別するための値であり、配列内で一意である必要があります。`label`は画面に表示される値です。推奨する最大文字数は10文字です。
+- `selectedId`(必須): optionsプロパティに指定した配列に含まれるidのうち初期の選択状態とする項目のidを指定します。selectedIdに一致する項目がない場合、先頭の項目が選択された状態になります。
+- `onClick`(任意): 項目がクリックされたときに追加で行いたい処理がある場合は指定してください。第2引数の`id`には選択された項目のidが渡されます。
+- `size`(任意): SegmentedControlの大きさを指定します。デフォルトは`medium`で、その他にも`large`を指定できます。
+
+## Size
+
+### Large
+
+<Story of={SegmentedControlStories.Large} />
+
+<Source
+  code={`
+const options = [
+  { id: 'small', label: '小' },
+  { id: 'medium', label: '中' },
+  { id: 'large', label: '大' },
+];
+const handleClick = useCallback(
+  (event: React.MouseEvent<HTMLButtonElement>, id: string) => {
+    console.log(id);
+  },
+  [],
+);
+return (
+  <SegmentedControl
+    selectedId="small"
+    options={options}
+    onClick={handleClick}
+    size="large"
+  />
+);
+`}
+/>
+
+### Medium
+
+<Story of={SegmentedControlStories.Medium} />
+
+<Source
+  code={`
+const options = [
+  { id: 'small', label: '小' },
+  { id: 'medium', label: '中' },
+  { id: 'large', label: '大' },
+];
+const handleClick = useCallback(
+  (event: React.MouseEvent<HTMLButtonElement>, id: string) => {
+    console.log(id);
+  },
+  [],
+);
+return (
+  <SegmentedControl
+    selectedId="small"
+    options={options}
+    onClick={handleClick}
+    size="medium"
+  />
+);
+`}
+/>
+
+## Total
+
+optionsプロパティに指定された配列の項目数に依存します。なお、項目数が過剰に多い場合は、SegmentedControlコンポーネントの使用を非推奨とします。
+
+### Total 1
+
+項目数が１のケースも許容していますが、ユーザは何も操作できないことに注意してください。
+
+<Story of={SegmentedControlStories.Total1} />
+
+### Total 2
+
+利用用途に応じて、Form/ToggleSwitchの利用も検討してください。
+
+<Story of={SegmentedControlStories.Total2} />
+
+### Total 3
+
+<Story of={SegmentedControlStories.Total3} />
+
+### Total 4
+
+<Story of={SegmentedControlStories.Total4} />
+
+### Total 5
+
+<Story of={SegmentedControlStories.Total5} />
+
+## Wrapped Text
+
+文字数や画面幅によっては改行されることがあります。
+
+<Story of={SegmentedControlStories.WrappedText} />
+

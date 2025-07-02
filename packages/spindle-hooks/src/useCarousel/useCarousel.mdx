@@ -1,0 +1,164 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as useCarouselStories from './useCarousel.stories';
+
+<Meta of={useCarouselStories} />
+
+# useCarousel
+
+Carouselの機能をまとめたHooksです。
+
+マークアップ部分のアクセシビリティ周りは担保できないので下の例を参考に実装してください。
+
+<Source
+  language="javascript"
+  code={`import { useCarousel } from '@openameba/spindle-hooks'`}
+/>
+
+## Normal
+
+<Story of={useCarouselStories.Normal} />
+
+<Source
+  code={`
+const HeroCarouselItem = ({
+  carouselItem,
+  isLinkClicked,
+  itemLinkClassName,
+}) => {
+  const handleLinkClick = useCallback(
+    (e) => {
+      if (!isLinkClicked) {
+        e.preventDefault();
+      }
+    },
+    [isLinkClicked],
+  );
+  return (
+    <li style={{ width: '44vw', padding: '0 0.44em' }}>
+      <a
+        className={itemLinkClassName}
+        style={{
+          display: 'inline-block',
+          width: '44vw',
+          textAlign: 'center',
+        }}
+        href={carouselItem.link}
+        onClick={handleLinkClick}
+      >
+        <span>
+          <img
+            alt=""
+            style={{
+              height: '30em',
+              width: '100%',
+              background: '#eee',
+              objectFit: 'cover',
+            }}
+            src={carouselItem.imageUrl}
+          />
+        </span>
+        <div>
+          <p style={{ fontWeight: 'bold' }}>{carouselItem.title}</p>
+        </div>
+      </a>
+    </li>
+  );
+};
+const HeroCarousel = () => {
+  const {
+    handleSlideToPrev,
+    handleSlideToNext,
+    handleMouseEnter,
+    handleMouseDown,
+    handleMouseLeave,
+    handleTouchStart,
+    handleTransitionEnd,
+    isAutoPlaying,
+    isLinkClicked,
+    itemsToRender,
+    listRef,
+    listStyles,
+    toggleAutoPlay,
+    handleFocus,
+    handleBlur,
+  } = useCarousel({
+    items: carouselList,
+    itemLinkClassName: 'js-auto-play-carousel-item-link',
+    shouldAutoPlaying: false,
+    displayCount: 3,
+  });
+  if (carouselList.length === 0) {
+    return null;
+  }
+  return (
+    <div>
+      <div
+        style={{
+          alignItems: 'center',
+          display: 'flex',
+          overflow: 'hidden',
+          justifyContent: 'center',
+        }}
+        onBlur={handleBlur}
+        onFocus={handleFocus}
+        onMouseDown={handleMouseDown}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onTouchStart={handleTouchStart}
+        onTransitionEnd={handleTransitionEnd}
+      >
+        <ul
+          aria-roledescription="カルーセル"
+          ref={listRef}
+          role="group"
+          style={{
+            display: 'flex',
+            marginRight: '0.88em',
+            padding: '0 0.44em',
+            listStyle: 'none',
+            width: '44vw',
+            transition: 'transform 0.8s ease-out',
+            ...listStyles,
+          }}
+        >
+          {itemsToRender.map((item, index) => (
+            <HeroCarouselItem
+              carouselItem={item}
+              isLinkClicked={isLinkClicked}
+              itemLinkClassName={ITEM_LINK_CLASS_NAME}
+              key={\`hero-carousel-\${index}\`}
+            />
+          ))}
+        </ul>
+      </div>
+      <div>
+        <button
+          type="button"
+          onClick={handleSlideToPrev}
+        >
+          前へ
+        </button>
+        <button
+          type="button"
+          onClick={toggleAutoPlay}
+        >
+          {isAutoPlaying ? '停止' : '再生'}
+        </button>
+        <button
+          type="button"
+          onClick={handleSlideToNext}
+        >
+          次へ
+        </button>
+      </div>
+    </div>
+  );
+};
+  `}
+/>
+
+## このHooksでやっていること
+
+- スライドの自動再生を停止/再開、前後のスライドに移動する機能を持ちます。
+- キーボード・フォーカスがスライドに入っているとき、自動再生は止まります。また、スライドにマウス・ホバーしているときも止まります。
+- reduced motionが指定された時に、アニメーションを軽減または削除します

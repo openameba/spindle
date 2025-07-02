@@ -1,0 +1,65 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as indexStories from './index.stories';
+
+<Meta of={indexStories} />
+
+# Icon
+
+<Source
+  language='javascript'
+  code={`import ICON_NAME from '@openameba/spindle-ui/Icon/{ICON_NAME}'`}
+/>
+
+※ `ICON_NAME`はアイコンの名前です。利用したいアイコンの名前を指定してください。
+
+## Clock Icon
+
+<Source
+  language='javascript'
+  code={`import Clock from '@openameba/spindle-ui/Icon/Clock'`}
+/>
+
+<Story of={indexStories.ClockIcon} />
+
+<Source
+  code={`
+<Clock aria-label="Clock" />
+  `}
+/>
+
+## Clock Icon Overriding Color
+
+<Source
+  language='javascript'
+  code={`import Clock from '@openameba/spindle-ui/Icon/Clock'`}
+/>
+
+<Story of={indexStories.ClockIconOverridingColor} />
+
+<Source
+  code={`
+<p style={{ color: 'green' }}>
+  <Clock aria-label="Clock" />
+</p>
+  `}
+/>
+
+## Clock Icon With Size
+
+<Source
+  language='javascript'
+  code={`import Clock from '@openameba/spindle-ui/Icon/Clock'`}
+/>
+
+<Story of={indexStories.ClockIconOverridingSize} />
+
+<Source
+  code={`
+<Clock aria-label="Clock" height="200" width="200" />
+  `}
+/>
+
+## Accessibillity
+
+アイコン単体で使われる場合は、`aria-label`を指定してください。装飾としてアイコンが利用される場合は、`aria-hidden`を`true`に指定してください。
+

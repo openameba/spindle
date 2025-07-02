@@ -1,0 +1,54 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as InvalidMessageStories from './InvalidMessage.stories';
+
+<Meta of={InvalidMessageStories} />
+
+# Form/InvalidMessage
+
+<Source
+  language='javascript'
+  code={`
+import { InvalidMessage } from '@openameba/spindle-ui/Form';
+import '@openameba/spindle-ui/Form/InvalidMessage.css';
+  `}
+/>
+
+<Source
+  language='css'
+  code={`@import './node_modules/@openameba/spindle-ui/Form/InvalidMessage.css'`}
+/>
+
+<Source
+  language='html'
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Form/InvalidMessage.css">`}
+/>
+
+## Invalid Message
+
+<Story of={InvalidMessageStories.InvalidMessage} />
+
+<Source
+  code={`
+<InvalidMessage visible>ファイル形式が正しくありません</InvalidMessage>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<p class="spui-InvalidMessage">
+  <span class="spui-InvalidMessage-icon"><svg>...</svg></span>
+  <span class="spui-InvalidMessage-body">ファイル形式が正しくありません</span>
+</p>
+  `}
+/>
+
+## Accessibility
+
+コンポーネントからはアプリケーション内での使われ方や重要度がわからないため、アラートに関する属性は付与していません。そのため、コンポーネント利用時には[alert role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_alert_role)や[ARIA live regions](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions)を用いて支援技術に通知してください。
+
+<Source
+  code={`
+<InvalidMessage role="alert" visible>ファイル形式が正しくありません</InvalidMessage>
+  `}
+/>
