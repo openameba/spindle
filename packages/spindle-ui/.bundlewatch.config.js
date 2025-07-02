@@ -51,6 +51,11 @@ const bundlewatchConfig = {
       compression: 'gzip',
     },
     {
+      path: './dist/InlineNotification/*.mjs',
+      maxSize: '1.2 kB',
+      compression: 'gzip',
+    },
+    {
       path: './dist/!(InlineNotification|Modal|SnackBar)/!(index).css',
       maxSize: '1.5 kB',
       compression: 'gzip',
