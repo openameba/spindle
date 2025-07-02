@@ -13,8 +13,6 @@ type Story = StoryObj<typeof meta>;
 
 export const InformationNotification: Story = {
   render: () => (
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
     <InlineNotification.Frame variant="information" visible>
       <InlineNotification.Icon>
         <Information aria-hidden="true" />
@@ -28,8 +26,6 @@ export const InformationNotification: Story = {
 
 export const InformationEmphasis: Story = {
   render: () => (
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
     <InlineNotification.Frame variant="information" emphasis visible>
       <InlineNotification.Icon>
         <Information aria-hidden="true" />
@@ -43,8 +39,6 @@ export const InformationEmphasis: Story = {
 
 export const ConfirmationNotification: Story = {
   render: () => (
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
     <InlineNotification.Frame variant="confirmation" visible>
       <InlineNotification.Icon>
         <Information aria-hidden="true" />
@@ -58,8 +52,6 @@ export const ConfirmationNotification: Story = {
 
 export const ConfirmationEmphasis: Story = {
   render: () => (
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
     <InlineNotification.Frame variant="confirmation" emphasis visible>
       <InlineNotification.Icon>
         <Information aria-hidden="true" />
@@ -73,8 +65,6 @@ export const ConfirmationEmphasis: Story = {
 
 export const ErrorNotification: Story = {
   render: () => (
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
     <InlineNotification.Frame variant="error" visible>
       <InlineNotification.Icon>
         <ExclamationmarkCircleFill aria-hidden="true" />
@@ -88,8 +78,6 @@ export const ErrorNotification: Story = {
 
 export const ErrorEmphasis: Story = {
   render: () => (
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
     <InlineNotification.Frame variant="error" emphasis visible>
       <InlineNotification.Icon>
         <ExclamationmarkCircleFill aria-hidden="true" />
@@ -103,8 +91,6 @@ export const ErrorEmphasis: Story = {
 
 export const Inset: Story = {
   render: () => (
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
     <InlineNotification.Frame variant="information" layout="inset" visible>
       <InlineNotification.Icon>
         <Information aria-hidden="true" />
@@ -118,8 +104,6 @@ export const Inset: Story = {
 
 export const Full: Story = {
   render: () => (
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
     <InlineNotification.Frame variant="information" layout="full" visible>
       <InlineNotification.Icon>
         <Information aria-hidden="true" />
@@ -133,8 +117,6 @@ export const Full: Story = {
 
 export const InlineNotificationwithIcon: Story = {
   render: () => (
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
     <InlineNotification.Frame variant="information" visible>
       <InlineNotification.Icon>
         <Information aria-hidden="true" />
@@ -148,8 +130,6 @@ export const InlineNotificationwithIcon: Story = {
 
 export const InlineNotificationwithAvatar: Story = {
   render: () => (
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
     <InlineNotification.Frame variant="information" visible>
       <InlineNotification.Avatar src="/avatar.png" alt="" />
       <InlineNotification.Text>
@@ -162,8 +142,6 @@ export const InlineNotificationwithAvatar: Story = {
 export const InlineNotificationwithIconButton: Story = {
   render: () => (
     <>
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-expect-error */}
       <InlineNotification.Frame variant="information" visible>
         <InlineNotification.Icon>
           <Information aria-hidden="true" />
@@ -175,8 +153,6 @@ export const InlineNotificationwithIconButton: Story = {
           <CrossBold aria-label="とじる" />
         </InlineNotification.IconButton>
       </InlineNotification.Frame>
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-expect-error */}
       <InlineNotification.Frame variant="information" emphasis visible>
         <InlineNotification.Icon>
           <Information aria-hidden="true" />
@@ -188,8 +164,6 @@ export const InlineNotificationwithIconButton: Story = {
           <CrossBold aria-label="とじる" />
         </InlineNotification.IconButton>
       </InlineNotification.Frame>
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-expect-error */}
       <InlineNotification.Frame variant="confirmation" visible>
         <InlineNotification.Icon>
           <Information aria-hidden="true" />
@@ -201,8 +175,6 @@ export const InlineNotificationwithIconButton: Story = {
           <CrossBold aria-label="とじる" />
         </InlineNotification.IconButton>
       </InlineNotification.Frame>
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-expect-error */}
       <InlineNotification.Frame variant="confirmation" emphasis visible>
         <InlineNotification.Icon>
           <Information aria-hidden="true" />
@@ -214,8 +186,6 @@ export const InlineNotificationwithIconButton: Story = {
           <CrossBold aria-label="とじる" />
         </InlineNotification.IconButton>
       </InlineNotification.Frame>
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-expect-error */}
       <InlineNotification.Frame variant="error" visible>
         <InlineNotification.Icon>
           <ExclamationmarkCircleFill aria-hidden="true" />
@@ -227,8 +197,6 @@ export const InlineNotificationwithIconButton: Story = {
           <CrossBold aria-label="とじる" />
         </InlineNotification.IconButton>
       </InlineNotification.Frame>
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-expect-error */}
       <InlineNotification.Frame variant="error" emphasis visible>
         <InlineNotification.Icon>
           <ExclamationmarkCircleFill aria-hidden="true" />
@@ -247,8 +215,6 @@ export const InlineNotificationwithIconButton: Story = {
 export const InlineNotificationwithTextButton: Story = {
   render: () => (
     <>
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-expect-error */}
       <InlineNotification.Frame variant="information" visible>
         <InlineNotification.Icon>
           <Information aria-hidden="true" />
@@ -258,8 +224,6 @@ export const InlineNotificationwithTextButton: Story = {
         </InlineNotification.Text>
         <InlineNotification.TextButton>とじる</InlineNotification.TextButton>
       </InlineNotification.Frame>
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-expect-error */}
       <InlineNotification.Frame variant="information" emphasis visible>
         <InlineNotification.Icon>
           <Information aria-hidden="true" />
@@ -269,8 +233,6 @@ export const InlineNotificationwithTextButton: Story = {
         </InlineNotification.Text>
         <InlineNotification.TextButton>とじる</InlineNotification.TextButton>
       </InlineNotification.Frame>
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-expect-error */}
       <InlineNotification.Frame variant="confirmation" visible>
         <InlineNotification.Icon>
           <Information aria-hidden="true" />
@@ -280,8 +242,6 @@ export const InlineNotificationwithTextButton: Story = {
         </InlineNotification.Text>
         <InlineNotification.TextButton>とじる</InlineNotification.TextButton>
       </InlineNotification.Frame>
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-expect-error */}
       <InlineNotification.Frame variant="confirmation" emphasis visible>
         <InlineNotification.Icon>
           <Information aria-hidden="true" />
@@ -291,8 +251,6 @@ export const InlineNotificationwithTextButton: Story = {
         </InlineNotification.Text>
         <InlineNotification.TextButton>とじる</InlineNotification.TextButton>
       </InlineNotification.Frame>
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-expect-error */}
       <InlineNotification.Frame variant="error" visible>
         <InlineNotification.Icon>
           <ExclamationmarkCircleFill aria-hidden="true" />
@@ -302,8 +260,6 @@ export const InlineNotificationwithTextButton: Story = {
         </InlineNotification.Text>
         <InlineNotification.TextButton>とじる</InlineNotification.TextButton>
       </InlineNotification.Frame>
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-expect-error */}
       <InlineNotification.Frame variant="error" emphasis visible>
         <InlineNotification.Icon>
           <ExclamationmarkCircleFill aria-hidden="true" />
@@ -320,8 +276,6 @@ export const InlineNotificationwithTextButton: Story = {
 export const InlineNotificationwithButton: Story = {
   render: () => (
     <>
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-expect-error */}
       <InlineNotification.Frame variant="information" visible>
         <InlineNotification.Icon>
           <Information aria-hidden="true" />
@@ -331,8 +285,6 @@ export const InlineNotificationwithButton: Story = {
         </InlineNotification.Text>
         <InlineNotification.Button>確認</InlineNotification.Button>
       </InlineNotification.Frame>
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-expect-error */}
       <InlineNotification.Frame variant="information" emphasis visible>
         <InlineNotification.Icon>
           <Information aria-hidden="true" />
@@ -342,8 +294,6 @@ export const InlineNotificationwithButton: Story = {
         </InlineNotification.Text>
         <InlineNotification.Button>詳細へ</InlineNotification.Button>
       </InlineNotification.Frame>
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-expect-error */}
       <InlineNotification.Frame variant="confirmation" visible>
         <InlineNotification.Icon>
           <Information aria-hidden="true" />
@@ -353,8 +303,6 @@ export const InlineNotificationwithButton: Story = {
         </InlineNotification.Text>
         <InlineNotification.Button>確認する</InlineNotification.Button>
       </InlineNotification.Frame>
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-expect-error */}
       <InlineNotification.Frame variant="confirmation" emphasis visible>
         <InlineNotification.Icon>
           <Information aria-hidden="true" />
@@ -364,8 +312,6 @@ export const InlineNotificationwithButton: Story = {
         </InlineNotification.Text>
         <InlineNotification.Button>投稿を確認</InlineNotification.Button>
       </InlineNotification.Frame>
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-expect-error */}
       <InlineNotification.Frame variant="error" visible>
         <InlineNotification.Icon>
           <ExclamationmarkCircleFill aria-hidden="true" />
@@ -375,8 +321,6 @@ export const InlineNotificationwithButton: Story = {
         </InlineNotification.Text>
         <InlineNotification.Button>再アップロード</InlineNotification.Button>
       </InlineNotification.Frame>
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-expect-error */}
       <InlineNotification.Frame variant="error" emphasis visible>
         <InlineNotification.Icon>
           <ExclamationmarkCircleFill aria-hidden="true" />
@@ -394,4 +338,20 @@ export const InlineNotificationwithButton: Story = {
 
 export const Visible: Story = {
   render: () => <VisiblePropsSample />,
+};
+
+export const WithFragment: Story = {
+  render: () => (
+    <InlineNotification.Frame variant="error" emphasis visible>
+      <>
+        <InlineNotification.Icon>
+          <Information aria-hidden="true" />
+        </InlineNotification.Icon>
+        <InlineNotification.Text>
+          Fragmentを使った例：ブログの管理者が承認するまで、コメントが反映されない場合があります
+        </InlineNotification.Text>
+        <InlineNotification.Button>確認</InlineNotification.Button>
+      </>
+    </InlineNotification.Frame>
+  ),
 };
