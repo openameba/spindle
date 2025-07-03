@@ -24,6 +24,8 @@ jobs:
             */*/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-v2
       - run: yarn install --frozen-lockfile
+      - name: Install Playwright Browsers
+        run: cd packages/spindle-syntax-themes && npx playwright install --with-deps chromium
       - run: |
           yarn lerna run --scope @openameba/spindle-hooks build
           yarn test

@@ -3,18 +3,13 @@
   "plugins": [
     "stylelint-prettier",
     "stylelint-order",
-    "stylelint-selector-bem-pattern"
+    "@namics/stylelint-bem"
   ],
   "rules": {
     "prettier/prettier": true,
     "order/properties-alphabetical-order": true,
-    "plugin/selector-bem-pattern": {
-      "implicitComponents": "src/**/*.css",
-      "preset": "suit",
-      "presetOptions": {
-        "namespace": "spui"
-      }
-    },
+    "@namics/stylelint-bem/patternPrefixes": ["spui"],
+    "@namics/stylelint-bem/patterns": ["suit"],
     "value-keyword-case": ["lower", {
       "ignoreKeywords": ["/^--/"]
     }]
