@@ -8,7 +8,10 @@ figma.connect(
   Dialog,
   'https://www.figma.com/design/FSgvRthUiMMXWgrSE4RUgr/Spindle-UI?node-id=452-38043',
   {
-    imports: ["import { Dialog } from '@openameba/spindle-ui';"],
+    imports: [
+      "import { Dialog } from '@openameba/spindle-ui';",
+      "import '@openameba/spindle-ui/Dialog/Dialog.css';",
+    ],
     props: {
       title: figma.boolean('Title', {
         true: <Dialog.Title></Dialog.Title>,
