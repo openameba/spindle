@@ -29,7 +29,7 @@ jobs:
           yarn lerna run --scope @openameba/spindle-hooks build
           yarn lerna run --scope @openameba/spindle-ui storybook:build
       - name: deploy to live channel
-        uses: FirebaseExtended/action-hosting-deploy@d482eb942f549f059116ec36b191860128553142 # v0
+        uses: FirebaseExtended/action-hosting-deploy@0cbcac4740c2bfb00d632f0b863b57713124eb5a # v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
