@@ -8,7 +8,7 @@ figma.connect(
   {
     imports: [
       "import { UnderlineTab } from '@openameba/spindle-ui';",
-      "import '@openameba/spindle-ui/NavigationTab/UnderlineTab/UnderlineTab.css';",
+      "import '@openameba/spindle-ui/NavigationTab/index.css';",
     ],
     variant: { Type: 'Under Bar' },
     props: {
