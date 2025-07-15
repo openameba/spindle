@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.3.0...@openameba/spindle-ui@2.4.0) (2025-07-15)
+
+### Bug Fixes
+
+- **spindle-ui:** fix semi modal style ([45650be](https://github.com/openameba/spindle/commit/45650bece6ed84a708a39dcf7460b501eb47fc62))
+- **spindle-ui:** inlineNotificationがFragmentを受け取った際に値のコピーが上手く行かない問題を修正 ([#1332](https://github.com/openameba/spindle/issues/1332)) ([f169fc2](https://github.com/openameba/spindle/commit/f169fc2959206285add8551c433097dd9de83477))
+- **spindle-ui:** ページの背景色に隠れてフォーカスリングが表示されないことがある問題を修正 ([7dd9bd9](https://github.com/openameba/spindle/commit/7dd9bd9ec49602d8d5d0e7861dd2be478e168cbb))
+
+### Features
+
+- **spindle-icons:** update icons ([b122821](https://github.com/openameba/spindle/commit/b12282176f8bac392a0c7d8c6edfe8f5d0b1ab46))
+- **spindle-mcp-server:** add tool for design doc ([e8f6179](https://github.com/openameba/spindle/commit/e8f61792304af59e6d98e2c9ed6f993b892c02b2))
+
 # [2.3.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.2.0...@openameba/spindle-ui@2.3.0) (2025-03-28)
 
 ### Bug Fixes

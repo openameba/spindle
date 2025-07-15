@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@1.3.0...@openameba/spindle-tokens@1.4.0) (2025-07-15)
+
+### Bug Fixes
+
+- **spindle-tokens:** correct figma id for colors ([573851a](https://github.com/openameba/spindle/commit/573851ab2c843f7f825d64d52400f66bc10222a4))
+
+### Features
+
+- **spindle-tokens:** update design tokens ([2473ff9](https://github.com/openameba/spindle/commit/2473ff9fcce544f2bb52c88c9d279b7fcf892d37))
+- **spindle-tokens:** update design tokens ([0078ead](https://github.com/openameba/spindle/commit/0078ead919f9c1089d142e86e15dec9740d5236d))
+
 # [1.3.0](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@1.2.2...@openameba/spindle-tokens@1.3.0) (2025-03-28)
 
 **Note:** Version bump only for package @openameba/spindle-tokens
