@@ -49,7 +49,7 @@ type Props = {
   max: number;
   value: number;
   size: 'large' | 'medium' | 'small';
-  showText: boolean;
+  showText?: boolean;
 }
 ```
 
