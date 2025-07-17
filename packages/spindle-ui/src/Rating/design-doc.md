@@ -72,15 +72,15 @@ React実装の一例です。
 上記の実装から書き出されるマークアップです。
 
 ```html
-<div class="spui-Rating" aria-label="3.5">
+<div class="spui-Rating" aria-label="5つ星中3.5の評価">
   <p class="spui-Rating-text spui-Rating-text--medium">3.5</p>
-  <ul class="spui-Rating" aria-label="3.5">
-    <li class="spui-Rating-item"><svg class="spui-Rating-item-icon spui-Rating-item-icon--medium"></svg></li>
-    <li class="spui-Rating-item"><svg class="spui-Rating-item-icon spui-Rating-item-icon--medium"></svg></li>
-    <li class="spui-Rating-item"><svg class="spui-Rating-item-icon spui-Rating-item-icon--medium"></svg></li>
-    <li class="spui-Rating-item"><svg class="spui-Rating-item-icon spui-Rating-item-icon--medium"></svg></li>
-    <li class="spui-Rating-item"><svg class="spui-Rating-item-icon spui-Rating-item-icon--medium"></svg></li>
-  </ul>
+  <div class="spui-Rating" role="img">
+    <span class="spui-Rating-item"><svg class="spui-Rating-item-icon spui-Rating-item-icon--medium"></svg></span>
+    <span class="spui-Rating-item"><svg class="spui-Rating-item-icon spui-Rating-item-icon--medium"></svg></span>
+    <span class="spui-Rating-item"><svg class="spui-Rating-item-icon spui-Rating-item-icon--medium"></svg></span>
+    <span class="spui-Rating-item"><svg class="spui-Rating-item-icon spui-Rating-item-icon--medium"></svg></span>
+    <span class="spui-Rating-item"><svg class="spui-Rating-item-icon spui-Rating-item-icon--medium"></svg></span>
+  </div>
 </div>
 ```
 
