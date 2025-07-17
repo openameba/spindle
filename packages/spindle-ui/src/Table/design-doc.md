@@ -19,7 +19,7 @@
 ### 基本的な使用方法
 
 ```tsx
-<Table borderTypes={['horizontal']} striped>
+<Table.Frame borderTypes={['horizontal']} striped>
   <Table.Caption>売上データ（2023年第4四半期）</Table.Caption>
   <Table.Header>
     <Table.Row>
@@ -40,13 +40,13 @@
       <Table.Cell align="center">-3%</Table.Cell>
     </Table.Row>
   </Table.Body>
-</Table>
+</Table.Frame>
 ```
 
 ### 横スクロール対応テーブル
 
 ```tsx
-<Table
+<Table.Frame
   borderTypes={['horizontal', 'vertical']}
   layout="scrollable"
 >
@@ -70,7 +70,7 @@
       <Table.Cell>1,370</Table.Cell>
     </Table.Row>
   </Table.Body>
-</Table>
+</Table.Frame>
 ```
 
 ### CSS Variablesによるスタイルのカスタマイズ
@@ -81,9 +81,9 @@
   '--Table-head-color': 'var(--color-text-high-emphasis-inverse)',
   '--Table-cell-borderColor': 'var(--color-border-accent-primary)'
 }}>
-  <Table borderTypes={['outlined']} rounded>
+  <Table.Frame borderTypes={['outlined']} rounded>
     ...
-  </Table>
+  </Table.Frame>
 </div>
 ```
 
@@ -114,9 +114,9 @@
 }
 
 // Component
-<Table borderTypes={['horizontal']}>
+<Table.Frame borderTypes={['horizontal']}>
   ...
-</Table>
+</Table.Frame>
 ```
 
 ### DO NOT
@@ -124,14 +124,14 @@
 #### レイアウト目的での使用を避ける
 ```tsx
 // ❌ Bad: フォームレイアウトでのテーブル使用
-<Table>
+<Table.Frame>
   <Table.Body>
     <Table.Row>
       <Table.Cell>ラベル:</Table.Cell>
       <Table.Cell><input /></Table.Cell>
     </Table.Row>
   </Table.Body>
-</Table>
+</Table.Frame>
 
 // ✅ Good: 適切なフォームレイアウト
 <div className="form-field">
@@ -143,31 +143,31 @@
 #### 個別セルでのボーダー指定
 ```tsx
 // ❌ Bad: 通常のテーブルで個別セルにボーダーを指定
-<Table>
+<Table.Frame>
   <Table.Body>
     <Table.Row>
       <Table.Cell className="border-red">データ</Table.Cell>
     </Table.Row>
   </Table.Body>
-</Table>
+</Table.Frame>
 
 // ✅ Good: borderTypes propを使用
-<Table borderTypes={['horizontal']}>
+<Table.Frame borderTypes={['horizontal']}>
   <Table.Body>
     <Table.Row>
       <Table.Cell>データ</Table.Cell>
     </Table.Row>
   </Table.Body>
-</Table>
+</Table.Frame>
 
 // ✅ Good: セル結合時は個別調整も可能
-<Table borderTypes={['horizontal', 'vertical']}>
+<Table.Frame borderTypes={['horizontal', 'vertical']}>
   <Table.Body>
     <Table.Row>
       <Table.Cell colSpan={2} className="merged-cell">結合セル</Table.Cell>
     </Table.Row>
   </Table.Body>
-</Table>
+</Table.Frame>
 ```
 
 #### セマンティクスの適切な使用
@@ -191,15 +191,16 @@ Tableコンポーネントで使用しているDesign Tokensは、CSS Variables�
 
 ### プロパティ
 
-#### Table
+#### Table.Frame
 ```typescript
-type TableProps = {
+type TableFrameProps = {
   borderTypes?: Array<'horizontal' | 'vertical' | 'outlined'>;
   rounded?: boolean;
   striped?: boolean;
   layout?: 'auto' | 'fixed' | 'scrollable';
   children?: ReactNode;
-} & Omit<React.TableHTMLAttributes<HTMLTableElement>, 'style'>;
+  className?: string;
+} & Omit<React.TableHTMLAttributes<HTMLTableElement>, 'style' | 'className'>;
 ```
 
 ##### layout
@@ -210,11 +211,12 @@ type TableProps = {
 #### Table.Head
 ```typescript
 interface TableHeadProps
-  extends Omit<React.ThHTMLAttributes<HTMLTableCellElement>, 'style'> {
+  extends Omit<React.ThHTMLAttributes<HTMLTableCellElement>, 'style' | 'className'> {
   align?: 'left' | 'center' | 'right';
   width?: CSSProperties['width'];
   minWidth?: CSSProperties['minWidth'];
   children?: ReactNode;
+  className?: string;
 }
 ```
 
@@ -233,9 +235,10 @@ interface TableHeadProps
 #### Table.Cell
 ```typescript
 interface TableCellProps
-  extends Omit<React.TdHTMLAttributes<HTMLTableCellElement>, 'style'> {
+  extends Omit<React.TdHTMLAttributes<HTMLTableCellElement>, 'style' | 'className'> {
   align?: 'left' | 'center' | 'right';
   children?: ReactNode;
+  className?: string;
 }
 ```
 
@@ -243,8 +246,9 @@ interface TableCellProps
 `<tfoot>`要素として出力。テーブルのフッター情報（合計、集計など）を格納。
 ```typescript
 interface TableFooterProps
-  extends Omit<React.HTMLAttributes<HTMLTableSectionElement>, 'style'> {
+  extends Omit<React.HTMLAttributes<HTMLTableSectionElement>, 'style' | 'className'> {
   children?: ReactNode;
+  className?: string;
 }
 ```
 
@@ -308,9 +312,9 @@ Tableコンポーネントは基本的なスタイルを提供しますが、プ
 
 ```tsx
 <div className="custom-table">
-  <Table borderTypes={['outlined']} rounded>
+  <Table.Frame borderTypes={['outlined']} rounded>
     {/* テーブル内容 */}
-  </Table>
+  </Table.Frame>
 </div>
 ```
 
@@ -354,8 +358,8 @@ Tableコンポーネントは基本的なスタイルを提供しますが、プ
 | --Table-head-color      | var(--color-text-high-emphasis) | ヘッダーテキスト色     |
 | --Table-cell-color      | var(--color-text-high-emphasis) | セルテキスト色         |
 | --Table-head-fontWeight | bold                            | ヘッダーフォント太さ   |
-| --Table-head-fontSize   | 13px                            | ヘッダーフォントサイズ |
-| --Table-cell-fontSize   | 13px                            | セルフォントサイズ     |
+| --Table-head-fontSize   | 14px                            | ヘッダーフォントサイズ |
+| --Table-cell-fontSize   | 14px                            | セルフォントサイズ     |
 | --Table-head-lineHeight | 1.4                             | ヘッダー行間           |
 | --Table-cell-lineHeight | 1.4                             | セル行間               |
 
@@ -372,8 +376,8 @@ Tableコンポーネントは基本的なスタイルを提供しますが、プ
 
 | 変数名                 | デフォルト値                 | 用途               |
 | :--------------------- | :--------------------------- | :----------------- |
-| --Table-head-padding   | 8px 12px                     | ヘッダーパディング |
-| --Table-cell-padding   | 8px 12px                     | セルパディング     |
+| --Table-head-padding   | 12px                         | ヘッダーパディング |
+| --Table-cell-padding   | 12px                         | セルパディング     |
 | --Table-sticky-shadow  | var(--box-shadow-lv2-normal) | 固定列の影         |
 | --Table-sticky-z-index | 1                            | 固定列のz-index    |
 
@@ -421,16 +425,16 @@ Tableコンポーネントでは、Web標準のtable要素の機能を最大限�
 #### 使用例
 ```tsx
 // 横罫線のみ
-<Table borderTypes={['horizontal']}>
+<Table.Frame borderTypes={['horizontal']}>
 
 // 縦横罫線
-<Table borderTypes={['horizontal', 'vertical']}>
+<Table.Frame borderTypes={['horizontal', 'vertical']}>
 
 // 外枠付き
-<Table borderTypes={['outlined']}>
+<Table.Frame borderTypes={['outlined']}>
 
 // 全てのボーダー
-<Table borderTypes={['horizontal', 'vertical', 'outlined']}>
+<Table.Frame borderTypes={['horizontal', 'vertical', 'outlined']}>
 ```
 
 ### CSS Variables中心の設計
