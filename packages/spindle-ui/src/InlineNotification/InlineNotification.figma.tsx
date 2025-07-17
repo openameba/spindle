@@ -8,7 +8,10 @@ figma.connect(
   InlineNotification,
   'https://www.figma.com/design/FSgvRthUiMMXWgrSE4RUgr/Spindle-UI?node-id=4094-14110',
   {
-    imports: ["import { InlineNotification } from '@openameba/spindle-ui';"],
+    imports: [
+      "import { InlineNotification } from '@openameba/spindle-ui';",
+      "import '@openameba/spindle-ui/InlineNotification/InlineNotification.css';",
+    ],
     props: {
       variant: figma.enum('variant', {
         Information: 'information',
