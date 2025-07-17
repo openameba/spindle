@@ -1,0 +1,365 @@
+/*
+ * Table
+ * NOTE: Styles can be overridden with "--Table-*" variables
+ */
+:root {
+  /* Surface・背景関連 */
+  --Table-backgroundColor: var(--color-surface-primary);
+  --Table-head-backgroundColor: var(--color-surface-tertiary);
+  --Table-cell-backgroundColor: var(--color-surface-primary);
+  --Table-row-striped-backgroundColor: var(--color-background);
+  --Table-row-hover-backgroundColor: var(--color-surface-secondary);
+
+  /* Text・テキスト関連 */
+  --Table-head-color: var(--color-text-high-emphasis);
+  --Table-cell-color: var(--color-text-high-emphasis);
+  --Table-head-fontWeight: bold;
+  --Table-head-fontSize: 14px;
+  --Table-cell-fontSize: 14px;
+  --Table-head-lineHeight: 1.4;
+  --Table-cell-lineHeight: 1.4;
+
+  /* Border・ボーダー関連 */
+  --Table-outlineColor: var(--color-border-strong-emphasis);
+  --Table-cell-borderColor: var(--color-border-low-emphasis);
+  --Table-footer-separatorColor: var(--color-border-medium-emphasis);
+  --Table-borderRadius: 16px;
+
+  /* Layout・レイアウト関連 */
+  --Table-head-padding: 12px;
+  --Table-cell-padding: 12px;
+  --Table-sticky-shadow: var(--box-shadow-lv2-normal);
+  --Table-sticky-z-index: 1;
+
+  /* Caption・キャプション関連 */
+  --Table-caption-color: var(--color-text-low-emphasis);
+  --Table-caption-fontSize: 12px;
+  --Table-caption-lineHeight: 1.6;
+  --Table-caption-fontWeight: normal;
+
+  /* Footer・フッター関連 */
+  --Table-footer-backgroundColor: var(--Table-cell-backgroundColor);
+  --Table-footer-color: var(--Table-cell-color);
+  --Table-footer-fontWeight: normal;
+  --Table-footer-fontSize: var(--Table-cell-fontSize);
+  --Table-footer-lineHeight: var(--Table-cell-lineHeight);
+  --Table-footer-padding: var(--Table-cell-padding);
+}
+
+/*
+ * Table container
+ */
+.spui-Table-container {
+  position: relative;
+  width: 100%;
+}
+
+.spui-Table-container--scrollable {
+  overflow-x: auto;
+}
+
+/*
+ * Table base
+ */
+.spui-Table {
+  background-color: var(--Table-backgroundColor);
+  border-spacing: 0;
+  table-layout: auto;
+  width: 100%;
+}
+
+.spui-Table--fixed {
+  table-layout: fixed;
+}
+
+.spui-Table--scrollable {
+  min-width: max-content;
+  width: 100%;
+}
+
+/*
+ * Border patterns - Array-based system
+ */
+
+/* horizontal: 水平線 */
+.spui-Table--horizontal .spui-Table-head,
+.spui-Table--horizontal .spui-Table-cell {
+  border-bottom: 1px solid var(--Table-cell-borderColor);
+}
+
+/* tbody の最後の行のみ bottom border を削除 */
+.spui-Table--horizontal
+  .spui-Table-body
+  .spui-Table-row:last-child
+  .spui-Table-head,
+.spui-Table--horizontal
+  .spui-Table-body
+  .spui-Table-row:last-child
+  .spui-Table-cell {
+  border-bottom: none;
+}
+
+/* footer の最初の行に強調された区切り線 */
+.spui-Table--horizontal
+  .spui-Table-footer
+  .spui-Table-row:first-child
+  .spui-Table-head,
+.spui-Table--horizontal
+  .spui-Table-footer
+  .spui-Table-row:first-child
+  .spui-Table-cell {
+  border-top: 2px solid var(--Table-footer-separatorColor);
+}
+
+/* footer の最後の行のみ bottom border を削除 */
+.spui-Table--horizontal
+  .spui-Table-footer
+  .spui-Table-row:last-child
+  .spui-Table-head,
+.spui-Table--horizontal
+  .spui-Table-footer
+  .spui-Table-row:last-child
+  .spui-Table-cell {
+  border-bottom: none;
+}
+
+/* vertical: 垂直線 */
+.spui-Table--vertical .spui-Table-head,
+.spui-Table--vertical .spui-Table-cell {
+  border-right: 1px solid var(--Table-cell-borderColor);
+}
+
+.spui-Table--vertical .spui-Table-head:last-child,
+.spui-Table--vertical .spui-Table-cell:last-child {
+  border-right: none;
+}
+
+/* outlined: 外枠 */
+.spui-Table--outlined {
+  border: 1px solid var(--Table-outlineColor);
+}
+
+/*
+ * Footer 固有のスタイル
+ * フッターは合計・集計行として目立たせる
+ */
+.spui-Table-footer .spui-Table-cell {
+  background-color: var(--Table-footer-backgroundColor);
+  color: var(--Table-footer-color);
+  font-size: var(--Table-footer-fontSize);
+  font-weight: var(--Table-footer-fontWeight);
+  line-height: var(--Table-footer-lineHeight);
+  padding: var(--Table-footer-padding);
+}
+
+.spui-Table-footer .spui-Table-head {
+  color: var(--Table-footer-color);
+  font-size: var(--Table-footer-fontSize);
+  font-weight: var(--Table-footer-fontWeight);
+  line-height: var(--Table-footer-lineHeight);
+  padding: var(--Table-footer-padding);
+}
+
+/*
+ * Rounded corners
+ */
+.spui-Table--rounded {
+  border-collapse: separate;
+  border-radius: var(--Table-borderRadius);
+  border-spacing: 0;
+}
+
+/* rounded + outlined の組み合わせでborder-radiusを適用 */
+.spui-Table--rounded.spui-Table--outlined {
+  border-radius: var(--Table-borderRadius);
+}
+
+/* 内部要素の角丸処理 */
+.spui-Table--rounded
+  .spui-Table-header
+  .spui-Table-row:first-child
+  .spui-Table-head:first-child {
+  border-top-left-radius: calc(var(--Table-borderRadius) - 1px);
+}
+
+.spui-Table--rounded
+  .spui-Table-header
+  .spui-Table-row:first-child
+  .spui-Table-head:last-child {
+  border-top-right-radius: calc(var(--Table-borderRadius) - 1px);
+}
+
+/* ヘッダー行がない場合のボディ最初の行 */
+.spui-Table--rounded:not(:has(.spui-Table-header))
+  .spui-Table-body
+  .spui-Table-row:first-child
+  .spui-Table-head:first-child,
+.spui-Table--rounded:not(:has(.spui-Table-header))
+  .spui-Table-body
+  .spui-Table-row:first-child
+  .spui-Table-cell:first-child {
+  border-top-left-radius: calc(var(--Table-borderRadius) - 1px);
+}
+
+.spui-Table--rounded:not(:has(.spui-Table-header))
+  .spui-Table-body
+  .spui-Table-row:first-child
+  .spui-Table-head:last-child,
+.spui-Table--rounded:not(:has(.spui-Table-header))
+  .spui-Table-body
+  .spui-Table-row:first-child
+  .spui-Table-cell:last-child {
+  border-top-right-radius: calc(var(--Table-borderRadius) - 1px);
+}
+
+.spui-Table--rounded
+  .spui-Table-body
+  .spui-Table-row:last-child
+  .spui-Table-head:first-child,
+.spui-Table--rounded
+  .spui-Table-body
+  .spui-Table-row:last-child
+  .spui-Table-cell:first-child {
+  border-bottom-left-radius: calc(var(--Table-borderRadius) - 1px);
+}
+
+.spui-Table--rounded
+  .spui-Table-body
+  .spui-Table-row:last-child
+  .spui-Table-head:last-child,
+.spui-Table--rounded
+  .spui-Table-body
+  .spui-Table-row:last-child
+  .spui-Table-cell:last-child {
+  border-bottom-right-radius: calc(var(--Table-borderRadius) - 1px);
+}
+
+/* footerがある場合の角丸処理 */
+.spui-Table--rounded
+  .spui-Table-footer
+  .spui-Table-row:last-child
+  .spui-Table-head:first-child,
+.spui-Table--rounded
+  .spui-Table-footer
+  .spui-Table-row:last-child
+  .spui-Table-cell:first-child {
+  border-bottom-left-radius: calc(var(--Table-borderRadius) - 1px);
+}
+
+.spui-Table--rounded
+  .spui-Table-footer
+  .spui-Table-row:last-child
+  .spui-Table-head:last-child,
+.spui-Table--rounded
+  .spui-Table-footer
+  .spui-Table-row:last-child
+  .spui-Table-cell:last-child {
+  border-bottom-right-radius: calc(var(--Table-borderRadius) - 1px);
+}
+
+/*
+ * Striped rows - セルのみ、行見出しは除外
+ */
+.spui-Table--striped
+  .spui-Table-body
+  .spui-Table-row:nth-child(even)
+  .spui-Table-cell {
+  background-color: var(--Table-row-striped-backgroundColor);
+}
+
+/*
+ * Table elements
+ */
+.spui-Table-caption {
+  caption-side: bottom;
+  color: var(--Table-caption-color);
+  font-size: var(--Table-caption-fontSize);
+  font-weight: var(--Table-caption-fontWeight);
+  line-height: var(--Table-caption-lineHeight);
+  margin-top: 12px;
+  text-align: left;
+}
+
+.spui-Table-header {
+  /* thead element - no specific styles, semantic structure only */
+}
+
+.spui-Table-body {
+  /* tbody element - no specific styles, semantic structure only */
+}
+
+.spui-Table-footer {
+  /* tfoot element - no specific styles, semantic structure only */
+}
+
+.spui-Table-row {
+  /* tr element - no specific styles, semantic structure only */
+}
+
+/*
+ * Table cells
+ */
+.spui-Table-head {
+  background-color: var(--Table-head-backgroundColor);
+  color: var(--Table-head-color);
+  font-size: var(--Table-head-fontSize);
+  font-weight: var(--Table-head-fontWeight);
+  line-height: var(--Table-head-lineHeight);
+  padding: var(--Table-head-padding);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.spui-Table-head--alignLeft {
+  text-align: left;
+}
+
+.spui-Table-head--alignCenter {
+  text-align: center;
+}
+
+.spui-Table-head--alignRight {
+  text-align: right;
+}
+
+/*
+ * Data cells
+ */
+.spui-Table-cell {
+  background-color: var(--Table-cell-backgroundColor);
+  color: var(--Table-cell-color);
+  font-size: var(--Table-cell-fontSize);
+  line-height: var(--Table-cell-lineHeight);
+  padding: var(--Table-cell-padding);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.spui-Table-cell--alignLeft {
+  text-align: left;
+}
+
+.spui-Table-cell--alignCenter {
+  text-align: center;
+}
+
+.spui-Table-cell--alignRight {
+  text-align: right;
+}
+
+/*
+ * Print styles
+ */
+@media print {
+  .spui-Table-container {
+    overflow: visible;
+  }
+
+  .spui-Table {
+    break-inside: auto;
+  }
+
+  .spui-Table-row {
+    break-inside: avoid;
+  }
+}
