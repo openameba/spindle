@@ -100,15 +100,6 @@ Tableコンポーネントは、以下のCSS Variablesでカスタマイズで�
       </td>
       <td>ストライプ行背景色</td>
     </tr>
-    <tr>
-      <td>
-        <code>--Table-row-hover-backgroundColor</code>
-      </td>
-      <td>
-        <code>var(--color-surface-secondary)</code>
-      </td>
-      <td>行ホバー時背景色</td>
-    </tr>
   </tbody>
 </table>
 
@@ -143,12 +134,39 @@ Tableコンポーネントは、以下のCSS Variablesでカスタマイズで�
     </tr>
     <tr>
       <td>
+        <code>--Table-footer-color</code>
+      </td>
+      <td>
+        <code>var(--color-text-high-emphasis)</code>
+      </td>
+      <td>フッターテキスト色</td>
+    </tr>
+    <tr>
+      <td>
         <code>--Table-head-fontWeight</code>
       </td>
       <td>
         <code>bold</code>
       </td>
       <td>ヘッダーフォント太さ</td>
+    </tr>
+    <tr>
+      <td>
+        <code>--Table-cell-fontWeight</code>
+      </td>
+      <td>
+        <code>normal</code>
+      </td>
+      <td>セルフォント太さ</td>
+    </tr>
+    <tr>
+      <td>
+        <code>--Table-footer-fontWeight</code>
+      </td>
+      <td>
+        <code>normal</code>
+      </td>
+      <td>フッターフォント太さ</td>
     </tr>
     <tr>
       <td>
@@ -185,6 +203,24 @@ Tableコンポーネントは、以下のCSS Variablesでカスタマイズで�
         <code>1.4</code>
       </td>
       <td>セル行間</td>
+    </tr>
+    <tr>
+      <td>
+        <code>--Table-footer-fontSize</code>
+      </td>
+      <td>
+        <code>14px</code>
+      </td>
+      <td>フッターフォントサイズ</td>
+    </tr>
+    <tr>
+      <td>
+        <code>--Table-footer-lineHeight</code>
+      </td>
+      <td>
+        <code>1.4</code>
+      </td>
+      <td>フッター行間</td>
     </tr>
   </tbody>
 </table>
@@ -270,21 +306,12 @@ Tableコンポーネントは、以下のCSS Variablesでカスタマイズで�
     </tr>
     <tr>
       <td>
-        <code>--Table-sticky-shadow</code>
+        <code>--Table-footer-padding</code>
       </td>
       <td>
-        <code>var(--box-shadow-lv2-normal)</code>
+        <code>12px</code>
       </td>
-      <td>固定列の影</td>
-    </tr>
-    <tr>
-      <td>
-        <code>--Table-sticky-z-index</code>
-      </td>
-      <td>
-        <code>1</code>
-      </td>
-      <td>固定列のz-index</td>
+      <td>フッターパディング</td>
     </tr>
   </tbody>
 </table>
@@ -339,73 +366,6 @@ Tableコンポーネントは、以下のCSS Variablesでカスタマイズで�
   </tbody>
 </table>
 
-### Footer・フッター関連
-
-<table>
-  <thead>
-    <tr>
-      <th>変数名</th>
-      <th>デフォルト値</th>
-      <th>用途</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <code>--Table-footer-backgroundColor</code>
-      </td>
-      <td>
-        <code>var(--Table-cell-backgroundColor)</code>
-      </td>
-      <td>フッター背景色（td）</td>
-    </tr>
-    <tr>
-      <td>
-        <code>--Table-footer-color</code>
-      </td>
-      <td>
-        <code>var(--Table-cell-color)</code>
-      </td>
-      <td>フッターテキスト色</td>
-    </tr>
-    <tr>
-      <td>
-        <code>--Table-footer-fontWeight</code>
-      </td>
-      <td>
-        <code>normal</code>
-      </td>
-      <td>フッターフォント太さ</td>
-    </tr>
-    <tr>
-      <td>
-        <code>--Table-footer-fontSize</code>
-      </td>
-      <td>
-        <code>var(--Table-cell-fontSize)</code>
-      </td>
-      <td>フッターフォントサイズ</td>
-    </tr>
-    <tr>
-      <td>
-        <code>--Table-footer-lineHeight</code>
-      </td>
-      <td>
-        <code>var(--Table-cell-lineHeight)</code>
-      </td>
-      <td>フッター行間</td>
-    </tr>
-    <tr>
-      <td>
-        <code>--Table-footer-padding</code>
-      </td>
-      <td>
-        <code>var(--Table-cell-padding)</code>
-      </td>
-      <td>フッターパディング</td>
-    </tr>
-  </tbody>
-</table>
 
 ```tsx
 import { Table } from '@openameba/spindle-ui';

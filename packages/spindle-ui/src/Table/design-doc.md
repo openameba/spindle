@@ -349,7 +349,6 @@ Tableコンポーネントは基本的なスタイルを提供しますが、プ
 | --Table-head-backgroundColor        | var(--color-surface-tertiary) | ヘッダー背景色       |
 | --Table-cell-backgroundColor        | var(--color-surface-primary)  | セル背景色           |
 | --Table-row-striped-backgroundColor | var(--color-background)       | ストライプ行背景色   |
-| --Table-row-hover-backgroundColor   | var(--color-surface-secondary) | 行ホバー時背景色     |
 
 #### Text・テキスト関連
 
@@ -357,11 +356,16 @@ Tableコンポーネントは基本的なスタイルを提供しますが、プ
 | :---------------------- | :------------------------------ | :--------------------- |
 | --Table-head-color      | var(--color-text-high-emphasis) | ヘッダーテキスト色     |
 | --Table-cell-color      | var(--color-text-high-emphasis) | セルテキスト色         |
+| --Table-footer-color    | var(--color-text-high-emphasis) | フッターテキスト色     |
 | --Table-head-fontWeight | bold                            | ヘッダーフォント太さ   |
+| --Table-cell-fontWeight | normal                          | セルフォント太さ       |
+| --Table-footer-fontWeight | normal                        | フッターフォント太さ   |
 | --Table-head-fontSize   | 14px                            | ヘッダーフォントサイズ |
 | --Table-cell-fontSize   | 14px                            | セルフォントサイズ     |
+| --Table-footer-fontSize | 14px                            | フッターフォントサイズ |
 | --Table-head-lineHeight | 1.4                             | ヘッダー行間           |
 | --Table-cell-lineHeight | 1.4                             | セル行間               |
+| --Table-footer-lineHeight | 1.4                           | フッター行間           |
 
 #### Border・ボーダー関連
 
@@ -378,8 +382,7 @@ Tableコンポーネントは基本的なスタイルを提供しますが、プ
 | :--------------------- | :--------------------------- | :----------------- |
 | --Table-head-padding   | 12px                         | ヘッダーパディング |
 | --Table-cell-padding   | 12px                         | セルパディング     |
-| --Table-sticky-shadow  | var(--box-shadow-lv2-normal) | 固定列の影         |
-| --Table-sticky-z-index | 1                            | 固定列のz-index    |
+| --Table-footer-padding | 12px                         | フッターパディング   |
 
 #### Caption・キャプション関連
 
@@ -389,17 +392,6 @@ Tableコンポーネントは基本的なスタイルを提供しますが、プ
 | --Table-caption-fontSize   | 12px                          | キャプションフォントサイズ |
 | --Table-caption-lineHeight | 1.6                           | キャプション行間       |
 | --Table-caption-fontWeight | normal                        | キャプションフォント太さ |
-
-#### Footer・フッター関連
-
-| 変数名                          | デフォルト値                          | 用途                   |
-| :------------------------------ | :------------------------------------ | :--------------------- |
-| --Table-footer-backgroundColor  | var(--Table-cell-backgroundColor)     | フッター背景色（td）   |
-| --Table-footer-color            | var(--Table-cell-color)               | フッターテキスト色     |
-| --Table-footer-fontWeight       | normal                                  | フッターフォント太さ   |
-| --Table-footer-fontSize         | var(--Table-cell-fontSize)            | フッターフォントサイズ |
-| --Table-footer-lineHeight       | var(--Table-cell-lineHeight)          | フッター行間           |
-| --Table-footer-padding          | var(--Table-cell-padding)             | フッターパディング     |
 
 ## 設計判断
 
