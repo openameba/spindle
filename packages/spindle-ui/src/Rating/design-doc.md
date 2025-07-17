@@ -86,6 +86,8 @@ React実装の一例です。
 
 ## アクセシビリティ
 
+- [画像に代替テキストを提供する](https://a11y-guidelines.ameba.design/1/1/1/)[基本必須]
+  - [ ] テキスト表記がない場合、星の総数とスコアを提供することができている
 - [情報や関係性を明確にする](https://a11y-guidelines.ameba.design/1/3/1/)[基本必須]
 - [意味のある順序でコンテンツを表現する](https://a11y-guidelines.ameba.design/1/3/2/)[基本必須]
 - [感覚的な特徴だけで説明しない](https://a11y-guidelines.ameba.design/1/3/3/)[基本必須]
@@ -93,6 +95,7 @@ React実装の一例です。
   - [ ] 端末を横向きにしても、適切に文字が折り返されレイアウトが変わり、コンテンツが見切れていない
   - [ ] 端末の向きが縦向き（portrait）を前提としたデザインになっていない
 - [色だけで伝えない](https://a11y-guidelines.ameba.design/1/4/1/)[基本必須]
+  - [ ] デフォルト／アクティブ時を色以外に塗りの範囲を変えることで伝えている
 - [テキストや文字画像のコントラストを確保する](https://a11y-guidelines.ameba.design/1/4/3/)[基本必須]
   - [ ] SpindleカラーパレットのTheme Colorsを適切に使い分けている
 - [テキストサイズを拡大縮小できる](https://a11y-guidelines.ameba.design/1/4/4/)[基本必須]
