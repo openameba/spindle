@@ -6,8 +6,8 @@ type Layout = 'auto' | 'fixed' | 'scrollable';
 
 type Align = 'left' | 'center' | 'right';
 
-// Table
-type TableProps = {
+// Table.Frame
+type TableFrameProps = {
   borderTypes?: Array<BorderType>;
   rounded?: boolean;
   striped?: boolean;
@@ -123,7 +123,7 @@ const getBorderClassNames = (borderTypes: Array<BorderType>) => {
 };
 
 // Main Table component
-const Frame = forwardRef<HTMLTableElement, TableProps>(function TableFrame(
+const Frame = forwardRef<HTMLTableElement, TableFrameProps>(function TableFrame(
   {
     borderTypes = [],
     rounded = false,
