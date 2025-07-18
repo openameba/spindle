@@ -9,41 +9,6 @@ const meta: Meta<typeof Table> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Basic: Story = {
-  render: () => (
-    <Table.Frame striped>
-      <Table.Header>
-        <Table.Row>
-          <Table.Head>商品名</Table.Head>
-          <Table.Head>売上（円）</Table.Head>
-        </Table.Row>
-      </Table.Header>
-      <Table.Body>
-        <Table.Row>
-          <Table.Cell>商品A</Table.Cell>
-          <Table.Cell>1,200,000</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>商品B</Table.Cell>
-          <Table.Cell>980,000</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>商品C</Table.Cell>
-          <Table.Cell>750,000</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>商品D</Table.Cell>
-          <Table.Cell>650,000</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>商品E</Table.Cell>
-          <Table.Cell>850,000</Table.Cell>
-        </Table.Row>
-      </Table.Body>
-    </Table.Frame>
-  ),
-};
-
 export const NoHeaders: Story = {
   render: () => (
     <Table.Frame borderTypes={['horizontal', 'outlined']} rounded>
@@ -302,37 +267,6 @@ export const FixedLayout: Story = {
   ),
 };
 
-export const TextAlignment: Story = {
-  render: () => (
-    <Table.Frame borderTypes={['horizontal', 'vertical']}>
-      <Table.Header>
-        <Table.Row>
-          <Table.Head>商品名</Table.Head>
-          <Table.Head align="center">ステータス</Table.Head>
-          <Table.Head align="right">価格</Table.Head>
-        </Table.Row>
-      </Table.Header>
-      <Table.Body>
-        <Table.Row>
-          <Table.Head scope="row">商品A</Table.Head>
-          <Table.Cell align="center">販売中</Table.Cell>
-          <Table.Cell align="right">¥1,200,000</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Head scope="row">商品B</Table.Head>
-          <Table.Cell align="center">準備中</Table.Cell>
-          <Table.Cell align="right">¥980,000</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Head scope="row">商品C</Table.Head>
-          <Table.Cell align="center">完売</Table.Cell>
-          <Table.Cell align="right">¥1,500</Table.Cell>
-        </Table.Row>
-      </Table.Body>
-    </Table.Frame>
-  ),
-};
-
 export const Scrollable: Story = {
   render: () => (
     <Table.Frame borderTypes={['horizontal', 'vertical']} layout="scrollable">
@@ -380,6 +314,37 @@ export const Scrollable: Story = {
           <Table.Cell>残りわずか</Table.Cell>
           <Table.Cell>2024年3月予定</Table.Cell>
           <Table.Cell>やや減少</Table.Cell>
+        </Table.Row>
+      </Table.Body>
+    </Table.Frame>
+  ),
+};
+
+export const TextAlignment: Story = {
+  render: () => (
+    <Table.Frame borderTypes={['horizontal', 'vertical']}>
+      <Table.Header>
+        <Table.Row>
+          <Table.Head>商品名</Table.Head>
+          <Table.Head align="center">ステータス</Table.Head>
+          <Table.Head align="right">価格</Table.Head>
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        <Table.Row>
+          <Table.Head scope="row">商品A</Table.Head>
+          <Table.Cell align="center">販売中</Table.Cell>
+          <Table.Cell align="right">¥1,200,000</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Head scope="row">商品B</Table.Head>
+          <Table.Cell align="center">準備中</Table.Cell>
+          <Table.Cell align="right">¥980,000</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Head scope="row">商品C</Table.Head>
+          <Table.Cell align="center">完売</Table.Cell>
+          <Table.Cell align="right">¥1,500</Table.Cell>
         </Table.Row>
       </Table.Body>
     </Table.Frame>

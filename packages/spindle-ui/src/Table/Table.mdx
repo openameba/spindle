@@ -366,7 +366,6 @@ Tableコンポーネントは、以下のCSS Variablesでカスタマイズで�
   </tbody>
 </table>
 
-
 ```tsx
 import { Table } from '@openameba/spindle-ui';
 import '@openameba/spindle-ui/Table/Table.css';
@@ -383,231 +382,21 @@ import '@openameba/spindle-ui/Table/Table.css';
 />
 ```
 
-## Basic
+## ヘッダーパターン
 
-<Story of={TableStories.Basic} />
-
-<Source
-  code={`<Table.Frame striped>
-  <Table.Header>
-    <Table.Row>
-      <Table.Head>商品名</Table.Head>
-      <Table.Head>売上（円）</Table.Head>
-    </Table.Row>
-  </Table.Header>
-  <Table.Body>
-    <Table.Row>
-      <Table.Cell>商品A</Table.Cell>
-      <Table.Cell>1,200,000</Table.Cell>
-    </Table.Row>
-    <Table.Row>
-      <Table.Cell>商品B</Table.Cell>
-      <Table.Cell>980,000</Table.Cell>
-    </Table.Row>
-    <Table.Row>
-      <Table.Cell>商品C</Table.Cell>
-      <Table.Cell>750,000</Table.Cell>
-    </Table.Row>
-    <Table.Row>
-      <Table.Cell>商品D</Table.Cell>
-      <Table.Cell>650,000</Table.Cell>
-    </Table.Row>
-    <Table.Row>
-      <Table.Cell>商品E</Table.Cell>
-      <Table.Cell>850,000</Table.Cell>
-    </Table.Row>
-  </Table.Body>
-</Table.Frame>`}
-/>
-
-<Source
-  language="html"
-  code={`<table class="spui-Table spui-Table--striped">
-  <thead class="spui-Table-header">
-    <tr class="spui-Table-row">
-      <th class="spui-Table-head">商品名</th>
-      <th class="spui-Table-head">売上（円）</th>
-    </tr>
-  </thead>
-  <tbody class="spui-Table-body">
-    <tr class="spui-Table-row">
-      <td class="spui-Table-cell">商品A</td>
-      <td class="spui-Table-cell">1,200,000</td>
-    </tr>
-    <tr class="spui-Table-row">
-      <td class="spui-Table-cell">商品B</td>
-      <td class="spui-Table-cell">980,000</td>
-    </tr>
-    <tr class="spui-Table-row">
-      <td class="spui-Table-cell">商品C</td>
-      <td class="spui-Table-cell">750,000</td>
-    </tr>
-    <tr class="spui-Table-row">
-      <td class="spui-Table-cell">商品D</td>
-      <td class="spui-Table-cell">650,000</td>
-    </tr>
-    <tr class="spui-Table-row">
-      <td class="spui-Table-cell">商品E</td>
-      <td class="spui-Table-cell">850,000</td>
-    </tr>
-  </tbody>
-</table>`}
-/>
-
-## Header Patterns
+テーブルのヘッダーは、データの構造に応じて適切に配置する必要があります。
 
 ### No Headers
 
 <Story of={TableStories.NoHeaders} />
 
-<Source
-  code={`<Table.Frame borderTypes={['horizontal', 'outlined']} rounded>
-  <Table.Body>
-    <Table.Row>
-      <Table.Cell>商品A</Table.Cell>
-      <Table.Cell>1,200,000</Table.Cell>
-      <Table.Cell>+12%</Table.Cell>
-    </Table.Row>
-    <Table.Row>
-      <Table.Cell>商品B</Table.Cell>
-      <Table.Cell>980,000</Table.Cell>
-      <Table.Cell>-3%</Table.Cell>
-    </Table.Row>
-    <Table.Row>
-      <Table.Cell>商品C</Table.Cell>
-      <Table.Cell>750,000</Table.Cell>
-      <Table.Cell>+5%</Table.Cell>
-    </Table.Row>
-  </Table.Body>
-</Table.Frame>`}
-/>
-
-<Source
-  language="html"
-  code={`<div class="spui-Table-container">
-  <table class="spui-Table spui-Table--horizontal spui-Table--outlined spui-Table--rounded">
-    <tbody class="spui-Table-body">
-      <tr class="spui-Table-row">
-        <td class="spui-Table-cell">商品A</td>
-        <td class="spui-Table-cell">1,200,000</td>
-        <td class="spui-Table-cell">+12%</td>
-      </tr>
-      <tr class="spui-Table-row">
-        <td class="spui-Table-cell">商品B</td>
-        <td class="spui-Table-cell">980,000</td>
-        <td class="spui-Table-cell">-3%</td>
-      </tr>
-      <tr class="spui-Table-row">
-        <td class="spui-Table-cell">商品C</td>
-        <td class="spui-Table-cell">750,000</td>
-        <td class="spui-Table-cell">+5%</td>
-      </tr>
-    </tbody>
-  </table>
-</div>`}
-/>
-
 ### Column Headers
 
 <Story of={TableStories.ColumnHeaders} />
 
-<Source
-  code={`<Table.Frame borderTypes={['horizontal', 'outlined']} rounded>
-  <Table.Header>
-    <Table.Row>
-      <Table.Head>商品名</Table.Head>
-      <Table.Head>売上（円）</Table.Head>
-      <Table.Head>前年比</Table.Head>
-    </Table.Row>
-  </Table.Header>
-  <Table.Body>
-    <Table.Row>
-      <Table.Cell>商品A</Table.Cell>
-      <Table.Cell>1,200,000</Table.Cell>
-      <Table.Cell>+12%</Table.Cell>
-    </Table.Row>
-    <Table.Row>
-      <Table.Cell>商品B</Table.Cell>
-      <Table.Cell>980,000</Table.Cell>
-      <Table.Cell>-3%</Table.Cell>
-    </Table.Row>
-  </Table.Body>
-</Table.Frame>`}
-/>
-
-<Source
-  language="html"
-  code={`<table class="spui-Table spui-Table--horizontal spui-Table--outlined spui-Table--rounded">
-  <thead class="spui-Table-header">
-    <tr class="spui-Table-row">
-      <th class="spui-Table-head">商品名</th>
-      <th class="spui-Table-head">売上（円）</th>
-      <th class="spui-Table-head">前年比</th>
-    </tr>
-  </thead>
-  <tbody class="spui-Table-body">
-    <tr class="spui-Table-row">
-      <td class="spui-Table-cell">商品A</td>
-      <td class="spui-Table-cell">1,200,000</td>
-      <td class="spui-Table-cell">+12%</td>
-    </tr>
-    <tr class="spui-Table-row">
-      <td class="spui-Table-cell">商品B</td>
-      <td class="spui-Table-cell">980,000</td>
-      <td class="spui-Table-cell">-3%</td>
-    </tr>
-  </tbody>
-</table>`}
-/>
-
 ### Row Headers
 
 <Story of={TableStories.RowHeaders} />
-
-<Source
-  code={`<Table.Frame borderTypes={['horizontal', 'outlined']} rounded>
-  <Table.Body>
-    <Table.Row>
-      <Table.Head scope="row">商品A</Table.Head>
-      <Table.Cell>1,200,000</Table.Cell>
-      <Table.Cell>+12%</Table.Cell>
-    </Table.Row>
-    <Table.Row>
-      <Table.Head scope="row">商品B</Table.Head>
-      <Table.Cell>980,000</Table.Cell>
-      <Table.Cell>-3%</Table.Cell>
-    </Table.Row>
-    <Table.Row>
-      <Table.Head scope="row">商品C</Table.Head>
-      <Table.Cell>750,000</Table.Cell>
-      <Table.Cell>+5%</Table.Cell>
-    </Table.Row>
-  </Table.Body>
-</Table.Frame>`}
-/>
-
-<Source
-  language="html"
-  code={`<table class="spui-Table spui-Table--horizontal spui-Table--outlined spui-Table--rounded">
-  <tbody class="spui-Table-body">
-    <tr class="spui-Table-row">
-      <th class="spui-Table-head" scope="row">商品A</th>
-      <td class="spui-Table-cell">1,200,000</td>
-      <td class="spui-Table-cell">+12%</td>
-    </tr>
-    <tr class="spui-Table-row">
-      <th class="spui-Table-head" scope="row">商品B</th>
-      <td class="spui-Table-cell">980,000</td>
-      <td class="spui-Table-cell">-3%</td>
-    </tr>
-    <tr class="spui-Table-row">
-      <th class="spui-Table-head" scope="row">商品C</th>
-      <td class="spui-Table-cell">750,000</td>
-      <td class="spui-Table-cell">+5%</td>
-    </tr>
-  </tbody>
-</table>`}
-/>
 
 ### Both Headers
 
@@ -662,219 +451,25 @@ import '@openameba/spindle-ui/Table/Table.css';
 </table>`}
 />
 
-## Border Styles
+## ボーダースタイル
+
+`borderTypes` propを使用して、テーブルの罫線スタイルをカスタマイズできます。
 
 ### Horizontal Borders
 
 <Story of={TableStories.HorizontalBorders} />
 
-<Source
-  code={`<Table.Frame borderTypes={['horizontal']}>
-  <Table.Header>
-    <Table.Row>
-      <Table.Head>商品名</Table.Head>
-      <Table.Head align="right">売上（円）</Table.Head>
-      <Table.Head align="center">前年比</Table.Head>
-    </Table.Row>
-  </Table.Header>
-  <Table.Body>
-    <Table.Row>
-      <Table.Head scope="row">商品A</Table.Head>
-      <Table.Cell align="right">1,200,000</Table.Cell>
-      <Table.Cell align="center">+12%</Table.Cell>
-    </Table.Row>
-    <Table.Row>
-      <Table.Head scope="row">商品B</Table.Head>
-      <Table.Cell align="right">980,000</Table.Cell>
-      <Table.Cell align="center">-3%</Table.Cell>
-    </Table.Row>
-  </Table.Body>
-</Table.Frame>`}
-/>
-
-<Source
-  language="html"
-  code={`<table class="spui-Table spui-Table--horizontal">
-  <thead class="spui-Table-header">
-    <tr class="spui-Table-row">
-      <th class="spui-Table-head">商品名</th>
-      <th class="spui-Table-head spui-Table-head--alignRight">売上（円）</th>
-      <th class="spui-Table-head spui-Table-head--alignCenter">前年比</th>
-    </tr>
-  </thead>
-  <tbody class="spui-Table-body">
-    <tr class="spui-Table-row">
-      <th class="spui-Table-head" scope="row">商品A</th>
-      <td class="spui-Table-cell spui-Table-cell--alignRight">1,200,000</td>
-      <td class="spui-Table-cell spui-Table-cell--alignCenter">+12%</td>
-    </tr>
-    <tr class="spui-Table-row">
-      <th class="spui-Table-head" scope="row">商品B</th>
-      <td class="spui-Table-cell spui-Table-cell--alignRight">980,000</td>
-      <td class="spui-Table-cell spui-Table-cell--alignCenter">-3%</td>
-    </tr>
-  </tbody>
-</table>`}
-/>
-
 ### Vertical Borders
 
 <Story of={TableStories.VerticalBorders} />
-
-<Source
-  code={`<Table.Frame borderTypes={['vertical']}>
-  <Table.Header>
-    <Table.Row>
-      <Table.Head>商品名</Table.Head>
-      <Table.Head>売上</Table.Head>
-      <Table.Head>前年比</Table.Head>
-    </Table.Row>
-  </Table.Header>
-  <Table.Body>
-    <Table.Row>
-      <Table.Cell>商品A</Table.Cell>
-      <Table.Cell>1,200,000</Table.Cell>
-      <Table.Cell>+12%</Table.Cell>
-    </Table.Row>
-    <Table.Row>
-      <Table.Cell>商品B</Table.Cell>
-      <Table.Cell>980,000</Table.Cell>
-      <Table.Cell>-3%</Table.Cell>
-    </Table.Row>
-  </Table.Body>
-</Table.Frame>`}
-/>
-
-<Source
-  language="html"
-  code={`<table class="spui-Table spui-Table--vertical">
-  <thead class="spui-Table-header">
-    <tr class="spui-Table-row">
-      <th class="spui-Table-head">商品名</th>
-      <th class="spui-Table-head">売上</th>
-      <th class="spui-Table-head">前年比</th>
-    </tr>
-  </thead>
-  <tbody class="spui-Table-body">
-    <tr class="spui-Table-row">
-      <td class="spui-Table-cell">商品A</td>
-      <td class="spui-Table-cell">1,200,000</td>
-      <td class="spui-Table-cell">+12%</td>
-    </tr>
-    <tr class="spui-Table-row">
-      <td class="spui-Table-cell">商品B</td>
-      <td class="spui-Table-cell">980,000</td>
-      <td class="spui-Table-cell">-3%</td>
-    </tr>
-  </tbody>
-</table>`}
-/>
 
 ### Outline Borders
 
 <Story of={TableStories.OutlineBorders} />
 
-<Source
-  code={`<Table.Frame borderTypes={['outlined']}>
-  <Table.Header>
-    <Table.Row>
-      <Table.Head>商品名</Table.Head>
-      <Table.Head>売上</Table.Head>
-      <Table.Head>前年比</Table.Head>
-    </Table.Row>
-  </Table.Header>
-  <Table.Body>
-    <Table.Row>
-      <Table.Head scope="row">商品A</Table.Head>
-      <Table.Cell>1,200,000</Table.Cell>
-      <Table.Cell>+12%</Table.Cell>
-    </Table.Row>
-    <Table.Row>
-      <Table.Head scope="row">商品B</Table.Head>
-      <Table.Cell>980,000</Table.Cell>
-      <Table.Cell>-3%</Table.Cell>
-    </Table.Row>
-  </Table.Body>
-</Table.Frame>`}
-/>
-
-<Source
-  language="html"
-  code={`<table class="spui-Table spui-Table--outlined">
-  <thead class="spui-Table-header">
-    <tr class="spui-Table-row">
-      <th class="spui-Table-head">商品名</th>
-      <th class="spui-Table-head">売上</th>
-      <th class="spui-Table-head">前年比</th>
-    </tr>
-  </thead>
-  <tbody class="spui-Table-body">
-    <tr class="spui-Table-row">
-      <th class="spui-Table-head" scope="row">商品A</th>
-      <td class="spui-Table-cell">1,200,000</td>
-      <td class="spui-Table-cell">+12%</td>
-    </tr>
-    <tr class="spui-Table-row">
-      <th class="spui-Table-head" scope="row">商品B</th>
-      <td class="spui-Table-cell">980,000</td>
-      <td class="spui-Table-cell">-3%</td>
-    </tr>
-  </tbody>
-</table>`}
-/>
-
 ### Grid Borders
 
 <Story of={TableStories.GridBorders} />
-
-<Source
-  code={`<Table.Frame borderTypes={['horizontal', 'vertical']}>
-  <Table.Header>
-    <Table.Row>
-      <Table.Head>商品名</Table.Head>
-      <Table.Head>売上</Table.Head>
-      <Table.Head>前年比</Table.Head>
-    </Table.Row>
-  </Table.Header>
-  <Table.Body>
-    <Table.Row>
-      <Table.Head scope="row">商品A</Table.Head>
-      <Table.Cell>1,200,000</Table.Cell>
-      <Table.Cell>+12%</Table.Cell>
-    </Table.Row>
-    <Table.Row>
-      <Table.Head scope="row">商品B</Table.Head>
-      <Table.Cell>980,000</Table.Cell>
-      <Table.Cell>-3%</Table.Cell>
-    </Table.Row>
-  </Table.Body>
-</Table.Frame>`}
-/>
-
-<Source
-  language="html"
-  code={`<table class="spui-Table spui-Table--horizontal spui-Table--vertical">
-  <thead class="spui-Table-header">
-    <tr class="spui-Table-row">
-      <th class="spui-Table-head">商品名</th>
-      <th class="spui-Table-head">売上</th>
-      <th class="spui-Table-head">前年比</th>
-    </tr>
-  </thead>
-  <tbody class="spui-Table-body">
-    <tr class="spui-Table-row">
-      <th class="spui-Table-head" scope="row">商品A</th>
-      <td class="spui-Table-cell">1,200,000</td>
-      <td class="spui-Table-cell">+12%</td>
-    </tr>
-    <tr class="spui-Table-row">
-      <th class="spui-Table-head" scope="row">商品B</th>
-      <td class="spui-Table-cell">980,000</td>
-      <td class="spui-Table-cell">-3%</td>
-    </tr>
-  </tbody>
-</table>`}
-/>
 
 ### All Borders
 
@@ -929,7 +524,9 @@ import '@openameba/spindle-ui/Table/Table.css';
 </table>`}
 />
 
-## Layout Variations
+## 固定レイアウト
+
+`layout="fixed"` を指定すると、テーブルの各列の幅を固定できます。
 
 ### Fixed Layout
 
@@ -949,11 +546,6 @@ import '@openameba/spindle-ui/Table/Table.css';
       <Table.Head scope="row">商品A</Table.Head>
       <Table.Cell>高品質な商品Aの詳細説明文です。長いテキストも固定幅で表示されます。</Table.Cell>
       <Table.Cell>¥1,200,000</Table.Cell>
-    </Table.Row>
-    <Table.Row>
-      <Table.Head scope="row">商品B</Table.Head>
-      <Table.Cell>商品Bの説明文</Table.Cell>
-      <Table.Cell>¥980,000</Table.Cell>
     </Table.Row>
   </Table.Body>
 </Table.Frame>`}
@@ -975,14 +567,78 @@ import '@openameba/spindle-ui/Table/Table.css';
       <td class="spui-Table-cell">高品質な商品Aの詳細説明文です。長いテキストも固定幅で表示されます。</td>
       <td class="spui-Table-cell">¥1,200,000</td>
     </tr>
-    <tr class="spui-Table-row">
-      <th class="spui-Table-head" scope="row">商品B</th>
-      <td class="spui-Table-cell">商品Bの説明文</td>
-      <td class="spui-Table-cell">¥980,000</td>
-    </tr>
   </tbody>
 </table>`}
 />
+
+## スクロール可能なテーブル
+
+`layout="scrollable"` を指定すると、幅の広いテーブルを水平スクロールで表示できます。
+
+### Scrollable
+
+<Story of={TableStories.Scrollable} />
+
+<Source
+  code={`<Table.Frame borderTypes={['horizontal', 'vertical']} layout="scrollable">
+  <Table.Header>
+    <Table.Row>
+      <Table.Head width="150px">商品名</Table.Head>
+      <Table.Head width="100px">Q1売上</Table.Head>
+      <Table.Head width="100px">Q2売上</Table.Head>
+      <Table.Head width="100px">Q3売上</Table.Head>
+      <Table.Head width="100px">Q4売上</Table.Head>
+      <Table.Head width="110px">年間合計</Table.Head>
+      <Table.Head width="80px">前年比</Table.Head>
+    </Table.Row>
+  </Table.Header>
+  <Table.Body>
+    <Table.Row>
+      <Table.Head scope="row">スマートフォン</Table.Head>
+      <Table.Cell>3,000,000</Table.Cell>
+      <Table.Cell>3,500,000</Table.Cell>
+      <Table.Cell>3,200,000</Table.Cell>
+      <Table.Cell>4,000,000</Table.Cell>
+      <Table.Cell>13,700,000</Table.Cell>
+      <Table.Cell>+12%</Table.Cell>
+    </Table.Row>
+  </Table.Body>
+</Table.Frame>`}
+/>
+
+<Source
+  language="html"
+  code={`<div class="spui-Table-container spui-Table-container--scrollable">
+  <table class="spui-Table spui-Table--horizontal spui-Table--vertical spui-Table--scrollable">
+    <thead class="spui-Table-header">
+      <tr class="spui-Table-row">
+        <th class="spui-Table-head" style="width: 150px">商品名</th>
+        <th class="spui-Table-head" style="width: 100px">Q1売上</th>
+        <th class="spui-Table-head" style="width: 100px">Q2売上</th>
+        <th class="spui-Table-head" style="width: 100px">Q3売上</th>
+        <th class="spui-Table-head" style="width: 100px">Q4売上</th>
+        <th class="spui-Table-head" style="width: 110px">年間合計</th>
+        <th class="spui-Table-head" style="width: 80px">前年比</th>
+      </tr>
+    </thead>
+    <tbody class="spui-Table-body">
+      <tr class="spui-Table-row">
+        <th class="spui-Table-head" scope="row">スマートフォン</th>
+        <td class="spui-Table-cell">3,000,000</td>
+        <td class="spui-Table-cell">3,500,000</td>
+        <td class="spui-Table-cell">3,200,000</td>
+        <td class="spui-Table-cell">4,000,000</td>
+        <td class="spui-Table-cell">13,700,000</td>
+        <td class="spui-Table-cell">+12%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>`}
+/>
+
+## テキスト配置
+
+`align` propを使用して、セル内のテキスト配置を指定できます。
 
 ### Text Alignment
 
@@ -1047,120 +703,17 @@ import '@openameba/spindle-ui/Table/Table.css';
 </table>`}
 />
 
-### Scrollable
+## スタイルバリエーション
 
-<Story of={TableStories.Scrollable} />
-
-<Source
-  code={`<Table.Frame borderTypes={['horizontal', 'vertical']} layout="scrollable">
-  <Table.Header>
-    <Table.Row>
-      <Table.Head width="150px">商品名</Table.Head>
-      <Table.Head width="100px">Q1売上</Table.Head>
-      <Table.Head width="100px">Q2売上</Table.Head>
-      <Table.Head width="100px">Q3売上</Table.Head>
-      <Table.Head width="100px">Q4売上</Table.Head>
-      <Table.Head width="110px">年間合計</Table.Head>
-      <Table.Head width="80px">前年比</Table.Head>
-      <Table.Head width="100px">カテゴリ</Table.Head>
-      <Table.Head width="120px">販売地域</Table.Head>
-      <Table.Head width="100px">在庫状況</Table.Head>
-      <Table.Head width="120px">次回入荷予定</Table.Head>
-      <Table.Head width="100px">備考</Table.Head>
-    </Table.Row>
-  </Table.Header>
-  <Table.Body>
-    <Table.Row>
-      <Table.Head scope="row">スマートフォン</Table.Head>
-      <Table.Cell>3,000,000</Table.Cell>
-      <Table.Cell>3,500,000</Table.Cell>
-      <Table.Cell>3,200,000</Table.Cell>
-      <Table.Cell>4,000,000</Table.Cell>
-      <Table.Cell>13,700,000</Table.Cell>
-      <Table.Cell>+12%</Table.Cell>
-      <Table.Cell>電子機器</Table.Cell>
-      <Table.Cell>全国</Table.Cell>
-      <Table.Cell>在庫あり</Table.Cell>
-      <Table.Cell>2024年2月予定</Table.Cell>
-      <Table.Cell>好調</Table.Cell>
-    </Table.Row>
-    <Table.Row>
-      <Table.Head scope="row">タブレット</Table.Head>
-      <Table.Cell>2,800,000</Table.Cell>
-      <Table.Cell>3,100,000</Table.Cell>
-      <Table.Cell>2,900,000</Table.Cell>
-      <Table.Cell>3,500,000</Table.Cell>
-      <Table.Cell>12,300,000</Table.Cell>
-      <Table.Cell>-3%</Table.Cell>
-      <Table.Cell>電子機器</Table.Cell>
-      <Table.Cell>関東・関西</Table.Cell>
-      <Table.Cell>残りわずか</Table.Cell>
-      <Table.Cell>2024年3月予定</Table.Cell>
-      <Table.Cell>やや減少</Table.Cell>
-    </Table.Row>
-  </Table.Body>
-</Table.Frame>`}
-/>
-
-<Source
-  language="html"
-  code={`<div class="spui-Table-container spui-Table-container--scrollable">
-  <table class="spui-Table spui-Table--horizontal spui-Table--vertical spui-Table--scrollable">
-    <thead class="spui-Table-header">
-      <tr class="spui-Table-row">
-        <th class="spui-Table-head" style="width: 150px">商品名</th>
-        <th class="spui-Table-head" style="width: 100px">Q1売上</th>
-        <th class="spui-Table-head" style="width: 100px">Q2売上</th>
-        <th class="spui-Table-head" style="width: 100px">Q3売上</th>
-        <th class="spui-Table-head" style="width: 100px">Q4売上</th>
-        <th class="spui-Table-head" style="width: 110px">年間合計</th>
-        <th class="spui-Table-head" style="width: 80px">前年比</th>
-        <th class="spui-Table-head" style="width: 100px">カテゴリ</th>
-        <th class="spui-Table-head" style="width: 120px">販売地域</th>
-        <th class="spui-Table-head" style="width: 100px">在庫状況</th>
-        <th class="spui-Table-head" style="width: 120px">次回入荷予定</th>
-        <th class="spui-Table-head" style="width: 100px">備考</th>
-      </tr>
-    </thead>
-    <tbody class="spui-Table-body">
-      <tr class="spui-Table-row">
-        <th class="spui-Table-head" scope="row">スマートフォン</th>
-        <td class="spui-Table-cell">3,000,000</td>
-        <td class="spui-Table-cell">3,500,000</td>
-        <td class="spui-Table-cell">3,200,000</td>
-        <td class="spui-Table-cell">4,000,000</td>
-        <td class="spui-Table-cell">13,700,000</td>
-        <td class="spui-Table-cell">+12%</td>
-        <td class="spui-Table-cell">電子機器</td>
-        <td class="spui-Table-cell">全国</td>
-        <td class="spui-Table-cell">在庫あり</td>
-        <td class="spui-Table-cell">2024年2月予定</td>
-        <td class="spui-Table-cell">好調</td>
-      </tr>
-      <tr class="spui-Table-row">
-        <th class="spui-Table-head" scope="row">タブレット</th>
-        <td class="spui-Table-cell">2,800,000</td>
-        <td class="spui-Table-cell">3,100,000</td>
-        <td class="spui-Table-cell">2,900,000</td>
-        <td class="spui-Table-cell">3,500,000</td>
-        <td class="spui-Table-cell">12,300,000</td>
-        <td class="spui-Table-cell">-3%</td>
-        <td class="spui-Table-cell">電子機器</td>
-        <td class="spui-Table-cell">関東・関西</td>
-        <td class="spui-Table-cell">残りわずか</td>
-        <td class="spui-Table-cell">2024年3月予定</td>
-        <td class="spui-Table-cell">やや減少</td>
-      </tr>
-    </tbody>
-  </table>
-</div>`}
-/>
-
-## Style Variations
+テーブルの表示スタイルをカスタマイズするためのオプションです。
 
 ### Striped
 
 <Story of={TableStories.Striped} />
+
+### Rounded
+
+<Story of={TableStories.Rounded} />
 
 <Source
   code={`<Table.Frame borderTypes={['horizontal']} striped>
@@ -1227,23 +780,9 @@ import '@openameba/spindle-ui/Table/Table.css';
       <td class="spui-Table-cell">750,000</td>
       <td class="spui-Table-cell">+5%</td>
     </tr>
-    <tr class="spui-Table-row">
-      <th class="spui-Table-head" scope="row">商品D</th>
-      <td class="spui-Table-cell">650,000</td>
-      <td class="spui-Table-cell">-8%</td>
-    </tr>
-    <tr class="spui-Table-row">
-      <th class="spui-Table-head" scope="row">商品E</th>
-      <td class="spui-Table-cell">850,000</td>
-      <td class="spui-Table-cell">+15%</td>
-    </tr>
   </tbody>
 </table>`}
 />
-
-### Rounded
-
-<Story of={TableStories.Rounded} />
 
 <Source
   code={`<Table.Frame borderTypes={['outlined']} rounded>
@@ -1294,7 +833,9 @@ import '@openameba/spindle-ui/Table/Table.css';
 </table>`}
 />
 
-## Cell Merging Examples
+## セル結合
+
+`colSpan` や `rowSpan` を使用して、セルを結合できます。
 
 ### Column Span
 
@@ -1440,7 +981,9 @@ import '@openameba/spindle-ui/Table/Table.css';
 </table>`}
 />
 
-## Semantic Components
+## セマンティックコンポーネント
+
+テーブルにキャプションやフッターを追加して、より意味的な情報を提供できます。
 
 ### With Caption
 
@@ -1557,11 +1100,6 @@ import '@openameba/spindle-ui/Table/Table.css';
       <th class="spui-Table-head" scope="row">商品B</th>
       <td class="spui-Table-cell spui-Table-cell--alignRight">980,000</td>
       <td class="spui-Table-cell spui-Table-cell--alignCenter">-3%</td>
-    </tr>
-    <tr class="spui-Table-row">
-      <th class="spui-Table-head" scope="row">商品C</th>
-      <td class="spui-Table-cell spui-Table-cell--alignRight">750,000</td>
-      <td class="spui-Table-cell spui-Table-cell--alignCenter">+5%</td>
     </tr>
   </tbody>
   <tfoot class="spui-Table-footer">
