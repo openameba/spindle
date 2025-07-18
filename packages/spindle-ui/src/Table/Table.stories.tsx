@@ -453,39 +453,46 @@ export const ColumnSpan: Story = {
 
 export const RowSpan: Story = {
   render: () => (
-    <Table.Frame borderTypes={['horizontal', 'vertical', 'outlined']}>
-      <Table.Header>
-        <Table.Row>
-          <Table.Head>カテゴリ</Table.Head>
-          <Table.Head>商品名</Table.Head>
-          <Table.Head>売上</Table.Head>
-        </Table.Row>
-      </Table.Header>
-      <Table.Body>
-        <Table.Row>
-          <Table.Head scope="row" rowSpan={2}>
-            電子機器
-          </Table.Head>
-          <Table.Cell>スマートフォン</Table.Cell>
-          <Table.Cell>1,200,000</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>タブレット</Table.Cell>
-          <Table.Cell>980,000</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Head scope="row" rowSpan={2}>
-            家電
-          </Table.Head>
-          <Table.Cell>冷蔵庫</Table.Cell>
-          <Table.Cell>750,000</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>洗濯機</Table.Cell>
-          <Table.Cell>650,000</Table.Cell>
-        </Table.Row>
-      </Table.Body>
-    </Table.Frame>
+    <>
+      <style>{`
+        .no-border-bottom {
+          border-bottom: none !important;
+        }
+      `}</style>
+      <Table.Frame borderTypes={['horizontal', 'vertical', 'outlined']}>
+        <Table.Header>
+          <Table.Row>
+            <Table.Head>カテゴリ</Table.Head>
+            <Table.Head>商品名</Table.Head>
+            <Table.Head>売上</Table.Head>
+          </Table.Row>
+        </Table.Header>
+        <Table.Body>
+          <Table.Row>
+            <Table.Head scope="row" rowSpan={2}>
+              電子機器
+            </Table.Head>
+            <Table.Cell>スマートフォン</Table.Cell>
+            <Table.Cell>1,200,000</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>タブレット</Table.Cell>
+            <Table.Cell>980,000</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Head scope="row" rowSpan={2} className="no-border-bottom">
+              家電
+            </Table.Head>
+            <Table.Cell>冷蔵庫</Table.Cell>
+            <Table.Cell>750,000</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>洗濯機</Table.Cell>
+            <Table.Cell>650,000</Table.Cell>
+          </Table.Row>
+        </Table.Body>
+      </Table.Frame>
+    </>
   ),
 };
 
