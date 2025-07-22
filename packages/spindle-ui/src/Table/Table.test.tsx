@@ -94,7 +94,7 @@ describe('<Table />', () => {
       );
 
       const wrapper = container.querySelector(
-        '.spui-Table-container--scrollable',
+        '.spui-Table-frame--scrollable',
       );
       expect(wrapper).toBeInTheDocument();
 

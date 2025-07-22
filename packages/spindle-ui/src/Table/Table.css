@@ -44,12 +44,12 @@
 /*
  * Table container
  */
-.spui-Table-container {
+.spui-Table-frame {
   position: relative;
   width: 100%;
 }
 
-.spui-Table-container--scrollable {
+.spui-Table-frame--scrollable {
   overflow-x: auto;
 }
 

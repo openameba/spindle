@@ -256,7 +256,7 @@ interface TableFooterProps
 実際に書き出されるマークアップの例です。
 
 ```html
-<div class="spui-Table-container spui-Table-container--scrollable">
+<div class="spui-Table-frame spui-Table-frame--scrollable">
   <table
     class="spui-Table spui-Table--horizontal spui-Table--striped spui-Table--scrollable"
     style="--Table-min-cell-width: 80px;"
