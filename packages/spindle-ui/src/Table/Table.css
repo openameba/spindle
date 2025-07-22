@@ -51,6 +51,7 @@
 
 .spui-Table-frame--scrollable {
   overflow-x: auto;
+  scroll-behavior: smooth;
 }
 
 /*
