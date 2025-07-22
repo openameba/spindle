@@ -72,9 +72,9 @@ React実装の一例です。
 上記の実装から書き出されるマークアップです。
 
 ```html
-<div class="spui-Rating" aria-label="5つ星中3.5の評価">
+<div class="spui-Rating">
   <p class="spui-Rating-text spui-Rating-text--medium">3.5</p>
-  <div class="spui-Rating" role="img">
+  <div class="spui-Rating" role="img" aria-label="5つ星中3.5の評価">
     <span class="spui-Rating-item"><svg class="spui-Rating-item-icon spui-Rating-item-icon--medium"></svg></span>
     <span class="spui-Rating-item"><svg class="spui-Rating-item-icon spui-Rating-item-icon--medium"></svg></span>
     <span class="spui-Rating-item"><svg class="spui-Rating-item-icon spui-Rating-item-icon--medium"></svg></span>
