@@ -37,7 +37,7 @@ Ratingコンポーネントは、`Rating`に`max`と`value`の`props`を渡し�
 ## 要素
 
 ### Design Tokens
-- Object Medium Emphasis (アイコンのデフォルト色)
+- Border High Emphasis (アイコンのデフォルト色)
 - Object Rating Orang (アイコンのアクティブ色)
 - Text High Emphasis (数字の色)
 
