@@ -87,7 +87,7 @@ React実装の一例です。
 ## アクセシビリティ
 
 - [画像に代替テキストを提供する](https://a11y-guidelines.ameba.design/1/1/1/)[基本必須]
-  - [ ] テキスト表記がない場合、星の総数とスコアを提供することができている
+  - [ ] テキスト表記がない場合、星の総数とスコアを提供できている
 - [情報や関係性を明確にする](https://a11y-guidelines.ameba.design/1/3/1/)[基本必須]
 - [意味のある順序でコンテンツを表現する](https://a11y-guidelines.ameba.design/1/3/2/)[基本必須]
 - [感覚的な特徴だけで説明しない](https://a11y-guidelines.ameba.design/1/3/3/)[基本必須]

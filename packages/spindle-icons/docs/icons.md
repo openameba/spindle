@@ -325,6 +325,14 @@
 | star_face_fill | ![](../dist/svg/star_face_fill.svg) |
 | star_fill | ![](../dist/svg/star_fill.svg) |
 | star_half | ![](../dist/svg/star_half.svg) |
+| star_part_10 | ![](../dist/svg/star_part_10.svg) |
+| star_part_20 | ![](../dist/svg/star_part_20.svg) |
+| star_part_30 | ![](../dist/svg/star_part_30.svg) |
+| star_part_40 | ![](../dist/svg/star_part_40.svg) |
+| star_part_60 | ![](../dist/svg/star_part_60.svg) |
+| star_part_70 | ![](../dist/svg/star_part_70.svg) |
+| star_part_80 | ![](../dist/svg/star_part_80.svg) |
+| star_part_90 | ![](../dist/svg/star_part_90.svg) |
 | stop_fill | ![](../dist/svg/stop_fill.svg) |
 | strikethrough | ![](../dist/svg/strikethrough.svg) |
 | sun | ![](../dist/svg/sun.svg) |
