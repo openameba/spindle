@@ -150,7 +150,7 @@
     },
     "Border/High Emphasis": {
       "$type": "color",
-      "$value": "{Primitive Color.Gray/Gray 60 alpha}"
+      "$value": "{Primitive Color.Gray/Gray 50 alpha}"
     },
     "Border/Medium Emphasis": {
       "$type": "color",
