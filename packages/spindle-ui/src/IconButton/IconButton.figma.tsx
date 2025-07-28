@@ -6,7 +6,10 @@ figma.connect(
   IconButton,
   'https://www.figma.com/design/FSgvRthUiMMXWgrSE4RUgr/Spindle-UI?node-id=4042-25426&t=R8kIhRlvP5CmX9Qn-0',
   {
-    imports: ["import { IconButton } from '@openameba/spindle-ui';"],
+    imports: [
+      "import { IconButton } from '@openameba/spindle-ui';",
+      "import '@openameba/spindle-ui/IconButton/IconButton.css';",
+    ],
     props: {
       size: figma.enum('Size', {
         Large: 'large',
