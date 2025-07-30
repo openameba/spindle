@@ -145,14 +145,16 @@ const Frame = forwardRef<HTMLTableElement, TableFrameProps>(function TableFrame(
     className,
   ]
     .filter(Boolean)
-    .join(' ');
+    .join(' ')
+    .trim();
 
   const frameClasses = [
     `${BLOCK_NAME}-frame`,
     layout === 'scrollable' && `${BLOCK_NAME}-frame--scrollable`,
   ]
     .filter(Boolean)
-    .join(' ');
+    .join(' ')
+    .trim();
 
   const tableElement = (
     <table ref={ref} className={classes} {...rest}>
@@ -176,7 +178,8 @@ const Caption = forwardRef<HTMLTableCaptionElement, TableCaptionProps>(
         ref={ref}
         className={[`${BLOCK_NAME}-caption`, className]
           .filter(Boolean)
-          .join(' ')}
+          .join(' ')
+          .trim()}
         {...rest}
       >
         {children}
@@ -193,7 +196,8 @@ const Header = forwardRef<HTMLTableSectionElement, TableHeaderProps>(
         ref={ref}
         className={[`${BLOCK_NAME}-header`, className]
           .filter(Boolean)
-          .join(' ')}
+          .join(' ')
+          .trim()}
         {...rest}
       >
         {children}
@@ -225,7 +229,8 @@ const Footer = forwardRef<HTMLTableSectionElement, TableFooterProps>(
         ref={ref}
         className={[`${BLOCK_NAME}-footer`, className]
           .filter(Boolean)
-          .join(' ')}
+          .join(' ')
+          .trim()}
         {...rest}
       >
         {children}
@@ -242,7 +247,10 @@ const Row = forwardRef<HTMLTableRowElement, TableRowProps>(function TableRow(
   return (
     <tr
       ref={ref}
-      className={[`${BLOCK_NAME}-row`, className].filter(Boolean).join(' ')}
+      className={[`${BLOCK_NAME}-row`, className]
+        .filter(Boolean)
+        .join(' ')
+        .trim()}
       {...rest}
     >
       {children}
@@ -262,7 +270,8 @@ const Head = forwardRef<HTMLTableCellElement, TableHeadProps>(
       className,
     ]
       .filter(Boolean)
-      .join(' ');
+      .join(' ')
+      .trim();
 
     const headStyle: React.CSSProperties | undefined =
       width || minWidth
@@ -289,7 +298,8 @@ const Cell = forwardRef<HTMLTableCellElement, TableCellProps>(
       className,
     ]
       .filter(Boolean)
-      .join(' ');
+      .join(' ')
+      .trim();
 
     return (
       <td ref={ref} className={classes} {...rest}>
