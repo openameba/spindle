@@ -8,6 +8,24 @@ import * as TableStories from './Table.stories';
 
 構造化されたデータを表形式で表示するためのコンポーネントです。Web標準の`<table>`要素をベースとしたラッパーコンポーネントとして設計されており、デザインシステムSpindleに準拠した基本スタイリングを提供しつつ、高い拡張性を持つことが特徴です。
 
+<Source
+  language="javascript"
+  code={`
+import { Table } from '@openameba/spindle-ui';
+import '@openameba/spindle-ui/Table/Table.css';
+  `}
+/>
+
+<Source
+  language="css"
+  code={`@import './node_modules/@openameba/spindle-ui/Table/Table.css'`}
+/>
+
+<Source
+  language="html"
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Table/Table.css">`}
+/>
+
 ## 使用上の注意
 
 ### スタイルのカスタマイズについて
@@ -371,24 +389,6 @@ Tableコンポーネントは、以下のCSS Variablesでカスタマイズで�
     </tr>
   </tbody>
 </table>
-
-<Source
-  language="javascript"
-  code={`
-import { Table } from '@openameba/spindle-ui';
-import '@openameba/spindle-ui/Table/Table.css';
-  `}
-/>
-
-<Source
-  language="css"
-  code={`@import './node_modules/@openameba/spindle-ui/Table/Table.css'`}
-/>
-
-<Source
-  language="html"
-  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Table/Table.css">`}
-/>
 
 ## ヘッダーパターン
 
