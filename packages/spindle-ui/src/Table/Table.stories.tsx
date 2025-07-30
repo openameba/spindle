@@ -229,7 +229,7 @@ export const FixedLayout: Story = {
         <Table.Row>
           <Table.Head scope="row">商品A</Table.Head>
           <Table.Cell>
-            高品質な商品Aの詳細説明文です。長いテキストも固定幅で表示されます。
+            高品質な商品Aの詳細説明文です。テキストが長くてもレイアウトは固定です。
           </Table.Cell>
           <Table.Cell>¥1,200,000</Table.Cell>
         </Table.Row>
