@@ -350,7 +350,7 @@
     },
     "Active/Neutral Button": {
       "$type": "color",
-      "$value": "{Primitive Color.Gray/Gray 10 alpha}"
+      "$value": "{Primitive Color.Gray/Gray 20 alpha}"
     },
     "Active/Lighted Button": {
       "$type": "color",
