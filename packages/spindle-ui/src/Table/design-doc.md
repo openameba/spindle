@@ -170,6 +170,35 @@
 </Table.Frame>
 ```
 
+#### 見出しセルの適切な使用
+```tsx
+// ❌ Bad: 見出しセルが全くない（NoHeadersパターン）
+<Table.Frame>
+  <Table.Body>
+    <Table.Row>
+      <Table.Cell>商品A</Table.Cell>
+      <Table.Cell>1,200,000</Table.Cell>
+    </Table.Row>
+  </Table.Body>
+</Table.Frame>
+
+// ✅ Good: 適切な列見出しまたは行見出しを設定
+<Table.Frame>
+  <Table.Header>
+    <Table.Row>
+      <Table.Head>商品名</Table.Head>
+      <Table.Head>売上</Table.Head>
+    </Table.Row>
+  </Table.Header>
+  <Table.Body>
+    <Table.Row>
+      <Table.Cell>商品A</Table.Cell>
+      <Table.Cell>1,200,000</Table.Cell>
+    </Table.Row>
+  </Table.Body>
+</Table.Frame>
+```
+
 #### セマンティクスの適切な使用
 ```tsx
 // ❌ Bad: 行見出しの未指定
@@ -479,6 +508,7 @@ Tableコンポーネントでは、Web標準のtable要素の機能を最大限�
 - [情報や関係性を明確にする](https://a11y-guidelines.ameba.design/1/3/1/)[基本必須]
   - [ ] `<table>`, `<thead>`, `<tbody>`, `<caption>`要素を適切に使用している
   - [ ] 列見出しは`<th>`、行見出しは`<th scope="row">`で実装している
+  - [ ] 全てのテーブルに適切な見出しセル（`<th>`）が存在する
   - [ ] 複雑な表では`id`と`headers`属性で関連性を明示している
 - [テキストや文字画像のコントラストを確保する](https://a11y-guidelines.ameba.design/1/4/3/)[基本必須]
   - [ ] SpindleのカラーパレットのTheme Colorsを適切に使い分け、コントラスト比を確保している（Text 4.5:1, Object 3:1）

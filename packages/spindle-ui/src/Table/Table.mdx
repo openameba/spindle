@@ -373,7 +373,7 @@ Tableコンポーネントは、以下のCSS Variablesでカスタマイズで�
 </table>
 
 <Source
-  language='javascript'
+  language="javascript"
   code={`
 import { Table } from '@openameba/spindle-ui';
 import '@openameba/spindle-ui/Table/Table.css';
@@ -381,22 +381,18 @@ import '@openameba/spindle-ui/Table/Table.css';
 />
 
 <Source
-  language='css'
+  language="css"
   code={`@import './node_modules/@openameba/spindle-ui/Table/Table.css'`}
 />
 
 <Source
-  language='html'
+  language="html"
   code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Table/Table.css">`}
 />
 
 ## ヘッダーパターン
 
-テーブルのヘッダーは、データの構造に応じて適切に配置する必要があります。
-
-### No Headers
-
-<Story of={TableStories.NoHeaders} />
+テーブルのヘッダーは、データの構造に応じて適切に配置する必要があります。見出しのないテーブルは非推奨です。
 
 ### Column Headers
 

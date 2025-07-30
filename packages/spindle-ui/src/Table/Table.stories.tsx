@@ -9,30 +9,6 @@ const meta: Meta<typeof Table> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const NoHeaders: Story = {
-  render: () => (
-    <Table.Frame borderTypes={['horizontal', 'outlined']} rounded>
-      <Table.Body>
-        <Table.Row>
-          <Table.Cell>商品A</Table.Cell>
-          <Table.Cell>1,200,000</Table.Cell>
-          <Table.Cell>+12%</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>商品B</Table.Cell>
-          <Table.Cell>980,000</Table.Cell>
-          <Table.Cell>-3%</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>商品C</Table.Cell>
-          <Table.Cell>750,000</Table.Cell>
-          <Table.Cell>+5%</Table.Cell>
-        </Table.Row>
-      </Table.Body>
-    </Table.Frame>
-  ),
-};
-
 export const ColumnHeaders: Story = {
   render: () => (
     <Table.Frame borderTypes={['horizontal', 'outlined']} rounded>
