@@ -148,7 +148,7 @@ const Frame = forwardRef<HTMLTableElement, TableFrameProps>(function TableFrame(
     .join(' ')
     .trim();
 
-  const frameClasses = [
+  const scrollContainerClasses = [
     `${BLOCK_NAME}-frame`,
     layout === 'scrollable' && `${BLOCK_NAME}-frame--scrollable`,
   ]
@@ -164,7 +164,7 @@ const Frame = forwardRef<HTMLTableElement, TableFrameProps>(function TableFrame(
 
   // Wrap in container if layout is scrollable
   if (layout === 'scrollable') {
-    return <div className={frameClasses}>{tableElement}</div>;
+    return <div className={scrollContainerClasses}>{tableElement}</div>;
   }
 
   return tableElement;
