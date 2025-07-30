@@ -2,6 +2,8 @@
   "extends": [
     "local>openameba/renovate-config:main.json5",
     "local>openameba/renovate-config:npm.json5",
+    "local>openameba/renovate-config:npm-app.json5",
+    "local>openameba/renovate-config:npm-monorepo.json5",
     "local>openameba/renovate-config:automerge-minor.json5"
   ],
   "reviewers": [
