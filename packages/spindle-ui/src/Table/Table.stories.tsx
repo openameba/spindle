@@ -537,7 +537,7 @@ export const WithFooter: Story = {
   ),
 };
 
-export const CustomTheme: Story = {
+export const CustomStyle: Story = {
   render: () => (
     <div
       style={{
