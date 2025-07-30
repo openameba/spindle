@@ -305,7 +305,7 @@ Tableコンポーネントは基本的なスタイルを提供しますが、プ
 ```css
 .custom-table {
   --Table-head-backgroundColor: var(--color-surface-tertiary);
-  --Table-head-fontSize: 0.875rem;
+  --Table-head-fontSize: 0.875em;
   --Table-cell-padding: 16px 12px;
 }
 ```
@@ -360,9 +360,9 @@ Tableコンポーネントは基本的なスタイルを提供しますが、プ
 | --Table-head-fontWeight | bold                            | ヘッダーフォント太さ   |
 | --Table-cell-fontWeight | normal                          | セルフォント太さ       |
 | --Table-footer-fontWeight | normal                        | フッターフォント太さ   |
-| --Table-head-fontSize   | 0.875rem                        | ヘッダーフォントサイズ |
-| --Table-cell-fontSize   | 0.875rem                        | セルフォントサイズ     |
-| --Table-footer-fontSize | 0.875rem                        | フッターフォントサイズ |
+| --Table-head-fontSize   | 0.875em                         | ヘッダーフォントサイズ |
+| --Table-cell-fontSize   | 0.875em                         | セルフォントサイズ     |
+| --Table-footer-fontSize | 0.875em                         | フッターフォントサイズ |
 | --Table-head-lineHeight | 1.4                             | ヘッダー行間           |
 | --Table-cell-lineHeight | 1.4                             | セル行間               |
 | --Table-footer-lineHeight | 1.4                           | フッター行間           |
@@ -389,7 +389,7 @@ Tableコンポーネントは基本的なスタイルを提供しますが、プ
 | 変数名                     | デフォルト値                  | 用途                   |
 | :------------------------- | :---------------------------- | :--------------------- |
 | --Table-caption-color      | var(--color-text-low-emphasis) | キャプションテキスト色 |
-| --Table-caption-fontSize   | 0.75rem                       | キャプションフォントサイズ |
+| --Table-caption-fontSize   | 0.75em                        | キャプションフォントサイズ |
 | --Table-caption-lineHeight | 1.6                           | キャプション行間       |
 | --Table-caption-fontWeight | normal                        | キャプションフォント太さ |
 

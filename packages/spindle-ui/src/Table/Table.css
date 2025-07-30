@@ -16,9 +16,9 @@
   --Table-head-fontWeight: bold;
   --Table-cell-fontWeight: normal;
   --Table-footer-fontWeight: normal;
-  --Table-head-fontSize: 0.875rem;
-  --Table-cell-fontSize: 0.875rem;
-  --Table-footer-fontSize: 0.875rem;
+  --Table-head-fontSize: 0.875em;
+  --Table-cell-fontSize: 0.875em;
+  --Table-footer-fontSize: 0.875em;
   --Table-head-lineHeight: 1.4;
   --Table-cell-lineHeight: 1.4;
   --Table-footer-lineHeight: 1.4;
@@ -36,7 +36,7 @@
 
   /* Caption・キャプション関連 */
   --Table-caption-color: var(--color-text-low-emphasis);
-  --Table-caption-fontSize: 0.75rem;
+  --Table-caption-fontSize: 0.75em;
   --Table-caption-lineHeight: 1.6;
   --Table-caption-fontWeight: normal;
 }
