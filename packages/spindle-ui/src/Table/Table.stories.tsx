@@ -550,18 +550,28 @@ export const LongText: Story = {
       <Table.Body>
         <Table.Row>
           <Table.Head scope="row">通常のテキスト</Table.Head>
-          <Table.Cell>これは通常の長さのテキストです。問題なく表示されます。</Table.Cell>
+          <Table.Cell>
+            これは通常の長さのテキストです。問題なく表示されます。
+          </Table.Cell>
           <Table.Cell>normaltext</Table.Cell>
         </Table.Row>
         <Table.Row>
           <Table.Head scope="row">長い連続文字</Table.Head>
-          <Table.Cell>123123123123123123123123123123123123123123123123123123123123123</Table.Cell>
-          <Table.Cell>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</Table.Cell>
+          <Table.Cell>
+            123123123123123123123123123123123123123123123123123123123123123
+          </Table.Cell>
+          <Table.Cell>
+            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+          </Table.Cell>
         </Table.Row>
         <Table.Row>
           <Table.Head scope="row">URL</Table.Head>
-          <Table.Cell>https://example.com/very/long/path/to/some/resource/that/might/break/layout</Table.Cell>
-          <Table.Cell>https://github.com/openameba/spindle/tree/main/packages/spindle-ui/src/Table</Table.Cell>
+          <Table.Cell>
+            https://example.com/very/long/path/to/some/resource/that/might/break/layout
+          </Table.Cell>
+          <Table.Cell>
+            https://github.com/openameba/spindle/tree/main/packages/spindle-ui/src/Table
+          </Table.Cell>
         </Table.Row>
       </Table.Body>
     </Table.Frame>
