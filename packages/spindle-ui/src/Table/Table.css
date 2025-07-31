@@ -328,3 +328,9 @@
 .spui-Table-cell--alignRight {
   text-align: right;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .spui-Table-frame--scrollable {
+    scroll-behavior: auto;
+  }
+}
