@@ -537,6 +537,37 @@ export const WithFooter: Story = {
   ),
 };
 
+export const LongText: Story = {
+  render: () => (
+    <Table.Frame borderTypes={['horizontal', 'vertical']} layout="fixed">
+      <Table.Header>
+        <Table.Row>
+          <Table.Head width="25%">項目名</Table.Head>
+          <Table.Head width="35%">長いテキスト</Table.Head>
+          <Table.Head width="40%">改行されないテキスト</Table.Head>
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        <Table.Row>
+          <Table.Head scope="row">通常のテキスト</Table.Head>
+          <Table.Cell>これは通常の長さのテキストです。問題なく表示されます。</Table.Cell>
+          <Table.Cell>normaltext</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Head scope="row">長い連続文字</Table.Head>
+          <Table.Cell>123123123123123123123123123123123123123123123123123123123123123</Table.Cell>
+          <Table.Cell>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Head scope="row">URL</Table.Head>
+          <Table.Cell>https://example.com/very/long/path/to/some/resource/that/might/break/layout</Table.Cell>
+          <Table.Cell>https://github.com/openameba/spindle/tree/main/packages/spindle-ui/src/Table</Table.Cell>
+        </Table.Row>
+      </Table.Body>
+    </Table.Frame>
+  ),
+};
+
 export const CustomStyle: Story = {
   render: () => (
     <div
