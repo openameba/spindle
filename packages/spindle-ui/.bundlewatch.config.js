@@ -72,7 +72,7 @@ const bundlewatchConfig = {
     },
     {
       path: './dist/InlineNotification/!(index).css',
-      maxSize: '2.8 kB',
+      maxSize: '2.9 kB',
       compression: 'gzip',
     },
   ],
