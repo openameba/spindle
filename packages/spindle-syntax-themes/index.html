@@ -36,8 +36,10 @@
   </style>
 </head>
 <body>
-<h1>Spindle syntax themes for highlight.js</h1>
-<div class="select-theme">
+<header>
+  <h1>Spindle syntax themes for highlight.js</h1>
+</header>
+<nav class="select-theme" aria-label="Theme selector">
   <label class="spui-DropDown-label is-active">
     <span class="spui-DropDown-visual" id="js-select-visual">Light</span>
     <span class="spui-DropDown-icon">
@@ -49,7 +51,8 @@
     </select>
     <span class="spui-DropDown-outline"></span>
   </label>
-</div>
+</nav>
+<main>
 <section>
   <h2>HTML, XML</h2>
   <pre>
@@ -290,6 +293,7 @@
     </code>
   </pre>
 </section>
+</main>
 <script src="https://unpkg.com/@highlightjs/cdn-assets@10.7.2/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
 <script type="module">
