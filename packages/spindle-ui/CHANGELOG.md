@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.4.0...@openameba/spindle-ui@2.5.0) (2025-08-01)
+
+### Bug Fixes
+
+- **spindle-ui:** accessibility checklist ([019805b](https://github.com/openameba/spindle/commit/019805b986258736a8e1a6fcdc2ffa4b3499f52d))
+- **spindle-ui:** design tokens ([865474d](https://github.com/openameba/spindle/commit/865474d124f4a888592ff2427506cfbdc388c9a0))
+- **spindle-ui:** example output html ([73bb49a](https://github.com/openameba/spindle/commit/73bb49ab0fa36bf671a639a626b01aa8452bcbd1))
+- **spindle-ui:** icon design token ([2b80cbf](https://github.com/openameba/spindle/commit/2b80cbf80b26f3bb157c9f1763acfba13a5f5b39))
+- **spindle-ui:** optional show text ([e3f1e37](https://github.com/openameba/spindle/commit/e3f1e3700df3167fb87b5387cfdbb1cb398f3caf))
+- **spindle-ui:** output html code ([a79e794](https://github.com/openameba/spindle/commit/a79e7947541c539645107fae462c233fd6c07bfe))
+- **spindle-ui:** rating aria label ([4379e71](https://github.com/openameba/spindle/commit/4379e71f889f4a211fd2b3bf0b6ed84b0cbb533d))
+- **spindle-ui:** rating design docs ([4a4e8a4](https://github.com/openameba/spindle/commit/4a4e8a434e5a1bdf18784af9c662e2a649e3b24f))
+
+### Features
+
+- **spindle-tokens:** update design tokens ([9d28f5c](https://github.com/openameba/spindle/commit/9d28f5cebdc280793bf6c4b9e7f9102355565cfe))
+- **spindle-ui:** update button component styles ([22e8e36](https://github.com/openameba/spindle/commit/22e8e36f0a7b7d1919b66cfd7a9d11e37831c0b3))
+
 # [2.4.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.3.0...@openameba/spindle-ui@2.4.0) (2025-07-15)
 
 ### Bug Fixes

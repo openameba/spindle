@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@1.4.0...@openameba/spindle-tokens@1.5.0) (2025-08-01)
+
+### Features
+
+- **spindle-tokens:** update design tokens ([3824d3b](https://github.com/openameba/spindle/commit/3824d3b2548beca8afca2380b965b004e6b6f3c9))
+- **spindle-tokens:** update design tokens ([9d28f5c](https://github.com/openameba/spindle/commit/9d28f5cebdc280793bf6c4b9e7f9102355565cfe))
+
 # [1.4.0](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@1.3.0...@openameba/spindle-tokens@1.4.0) (2025-07-15)
 
 ### Bug Fixes
