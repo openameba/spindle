@@ -5884,10 +5884,10 @@ ajv@^8.9.0:
     json-schema-traverse "^1.0.0"
     require-from-string "^2.0.2"
 
-ameba-color-palette.css@^4.14.0:
-  version "4.14.0"
-  resolved "https://registry.yarnpkg.com/ameba-color-palette.css/-/ameba-color-palette.css-4.14.0.tgz#0f437153094e0be7e57a6c024ae8d13c94058f14"
-  integrity sha512-iPUmaWW3EvpQm1TRJ69E3smgeoVNCKskzPjknPjT3aWwbMlRHaT2/dWnLdYsFqz/huNchw5Dp1g01ekkPPjSBQ==
+ameba-color-palette.css@^4.17.0:
+  version "4.17.0"
+  resolved "https://registry.yarnpkg.com/ameba-color-palette.css/-/ameba-color-palette.css-4.17.0.tgz#07f4c60e5cef16542b878f1387b36d600167e6e2"
+  integrity sha512-3Z3aZiflXewBdG1Z33JHk10l3y2AMPc10rRbq3gY8ntEejrsuH/vvOKHAqwFrLswwME848BH/wpYOKjwKENwOA==
 
 analyze-desumasu-dearu@^4.0.0:
   version "4.0.0"
