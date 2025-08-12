@@ -229,6 +229,26 @@
   border-bottom-right-radius: calc(var(--Table-borderRadius) - 1px);
 }
 
+.spui-Table--rounded:has(.spui-Table-footer)
+  .spui-Table-body
+  .spui-Table-row:last-child
+  .spui-Table-head:first-child,
+.spui-Table--rounded:has(.spui-Table-footer)
+  .spui-Table-body
+  .spui-Table-row:last-child
+  .spui-Table-cell:first-child,
+.spui-Table--rounded:has(.spui-Table-footer)
+  .spui-Table-body
+  .spui-Table-row:last-child
+  .spui-Table-head:last-child,
+.spui-Table--rounded:has(.spui-Table-footer)
+  .spui-Table-body
+  .spui-Table-row:last-child
+  .spui-Table-cell:last-child {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
 /* footerがある場合の角丸処理 */
 .spui-Table--rounded
   .spui-Table-footer
