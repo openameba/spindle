@@ -19,7 +19,7 @@
 ### 基本的な使用方法
 
 ```tsx
-<Table borderTypes={['horizontal']} striped>
+<Table.Frame borderTypes={['horizontal']} striped>
   <Table.Caption>売上データ（2023年第4四半期）</Table.Caption>
   <Table.Header>
     <Table.Row>
@@ -40,13 +40,13 @@
       <Table.Cell align="center">-3%</Table.Cell>
     </Table.Row>
   </Table.Body>
-</Table>
+</Table.Frame>
 ```
 
 ### 横スクロール対応テーブル
 
 ```tsx
-<Table
+<Table.Frame
   borderTypes={['horizontal', 'vertical']}
   layout="scrollable"
 >
@@ -70,7 +70,7 @@
       <Table.Cell>1,370</Table.Cell>
     </Table.Row>
   </Table.Body>
-</Table>
+</Table.Frame>
 ```
 
 ### CSS Variablesによるスタイルのカスタマイズ
@@ -81,9 +81,9 @@
   '--Table-head-color': 'var(--color-text-high-emphasis-inverse)',
   '--Table-cell-borderColor': 'var(--color-border-accent-primary)'
 }}>
-  <Table borderTypes={['outlined']} rounded>
+  <Table.Frame borderTypes={['outlined']} rounded>
     ...
-  </Table>
+  </Table.Frame>
 </div>
 ```
 
@@ -114,9 +114,9 @@
 }
 
 // Component
-<Table borderTypes={['horizontal']}>
+<Table.Frame borderTypes={['horizontal']}>
   ...
-</Table>
+</Table.Frame>
 ```
 
 ### DO NOT
@@ -124,14 +124,14 @@
 #### レイアウト目的での使用を避ける
 ```tsx
 // ❌ Bad: フォームレイアウトでのテーブル使用
-<Table>
+<Table.Frame>
   <Table.Body>
     <Table.Row>
       <Table.Cell>ラベル:</Table.Cell>
       <Table.Cell><input /></Table.Cell>
     </Table.Row>
   </Table.Body>
-</Table>
+</Table.Frame>
 
 // ✅ Good: 適切なフォームレイアウト
 <div className="form-field">
@@ -143,31 +143,60 @@
 #### 個別セルでのボーダー指定
 ```tsx
 // ❌ Bad: 通常のテーブルで個別セルにボーダーを指定
-<Table>
+<Table.Frame>
   <Table.Body>
     <Table.Row>
       <Table.Cell className="border-red">データ</Table.Cell>
     </Table.Row>
   </Table.Body>
-</Table>
+</Table.Frame>
 
 // ✅ Good: borderTypes propを使用
-<Table borderTypes={['horizontal']}>
+<Table.Frame borderTypes={['horizontal']}>
   <Table.Body>
     <Table.Row>
       <Table.Cell>データ</Table.Cell>
     </Table.Row>
   </Table.Body>
-</Table>
+</Table.Frame>
 
 // ✅ Good: セル結合時は個別調整も可能
-<Table borderTypes={['horizontal', 'vertical']}>
+<Table.Frame borderTypes={['horizontal', 'vertical']}>
   <Table.Body>
     <Table.Row>
       <Table.Cell colSpan={2} className="merged-cell">結合セル</Table.Cell>
     </Table.Row>
   </Table.Body>
-</Table>
+</Table.Frame>
+```
+
+#### 見出しセルの適切な使用
+```tsx
+// ❌ Bad: 見出しセルが全くない（NoHeadersパターン）
+<Table.Frame>
+  <Table.Body>
+    <Table.Row>
+      <Table.Cell>商品A</Table.Cell>
+      <Table.Cell>1,200,000</Table.Cell>
+    </Table.Row>
+  </Table.Body>
+</Table.Frame>
+
+// ✅ Good: 適切な列見出しまたは行見出しを設定
+<Table.Frame>
+  <Table.Header>
+    <Table.Row>
+      <Table.Head>商品名</Table.Head>
+      <Table.Head>売上</Table.Head>
+    </Table.Row>
+  </Table.Header>
+  <Table.Body>
+    <Table.Row>
+      <Table.Cell>商品A</Table.Cell>
+      <Table.Cell>1,200,000</Table.Cell>
+    </Table.Row>
+  </Table.Body>
+</Table.Frame>
 ```
 
 #### セマンティクスの適切な使用
@@ -191,15 +220,16 @@ Tableコンポーネントで使用しているDesign Tokensは、CSS Variables�
 
 ### プロパティ
 
-#### Table
+#### Table.Frame
 ```typescript
-type TableProps = {
+type TableFrameProps = {
   borderTypes?: Array<'horizontal' | 'vertical' | 'outlined'>;
   rounded?: boolean;
   striped?: boolean;
   layout?: 'auto' | 'fixed' | 'scrollable';
   children?: ReactNode;
-} & Omit<React.TableHTMLAttributes<HTMLTableElement>, 'style'>;
+  className?: string;
+} & Omit<React.TableHTMLAttributes<HTMLTableElement>, 'style' | 'className'>;
 ```
 
 ##### layout
@@ -210,11 +240,12 @@ type TableProps = {
 #### Table.Head
 ```typescript
 interface TableHeadProps
-  extends Omit<React.ThHTMLAttributes<HTMLTableCellElement>, 'style'> {
+  extends Omit<React.ThHTMLAttributes<HTMLTableCellElement>, 'style' | 'className'> {
   align?: 'left' | 'center' | 'right';
   width?: CSSProperties['width'];
   minWidth?: CSSProperties['minWidth'];
   children?: ReactNode;
+  className?: string;
 }
 ```
 
@@ -233,9 +264,10 @@ interface TableHeadProps
 #### Table.Cell
 ```typescript
 interface TableCellProps
-  extends Omit<React.TdHTMLAttributes<HTMLTableCellElement>, 'style'> {
+  extends Omit<React.TdHTMLAttributes<HTMLTableCellElement>, 'style' | 'className'> {
   align?: 'left' | 'center' | 'right';
   children?: ReactNode;
+  className?: string;
 }
 ```
 
@@ -243,8 +275,9 @@ interface TableCellProps
 `<tfoot>`要素として出力。テーブルのフッター情報（合計、集計など）を格納。
 ```typescript
 interface TableFooterProps
-  extends Omit<React.HTMLAttributes<HTMLTableSectionElement>, 'style'> {
+  extends Omit<React.HTMLAttributes<HTMLTableSectionElement>, 'style' | 'className'> {
   children?: ReactNode;
+  className?: string;
 }
 ```
 
@@ -252,7 +285,7 @@ interface TableFooterProps
 実際に書き出されるマークアップの例です。
 
 ```html
-<div class="spui-Table-container spui-Table-container--scrollable">
+<div class="spui-Table-frame spui-Table-frame--scrollable">
   <table
     class="spui-Table spui-Table--horizontal spui-Table--striped spui-Table--scrollable"
     style="--Table-min-cell-width: 80px;"
@@ -301,16 +334,16 @@ Tableコンポーネントは基本的なスタイルを提供しますが、プ
 ```css
 .custom-table {
   --Table-head-backgroundColor: var(--color-surface-tertiary);
-  --Table-head-fontSize: 14px;
+  --Table-head-fontSize: 0.875em;
   --Table-cell-padding: 16px 12px;
 }
 ```
 
 ```tsx
 <div className="custom-table">
-  <Table borderTypes={['outlined']} rounded>
+  <Table.Frame borderTypes={['outlined']} rounded>
     {/* テーブル内容 */}
-  </Table>
+  </Table.Frame>
 </div>
 ```
 
@@ -345,7 +378,6 @@ Tableコンポーネントは基本的なスタイルを提供しますが、プ
 | --Table-head-backgroundColor        | var(--color-surface-tertiary) | ヘッダー背景色       |
 | --Table-cell-backgroundColor        | var(--color-surface-primary)  | セル背景色           |
 | --Table-row-striped-backgroundColor | var(--color-background)       | ストライプ行背景色   |
-| --Table-row-hover-backgroundColor   | var(--color-surface-secondary) | 行ホバー時背景色     |
 
 #### Text・テキスト関連
 
@@ -353,11 +385,16 @@ Tableコンポーネントは基本的なスタイルを提供しますが、プ
 | :---------------------- | :------------------------------ | :--------------------- |
 | --Table-head-color      | var(--color-text-high-emphasis) | ヘッダーテキスト色     |
 | --Table-cell-color      | var(--color-text-high-emphasis) | セルテキスト色         |
+| --Table-footer-color    | var(--color-text-high-emphasis) | フッターテキスト色     |
 | --Table-head-fontWeight | bold                            | ヘッダーフォント太さ   |
-| --Table-head-fontSize   | 13px                            | ヘッダーフォントサイズ |
-| --Table-cell-fontSize   | 13px                            | セルフォントサイズ     |
+| --Table-cell-fontWeight | normal                          | セルフォント太さ       |
+| --Table-footer-fontWeight | normal                        | フッターフォント太さ   |
+| --Table-head-fontSize   | 0.875em                         | ヘッダーフォントサイズ |
+| --Table-cell-fontSize   | 0.875em                         | セルフォントサイズ     |
+| --Table-footer-fontSize | 0.875em                         | フッターフォントサイズ |
 | --Table-head-lineHeight | 1.4                             | ヘッダー行間           |
 | --Table-cell-lineHeight | 1.4                             | セル行間               |
+| --Table-footer-lineHeight | 1.4                           | フッター行間           |
 
 #### Border・ボーダー関連
 
@@ -372,30 +409,18 @@ Tableコンポーネントは基本的なスタイルを提供しますが、プ
 
 | 変数名                 | デフォルト値                 | 用途               |
 | :--------------------- | :--------------------------- | :----------------- |
-| --Table-head-padding   | 8px 12px                     | ヘッダーパディング |
-| --Table-cell-padding   | 8px 12px                     | セルパディング     |
-| --Table-sticky-shadow  | var(--box-shadow-lv2-normal) | 固定列の影         |
-| --Table-sticky-z-index | 1                            | 固定列のz-index    |
+| --Table-head-padding   | 12px                         | ヘッダーパディング |
+| --Table-cell-padding   | 12px                         | セルパディング     |
+| --Table-footer-padding | 12px                         | フッターパディング   |
 
 #### Caption・キャプション関連
 
 | 変数名                     | デフォルト値                  | 用途                   |
 | :------------------------- | :---------------------------- | :--------------------- |
 | --Table-caption-color      | var(--color-text-low-emphasis) | キャプションテキスト色 |
-| --Table-caption-fontSize   | 12px                          | キャプションフォントサイズ |
+| --Table-caption-fontSize   | 0.75em                        | キャプションフォントサイズ |
 | --Table-caption-lineHeight | 1.6                           | キャプション行間       |
 | --Table-caption-fontWeight | normal                        | キャプションフォント太さ |
-
-#### Footer・フッター関連
-
-| 変数名                          | デフォルト値                          | 用途                   |
-| :------------------------------ | :------------------------------------ | :--------------------- |
-| --Table-footer-backgroundColor  | var(--Table-cell-backgroundColor)     | フッター背景色（td）   |
-| --Table-footer-color            | var(--Table-cell-color)               | フッターテキスト色     |
-| --Table-footer-fontWeight       | normal                                  | フッターフォント太さ   |
-| --Table-footer-fontSize         | var(--Table-cell-fontSize)            | フッターフォントサイズ |
-| --Table-footer-lineHeight       | var(--Table-cell-lineHeight)          | フッター行間           |
-| --Table-footer-padding          | var(--Table-cell-padding)             | フッターパディング     |
 
 ## 設計判断
 
@@ -421,16 +446,16 @@ Tableコンポーネントでは、Web標準のtable要素の機能を最大限�
 #### 使用例
 ```tsx
 // 横罫線のみ
-<Table borderTypes={['horizontal']}>
+<Table.Frame borderTypes={['horizontal']}>
 
 // 縦横罫線
-<Table borderTypes={['horizontal', 'vertical']}>
+<Table.Frame borderTypes={['horizontal', 'vertical']}>
 
 // 外枠付き
-<Table borderTypes={['outlined']}>
+<Table.Frame borderTypes={['outlined']}>
 
 // 全てのボーダー
-<Table borderTypes={['horizontal', 'vertical', 'outlined']}>
+<Table.Frame borderTypes={['horizontal', 'vertical', 'outlined']}>
 ```
 
 ### CSS Variables中心の設計
@@ -483,6 +508,7 @@ Tableコンポーネントでは、Web標準のtable要素の機能を最大限�
 - [情報や関係性を明確にする](https://a11y-guidelines.ameba.design/1/3/1/)[基本必須]
   - [ ] `<table>`, `<thead>`, `<tbody>`, `<caption>`要素を適切に使用している
   - [ ] 列見出しは`<th>`、行見出しは`<th scope="row">`で実装している
+  - [ ] 全てのテーブルに適切な見出しセル（`<th>`）が存在する
   - [ ] 複雑な表では`id`と`headers`属性で関連性を明示している
 - [テキストや文字画像のコントラストを確保する](https://a11y-guidelines.ameba.design/1/4/3/)[基本必須]
   - [ ] SpindleのカラーパレットのTheme Colorsを適切に使い分け、コントラスト比を確保している（Text 4.5:1, Object 3:1）
