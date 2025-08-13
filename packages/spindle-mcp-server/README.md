@@ -10,7 +10,27 @@ SpindleのMCPサーバーを利用するには、まず、`@openameba/spindle` �
 git clone git@github.com:openameba/spindle.git
 ```
 
-次に、MCPクライアントの設定をします。以下は[Cursor](https://www.cursor.com/)での設定例です。SpindleのMCPサーバーを利用するにローカル環境にあらかじめ[nodejs](https://nodejs.org/)がインストールされている必要があります。
+次に、MCPクライアントの設定をします。SpindleのMCPサーバーを利用するにローカル環境にあらかじめ[nodejs](https://nodejs.org/)がインストールされている必要があります。
+
+### Claude Code CLIでの設定
+
+[Claude Code CLI](https://github.com/anthropics/claude-code)を使用する場合は、以下のコマンドで設定します。
+
+```bash
+claude mcp add ameba-spindle node /PATH_TO_PACKAGE/spindle/packages/spindle-mcp-server/dist/index.js
+```
+
+※ `PATH_TO_PACKAGE` は実際のパスに置き換えてください。
+
+設定が正しく追加されたか、以下のコマンドで確認します。
+
+```bash
+claude mcp get ameba-spindle
+```
+
+### Cursorでの設定
+
+[Cursor](https://www.cursor.com/)を使用する場合は、設定ファイルに以下を追加します。
 
 ```json
 {
