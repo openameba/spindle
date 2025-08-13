@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.5.0...@openameba/spindle-ui@2.6.0) (2025-08-13)
+
+### Bug Fixes
+
+- **spindle-ui:** containerからframeに変更 ([3f5e8c1](https://github.com/openameba/spindle/commit/3f5e8c16e1872fb7a5b4474a2dd19f13d7f94cc3))
+- **spindle-ui:** customTheme storyをcustomStyleに変更 ([00d1fc5](https://github.com/openameba/spindle/commit/00d1fc5f6e4cc5a26a328c45eba778ff099e001d))
+- **spindle-ui:** fix formatを実行してフォーマットを修正 ([bafbeb9](https://github.com/openameba/spindle/commit/bafbeb955a98cbf3d159c53cfd7bb70de15a5b01))
+- **spindle-ui:** fontSizeは相対サイズに変更 ([a29c77b](https://github.com/openameba/spindle/commit/a29c77b8e5ed0ceb8bde59d51327b5e5015af256))
+- **spindle-ui:** footerがある時にroundedを指定するとtbodyの最後の行がroundedになる不具合を修正 ([0cfaf63](https://github.com/openameba/spindle/commit/0cfaf63415cfcde702a6843c911b71104d8e3617))
+- **spindle-ui:** reduced motion時のアニメーション抑制 ([3dbc067](https://github.com/openameba/spindle/commit/3dbc067bf613c7ed6c3a75033f32ab1a1d9292c5))
+- **spindle-ui:** table font-size単位をremからemに変更 ([4a3b3f8](https://github.com/openameba/spindle/commit/4a3b3f83568d56d45bbb59966d7fdd5efeff185d))
+- **spindle-ui:** table.mdxのimportセクションをSourceコンポーネントに変更 ([ef63a99](https://github.com/openameba/spindle/commit/ef63a997a2d6dc3d0bd49a34b373e6c9e1a1258f))
+- **spindle-ui:** セル結合時のスタイル上書きを適切に修正 ([b0b2935](https://github.com/openameba/spindle/commit/b0b29353f80eea18e405d78af3bc6b45b6e5df68))
+- **spindle-ui:** 使い方を上に持っていく ([a7c8d19](https://github.com/openameba/spindle/commit/a7c8d19b9b518e8290f6107695934b2cdc380293))
+- **spindle-ui:** 省略できるHTMLサンプルを削除し可読性を向上 ([0514e67](https://github.com/openameba/spindle/commit/0514e67569f698ed8fd91a37241b15819e1288c5))
+- **spindle-ui:** 紛らわしいstoryの文言を修正 ([f834ae8](https://github.com/openameba/spindle/commit/f834ae88bc49498d1bf3305043a807870f1334ca))
+- **spindle-ui:** 見出しのないテーブルは非推奨にする ([eb939b1](https://github.com/openameba/spindle/commit/eb939b11cbe8c921569319d89f7065fb7c0231c3))
+
+### Features
+
+- **spindle-ui:** add table component ([5518bd4](https://github.com/openameba/spindle/commit/5518bd4375ddca3d2f5bfaf13d257e4b65c8bf6f))
+- **spindle-ui:** css variablesを中心にCSSを整理 ([acf08cd](https://github.com/openameba/spindle/commit/acf08cd5a1fa1711a946b6a644d03b7a7253804b))
+- **spindle-ui:** storyのexampleを減らしてstorybookが重くなるのを抑制する ([888b55a](https://github.com/openameba/spindle/commit/888b55a653dda1c26340f87a0b336ee798149e1f))
+- **spindle-ui:** table セルに長いテキスト対応のoverflow-wrapを追加 ([f438588](https://github.com/openameba/spindle/commit/f438588b2045bb3bc176cb5d68114b0470122a69))
+- **spindle-ui:** スムーズスクロールを追加 ([49c352c](https://github.com/openameba/spindle/commit/49c352cc4b459ac8ae4e17ef3ff6209429a86b45))
+
 # [2.5.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.4.0...@openameba/spindle-ui@2.5.0) (2025-08-01)
 
 ### Bug Fixes
