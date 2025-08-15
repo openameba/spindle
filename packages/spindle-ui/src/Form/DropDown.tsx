@@ -1,5 +1,5 @@
 import React, { forwardRef, useEffect, useRef, useState } from 'react';
-import mergeRefs from 'react-merge-refs';
+import { useMergeRefs } from 'use-callback-ref';
 
 import ChevronDownBold from '../Icon/ChevronDownBold';
 
@@ -58,7 +58,7 @@ export const DropDown = forwardRef<HTMLSelectElement, Props>(function DropDown(
       </span>
       <select
         className={`${BLOCK_NAME}-select`}
-        ref={mergeRefs([selectEl, ref])}
+        ref={useMergeRefs([selectEl, ref])}
         onChange={handleChange}
         {...rest}
       >

@@ -5,7 +5,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import mergeRefs from 'react-merge-refs';
+import { useMergeRefs } from 'use-callback-ref';
 import { ButtonGroup as Group } from '../ButtonGroup';
 import CrossBold from '../Icon/CrossBold';
 import { IconButton } from '../IconButton';
@@ -20,29 +20,23 @@ interface AppealModalProps extends React.DialogHTMLAttributes<HTMLElement> {
   onClose?: (event: React.BaseSyntheticEvent) => void;
 }
 
-export interface DialogHTMLElement extends HTMLElement {
-  close?: () => void;
-  showModal?: (returnValue?: string) => void;
-  open?: boolean;
-}
-
 const BLOCK_NAME = 'spui-AppealModal';
 const FADE_OUT_ANIMATION = 'spui-AppealModal-fade-out';
 
-const Frame = forwardRef<DialogHTMLElement, AppealModalProps>(
+const Frame = forwardRef<HTMLDialogElement, AppealModalProps>(
   function AppealModal(
     { children, className, open, size = 'large', onClose, ...rest },
     ref,
   ) {
     const [closing, setClosing] = useState(false);
-    const dialogEl = useRef<DialogHTMLElement>(null);
+    const dialogEl = useRef<HTMLDialogElement>(null);
 
     const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault(); // To be closed with the open prop
       onClose && onClose(event);
     };
 
-    const handleDialogClick = (event: React.MouseEvent<DialogHTMLElement>) => {
+    const handleDialogClick = (event: React.MouseEvent<HTMLDialogElement>) => {
       // Detect backdrop click
       if (event.target === dialogEl.current) {
         onClose && onClose(event);
@@ -50,7 +44,7 @@ const Frame = forwardRef<DialogHTMLElement, AppealModalProps>(
     };
 
     const handleDialogClose = (
-      event: React.SyntheticEvent<DialogHTMLElement>,
+      event: React.SyntheticEvent<HTMLDialogElement>,
     ) => {
       // Detect escape key type
       if (event.target === dialogEl.current) {
@@ -114,7 +108,7 @@ const Frame = forwardRef<DialogHTMLElement, AppealModalProps>(
           .filter(Boolean)
           .join(' ')
           .trim()}
-        ref={mergeRefs([dialogEl, ref])}
+        ref={useMergeRefs([dialogEl, ref])}
         onClick={handleDialogClick}
         onClose={handleDialogClose}
         {...rest}
