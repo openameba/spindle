@@ -14,6 +14,7 @@ export { DropdownMenu } from './DropdownMenu';
 export { SnackBar } from './SnackBar';
 export { InlineNotification } from './InlineNotification';
 export { SegmentedControl } from './SegmentedControl';
+export { Rating } from './Rating';
 export {
   StackNotificationManagerProvider,
   useStackNotificationManagerContext,

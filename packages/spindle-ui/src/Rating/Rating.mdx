@@ -1,0 +1,87 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+import * as RatingStories from './Rating.stories';
+
+<Meta of={RatingStories} />
+
+# Rating
+
+<Source
+  language="javascript"
+  code={`
+import { Rating } from '@openameba/spindle-ui';
+import '@openameba/spindle-ui/Rating/Rating.css';
+  `}
+/>
+
+<Source
+  language="css"
+  code={`@import './node_modules/@openameba/spindle-ui/Rating/Rating.css'`}
+/>
+
+<Source
+  language="html"
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Rating/Rating.css">`}
+/>
+
+## max 5 value 0
+
+<Story of={RatingStories.Max5Value0} />
+
+<Source language="jsx" code={`<Rating max={5} value={0} size="medium" />`} />
+
+## max 5 value 3.5
+
+<Story of={RatingStories.Max5Value35} />
+
+<Source language="jsx" code={`<Rating max={5} value={3.5} size="medium" />`} />
+
+## max 5 value 5
+
+<Story of={RatingStories.Max5Value5} />
+
+<Source language="jsx" code={`<Rating max={5} value={5} size="medium" />`} />
+
+## max 5 value 3（small size）
+
+<Story of={RatingStories.Max5Value3SmallSize} />
+
+<Source language="jsx" code={`<Rating max={5} value={3} size="small" />`} />
+
+## max 5 value 3（medium size）
+
+<Story of={RatingStories.Max5Value3MediumSize} />
+
+<Source language="jsx" code={`<Rating max={5} value={3} size="medium" />`} />
+
+## max 5 value 3（large size）
+
+<Story of={RatingStories.Max5Value3LargeSize} />
+
+<Source language="jsx" code={`<Rating max={5} value={3} size="large" />`} />
+
+## show text（small size）
+
+<Story of={RatingStories.ShowTextSmallSize} />
+
+<Source
+  language="jsx"
+  code={`<Rating max={5} value={3} size="small" showText={true} />`}
+/>
+
+## show text（medium size）
+
+<Story of={RatingStories.ShowTextMediumSize} />
+
+<Source
+  language="jsx"
+  code={`<Rating max={5} value={3} size="medium" showText={true} />`}
+/>
+
+## show text（large size）
+
+<Story of={RatingStories.ShowTextLargeSize} />
+
+<Source
+  language="jsx"
+  code={`<Rating max={5} value={3} size="large" showText={true} />`}
+/>
