@@ -11,6 +11,7 @@ figma.connect(
   {
     imports: [
       "import { SnackBar } from '@openameba/spindle-ui'; import { Information } from '@openameba/spindle-ui/Icon';",
+      "import '@openameba/spindle-ui/SnackBar/SnackBar.css';",
     ],
     variant: { variant: 'Information' },
     props: {
@@ -45,6 +46,7 @@ figma.connect(
   {
     imports: [
       "import { SnackBar } from '@openameba/spindle-ui'; import { CheckCircleFill } from '@openameba/spindle-ui/Icon';",
+      "import '@openameba/spindle-ui/SnackBar/SnackBar.css';",
     ],
     variant: { variant: 'Confirmation' },
     props: {
@@ -79,6 +81,7 @@ figma.connect(
   {
     imports: [
       "import { SnackBar } from '@openameba/spindle-ui'; import { ExclamationmarkCircleFill } from '@openameba/spindle-ui/Icon';",
+      "import '@openameba/spindle-ui/SnackBar/SnackBar.css';",
     ],
     variant: { variant: 'Error' },
     props: {

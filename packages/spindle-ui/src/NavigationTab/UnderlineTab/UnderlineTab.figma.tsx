@@ -6,7 +6,10 @@ figma.connect(
   UnderlineTab,
   'https://www.figma.com/design/FSgvRthUiMMXWgrSE4RUgr/Spindle-UI?node-id=4053-27265&t=YLIDc1qkFqK1kafo-4',
   {
-    imports: ["import { UnderlineTab } from '@openameba/spindle-ui';"],
+    imports: [
+      "import { UnderlineTab } from '@openameba/spindle-ui';",
+      "import '@openameba/spindle-ui/NavigationTab/index.css';",
+    ],
     variant: { Type: 'Under Bar' },
     props: {
       scroll: figma.enum('Scroll', {
