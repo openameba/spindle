@@ -142,32 +142,27 @@ const Frame = forwardRef<HTMLTableElement, TableFrameProps>(function TableFrame(
     striped && `${BLOCK_NAME}--striped`,
     layout === 'fixed' && `${BLOCK_NAME}--fixed`,
     layout === 'scrollable' && `${BLOCK_NAME}--scrollable`,
+  ]
+    .filter(Boolean)
+    .join(' ')
+    .trim();
+
+  const wrapperClasses = [
+    `${BLOCK_NAME}-frame`,
+    layout === 'scrollable' && `${BLOCK_NAME}-frame--scrollable`,
     className,
   ]
     .filter(Boolean)
     .join(' ')
     .trim();
 
-  const scrollContainerClasses = [
-    `${BLOCK_NAME}-frame`,
-    layout === 'scrollable' && `${BLOCK_NAME}-frame--scrollable`,
-  ]
-    .filter(Boolean)
-    .join(' ')
-    .trim();
-
-  const tableElement = (
-    <table ref={ref} className={classes} {...rest}>
-      {children}
-    </table>
+  return (
+    <div className={wrapperClasses}>
+      <table ref={ref} className={classes} {...rest}>
+        {children}
+      </table>
+    </div>
   );
-
-  // Wrap in container if layout is scrollable
-  if (layout === 'scrollable') {
-    return <div className={scrollContainerClasses}>{tableElement}</div>;
-  }
-
-  return tableElement;
 });
 
 // Table.Caption
