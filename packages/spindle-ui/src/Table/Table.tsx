@@ -123,7 +123,7 @@ const getBorderClassNames = (borderTypes: Array<BorderType>) => {
 };
 
 // Main Table component
-const Frame = forwardRef<HTMLTableElement, TableFrameProps>(function TableFrame(
+const Frame = forwardRef<HTMLDivElement, TableFrameProps>(function TableFrame(
   {
     borderTypes = [],
     rounded = false,
@@ -157,8 +157,8 @@ const Frame = forwardRef<HTMLTableElement, TableFrameProps>(function TableFrame(
     .trim();
 
   return (
-    <div className={wrapperClasses}>
-      <table ref={ref} className={classes} {...rest}>
+    <div ref={ref} className={wrapperClasses}>
+      <table className={classes} {...rest}>
         {children}
       </table>
     </div>

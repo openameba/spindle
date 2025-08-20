@@ -101,11 +101,11 @@ describe('<Table />', () => {
     });
 
     test('forward ref', () => {
-      const ref = React.createRef<HTMLTableElement>();
+      const ref = React.createRef<HTMLDivElement>();
 
       render(<Table.Frame ref={ref} />);
 
-      expect(screen.getByRole('table')).toEqual(ref.current);
+      expect(screen.getByRole('table').parentElement).toEqual(ref.current);
     });
   });
 
