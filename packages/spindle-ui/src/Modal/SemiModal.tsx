@@ -6,7 +6,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import mergeRefs from 'react-merge-refs';
+import { useMergeRefs } from 'use-callback-ref';
 import CrossBold from '../Icon/CrossBold';
 import { IconButton } from '../IconButton';
 
@@ -22,24 +22,18 @@ interface SemiModalProps
   onClose?: (event: React.BaseSyntheticEvent) => void;
 }
 
-export interface DialogHTMLElement extends HTMLElement {
-  close?: () => void;
-  showModal?: (returnValue?: string) => void;
-  open?: boolean;
-}
-
 const BLOCK_NAME = 'spui-SemiModal';
 const ANIMATION_NAME_LIST = [
   `${BLOCK_NAME}-fade-out`,
   `${BLOCK_NAME}-slide-out`,
 ];
 
-const Frame = forwardRef<DialogHTMLElement, SemiModalProps>(function SemiModal(
+const Frame = forwardRef<HTMLDialogElement, SemiModalProps>(function SemiModal(
   { children, open, size = 'medium', type = 'popup', onClose, ...rest },
   ref,
 ) {
   const [closing, setClosing] = useState(false);
-  const dialogEl = useRef<DialogHTMLElement>(null);
+  const dialogEl = useRef<HTMLDialogElement>(null);
 
   // 閉じるアイコンを押した時
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -48,7 +42,7 @@ const Frame = forwardRef<DialogHTMLElement, SemiModalProps>(function SemiModal(
   };
 
   // backdropを押した時
-  const handleDialogClick = (event: React.MouseEvent<DialogHTMLElement>) => {
+  const handleDialogClick = (event: React.MouseEvent<HTMLDialogElement>) => {
     // Detect backdrop click
     if (event.target === dialogEl.current) {
       onClose?.(event);
@@ -57,7 +51,7 @@ const Frame = forwardRef<DialogHTMLElement, SemiModalProps>(function SemiModal(
 
   //EscKeyを押したとき
   const handleDialogClose = (
-    event: React.SyntheticEvent<DialogHTMLElement>,
+    event: React.SyntheticEvent<HTMLDialogElement>,
   ) => {
     // Detect escape key type
     if (event.target === dialogEl.current) {
@@ -115,7 +109,7 @@ const Frame = forwardRef<DialogHTMLElement, SemiModalProps>(function SemiModal(
         .filter(Boolean)
         .join(' ')
         .trim()}
-      ref={mergeRefs([dialogEl, ref])}
+      ref={useMergeRefs([dialogEl, ref])}
       onClick={handleDialogClick}
       onClose={handleDialogClose}
       data-type={type}
