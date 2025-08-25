@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.6.0...@openameba/spindle-ui@2.6.1) (2025-08-25)
+
+### Features
+
+- **spindle-ui:** react-merge-refsをuse-callback-refに置き換え ([#1351](https://github.com/openameba/spindle/issues/1351)) ([5564d0e](https://github.com/openameba/spindle/commit/5564d0e7b24729a70a545211a82008bd6445a69f))
+
 # [2.6.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.5.0...@openameba/spindle-ui@2.6.0) (2025-08-13)
 
 ### Bug Fixes
