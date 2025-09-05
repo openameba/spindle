@@ -7,13 +7,12 @@
 .spui-Rating[role='img'] {
   gap: 2px;
   line-height: 0;
-  margin: 0;
-  padding: 0;
 }
 
 .spui-Rating-text {
   color: var(--color-text-high-emphasis);
   font-weight: bold;
+  line-height: 1.4;
   margin: 0;
 }
 
@@ -27,10 +26,6 @@
 
 .spui-Rating-text--small {
   font-size: 0.8125rem;
-}
-
-.spui-Rating-item {
-  list-style: none;
 }
 
 .spui-Rating-item--active,

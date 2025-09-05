@@ -6,9 +6,9 @@ export const StarBack = (props: Props) => {
   return (
     <svg
       fill="none"
-      height="16"
+      height="1em"
       viewBox="0 0 16 16"
-      width="16"
+      width="1em"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >

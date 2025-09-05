@@ -18,6 +18,7 @@ export const Max5Value0: Story = {
 };
 
 export const Max5Value35: Story = {
+  name: 'Max 5 Value 3.5',
   args: {
     max: 5,
     value: 3.5,
@@ -81,5 +82,21 @@ export const ShowTextLargeSize: Story = {
     value: 3,
     size: 'large',
     showText: true,
+  },
+};
+
+export const OverMaxClamped: Story = {
+  args: {
+    max: 5,
+    value: 6,
+    size: 'medium',
+  },
+};
+
+export const NegativeClamped: Story = {
+  args: {
+    max: 5,
+    value: -1,
+    size: 'medium',
   },
 };

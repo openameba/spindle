@@ -23,6 +23,12 @@ import '@openameba/spindle-ui/Rating/Rating.css';
   code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Rating/Rating.css">`}
 />
 
+## 値の刻みについて
+
+`value`は0.1刻みで指定できます（小数第1位で四捨五入されます）。
+
+<Source language="jsx" code={`<Rating max={5} value={3.7} size="medium" />`} />
+
 ## max 5 value 0
 
 <Story of={RatingStories.Max5Value0} />
