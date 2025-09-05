@@ -1,5 +1,6 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
-import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
+import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';
+import express from 'express';
 import { z } from 'zod';
 import { getAccessibilityDocs } from './accessibility.js';
 import { getComponents, getComponentInfo } from './components.js';
@@ -147,9 +148,96 @@ server.tool(
 );
 
 async function main() {
-  const transport = new StdioServerTransport();
+  const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
+  // Security: Force localhost binding to prevent external access
+  const host = '127.0.0.1';
+
+  const transport = new StreamableHTTPServerTransport({
+    sessionIdGenerator: undefined, // Stateless server
+    enableJsonResponse: false,
+  });
+
   await server.connect(transport);
-  console.error('Spindle MCP Server running on stdio');
+
+  // Create Express app
+  const app = express();
+
+  // Security: Origin header validation middleware to prevent DNS rebinding attacks
+  app.use((req, res, next) => {
+    const origin = req.get('Origin');
+
+    // Validate Origin header for browser requests
+    // TODO: add allow origin list
+    if (origin) {
+      res.status(403).json({
+        error: 'Forbidden: Invalid origin',
+        message: 'Only localhost origins are allowed',
+      });
+      return;
+    }
+
+    // Validate remote address for direct access
+    if (req.socket.remoteAddress !== '127.0.0.1') {
+      res.status(403).json({
+        error: 'Forbidden: Invalid origin',
+        message: 'Only localhost origins are allowed',
+      });
+      return;
+    }
+
+    next();
+  });
+
+  // Access logging middleware
+  app.use((req, _, next) => {
+    const timestamp = new Date().toISOString();
+    const method = req.method;
+    const url = req.url;
+    const userAgent = req.get('User-Agent') || 'Unknown';
+    const origin = req.get('Origin') || 'Direct';
+
+    console.log(
+      `[${timestamp}] ${method} ${url} - ${userAgent} (Origin: ${origin})`,
+    );
+    next();
+  });
+
+  app.use(express.json({ limit: '10mb' }));
+  app.use(express.text({ limit: '10mb' }));
+
+  // Health check endpoint
+  app.get('/health', (_, res) => {
+    res.json({ status: 'ok', server: 'Spindle MCP Server' });
+  });
+
+  // MCP endpoint
+  app.post('/mcp', (req, res) => {
+    transport.handleRequest(req, res, req.body);
+  });
+
+  // Start HTTP server
+  const httpServer = app.listen(port, host, () => {
+    console.error(`Spindle MCP Server running on http://${host}:${port}`);
+    console.error(`Health check: http://${host}:${port}/health`);
+    console.error(`MCP endpoint: http://${host}:${port}/mcp`);
+  });
+
+  // Graceful shutdown
+  process.on('SIGINT', async () => {
+    console.error('Received SIGINT, shutting down gracefully...');
+    httpServer.close(() => {
+      console.error('HTTP server closed');
+      process.exit(0);
+    });
+  });
+
+  process.on('SIGTERM', async () => {
+    console.error('Received SIGTERM, shutting down gracefully...');
+    httpServer.close(() => {
+      console.error('HTTP server closed');
+      process.exit(0);
+    });
+  });
 }
 
 main().catch((error) => {
