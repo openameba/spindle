@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      id-token: write
+      id-token: write # Needed for npm Trusted Publishing (OIDC)
       pull-requests: write
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -34,7 +34,9 @@ jobs:
             node_modules
             */*/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-v2
-      - run: npm install -g npm@9
+      # Update npm (>=11.5.1 required for OIDC/provenance); install latest
+      - name: Update npm
+        run: npm install -g npm@latest
       - run: yarn install --frozen-lockfile
       - run: yarn lerna run --scope @openameba/spindle-hooks build
       - name: Set git user
@@ -51,7 +53,7 @@ jobs:
         run: yarn lerna publish ${{ steps.extract_branch.outputs.version }} --conventional-commits --create-release github --yes --no-private
         env:
           GH_TOKEN: ${{ github.token }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          # OIDC: do not set NODE_AUTH_TOKEN
           NPM_CONFIG_PROVENANCE: true
       - name: Create Pull Request
         run: >
