@@ -45,8 +45,8 @@ jobs:
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
       - name: Extract branch from git ref
         run: |
-          echo "::set-output name=name::${GITHUB_REF#refs/*/}"
-          echo "::set-output name=version::${GITHUB_REF##*/}"
+          echo "name=${GITHUB_REF#refs/*/}" >> "$GITHUB_OUTPUT"
+          echo "version=${GITHUB_REF##*/}" >> "$GITHUB_OUTPUT"
         id: extract_branch
       - name: Releaseing with lerna
         # also see some options in lerna.json
