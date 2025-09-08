@@ -5,7 +5,7 @@ interface Props extends React.SVGProps<SVGSVGElement> {}
 export const StarBack = (props: Props) => {
   return (
     <svg
-      fill="none"
+      fill="currentColor"
       height="1em"
       viewBox="0 0 16 16"
       width="1em"

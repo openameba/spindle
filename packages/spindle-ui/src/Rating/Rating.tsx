@@ -26,20 +26,12 @@ export const Rating = (props: Props) => {
   const { max, value, size, showText = false, ...rest } = props;
   const convertedValue = convertToValue(value);
   const clampedValue = clamp(convertedValue, 0, max);
-  const iconClass = [`${BLOCK_NAME}-icon`, `${BLOCK_NAME}-icon--${size}`]
-    .filter(Boolean)
-    .join(' ')
-    .trim();
   const ariaLabel = `${max}つ星中${clampedValue}の評価`;
 
   return (
-    <div className={BLOCK_NAME} {...rest}>
-      {showText && (
-        <p className={`${BLOCK_NAME}-text ${BLOCK_NAME}-text--${size}`}>
-          {clampedValue}
-        </p>
-      )}
-      <div className={BLOCK_NAME} role="img" aria-label={ariaLabel}>
+    <div className={`${BLOCK_NAME} ${BLOCK_NAME}--${size}`} {...rest}>
+      {showText && <p className={`${BLOCK_NAME}-text`}>{clampedValue}</p>}
+      <div className={`${BLOCK_NAME}-image`} role="img" aria-label={ariaLabel}>
         {Array.from({ length: max }, (_, index: number) => {
           const itemValue = index + 1;
           const isFull = clampedValue >= itemValue;
@@ -49,21 +41,30 @@ export const Rating = (props: Props) => {
           return (
             <span key={itemValue} className={`${BLOCK_NAME}-item`}>
               {isFull ? (
-                <span className={`${BLOCK_NAME}-item--full`}>
-                  <StarFront className={iconClass} />
+                <span className={`${BLOCK_NAME}-item--active`}>
+                  <StarFront
+                    className={`${BLOCK_NAME}-icon`}
+                    aria-hidden="true"
+                  />
                 </span>
               ) : isActive ? (
                 <span className={`${BLOCK_NAME}-item--active`}>
-                  <StarBack className={iconClass} />
+                  <StarBack
+                    className={`${BLOCK_NAME}-icon`}
+                    aria-hidden="true"
+                  />
                   <span
                     className={`${BLOCK_NAME}-item--front`}
                     style={{ width: `${fillRatio * 100}%` }}
                   >
-                    <StarFront className={iconClass} />
+                    <StarFront
+                      className={`${BLOCK_NAME}-icon`}
+                      aria-hidden="true"
+                    />
                   </span>
                 </span>
               ) : (
-                <Star className={iconClass} />
+                <Star className={`${BLOCK_NAME}-icon`} aria-hidden="true" />
               )}
             </span>
           );

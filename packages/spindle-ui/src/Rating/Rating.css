@@ -4,7 +4,8 @@
   gap: 8px;
 }
 
-.spui-Rating[role='img'] {
+.spui-Rating-image {
+  display: flex;
   gap: 2px;
   line-height: 0;
 }
@@ -16,20 +17,19 @@
   margin: 0;
 }
 
-.spui-Rating-text--large {
-  font-size: 1.25rem;
+.spui-Rating--large .spui-Rating-text {
+  font-size: 1.25em;
 }
 
-.spui-Rating-text--medium {
-  font-size: 1rem;
+.spui-Rating--medium .spui-Rating-text {
+  font-size: 1em;
 }
 
-.spui-Rating-text--small {
-  font-size: 0.8125rem;
+.spui-Rating--small .spui-Rating-text {
+  font-size: 0.8125em;
 }
 
-.spui-Rating-item--active,
-.spui-Rating-item--full {
+.spui-Rating-item--active {
   display: block;
   position: relative;
 }
@@ -52,18 +52,24 @@
   top: 0;
 }
 
-.spui-Rating-item--full .spui-Rating-icon {
+.spui-Rating-item--active:has(.spui-Rating-item--front) .spui-Rating-icon {
+  color: transparent;
+}
+
+.spui-Rating-item--active .spui-Rating-item--front .spui-Rating-icon,
+.spui-Rating-item--active:not(:has(.spui-Rating-item--front))
+  .spui-Rating-icon {
   color: var(--color-object-rating);
 }
 
-.spui-Rating-icon--large {
+.spui-Rating--large .spui-Rating-icon {
   font-size: 1.25em;
 }
 
-.spui-Rating-icon--medium {
+.spui-Rating--medium .spui-Rating-icon {
   font-size: 1em;
 }
 
-.spui-Rating-icon--small {
+.spui-Rating--small .spui-Rating-icon {
   font-size: 0.8125em;
 }
