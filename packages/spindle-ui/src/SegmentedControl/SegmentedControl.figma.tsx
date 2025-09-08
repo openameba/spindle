@@ -6,7 +6,10 @@ figma.connect(
   SegmentedControl,
   'https://www.figma.com/design/FSgvRthUiMMXWgrSE4RUgr/Spindle-UI?node-id=4039-12411',
   {
-    imports: ["import { SegmentedControl } from '@openameba/spindle-ui';"],
+    imports: [
+      "import { SegmentedControl } from '@openameba/spindle-ui';",
+      "import '@openameba/spindle-ui/SegmentedControl/SegmentedControl.css';",
+    ],
     props: {
       size: figma.enum('Size', {
         Medium: 'medium',

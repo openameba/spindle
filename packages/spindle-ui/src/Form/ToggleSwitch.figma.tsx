@@ -6,7 +6,10 @@ figma.connect(
   ToggleSwitch,
   'https://www.figma.com/design/FSgvRthUiMMXWgrSE4RUgr/Spindle-UI?node-id=473-33067&t=BiQUBKKifVQV5TbP-0',
   {
-    imports: ["import { ToggleSwitch } from '@openameba/spindle-ui/Form';"],
+    imports: [
+      "import { ToggleSwitch } from '@openameba/spindle-ui/Form';",
+      "import '@openameba/spindle-ui/Form/ToggleSwitch.css';",
+    ],
     props: {
       active: figma.boolean('Active'),
       id: figma.string('id'),
