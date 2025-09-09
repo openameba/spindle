@@ -30,7 +30,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/openameba/spindle.git"
+    "url": "https://github.com/openameba/spindle",
+    "directory": "packages/spindle-hooks"
   },
   "publishConfig": {
     "access": "public"
