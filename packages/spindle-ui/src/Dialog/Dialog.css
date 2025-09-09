@@ -58,8 +58,8 @@
 }
 
 /* Close animation duration is faster than the open animation duration */
-dialog:not([open]),
-dialog:not([open])::backdrop {
+.spui-Dialog:not([open]),
+.spui-Dialog:not([open])::backdrop {
   transition-duration: 0.15s;
 }
 
