@@ -1,4 +1,5 @@
 import { startServer } from './server.js';
+export { startServer };
 
 // 直接実行された場合のみサーバーを起動
 if (require.main === module) {
