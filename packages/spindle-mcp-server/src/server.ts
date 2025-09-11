@@ -152,7 +152,7 @@ export function createServer(): McpServer {
 }
 
 export async function startServer() {
-  const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
+  const port = 5314; // S (5) + spin (3.14)
   // Security: Force localhost binding to prevent external access
   const host = '127.0.0.1';
 
@@ -228,20 +228,5 @@ export async function startServer() {
     console.error(`MCP endpoint: http://${host}:${port}/mcp`);
   });
 
-  // Graceful shutdown
-  process.on('SIGINT', async () => {
-    console.error('Received SIGINT, shutting down gracefully...');
-    httpServer.close(() => {
-      console.error('HTTP server closed');
-      process.exit(0);
-    });
-  });
-
-  process.on('SIGTERM', async () => {
-    console.error('Received SIGTERM, shutting down gracefully...');
-    httpServer.close(() => {
-      console.error('HTTP server closed');
-      process.exit(0);
-    });
-  });
+  return httpServer;
 }
