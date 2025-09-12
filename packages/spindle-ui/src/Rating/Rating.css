@@ -52,13 +52,12 @@
   top: 0;
 }
 
-.spui-Rating-item--active:has(.spui-Rating-item--front) .spui-Rating-icon {
+.spui-Rating-item--active .spui-Rating-icon {
   color: transparent;
 }
 
-.spui-Rating-item--active .spui-Rating-item--front .spui-Rating-icon,
-.spui-Rating-item--active:not(:has(.spui-Rating-item--front))
-  .spui-Rating-icon {
+.spui-Rating-item--full .spui-Rating-icon,
+.spui-Rating-item--active .spui-Rating-item--front .spui-Rating-icon {
   color: var(--color-object-rating);
 }
 

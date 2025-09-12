@@ -41,7 +41,7 @@ export const Rating = (props: Props) => {
           return (
             <span key={itemValue} className={`${BLOCK_NAME}-item`}>
               {isFull ? (
-                <span className={`${BLOCK_NAME}-item--active`}>
+                <span className={`${BLOCK_NAME}-item--full`}>
                   <StarFront
                     className={`${BLOCK_NAME}-icon`}
                     aria-hidden="true"
