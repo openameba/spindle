@@ -18498,24 +18498,23 @@ reg-gh-app-interface@^1.3.0:
   resolved "https://registry.yarnpkg.com/reg-gh-app-interface/-/reg-gh-app-interface-1.3.0.tgz#903fac5f9b18c098de3368634d2d0f6f6a1e02eb"
   integrity sha512-p3AXRqXTuBUlud8V7WlyrKE408prM7/TAWXLhcer0492Grhj3K1SzI/v7qadd7gtxTochZsvScL46vIaZB2icg==
 
-reg-keygen-git-hash-plugin@0.14.3:
-  version "0.14.3"
-  resolved "https://registry.yarnpkg.com/reg-keygen-git-hash-plugin/-/reg-keygen-git-hash-plugin-0.14.3.tgz#934680dc4f987e08494ba195c21c487da42a886e"
-  integrity sha512-qdFj4YKctQKyI1LpFYJelFzwOi7Z2mqXEUXdsPeHgk1eJ4ar44Lns8FD9feZFYFulDbl1V5c49hBZYRPItewIg==
+reg-keygen-git-hash-plugin@0.14.5:
+  version "0.14.5"
+  resolved "https://registry.yarnpkg.com/reg-keygen-git-hash-plugin/-/reg-keygen-git-hash-plugin-0.14.5.tgz#dde5694b843f7fab6322952954fc5769699b2087"
+  integrity sha512-7XcF/JPoHmLlQ/Px80BCQdTyfbeDiNmI9/u5sSC6rqvuxbZ/d9IjCz83ELRc832mHtuG3uRQCGXR1/HrV7h31A==
   dependencies:
     reg-suit-util "^0.14.3"
     shell-escape "^0.2.0"
 
-reg-notify-github-plugin@0.14.4:
-  version "0.14.4"
-  resolved "https://registry.yarnpkg.com/reg-notify-github-plugin/-/reg-notify-github-plugin-0.14.4.tgz#2102e80ac5f3a6f533f27134747ffec6e1d95f0c"
-  integrity sha512-p3VZyyQuty6Kj+MzY+T/vZQP+QK0VjU2RwK8oR6iT/oKskrtxq3SGB1dxdsMYprttSG3y4hkxZenN07ZluvSPg==
+reg-notify-github-plugin@0.14.5:
+  version "0.14.5"
+  resolved "https://registry.yarnpkg.com/reg-notify-github-plugin/-/reg-notify-github-plugin-0.14.5.tgz#543f8282a813283924b4d37dccec42acbd98b821"
+  integrity sha512-MCwnmafts75C7fhdwi9KA9jUnVogNMQ7WIp5q4XQHxJ611M240XfK6BP8VWDL3y1dDGPife2eQDSaTQC/lahNA==
   dependencies:
     open "^8.0.0"
     reg-gh-app-interface "^1.3.0"
     reg-suit-util "^0.14.3"
     tiny-commit-walker "^1.1.2"
-    undici "^6.0.0"
 
 reg-publish-gcs-plugin@0.14.4:
   version "0.14.4"
@@ -18528,10 +18527,10 @@ reg-publish-gcs-plugin@0.14.4:
     reg-suit-util "^0.14.3"
     uuid "^9.0.0"
 
-reg-suit-core@^0.14.4:
-  version "0.14.4"
-  resolved "https://registry.yarnpkg.com/reg-suit-core/-/reg-suit-core-0.14.4.tgz#7c1c9598014d204ae7a2761384dcc599a4963b2c"
-  integrity sha512-1QTqsMfFbWrlM4N7aRM+GTc5ilbPCh4ffDUpJzDKGcovpapiVUOzpUAsmT1Q34TrFHcWtx+ZEFKWMHgtomSW0Q==
+reg-suit-core@^0.14.5:
+  version "0.14.5"
+  resolved "https://registry.yarnpkg.com/reg-suit-core/-/reg-suit-core-0.14.5.tgz#a83b687afce94cede42baee4f4a6e9083f4888c7"
+  integrity sha512-7wIA+bcggLfcPqkMyWfKKYYfQClIQ2gKgyD/LujinyKUZesOyZ3sYd3UPlWB0SBxViNgDtQ5C50EkyCKUW2e3g==
   dependencies:
     reg-cli "^0.18.5"
     reg-suit-util "^0.14.3"
@@ -18556,15 +18555,15 @@ reg-suit-util@^0.14.3:
     mime-types "^2.1.27"
     mkdirp "^1.0.4"
 
-reg-suit@0.14.4:
-  version "0.14.4"
-  resolved "https://registry.yarnpkg.com/reg-suit/-/reg-suit-0.14.4.tgz#c8e9e488e305c51c96b7733e4dafc2e3e9388e39"
-  integrity sha512-2SdAe7MX5whfEvqkf29Z0dSbIlorfJhPPZt9WEHNvM+CtdPYZJjQaswh2Xjt7uMTrUey0FCELmC7nLY6zUMK3Q==
+reg-suit@0.14.5:
+  version "0.14.5"
+  resolved "https://registry.yarnpkg.com/reg-suit/-/reg-suit-0.14.5.tgz#cab2b04f9042ab1bffba4b1ccda863037fc99d28"
+  integrity sha512-AWenzVuJ/MBUt8Ejaaom7SDN8PF71seIjIBBnYcdPcrs5CHEuCAERCCkv6EgEuU85vXS5gc0XzuJVMbj3ay0hQ==
   dependencies:
     cp-file "9.1.0"
     ignore "5.3.1"
     inquirer "8.2.6"
-    reg-suit-core "^0.14.4"
+    reg-suit-core "^0.14.5"
     reg-suit-util "^0.14.3"
     yargs "17.0.1"
 
@@ -21703,11 +21702,6 @@ undici-types@~6.19.2:
   version "6.19.8"
   resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-6.19.8.tgz#35111c9d1437ab83a7cdc0abae2f26d88eda0a02"
   integrity sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==
-
-undici@^6.0.0:
-  version "6.21.3"
-  resolved "https://registry.yarnpkg.com/undici/-/undici-6.21.3.tgz#185752ad92c3d0efe7a7d1f6854a50f83b552d7a"
-  integrity sha512-gBLkYIlEnSp8pFbT64yFgGE6UIB9tAkhukC23PmMDCe5Nd+cRqKxSjw5y54MK2AZMgZfJWMaNE4nYUHgi1XEOw==
 
 unicode-emoji-modifier-base@^1.0.0:
   version "1.0.0"
