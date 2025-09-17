@@ -102,13 +102,13 @@
     "reg-publish-gcs-plugin": "0.14.4",
     "reg-suit": "0.14.5",
     "scaffdog": "4.1.0",
-    "storybook": "8.6.14",
-    "stylelint": "^15.0.0",
+    "storybook": "^8.6.14",
+    "stylelint": "^16.0.0",
     "stylelint-config-prettier": "^9.0.0",
-    "stylelint-config-standard": "^34.0.0",
-    "stylelint-order": "^6.0.0",
-    "stylelint-prettier": "^4.0.0",
-    "stylelint-selector-bem-pattern": "^3.0.0",
+    "stylelint-config-standard": "^39.0.0",
+    "stylelint-order": "^7.0.0",
+    "stylelint-prettier": "^5.0.0",
+    "stylelint-selector-bem-pattern": "^4.0.0",
     "ts-jest": "29.4.1"
   }
 }

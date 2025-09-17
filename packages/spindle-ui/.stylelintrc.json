@@ -1,5 +1,8 @@
 {
-  "extends": "stylelint-config-prettier",
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-prettier"
+  ],
   "plugins": [
     "stylelint-prettier",
     "stylelint-order",
@@ -17,6 +20,9 @@
     },
     "value-keyword-case": ["lower", {
       "ignoreKeywords": ["/^--/"]
-    }]
+    }],
+    "color-function-notation": "legacy",
+    "alpha-value-notation": "number",
+    "color-hex-length": "long"
   }
 }
