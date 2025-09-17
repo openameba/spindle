@@ -37,7 +37,7 @@
     "jest": "29.7.0",
     "jscodeshift": "17.1.1",
     "lerna": "8.1.8",
-    "npm-run-all2": "6.2.3",
+    "npm-run-all2": "8.0.4",
     "prettier": "3.3.3",
     "textlint": "14.2.0",
     "textlint-rule-preset-ameba": "openameba/textlint-rule-preset-ameba#v0.5.1",
