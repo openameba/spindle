@@ -19,7 +19,6 @@
   },
   "devDependencies": {
     "@types/node": "20.17.30",
-    "typescript": "5.8.3",
     "vitest": "3.1.2"
   }
 }
