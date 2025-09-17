@@ -11,8 +11,7 @@
    * Layout should be set to have appropriate width with longest option text.
    * Browsers automatically get the width from select element
   */
-  /* stylelint-disable-next-line declaration-property-value-no-unknown */
-  appearance: listitem; /* To apply layout (font size, padding etc) to <select> in WebKit */
+  appearance: none; /* To apply layout (font size, padding etc) to <select> in WebKit */
   box-sizing: border-box;
   font-size: 1em;
   margin: 0;
