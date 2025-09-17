@@ -32,7 +32,7 @@
     "@acot/acot-config": "0.0.19",
     "@acot/cli": "0.0.19",
     "csso-cli": "4.0.2",
-    "firebase-tools": "13.17.0",
+    "firebase-tools": "14.16.0",
     "puppeteer": "24.2.0",
     "stylelint": "^15.0.0",
     "stylelint-config-standard": "^34.0.0"
