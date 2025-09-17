@@ -24,10 +24,12 @@
   margin: 0;
   padding: 0;
   -webkit-tap-highlight-color: var(--TextButton-tapHighlightColor);
+  text-decoration: underline;
 }
 
 .spui-TextButton:disabled {
   opacity: 0.3;
+  text-decoration: none;
 }
 
 .spui-TextButton:focus {
@@ -73,16 +75,8 @@
 /*
  * Underline management
 */
-.spui-TextButton {
-  text-decoration: underline;
-}
-
 .spui-TextButton--hasIcon,
 .spui-TextButton--underlinehover {
-  text-decoration: none;
-}
-
-.spui-TextButton:disabled {
   text-decoration: none;
 }
 
