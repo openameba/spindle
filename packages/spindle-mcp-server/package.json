@@ -16,7 +16,7 @@
   "scripts": {
     "build": "npm run copy-assets && tsc -p tsconfig.build.json",
     "copy-assets": "node scripts/copy-assets.js",
-    "test": "vitest run",
+    "test": "npm run copy-assets && vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "prepublishOnly": "npm run build"
