@@ -2,6 +2,7 @@
   "name": "@openameba/spindle-mcp-server",
   "version": "0.1.0",
   "description": "MCP server for Ameba Design System Spindle",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -19,6 +20,7 @@
   },
   "devDependencies": {
     "@types/node": "20.19.15",
+    "cpx2": "8.0.0",
     "vitest": "3.2.4"
   }
 }
