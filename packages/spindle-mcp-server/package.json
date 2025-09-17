@@ -5,15 +5,38 @@
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "bin": {
+    "spindle-mcp-server": "dist/index.js"
+  },
+  "files": [
+    "dist/**/*",
+    "assets/**/*",
+    "README.md"
+  ],
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
-    "dev": "tsc -w",
-    "start": "node dist/index.js",
+    "build": "npm run copy-assets && tsc -p tsconfig.build.json",
+    "copy-assets": "node scripts/copy-assets.js",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "prepublishOnly": "npm run build"
   },
-  "private": true,
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "design-system",
+    "ameba",
+    "spindle"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/openameba/spindle",
+    "directory": "packages/spindle-mcp-server"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "SEE LICENSE IN README.md",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.3.1",
     "zod": "^4.1.9"
