@@ -41,7 +41,7 @@
     "prettier": "3.3.3",
     "textlint": "14.2.0",
     "textlint-rule-preset-ameba": "openameba/textlint-rule-preset-ameba#v0.5.1",
-    "typescript": "4.8.2",
+    "typescript": "5.9.2",
     "yaml-lint": "1.7.0"
   },
   "engines": {
