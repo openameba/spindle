@@ -8,7 +8,6 @@
   --TextButton-color: var(--color-text-accent-primary);
   --TextButton-icon-color: var(--color-object-accent-primary);
   --TextButton-fontWeight: bold;
-
   --TextButton--subtle-color: var(--color-text-low-emphasis);
   --TextButton--subtle-icon-color: var(--color-object-low-emphasis);
 }

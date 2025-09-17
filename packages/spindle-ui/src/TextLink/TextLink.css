@@ -8,7 +8,6 @@
   --TextLink-color: var(--color-text-accent-primary);
   --TextLink-icon-color: var(--color-object-accent-primary);
   --TextLink-fontWeight: bold;
-
   --TextLink--subtle-color: var(--color-text-low-emphasis);
   --TextLink--subtle-icon-color: var(--color-object-low-emphasis);
 }

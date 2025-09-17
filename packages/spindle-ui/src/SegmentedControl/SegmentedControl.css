@@ -57,7 +57,7 @@
 }
 
 .spui-SegmentedControl--divider
-  .spui-SegmentedControl-button:first-of-type:before {
+  .spui-SegmentedControl-button:first-of-type::before {
   content: none;
 }
 
@@ -99,7 +99,7 @@
   background-color: var(--color-surface-primary);
   bottom: 4px;
   /* TODO: replace color with color palette */
-  box-shadow: 0px 3.25px 7.75px rgba(8, 18, 26, 0.06);
+  box-shadow: 0 3.25px 7.75px rgba(8, 18, 26, 0.06);
   content: '';
   height: auto;
   left: 0;

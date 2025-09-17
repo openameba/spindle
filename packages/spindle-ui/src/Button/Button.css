@@ -5,7 +5,6 @@
 :root {
   --Button-tapHighlightColor: var(--gray-5-alpha);
   --Button-onFocus-outlineColor: var(--color-focus-clarity);
-
   --Button--contained-backgroundColor: var(--color-surface-accent-primary);
   --Button--contained-color: var(--color-text-high-emphasis-inverse);
   --Button--contained-onActive-backgroundColor: var(
@@ -14,7 +13,6 @@
   --Button--contained-onHover-backgroundColor: var(
     --color-hover-contained-button
   );
-
   --Button--outlined-borderColor: var(--color-border-accent-primary);
   --Button--outlined-color: var(--color-text-accent-primary);
   --Button--outlined-onActive-backgroundColor: var(
@@ -23,21 +21,18 @@
   --Button--outlined-onHover-backgroundColor: var(
     --color-hover-outlined-button
   );
-
   --Button--lighted-backgroundColor: var(--color-surface-accent-primary-light);
   --Button--lighted-color: var(--color-text-accent-primary);
   --Button--lighted-onActive-backgroundColor: var(
     --color-active-lighted-button
   );
   --Button--lighted-onHover-backgroundColor: var(--color-hover-lighted-button);
-
   --Button--neutral-backgroundColor: var(--color-surface-tertiary);
   --Button--neutral-color: var(--color-text-medium-emphasis);
   --Button--neutral-onActive-backgroundColor: var(
     --color-active-neutral-button
   );
   --Button--neutral-onHover-backgroundColor: var(--color-hover-neutral-button);
-
   --Button--danger-borderColor: var(--color-border-caution);
   --Button--danger-color: var(--color-text-caution);
   --Button--danger-onActive-backgroundColor: var(--color-active-danger-button);

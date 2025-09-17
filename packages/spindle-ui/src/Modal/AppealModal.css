@@ -107,7 +107,7 @@ html.spui-AppealModal--open {
 .spui-AppealModal-frame {
   color: var(--color-text-medium-emphasis);
   display: grid;
-  gap: 0px 0px;
+  gap: 0;
   grid-auto-flow: row;
   grid-template-areas:
     'Image'
@@ -242,7 +242,7 @@ html.spui-AppealModal--open {
     /* stylelint-enable plugin/selector-bem-pattern */
 
     display: inline-flex;
-    margin: 36px 0 0 0;
+    margin: 36px 0 0;
   }
 
   .spui-AppealModal-closeTextButton {
@@ -254,6 +254,7 @@ html.spui-AppealModal--open {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -263,6 +264,7 @@ html.spui-AppealModal--open {
   from {
     opacity: 1;
   }
+
   to {
     opacity: 0;
   }
