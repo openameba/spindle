@@ -13564,10 +13564,10 @@ jsbn@1.1.0:
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-1.1.0.tgz#b01307cb29b618a1ed26ec79e911f803c4da0040"
   integrity sha512-4bYVV3aAMtDTTu4+xsDYa6sy9GyJ69/amsu9sYF2zqjiEoZA5xJi3BrfX3uY+/IekIu7MwdObdbDWpoZdBv3/A==
 
-jscodeshift@17.1.1:
-  version "17.1.1"
-  resolved "https://registry.yarnpkg.com/jscodeshift/-/jscodeshift-17.1.1.tgz#03d81c8d32bd7100c2f092cf2a38bd9ae88379c6"
-  integrity sha512-4vq5B1sD37aa9qed3zWq2XQPun5XjxebIv+Folr57lt8B4HLGDHEz1UG7pfcxzSaelzPbcY7yZSs033/S0i6wQ==
+jscodeshift@17.3.0:
+  version "17.3.0"
+  resolved "https://registry.yarnpkg.com/jscodeshift/-/jscodeshift-17.3.0.tgz#b9ea1d8d1c9255103bfc4cb42ddb46e18cb2415c"
+  integrity sha512-LjFrGOIORqXBU+jwfC9nbkjmQfFldtMIoS6d9z2LG/lkmyNXsJAySPT+2SWXJEoE68/bCWcxKpXH37npftgmow==
   dependencies:
     "@babel/core" "^7.24.7"
     "@babel/parser" "^7.24.7"
@@ -13584,7 +13584,7 @@ jscodeshift@17.1.1:
     micromatch "^4.0.7"
     neo-async "^2.5.0"
     picocolors "^1.0.1"
-    recast "^0.23.9"
+    recast "^0.23.11"
     tmp "^0.2.3"
     write-file-atomic "^5.0.1"
 
@@ -18250,21 +18250,10 @@ readdirp@~3.6.0:
   dependencies:
     picomatch "^2.2.1"
 
-recast@^0.23.5:
+recast@^0.23.11, recast@^0.23.5:
   version "0.23.11"
   resolved "https://registry.yarnpkg.com/recast/-/recast-0.23.11.tgz#8885570bb28cf773ba1dc600da7f502f7883f73f"
   integrity sha512-YTUo+Flmw4ZXiWfQKGcwwc11KnoRAYgzAE2E7mXKCjSviTKShtxBsN6YUUBB2gtaBzKzeKunxhUwNHQuRryhWA==
-  dependencies:
-    ast-types "^0.16.1"
-    esprima "~4.0.0"
-    source-map "~0.6.1"
-    tiny-invariant "^1.3.3"
-    tslib "^2.0.1"
-
-recast@^0.23.9:
-  version "0.23.9"
-  resolved "https://registry.yarnpkg.com/recast/-/recast-0.23.9.tgz#587c5d3a77c2cfcb0c18ccce6da4361528c2587b"
-  integrity sha512-Hx/BGIbwj+Des3+xy5uAtAbdCyqK9y9wbBcDFDYanLS9JnMqf7OeF87HQwUimE87OEc72mr6tkKUKMBBL+hF9Q==
   dependencies:
     ast-types "^0.16.1"
     esprima "~4.0.0"
