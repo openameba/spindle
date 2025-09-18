@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.2](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.6.1...@openameba/spindle-ui@2.6.2) (2025-09-18)
+
+### Bug Fixes
+
+- **spindle-ui:** checkbox outline with text ([d061c2a](https://github.com/openameba/spindle/commit/d061c2aeba679fd082dc294f8e40778a94ab72fb))
+- **spindle-ui:** radio outline with text ([af4c12a](https://github.com/openameba/spindle/commit/af4c12a7692d6f1e58553929b5d08f469b623910))
+
 ## [2.6.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.6.0...@openameba/spindle-ui@2.6.1) (2025-08-25)
 
 ### Features
