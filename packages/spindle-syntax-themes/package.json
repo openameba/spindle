@@ -35,6 +35,6 @@
     "firebase-tools": "14.17.0",
     "puppeteer": "24.2.0",
     "stylelint": "^15.0.0",
-    "stylelint-config-standard": "^34.0.0"
+    "stylelint-config-standard": "^39.0.0"
   }
 }
