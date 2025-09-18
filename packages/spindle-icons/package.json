@@ -26,7 +26,7 @@
   "devDependencies": {
     "@types/cli-progress": "3.11.6",
     "axios": "1.12.2",
-    "cli-progress": "3.8.2",
+    "cli-progress": "3.12.0",
     "figma-api": "1.5.5",
     "npm-run-all2": "8.0.4",
     "svg-sprite": "2.0.4",
