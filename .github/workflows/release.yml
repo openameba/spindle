@@ -18,6 +18,7 @@ jobs:
     permissions:
       contents: write
       id-token: write # Needed for npm Trusted Publishing (OIDC)
+      pull-requests: write # Needed for creating pull requests
     steps:
       - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
         with:
@@ -89,6 +90,7 @@ jobs:
             fi
           done
       - name: Create Pull Request
+        if: steps.check_changes.outputs.CHANGED == 'true'
         run: >
           curl
           -X POST
