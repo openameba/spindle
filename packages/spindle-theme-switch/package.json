@@ -28,7 +28,7 @@
     "prepublishOnly": "yarn build && yarn cp"
   },
   "dependencies": {
-    "dark-mode-toggle": "^0.16.0"
+    "dark-mode-toggle": "^0.17.0"
   },
   "devDependencies": {
     "firebase-tools": "14.16.0"

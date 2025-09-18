@@ -8427,10 +8427,10 @@ dargs@^8.0.0:
   resolved "https://registry.yarnpkg.com/dargs/-/dargs-8.1.0.tgz#a34859ea509cbce45485e5aa356fef70bfcc7272"
   integrity sha512-wAV9QHOsNbwnWdNW2FYvE1P56wtgSbM+3SZcdGiWQILwVjACCXDCI3Ai8QlCjMDB8YK5zySiXZYBiwGmNY3lnw==
 
-dark-mode-toggle@^0.16.0:
-  version "0.16.0"
-  resolved "https://registry.yarnpkg.com/dark-mode-toggle/-/dark-mode-toggle-0.16.0.tgz#1e9d87b67e44065ec6386083a8698702c9c910cf"
-  integrity sha512-Xkc6BIVqA/5g2EnBDlgACFnwG7yYpoCQZECmLD337lytUq9azG7R2jtMqehRGfp1oF3Mrh89PAsNc4tLhkXvrQ==
+dark-mode-toggle@^0.17.0:
+  version "0.17.0"
+  resolved "https://registry.yarnpkg.com/dark-mode-toggle/-/dark-mode-toggle-0.17.0.tgz#66fc4c235af629e2bd540973810df21a6692841d"
+  integrity sha512-o8Edp4y83e2cpVUNd86+4iJaRgNvK9kmtPVwZ++ZK3D/9/oxRofK+dc16leF05An1tTJeiXUQ8nIlMA9zwGzAw==
 
 dashify@^2.0.0:
   version "2.0.0"
