@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.3](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.6.2...@openameba/spindle-ui@2.6.3) (2025-09-18)
+
+### Bug Fixes
+
+- **spindle-ui:** resolve no-duplicate-selectors errors ([e99baf0](https://github.com/openameba/spindle/commit/e99baf0aec19a7e7b58b3cf1bb67b62cfa9bff9e))
+
 ## [2.6.2](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.6.1...@openameba/spindle-ui@2.6.2) (2025-09-18)
 
 ### Bug Fixes
