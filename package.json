@@ -39,7 +39,7 @@
     "lerna": "8.1.8",
     "npm-run-all2": "8.0.4",
     "prettier": "3.3.3",
-    "textlint": "14.2.0",
+    "textlint": "15.2.2",
     "textlint-rule-preset-ameba": "openameba/textlint-rule-preset-ameba#v0.5.1",
     "typescript": "5.9.2",
     "yaml-lint": "1.7.0"
