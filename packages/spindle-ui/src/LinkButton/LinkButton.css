@@ -5,29 +5,24 @@
 :root {
   --LinkButton-tapHighlightColor: var(--gray-5-alpha);
   --LinkButton-onFocus-outlineColor: var(--color-focus-clarity);
-
   --LinkButton--contained-backgroundColor: var(--color-surface-accent-primary);
   --LinkButton--contained-color: var(--color-text-high-emphasis-inverse);
   --LinkButton--contained-onActive-backgroundColor: var(--primary-green-100);
   --LinkButton--contained-onHover-backgroundColor: var(--primary-green-100);
-
   --LinkButton--outlined-borderColor: var(--color-border-accent-primary);
   --LinkButton--outlined-color: var(--color-text-accent-primary);
   --LinkButton--outlined-onActive-backgroundColor: var(--primary-green-5);
   --LinkButton--outlined-onHover-backgroundColor: var(--primary-green-5);
-
   --LinkButton--lighted-backgroundColor: var(
     --color-surface-accent-primary-light
   );
   --LinkButton--lighted-color: var(--color-text-accent-primary);
   --LinkButton--lighted-onActive-backgroundColor: var(--primary-green-10);
   --LinkButton--lighted-onHover-backgroundColor: var(--primary-green-10);
-
   --LinkButton--neutral-backgroundColor: var(--color-surface-tertiary);
   --LinkButton--neutral-color: var(--color-text-medium-emphasis);
   --LinkButton--neutral-onActive-backgroundColor: var(--gray-20-alpha);
   --LinkButton--neutral-onHover-backgroundColor: var(--gray-20-alpha);
-
   --LinkButton--danger-borderColor: var(--color-border-caution);
   --LinkButton--danger-color: var(--color-text-caution);
   --LinkButton--danger-onActive-backgroundColor: var(--caution-red-5-alpha);

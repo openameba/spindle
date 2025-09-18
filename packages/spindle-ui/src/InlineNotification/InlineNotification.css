@@ -14,12 +14,10 @@
   --InlineNotification--neutral-color: var(--color-text-high-emphasis-inverse);
   --InlineNotification--neutral-onHover-backgroundColor: var(--white-30-alpha);
   --InlineNotification--neutral-onActive-backgroundColor: var(--white-30-alpha);
-
   --InlineNotification--outlined-onHover-backgroundColor: var(--white-50-alpha);
   --InlineNotification--outlined-onActive-backgroundColor: var(
     --white-50-alpha
   );
-
   --InlineNotification--contained-backgroundColor: var(--color-surface-primary);
   --InlineNotification--contained-color: var(--color-text-accent-primary);
   --InlineNotification--contained-onHover-backgroundColor: var(
@@ -28,7 +26,6 @@
   --InlineNotification--contained-onActive-backgroundColor: var(
     --white-70-alpha
   );
-
   --InlineNotification--danger-borderColor: var(
     --color-border-high-emphasis-inverse
   );
@@ -41,14 +38,17 @@
   border-radius: 12px;
   width: 100%;
 }
+
 .spui-InlineNotification--full {
-  border-radius: 0px;
+  border-radius: 0;
 }
+
 .spui-InlineNotification-content {
   align-items: center;
   display: flex;
   padding: 8px 12px;
 }
+
 .spui-InlineNotification-icon {
   align-items: center;
   display: flex;
@@ -57,6 +57,7 @@
   margin-right: 8px;
   padding: 5px 0;
 }
+
 .spui-InlineNotification-avatar {
   flex: none;
   height: 36px;
@@ -64,6 +65,7 @@
   position: relative;
   width: 36px;
 }
+
 .spui-InlineNotification-avatar::before {
   border: solid 1px var(--color-border-low-emphasis);
   border-radius: 50%;
@@ -73,12 +75,14 @@
   position: absolute;
   width: 100%;
 }
+
 .spui-InlineNotification-avatarInner {
   border-radius: 50%;
   height: 100%;
   object-fit: cover;
   width: 100%;
 }
+
 .spui-InlineNotification-text {
   flex: 1;
   font-size: 0.875em;
@@ -88,15 +92,18 @@
   min-width: 0;
   overflow-wrap: break-word;
 }
+
 .spui-InlineNotification-iconButton {
   margin-left: 16px;
   padding: 5px 0;
 }
+
 .spui-InlineNotification-textButton {
   flex: none;
   font-size: 0.75em;
   margin-left: 16px;
 }
+
 .spui-InlineNotification-button {
   flex: none;
   margin-left: 16px;
@@ -112,16 +119,20 @@
 .spui-InlineNotification--information {
   background-color: var(--color-surface-tertiary);
 }
+
 .spui-InlineNotification--information .spui-InlineNotification-icon {
   color: var(--color-object-medium-emphasis);
 }
+
 .spui-InlineNotification--information .spui-InlineNotification-text {
   color: var(--color-text-medium-emphasis);
 }
+
 .spui-InlineNotification--information .spui-InlineNotification-iconButton {
   /* stylelint-disable-next-line plugin/selector-bem-pattern */
   --IconButton--neutral-backgroundColor: transparent;
 }
+
 .spui-InlineNotification--information .spui-InlineNotification-textButton {
   /* stylelint-disable-next-line plugin/selector-bem-pattern */
   --TextButton-color: var(--color-text-medium-emphasis);
@@ -131,14 +142,17 @@
 .spui-InlineNotification--information.spui-InlineNotification--emphasized {
   background-color: var(--color-surface-accent-neutral-high-emphasis);
 }
+
 .spui-InlineNotification--information.spui-InlineNotification--emphasized
   .spui-InlineNotification-icon {
   color: var(--color-object-high-emphasis-inverse);
 }
+
 .spui-InlineNotification--information.spui-InlineNotification--emphasized
   .spui-InlineNotification-text {
   color: var(--color-text-high-emphasis-inverse);
 }
+
 .spui-InlineNotification--information.spui-InlineNotification--emphasized
   .spui-InlineNotification-iconButton {
   /* stylelint-disable-next-line plugin/selector-bem-pattern */
@@ -152,11 +166,13 @@
     --InlineNotification--neutral-onActive-backgroundColor
   );
 }
+
 .spui-InlineNotification--information.spui-InlineNotification--emphasized
   .spui-InlineNotification-textButton {
   /* stylelint-disable-next-line plugin/selector-bem-pattern */
   --TextButton-color: var(--color-text-high-emphasis-inverse);
 }
+
 .spui-InlineNotification--information.spui-InlineNotification--emphasized
   .spui-InlineNotification-button {
   /* stylelint-disable-next-line plugin/selector-bem-pattern */
@@ -179,12 +195,15 @@
 .spui-InlineNotification--confirmation {
   background-color: var(--color-surface-accent-primary-light);
 }
+
 .spui-InlineNotification--confirmation .spui-InlineNotification-icon {
   color: var(--color-object-accent-primary);
 }
+
 .spui-InlineNotification--confirmation .spui-InlineNotification-text {
   color: var(--color-text-accent-primary);
 }
+
 .spui-InlineNotification--confirmation .spui-InlineNotification-iconButton {
   /* stylelint-disable-next-line plugin/selector-bem-pattern */
   --IconButton--outlined-borderColor: none;
@@ -197,6 +216,7 @@
     --InlineNotification--outlined-onActive-backgroundColor
   );
 }
+
 .spui-InlineNotification--confirmation .spui-InlineNotification-button {
   /* stylelint-disable-next-line plugin/selector-bem-pattern */
   --Button--outlined-onHover-backgroundColor: var(
@@ -212,19 +232,23 @@
 .spui-InlineNotification--confirmation.spui-InlineNotification--emphasized {
   background-color: var(--color-surface-accent-primary);
 }
+
 .spui-InlineNotification--confirmation.spui-InlineNotification--emphasized
   .spui-InlineNotification-icon {
   color: var(--color-object-high-emphasis-inverse);
 }
+
 .spui-InlineNotification--confirmation.spui-InlineNotification--emphasized
   .spui-InlineNotification-text {
   color: var(--color-text-high-emphasis-inverse);
 }
+
 .spui-InlineNotification--confirmation.spui-InlineNotification--emphasized
   .spui-InlineNotification-textButton {
   /* stylelint-disable-next-line plugin/selector-bem-pattern */
   --TextButton-color: var(--color-text-high-emphasis-inverse);
 }
+
 .spui-InlineNotification--confirmation.spui-InlineNotification--emphasized
   .spui-InlineNotification-button {
   /* stylelint-disable-next-line plugin/selector-bem-pattern */
@@ -247,16 +271,20 @@
 .spui-InlineNotification--error {
   background-color: var(--color-surface-caution-light);
 }
+
 .spui-InlineNotification--error .spui-InlineNotification-icon {
   color: var(--color-object-caution);
 }
+
 .spui-InlineNotification--error .spui-InlineNotification-text {
   color: var(--color-text-caution);
 }
+
 .spui-InlineNotification--error .spui-InlineNotification-iconButton {
   /* stylelint-disable-next-line plugin/selector-bem-pattern */
   --IconButton--danger-borderColor: none;
 }
+
 .spui-InlineNotification--error .spui-InlineNotification-textButton {
   /* stylelint-disable-next-line plugin/selector-bem-pattern */
   --TextButton-color: var(--color-text-caution);
@@ -266,14 +294,17 @@
 .spui-InlineNotification--error.spui-InlineNotification--emphasized {
   background-color: var(--color-surface-caution);
 }
+
 .spui-InlineNotification--error.spui-InlineNotification--emphasized
   .spui-InlineNotification-icon {
   color: var(--color-object-high-emphasis-inverse);
 }
+
 .spui-InlineNotification--error.spui-InlineNotification--emphasized
   .spui-InlineNotification-text {
   color: var(--color-text-high-emphasis-inverse);
 }
+
 .spui-InlineNotification--error.spui-InlineNotification--emphasized
   .spui-InlineNotification-iconButton {
   /* stylelint-disable-next-line plugin/selector-bem-pattern */
@@ -287,11 +318,13 @@
     --InlineNotification--danger-onActive-backgroundColor
   );
 }
+
 .spui-InlineNotification--error.spui-InlineNotification--emphasized
   .spui-InlineNotification-textButton {
   /* stylelint-disable-next-line plugin/selector-bem-pattern */
   --TextButton-color: var(--color-text-high-emphasis-inverse);
 }
+
 .spui-InlineNotification--error.spui-InlineNotification--emphasized
   .spui-InlineNotification-button {
   /* stylelint-disable-next-line plugin/selector-bem-pattern */

@@ -1,5 +1,5 @@
 {
-  "extends": "stylelint-config-prettier",
+  "extends": "stylelint-config-standard",
   "plugins": [
     "stylelint-prettier",
     "stylelint-order",
@@ -17,6 +17,17 @@
     },
     "value-keyword-case": ["lower", {
       "ignoreKeywords": ["/^--/"]
-    }]
+    }],
+    "color-function-notation": "legacy",
+    "alpha-value-notation": "number",
+    "selector-class-pattern": null,
+    "custom-property-pattern": null,
+    "keyframes-name-pattern": null,
+    "import-notation": null,
+    "color-function-alias-notation": null,
+    "comment-empty-line-before": null,
+    "media-feature-range-notation": null,
+    "no-descending-specificity": null,
+    "property-no-deprecated": null
   }
 }

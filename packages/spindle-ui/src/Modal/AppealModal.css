@@ -107,16 +107,14 @@ html.spui-AppealModal--open {
 .spui-AppealModal-frame {
   color: var(--color-text-medium-emphasis);
   display: grid;
-  gap: 0px 0px;
+  gap: 0;
   grid-auto-flow: row;
-  grid-template-areas:
+  grid-template:
     'Image'
     'Title'
     'Body'
     'ButtonGroup'
-    'CloseButton';
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
+    'CloseButton' / 1fr;
   padding: 0 0 24px;
   width: 100%;
 }
@@ -198,13 +196,11 @@ html.spui-AppealModal--open {
 
   .spui-AppealModal-frame {
     grid-auto-flow: row;
-    grid-template-areas:
+    grid-template:
       'Title CloseButton'
       'Body CloseButton'
       'Image Image'
-      'ButtonGroup ButtonGroup';
-    grid-template-columns: 1fr 72px;
-    grid-template-rows: auto;
+      'ButtonGroup ButtonGroup' / 1fr 72px;
     padding: 0 0 36px;
   }
 
@@ -242,7 +238,7 @@ html.spui-AppealModal--open {
     /* stylelint-enable plugin/selector-bem-pattern */
 
     display: inline-flex;
-    margin: 36px 0 0 0;
+    margin: 36px 0 0;
   }
 
   .spui-AppealModal-closeTextButton {
@@ -254,6 +250,7 @@ html.spui-AppealModal--open {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -263,6 +260,7 @@ html.spui-AppealModal--open {
   from {
     opacity: 1;
   }
+
   to {
     opacity: 0;
   }
