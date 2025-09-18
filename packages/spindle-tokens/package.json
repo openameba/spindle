@@ -45,6 +45,6 @@
     "stylelint": "^15.10.2",
     "stylelint-config-standard": "^34.0.0",
     "ts-jest": "29.4.1",
-    "tsx": "4.19.4"
+    "tsx": "4.20.5"
   }
 }
