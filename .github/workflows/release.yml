@@ -60,7 +60,10 @@ jobs:
           else
             echo "Changed packages: $CHANGED_PACKAGES"
             echo "CHANGED=true" >> $GITHUB_OUTPUT
-            echo "CHANGED_PACKAGES=$CHANGED_PACKAGES" >> $GITHUB_OUTPUT
+            # Convert space-separated packages to newline-separated for GitHub Actions
+            echo "CHANGED_PACKAGES<<EOF" >> $GITHUB_OUTPUT
+            echo "$CHANGED_PACKAGES" | tr ' ' '\n' >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
           fi
         id: check_changes
       - name: Create tags and releases with lerna (skip npm publish)
@@ -76,12 +79,14 @@ jobs:
           echo "Changed packages: $CHANGED_PACKAGES"
 
           # Publish each changed package
-          for package_name in $CHANGED_PACKAGES; do
-            echo "Publishing $package_name"
-            package_dir="packages/${package_name#@openameba/}"
-            cd "$package_dir"
-            npm publish --access public
-            cd ../..
+          echo "$CHANGED_PACKAGES" | while read -r package_name; do
+            if [ -n "$package_name" ]; then
+              echo "Publishing $package_name"
+              package_dir="packages/${package_name#@openameba/}"
+              cd "$package_dir"
+              npm publish --access public
+              cd ../..
+            fi
           done
       - name: Create Pull Request
         run: >
