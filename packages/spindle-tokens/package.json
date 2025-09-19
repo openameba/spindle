@@ -1,6 +1,6 @@
 {
   "name": "@openameba/spindle-tokens",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Spindle design tokens.",
   "homepage": "https://github.com/openameba/spindle#readme",
   "license": "MIT",
@@ -15,7 +15,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/openameba/spindle.git"
+    "url": "https://github.com/openameba/spindle",
+    "directory": "packages/spindle-tokens"
   },
   "scripts": {
     "test": "tsc --noEmit && yarn jest",
@@ -33,17 +34,17 @@
     "url": "https://github.com/openameba/spindle/issues"
   },
   "devDependencies": {
-    "@figma/rest-api-spec": "0.24.0",
-    "@types/jest": "29.5.13",
+    "@figma/rest-api-spec": "0.33.0",
+    "@types/jest": "29.5.14",
     "@types/lodash.setwith": "4.3.9",
     "jest": "29.7.0",
     "jsonabc": "2.3.1",
     "lodash.setwith": "4.3.2",
     "make-dir": "4.0.0",
-    "style-dictionary": "4.1.0",
+    "style-dictionary": "5.0.4",
     "stylelint": "^15.10.2",
     "stylelint-config-standard": "^34.0.0",
-    "ts-jest": "29.3.2",
-    "tsx": "4.19.4"
+    "ts-jest": "29.4.1",
+    "tsx": "4.20.5"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@openameba/spindle-icons",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "scripts": {
     "clean": "npx rimraf dist",
     "mkdir": "npx mkdirp dist",
@@ -17,19 +17,20 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/openameba/spindle.git"
+    "url": "https://github.com/openameba/spindle",
+    "directory": "packages/spindle-icons"
   },
   "publishConfig": {
     "access": "public"
   },
   "devDependencies": {
-    "@types/cli-progress": "3.7.0",
-    "axios": "1.9.0",
-    "cli-progress": "3.8.2",
-    "figma-api": "1.5.5",
-    "npm-run-all2": "6.2.6",
+    "@types/cli-progress": "3.11.6",
+    "axios": "1.12.2",
+    "cli-progress": "3.12.0",
+    "figma-api": "1.12.0",
+    "npm-run-all2": "8.0.4",
     "svg-sprite": "2.0.4",
-    "svgo": "3.3.2",
+    "svgo": "4.0.0",
     "ts-node": "10.9.2"
   }
 }

@@ -19,7 +19,7 @@
 .spui-Toast-content {
   align-items: center;
   border-radius: 52px;
-  box-shadow: 0px 11px 28px rgba(8, 18, 26, 0.24);
+  box-shadow: 0 11px 28px rgba(8, 18, 26, 0.24);
   box-sizing: border-box;
   display: inline-flex;
   margin: 0;
@@ -87,6 +87,7 @@
 .spui-Toast-iconButton {
   /* stylelint-disable-next-line plugin/selector-bem-pattern */
   --IconButton--neutral-backgroundColor: transparent;
+
   margin-left: 12px;
 }
 

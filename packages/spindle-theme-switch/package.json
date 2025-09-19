@@ -1,6 +1,6 @@
 {
   "name": "@openameba/spindle-theme-switch",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Spindle theme switch",
   "license": "MIT",
   "type": "module",
@@ -12,7 +12,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/openameba/spindle.git"
+    "url": "https://github.com/openameba/spindle",
+    "directory": "packages/spindle-theme-switch"
   },
   "publishConfig": {
     "access": "public"
@@ -27,9 +28,9 @@
     "prepublishOnly": "yarn build && yarn cp"
   },
   "dependencies": {
-    "dark-mode-toggle": "^0.16.0"
+    "dark-mode-toggle": "^0.17.0"
   },
   "devDependencies": {
-    "firebase-tools": "13.17.0"
+    "firebase-tools": "14.17.0"
   }
 }
