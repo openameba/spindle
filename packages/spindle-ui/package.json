@@ -73,7 +73,7 @@
     "@storybook/addon-viewport": "8.6.14",
     "@storybook/addon-webpack5-compiler-swc": "3.0.0",
     "@storybook/blocks": "8.6.14",
-    "@storybook/react": "8.6.14",
+    "@storybook/react": "9.1.7",
     "@storybook/react-webpack5": "8.6.14",
     "@svgr/cli": "8.1.0",
     "@swc/core": "1.13.5",
