@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.7.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.6.3...@openameba/spindle-ui@2.7.0) (2025-09-19)
+
+### Features
+
+- **spindle-ui:** migrate Dialog to allow-discrete transitions ([4c1dd4f](https://github.com/openameba/spindle/commit/4c1dd4f688d30dd7d84b4fbda88ffbbc1d534a55))
+
 ## [2.6.3](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.6.2...@openameba/spindle-ui@2.6.3) (2025-09-18)
 
 ### Bug Fixes
