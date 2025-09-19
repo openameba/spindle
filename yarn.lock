@@ -22826,10 +22826,15 @@ zod@3.25.58:
   resolved "https://registry.yarnpkg.com/zod/-/zod-3.25.58.tgz#7cd680cbbf01d0994cd2e943a08dc7e77c6d2b7a"
   integrity sha512-DVLmMQzSZwNYzQoMaM3MQWnxr2eq+AtM9Hx3w1/Yl0pH8sLTSjN4jGP7w6f7uand6Hw44tsnSu1hz1AOA6qI2Q==
 
-zod@^3.22.3, zod@^3.22.4, zod@^3.23.8, zod@^3.24.1, zod@^3.24.3, zod@^3.25.76:
+zod@^3.22.3, zod@^3.23.8, zod@^3.24.1, zod@^3.24.3, zod@^3.25.76:
   version "3.25.76"
   resolved "https://registry.yarnpkg.com/zod/-/zod-3.25.76.tgz#26841c3f6fd22a6a2760e7ccb719179768471e34"
   integrity sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==
+
+zod@^4.1.9:
+  version "4.1.9"
+  resolved "https://registry.yarnpkg.com/zod/-/zod-4.1.9.tgz#c03a0ddb10f5578f13f8f70f1959f89fd09c1c06"
+  integrity sha512-HI32jTq0AUAC125z30E8bQNz0RQ+9Uc+4J7V97gLYjZVKRjeydPgGt6dvQzFrav7MYOUGFqqOGiHpA/fdbd0cQ==
 
 zwitch@^1.0.0:
   version "1.0.5"
