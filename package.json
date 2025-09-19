@@ -38,7 +38,7 @@
     "jscodeshift": "17.3.0",
     "lerna": "8.2.4",
     "npm-run-all2": "8.0.4",
-    "prettier": "3.3.3",
+    "prettier": "3.6.2",
     "textlint": "15.2.2",
     "textlint-rule-preset-ameba": "openameba/textlint-rule-preset-ameba#v0.5.1",
     "typescript": "5.9.2",
