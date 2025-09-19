@@ -1,7 +1,10 @@
 {
 	"$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
 	"vcs": { "enabled": false, "clientKind": "git", "useIgnoreFile": false },
-	"files": { "ignoreUnknown": false },
+	"files": {
+		"ignoreUnknown": false,
+		"includes": ["packages/**/src/**/*.{ts,tsx}"]
+	},
 	"formatter": {
 		"enabled": true,
 		"formatWithErrors": false,
@@ -13,13 +16,7 @@
 		"bracketSameLine": false,
 		"bracketSpacing": true,
 		"expand": "auto",
-		"useEditorconfig": true,
-		"includes": [
-			"**",
-			"!**/dist/",
-			"!**/public/",
-			"!packages/spindle-tokens/lib/*.js"
-		]
+		"useEditorconfig": true
 	},
 	"linter": { "enabled": true, "rules": { "recommended": true } },
 	"javascript": {
@@ -35,7 +32,18 @@
 			"bracketSpacing": true
 		}
 	},
-	"html": { "formatter": { "selfCloseVoidElements": "always" } },
+	"html": {
+		"formatter": {
+			"enabled": false,
+			"selfCloseVoidElements": "always"
+		}
+	},
+	"css": {
+		"formatter": { "enabled": false }
+	},
+	"json": {
+		"formatter": { "enabled": false }
+	},
 	"assist": {
 		"enabled": true,
 		"actions": { "source": { "organizeImports": "on" } }
