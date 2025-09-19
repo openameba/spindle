@@ -2,11 +2,7 @@ module.exports = {
   plugins: [
     {
       name: 'preset-default',
-      params: {
-        overrides: {
-          removeViewBox: false,
-        },
-      },
+      // v4で removeViewBox と removeTitle がデフォルト無効になったため上書きしない
     },
     {
       name: 'removeAttrs',
