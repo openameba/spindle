@@ -7,8 +7,13 @@
   /* TODO: replace color with color palette */
   box-shadow: 0 11px 28px rgba(8, 18, 26, 0.12);
   color: var(--color-text-medium-emphasis);
+  opacity: 0;
   padding: 24px;
   position: fixed;
+  transition:
+    display 350ms allow-discrete,
+    overlay 350ms allow-discrete,
+    opacity 350ms cubic-bezier(0, 0, 0, 1);
   /* NOTE: box-sizing does not work well with dialog-polyfill */
   /* width property is calculated from dialog width - padding * 2 */
   width: calc(400px - 24px * 2);
@@ -27,40 +32,45 @@
 .spui-Dialog::backdrop {
   /* TODO: replace color with color palette, backdrop does not accept variable */
   background: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition:
+    display 350ms allow-discrete,
+    overlay 350ms allow-discrete,
+    opacity 350ms cubic-bezier(0, 0, 0, 1);
 }
 
-/* Dialog polyfill adds ".backdrop" instead of "::backdrop" */
-.spui-Dialog + .backdrop {
-  background: rgba(0, 0, 0, 0.8);
+.spui-Dialog[open] {
+  opacity: 1;
 }
 
-/* NOTE: set no animations to the dialog-polyfill browsers for stability */
-.spui-Dialog[open]:not(.spui-Dialog--closing),
-.spui-Dialog[open]:not(.spui-Dialog--closing).spui-Dialog::backdrop {
-  animation: 0.35s cubic-bezier(0, 0, 0, 1) spui-Dialog-fade-in;
+.spui-Dialog[open]::backdrop {
+  opacity: 1;
 }
 
-.spui-Dialog--closing,
-.spui-Dialog--closing.spui-Dialog::backdrop {
-  animation: 0.15s cubic-bezier(0, 0, 0, 1) spui-Dialog-fade-out;
-}
+@starting-style {
+  .spui-Dialog[open] {
+    opacity: 0;
+  }
 
-@media (prefers-reduced-motion: reduce) {
-  .spui-Dialog[open]:not(.spui-Dialog--closing),
-  .spui-Dialog[open]:not(.spui-Dialog--closing).spui-Dialog::backdrop,
-  .spui-Dialog--closing,
-  .spui-Dialog--closing.spui-Dialog::backdrop {
-    /* Do not remove this animation to detect animationend in JavaScript */
-    animation-duration: 0.01s;
+  .spui-Dialog[open]::backdrop {
+    opacity: 0;
   }
 }
 
-html:has(.spui-Dialog[open]) {
-  overflow: hidden;
+/* Close animation duration is faster than the open animation duration */
+.spui-Dialog:not([open]),
+.spui-Dialog:not([open])::backdrop {
+  transition-duration: 0.15s;
 }
 
-/* Fallback for :has() */
-html.spui-Dialog--open {
+@media (prefers-reduced-motion: reduce) {
+  .spui-Dialog,
+  .spui-Dialog::backdrop {
+    transition-duration: 1ms;
+  }
+}
+
+html:has(.spui-Dialog:modal) {
   overflow: hidden;
 }
 /* stylelint-enable plugin/selector-bem-pattern */
@@ -116,6 +126,7 @@ html.spui-Dialog--open {
 }
 
 .spui-Dialog--styleOnly {
+  opacity: 1;
   position: static;
 }
 
@@ -123,25 +134,5 @@ html.spui-Dialog--open {
   .spui-Dialog {
     padding: 36px;
     width: calc(400px - 36px * 2);
-  }
-}
-
-@keyframes spui-Dialog-fade-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes spui-Dialog-fade-out {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
   }
 }

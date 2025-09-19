@@ -25,7 +25,7 @@ import '@openameba/spindle-ui/Dialog/Dialog.css';
 
 ## Dialog
 
-Dialogは、利用者に重要な意思決定を促す時に利用されます。Spindle UIのDialogは[HTMLDialogElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement)を利用して作られています。[非対応ブラウザ](https://caniuse.com/dialog)には[dialog polyfill](https://github.com/GoogleChrome/dialog-polyfill)と併用してください。
+Dialogは、利用者に重要な意思決定を促す時に利用されます。Spindle UIのDialogは[HTMLDialogElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement)を利用して作られています。
 
 また、`<dialog>`要素には`<form method="dialog">`要素が内包されているため、以下の動作が想定されています。
 
@@ -45,11 +45,6 @@ function DialogExample() {
   const handleOpenButtonClick = () => setOpen(true);
   const handleDialogCancel = () => setOpen(false);
   const handleDialogClose = () => setOpen(false);
-  useEffect(() => {
-    if (dialogRef.current) {
-      dialogPolyfill.registerDialog(dialogRef.current);
-    }
-  }, [dialogRef]);
   return (
     <>
       <Button aria-haspopup="true" onClick={handleOpenButtonClick} size="medium" variant="neutral">開く</Button>
