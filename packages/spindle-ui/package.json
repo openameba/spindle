@@ -109,6 +109,6 @@
     "stylelint-order": "^7.0.0",
     "stylelint-prettier": "^5.0.0",
     "stylelint-selector-bem-pattern": "^4.0.0",
-    "ts-jest": "29.4.1"
+    "ts-jest": "29.4.2"
   }
 }
