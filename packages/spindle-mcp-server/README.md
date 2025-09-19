@@ -1,26 +1,20 @@
-# Spindle MCP Server (In Development)
+# Spindle MCP Server
 
 AmebaデザインシステムSpindleに関するデータを[Model Context Protocol(MCP)](https://modelcontextprotocol.io/introduction)を通じて提供します。
 
 ## MCPサーバーの設定
 
-SpindleのMCPサーバーを利用するには、まず、`@openameba/spindle` リポジトリをクローンします。
-
-```
-git clone git@github.com:openameba/spindle.git
-```
-
-次に、MCPクライアントの設定をします。SpindleのMCPサーバーを利用するにローカル環境にあらかじめ[nodejs](https://nodejs.org/)がインストールされている必要があります。
+MCPクライアントの設定をします。SpindleのMCPサーバーを利用するにはローカル環境にあらかじめ[nodejs](https://nodejs.org/)がインストールされている必要があります。
 
 ### Claude Code CLIでの設定
 
 [Claude Code CLI](https://github.com/anthropics/claude-code)を使用する場合は、以下のコマンドで設定します。
 
-```bash
-claude mcp add ameba-spindle node /PATH_TO_PACKAGE/spindle/packages/spindle-mcp-server/dist/index.js
-```
+#### npxを使用する場合（推奨）
 
-※ `PATH_TO_PACKAGE` は実際のパスに置き換えてください。
+```bash
+claude mcp add ameba-spindle npx -y @openameba/spindle-mcp-server@latest
+```
 
 設定が正しく追加されたか、以下のコマンドで確認します。
 
@@ -32,20 +26,21 @@ claude mcp get ameba-spindle
 
 [Cursor](https://www.cursor.com/)を使用する場合は、設定ファイルに以下を追加します。
 
+#### npxを使用する場合（推奨）
+
 ```json
 {
   "mcpServers": {
     "ameba-spindle": {
-      "command": "node",
+      "command": "npx",
       "args": [
-        "/PATH_TO_PACKAGE/spindle/packages/spindle-mcp-server/dist/index.js"
+        "-y",
+        "@openameba/spindle-mcp-server@latest"
       ]
     }
   }
 }
 ```
-
-※ `/PATH_TO_PACKAGE` は実際のパスに置き換えてください。
 
 ## 機能
 
@@ -81,33 +76,47 @@ SpindleのMCPサーバーは以下のような利用法が想定されていま�
 
 SpindleのMCPサーバーの開発には以下の手順が必要です。
 
+### 前提条件
+
+- Node.jsがインストールされていること
+- このリポジトリのルートディレクトリで `yarn` を実行して依存関係をインストール済みであること
+
+### 開発手順
+
 1. 依存パッケージのインストール
 
 ```bash
 yarn
 ```
 
-2. 開発用サーバーの起動
-
-```bash
-yarn dev
-```
-
-開発用サーバーを起動すると、ファイルの変更を監視し、自動的にビルドが実行されます。
-
-3. テスト
-
-```bash
-yarn test
-```
-
-4. ビルド
+2. ビルド
 
 ```bash
 yarn build
 ```
 
+3. 生成されたファイルを利用して動作確認
 
-ビルドすると、`dist` ディレクトリに実行可能なファイルが生成されます。
+```
+{
+  "mcpServers": {
+    "ameba-spindle": {
+      "command": "node",
+      "args": [
+        "/PATH_TO_PACKAGE/spindle/packages/spindle-mcp-server/dist/index.js"
+      ]
+    }
+  }
+}
+```
 
-※ nodejsで実行できるよう、ビルド後の生成ファイルをgit管理に含めてください
+4. テスト
+
+```bash
+yarn test
+```
+
+### 注意事項
+
+- **アセットファイルの更新**: `spindle-ui` や `spindle-tokens` パッケージのファイルが更新された場合は、`npm run copy-assets` を実行してアセットファイルを再コピーしてください
+- **開発時のファイル監視**: `npm run dev` はTypeScriptファイルの変更のみを監視します。アセットファイルを更新した場合は手動で再コピーが必要です

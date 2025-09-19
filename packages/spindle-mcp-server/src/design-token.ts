@@ -26,7 +26,7 @@ export function getCssDesignToken(tokenType: string): object | null {
 
   const tokenPath = path.join(
     __dirname,
-    '../../spindle-tokens/dist/css',
+    '../assets/spindle-tokens/dist/css',
     `spindle-tokens-${tokenType}.css`,
   );
   if (!fs.existsSync(tokenPath)) {
@@ -38,7 +38,7 @@ export function getCssDesignToken(tokenType: string): object | null {
 }
 
 export function getAllCssDesignTokens(): DesignTokens {
-  const cssDir = path.join(__dirname, '../../spindle-tokens/dist/css');
+  const cssDir = path.join(__dirname, '../assets/spindle-tokens/dist/css');
   const files = fs
     .readdirSync(cssDir)
     .filter(

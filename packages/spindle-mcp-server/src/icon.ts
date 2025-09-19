@@ -14,7 +14,7 @@ interface Icons {
 
 function getIconDocumentation(): Promise<string> {
   return fs.promises.readFile(
-    path.join(__dirname, '../../spindle-ui/src/Icon', 'index.mdx'),
+    path.join(__dirname, '../assets/spindle-ui/src/Icon', 'index.mdx'),
     'utf-8',
   );
 }
@@ -30,7 +30,7 @@ export async function getIcons(): Promise<Icons> {
 }
 
 async function getAllIcons(): Promise<string[]> {
-  const iconDir = path.join(__dirname, '../../spindle-ui/src/Icon');
+  const iconDir = path.join(__dirname, '../assets/spindle-ui/src/Icon');
   const files = await fs.promises.readdir(iconDir);
   return files
     .filter((file) => file.endsWith('.tsx'))
@@ -38,7 +38,11 @@ async function getAllIcons(): Promise<string[]> {
 }
 
 function getIconPath(iconName: string): string {
-  return path.join(__dirname, '../../spindle-ui/src/Icon', `${iconName}.tsx`);
+  return path.join(
+    __dirname,
+    '../assets/spindle-ui/src/Icon',
+    `${iconName}.tsx`,
+  );
 }
 
 export async function getIconInfo(iconName: string): Promise<IconInfo | null> {
