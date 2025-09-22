@@ -1,10 +1,4 @@
-import React, {
-  forwardRef,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import React, { forwardRef, useEffect, useRef } from 'react';
 import { useMergeRefs } from 'use-callback-ref';
 import { ButtonGroup as Group } from '../ButtonGroup';
 import CrossBold from '../Icon/CrossBold';
@@ -21,14 +15,12 @@ interface AppealModalProps extends React.DialogHTMLAttributes<HTMLElement> {
 }
 
 const BLOCK_NAME = 'spui-AppealModal';
-const FADE_OUT_ANIMATION = 'spui-AppealModal-fade-out';
 
 const Frame = forwardRef<HTMLDialogElement, AppealModalProps>(
   function AppealModal(
     { children, className, open, size = 'large', onClose, ...rest },
     ref,
   ) {
-    const [closing, setClosing] = useState(false);
     const dialogEl = useRef<HTMLDialogElement>(null);
 
     const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -49,30 +41,8 @@ const Frame = forwardRef<HTMLDialogElement, AppealModalProps>(
       // Detect escape key type
       if (event.target === dialogEl.current) {
         onClose && onClose(event);
-        setClosing(false);
       }
     };
-
-    const handleAnimationEnd = useCallback(
-      (event: AnimationEvent) => {
-        if (
-          dialogEl.current &&
-          event.animationName === FADE_OUT_ANIMATION &&
-          !event.pseudoElement // To exclude ::backdrop
-        ) {
-          dialogEl.current.close && dialogEl.current.close();
-        }
-      },
-      [dialogEl],
-    );
-
-    useEffect(() => {
-      const dialog = dialogEl.current;
-      dialog?.addEventListener('animationend', handleAnimationEnd, false);
-
-      return () =>
-        dialog?.removeEventListener('animationend', handleAnimationEnd, false);
-    }, [dialogEl, handleAnimationEnd]);
 
     useEffect(() => {
       const dialog = dialogEl.current;
@@ -80,31 +50,16 @@ const Frame = forwardRef<HTMLDialogElement, AppealModalProps>(
         return;
       }
 
-      // Remove this when browsers support :has() pseudo-class
-      const classNameToStopScrollBehindDialog = `${BLOCK_NAME}--open`;
-
       if (open) {
         !dialog.open && dialog.showModal?.();
-        document.documentElement.classList.add(
-          classNameToStopScrollBehindDialog,
-        );
       } else {
-        dialog?.open && setClosing(true);
-        // Always remove this class to avoid unexpected scroll stopping
-        document.documentElement.classList.remove(
-          classNameToStopScrollBehindDialog,
-        );
+        dialog?.close?.();
       }
     }, [open, dialogEl]);
 
     return (
       <dialog
-        className={[
-          BLOCK_NAME,
-          `${BLOCK_NAME}--${size}`,
-          closing && `${BLOCK_NAME}--closing`,
-          className,
-        ]
+        className={[BLOCK_NAME, `${BLOCK_NAME}--${size}`, className]
           .filter(Boolean)
           .join(' ')
           .trim()}
@@ -141,7 +96,12 @@ const StyleOnly = ({
 }: React.ComponentProps<'div'> & { size?: Size }) => {
   return (
     <div
-      className={[BLOCK_NAME, `${BLOCK_NAME}--${size}`, className]
+      className={[
+        BLOCK_NAME,
+        `${BLOCK_NAME}--styleOnly`,
+        `${BLOCK_NAME}--${size}`,
+        className,
+      ]
         .filter(Boolean)
         .join(' ')
         .trim()}

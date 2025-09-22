@@ -16,8 +16,13 @@
   /* TODO: replace color with color palette */
   box-shadow: 0 11px 28px rgba(8, 18, 26, 0.12);
   height: fit-content;
+  opacity: 0;
   padding: 0;
   position: fixed;
+  transition:
+    opacity 350ms cubic-bezier(0, 0, 0, 1),
+    display 350ms allow-discrete,
+    overlay 350ms allow-discrete;
   width: fit-content;
 }
 
@@ -26,62 +31,60 @@
   bottom: 0;
   margin: auto auto 0;
   transform: translateY(100%);
+  transition:
+    opacity 350ms cubic-bezier(0, 0, 0, 1),
+    transform 350ms cubic-bezier(0, 0, 0, 1),
+    display 350ms allow-discrete,
+    overlay 350ms allow-discrete;
   will-change: translate;
 }
 
-/* stylelint-disable plugin/selector-bem-pattern */
-/* NOTE: set no animations to the dialog-polyfill browsers for stability */
-.spui-SemiModal[data-type='popup'][open]:not(.spui-SemiModal--closing),
-.spui-SemiModal[data-type='popup'][open]:not(
-    .spui-SemiModal--closing
-  ).spui-SemiModal::backdrop,
-.spui-SemiModal[data-type='sheet'][open]:not(
-    .spui-SemiModal--closing
-  ).spui-SemiModal::backdrop {
-  animation: 350ms cubic-bezier(0, 0, 0, 1) spui-SemiModal-fade-in;
+.spui-SemiModal[open],
+.spui-SemiModal--styleOnly,
+.spui-SemiModal[open]::backdrop {
+  opacity: 1;
 }
 
-.spui-SemiModal--closing.spui-SemiModal[data-type='popup'],
-.spui-SemiModal--closing[data-type='popup'].spui-SemiModal::backdrop,
-.spui-SemiModal--closing[data-type='sheet'].spui-SemiModal::backdrop {
-  animation: 350ms cubic-bezier(0, 0, 0, 1) spui-SemiModal-fade-out;
+.spui-SemiModal::backdrop {
+  /* TODO: replace color with color palette, backdrop does not accept variable */
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition:
+    opacity 350ms cubic-bezier(0, 0, 0, 1),
+    display 350ms allow-discrete,
+    overlay 350ms allow-discrete;
 }
 
-.spui-SemiModal[data-type='sheet'][open]:not(.spui-SemiModal--closing, button) {
-  animation: both 350ms cubic-bezier(0, 0, 0, 1) spui-SemiModal-slide-in;
+.spui-SemiModal[data-type='sheet'][open] {
+  transform: translateY(0);
 }
 
-.spui-SemiModal--closing.spui-SemiModal[data-type='sheet'] {
-  animation: both 350ms cubic-bezier(0, 0, 0, 1) spui-SemiModal-slide-out;
-}
+/* Starting style for smooth transitions */
+@starting-style {
+  .spui-SemiModal[open] {
+    opacity: 0;
+  }
 
-@media (prefers-reduced-motion: reduce) {
-  .spui-SemiModal[data-type='popup'][open]:not(.spui-SemiModal--closing),
-  .spui-SemiModal[data-type='popup'][open]:not(
-      .spui-SemiModal--closing
-    ).spui-SemiModal::backdrop,
-  .spui-SemiModal[data-type='popup'].spui-SemiModal--closing,
-  .spui-SemiModal--closing.spui-SemiModal[data-type='popup']::backdrop,
-  .spui-SemiModal[data-type='sheet'][open]:not(.spui-SemiModal--closing),
-  .spui-SemiModal[data-type='sheet'][open]:not(
-      .spui-SemiModal--closing
-    ).spui-SemiModal::backdrop,
-  .spui-SemiModal[data-type='sheet'].spui-SemiModal--closing,
-  .spui-SemiModal--closing.spui-SemiModal[data-type='sheet']::backdrop {
-    /* Do not remove this animation to detect animationend in JavaScript */
-    animation-duration: 0.01s;
+  .spui-SemiModal[open]::backdrop {
+    opacity: 0;
+  }
+
+  .spui-SemiModal[data-type='sheet'][open] {
+    transform: translateY(100%);
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .spui-SemiModal,
+  .spui-SemiModal::backdrop {
+    transition-duration: 0.01s;
+  }
+}
+
+/* stylelint-disable-next-line plugin/selector-bem-pattern */
 html:has(.spui-SemiModal[open]) {
   overflow: hidden;
 }
-
-/* Fallback for :has() */
-html.spui-SemiModal--open {
-  overflow: hidden;
-}
-/* stylelint-enable plugin/selector-bem-pattern */
 
 /* The minimum margin for the small devices */
 /* 440px is calculated from dialog width (400px) + minimum margin (20px * 2) */
@@ -90,17 +93,6 @@ html.spui-SemiModal--open {
   .spui-SemiModal {
     width: calc(100% - (20px * 2));
   }
-}
-
-.spui-SemiModal::backdrop {
-  /* TODO: replace color with color palette, backdrop does not accept variable */
-  background: rgba(0, 0, 0, 0.6);
-}
-
-/* Dialog polyfill adds ".backdrop" instead of "::backdrop" */
-/* stylelint-disable-next-line plugin/selector-bem-pattern */
-.spui-SemiModal + .backdrop {
-  background: rgba(0, 0, 0, 0.6);
 }
 
 /*
@@ -155,6 +147,7 @@ html.spui-SemiModal--open {
   /* stylelint-disable plugin/selector-bem-pattern */
   --IconButton--neutral-backgroundColor: transparent;
   --IconButton--neutral-onHover-backgroundColor: var(--color-surface-tertiary);
+  /* stylelint-enable plugin/selector-bem-pattern */
 }
 
 .spui-SemiModal-headerTitle {
@@ -275,8 +268,9 @@ html.spui-SemiModal--open {
   .spui-SemiModal-closeIconButton {
     height: 24px;
     width: 24px;
-
+    /* stylelint-disable plugin/selector-bem-pattern */
     --IconButton--neutral-onHover-backgroundColor: transparent;
+    /* stylelint-enable plugin/selector-bem-pattern */
   }
 
   .spui-SemiModal-frame {
@@ -291,45 +285,5 @@ html.spui-SemiModal--open {
   .spui-SemiModal-footer :is(.spui-Button, .spui-LinkButton) {
     max-width: 360px;
     width: 100%;
-  }
-}
-
-@keyframes spui-SemiModal-slide-in {
-  from {
-    transform: translateY(100%);
-  }
-
-  to {
-    transform: translateY(0);
-  }
-}
-
-@keyframes spui-SemiModal-slide-out {
-  from {
-    transform: translateY(0);
-  }
-
-  to {
-    transform: translateY(100%);
-  }
-}
-
-@keyframes spui-SemiModal-fade-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes spui-SemiModal-fade-out {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
   }
 }
