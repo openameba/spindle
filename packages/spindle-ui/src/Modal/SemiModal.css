@@ -26,7 +26,6 @@
   width: fit-content;
 }
 
-/* stylelint-disable-next-line plugin/selector-bem-pattern */
 .spui-SemiModal[data-type='sheet'] {
   border-radius: 20px 20px 0 0;
   bottom: 0;
@@ -40,16 +39,12 @@
   will-change: translate;
 }
 
-/* stylelint-disable-next-line plugin/selector-bem-pattern */
-.spui-SemiModal[open] {
+.spui-SemiModal[open],
+.spui-SemiModal--styleOnly,
+.spui-SemiModal[open]::backdrop {
   opacity: 1;
 }
 
-.spui-SemiModal--styleOnly {
-  opacity: 1;
-}
-
-/* stylelint-disable-next-line plugin/selector-bem-pattern */
 .spui-SemiModal::backdrop {
   /* TODO: replace color with color palette, backdrop does not accept variable */
   background: rgba(0, 0, 0, 0.6);
@@ -60,29 +55,20 @@
     overlay 350ms allow-discrete;
 }
 
-/* stylelint-disable-next-line plugin/selector-bem-pattern */
-.spui-SemiModal[open]::backdrop {
-  opacity: 1;
-}
-
-/* stylelint-disable-next-line plugin/selector-bem-pattern */
 .spui-SemiModal[data-type='sheet'][open] {
   transform: translateY(0);
 }
 
 /* Starting style for smooth transitions */
 @starting-style {
-  /* stylelint-disable-next-line plugin/selector-bem-pattern */
   .spui-SemiModal[open] {
     opacity: 0;
   }
 
-  /* stylelint-disable-next-line plugin/selector-bem-pattern */
   .spui-SemiModal[open]::backdrop {
     opacity: 0;
   }
 
-  /* stylelint-disable-next-line plugin/selector-bem-pattern */
   .spui-SemiModal[data-type='sheet'][open] {
     transform: translateY(100%);
   }
@@ -183,19 +169,16 @@ html:has(.spui-SemiModal[open]) {
   overflow: hidden scroll;
 }
 
-/* stylelint-disable-next-line plugin/selector-bem-pattern */
 .spui-SemiModal-contents::-webkit-scrollbar {
   border-radius: 4px;
   width: 8px;
 }
 
-/* stylelint-disable-next-line plugin/selector-bem-pattern */
 .spui-SemiModal-contents::-webkit-scrollbar-thumb {
   background: var(--color-object-low-emphasis);
   border-radius: 4px;
 }
 
-/* stylelint-disable-next-line plugin/selector-bem-pattern */
 .spui-SemiModal-contents::-webkit-scrollbar-track:enabled {
   background-color: var(--color-surface-secondary);
   border-radius: 4px;

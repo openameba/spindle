@@ -25,16 +25,12 @@
   width: 400px;
 }
 
-/* stylelint-disable-next-line plugin/selector-bem-pattern */
-.spui-AppealModal[open] {
+.spui-AppealModal[open],
+.spui-AppealModal--styleOnly,
+.spui-AppealModal[open]::backdrop {
   opacity: 1;
 }
 
-.spui-AppealModal--styleOnly {
-  opacity: 1;
-}
-
-/* stylelint-disable-next-line plugin/selector-bem-pattern */
 .spui-AppealModal::backdrop {
   /* TODO: replace color with color palette, backdrop does not accept variable */
   background: rgba(0, 0, 0, 0.6);
@@ -45,19 +41,12 @@
     overlay 500ms allow-discrete;
 }
 
-/* stylelint-disable-next-line plugin/selector-bem-pattern */
-.spui-AppealModal[open]::backdrop {
-  opacity: 1;
-}
-
 /* Starting style for smooth transitions */
 @starting-style {
-  /* stylelint-disable-next-line plugin/selector-bem-pattern */
   .spui-AppealModal[open] {
     opacity: 0;
   }
 
-  /* stylelint-disable-next-line plugin/selector-bem-pattern */
   .spui-AppealModal[open]::backdrop {
     opacity: 0;
   }
@@ -179,7 +168,6 @@ html:has(.spui-AppealModal[open]) {
   text-align: center;
 }
 
-/* stylelint-disable-next-line plugin/selector-bem-pattern */
 .spui-AppealModal-buttonGroup :is(.spui-Button, .spui-LinkButton) {
   max-width: 240px;
 }
