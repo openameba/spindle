@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.7.0...@openameba/spindle-ui@2.8.0) (2025-09-22)
+
+### Features
+
+- **spindle-ui:** migrate AppealModal to allow-discrete transitions ([f540486](https://github.com/openameba/spindle/commit/f540486374ceff52b3b188d4f1f38121ead39c82))
+- **spindle-ui:** migrate SemiModal to allow-discrete transitions ([64b6eee](https://github.com/openameba/spindle/commit/64b6eee06bb6371dc2f5e3b8340697b540fa0c72))
+
 # [2.7.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.6.3...@openameba/spindle-ui@2.7.0) (2025-09-19)
 
 ### Features
