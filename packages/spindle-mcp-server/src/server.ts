@@ -7,7 +7,6 @@ import { getIconInfo, getIcons } from './icon.js';
 import { getComponentDesignDocTemplate } from './design-doc.js';
 import pkg from '../package.json' with { type: 'json' };
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const VERSION = pkg.version;
 
 export function createServer(): McpServer {
