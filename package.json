@@ -10,11 +10,14 @@
     "lint:yaml": "yamllint .github/workflows/*.yml",
     "lint:packages": "lerna run lint",
     "lint:text": "textlint --quiet .",
-    "format": "prettier --check 'packages/**/src/**/*.{js,ts,tsx}'",
+    "format": "run-p format:*",
+    "format:css": "biome format packages/**/*.css",
+    "format:script": "prettier --check 'packages/**/src/**/*.{js,ts,tsx}'",
     "fix": "run-p fix:*",
     "fix:script": "eslint . --fix",
     "fix:packages": "lerna run format",
     "fix:format": "prettier --write '**/*.{js,ts,tsx}'",
+    "fix:css": "biome format --write packages/**/*.css",
     "fix:text": "textlint --fix .",
     "bootstrap": "lerna bootstrap",
     "build": "run-s build:*",
@@ -23,6 +26,7 @@
     "prepare": "is-ci || husky install"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.2.4",
     "@commitlint/cli": "19.8.1",
     "@commitlint/config-conventional": "19.8.1",
     "@commitlint/config-lerna-scopes": "19.8.1",
