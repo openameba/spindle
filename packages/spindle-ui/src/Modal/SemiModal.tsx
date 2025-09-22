@@ -1,11 +1,4 @@
-import React, {
-  forwardRef,
-  ReactNode,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import React, { forwardRef, ReactNode, useEffect, useRef } from 'react';
 import { useMergeRefs } from 'use-callback-ref';
 import CrossBold from '../Icon/CrossBold';
 import { IconButton } from '../IconButton';
@@ -23,16 +16,11 @@ interface SemiModalProps
 }
 
 const BLOCK_NAME = 'spui-SemiModal';
-const ANIMATION_NAME_LIST = [
-  `${BLOCK_NAME}-fade-out`,
-  `${BLOCK_NAME}-slide-out`,
-];
 
 const Frame = forwardRef<HTMLDialogElement, SemiModalProps>(function SemiModal(
   { children, open, size = 'medium', type = 'popup', onClose, ...rest },
   ref,
 ) {
-  const [closing, setClosing] = useState(false);
   const dialogEl = useRef<HTMLDialogElement>(null);
 
   // 閉じるアイコンを押した時
@@ -56,59 +44,25 @@ const Frame = forwardRef<HTMLDialogElement, SemiModalProps>(function SemiModal(
     // Detect escape key type
     if (event.target === dialogEl.current) {
       onClose?.(event);
-      setClosing(false);
     }
   };
-
-  // modalアニメーション終了時
-  const handleAnimationEnd = useCallback(
-    (event: AnimationEvent) => {
-      if (
-        dialogEl.current &&
-        ANIMATION_NAME_LIST.includes(event.animationName) &&
-        !event.pseudoElement // To exclude ::backdrop
-      ) {
-        dialogEl.current?.close?.();
-      }
-    },
-    [dialogEl],
-  );
-
-  useEffect(() => {
-    dialogEl.current?.addEventListener(
-      'animationend',
-      handleAnimationEnd,
-      false,
-    );
-  }, [handleAnimationEnd]);
 
   useEffect(() => {
     if (!dialogEl.current) {
       return;
     }
 
-    // Remove this when browsers support :has() pseudo-class
-    const classNameToStopScrollBehindDialog = `${BLOCK_NAME}--open`;
-
     if (open) {
       dialogEl.current?.showModal?.();
-      document.documentElement.classList.add(classNameToStopScrollBehindDialog);
     } else {
-      dialogEl.current?.open && setClosing(true);
-      // Always remove this class to avoid unexpected scroll stopping
-      document.documentElement.classList.remove(
-        classNameToStopScrollBehindDialog,
-      );
+      dialogEl.current?.close?.();
     }
   }, [open, dialogEl]);
 
   return (
     <dialog
       role="dialog"
-      className={[BLOCK_NAME, closing && `${BLOCK_NAME}--closing`]
-        .filter(Boolean)
-        .join(' ')
-        .trim()}
+      className={BLOCK_NAME}
       ref={useMergeRefs([dialogEl, ref])}
       onClick={handleDialogClick}
       onClose={handleDialogClose}
@@ -183,7 +137,12 @@ const StyleOnly = ({
 }: React.ComponentProps<'div'> & { size?: Size; type?: Type }) => {
   return (
     <div
-      className={[BLOCK_NAME, `${BLOCK_NAME}--${size}`, className]
+      className={[
+        BLOCK_NAME,
+        `${BLOCK_NAME}--styleOnly`,
+        `${BLOCK_NAME}--${size}`,
+        className,
+      ]
         .filter(Boolean)
         .join(' ')
         .trim()}
