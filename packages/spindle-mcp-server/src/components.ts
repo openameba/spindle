@@ -25,7 +25,7 @@ export function getComponentInfo(
   componentName: string,
   directory: string,
 ): ComponentInfo | null {
-  const baseDir = path.join(__dirname, '../../spindle-ui/src');
+  const baseDir = path.join(__dirname, '../assets/spindle-ui/src');
 
   const normalizedDir = directory.split('/').filter(Boolean);
   const componentDir = path.join(baseDir, ...normalizedDir);
@@ -108,7 +108,7 @@ export function getComponentInfo(
 }
 
 function getAllComponents(): ComponentInfo[] {
-  const componentsDir = path.join(__dirname, '../../spindle-ui/src');
+  const componentsDir = path.join(__dirname, '../assets/spindle-ui/src');
   const components: ComponentInfo[] = [];
 
   function scanDirectory(dir: string) {
@@ -148,7 +148,7 @@ export async function getComponents(): Promise<Components> {
   const components = await getAllComponents();
   const componentList = components.map((comp) => comp.name);
   const documentation = await fs.promises.readFile(
-    path.join(__dirname, '../../spindle-ui/README.md'),
+    path.join(__dirname, '../assets/spindle-ui/README.md'),
     'utf-8',
   );
 
