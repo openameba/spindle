@@ -58,5 +58,8 @@
       "**/@types/**",
       "**/webpack/**"
     ]
+  },
+  "resolutions": {
+    "zod": "3.24.2"
   }
 }
