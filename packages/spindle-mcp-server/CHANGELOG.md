@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/openameba/spindle/compare/@openameba/spindle-mcp-server@1.0.0...@openameba/spindle-mcp-server@1.0.1) (2025-09-24)
+
+### Bug Fixes
+
+- **spindle-mcp-server:** migrate to ES module format and update TypeScript config ([acc2f42](https://github.com/openameba/spindle/commit/acc2f42d30d8231b05ebd392c0eb6b21ff74f601))
+
 # 1.0.0 (2025-09-22)
 
 ### Features
