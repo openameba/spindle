@@ -2,3 +2,4 @@ node_modules/
 dist/
 public/
 packages/spindle-tokens/lib/*.js
+packages/spindle-ui/src/Icon/*.tsx
