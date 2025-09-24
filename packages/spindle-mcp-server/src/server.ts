@@ -5,9 +5,9 @@ import { getComponents, getComponentInfo } from './components.js';
 import { getAllCssDesignTokens, getCssDesignToken } from './design-token.js';
 import { getIconInfo, getIcons } from './icon.js';
 import { getComponentDesignDocTemplate } from './design-doc.js';
+import pkg from '../package.json' with { type: 'json' };
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const VERSION = require('../package.json').version;
+const VERSION = pkg.version;
 
 export function createServer(): McpServer {
   const server = new McpServer({
