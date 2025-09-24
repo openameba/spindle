@@ -1,6 +1,6 @@
 {
   "name": "@openameba/spindle-mcp-server",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "MCP server for Ameba Design System Spindle",
   "type": "module",
   "main": "dist/index.js",
