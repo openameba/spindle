@@ -5,7 +5,7 @@
 
 import ReactDOM from 'react-dom';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// biome-ignore lint/suspicious/noExplicitAny: Accessing undocumented React API
 const flushSync = (ReactDOM as any).flushSync;
 type FlushSyncCallback = () => void;
 

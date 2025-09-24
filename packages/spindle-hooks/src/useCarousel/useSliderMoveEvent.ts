@@ -11,6 +11,7 @@ export function useSliderMoveEvent() {
   const startXRef = useValueRef(startX);
   const startYRef = useValueRef(startY);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: Refs are used for mutable values that don't trigger re-renders
   const onMouseMove = useCallback((e: MouseEvent) => {
     if (startXRef.current === null || startYRef.current === null) return;
 
@@ -20,6 +21,7 @@ export function useSliderMoveEvent() {
     setDiffY(e.clientY - startYRef.current);
   }, []);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: Refs are used for mutable values that don't trigger re-renders
   const onTouchMove = useCallback((e: TouchEvent) => {
     if (
       startXRef.current === null ||

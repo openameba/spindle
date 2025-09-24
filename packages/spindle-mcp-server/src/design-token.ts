@@ -11,6 +11,7 @@ function parseCssCustomProperties(cssContent: string): object {
   const regex = /--([^:]+):\s*([^;]+);/g;
   let match: RegExpExecArray | null;
 
+  // biome-ignore lint/suspicious/noAssignInExpressions: Standard regex pattern matching
   while ((match = regex.exec(cssContent)) !== null) {
     const [, name, value] = match;
     properties[name.trim()] = value.trim();

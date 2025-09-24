@@ -144,6 +144,7 @@ const HeroCarousel = () => {
               carouselItem={item}
               isLinkClicked={isLinkClicked}
               itemLinkClassName={ITEM_LINK_CLASS_NAME}
+              // biome-ignore lint/suspicious/noArrayIndexKey: Carousel items have fixed order
               key={`hero-carousel-${index}`}
             />
           ))}

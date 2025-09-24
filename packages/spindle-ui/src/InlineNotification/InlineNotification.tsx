@@ -91,7 +91,7 @@ const Frame: FC<Props> = ({
   );
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// biome-ignore lint/suspicious/noExplicitAny: Props spreading requires flexible type
 type OwnProps = Record<string, any>;
 type InternalChildProps = {
   variant?: Variant;
