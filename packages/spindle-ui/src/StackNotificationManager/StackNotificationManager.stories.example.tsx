@@ -1,13 +1,13 @@
 import React, { useCallback, useEffect, useRef } from 'react';
-import { SnackBar } from '../SnackBar';
-import { useStackNotificationManager } from '.';
-import {
-  StackNotificationManagerProvider,
-  StackPosition,
-} from './StackNotificationManager';
 import { Button } from '../Button';
 import Information from '../Icon/Information';
+import { SnackBar } from '../SnackBar';
+import { useStackNotificationManager } from '.';
 import { useRepeatedStackItem } from './hooks';
+import {
+  StackNotificationManagerProvider,
+  type StackPosition,
+} from './StackNotificationManager';
 
 const usePoliteAnnouncer = (active: boolean, message: string) => {
   const announcer = useRef<HTMLElement | null>(null);
@@ -51,20 +51,16 @@ const SnackBarExample: React.FC<
   usePoliteAnnouncer(!!stackProps.active, text);
 
   return (
-    <>
-      <SnackBar.Frame
-        variant={variant}
-        onHide={handleOnHide}
-        {...rest}
-        {...stackProps}
-      >
-        <>
-          {icon && <SnackBar.Icon>{icon}</SnackBar.Icon>}
-          <SnackBar.Text>{text}</SnackBar.Text>
-          <SnackBar.TextButton>取り消し</SnackBar.TextButton>
-        </>
-      </SnackBar.Frame>
-    </>
+    <SnackBar.Frame
+      variant={variant}
+      onHide={handleOnHide}
+      {...rest}
+      {...stackProps}
+    >
+      {icon && <SnackBar.Icon>{icon}</SnackBar.Icon>}
+      <SnackBar.Text>{text}</SnackBar.Text>
+      <SnackBar.TextButton>取り消し</SnackBar.TextButton>
+    </SnackBar.Frame>
   );
 };
 

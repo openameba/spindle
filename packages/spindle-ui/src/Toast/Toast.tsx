@@ -1,11 +1,11 @@
-import React, { FC } from 'react';
-import {
-  ManagedStack,
-  useStackNotificationComponent,
-} from '../StackNotificationManager';
+import React, { type FC } from 'react';
 import CrossBold from '../Icon/CrossBold';
 import { IconButton } from '../IconButton';
-import { StackNotificationComponentProps } from '../StackNotificationManager/StackNotificationManager';
+import {
+  type ManagedStack,
+  useStackNotificationComponent,
+} from '../StackNotificationManager';
+import type { StackNotificationComponentProps } from '../StackNotificationManager/StackNotificationManager';
 
 type Position = keyof Pick<ManagedStack, 'topCenter' | 'bottomCenter'>;
 

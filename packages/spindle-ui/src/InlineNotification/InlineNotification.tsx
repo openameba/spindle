@@ -1,17 +1,17 @@
 import React, {
-  ReactNode,
-  FC,
   Children,
   cloneElement,
-  HTMLAttributes,
-  useMemo,
+  type FC,
   Fragment,
-  useCallback,
+  type HTMLAttributes,
   isValidElement,
+  type ReactNode,
+  useCallback,
+  useMemo,
 } from 'react';
 import { Button as SpindleButton } from '../Button/Button';
-import { TextButton as SpindleTextButton } from '../TextButton/TextButton';
 import { IconButton as SpindleIconButton } from '../IconButton/IconButton';
+import { TextButton as SpindleTextButton } from '../TextButton/TextButton';
 
 type Variant = 'information' | 'confirmation' | 'error';
 type Layout = 'inset' | 'full';
@@ -104,8 +104,7 @@ const convertInternalChildProps = (
   const hasInternalChildProps = (
     props: OwnProps,
   ): props is InternalChildProps =>
-    ({}).hasOwnProperty.call(props, 'variant') ||
-    {}.hasOwnProperty.call(props, 'emphasis');
+    Object.hasOwn(props, 'variant') || Object.hasOwn(props, 'emphasis');
 
   if (hasInternalChildProps(props)) {
     const result = {

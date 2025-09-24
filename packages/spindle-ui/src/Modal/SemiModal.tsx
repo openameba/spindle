@@ -1,4 +1,4 @@
-import React, { forwardRef, ReactNode, useEffect, useRef } from 'react';
+import React, { forwardRef, type ReactNode, useEffect, useRef } from 'react';
 import { useMergeRefs } from 'use-callback-ref';
 import CrossBold from '../Icon/CrossBold';
 import { IconButton } from '../IconButton';
@@ -57,11 +57,10 @@ const Frame = forwardRef<HTMLDialogElement, SemiModalProps>(function SemiModal(
     } else {
       dialogEl.current?.close?.();
     }
-  }, [open, dialogEl]);
+  }, [open]);
 
   return (
     <dialog
-      role="dialog"
       className={BLOCK_NAME}
       ref={useMergeRefs([dialogEl, ref])}
       onClick={handleDialogClick}
@@ -86,7 +85,7 @@ const Header = ({
   ...rest
 }: React.ComponentProps<'header'> & { children: ReactNode }) => {
   return (
-    <header role="heading" className={`${BLOCK_NAME}-header`} {...rest}>
+    <header className={`${BLOCK_NAME}-header`} {...rest}>
       {children}
       <div className={`${BLOCK_NAME}-closeIconButton`}>
         <IconButton

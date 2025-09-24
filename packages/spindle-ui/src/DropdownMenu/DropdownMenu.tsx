@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 type Variant =
   | 'text'
@@ -76,13 +76,13 @@ const List = ({
 
       setFadeOut(true);
     },
-    [open, setFadeOut, triggerRef],
+    [open, triggerRef],
   );
 
   const onClickCloser = useCallback(() => {
     setFadeOut(true);
     triggerRef.current?.focus();
-  }, [setFadeOut, triggerRef]);
+  }, [triggerRef]);
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -100,7 +100,7 @@ const List = ({
       onClose();
       setFadeOut(false);
     },
-    [onClose, setFadeOut],
+    [onClose],
   );
 
   // Triggerボタンの縦横幅を取得
@@ -129,7 +129,7 @@ const List = ({
 
     return () =>
       menu?.removeEventListener('animationend', handleAnimationEnd, false);
-  }, [menuEl, handleAnimationEnd, open]);
+  }, [handleAnimationEnd, open]);
 
   useEffect(() => {
     if (open) {
@@ -179,7 +179,6 @@ const List = ({
         .filter(Boolean)
         .join(' ')}
       ref={menuEl}
-      role="menu"
       style={{ bottom, left, top }}
     >
       {children}
@@ -189,7 +188,7 @@ const List = ({
 
 const ListItem = ({ children, icon, onClick }: ListItemProps) => {
   return (
-    <li className={`${BLOCK_NAME}-menuItem`} role="menuItem">
+    <li className={`${BLOCK_NAME}-menuItem`}>
       <button className={`${BLOCK_NAME}-menuButton`} onClick={onClick}>
         {icon && <div className={`${BLOCK_NAME}-iconContainer`}>{icon}</div>}
         <div className={`${BLOCK_NAME}-textContainer`}>{children}</div>
@@ -252,7 +251,6 @@ const Position = ({
         .filter(Boolean)
         .join(' ')}
       ref={menuEl}
-      role="menu"
       style={{ bottom, left, top }}
     >
       {children}

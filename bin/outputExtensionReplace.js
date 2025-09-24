@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const { access } = require('fs').promises;
+const { access } = require('node:fs').promises;
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const { dirname, join, resolve } = require('path');
+const { dirname, join, resolve } = require('node:path');
 
 async function checkFileExists(filePath) {
   try {

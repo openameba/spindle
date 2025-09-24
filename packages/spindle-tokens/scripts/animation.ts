@@ -1,16 +1,16 @@
-import fs from 'fs';
-import path from 'path';
-import { GetLocalVariablesResponse } from '@figma/rest-api-spec';
-import { fetchLocalVariables } from '../lib/figma';
+import fs from 'node:fs';
+import path from 'node:path';
+import type { GetLocalVariablesResponse } from '@figma/rest-api-spec';
 import {
   transformAnimation,
   transformAnimationProperty,
 } from '../lib/animation-transformer';
+import { fetchLocalVariables } from '../lib/figma';
 
 const FIGMA_FILE_KEY = 'st60hCtXaGsXQCnCwNS9Dy';
 const FIGMA_TOKEN = process.env.FIGMA_TOKEN || '';
 
-(async function () {
+(async () => {
   const variables = await fetchLocalVariables<GetLocalVariablesResponse>(
     FIGMA_FILE_KEY,
     FIGMA_TOKEN,

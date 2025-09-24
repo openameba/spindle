@@ -1,11 +1,11 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
-  ManagedStack,
-  StackNotificationManagerProperties,
-  StackNotificationManagerProps,
-  StackOffset,
-  StackPosition,
-  StackPositionOffset,
+  type ManagedStack,
+  type StackNotificationManagerProperties,
+  type StackNotificationManagerProps,
+  type StackOffset,
+  type StackPosition,
+  type StackPositionOffset,
   useStackNotificationManagerContext,
 } from './StackNotificationManager';
 
@@ -44,9 +44,7 @@ function removeMQListener(
 
 const useBreakpoint = (breakpoint: string): boolean => {
   const mql = useRef(
-    typeof window !== 'undefined' && window.matchMedia
-      ? window.matchMedia(breakpoint)
-      : undefined,
+    window?.matchMedia ? window.matchMedia(breakpoint) : undefined,
   );
   const [matches, setMatches] = useState(() =>
     mql.current ? mql.current.matches : false,
@@ -384,14 +382,14 @@ export const useStackNotificationComponent = <
         setIsShow(false);
       }, displayingTimeout);
     }
-  }, [isShow, timeoutID, setIsShow, displayingTimeout]);
+  }, [isShow, displayingTimeout]);
 
   const resetTimeout = useCallback(() => {
     if (timeoutID.current) {
       window.clearTimeout(timeoutID.current);
       timeoutID.current = null;
     }
-  }, [timeoutID]);
+  }, []);
 
   const handleTransitionEnd = useCallback(() => {
     if (onHide && !isShow) {

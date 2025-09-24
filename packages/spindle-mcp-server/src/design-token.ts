@@ -1,5 +1,5 @@
-import path from 'path';
-import fs from 'fs';
+import fs from 'node:fs';
+import path from 'node:path';
 
 interface DesignTokens {
   tokenList: Record<string, object>;

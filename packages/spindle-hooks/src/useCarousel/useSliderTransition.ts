@@ -1,4 +1,4 @@
-import { useMemo, useState, MutableRefObject } from 'react';
+import { type MutableRefObject, useMemo, useState } from 'react';
 import { useFlushSync } from '../internal/useFlushSync';
 import { useValueRef } from './useValueRef';
 

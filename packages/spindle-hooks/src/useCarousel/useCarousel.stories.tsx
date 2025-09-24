@@ -1,5 +1,5 @@
-import React, { useCallback } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import React, { useCallback } from 'react';
 import { useCarousel } from './useCarousel';
 
 const ITEM_LINK_CLASS_NAME = 'js-auto-play-carousel-item-link';

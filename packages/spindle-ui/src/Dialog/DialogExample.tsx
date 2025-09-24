@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
 import dialogPolyfill from 'dialog-polyfill';
+import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '../Button';
 import { SubtleButton } from '../SubtleButton';
 import { Dialog } from './Dialog';

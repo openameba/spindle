@@ -1,5 +1,6 @@
-import * as React from 'react';
 import type { SVGProps } from 'react';
+import * as React from 'react';
+
 const SvgArrowpagingDown = (props: SVGProps<SVGSVGElement>) => (
   <svg
     width="1em"

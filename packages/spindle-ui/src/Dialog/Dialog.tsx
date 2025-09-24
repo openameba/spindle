@@ -30,7 +30,7 @@ const Frame = forwardRef<HTMLDialogElement, DialogProps>(function Dialog(
   const handleDialogClick = (event: React.MouseEvent<HTMLDialogElement>) => {
     // Detect backdrop click
     if (event.target === dialogEl.current) {
-      onClose && onClose(event);
+      onClose?.(event);
     }
   };
 
@@ -39,7 +39,7 @@ const Frame = forwardRef<HTMLDialogElement, DialogProps>(function Dialog(
   ) => {
     // Detect escape key type
     if (event.target === dialogEl.current) {
-      onClose && onClose(event);
+      onClose?.(event);
     }
   };
 
@@ -54,7 +54,7 @@ const Frame = forwardRef<HTMLDialogElement, DialogProps>(function Dialog(
     } else {
       dialog?.open && dialog.close?.();
     }
-  }, [open, dialogEl]);
+  }, [open]);
 
   return (
     <dialog

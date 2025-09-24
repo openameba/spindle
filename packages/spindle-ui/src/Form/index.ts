@@ -1,3 +1,4 @@
+export { ButtonSwitch } from './ButtonSwitch/ButtonSwitch';
 export { Checkbox } from './Checkbox';
 export { DropDown } from './DropDown';
 export { InputLabel } from './InputLabel';
@@ -6,4 +7,3 @@ export { Radio } from './Radio';
 export { TextArea } from './TextArea';
 export { TextField } from './TextField';
 export { ToggleSwitch } from './ToggleSwitch';
-export { ButtonSwitch } from './ButtonSwitch/ButtonSwitch';

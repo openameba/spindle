@@ -1,8 +1,8 @@
-import React from 'react';
-import { render, screen, fireEvent, act } from '@testing-library/react';
 import { jest } from '@jest/globals';
+import { act, fireEvent, render, screen } from '@testing-library/react';
+import React from 'react';
 
-import { Toast, BLOCK_NAME, DISPLAYING_TIMEOUT_DURATION } from './Toast';
+import { BLOCK_NAME, DISPLAYING_TIMEOUT_DURATION, Toast } from './Toast';
 
 describe('<Toast />', () => {
   beforeEach(() => {

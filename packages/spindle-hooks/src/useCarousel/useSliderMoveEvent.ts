@@ -47,7 +47,7 @@ export function useSliderMoveEvent() {
     };
     // this effect should be called only once
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [onMouseMove, onTouchMove]);
 
   return {
     diffXRef,
