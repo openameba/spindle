@@ -1,7 +1,6 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "lib": ["DOM", "ES2022"],
     "baseUrl": ".",
     "paths": {
       "react": ["./node_modules/@types/react"]
