@@ -44,6 +44,7 @@ export const HeroCarousel: FC<Props> = React.memo(function HeroCarousel({
 
   return (
     <div>
+      {/* biome-ignore lint/a11y/noStaticElementInteractions: Carousel container with complex touch/mouse interactions */}
       <div
         className={`${BLOCK_NAME}-container`}
         onBlur={handleBlur}

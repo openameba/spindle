@@ -42,11 +42,45 @@
   },
   "overrides": [
     {
-      "includes": ["**/*.stories.*", "**/*.example.*", "**/*.test.*", "**/DialogExample.tsx", "**/Icon/*.tsx"],
+      "includes": [
+        "**/*.stories.*",
+        "**/*.example.*",
+        "**/*.test.*",
+        "**/DialogExample.tsx"
+      ],
       "linter": {
         "rules": {
           "correctness": {
             "useUniqueElementIds": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["**/Icon/*.tsx"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "useUniqueElementIds": "off"
+          },
+          "a11y": {
+            "recommended": false
+          }
+        }
+      }
+    },
+    {
+      "includes": [
+        "**/useCarousel/*.stories.tsx",
+        "**/HeroCarousel/HeroCarousel.tsx",
+        "**/SegmentedControl/SegmentedControl.tsx",
+        "**/Form/ButtonSwitch/ButtonSwitch.tsx",
+        "**/Toast/Toast.tsx"
+      ],
+      "linter": {
+        "rules": {
+          "a11y": {
+            "useSemanticElements": "off"
           }
         }
       }

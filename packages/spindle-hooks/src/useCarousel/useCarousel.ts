@@ -78,18 +78,21 @@ export function useCarousel<Item>({
   );
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: Refs are used for mutable values that don't trigger re-renders
-  const slideToNext = useCallback((ignoreHover = false) => {
-    const shouldSlideToNext =
-      ((!isHoveringRef.current && isAutoPlayingRef.current) || ignoreHover) &&
-      currentIndexRef.current <= itemCount;
+  const slideToNext = useCallback(
+    (ignoreHover = false) => {
+      const shouldSlideToNext =
+        ((!isHoveringRef.current && isAutoPlayingRef.current) || ignoreHover) &&
+        currentIndexRef.current <= itemCount;
 
-    if (shouldSlideToNext) {
-      setIsFocus(false);
-      setDisableTransition(false);
-      setCurrentIndex(currentIndexRef.current + 1);
-    }
-    resetAutoSlide();
-  }, [itemCount, resetAutoSlide]);
+      if (shouldSlideToNext) {
+        setIsFocus(false);
+        setDisableTransition(false);
+        setCurrentIndex(currentIndexRef.current + 1);
+      }
+      resetAutoSlide();
+    },
+    [itemCount, resetAutoSlide],
+  );
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: Refs are used for mutable values that don't trigger re-renders
   const slideToPrev = useCallback(() => {

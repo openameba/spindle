@@ -57,6 +57,7 @@ const Frame = forwardRef<HTMLDialogElement, DialogProps>(function Dialog(
   }, [open]);
 
   return (
+    // biome-ignore lint/a11y/useKeyWithClickEvents: Dialog close on backdrop click is standard behavior, ESC key handles keyboard closing
     <dialog
       ref={useMergeRefs([dialogEl, ref])}
       className={[BLOCK_NAME, className].filter(Boolean).join(' ').trim()}

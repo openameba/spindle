@@ -167,6 +167,7 @@ const List = ({
   }
 
   return (
+    // biome-ignore lint/a11y/useKeyWithClickEvents: Menu closing handled by ESC key and individual menu items
     <ul
       id={id}
       onClick={onClickCloser}
@@ -189,7 +190,11 @@ const List = ({
 const ListItem = ({ children, icon, onClick }: ListItemProps) => {
   return (
     <li className={`${BLOCK_NAME}-menuItem`}>
-      <button className={`${BLOCK_NAME}-menuButton`} onClick={onClick}>
+      <button
+        type="button"
+        className={`${BLOCK_NAME}-menuButton`}
+        onClick={onClick}
+      >
         {icon && <div className={`${BLOCK_NAME}-iconContainer`}>{icon}</div>}
         <div className={`${BLOCK_NAME}-textContainer`}>{children}</div>
       </button>

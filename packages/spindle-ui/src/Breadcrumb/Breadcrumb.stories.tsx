@@ -28,9 +28,9 @@ export const BreadcrumbListWithoutBreadcrumbItem: Story = {
   render: () => (
     <>
       <BreadcrumbListComponent variant="emphasized">
-        <a href="#">Top</a>
-        <a href="#">Team</a>
-        <a href="#" aria-current="page">
+        <a href="/">Top</a>
+        <a href="/team">Team</a>
+        <a href="/team/about" aria-current="page">
           Amebaとは
         </a>
       </BreadcrumbListComponent>
@@ -42,9 +42,9 @@ export const NoHref: Story = {
   render: () => (
     <>
       <BreadcrumbListComponent variant="emphasized">
-        <a href="#">Top</a>
-        <a href="#">Team</a>
-        <a aria-current="page">Amebaとは</a>
+        <a href="/">Top</a>
+        <a href="/team">Team</a>
+        <span aria-current="page">Amebaとは</span>
       </BreadcrumbListComponent>
     </>
   ),

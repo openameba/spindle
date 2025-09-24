@@ -99,6 +99,7 @@ export const Toast: FC<Props> = ({
         onMouseOut={setIsShowWithTimeout}
         onFocus={resetTimeout}
         onBlur={setIsShowWithTimeout}
+        role="status"
       >
         {icon && <div className={`${BLOCK_NAME}-contentInfo`}>{icon}</div>}
         <span className={`${BLOCK_NAME}-contentText`}>{children}</span>

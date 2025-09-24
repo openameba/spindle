@@ -107,6 +107,7 @@ const Frame = ({
         onMouseOut={setIsShowWithTimeout}
         onFocus={resetTimeout}
         onBlur={setIsShowWithTimeout}
+        role="alert"
       >
         {Children.map(children, (child) =>
           child ? cloneElement(child, { variant, setIsShow }) : child,
