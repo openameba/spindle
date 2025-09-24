@@ -9,7 +9,7 @@ interface DesignTokens {
 function parseCssCustomProperties(cssContent: string): object {
   const properties: Record<string, string> = {};
   const regex = /--([^:]+):\s*([^;]+);/g;
-  let match;
+  let match: RegExpExecArray | null;
 
   while ((match = regex.exec(cssContent)) !== null) {
     const [, name, value] = match;

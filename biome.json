@@ -39,5 +39,17 @@
         "recommended": true
       }
     }
-  }
+  },
+  "overrides": [
+    {
+      "includes": ["**/*.stories.*", "**/*.example.*", "**/*.test.*", "**/DialogExample.tsx", "**/Icon/*.tsx"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "useUniqueElementIds": "off"
+          }
+        }
+      }
+    }
+  ]
 }

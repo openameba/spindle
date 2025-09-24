@@ -165,6 +165,7 @@ const TextButton: FC<
 > = ({ icon, children, onClick, ...rest }) => {
   const [props, internalProps] = useMemo(
     () => convertInternalChildProps(rest),
+    // biome-ignore lint/correctness/useExhaustiveDependencies: rest contains all props and needs to be tracked
     [rest],
   );
   const variant = internalProps.variant || DEFAULT_VARIANT;
@@ -189,6 +190,7 @@ const TextLink: FC<
 > = ({ icon, children, onClick, ...rest }) => {
   const [props, internalProps] = useMemo(
     () => convertInternalChildProps(rest),
+    // biome-ignore lint/correctness/useExhaustiveDependencies: rest contains all props and needs to be tracked
     [rest],
   );
   const variant = internalProps.variant || DEFAULT_VARIANT;

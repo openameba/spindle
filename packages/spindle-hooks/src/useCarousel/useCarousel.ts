@@ -77,7 +77,7 @@ export function useCarousel<Item>({
     [displayCount, items],
   );
 
-  const slideToNext = (ignoreHover = false) => {
+  const slideToNext = useCallback((ignoreHover = false) => {
     const shouldSlideToNext =
       ((!isHoveringRef.current && isAutoPlayingRef.current) || ignoreHover) &&
       currentIndexRef.current <= itemCount;
@@ -88,16 +88,16 @@ export function useCarousel<Item>({
       setCurrentIndex(currentIndexRef.current + 1);
     }
     resetAutoSlide();
-  };
+  }, [itemCount, resetAutoSlide]);
 
-  const slideToPrev = () => {
+  const slideToPrev = useCallback(() => {
     if (currentIndexRef.current >= 0) {
       setIsFocus(false);
       setDisableTransition(false);
       setCurrentIndex(currentIndexRef.current - 1);
     }
     resetAutoSlide();
-  };
+  }, [resetAutoSlide]);
 
   const handleMouseEnter = () => setIsHovering(true);
 
@@ -112,7 +112,7 @@ export function useCarousel<Item>({
     setStartY(e.clientY);
   };
 
-  const onMouseUp = () => {
+  const onMouseUp = useCallback(() => {
     if (diffXRef.current > SWIPE_THRESHOLD_X) {
       setIsLinkClicked(false);
       setIsAutoPlaying(false);
@@ -131,7 +131,7 @@ export function useCarousel<Item>({
     setStartY(null);
     setDiffX(0);
     setDiffY(0);
-  };
+  }, [slideToPrev, slideToNext]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     if (!e.touches.length) return;
@@ -144,10 +144,10 @@ export function useCarousel<Item>({
     setStartY(touch.clientY);
   };
 
-  const onTouchEnd = () => {
+  const onTouchEnd = useCallback(() => {
     setIsHovering(false);
     onMouseUp();
-  };
+  }, [onMouseUp]);
 
   const handleSlideToPrev = () => {
     resetTimeOut();
@@ -205,8 +205,6 @@ export function useCarousel<Item>({
       document.body.removeEventListener('mouseup', onMouseUp);
       document.body.removeEventListener('touchend', onTouchEnd);
     };
-    // this effect should be called only once
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [onMouseUp, onTouchEnd]);
 
   return {

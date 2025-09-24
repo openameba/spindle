@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useValueRef } from './useValueRef';
 
 export function useSliderMoveEvent() {
@@ -11,16 +11,16 @@ export function useSliderMoveEvent() {
   const startXRef = useValueRef(startX);
   const startYRef = useValueRef(startY);
 
-  const onMouseMove = (e: MouseEvent) => {
+  const onMouseMove = useCallback((e: MouseEvent) => {
     if (startXRef.current === null || startYRef.current === null) return;
 
     e.preventDefault();
 
     setDiffX(e.clientX - startXRef.current);
     setDiffY(e.clientY - startYRef.current);
-  };
+  }, []);
 
-  const onTouchMove = (e: TouchEvent) => {
+  const onTouchMove = useCallback((e: TouchEvent) => {
     if (
       startXRef.current === null ||
       startYRef.current === null ||
@@ -33,7 +33,7 @@ export function useSliderMoveEvent() {
 
     setDiffX(touch.clientX - startXRef.current);
     setDiffY(touch.clientY - startYRef.current);
-  };
+  }, []);
 
   useEffect(() => {
     document.body.addEventListener('mousemove', onMouseMove);
@@ -45,8 +45,6 @@ export function useSliderMoveEvent() {
       document.body.removeEventListener('mousemove', onMouseMove);
       document.body.removeEventListener('touchmove', onTouchMove);
     };
-    // this effect should be called only once
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [onMouseMove, onTouchMove]);
 
   return {

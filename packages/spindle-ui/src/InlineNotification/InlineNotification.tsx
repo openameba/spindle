@@ -136,6 +136,7 @@ const Button: FC<
 > = ({ children, ...rest }) => {
   const [props, internalProps] = useMemo(
     () => convertInternalChildProps(rest),
+    // biome-ignore lint/correctness/useExhaustiveDependencies: rest contains all props and needs to be tracked
     [rest],
   );
   const variant = internalProps.variant || DEFAULT_VARIANT;
@@ -165,6 +166,7 @@ const TextButton: FC<
 const IconButton: FC<{ children: ReactNode }> = ({ children, ...rest }) => {
   const [props, internalProps] = useMemo(
     () => convertInternalChildProps(rest),
+    // biome-ignore lint/correctness/useExhaustiveDependencies: rest contains all props and needs to be tracked
     [rest],
   );
   const variant = internalProps.variant || DEFAULT_VARIANT;
