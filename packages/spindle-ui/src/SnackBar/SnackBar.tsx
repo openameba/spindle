@@ -20,7 +20,7 @@ import { TextLink as SpindleTextLink } from '../TextLink/TextLink';
 type Variant = 'information' | 'confirmation' | 'error';
 
 type Props = StackNotificationComponentProps<{
-  children?: React.ReactElement;
+  children?: React.ReactNode;
   active?: boolean;
   // milliseconds to hide
   duration?: number;
@@ -110,7 +110,9 @@ const Frame = ({
         role="alert"
       >
         {Children.map(children, (child) =>
-          child ? cloneElement(child, { variant, setIsShow }) : child,
+          child && React.isValidElement(child)
+            ? cloneElement(child, { variant, setIsShow })
+            : child,
         )}
         <div
           className={`${BLOCK_NAME}-iconButton ${BLOCK_NAME}-iconButton--${variant}`}
