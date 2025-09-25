@@ -2,10 +2,12 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
+    "types": ["jest", "@testing-library/jest-dom"],
     "jsx": "react",
     "skipLibCheck": true
   },
   "include": [
-    "src"
+    "src",
+    "setup-tests.ts"
   ]
 }
