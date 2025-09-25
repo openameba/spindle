@@ -8,6 +8,7 @@
   },
   "exclude": [
     "src/**/*.test.*",
-    "src/**/*.stories.*"
+    "src/**/*.stories.*",
+    "src/**/*.figma.tsx"
   ]
 }
