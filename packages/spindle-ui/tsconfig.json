@@ -7,7 +7,11 @@
     "skipLibCheck": true
   },
   "include": [
-    "src",
-    "setup-tests.ts"
+    "src"
+  ],
+  "exclude": [
+    "src/**/*.test.*",
+    "src/**/*.stories.*",
+    "src/**/*.figma.tsx"
   ]
 }
