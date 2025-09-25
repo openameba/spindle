@@ -3,22 +3,22 @@
  */
 
 :root {
-  --box-shadow-lv6-weak: 0 11px 28px 0 #08121a0f;
-  --box-shadow-lv6-strong: 0 11px 28px 0 #08121a3d;
-  --box-shadow-lv6-normal: 0 11px 28px 0 #08121a1f;
-  --box-shadow-lv4-weak: 0 4.75px 14.25px 0 #08121a0f;
-  --box-shadow-lv4-strong: 0 4.75px 14.25px 0 #08121a3d;
-  --box-shadow-lv4-normal: 0 4.75px 14.25px 0 #08121a1f;
-  --box-shadow-lv2-weak: 0 3.25px 7.75px 0 #08121a0f;
-  --box-shadow-lv2-strong: 0 3.25px 7.75px 0 #08121a3d;
-  --box-shadow-lv2-normal: 0 3.25px 7.75px 0 #08121a1f;
-  --drop-shadow-lv6-weak: 0 11px 14px 0 #08121a0f;
-  --drop-shadow-lv6-strong: 0 11px 14px 0 #08121a3d;
-  --drop-shadow-lv6-normal: 0 11px 14px 0 #08121a1f;
-  --drop-shadow-lv4-weak: 0 4.75px 7.125px 0 #08121a0f;
-  --drop-shadow-lv4-strong: 0 4.75px 7.125px 0 #08121a3d;
-  --drop-shadow-lv4-normal: 0 4.75px 7.125px 0 #08121a1f;
-  --drop-shadow-lv2-weak: 0 3.25px 3.875px 0 #08121a0f;
-  --drop-shadow-lv2-strong: 0 3.25px 3.875px 0 #08121a3d;
   --drop-shadow-lv2-normal: 0 3.25px 3.875px 0 #08121a1f;
+  --drop-shadow-lv2-strong: 0 3.25px 3.875px 0 #08121a3d;
+  --drop-shadow-lv2-weak: 0 3.25px 3.875px 0 #08121a0f;
+  --drop-shadow-lv4-normal: 0 4.75px 7.125px 0 #08121a1f;
+  --drop-shadow-lv4-strong: 0 4.75px 7.125px 0 #08121a3d;
+  --drop-shadow-lv4-weak: 0 4.75px 7.125px 0 #08121a0f;
+  --drop-shadow-lv6-normal: 0 11px 14px 0 #08121a1f;
+  --drop-shadow-lv6-strong: 0 11px 14px 0 #08121a3d;
+  --drop-shadow-lv6-weak: 0 11px 14px 0 #08121a0f;
+  --box-shadow-lv2-normal: 0 3.25px 7.75px 0 #08121a1f;
+  --box-shadow-lv2-strong: 0 3.25px 7.75px 0 #08121a3d;
+  --box-shadow-lv2-weak: 0 3.25px 7.75px 0 #08121a0f;
+  --box-shadow-lv4-normal: 0 4.75px 14.25px 0 #08121a1f;
+  --box-shadow-lv4-strong: 0 4.75px 14.25px 0 #08121a3d;
+  --box-shadow-lv4-weak: 0 4.75px 14.25px 0 #08121a0f;
+  --box-shadow-lv6-normal: 0 11px 28px 0 #08121a1f;
+  --box-shadow-lv6-strong: 0 11px 28px 0 #08121a3d;
+  --box-shadow-lv6-weak: 0 11px 28px 0 #08121a0f;
 }

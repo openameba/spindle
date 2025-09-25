@@ -28,11 +28,13 @@ figma.connect(
     },
     example: ({ variant, rightItem, label }) => (
       <SnackBar.Frame variant={variant}>
-        <SnackBar.Icon>
-          <Information aria-label="インフォメーション" />
-        </SnackBar.Icon>
-        <SnackBar.Text>{label}</SnackBar.Text>
-        {rightItem}
+        <>
+          <SnackBar.Icon>
+            <Information aria-label="インフォメーション" />
+          </SnackBar.Icon>
+          <SnackBar.Text>{label}</SnackBar.Text>
+          {rightItem}
+        </>
       </SnackBar.Frame>
     ),
   },
@@ -61,11 +63,13 @@ figma.connect(
     },
     example: ({ variant, rightItem, label }) => (
       <SnackBar.Frame variant={variant}>
-        <SnackBar.Icon>
-          <CheckCircleFill aria-label="確認" />
-        </SnackBar.Icon>
-        <SnackBar.Text>{label}</SnackBar.Text>
-        {rightItem}
+        <>
+          <SnackBar.Icon>
+            <CheckCircleFill aria-label="確認" />
+          </SnackBar.Icon>
+          <SnackBar.Text>{label}</SnackBar.Text>
+          {rightItem}
+        </>
       </SnackBar.Frame>
     ),
   },
@@ -94,11 +98,13 @@ figma.connect(
     },
     example: ({ variant, rightItem, label }) => (
       <SnackBar.Frame variant={variant}>
-        <SnackBar.Icon>
-          <ExclamationmarkCircleFill aria-label="注意" />
-        </SnackBar.Icon>
-        <SnackBar.Text>{label}</SnackBar.Text>
-        {rightItem}
+        <>
+          <SnackBar.Icon>
+            <ExclamationmarkCircleFill aria-label="注意" />
+          </SnackBar.Icon>
+          <SnackBar.Text>{label}</SnackBar.Text>
+          {rightItem}
+        </>
       </SnackBar.Frame>
     ),
   },
