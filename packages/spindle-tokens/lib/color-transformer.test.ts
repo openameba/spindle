@@ -3,7 +3,6 @@ import {
   transformThemeColor,
 } from './color-transformer';
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const colorResponse = require('./color-response.json');
 
 describe('transform color', () => {

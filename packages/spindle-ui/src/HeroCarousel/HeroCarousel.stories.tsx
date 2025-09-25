@@ -1,5 +1,5 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 import { HeroCarousel } from './HeroCarousel';
 import type { CarouselItem } from './HeroCarouselItem';
 

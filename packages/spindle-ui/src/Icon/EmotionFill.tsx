@@ -1,5 +1,6 @@
-import * as React from 'react';
 import type { SVGProps } from 'react';
+import * as React from 'react';
+
 const SvgEmotionFill = (props: SVGProps<SVGSVGElement>) => (
   <svg
     width="1em"

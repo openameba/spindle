@@ -1,17 +1,17 @@
 import React, {
-  ReactNode,
-  FC,
   Children,
   cloneElement,
-  HTMLAttributes,
-  useMemo,
+  type FC,
   Fragment,
-  useCallback,
+  type HTMLAttributes,
   isValidElement,
+  type ReactNode,
+  useCallback,
+  useMemo,
 } from 'react';
 import { Button as SpindleButton } from '../Button/Button';
-import { TextButton as SpindleTextButton } from '../TextButton/TextButton';
 import { IconButton as SpindleIconButton } from '../IconButton/IconButton';
+import { TextButton as SpindleTextButton } from '../TextButton/TextButton';
 
 type Variant = 'information' | 'confirmation' | 'error';
 type Layout = 'inset' | 'full';
@@ -91,7 +91,7 @@ const Frame: FC<Props> = ({
   );
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// biome-ignore lint/suspicious/noExplicitAny: Props spreading requires flexible type
 type OwnProps = Record<string, any>;
 type InternalChildProps = {
   variant?: Variant;
@@ -104,8 +104,7 @@ const convertInternalChildProps = (
   const hasInternalChildProps = (
     props: OwnProps,
   ): props is InternalChildProps =>
-    ({}).hasOwnProperty.call(props, 'variant') ||
-    {}.hasOwnProperty.call(props, 'emphasis');
+    Object.hasOwn(props, 'variant') || Object.hasOwn(props, 'emphasis');
 
   if (hasInternalChildProps(props)) {
     const result = {
@@ -137,6 +136,7 @@ const Button: FC<
 > = ({ children, ...rest }) => {
   const [props, internalProps] = useMemo(
     () => convertInternalChildProps(rest),
+    // biome-ignore lint/correctness/useExhaustiveDependencies: rest contains all props and needs to be tracked
     [rest],
   );
   const variant = internalProps.variant || DEFAULT_VARIANT;
@@ -166,6 +166,7 @@ const TextButton: FC<
 const IconButton: FC<{ children: ReactNode }> = ({ children, ...rest }) => {
   const [props, internalProps] = useMemo(
     () => convertInternalChildProps(rest),
+    // biome-ignore lint/correctness/useExhaustiveDependencies: rest contains all props and needs to be tracked
     [rest],
   );
   const variant = internalProps.variant || DEFAULT_VARIANT;

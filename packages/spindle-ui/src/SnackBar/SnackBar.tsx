@@ -1,26 +1,26 @@
 import React, {
+  type AnchorHTMLAttributes,
   Children,
   cloneElement,
-  Dispatch,
-  FC,
-  HTMLAttributes,
-  AnchorHTMLAttributes,
-  MouseEventHandler,
-  ReactNode,
-  SetStateAction,
+  type Dispatch,
+  type FC,
+  type HTMLAttributes,
+  type MouseEventHandler,
+  type ReactNode,
+  type SetStateAction,
   useMemo,
 } from 'react';
-import { useStackNotificationComponent } from '../StackNotificationManager';
 import CrossBold from '../Icon/CrossBold';
 import { IconButton } from '../IconButton';
-import { TextLink as SpindleTextLink } from '../TextLink/TextLink';
+import { useStackNotificationComponent } from '../StackNotificationManager';
+import type { StackNotificationComponentProps } from '../StackNotificationManager/StackNotificationManager';
 import { TextButton as SpindleTextButton } from '../TextButton/TextButton';
-import { StackNotificationComponentProps } from '../StackNotificationManager/StackNotificationManager';
+import { TextLink as SpindleTextLink } from '../TextLink/TextLink';
 
 type Variant = 'information' | 'confirmation' | 'error';
 
 type Props = StackNotificationComponentProps<{
-  children?: React.ReactElement;
+  children?: React.ReactNode;
   active?: boolean;
   // milliseconds to hide
   duration?: number;
@@ -107,9 +107,12 @@ const Frame = ({
         onMouseOut={setIsShowWithTimeout}
         onFocus={resetTimeout}
         onBlur={setIsShowWithTimeout}
+        role="alert"
       >
         {Children.map(children, (child) =>
-          child ? cloneElement(child, { variant, setIsShow }) : child,
+          child && React.isValidElement(child)
+            ? cloneElement(child, { variant, setIsShow })
+            : child,
         )}
         <div
           className={`${BLOCK_NAME}-iconButton ${BLOCK_NAME}-iconButton--${variant}`}
@@ -128,7 +131,7 @@ const Frame = ({
   );
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// biome-ignore lint/suspicious/noExplicitAny: Props spreading requires flexible type
 type OwnProps = Record<string, any>;
 
 const convertInternalChildProps = (
@@ -137,8 +140,7 @@ const convertInternalChildProps = (
   const hasInternalChildProps = (
     props: OwnProps,
   ): props is InternalChildProps =>
-    ({}).hasOwnProperty.call(props, 'setIsShow') ||
-    {}.hasOwnProperty.call(props, 'variant');
+    Object.hasOwn(props, 'setIsShow') || Object.hasOwn(props, 'variant');
 
   if (hasInternalChildProps(props)) {
     const result = {
@@ -166,6 +168,7 @@ const TextButton: FC<
 > = ({ icon, children, onClick, ...rest }) => {
   const [props, internalProps] = useMemo(
     () => convertInternalChildProps(rest),
+    // biome-ignore lint/correctness/useExhaustiveDependencies: rest contains all props and needs to be tracked
     [rest],
   );
   const variant = internalProps.variant || DEFAULT_VARIANT;
@@ -190,6 +193,7 @@ const TextLink: FC<
 > = ({ icon, children, onClick, ...rest }) => {
   const [props, internalProps] = useMemo(
     () => convertInternalChildProps(rest),
+    // biome-ignore lint/correctness/useExhaustiveDependencies: rest contains all props and needs to be tracked
     [rest],
   );
   const variant = internalProps.variant || DEFAULT_VARIANT;

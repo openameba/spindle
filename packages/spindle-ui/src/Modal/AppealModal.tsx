@@ -25,13 +25,13 @@ const Frame = forwardRef<HTMLDialogElement, AppealModalProps>(
 
     const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault(); // To be closed with the open prop
-      onClose && onClose(event);
+      onClose?.(event);
     };
 
     const handleDialogClick = (event: React.MouseEvent<HTMLDialogElement>) => {
       // Detect backdrop click
       if (event.target === dialogEl.current) {
-        onClose && onClose(event);
+        onClose?.(event);
       }
     };
 
@@ -40,7 +40,7 @@ const Frame = forwardRef<HTMLDialogElement, AppealModalProps>(
     ) => {
       // Detect escape key type
       if (event.target === dialogEl.current) {
-        onClose && onClose(event);
+        onClose?.(event);
       }
     };
 
@@ -55,9 +55,10 @@ const Frame = forwardRef<HTMLDialogElement, AppealModalProps>(
       } else {
         dialog?.close?.();
       }
-    }, [open, dialogEl]);
+    }, [open]);
 
     return (
+      // biome-ignore lint/a11y/useKeyWithClickEvents: Dialog close on backdrop click is standard behavior, ESC key handles keyboard closing
       <dialog
         className={[BLOCK_NAME, `${BLOCK_NAME}--${size}`, className]
           .filter(Boolean)

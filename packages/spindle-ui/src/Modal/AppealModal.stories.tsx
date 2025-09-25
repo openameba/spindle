@@ -1,12 +1,12 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { AppealModal } from './AppealModal';
+import React from 'react';
+import type { AppealModal } from './AppealModal';
 import {
   AppealModalExample,
   StyleOnly,
+  StyleOnlyCustomized,
   StyleOnlyMedium,
   StyleOnlySmall,
-  StyleOnlyCustomized,
 } from './AppealModal.stories.example';
 
 const meta: Meta<typeof AppealModal.Frame> = {

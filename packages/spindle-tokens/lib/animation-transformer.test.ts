@@ -3,7 +3,6 @@ import {
   transformAnimationProperty,
 } from './animation-transformer';
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const animationResponse = require('./animation-response.json');
 
 describe('transform Animation', () => {

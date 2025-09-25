@@ -1,5 +1,5 @@
-import { promises as fs } from 'fs';
-import { relative } from 'path';
+import { promises as fs } from 'node:fs';
+import { relative } from 'node:path';
 
 const DOC_DIR = 'docs';
 const SVG_DIR = 'dist/svg';

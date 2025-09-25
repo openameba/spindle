@@ -1,7 +1,7 @@
-import React from 'react';
-import { render, screen, renderHook } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { jest } from '@jest/globals';
+import { render, renderHook, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import React from 'react';
 
 import { ButtonSwitch } from './ButtonSwitch';
 

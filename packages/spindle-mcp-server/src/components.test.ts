@@ -1,5 +1,5 @@
-import { describe, it, expect } from 'vitest';
-import { getComponents, getComponentInfo } from './components';
+import { describe, expect, it } from 'vitest';
+import { getComponentInfo, getComponents } from './components';
 
 describe('Components functions', () => {
   describe('getComponents', () => {

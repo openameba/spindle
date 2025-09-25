@@ -1,7 +1,6 @@
 const {
   checkFileExists,
   shouldReplaceExtension,
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
 } = require('./outputExtensionReplace');
 
 describe('checkFileExists', () => {

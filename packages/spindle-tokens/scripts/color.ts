@@ -1,17 +1,17 @@
-import fs from 'fs';
-import path from 'path';
-import { GetLocalVariablesResponse } from '@figma/rest-api-spec';
-import { fetchLocalVariables } from '../lib/figma';
+import fs from 'node:fs';
+import path from 'node:path';
+import type { GetLocalVariablesResponse } from '@figma/rest-api-spec';
 import {
   transformPrimitiveColor,
   transformThemeColor,
 } from '../lib/color-transformer';
+import { fetchLocalVariables } from '../lib/figma';
 
 const FIGMA_FILE_KEY_PRIMITIVE = 'GIWwD96N0dDLzv0YxKZXTf';
 const FIGMA_FILE_KEY_THEME = 'jbyORMGXjv9Cr770bWEKna';
 const FIGMA_TOKEN = process.env.FIGMA_TOKEN || '';
 
-(async function () {
+(async () => {
   const variablesPrimitive =
     await fetchLocalVariables<GetLocalVariablesResponse>(
       FIGMA_FILE_KEY_PRIMITIVE,
@@ -38,11 +38,11 @@ const FIGMA_TOKEN = process.env.FIGMA_TOKEN || '';
 
   fs.writeFileSync(
     path.resolve(__dirname, '../tokens/theme-light.tokens.json'),
-    JSON.stringify({ Color: transformedThemeColor['Light'] }, null, 2),
+    JSON.stringify({ Color: transformedThemeColor.Light }, null, 2),
   );
 
   fs.writeFileSync(
     path.resolve(__dirname, '../tokens/theme-dark.tokens.json'),
-    JSON.stringify({ Color: transformedThemeColor['Dark'] }, null, 2),
+    JSON.stringify({ Color: transformedThemeColor.Dark }, null, 2),
   );
 })();

@@ -1,8 +1,8 @@
-import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+import { ChevronDownBold, GraphBar, PencilAdd, Present } from '../Icon';
 import { LinkButton } from './LinkButton';
-import { GraphBar, Present, PencilAdd, ChevronDownBold } from '../Icon';
 
 const meta: Meta<typeof LinkButton> = {
   title: 'LinkButton',
