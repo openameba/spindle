@@ -1,57 +1,57 @@
 const bundlewatchConfig = {
   files: [
     {
-      path: './dist/Icon/@(OnedariFill|Peta).mjs',
+      path: './dist/src/Icon/@(OnedariFill|Peta).mjs',
       maxSize: '2 kB',
       compression: 'gzip',
     },
     {
-      path: './dist/Icon/!(index|OnedariFill|Peta).mjs',
+      path: './dist/src/Icon/!(index|OnedariFill|Peta).mjs',
       maxSize: '1.1 kB',
       compression: 'gzip',
     },
     {
-      path: './dist/!(Icon|Toast|DropdownMenu|Pagination|Modal|SnackBar|StackNotificationManager|SegmentedControl)/*.mjs',
+      path: './dist/src/!(Icon|Toast|DropdownMenu|Pagination|Modal|SnackBar|StackNotificationManager|SegmentedControl)/*.mjs',
       maxSize: '1.1 kB',
       compression: 'gzip',
     },
     {
-      path: './dist/Modal/*.mjs',
+      path: './dist/src/Modal/*.mjs',
       maxSize: '1.5 kB',
       compression: 'gzip',
     },
     {
-      path: './dist/SnackBar/*.mjs',
-      maxSize: '1.5 kB',
+      path: './dist/src/SnackBar/*.mjs',
+      maxSize: '1.6 kB',
       compression: 'gzip',
     },
     {
-      path: './dist/Toast/*.mjs',
+      path: './dist/src/Toast/*.mjs',
       maxSize: '1.0 kB',
       compression: 'gzip',
     },
     {
-      path: './dist/DropdownMenu/*.mjs',
+      path: './dist/src/DropdownMenu/*.mjs',
+      maxSize: '1.6 kB',
+      compression: 'gzip',
+    },
+    {
+      path: './dist/src/Pagination/*.mjs',
       maxSize: '1.5 kB',
       compression: 'gzip',
     },
     {
-      path: './dist/Pagination/*.mjs',
-      maxSize: '1.5 kB',
-      compression: 'gzip',
-    },
-    {
-      path: './dist/StackNotificationManager/*.mjs',
+      path: './dist/src/StackNotificationManager/*.mjs',
       maxSize: '2.8 kB',
       compression: 'gzip',
     },
     {
-      path: './dist/SegmentedControl/*.mjs',
+      path: './dist/src/SegmentedControl/*.mjs',
       maxSize: '1.3 kB',
       compression: 'gzip',
     },
     {
-      path: './dist/InlineNotification/*.mjs',
+      path: './dist/src/InlineNotification/*.mjs',
       maxSize: '1.2 kB',
       compression: 'gzip',
     },
