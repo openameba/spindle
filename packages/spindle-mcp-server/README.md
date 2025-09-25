@@ -13,7 +13,7 @@ MCPクライアントの設定をします。SpindleのMCPサーバーを利用�
 #### npxを使用する場合（推奨）
 
 ```bash
-claude mcp add ameba-spindle npx -y @openameba/spindle-mcp-server@latest
+claude mcp add ameba-spindle -- npx -y @openameba/spindle-mcp-server@latest
 ```
 
 設定が正しく追加されたか、以下のコマンドで確認します。
