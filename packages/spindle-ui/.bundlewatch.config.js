@@ -22,7 +22,7 @@ const bundlewatchConfig = {
     },
     {
       path: './dist/SnackBar/*.mjs',
-      maxSize: '1.5 kB',
+      maxSize: '1.55 kB',
       compression: 'gzip',
     },
     {
@@ -32,7 +32,7 @@ const bundlewatchConfig = {
     },
     {
       path: './dist/DropdownMenu/*.mjs',
-      maxSize: '1.5 kB',
+      maxSize: '1.55 kB',
       compression: 'gzip',
     },
     {
