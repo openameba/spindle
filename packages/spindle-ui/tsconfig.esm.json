@@ -9,6 +9,7 @@
   "exclude": [
     "src/**/*.test.*",
     "src/**/*.stories.*",
-    "src/**/*.figma.tsx"
+    "src/**/*.figma.tsx",
+    "setup-tests.ts"
   ]
 }

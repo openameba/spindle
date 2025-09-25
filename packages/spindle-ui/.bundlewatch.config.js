@@ -1,57 +1,57 @@
 const bundlewatchConfig = {
   files: [
     {
-      path: './dist/src/Icon/@(OnedariFill|Peta).mjs',
+      path: './dist/Icon/@(OnedariFill|Peta).mjs',
       maxSize: '2 kB',
       compression: 'gzip',
     },
     {
-      path: './dist/src/Icon/!(index|OnedariFill|Peta).mjs',
+      path: './dist/Icon/!(index|OnedariFill|Peta).mjs',
       maxSize: '1.1 kB',
       compression: 'gzip',
     },
     {
-      path: './dist/src/!(Icon|Toast|DropdownMenu|Pagination|Modal|SnackBar|StackNotificationManager|SegmentedControl)/*.mjs',
+      path: './dist/!(Icon|Toast|DropdownMenu|Pagination|Modal|SnackBar|StackNotificationManager|SegmentedControl|InlineNotification)/*.mjs',
       maxSize: '1.1 kB',
       compression: 'gzip',
     },
     {
-      path: './dist/src/Modal/*.mjs',
+      path: './dist/Modal/*.mjs',
       maxSize: '1.5 kB',
       compression: 'gzip',
     },
     {
-      path: './dist/src/SnackBar/*.mjs',
+      path: './dist/SnackBar/*.mjs',
       maxSize: '1.6 kB',
       compression: 'gzip',
     },
     {
-      path: './dist/src/Toast/*.mjs',
+      path: './dist/Toast/*.mjs',
       maxSize: '1.0 kB',
       compression: 'gzip',
     },
     {
-      path: './dist/src/DropdownMenu/*.mjs',
+      path: './dist/DropdownMenu/*.mjs',
       maxSize: '1.6 kB',
       compression: 'gzip',
     },
     {
-      path: './dist/src/Pagination/*.mjs',
+      path: './dist/Pagination/*.mjs',
       maxSize: '1.5 kB',
       compression: 'gzip',
     },
     {
-      path: './dist/src/StackNotificationManager/*.mjs',
+      path: './dist/StackNotificationManager/*.mjs',
       maxSize: '2.8 kB',
       compression: 'gzip',
     },
     {
-      path: './dist/src/SegmentedControl/*.mjs',
+      path: './dist/SegmentedControl/*.mjs',
       maxSize: '1.3 kB',
       compression: 'gzip',
     },
     {
-      path: './dist/src/InlineNotification/*.mjs',
+      path: './dist/InlineNotification/*.mjs',
       maxSize: '1.2 kB',
       compression: 'gzip',
     },
