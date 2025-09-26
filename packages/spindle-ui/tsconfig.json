@@ -2,6 +2,7 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
+    "lib": ["ESNext", "DOM"],
     "types": ["jest", "@testing-library/jest-dom"],
     "jsx": "react",
     "skipLibCheck": true
