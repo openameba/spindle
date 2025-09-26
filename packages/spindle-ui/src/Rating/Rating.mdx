@@ -25,7 +25,7 @@ import '@openameba/spindle-ui/Rating/Rating.css';
 
 ## 値の刻みについて
 
-`value`は0.1刻みで指定できます（小数第1位以下で四捨五入されます）。
+`value`は0.1刻みで指定できます（小数第2位で四捨五入されます）。
 
 <Source language="jsx" code={`<Rating max={5} value={3.7} size="medium" />`} />
 
@@ -91,3 +91,15 @@ import '@openameba/spindle-ui/Rating/Rating.css';
   language="jsx"
   code={`<Rating max={5} value={3} size="large" showText={true} />`}
 />
+
+## Over Max Clamped
+
+<Story of={RatingStories.OverMaxClamped} />
+
+<Source language="jsx" code={`<Rating max={5} value={6} size="medium" />`} />
+
+## Negative Clamped
+
+<Story of={RatingStories.NegativeClamped} />
+
+<Source language="jsx" code={`<Rating max={5} value={-1} size="medium" />`} />
