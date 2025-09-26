@@ -1,42 +1,50 @@
 # Rating
 
 ## 概要・背景
+
 Ratingは、ユーザーが特定の項目やサービスに対して「評価結果を表示する」ためのコンポーネントです。
 本コンポーネントは評価値の表示を想定しており、ユーザーによる評価入力や変更機能は提供しません。
 
 ## スクリーンショット
+
 ![Ratingコンポーネントのデザイン](https://github.com/user-attachments/assets/ddce8680-ddba-4510-a65b-b3f82e13db99)
 
 ## 使用例
 
 ### DO
+
 Ratingコンポーネントは、`Rating`に`max`と`value`の`props`を渡して使用することを想定しています。
 
 ```tsx
-<Rating max={5} value={3.5} />
+<Rating max={5} value={3.7} />
 ```
 
 ### DO NOT
+
 以下のようなpropsの渡し方でも描画可能ですが、意図しない表示になる可能性があるため明示的に扱いを設計することを推奨します。
 
 #### 評価値がmaxより大きい
+
 ```tsx
 <Rating max={5} value={6} />
 ```
 
 #### 負の評価値
+
 ```tsx
 <Rating max={5} value={-1} />
 ```
 
 #### maxが0以下
+
 ```tsx
-<Rating max={0} value={3.5} />
+<Rating max={0} value={3.7} />
 ```
 
 ## 要素
 
 ### Design Tokens
+
 - Border High Emphasis (アイコンのデフォルト色)
 - Object Rating Orang (アイコンのアクティブ色)
 - Text High Emphasis (数字の色)
@@ -44,42 +52,55 @@ Ratingコンポーネントは、`Rating`に`max`と`value`の`props`を渡し�
 ### プロパティ
 
 #### Rating
+
 ```ts
 type Props = {
   max: number;
   value: number;
   size: 'large' | 'medium' | 'small';
   showText?: boolean;
-}
+};
 ```
 
 #### 評価値の変換処理
-評価値（value）は、0.5刻みで表示されます。小数第1位以下は四捨五入され、0.5単位に変換されます。
+
+評価値（value）は、0.1刻みで表示されます。小数第2位で四捨五入され、0.1単位に変換されます。
 
 ```ts
 const convertToValue = (num: number): number => {
-  return Math.round(num * 2) / 2;
+  return Math.round(num * 10) / 10;
 };
 ```
 
 ## 実装例
+
 React実装の一例です。
 
 ```tsx
-<Rating max={5} value={3.5} showText={true} size="medium" />
+<Rating max={5} value={3.7} showText={true} size="medium" />
 ```
 
 上記の実装から書き出されるマークアップです。
 
 ```html
 <div class="spui-Rating">
-  <p class="spui-Rating-text spui-Rating-text--medium">3.5</p>
-  <div class="spui-Rating" role="img" aria-label="5つ星中3.5の評価">
-    <span class="spui-Rating-item"><svg class="spui-Rating-item-icon spui-Rating-item-icon--medium"></svg></span>
-    <span class="spui-Rating-item"><svg class="spui-Rating-item-icon spui-Rating-item-icon--medium"></svg></span>
-    <span class="spui-Rating-item"><svg class="spui-Rating-item-icon spui-Rating-item-icon--medium"></svg></span>
-    <span class="spui-Rating-item"><svg class="spui-Rating-item-icon spui-Rating-item-icon--medium"></svg></span>
-    <span class="spui-Rating-item"><svg class="spui-Rating-item-icon spui-Rating-item-icon--medium"></svg></span>
+  <p class="spui-Rating-text spui-Rating-text--medium">3.7</p>
+  <div class="spui-Rating" role="img" aria-label="5つ星中3.7の評価">
+    <span class="spui-Rating-item"
+      ><svg class="spui-Rating-item-icon spui-Rating-item-icon--medium"></svg
+    ></span>
+    <span class="spui-Rating-item"
+      ><svg class="spui-Rating-item-icon spui-Rating-item-icon--medium"></svg
+    ></span>
+    <span class="spui-Rating-item"
+      ><svg class="spui-Rating-item-icon spui-Rating-item-icon--medium"></svg
+    ></span>
+    <span class="spui-Rating-item"
+      ><svg class="spui-Rating-item-icon spui-Rating-item-icon--medium"></svg
+    ></span>
+    <span class="spui-Rating-item"
+      ><svg class="spui-Rating-item-icon spui-Rating-item-icon--medium"></svg
+    ></span>
   </div>
 </div>
 ```
@@ -104,4 +125,5 @@ React実装の一例です。
   - [ ] HTML仕様に準拠した実装をしている
 
 ## リンク集
+
 特になし。
