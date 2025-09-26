@@ -94,7 +94,8 @@ export const PaginationItem: FC<Props> = React.memo(
         rel={getLinkRelAttribute({ linkFollowType, pageNumber })}
         aria-label={itemPropMap[type].label}
         href={isDisabled ? undefined : createUrl(pageNumber)}
-        aria-disabled={isDisabled ? true : undefined}
+        aria-hidden={isDisabled ? true : undefined}
+        tabIndex={isDisabled ? -1 : undefined}
         onClick={
           isDisabled
             ? undefined
