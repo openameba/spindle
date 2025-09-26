@@ -1,9 +1,9 @@
-import React from 'react';
-import { SnackBar } from './SnackBar';
 import figma from '@figma/code-connect';
+import React from 'react';
 import CheckCircleFill from 'src/Icon/CheckCircleFill';
 import ExclamationmarkCircleFill from 'src/Icon/ExclamationmarkCircleFill';
 import Information from 'src/Icon/Information';
+import { SnackBar } from './SnackBar';
 
 figma.connect(
   SnackBar,
@@ -28,13 +28,11 @@ figma.connect(
     },
     example: ({ variant, rightItem, label }) => (
       <SnackBar.Frame variant={variant}>
-        <>
-          <SnackBar.Icon>
-            <Information aria-label="インフォメーション" />
-          </SnackBar.Icon>
-          <SnackBar.Text>{label}</SnackBar.Text>
-          {rightItem}
-        </>
+        <SnackBar.Icon>
+          <Information aria-label="インフォメーション" />
+        </SnackBar.Icon>
+        <SnackBar.Text>{label}</SnackBar.Text>
+        {rightItem}
       </SnackBar.Frame>
     ),
   },
@@ -63,13 +61,11 @@ figma.connect(
     },
     example: ({ variant, rightItem, label }) => (
       <SnackBar.Frame variant={variant}>
-        <>
-          <SnackBar.Icon>
-            <CheckCircleFill aria-label="確認" />
-          </SnackBar.Icon>
-          <SnackBar.Text>{label}</SnackBar.Text>
-          {rightItem}
-        </>
+        <SnackBar.Icon>
+          <CheckCircleFill aria-label="確認" />
+        </SnackBar.Icon>
+        <SnackBar.Text>{label}</SnackBar.Text>
+        {rightItem}
       </SnackBar.Frame>
     ),
   },
@@ -98,13 +94,11 @@ figma.connect(
     },
     example: ({ variant, rightItem, label }) => (
       <SnackBar.Frame variant={variant}>
-        <>
-          <SnackBar.Icon>
-            <ExclamationmarkCircleFill aria-label="注意" />
-          </SnackBar.Icon>
-          <SnackBar.Text>{label}</SnackBar.Text>
-          {rightItem}
-        </>
+        <SnackBar.Icon>
+          <ExclamationmarkCircleFill aria-label="注意" />
+        </SnackBar.Icon>
+        <SnackBar.Text>{label}</SnackBar.Text>
+        {rightItem}
       </SnackBar.Frame>
     ),
   },

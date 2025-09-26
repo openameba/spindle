@@ -1,7 +1,7 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { BreadcrumbList as BreadcrumbListComponent } from './BreadcrumbList';
+import React from 'react';
 import { BreadcrumbItem } from './BreadcrumbItem';
+import { BreadcrumbList as BreadcrumbListComponent } from './BreadcrumbList';
 
 const meta: Meta<typeof BreadcrumbListComponent> = {
   title: 'Breadcrumb',
@@ -28,9 +28,9 @@ export const BreadcrumbListWithoutBreadcrumbItem: Story = {
   render: () => (
     <>
       <BreadcrumbListComponent variant="emphasized">
-        <a href="#">Top</a>
-        <a href="#">Team</a>
-        <a href="#" aria-current="page">
+        <a href="#top">Top</a>
+        <a href="#team">Team</a>
+        <a href="#about" aria-current="page">
           Amebaとは
         </a>
       </BreadcrumbListComponent>
@@ -42,9 +42,9 @@ export const NoHref: Story = {
   render: () => (
     <>
       <BreadcrumbListComponent variant="emphasized">
-        <a href="#">Top</a>
-        <a href="#">Team</a>
-        <a aria-current="page">Amebaとは</a>
+        <a href="#top">Top</a>
+        <a href="#team">Team</a>
+        <span aria-current="page">Amebaとは</span>
       </BreadcrumbListComponent>
     </>
   ),

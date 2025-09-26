@@ -30,7 +30,7 @@ const Frame = forwardRef<HTMLDialogElement, DialogProps>(function Dialog(
   const handleDialogClick = (event: React.MouseEvent<HTMLDialogElement>) => {
     // Detect backdrop click
     if (event.target === dialogEl.current) {
-      onClose && onClose(event);
+      onClose?.(event);
     }
   };
 
@@ -39,7 +39,7 @@ const Frame = forwardRef<HTMLDialogElement, DialogProps>(function Dialog(
   ) => {
     // Detect escape key type
     if (event.target === dialogEl.current) {
-      onClose && onClose(event);
+      onClose?.(event);
     }
   };
 
@@ -54,9 +54,10 @@ const Frame = forwardRef<HTMLDialogElement, DialogProps>(function Dialog(
     } else {
       dialog?.open && dialog.close?.();
     }
-  }, [open, dialogEl]);
+  }, [open]);
 
   return (
+    // biome-ignore lint/a11y/useKeyWithClickEvents: Dialog close on backdrop click is standard behavior, ESC key handles keyboard closing
     <dialog
       ref={useMergeRefs([dialogEl, ref])}
       className={[BLOCK_NAME, className].filter(Boolean).join(' ').trim()}

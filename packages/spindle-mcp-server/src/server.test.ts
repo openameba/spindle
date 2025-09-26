@@ -1,6 +1,6 @@
-import { describe, it, expect, beforeAll } from 'vitest';
-import { createServer } from './server';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
+import { beforeAll, describe, expect, it } from 'vitest';
+import { createServer } from './server';
 
 describe('MCP Server', () => {
   let server: McpServer;

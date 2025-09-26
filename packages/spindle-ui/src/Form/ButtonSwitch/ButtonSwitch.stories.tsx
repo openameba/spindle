@@ -1,6 +1,6 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { ButtonSwitch } from './ButtonSwitch';
+import React from 'react';
+import type { ButtonSwitch } from './ButtonSwitch';
 import { ButtonSwitchExample } from './ButtonSwitch.stories.example';
 
 const meta: Meta<typeof ButtonSwitch> = {

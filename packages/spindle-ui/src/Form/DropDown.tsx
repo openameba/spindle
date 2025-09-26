@@ -22,7 +22,7 @@ export const DropDown = forwardRef<HTMLSelectElement, Props>(function DropDown(
   const [disabled, setDisabled] = useState(false);
 
   const update = () => {
-    if (selectEl && selectEl.current) {
+    if (selectEl?.current) {
       const selectedEl =
         selectEl.current.options[selectEl.current.selectedIndex];
       const value = selectedEl.text;

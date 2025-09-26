@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Toast } from './Toast';
+import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '../Button';
 import {
-  Information as InformationIcon,
   CheckCircleFill,
   ExclamationmarkCircleFill,
+  Information as InformationIcon,
 } from '../Icon';
+import { Toast } from './Toast';
 
 const usePoliteAnnouncer = (message: string) => {
   const announcer = useRef<HTMLElement | null>(null);
@@ -140,7 +140,7 @@ export const Confirmation: Story = {
   ),
 };
 
-export const Error: Story = {
+export const ErrorToast: Story = {
   render: () => (
     <ActivateButton variant="error" icon={<ExclamationmarkCircleFill />} />
   ),

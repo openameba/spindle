@@ -1,6 +1,6 @@
 import React, {
-  RefObject,
   createRef,
+  type RefObject,
   useCallback,
   useEffect,
   useMemo,
@@ -50,7 +50,7 @@ export const SegmentedControl: React.FC<Props> = ({
         (4 + 4) * selectedIndex + 4
       }px))`,
     );
-  }, [options, selectedIndex]);
+  }, [selectedIndex]);
 
   useEffect(() => {
     // selectedIdがどの項目にも一致しない場合は最初の項目を選択する

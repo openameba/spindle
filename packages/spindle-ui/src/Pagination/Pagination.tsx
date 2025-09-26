@@ -1,9 +1,8 @@
-import React, { useCallback, useEffect, useState, useRef } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import MenuHorizontal from '../Icon/MenuHorizontal';
-
-import PaginationItem from './PaginationItem';
-import { useShowItem } from './hooks/useShowItem';
 import { getLinkRelAttribute } from './helpers/getLinkRelAttribute';
+import { useShowItem } from './hooks/useShowItem';
+import PaginationItem from './PaginationItem';
 
 export type LinkFollowType = 'all' | 'none' | 'firstPage';
 
@@ -39,10 +38,9 @@ export const Pagination = (props: Props) => {
     ...rest
   } = props;
 
-  const handleMatchMedia =
-    typeof window !== 'undefined' && window.matchMedia
-      ? window.matchMedia('(max-width: 360px)')
-      : undefined;
+  const handleMatchMedia = window?.matchMedia
+    ? window.matchMedia('(max-width: 360px)')
+    : undefined;
 
   const isMatchMedia = useRef(handleMatchMedia);
   const [matches, setMatches] = useState(() =>
@@ -51,9 +49,7 @@ export const Pagination = (props: Props) => {
 
   const onChangeView = useCallback(() => {
     const isMatchMedia = handleMatchMedia;
-    setMatches(
-      isMatchMedia && isMatchMedia.matches ? isMatchMedia.matches : false,
-    );
+    setMatches(isMatchMedia?.matches ? isMatchMedia.matches : false);
   }, [handleMatchMedia]);
 
   const onOrientationchange = useCallback(() => {
@@ -191,10 +187,7 @@ export const Pagination = (props: Props) => {
         )}
       </ul>
       {showTotal && (
-        <p
-          className={`${BLOCK_NAME}-total`}
-          aria-label={`${total}ページ中の${current}ページ目`}
-        >
+        <p className={`${BLOCK_NAME}-total`}>
           {current}/{total}ページ
         </p>
       )}

@@ -1,11 +1,11 @@
+import { renderHook as _renderHook, act } from '@testing-library/react';
 import React from 'react';
-import { act, renderHook as _renderHook } from '@testing-library/react';
 import {
   StackNotificationManagerProvider,
-  useStackNotificationManager,
-  StackOffset,
-  useStackInteraction,
+  type StackOffset,
   useRepeatedStackItem,
+  useStackInteraction,
+  useStackNotificationManager,
 } from '.';
 import { useStackNotificationManagerContext } from './StackNotificationManager';
 

@@ -67,7 +67,7 @@ export const ButtonSwitch: React.FC<Props> = ({
           onKeyDown={(e) => handleKeydown(e, index)}
           key={option.value}
           className={`${BLOCK_NAME}-button`}
-          onClick={() => onClick && onClick(option.value)}
+          onClick={() => onClick?.(option.value)}
           ref={buttonsRef.current[index]}
         >
           {value === option.value && (

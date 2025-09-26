@@ -1,8 +1,8 @@
-import React from 'react';
-import { Dialog } from './Dialog';
 import figma from '@figma/code-connect';
-import { SubtleButton } from 'src/SubtleButton';
+import React from 'react';
 import { Button } from 'src/Button';
+import { SubtleButton } from 'src/SubtleButton';
+import { Dialog } from './Dialog';
 
 figma.connect(
   Dialog,

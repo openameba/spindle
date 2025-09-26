@@ -1,5 +1,5 @@
-import { describe, it, expect } from 'vitest';
-import { getIcons, getIconInfo } from './icon';
+import { describe, expect, it } from 'vitest';
+import { getIconInfo, getIcons } from './icon';
 
 describe('Icon functions', () => {
   describe('getIcons', () => {

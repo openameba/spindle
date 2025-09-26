@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import ChevronRightBold from '../Icon/ChevronRightBold';
 import ChevronRight from '../Icon/ChevronRight';
+import ChevronRightBold from '../Icon/ChevronRightBold';
 
 type Variant = 'standard' | 'emphasized';
 type Wrap = 'wrap';

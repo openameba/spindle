@@ -1,11 +1,11 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { z } from 'zod';
+import pkg from '../package.json' with { type: 'json' };
 import { getAccessibilityDocs } from './accessibility.js';
-import { getComponents, getComponentInfo } from './components.js';
+import { getComponentInfo, getComponents } from './components.js';
+import { getComponentDesignDocTemplate } from './design-doc.js';
 import { getAllCssDesignTokens, getCssDesignToken } from './design-token.js';
 import { getIconInfo, getIcons } from './icon.js';
-import { getComponentDesignDocTemplate } from './design-doc.js';
-import pkg from '../package.json' with { type: 'json' };
 
 const VERSION = pkg.version;
 

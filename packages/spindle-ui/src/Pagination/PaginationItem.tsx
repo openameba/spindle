@@ -1,11 +1,10 @@
-import React, { FC } from 'react';
-import ChevronRightBold from '../Icon/ChevronRightBold';
+import React, { type FC } from 'react';
 import ChevronLeftBold from '../Icon/ChevronLeftBold';
-import TriangleendRightBold from '../Icon/TriangleendRightBold';
+import ChevronRightBold from '../Icon/ChevronRightBold';
 import TriangleendLeftBold from '../Icon/TriangleendLeftBold';
-
-import { useItemPageNumber } from './hooks/useItemPageNumber';
+import TriangleendRightBold from '../Icon/TriangleendRightBold';
 import { getLinkRelAttribute } from './helpers/getLinkRelAttribute';
+import { useItemPageNumber } from './hooks/useItemPageNumber';
 import type { LinkFollowType } from './Pagination';
 
 type Props = {

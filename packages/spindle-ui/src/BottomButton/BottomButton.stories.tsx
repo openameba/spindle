@@ -1,7 +1,7 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { BottomButton } from './BottomButton';
+import React from 'react';
 import { Button } from '../Button/Button';
+import { BottomButton } from './BottomButton';
 
 const meta: Meta<typeof BottomButton> = {
   title: 'BottomButton',

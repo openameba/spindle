@@ -1,12 +1,12 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { DropdownMenu } from './DropdownMenu';
+import React from 'react';
+import type { DropdownMenu } from './DropdownMenu';
 import {
+  HeadWithIconAndCaption as HeadWithIconAndCaptionExample,
+  HeadWithIcon as HeadWithIconExample,
+  Position as PositionExample,
   Text as TextExample,
   TextWithIcon as TextWithIconExample,
-  HeadWithIcon as HeadWithIconExample,
-  HeadWithIconAndCaption as HeadWithIconAndCaptionExample,
-  Position as PositionExample,
 } from './DropdownMenu.stories.example';
 
 const meta: Meta<typeof DropdownMenu.Frame> = {

@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
 import dialogPolyfill from 'dialog-polyfill';
+import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '../Button';
 import { LinkButton } from '../LinkButton';
 import { AppealModal } from './AppealModal';
@@ -57,6 +57,7 @@ export function AppealModalExample() {
               width="640"
               height="336"
               src="https://images.microcms-assets.io/assets/24995dc41d5c40808fe4a9e3f6fb2b20/e2526e7bfa494168a2e547cfe55ac89f/top_mv.jpg?w=640&h=336&fit=clamp&fm=webp&q=85"
+              alt=""
             />
           </picture>
         </AppealModal.Image>
@@ -89,6 +90,7 @@ export function StyleOnly() {
           style={{ height: 'auto', width: '100%' }}
           width="640"
           height="336"
+          alt=""
           src="https://images.microcms-assets.io/assets/24995dc41d5c40808fe4a9e3f6fb2b20/e2526e7bfa494168a2e547cfe55ac89f/top_mv.jpg?w=640&h=336&fit=crop&fm=webp&q=85"
         />
       </AppealModal.Image>
@@ -121,6 +123,7 @@ export function StyleOnlyMedium() {
           style={{ height: 'auto', width: '100%' }}
           width="640"
           height="336"
+          alt=""
           src="https://images.microcms-assets.io/assets/24995dc41d5c40808fe4a9e3f6fb2b20/e2526e7bfa494168a2e547cfe55ac89f/top_mv.jpg?w=640&h=336&fit=crop&fm=webp&q=85"
         />
       </AppealModal.Image>
@@ -155,6 +158,7 @@ export function StyleOnlySmall() {
           style={{ height: 'auto', width: '100%' }}
           width="640"
           height="336"
+          alt=""
           src="https://images.microcms-assets.io/assets/24995dc41d5c40808fe4a9e3f6fb2b20/e2526e7bfa494168a2e547cfe55ac89f/top_mv.jpg?w=640&h=336&fit=crop&fm=webp&q=85"
         />
       </AppealModal.Image>
@@ -189,6 +193,7 @@ export function StyleOnlyCustomized() {
           style={{ height: 'auto', width: '100%' }}
           width="640"
           height="336"
+          alt=""
           src="https://images.microcms-assets.io/assets/24995dc41d5c40808fe4a9e3f6fb2b20/e2526e7bfa494168a2e547cfe55ac89f/top_mv.jpg?w=640&h=336&fit=crop&fm=webp&q=85"
         />
       </AppealModal.Image>

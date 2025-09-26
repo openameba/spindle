@@ -1,8 +1,8 @@
-import React from 'react';
-import { InlineNotification } from './InlineNotification';
 import figma from '@figma/code-connect';
+import React from 'react';
 import CrossBold from 'src/Icon/CrossBold';
 import Information from 'src/Icon/Information';
+import { InlineNotification } from './InlineNotification';
 
 figma.connect(
   InlineNotification,
@@ -47,11 +47,9 @@ figma.connect(
         layout={layout}
         emphasis={emphasis}
       >
-        <>
-          {leftIcon}
-          <InlineNotification.Text>{label}</InlineNotification.Text>
-          {closeButton}
-        </>
+        {leftIcon}
+        <InlineNotification.Text>{label}</InlineNotification.Text>
+        {closeButton}
       </InlineNotification.Frame>
     ),
   },

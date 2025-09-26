@@ -1,5 +1,5 @@
+import { promises as fs } from 'node:fs';
 import cliProgress from 'cli-progress';
-import { promises as fs } from 'fs';
 import { download } from '../lib/download';
 import { figma } from '../lib/figma';
 

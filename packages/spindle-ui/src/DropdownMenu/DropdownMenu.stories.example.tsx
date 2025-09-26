@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
 import { actions } from '@storybook/addon-actions';
+import React, { useRef, useState } from 'react';
 
 import { Button } from '../Button';
 import AllFill from '../Icon/AllFill';
@@ -16,7 +16,7 @@ export function Text() {
   };
 
   return (
-    <div style={{ ['--DropdownMenu-z-index']: 2 }}>
+    <div style={{ '--DropdownMenu-z-index': 2 }}>
       <DropdownMenu.Frame>
         <Button
           aria-controls="dropdown-menu-example1"
@@ -59,7 +59,7 @@ export function TextWithIcon() {
   };
 
   return (
-    <div style={{ ['--DropdownMenu-z-index']: 2 }}>
+    <div style={{ '--DropdownMenu-z-index': 2 }}>
       <DropdownMenu.Frame>
         <Button
           aria-controls="dropdown-menu-example2"
@@ -108,7 +108,7 @@ export function HeadWithIcon() {
   };
 
   return (
-    <div style={{ ['--DropdownMenu-z-index']: 2 }}>
+    <div style={{ '--DropdownMenu-z-index': 2 }}>
       <DropdownMenu.Frame>
         <Button
           aria-controls="dropdown-menu-example3"
@@ -157,7 +157,7 @@ export function HeadWithIconAndCaption() {
   };
 
   return (
-    <div style={{ ['--DropdownMenu-z-index']: 2 }}>
+    <div style={{ '--DropdownMenu-z-index': 2 }}>
       <DropdownMenu.Frame>
         <Button
           aria-controls="dropdown-menu-example4"
@@ -205,7 +205,7 @@ export function Position() {
     <>
       <div
         style={{
-          ['--DropdownMenu-z-index']: 2,
+          '--DropdownMenu-z-index': 2,
           marginTop: 80,
           marginLeft: 210,
         }}
@@ -223,7 +223,7 @@ export function Position() {
       </div>
       <div
         style={{
-          ['--DropdownMenu-z-index']: 2,
+          '--DropdownMenu-z-index': 2,
           marginTop: 90,
           marginLeft: 105,
         }}
@@ -239,7 +239,7 @@ export function Position() {
           </DropdownMenu.Position>
         </DropdownMenu.Frame>
       </div>
-      <div style={{ ['--DropdownMenu-z-index']: 2, marginTop: 90 }}>
+      <div style={{ '--DropdownMenu-z-index': 2, marginTop: 90 }}>
         <DropdownMenu.Frame>
           <Button ref={triggerRef} size="medium" variant="neutral">
             例
@@ -252,7 +252,7 @@ export function Position() {
         </DropdownMenu.Frame>
       </div>
 
-      <div style={{ ['--DropdownMenu-z-index']: 2, marginTop: 20 }}>
+      <div style={{ '--DropdownMenu-z-index': 2, marginTop: 20 }}>
         <DropdownMenu.Frame>
           <Button ref={triggerRef} size="medium" variant="neutral">
             例
@@ -264,7 +264,7 @@ export function Position() {
           </DropdownMenu.Position>
         </DropdownMenu.Frame>
       </div>
-      <div style={{ ['--DropdownMenu-z-index']: 2, marginTop: 90 }}>
+      <div style={{ '--DropdownMenu-z-index': 2, marginTop: 90 }}>
         <DropdownMenu.Frame>
           <Button ref={triggerRef} size="medium" variant="neutral">
             例
@@ -278,7 +278,7 @@ export function Position() {
           </DropdownMenu.Position>
         </DropdownMenu.Frame>
       </div>
-      <div style={{ ['--DropdownMenu-z-index']: 2, marginTop: 90 }}>
+      <div style={{ '--DropdownMenu-z-index': 2, marginTop: 90 }}>
         <DropdownMenu.Frame>
           <Button ref={triggerRef} size="medium" variant="neutral">
             例
@@ -295,7 +295,7 @@ export function Position() {
 
       <div
         style={{
-          ['--DropdownMenu-z-index']: 2,
+          '--DropdownMenu-z-index': 2,
           marginTop: 90,
           marginLeft: 210,
         }}
@@ -315,7 +315,7 @@ export function Position() {
       </div>
       <div
         style={{
-          ['--DropdownMenu-z-index']: 2,
+          '--DropdownMenu-z-index': 2,
           marginTop: 90,
           marginLeft: 110,
         }}
@@ -336,7 +336,7 @@ export function Position() {
           </DropdownMenu.Position>
         </DropdownMenu.Frame>
       </div>
-      <div style={{ ['--DropdownMenu-z-index']: 2, marginTop: 90 }}>
+      <div style={{ '--DropdownMenu-z-index': 2, marginTop: 90 }}>
         <DropdownMenu.Frame>
           <Button ref={triggerRef} size="medium" variant="neutral">
             例
@@ -353,7 +353,7 @@ export function Position() {
 
       <div
         style={{
-          ['--DropdownMenu-z-index']: 2,
+          '--DropdownMenu-z-index': 2,
           marginTop: 90,
           marginLeft: 265,
         }}
@@ -371,7 +371,7 @@ export function Position() {
       </div>
       <div
         style={{
-          ['--DropdownMenu-z-index']: 2,
+          '--DropdownMenu-z-index': 2,
           marginTop: 90,
           marginLeft: 265,
         }}
@@ -391,7 +391,7 @@ export function Position() {
       </div>
       <div
         style={{
-          ['--DropdownMenu-z-index']: 2,
+          '--DropdownMenu-z-index': 2,
           marginTop: 90,
           marginLeft: 265,
         }}

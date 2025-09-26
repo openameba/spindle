@@ -1,4 +1,7 @@
-import { GetLocalVariablesResponse, VariableAlias } from '@figma/rest-api-spec';
+import type {
+  GetLocalVariablesResponse,
+  VariableAlias,
+} from '@figma/rest-api-spec';
 
 export function transformAnimationProperty(
   variables: GetLocalVariablesResponse,

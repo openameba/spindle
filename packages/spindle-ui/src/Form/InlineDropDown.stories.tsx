@@ -1,6 +1,6 @@
-import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 import { InlineDropDown } from './InlineDropDown';
 
 const meta: Meta<typeof InlineDropDown> = {

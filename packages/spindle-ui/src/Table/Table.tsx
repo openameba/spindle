@@ -1,4 +1,4 @@
-import React, { forwardRef, ReactNode, CSSProperties } from 'react';
+import React, { type CSSProperties, forwardRef, type ReactNode } from 'react';
 
 type BorderType = 'horizontal' | 'vertical' | 'outlined';
 

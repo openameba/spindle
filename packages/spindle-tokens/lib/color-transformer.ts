@@ -1,7 +1,7 @@
-import {
+import type {
   GetLocalVariablesResponse,
-  VariableAlias,
   RGBA,
+  VariableAlias,
 } from '@figma/rest-api-spec';
 
 function rgbaToHex(r: number, g: number, b: number, a: number) {

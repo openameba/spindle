@@ -14,14 +14,12 @@ export function VisiblePropsSample() {
         表示を切り替える
       </Button>
       <InlineNotification.Frame variant="information" visible={visible}>
-        <>
-          <InlineNotification.Icon>
-            <Information aria-hidden="true" />
-          </InlineNotification.Icon>
-          <InlineNotification.Text>
-            ブログの管理者が承認するまで、コメントが反映されない場合があります
-          </InlineNotification.Text>
-        </>
+        <InlineNotification.Icon>
+          <Information aria-hidden="true" />
+        </InlineNotification.Icon>
+        <InlineNotification.Text>
+          ブログの管理者が承認するまで、コメントが反映されない場合があります
+        </InlineNotification.Text>
       </InlineNotification.Frame>
     </div>
   );

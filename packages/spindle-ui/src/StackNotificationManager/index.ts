@@ -1,18 +1,18 @@
 export {
+  useRepeatedStackItem,
+  useStackInteraction,
+  useStackNotificationComponent,
+  useStackNotificationManager,
+} from './hooks';
+export type {
+  ManagedStack,
+  StackNotificationComponentProps,
+  StackNotificationManagerProps,
+  StackOffset,
+  StackPosition,
+  StackPositionOffset,
+} from './StackNotificationManager';
+export {
   StackNotificationManagerProvider,
   useStackNotificationManagerContext,
 } from './StackNotificationManager';
-export type {
-  StackPosition,
-  StackOffset,
-  StackPositionOffset,
-  ManagedStack,
-  StackNotificationManagerProps,
-  StackNotificationComponentProps,
-} from './StackNotificationManager';
-export {
-  useStackNotificationManager,
-  useStackInteraction,
-  useRepeatedStackItem,
-  useStackNotificationComponent,
-} from './hooks';

@@ -66,7 +66,7 @@ module.exports = {
             output: './tokens/shadow',
             replacer: (result) =>
               JSON.stringify(
-                { Shadow: { ['Drop Shadow']: sortObj(result) } },
+                { Shadow: { 'Drop Shadow': sortObj(result) } },
                 null,
                 2,
               ),

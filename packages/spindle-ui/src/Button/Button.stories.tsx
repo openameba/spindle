@@ -1,8 +1,8 @@
-import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+import { ChevronDownBold, FileAdd, Link, PlusBold } from '../Icon';
 import { Button } from './Button';
-import { PlusBold, Link, FileAdd, ChevronDownBold } from '../Icon';
 
 const meta: Meta<typeof Button> = {
   title: 'Button',
