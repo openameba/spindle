@@ -19,6 +19,7 @@
 @import './List/index.css';
 @import './DropdownMenu/DropdownMenu.css';
 @import './Pagination/Pagination.css';
+@import './Rating/Rating.css';
 @import './InlineNotification/InlineNotification.css';
 @import './SegmentedControl/SegmentedControl.css';
 @import './NavigationTab/index.css';

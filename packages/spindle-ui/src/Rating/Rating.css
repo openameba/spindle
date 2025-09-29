@@ -1,0 +1,74 @@
+.spui-Rating {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+.spui-Rating-image {
+  display: flex;
+  gap: 2px;
+  line-height: 0;
+}
+
+.spui-Rating-text {
+  color: var(--color-text-high-emphasis);
+  font-weight: bold;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.spui-Rating--large .spui-Rating-text {
+  font-size: 1.25em;
+}
+
+.spui-Rating--medium .spui-Rating-text {
+  font-size: 1em;
+}
+
+.spui-Rating--small .spui-Rating-text {
+  font-size: 0.8125em;
+}
+
+.spui-Rating-item--active {
+  display: block;
+  position: relative;
+}
+
+.spui-Rating-icon {
+  color: var(--color-border-high-emphasis);
+}
+
+.spui-Rating-item--front {
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+}
+
+.spui-Rating-item--front .spui-Rating-icon {
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.spui-Rating-item--active .spui-Rating-icon {
+  color: transparent;
+}
+
+.spui-Rating-item--full .spui-Rating-icon,
+.spui-Rating-item--active .spui-Rating-item--front .spui-Rating-icon {
+  color: var(--color-object-rating);
+}
+
+.spui-Rating--large .spui-Rating-icon {
+  font-size: 1.25em;
+}
+
+.spui-Rating--medium .spui-Rating-icon {
+  font-size: 1em;
+}
+
+.spui-Rating--small .spui-Rating-icon {
+  font-size: 0.8125em;
+}
