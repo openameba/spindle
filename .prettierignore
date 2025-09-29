@@ -1,3 +1,8 @@
 dist/
 public/
 packages/spindle-tokens/lib/*.js
+# Biome handles these file types
+*.js
+*.jsx
+*.ts
+*.tsx

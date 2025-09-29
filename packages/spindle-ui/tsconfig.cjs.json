@@ -7,9 +7,5 @@
     "declaration": true,
     "declarationMap": true,
     "skipLibCheck": true
-  },
-  "exclude": [
-    "src/**/*.test.*",
-    "src/**/*.stories.*"
-  ]
+  }
 }
