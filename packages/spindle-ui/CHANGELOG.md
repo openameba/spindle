@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.9.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.8.0...@openameba/spindle-ui@2.9.0) (2025-09-29)
+
+### Bug Fixes
+
+- description ([95187fe](https://github.com/openameba/spindle/commit/95187feed9e502bdd0c7dec367a60623f8ff5c15))
+- rating compoent style ([8bcd164](https://github.com/openameba/spindle/commit/8bcd16426752ffa7a60491f2c02e401931f62a9b))
+- rating docs ([d69fbac](https://github.com/openameba/spindle/commit/d69fbac553c1bbe1a7eb0a359a9350a6c4756b0e))
+
+### Features
+
+- **spindle-ui:** add rating component ([3546053](https://github.com/openameba/spindle/commit/35460534bd155679ecc5edde67cfea49cfcbd0a8))
+- **spindle-ui:** ratingコンポーネントの指摘事項対応 ([f94386d](https://github.com/openameba/spindle/commit/f94386da69eead2dd17911b1c8490dad1593fbdd))
+- **spindle-ui:** ratingコンポーネントを修正 ([4f892f6](https://github.com/openameba/spindle/commit/4f892f6d9ac05ea06e940ac5ed92ef6950628425))
+
 # [2.8.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.7.0...@openameba/spindle-ui@2.8.0) (2025-09-22)
 
 ### Features
