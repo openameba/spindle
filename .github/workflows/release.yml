@@ -65,7 +65,7 @@ jobs:
         if: ${{ github.event.inputs.version_type == 'major' }}
         run: |
           echo "Checking lerna changed for major release..."
-          CHANGED_PACKAGES=$(npx lerna changed --json | jq -r '.[].name' | tr '\n' ' ')
+          CHANGED_PACKAGES=$(npx lerna changed --json | jq -r '.[].name' | tr '\n' ' ' | sed 's/ $//')
           echo "Changed packages: $CHANGED_PACKAGES"
           if [ -z "$CHANGED_PACKAGES" ]; then
             echo "No packages have changed. Major release requires changes."
