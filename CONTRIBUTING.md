@@ -19,7 +19,7 @@ Amebaとして提供される成果物は、それらに則って開発される
 1. 作業が終わったらコミットをまとめて、該当ブランチを`main`ブランチにマージします
     - コミットはCHANGELOGに反映されるため、適切な単位でまとめてください
     - コミット名については`Pull Requestの作り方`欄を参考にしてください
-2. GitHub Actionsの「releaseing」ワークフローを手動実行します
+2. GitHub Actionsの「releasing」ワークフローを手動実行します
    - ワークフロー実行時に以下を選択してください：
      - **Release version type**: `major`, `minor`, `patch`, `premajor`, `preminor`, `prepatch`, `prerelease`から選択
      - **Package name to release**: 特定のパッケージ名または`all-changed`（変更された全パッケージ）から選択

@@ -1,4 +1,4 @@
-name: releaseing
+name: releasing
 
 on:
   workflow_dispatch:
@@ -30,8 +30,8 @@ on:
           - '@openameba/spindle-ui'
 
 jobs:
-  releaseing:
-    name: releaseing
+  releasing:
+    name: releasing
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -80,12 +80,12 @@ jobs:
             exit 1
           fi
           echo "Packages changed successfully for major release"
-      - name: Releaseing with lerna (specific package)
+      - name: releasing with lerna (specific package)
         if: ${{ github.event.inputs.package_name != 'all-changed' }}
         run: yarn lerna publish ${{ github.event.inputs.version_type }} --conventional-commits --create-release github --yes --no-private --scope ${{ github.event.inputs.package_name }}
         env:
           GH_TOKEN: ${{ github.token }}
-      - name: Releaseing with lerna (all packages)
+      - name: releasing with lerna (all packages)
         if: ${{ github.event.inputs.package_name == 'all-changed' }}
         run: yarn lerna publish ${{ github.event.inputs.version_type }} --conventional-commits --create-release github --yes --no-private
         env:
