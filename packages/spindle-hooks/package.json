@@ -58,7 +58,7 @@
     "@testing-library/jest-dom": "6.8.0",
     "@testing-library/react": "16.3.0",
     "@testing-library/user-event": "14.6.1",
-    "@types/jest": "29.5.14",
+    "@types/jest": "30.0.0",
     "@types/react": "18.3.24",
     "@types/react-dom": "19.1.9",
     "bundlewatch": "0.4.1",
