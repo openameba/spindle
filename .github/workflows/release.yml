@@ -48,49 +48,12 @@ jobs:
           echo "name=${GITHUB_REF#refs/*/}" >> "$GITHUB_OUTPUT"
           echo "version=${GITHUB_REF##*/}" >> "$GITHUB_OUTPUT"
         id: extract_branch
-      - name: Check for changes
-        run: |
-          echo "Checking for changes..."
-          # Get the list of changed packages
-          CHANGED_PACKAGES=$(yarn --silent lerna changed --json | jq -r '.[].name' || echo "")
-
-          if [ -z "$CHANGED_PACKAGES" ]; then
-            echo "No packages were changed, skipping release"
-            echo "CHANGED=false" >> $GITHUB_OUTPUT
-            echo "CHANGED_PACKAGES=" >> $GITHUB_OUTPUT
-          else
-            echo "Changed packages: $CHANGED_PACKAGES"
-            echo "CHANGED=true" >> $GITHUB_OUTPUT
-            # Convert space-separated packages to newline-separated for GitHub Actions
-            echo "CHANGED_PACKAGES<<EOF" >> $GITHUB_OUTPUT
-            echo "$CHANGED_PACKAGES" | tr ' ' '\n' >> $GITHUB_OUTPUT
-            echo "EOF" >> $GITHUB_OUTPUT
-          fi
-        id: check_changes
-      - name: Create tags and releases with lerna (skip npm publish)
-        if: steps.check_changes.outputs.CHANGED == 'true'
-        run: yarn lerna publish ${{ steps.extract_branch.outputs.version }} --conventional-commits --create-release github --yes --no-private --skip-npm
+      - name: Releaseing with lerna
+        # also see some options in lerna.json
+        run: yarn lerna publish ${{ steps.extract_branch.outputs.version }} --conventional-commits --create-release github --yes --no-private
         env:
           GH_TOKEN: ${{ github.token }}
-      - name: Publish updated packages with OIDC
-        if: steps.check_changes.outputs.CHANGED == 'true'
-        run: |
-          # Use the changed packages list from check_changes step
-          CHANGED_PACKAGES="${{ steps.check_changes.outputs.CHANGED_PACKAGES }}"
-          echo "Changed packages: $CHANGED_PACKAGES"
-
-          # Publish each changed package
-          echo "$CHANGED_PACKAGES" | while read -r package_name; do
-            if [ -n "$package_name" ]; then
-              echo "Publishing $package_name"
-              package_dir="packages/${package_name#@openameba/}"
-              cd "$package_dir"
-              npm publish --access public
-              cd ../..
-            fi
-          done
       - name: Create Pull Request
-        if: steps.check_changes.outputs.CHANGED == 'true'
         run: >
           curl
           -X POST
