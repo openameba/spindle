@@ -19,10 +19,11 @@ Amebaとして提供される成果物は、それらに則って開発される
 1. 作業が終わったらコミットをまとめて、該当ブランチを`main`ブランチにマージします
     - コミットはCHANGELOGに反映されるため、適切な単位でまとめてください
     - コミット名については`Pull Requestの作り方`欄を参考にしてください
-2. リリースされるパッケージ名はGitHub Actionsの「Check changed packages」ワークフローで確認できます
-   - 依存モジュールの更新等でソースコードに変更のないパッケージも表示されることがありますが問題ありません
-   - **majorリリースの場合**、GitHub Actionsの「Check changed packages」ワークフローを手動実行し、**対象パッケージ以外の変更が含まれていないか確認してください**。対象外パッケージに変更があると、他のパッケージもメジャーリリースになってしまうためです（されても致命的な問題ではありませんが）
-3. 変更内容に合わせてリリースブランチを作成します。選択できる名前は[release.yml](/.github/workflows/release.yml#L6-L12)を参照してください
-4. ブランチがプッシュされるとCHANGELOG作成・npmパブリッシュ・Pull Request作成が自動的に行われます
-5. 4で作成されたPull Requestの内容を確認し、`main`ブランチにマージします
-6. 開発メンバーに周知します
+2. GitHub Actionsの「releaseing」ワークフローを手動実行します
+   - ワークフロー実行時に以下を選択してください：
+     - **Release version type**: `major`, `minor`, `patch`, `premajor`, `preminor`, `prepatch`, `prerelease`から選択
+     - **Package name to release**: 特定のパッケージ名または`all-changed`（変更された全パッケージ）から選択
+   - **majorリリースの場合**、選択したパッケージのみが変更されていることを確認してください。複数パッケージが変更されている場合は、majorリリースは実行されません。先に他のパッケージをリリースしてから再実行してください。
+3. ワークフロー実行によりCHANGELOG作成・npmパブリッシュ・Pull Request作成が自動的に行われます
+4. 3で作成されたPull Requestの内容を確認し、`main`ブランチにマージします
+5. 開発メンバーに周知します
