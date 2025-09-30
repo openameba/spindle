@@ -76,7 +76,7 @@ jobs:
           if [ "$CHANGED_PACKAGES" = "${{ github.event.inputs.package_name }}" ]; then
             echo "Selected package ${{ github.event.inputs.package_name }} has changes. Proceeding with major release."
           else
-            echo "Selected package ${{ github.event.inputs.package_name }} has no changes. Major release requires changes to the selected package."
+            echo "Major releases are only allowed when exactly one package (the selected one) has changes. Changed packages: $CHANGED_PACKAGES. Selected package: ${{ github.event.inputs.package_name }}"
             exit 1
           fi
           echo "Packages changed successfully for major release"
