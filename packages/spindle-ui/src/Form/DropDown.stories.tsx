@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import { DropDown as DropDownComponent } from './DropDown';
 
 const meta: Meta<typeof DropDownComponent> = {

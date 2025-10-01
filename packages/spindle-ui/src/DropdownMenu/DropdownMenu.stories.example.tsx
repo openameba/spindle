@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { actions } from '@storybook/addon-actions';
+import { actions } from 'storybook/actions';
 
 import { Button } from '../Button';
 import AllFill from '../Icon/AllFill';
