@@ -59,7 +59,7 @@ describe('<SegmentedControl />', () => {
     );
 
     await user.click(screen.getByText(options[1].label));
-    expect(onClick).toBeCalled();
+    expect(onClick).toHaveBeenCalled();
   });
 
   test('The button clicked should be selected, the other buttons should not be selected', async () => {

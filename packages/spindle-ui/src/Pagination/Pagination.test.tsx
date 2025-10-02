@@ -23,7 +23,7 @@ describe('<Pagination />', () => {
 
     await user.click(screen.getByText(1));
     fireEvent.click(screen.getByText(1));
-    expect(onClick).toBeCalled();
+    expect(onClick).toHaveBeenCalled();
   });
 
   test('should render all anchors without rel attribute when linkFollowType is all', () => {
