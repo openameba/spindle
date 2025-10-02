@@ -139,23 +139,27 @@ export const Pagination = (props: Props) => {
               className={`${BLOCK_NAME}-item`}
               key={`pagination-item-${pageNumber}`}
             >
-              <a
-                className={`${BLOCK_NAME}-link`}
-                rel={getLinkRelAttribute({ linkFollowType, pageNumber })}
-                href={isCurrent ? undefined : createUrl(pageNumber)}
-                aria-current={isCurrent ? 'page' : undefined}
-                aria-disabled={isCurrent ? true : undefined}
-                onClick={
-                  isCurrent
-                    ? undefined
-                    : (e) => {
-                        handleClick(e, pageNumber);
-                      }
-                }
-                aria-label={`${pageNumber}ページ目`}
-              >
-                {pageNumber}
-              </a>
+              {isCurrent ? (
+                <span
+                  className={`${BLOCK_NAME}-link`}
+                  aria-current="page"
+                  aria-label={`${pageNumber}ページ目`}
+                >
+                  {pageNumber}
+                </span>
+              ) : (
+                <a
+                  className={`${BLOCK_NAME}-link`}
+                  rel={getLinkRelAttribute({ linkFollowType, pageNumber })}
+                  href={createUrl(pageNumber)}
+                  onClick={(e) => {
+                    handleClick(e, pageNumber);
+                  }}
+                  aria-label={`${pageNumber}ページ目`}
+                >
+                  {pageNumber}
+                </a>
+              )}
               {showEllipsis && (
                 <MenuHorizontal
                   aria-hidden="true"
