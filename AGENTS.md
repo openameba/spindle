@@ -17,3 +17,9 @@
 - Use Conventional Commits `BREAKING CHANGE` notation when there are breaking changes
 - Use either Japanese or English for the text
 - Do not include co-author, "Generated with", or other agent-specific information in commits
+
+## Dependency Updates
+
+### Storybook
+- When updating Storybook, use the official migration command: `npx storybook@{VERSION} upgrade`
+- Use Chrome DevTools MCP to verify that all pages display without errors (errors may occur during rendering)
