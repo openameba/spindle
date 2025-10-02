@@ -200,7 +200,7 @@ describe('<DropdownMenu />', () => {
 
     if (menuButton) await user.click(menuButton);
 
-    expect(onMenuButtonClick).toBeCalled();
+    expect(onMenuButtonClick).toHaveBeenCalled();
     expect(menu).toHaveClass('is-fade-out');
 
     act(() => {
