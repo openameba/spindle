@@ -142,9 +142,8 @@ export const Pagination = (props: Props) => {
               <a
                 className={`${BLOCK_NAME}-link`}
                 rel={getLinkRelAttribute({ linkFollowType, pageNumber })}
-                href={isCurrent ? undefined : createUrl(pageNumber)}
+                href={isCurrent ? '#' : createUrl(pageNumber)}
                 aria-current={isCurrent ? 'page' : undefined}
-                aria-disabled={isCurrent ? true : undefined}
                 onClick={
                   isCurrent
                     ? undefined
