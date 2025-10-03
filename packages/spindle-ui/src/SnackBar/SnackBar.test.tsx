@@ -39,7 +39,7 @@ describe('<SnackBar />', () => {
         }
       });
 
-      expect(onHide).toBeCalledTimes(1);
+      expect(onHide).toHaveBeenCalledTimes(1);
     };
 
     const onHide = jest.fn();
@@ -110,7 +110,7 @@ describe('<SnackBar />', () => {
       }
     });
 
-    expect(onHide).toBeCalledTimes(1);
+    expect(onHide).toHaveBeenCalledTimes(1);
   });
 
   test('When it is focused, duration should be reset', () => {
@@ -156,7 +156,7 @@ describe('<SnackBar />', () => {
       }
     });
 
-    expect(onHide).toBeCalledTimes(1);
+    expect(onHide).toHaveBeenCalledTimes(1);
   });
 
   test('it should close when close button is clicked', () => {
@@ -189,6 +189,6 @@ describe('<SnackBar />', () => {
       }
     });
 
-    expect(onHide).toBeCalledTimes(1);
+    expect(onHide).toHaveBeenCalledTimes(1);
   });
 });

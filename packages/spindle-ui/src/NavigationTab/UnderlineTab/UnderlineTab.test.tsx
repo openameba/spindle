@@ -151,7 +151,7 @@ describe('<UnderlineTab />', () => {
       if (defaultSelectedButton.nextElementSibling) {
         await user.click(defaultSelectedButton.nextElementSibling);
       }
-      expect(onClick).toBeCalled();
+      expect(onClick).toHaveBeenCalled();
       const selectedButton = screen.getByRole('tab', { selected: true });
       expect(selectedButton.getAttribute('id')).toEqual(selectedId);
     });

@@ -3,7 +3,7 @@ module.exports = {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
   setupFilesAfterEnv: ['<rootDir>/setup-tests.ts'],
   transform: {
-    '^.+\\.tsx?$': 'ts-jest',
+    '^.+\\.tsx?$': '@swc/jest',
   },
   testEnvironment: 'jest-environment-jsdom',
   testMatch: ['<rootDir>/src/**/*.test.{ts,tsx}'],

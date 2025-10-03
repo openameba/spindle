@@ -8,7 +8,7 @@ module.exports = {
     '^react($|/.+)': '<rootDir>/node_modules/react$1',
   },
   transform: {
-    '^.+\\.tsx?$': 'ts-jest',
+    '^.+\\.tsx?$': '@swc/jest',
   },
   testEnvironment: 'jest-environment-jsdom',
 };

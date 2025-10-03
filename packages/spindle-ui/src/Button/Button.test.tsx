@@ -14,7 +14,7 @@ describe('<Button />', () => {
     render(<Button onClick={onButtonClick} />);
 
     await user.click(screen.getByRole('button'));
-    expect(onButtonClick).toBeCalled();
+    expect(onButtonClick).toHaveBeenCalled();
   });
 
   test('forward ref', () => {
