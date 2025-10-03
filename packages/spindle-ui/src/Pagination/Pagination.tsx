@@ -144,7 +144,6 @@ export const Pagination = (props: Props) => {
                 rel={getLinkRelAttribute({ linkFollowType, pageNumber })}
                 href={isCurrent ? '#' : createUrl(pageNumber)}
                 aria-current={isCurrent ? 'page' : undefined}
-                aria-disabled={isCurrent ? true : undefined}
                 onClick={
                   isCurrent
                     ? undefined
