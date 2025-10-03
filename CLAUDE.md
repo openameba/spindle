@@ -18,6 +18,9 @@
 - Use either Japanese or English for the text
 - Do not include co-author, "Generated with", or other agent-specific information in commits
 
+## Issue Creation
+- Use the `create-issue` command (.claude/commands/create-issue.md) to ensure proper formatting and tracking
+
 ## Dependency Updates
 
 ### Package Installation
