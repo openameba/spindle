@@ -42,7 +42,7 @@
     "zod": "^4.1.9"
   },
   "devDependencies": {
-    "@types/node": "20.19.17",
+    "@types/node": "20.19.18",
     "cpx2": "8.0.0",
     "vitest": "3.2.4"
   }
