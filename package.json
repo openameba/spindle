@@ -23,9 +23,9 @@
     "prepare": "is-ci || husky install"
   },
   "devDependencies": {
-    "@commitlint/cli": "19.8.1",
-    "@commitlint/config-conventional": "19.8.1",
-    "@commitlint/config-lerna-scopes": "19.8.1",
+    "@commitlint/cli": "20.0.0",
+    "@commitlint/config-conventional": "20.0.0",
+    "@commitlint/config-lerna-scopes": "20.0.0",
     "@typescript-eslint/eslint-plugin": "7.18.0",
     "@typescript-eslint/parser": "6.21.0",
     "eslint": "8.57.1",
