@@ -2185,10 +2185,10 @@
     zod "3.25.58"
     zod-validation-error "^3.2.0"
 
-"@figma/rest-api-spec@0.33.0":
-  version "0.33.0"
-  resolved "https://registry.yarnpkg.com/@figma/rest-api-spec/-/rest-api-spec-0.33.0.tgz#9b56bb13eb29af86ac097682d9e69d170217362c"
-  integrity sha512-T/hxrxvnAejDHVzHr5av7eM09vCniyeyLy77QUMmnavUIZe+jA/Ex5mpFhMS6DHVAy/zuBUDJDZRMZ4t8OBwFg==
+"@figma/rest-api-spec@0.34.0":
+  version "0.34.0"
+  resolved "https://registry.yarnpkg.com/@figma/rest-api-spec/-/rest-api-spec-0.34.0.tgz#33b1ca870a0a9332f8a0b641d66b515dcb128adc"
+  integrity sha512-eyKqo1S1e2dzpfF6WGNgMT1XPciUwH6MeZDi3qfrSAp4kqNauHwuGHOMTnZFTydF93FYpdg0T6Hp9lsJu8bDcg==
 
 "@google-cloud/cloud-sql-connector@^1.3.3":
   version "1.3.4"
