@@ -94,15 +94,6 @@
   margin-left: 10px;
 }
 
-.spui-Pagination--hidden {
-  clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  width: 1px;
-}
-
 @container spui-pagination (max-width: 360px) {
   .spui-Pagination-item--first,
   .spui-Pagination-item--last {
