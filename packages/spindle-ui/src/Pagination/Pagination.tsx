@@ -143,8 +143,10 @@ export const Pagination = (props: Props) => {
                 <span
                   className={`${BLOCK_NAME}-link`}
                   aria-current="page"
-                  aria-label={`${pageNumber}ページ目`}
                 >
+                  <span className={`${BLOCK_NAME}--hidden`}>
+                    現在のページ: 
+                  </span>
                   {pageNumber}
                 </span>
               ) : (
