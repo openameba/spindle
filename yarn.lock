@@ -1465,14 +1465,14 @@
   resolved "https://registry.yarnpkg.com/@colors/colors/-/colors-1.6.0.tgz#ec6cd237440700bc23ca23087f513c75508958b0"
   integrity sha512-Ir+AOibqzrIsL6ajt3Rz3LskB7OiMVHqltZmspbW/TJuTVuyOMirVqAkjfY6JISiLHgyNqicAC8AyHHGzNd/dA==
 
-"@commitlint/cli@20.0.0":
-  version "20.0.0"
-  resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-20.0.0.tgz#9459cbf4c0cbabca19bc7219ad295f7f39791e4f"
-  integrity sha512-I3D7Yldq8ZhOB3qEaTvXWIgib6tSZhbCpRObfFQ/aYI0J9AH8NMwT07Ak+bpE3n6Yn7EtbqEhQUkJZ/jZ5kCeQ==
+"@commitlint/cli@20.1.0":
+  version "20.1.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-20.1.0.tgz#07365e2849d86f771e76ea0ceb96cd88bb945e03"
+  integrity sha512-pW5ujjrOovhq5RcYv5xCpb4GkZxkO2+GtOdBW2/qrr0Ll9tl3PX0aBBobGQl3mdZUbOBgwAexEQLeH6uxL0VYg==
   dependencies:
     "@commitlint/format" "^20.0.0"
     "@commitlint/lint" "^20.0.0"
-    "@commitlint/load" "^20.0.0"
+    "@commitlint/load" "^20.1.0"
     "@commitlint/read" "^20.0.0"
     "@commitlint/types" "^20.0.0"
     tinyexec "^1.0.0"
@@ -1552,7 +1552,7 @@
     "@commitlint/rules" "^20.0.0"
     "@commitlint/types" "^20.0.0"
 
-"@commitlint/load@^20.0.0":
+"@commitlint/load@^20.1.0":
   version "20.1.0"
   resolved "https://registry.yarnpkg.com/@commitlint/load/-/load-20.1.0.tgz#8eb7aefbfb066db903d1a89c4727093a57fcffbc"
   integrity sha512-qo9ER0XiAimATQR5QhvvzePfeDfApi/AFlC1G+YN+ZAY8/Ua6IRrDrxRvQAr+YXUKAxUsTDSp9KXeXLBPsNRWg==
