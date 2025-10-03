@@ -20,6 +20,9 @@
 
 ## Dependency Updates
 
+### Package Installation
+- Install devDependencies with exact versions: `yarn add --exact --dev <package>`
+
 ### Storybook
 - When updating Storybook, use the official migration command: `npx storybook@{VERSION} upgrade`
 - Use Chrome DevTools MCP to verify that all pages display without errors (errors may occur during rendering)
