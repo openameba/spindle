@@ -20247,10 +20247,10 @@ stubs@^3.0.0:
   resolved "https://registry.yarnpkg.com/stubs/-/stubs-3.0.0.tgz#e8d2ba1fa9c90570303c030b6900f7d5f89abe5b"
   integrity sha512-PdHt7hHUJKxvTCgbKX9C1V/ftOcjJQgz8BZwNfV5c4B6dcGqlpelTbJ999jBGZ2jYiPAwcX5dP6oBwVlBlUbxw==
 
-style-dictionary@5.0.4:
-  version "5.0.4"
-  resolved "https://registry.yarnpkg.com/style-dictionary/-/style-dictionary-5.0.4.tgz#12f750284c93f7ade7c64eb3245da3b50df7c9b5"
-  integrity sha512-+k82riDTHnCpOYzKz1Xa4W219dEOI8pc2a2jnWZuAFY11PHvRL1Ao55Lle3t/kQbiRU5QACdC3xeUNuByaKE3w==
+style-dictionary@5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/style-dictionary/-/style-dictionary-5.1.0.tgz#3fa1afe45784a57cb7d299bcdc26e006c41bcb4d"
+  integrity sha512-HsCPJAqJIjQaxhHmiHSEqM96TAC/+6B6aLYeXAbcfLcrooKClKLaWl5T5vqJNNfqmJlpoRP9k0dkcqfAk0q4Kg==
   dependencies:
     "@bundled-es-modules/deepmerge" "^4.3.1"
     "@bundled-es-modules/glob" "^11.0.3"
