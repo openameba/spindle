@@ -10483,10 +10483,10 @@ find-up@^7.0.0:
     path-exists "^5.0.0"
     unicorn-magic "^0.1.0"
 
-firebase-tools@14.17.0:
-  version "14.17.0"
-  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-14.17.0.tgz#0c9e7624b28399114cc4dca136353fe1deecaf4b"
-  integrity sha512-BWOfB9kokuRZbfRpr1AJrMiJHzyp8TjTNmYlgmHnGcBOAwtDinaeceqiKwLyZ6SucnOWj6Ca73DubqbAj+DmKw==
+firebase-tools@14.18.0:
+  version "14.18.0"
+  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-14.18.0.tgz#3eba7885a0d34e5eaf5f7e432c8dfd4b5aec2190"
+  integrity sha512-k4OVoIMvD38VMSH0a48H2NfhtmrfklQGOLBiw3+atc751anksLzs93hyHFmLISr7Vzb5gP7pkpmc54HBgqQXZg==
   dependencies:
     "@electric-sql/pglite" "^0.3.3"
     "@electric-sql/pglite-tools" "^0.2.8"
