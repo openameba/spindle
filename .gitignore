@@ -123,8 +123,8 @@ dist
 # A file that stores custom attributes of its containing folder in Apple macOS
 .DS_Store
 
-# acot test result
-.acot/
+# Lighthouse CI test result
+.lighthouseci/
 
 # Files in packages
 packages/spindle-tokens/lib/*.js

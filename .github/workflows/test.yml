@@ -28,5 +28,5 @@ jobs:
           yarn lerna run --scope @openameba/spindle-hooks build
           yarn test
         env:
-          PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome-stable
+          CHROME_PATH: /usr/bin/google-chrome-stable
 

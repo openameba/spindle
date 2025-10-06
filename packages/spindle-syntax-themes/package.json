@@ -19,7 +19,7 @@
   },
   "scripts": {
     "test": "yarn lint && yarn test:a11y",
-    "test:a11y": "acot run",
+    "test:a11y": "lhci autorun",
     "lint": "stylelint *.css",
     "minify": "csso highlightjs-light.css --output highlightjs-light.min.css && csso highlightjs-dark.css --output highlightjs-dark.min.css",
     "prepublishOnly": "yarn minify",
@@ -29,8 +29,7 @@
     "serve": "npx serve -p 5001"
   },
   "devDependencies": {
-    "@acot/acot-config": "0.0.19",
-    "@acot/cli": "0.0.19",
+    "@lhci/cli": "0.15.1",
     "csso-cli": "4.0.2",
     "firebase-tools": "14.18.0",
     "puppeteer": "24.23.0",
