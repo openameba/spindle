@@ -17,6 +17,7 @@
 - Use Conventional Commits `BREAKING CHANGE` notation when there are breaking changes
 - Use either Japanese or English for the text
 - Do not include co-author, "Generated with", or other agent-specific information in commits
+- Keep titles under 50 characters; may exceed if scope is long
 
 ## Dependency Updates
 
