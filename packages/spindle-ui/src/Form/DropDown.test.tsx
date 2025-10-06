@@ -35,7 +35,7 @@ describe('<DropDown />', () => {
     const user = userEvent.setup();
 
     await user.selectOptions(screen.getByRole('combobox'), 'c');
-    expect(onChange).toBeCalled();
+    expect(onChange).toHaveBeenCalled();
   });
 
   test('forward ref', () => {

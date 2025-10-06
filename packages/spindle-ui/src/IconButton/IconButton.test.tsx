@@ -13,6 +13,6 @@ describe('<IconButton />', () => {
     render(<IconButton onClick={onButtonClick} />);
 
     await user.click(screen.getByRole('button'));
-    expect(onButtonClick).toBeCalled();
+    expect(onButtonClick).toHaveBeenCalled();
   });
 });
