@@ -12,6 +12,8 @@
 
 ## Pre-flight Checklist
 
+**Always report the checklist results to the user BEFORE creating the issue, indicating which items passed or failed. Do not proceed with issue creation until all checklist items are verified and reported to the user.**
+
 - [ ] MCP is configured and available (choose one):
   - Linear MCP
   - GitHub MCP
@@ -31,8 +33,6 @@
 - [ ] For Linear MCP: Specify appropriate project:
   - Use `mcp_Linear_list_projects` to get project list and select appropriate project
   - If no suitable project exists, propose creating a new one and use `mcp_Linear_create_project` to add it (with user permission)
-
-**Always report the checklist results to the user, indicating which items passed or failed.**
 
 ## Usage
 
