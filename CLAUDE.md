@@ -19,6 +19,9 @@
 - Do not include co-author, "Generated with", or other agent-specific information in commits
 - Keep titles under 50 characters; may exceed if scope is long
 
+## Issue Creation
+- Use the `create-issue` command (.claude/commands/create-issue.md) to ensure proper formatting and tracking
+
 ## Dependency Updates
 
 ### Package Installation
