@@ -1,0 +1,14 @@
+{
+  "ci": {
+    "collect": {
+      "startServerCommand": "yarn serve",
+      "url": ["http://localhost:5001/", "http://localhost:5001/?theme=dark"],
+      "numberOfRuns": 1
+    },
+    "assert": {
+      "assertions": {
+        "categories:accessibility": ["error", { "minScore": 1 }]
+      }
+    }
+  }
+}
