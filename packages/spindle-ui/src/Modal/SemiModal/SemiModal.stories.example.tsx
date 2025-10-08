@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import dialogPolyfill from 'dialog-polyfill';
-import { Button } from '../Button';
+import { Button } from '../../Button';
 import { SemiModal } from './SemiModal';
 
 import 'dialog-polyfill/dist/dialog-polyfill.css';
