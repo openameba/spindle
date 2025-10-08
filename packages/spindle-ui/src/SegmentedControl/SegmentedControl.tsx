@@ -32,7 +32,7 @@ export const SegmentedControl: React.FC<Props> = ({
 }) => {
   const [selectedId, setSelectedId] = useState(userSelectedId);
   const indicatorRef = useRef<HTMLDivElement>(null);
-  const buttonsRef = useRef<RefObject<HTMLButtonElement>[]>([]);
+  const buttonsRef = useRef<React.RefObject<HTMLButtonElement | null>[]>([]);
   const selectedIndex = useMemo(
     () => options.findIndex((option) => option.id === selectedId),
     [options, selectedId],

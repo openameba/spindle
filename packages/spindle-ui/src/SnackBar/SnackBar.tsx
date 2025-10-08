@@ -8,6 +8,7 @@ import React, {
   type MouseEventHandler,
   type ReactNode,
   type SetStateAction,
+  isValidElement,
 } from 'react';
 import CrossBold from '../Icon/CrossBold';
 import { IconButton } from '../IconButton';
@@ -19,7 +20,7 @@ import { TextLink as SpindleTextLink } from '../TextLink/TextLink';
 type Variant = 'information' | 'confirmation' | 'error';
 
 type Props = StackNotificationComponentProps<{
-  children?: React.ReactElement;
+  children?: React.ReactNode;
   active?: boolean;
   // milliseconds to hide
   duration?: number;
@@ -50,7 +51,7 @@ const Frame = ({
   variant = DEFAULT_VARIANT,
   stackPosition = 0,
   setContentHeight,
-}: Props): React.ReactElement => {
+}: Props) => {
   const {
     isShow,
     active,
@@ -108,7 +109,12 @@ const Frame = ({
         onBlur={setIsShowWithTimeout}
       >
         {Children.map(children, (child) =>
-          child ? cloneElement(child, { variant, setIsShow }) : child,
+          isValidElement<{
+            variant?: Variant;
+            setIsShow?: Dispatch<SetStateAction<boolean>>;
+          }>(child)
+            ? cloneElement(child, { variant, setIsShow })
+            : child,
         )}
         <div
           className={`${BLOCK_NAME}-iconButton ${BLOCK_NAME}-iconButton--${variant}`}
