@@ -1,4 +1,4 @@
-import React, { createRef, type RefObject, useCallback, useRef } from 'react';
+import React, { createRef, useCallback, useRef } from 'react';
 import CheckBold from '../../Icon/CheckBold';
 
 type Props = {
@@ -19,7 +19,7 @@ export const ButtonSwitch: React.FC<Props> = ({
   options,
   onClick,
 }) => {
-  const buttonsRef = useRef<RefObject<HTMLButtonElement>[]>([]);
+  const buttonsRef = useRef<React.RefObject<HTMLButtonElement | null>[]>([]);
 
   options.forEach((_, index) => {
     buttonsRef.current[index] = createRef<HTMLButtonElement>();

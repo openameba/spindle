@@ -9,6 +9,7 @@ import React, {
   ReactNode,
   SetStateAction,
   useMemo,
+  isValidElement,
 } from 'react';
 import { useStackNotificationComponent } from '../StackNotificationManager';
 import CrossBold from '../Icon/CrossBold';
@@ -20,7 +21,7 @@ import { StackNotificationComponentProps } from '../StackNotificationManager/Sta
 type Variant = 'information' | 'confirmation' | 'error';
 
 type Props = StackNotificationComponentProps<{
-  children?: React.ReactElement;
+  children?: React.ReactNode;
   active?: boolean;
   // milliseconds to hide
   duration?: number;
@@ -51,7 +52,7 @@ const Frame = ({
   variant = DEFAULT_VARIANT,
   stackPosition = 0,
   setContentHeight,
-}: Props): React.ReactElement => {
+}: Props) => {
   const {
     isShow,
     active,
@@ -109,7 +110,12 @@ const Frame = ({
         onBlur={setIsShowWithTimeout}
       >
         {Children.map(children, (child) =>
-          child ? cloneElement(child, { variant, setIsShow }) : child,
+          isValidElement<{
+            variant?: Variant;
+            setIsShow?: Dispatch<SetStateAction<boolean>>;
+          }>(child)
+            ? cloneElement(child, { variant, setIsShow })
+            : child,
         )}
         <div
           className={`${BLOCK_NAME}-iconButton ${BLOCK_NAME}-iconButton--${variant}`}
