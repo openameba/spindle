@@ -21,11 +21,9 @@ jobs:
             */*/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-v2
       - run: yarn install --frozen-lockfile
-      # Build application to check if the system works or not
-      # TODO: Build script for spindle-icon should be added
-      - name: build application
+      # Build all packages except spindle-icons to check if the system works or not
+      # spindle-icons is excluded because it requires FIGMA_TOKEN and fetches data from Figma API on every build
+      - name: build all packages
         run: |
-          yarn lerna run --scope @openameba/spindle-hooks build
-          yarn lerna run --scope @openameba/spindle-ui storybook:build
-          yarn lerna run --scope @openameba/spindle-ui build
+          yarn lerna run --ignore @openameba/spindle-icons build
           yarn build:extensionReplace
