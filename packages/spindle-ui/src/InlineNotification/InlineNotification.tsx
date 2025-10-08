@@ -59,7 +59,8 @@ const Frame: FC<Props> = ({
           return child;
         }
         if (child.type === Fragment) {
-          const fragmentChildren = child.props.children;
+          const fragmentChildren = (child.props as { children?: ReactNode })
+            .children;
           return processChildren(fragmentChildren);
         }
         const additionalProps = { variant, emphasis };

@@ -6,7 +6,7 @@ import { Dialog } from './Dialog';
 
 import 'dialog-polyfill/dist/dialog-polyfill.css';
 
-function useDialogpolyfill(ref: React.RefObject<HTMLDialogElement>) {
+function useDialogpolyfill(ref: React.RefObject<HTMLDialogElement | null>) {
   useEffect(() => {
     if (ref.current) {
       dialogPolyfill.registerDialog(ref.current);
@@ -16,7 +16,7 @@ function useDialogpolyfill(ref: React.RefObject<HTMLDialogElement>) {
 
 export function DialogExample() {
   const [open, setOpen] = useState(false);
-  const dialogRef = useRef<HTMLDialogElement>(null);
+  const dialogRef = useRef<HTMLDialogElement | null>(null);
 
   const handleOpenButtonClick = () => setOpen(true);
 

@@ -34,7 +34,7 @@ interface ListProps extends DefaultProps {
   onClose: () => void;
   open: boolean;
   position?: Position;
-  triggerRef: React.RefObject<HTMLButtonElement>;
+  triggerRef: React.RefObject<HTMLButtonElement | null>;
   variant?: Variant;
 }
 
