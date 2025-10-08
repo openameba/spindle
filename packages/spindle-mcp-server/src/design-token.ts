@@ -111,7 +111,24 @@ import '@openameba/spindle-tokens/dist/css/spindle-tokens-shadow.css';
 <link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-tokens/dist/css/spindle-tokens-shadow.css">
 \`\`\`
 
-※ 本番環境で利用する際にはでセルフホストすることを推奨します。
+**Spacingトークンについて**
+
+Spacingトークンはデバイスサイズに応じて異なる値を持ちます。対象デバイスに合わせて適切なファイルを読み込むか、メディアクエリで切り替えてください。
+
+単一デバイス向けの場合:
+\`\`\`css
+/* Mobile向けの場合 */
+@import '@openameba/spindle-tokens/dist/css/spindle-tokens-spacing-mobile.css';
+\`\`\`
+
+レスポンシブ対応の場合:
+\`\`\`html
+<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-tokens/dist/css/spindle-tokens-spacing-mobile.css" media="(max-width: 767px)">
+<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-tokens/dist/css/spindle-tokens-spacing-tablet.css" media="(min-width: 768px) and (max-width: 1023px)">
+<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-tokens/dist/css/spindle-tokens-spacing-desktop.css" media="(min-width: 1024px)">
+\`\`\`
+
+※ 本番環境で利用する際にはセルフホストすることを推奨します。
   `;
 
   return {
