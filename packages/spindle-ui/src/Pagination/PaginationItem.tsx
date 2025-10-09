@@ -88,27 +88,37 @@ export const PaginationItem: FC<Props> = React.memo(
       },
     };
 
-    return (
-      <a
-        className={`${BLOCK_NAME}-link ${BLOCK_NAME}-link--${type}`}
-        rel={getLinkRelAttribute({ linkFollowType, pageNumber })}
-        aria-label={itemPropMap[type].label}
-        href={isDisabled ? undefined : createUrl(pageNumber)}
-        aria-disabled={isDisabled ? true : undefined}
-        onClick={
-          isDisabled
-            ? undefined
-            : (e) => {
-                onClick(e, pageNumber);
-              }
-        }
-      >
+    const PaginationItemLabel = () => (
+      <>
         {isShowLabel && (
           <span className={`${BLOCK_NAME}-label`}>
             {itemPropMap[type].label}
           </span>
         )}
         {itemPropMap[type].icon()}
+      </>
+    );
+
+    return isDisabled ? (
+      <button
+        type="button"
+        className={`${BLOCK_NAME}-link ${BLOCK_NAME}-link--${type}`}
+        aria-label={itemPropMap[type].label}
+        disabled
+      >
+        <PaginationItemLabel />
+      </button>
+    ) : (
+      <a
+        className={`${BLOCK_NAME}-link ${BLOCK_NAME}-link--${type}`}
+        rel={getLinkRelAttribute({ linkFollowType, pageNumber })}
+        aria-label={itemPropMap[type].label}
+        href={createUrl(pageNumber)}
+        onClick={(e) => {
+          onClick(e, pageNumber);
+        }}
+      >
+        <PaginationItemLabel />
       </a>
     );
   },
