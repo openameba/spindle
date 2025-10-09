@@ -9,6 +9,7 @@ import HeroCarouselItem from './HeroCarouselItem';
 
 type Props = {
   carouselList: CarouselItem[];
+  autoplay?: boolean;
 };
 
 const BLOCK_NAME = 'spui-HeroCarousel';
@@ -16,6 +17,7 @@ const ITEM_LINK_CLASS_NAME = 'js-auto-play-carousel-item-link';
 
 export const HeroCarousel: FC<Props> = React.memo(function HeroCarousel({
   carouselList,
+  autoplay = true,
 }) {
   const {
     handleSlideToPrev,
@@ -36,6 +38,7 @@ export const HeroCarousel: FC<Props> = React.memo(function HeroCarousel({
   } = useCarousel({
     items: carouselList,
     itemLinkClassName: ITEM_LINK_CLASS_NAME,
+    shouldAutoPlaying: autoplay,
   });
 
   if (carouselList.length === 0) {
