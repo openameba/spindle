@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.9.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.9.0...@openameba/spindle-ui@2.9.1) (2025-10-09)
+
+### Bug Fixes
+
+- **spindle-ui:** delete aria disabled ([6a61c0a](https://github.com/openameba/spindle/commit/6a61c0ace22fc94ed6f73839e561dbfd59f94abc))
+- **spindle-ui:** delete outline style ([e9c4697](https://github.com/openameba/spindle/commit/e9c46971c60a7dfceeb76c770dc24c99b87af50e))
+- **spindle-ui:** delete pagination unused style ([04cff9d](https://github.com/openameba/spindle/commit/04cff9ddab8a12a25fc6dc2ddb9372d433f176fb))
+- **spindle-ui:** pagination component aria ([91ea006](https://github.com/openameba/spindle/commit/91ea006708163ae159b31112595ffc0de0b7ed76))
+- **spindle-ui:** pagination current link ([50a82ec](https://github.com/openameba/spindle/commit/50a82ec2c07509ef5d4440d9a6de01fa34bff605))
+- **spindle-ui:** pagination label ([ab723f5](https://github.com/openameba/spindle/commit/ab723f5b0a911dc95ad2c49bec5802d7d5ede677))
+- **spindle-ui:** pagination link element to button ([017f17b](https://github.com/openameba/spindle/commit/017f17bfd58d7a93fc4f608ca6b0dfae18621231))
+
+### Features
+
+- **spindle-ui:** add pagination disabled test ([4f6fabd](https://github.com/openameba/spindle/commit/4f6fabd5d8579a162b49c12c344a0e919cf28415))
+
 # [2.9.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.8.0...@openameba/spindle-ui@2.9.0) (2025-09-29)
 
 ### Bug Fixes
