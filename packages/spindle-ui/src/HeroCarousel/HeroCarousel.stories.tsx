@@ -44,5 +44,5 @@ const carouselList: CarouselItem[] = [
 ];
 
 export const Normal: Story = {
-  render: () => <HeroCarousel carouselList={carouselList} />,
+  render: () => <HeroCarousel carouselList={carouselList} autoplay={false} />,
 };
