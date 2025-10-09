@@ -22,6 +22,9 @@
 ## Issue Creation
 - Use the `create-issue` command (.claude/commands/create-issue.md) to ensure proper formatting and tracking
 
+## Pull Request Creation
+- Write the PR summary in Japanese, providing a concise overview of the changes
+
 ## Dependency Updates
 
 ### Package Installation
