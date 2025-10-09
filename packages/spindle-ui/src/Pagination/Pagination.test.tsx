@@ -84,4 +84,80 @@ describe('<Pagination />', () => {
       }
     });
   });
+
+  test('prev is disabled on the first page when total is below threshold (<100)', () => {
+    render(
+      <Pagination
+        total={20}
+        current={1}
+        linkFollowType="all"
+        showTotal={false}
+        createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+        onPageChange={() => {}}
+      />,
+    );
+
+    const prev = screen.getByRole('button', { name: '前へ' });
+    expect(prev).toBeDisabled();
+
+    const next = screen.getByRole('link', { name: '次へ' });
+    expect(next).toBeInTheDocument();
+  });
+
+  test('next is disabled on the last page when total is below threshold (<100)', () => {
+    render(
+      <Pagination
+        total={20}
+        current={20}
+        linkFollowType="all"
+        showTotal={false}
+        createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+        onPageChange={() => {}}
+      />,
+    );
+
+    const next = screen.getByRole('button', { name: '次へ' });
+    expect(next).toBeDisabled();
+
+    const prev = screen.getByRole('link', { name: '前へ' });
+    expect(prev).toBeInTheDocument();
+  });
+
+  test('first is disabled on the first page when total is equal or above threshold (>=100)', () => {
+    render(
+      <Pagination
+        total={100}
+        current={1}
+        linkFollowType="all"
+        showTotal={false}
+        createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+        onPageChange={() => {}}
+      />,
+    );
+
+    const first = screen.getByRole('button', { name: '最初へ' });
+    expect(first).toBeDisabled();
+
+    const last = screen.getByRole('link', { name: '最後へ' });
+    expect(last).toBeInTheDocument();
+  });
+
+  test('last is disabled on the last page when total is equal or above threshold (>=100)', () => {
+    render(
+      <Pagination
+        total={100}
+        current={100}
+        linkFollowType="all"
+        showTotal={false}
+        createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+        onPageChange={() => {}}
+      />,
+    );
+
+    const last = screen.getByRole('button', { name: '最後へ' });
+    expect(last).toBeDisabled();
+
+    const first = screen.getByRole('link', { name: '最初へ' });
+    expect(first).toBeInTheDocument();
+  });
 });
