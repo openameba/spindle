@@ -25,8 +25,7 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-v2
       - run: yarn install --frozen-lockfile
       - run: |
-          yarn lerna run --scope @openameba/spindle-hooks build
+          npx -y lerna@^9 run --scope @openameba/spindle-hooks build
           yarn test
         env:
           CHROME_PATH: /usr/bin/google-chrome-stable
-

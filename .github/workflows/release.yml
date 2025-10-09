@@ -56,7 +56,7 @@ jobs:
       - name: Update npm
         run: npm install -g npm@latest
       - run: yarn install --frozen-lockfile
-      - run: yarn lerna run --scope @openameba/spindle-hooks build
+      - run: npx -y lerna@^9 run --scope @openameba/spindle-hooks build
       - name: Set git user
         run: |
           git config --global user.name 'github-actions[bot]'
@@ -82,12 +82,12 @@ jobs:
           echo "Packages changed successfully for major release"
       - name: releasing with lerna (specific package)
         if: ${{ github.event.inputs.package_name != 'all-changed' }}
-        run: yarn lerna publish ${{ github.event.inputs.version_type }} --conventional-commits --create-release github --yes --no-private --scope ${{ github.event.inputs.package_name }}
+        run: npx -y lerna@^9 publish ${{ github.event.inputs.version_type }} --conventional-commits --create-release github --yes --no-private --filter ${{ github.event.inputs.package_name }}
         env:
           GH_TOKEN: ${{ github.token }}
       - name: releasing with lerna (all packages)
         if: ${{ github.event.inputs.package_name == 'all-changed' }}
-        run: yarn lerna publish ${{ github.event.inputs.version_type }} --conventional-commits --create-release github --yes --no-private
+        run: npx -y lerna@^9 publish ${{ github.event.inputs.version_type }} --conventional-commits --create-release github --yes --no-private
         env:
           GH_TOKEN: ${{ github.token }}
       - name: Create Pull Request

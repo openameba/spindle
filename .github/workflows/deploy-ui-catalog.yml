@@ -26,8 +26,8 @@ jobs:
       - run: yarn install --frozen-lockfile
       - name: Update UI catalog
         run: |
-          yarn lerna run --scope @openameba/spindle-hooks build
-          yarn lerna run --scope @openameba/spindle-ui storybook:build
+          npx -y lerna@^9 run --scope @openameba/spindle-hooks build
+          npx -y lerna@^9 run --scope @openameba/spindle-ui storybook:build
       - name: deploy to live channel
         uses: FirebaseExtended/action-hosting-deploy@e2eda2e106cfa35cdbcf4ac9ddaf6c4756df2c8c # v0
         with:

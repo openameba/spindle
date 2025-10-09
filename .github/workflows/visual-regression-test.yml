@@ -68,8 +68,8 @@ jobs:
           key: ${{ runner.os }}-${{ github.event_name }}-${{ hashFiles('**/yarn.lock') }}-v2
       - run: yarn install --frozen-lockfile
       - run: |
-          yarn lerna run --scope @openameba/spindle-hooks build
-          yarn lerna run --scope @openameba/spindle-ui storybook:build
+          npx -y lerna@^9 run --scope @openameba/spindle-hooks build
+          npx -y lerna@^9 run --scope @openameba/spindle-ui storybook:build
       - name: capture stories
         run: >
           npx storycap
@@ -81,7 +81,7 @@ jobs:
       - run: |
           printf -- '%s' "$GOOGLE_APPLICATION_CREDENTIALS_JSON" | base64 --decode > "${PWD}/storage-key.json"
           export GOOGLE_APPLICATION_CREDENTIALS="${PWD}/storage-key.json"
-          yarn lerna run --scope @openameba/spindle-ui test:regression
+          npx -y lerna@^9 run --scope @openameba/spindle-ui test:regression
         env:
           GCS_BUCKET_NAME_REG_SUIT: ${{ secrets.GCS_BUCKET_NAME_REG_SUIT }}
           GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}

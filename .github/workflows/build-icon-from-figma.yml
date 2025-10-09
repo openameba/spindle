@@ -47,8 +47,8 @@ jobs:
           ICONS: ${{ github.event.inputs.selection }}
         run: |
           node -p "JSON.stringify({ fileKey: '$FILE_KEY', nodeId: '$NODE_ID', dest: 'dist', iconNames: $ICONS.map(({name}) => name) })" > packages/spindle-icons/figma.json
-          yarn lerna run --scope @openameba/spindle-icons build
-          yarn lerna run --scope @openameba/spindle-ui icon
+          npx -y lerna@^9 run --scope @openameba/spindle-icons build
+          npx -y lerna@^9 run --scope @openameba/spindle-ui icon
           yarn fix
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e # v7.0.8
