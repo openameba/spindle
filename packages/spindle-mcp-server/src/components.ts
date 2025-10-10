@@ -59,6 +59,16 @@ export function getComponentInfo(
     );
 
     if (implFile) {
+      // Skip re-export files (check if subdirectory with same name exists)
+      const componentSubDir = path.join(dir, actualComponentName);
+      if (
+        fs.existsSync(componentSubDir) &&
+        fs.statSync(componentSubDir).isDirectory()
+      ) {
+        // Continue searching in subdirectory instead
+        return findComponentInDirectory(componentSubDir);
+      }
+
       const implPath = path.join(dir, implFile.name);
       info.implementation = {
         name: implFile.name,
@@ -136,6 +146,16 @@ function getAllComponents(): ComponentInfo[] {
       ) {
         const componentName = entry.name.replace('.tsx', '');
         const directory = path.dirname(relativePath);
+
+        // Skip re-export files (check if subdirectory with same name exists)
+        const componentSubDir = path.join(dir, componentName);
+        if (
+          fs.existsSync(componentSubDir) &&
+          fs.statSync(componentSubDir).isDirectory()
+        ) {
+          continue;
+        }
+
         const info = getComponentInfo(componentName, directory);
         if (info) {
           components.push(info);

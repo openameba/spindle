@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import dialogPolyfill from 'dialog-polyfill';
-import { Button } from '../Button';
-import { LinkButton } from '../LinkButton';
+import { Button } from '../../Button';
+import { LinkButton } from '../../LinkButton';
 import { AppealModal } from './AppealModal';
 
 import 'dialog-polyfill/dist/dialog-polyfill.css';
-import { Checkbox } from '../Form';
+import { Checkbox } from '../../Form';
 
 function useDialogpolyfill(ref: React.RefObject<HTMLDialogElement>) {
   useEffect(() => {

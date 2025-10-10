@@ -1,21 +1,3 @@
-import React from 'react';
-
-interface Props
-  extends Omit<React.LabelHTMLAttributes<HTMLLabelElement>, 'className'> {
-  children?: React.ReactNode;
-  id: string;
-}
-
-const BLOCK_NAME = 'spui-InputLabel';
-
-export const InputLabel: React.FC<Props> = ({
-  children,
-  id = '',
-  ...rest
-}: Props) => {
-  return (
-    <label className={BLOCK_NAME} htmlFor={id} {...rest}>
-      {children}
-    </label>
-  );
-};
+// Re-export for backward compatibility after directory structure refactoring
+// TODO: Remove this file in a future major version
+export { InputLabel } from './InputLabel/InputLabel';
