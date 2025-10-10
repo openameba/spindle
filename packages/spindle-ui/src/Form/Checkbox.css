@@ -61,6 +61,14 @@
   opacity: 0.3;
 }
 
+.spui-Checkbox-label--inverse
+  .spui-Checkbox-input:checked
+  + .spui-Checkbox-icon {
+  background-color: var(--color-surface-primary);
+  border: solid 1px var(--color-surface-primary);
+  color: var(--color-object-accent-primary);
+}
+
 /* To add 2px space for outline */
 .spui-Checkbox-outline {
   border-radius: 2px;
