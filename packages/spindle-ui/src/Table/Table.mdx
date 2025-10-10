@@ -565,6 +565,116 @@ Tableコンポーネントは、以下のCSS Variablesでカスタマイズで�
 </Table.Frame>`}
 />
 
+## 固定列（Sticky Columns）
+
+横スクロール可能なテーブルで、左端または右端の列を固定表示できます。`stickyLeftColumns`と`stickyRightColumns` propで固定する列数を指定します。
+
+### Sticky Left Columns
+
+左側の列を固定して、横スクロールしても常に表示させることができます。
+
+<Story of={TableStories.StickyColumnsLeft} />
+
+<Source
+  code={`<Table.Frame
+  borderTypes={['horizontal', 'vertical']}
+  layout="scrollable"
+  stickyLeftColumns={1}  // 左側1列を固定
+>
+  <Table.Header>
+    <Table.Row>
+      <Table.Head width="150px">商品名</Table.Head>
+      <Table.Head minWidth="100px">1月</Table.Head>
+      <Table.Head minWidth="100px">2月</Table.Head>
+      <Table.Head minWidth="100px">3月</Table.Head>
+      <Table.Head minWidth="110px">年間合計</Table.Head>
+    </Table.Row>
+  </Table.Header>
+  <Table.Body>
+    <Table.Row>
+      <Table.Head scope="row">スマートフォン</Table.Head>
+      <Table.Cell>850</Table.Cell>
+      <Table.Cell>920</Table.Cell>
+      <Table.Cell>1,100</Table.Cell>
+      {/* ... */}
+      <Table.Cell>13,090</Table.Cell>
+    </Table.Row>
+  </Table.Body>
+</Table.Frame>`}
+/>
+
+### Sticky Right Columns
+
+右側の列を固定して、重要なサマリー情報などを常に表示させることができます。
+
+<Story of={TableStories.StickyColumnsRight} />
+
+<Source
+  code={`<Table.Frame
+  borderTypes={['horizontal', 'vertical']}
+  layout="scrollable"
+  stickyRightColumns={2}  // 右側2列を固定
+>
+  <Table.Header>
+    <Table.Row>
+      <Table.Head minWidth="100px">1月</Table.Head>
+      <Table.Head minWidth="100px">2月</Table.Head>
+      <Table.Head minWidth="100px">3月</Table.Head>
+      {/* ... 12月まで */}
+      <Table.Head width="110px">年間合計</Table.Head>
+      <Table.Head width="80px">前年比</Table.Head>
+    </Table.Row>
+  </Table.Header>
+  <Table.Body>
+    <Table.Row>
+      <Table.Cell>850</Table.Cell>
+      <Table.Cell>920</Table.Cell>
+      <Table.Cell>1,100</Table.Cell>
+      {/* ... */}
+      <Table.Cell>13,090</Table.Cell>
+      <Table.Cell>+12%</Table.Cell>
+    </Table.Row>
+  </Table.Body>
+</Table.Frame>`}
+/>
+
+### Sticky Both Columns
+
+左右両方の列を同時に固定することもできます。striped（ストライプ）などの他のスタイルオプションと組み合わせることも可能です。
+
+<Story of={TableStories.StickyColumnsBoth} />
+
+<Source
+  code={`<Table.Frame
+  borderTypes={['horizontal', 'vertical']}
+  layout="scrollable"
+  stickyLeftColumns={1}   // 左側1列を固定
+  stickyRightColumns={1}  // 右側1列を固定
+  striped
+>
+  <Table.Header>
+    <Table.Row>
+      <Table.Head width="150px">商品名</Table.Head>
+      <Table.Head minWidth="100px">1月</Table.Head>
+      <Table.Head minWidth="100px">2月</Table.Head>
+      <Table.Head minWidth="100px">3月</Table.Head>
+      {/* ... 12月まで */}
+      <Table.Head width="110px">年間合計</Table.Head>
+    </Table.Row>
+  </Table.Header>
+  <Table.Body>
+    <Table.Row>
+      <Table.Head scope="row">スマートフォン</Table.Head>
+      <Table.Cell>850</Table.Cell>
+      <Table.Cell>920</Table.Cell>
+      <Table.Cell>1,100</Table.Cell>
+      {/* ... */}
+      <Table.Cell>13,090</Table.Cell>
+    </Table.Row>
+  </Table.Body>
+</Table.Frame>`}
+/>
+
 ## テキスト配置
 
 `align` propを使用して、セル内のテキスト配置を指定できます。
