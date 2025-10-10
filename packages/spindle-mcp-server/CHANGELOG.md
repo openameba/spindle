@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/openameba/spindle/compare/@openameba/spindle-mcp-server@1.1.1...@openameba/spindle-mcp-server@1.2.0) (2025-10-10)
+
+### Features
+
+- **spindle-mcp-server:** add spacing tokens documentation ([4f1dd78](https://github.com/openameba/spindle/commit/4f1dd78185664f22179617fc8bf49fb4161deb57))
+
 ## [1.1.1](https://github.com/openameba/spindle/compare/@openameba/spindle-mcp-server@1.1.0...@openameba/spindle-mcp-server@1.1.1) (2025-10-09)
 
 **Note:** Version bump only for package @openameba/spindle-mcp-server
