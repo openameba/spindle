@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.10.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.9.1...@openameba/spindle-ui@2.10.0) (2025-10-10)
+
+### Features
+
+- **spindle-ui:** add autoplay prop to HeroCarousel ([7a0084b](https://github.com/openameba/spindle/commit/7a0084b47728c60f5d72d721e8781aba5bfdd249))
+
 ## [2.9.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.9.0...@openameba/spindle-ui@2.9.1) (2025-10-09)
 
 ### Bug Fixes

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@1.6.1...@openameba/spindle-tokens@1.7.0) (2025-10-10)
+
+### Features
+
+- **spindle-tokens:** add spacing tokens with multi-device support ([1f5494b](https://github.com/openameba/spindle/commit/1f5494b60283a4ffcdb731c4da7ff0bca0a25252))
+
 ## [1.6.1](https://github.com/openameba/spindle/compare/@openameba/spindle-tokens@1.6.0...@openameba/spindle-tokens@1.6.1) (2025-10-09)
 
 **Note:** Version bump only for package @openameba/spindle-tokens
