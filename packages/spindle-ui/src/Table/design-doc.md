@@ -73,6 +73,40 @@
 </Table.Frame>
 ```
 
+### Sticky列（固定列）対応テーブル
+
+```tsx
+<Table.Frame
+  borderTypes={['horizontal', 'vertical']}
+  layout="scrollable"
+  stickyLeftColumns={2}  // 左側2列を固定
+  stickyRightColumns={1}  // 右側1列を固定
+>
+  <Table.Header>
+    <Table.Row>
+      <Table.Head width="150px">商品名</Table.Head>
+      <Table.Head width="100px">カテゴリ</Table.Head>
+      <Table.Head>Q1売上</Table.Head>
+      <Table.Head>Q2売上</Table.Head>
+      <Table.Head>Q3売上</Table.Head>
+      <Table.Head>Q4売上</Table.Head>
+      <Table.Head width="100px">合計</Table.Head>
+    </Table.Row>
+  </Table.Header>
+  <Table.Body>
+    <Table.Row>
+      <Table.Head scope="row">スマートフォン</Table.Head>
+      <Table.Cell>電子機器</Table.Cell>
+      <Table.Cell>3,000,000</Table.Cell>
+      <Table.Cell>3,500,000</Table.Cell>
+      <Table.Cell>3,200,000</Table.Cell>
+      <Table.Cell>4,000,000</Table.Cell>
+      <Table.Cell>13,700,000</Table.Cell>
+    </Table.Row>
+  </Table.Body>
+</Table.Frame>
+```
+
 ### CSS Variablesによるスタイルのカスタマイズ
 
 ```tsx
@@ -227,6 +261,8 @@ type TableFrameProps = {
   rounded?: boolean;
   striped?: boolean;
   layout?: 'auto' | 'fixed' | 'scrollable';
+  stickyLeftColumns?: number;
+  stickyRightColumns?: number;
   children?: ReactNode;
   className?: string;
 } & Omit<React.TableHTMLAttributes<HTMLTableElement>, 'style' | 'className'>;
@@ -236,6 +272,13 @@ type TableFrameProps = {
 - `auto`: 内容に基づいて列幅を自動計算、コンテナ幅に収める（デフォルト）
 - `fixed`: 最初の行の指定に基づいて列幅を固定、コンテナ幅に収める
 - `scrollable`: 横スクロール、列数が多い場合に有効
+
+##### stickyLeftColumns / stickyRightColumns
+- 横スクロール時に固定表示する列数を指定
+- `stickyLeftColumns`: 左側から固定する列数（0以上の整数）
+- `stickyRightColumns`: 右側から固定する列数（0以上の整数）
+- 固定列には自動的にシャドウが付加され、スクロール時の視認性を向上
+- 固定列の背景色は擬似要素で実装され、通常のセル・ヘッダー・ストライプ行の背景色が自動適用
 
 #### Table.Head
 ```typescript
@@ -413,6 +456,12 @@ Tableコンポーネントは基本的なスタイルを提供しますが、プ
 | --Table-cell-padding   | 12px                         | セルパディング     |
 | --Table-footer-padding | 12px                         | フッターパディング   |
 
+#### Sticky・固定列関連
+
+| 変数名                 | デフォルト値 | 用途                   |
+| :--------------------- | :----------- | :--------------------- |
+| --Table-sticky-z-index | 1            | Sticky列の重ね順       |
+
 #### Caption・キャプション関連
 
 | 変数名                     | デフォルト値                  | 用途                   |
@@ -502,7 +551,6 @@ Tableコンポーネントでは、Web標準のtable要素の機能を最大限�
 将来的には、以下の機能の提供を予定しています：
 - ソート
 - もっと見る
-- 列の固定
 
 ## アクセシビリティ
 - [情報や関係性を明確にする](https://a11y-guidelines.ameba.design/1/3/1/)[基本必須]

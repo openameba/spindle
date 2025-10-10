@@ -578,6 +578,261 @@ export const LongText: Story = {
   ),
 };
 
+export const StickyColumnsLeft: Story = {
+  render: () => (
+    <Table.Frame
+      borderTypes={['horizontal', 'vertical']}
+      layout="scrollable"
+      stickyLeftColumns={1}
+    >
+      <Table.Header>
+        <Table.Row>
+          <Table.Head width="150px">商品名</Table.Head>
+          <Table.Head minWidth="100px">1月</Table.Head>
+          <Table.Head minWidth="100px">2月</Table.Head>
+          <Table.Head minWidth="100px">3月</Table.Head>
+          <Table.Head minWidth="100px">4月</Table.Head>
+          <Table.Head minWidth="100px">5月</Table.Head>
+          <Table.Head minWidth="100px">6月</Table.Head>
+          <Table.Head minWidth="100px">7月</Table.Head>
+          <Table.Head minWidth="100px">8月</Table.Head>
+          <Table.Head minWidth="100px">9月</Table.Head>
+          <Table.Head minWidth="100px">10月</Table.Head>
+          <Table.Head minWidth="100px">11月</Table.Head>
+          <Table.Head minWidth="100px">12月</Table.Head>
+          <Table.Head minWidth="110px">年間合計</Table.Head>
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        <Table.Row>
+          <Table.Head scope="row">スマートフォン</Table.Head>
+          <Table.Cell>850</Table.Cell>
+          <Table.Cell>920</Table.Cell>
+          <Table.Cell>1,100</Table.Cell>
+          <Table.Cell>980</Table.Cell>
+          <Table.Cell>1,050</Table.Cell>
+          <Table.Cell>1,200</Table.Cell>
+          <Table.Cell>1,150</Table.Cell>
+          <Table.Cell>1,080</Table.Cell>
+          <Table.Cell>990</Table.Cell>
+          <Table.Cell>1,120</Table.Cell>
+          <Table.Cell>1,250</Table.Cell>
+          <Table.Cell>1,400</Table.Cell>
+          <Table.Cell>13,090</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Head scope="row">タブレット</Table.Head>
+          <Table.Cell>650</Table.Cell>
+          <Table.Cell>720</Table.Cell>
+          <Table.Cell>800</Table.Cell>
+          <Table.Cell>750</Table.Cell>
+          <Table.Cell>780</Table.Cell>
+          <Table.Cell>850</Table.Cell>
+          <Table.Cell>820</Table.Cell>
+          <Table.Cell>790</Table.Cell>
+          <Table.Cell>760</Table.Cell>
+          <Table.Cell>810</Table.Cell>
+          <Table.Cell>880</Table.Cell>
+          <Table.Cell>950</Table.Cell>
+          <Table.Cell>9,560</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Head scope="row">ノートPC</Table.Head>
+          <Table.Cell>1,200</Table.Cell>
+          <Table.Cell>1,150</Table.Cell>
+          <Table.Cell>1,300</Table.Cell>
+          <Table.Cell>1,250</Table.Cell>
+          <Table.Cell>1,280</Table.Cell>
+          <Table.Cell>1,400</Table.Cell>
+          <Table.Cell>1,350</Table.Cell>
+          <Table.Cell>1,300</Table.Cell>
+          <Table.Cell>1,220</Table.Cell>
+          <Table.Cell>1,350</Table.Cell>
+          <Table.Cell>1,450</Table.Cell>
+          <Table.Cell>1,600</Table.Cell>
+          <Table.Cell>15,850</Table.Cell>
+        </Table.Row>
+      </Table.Body>
+    </Table.Frame>
+  ),
+};
+
+export const StickyColumnsRight: Story = {
+  render: () => (
+    <Table.Frame
+      borderTypes={['horizontal', 'vertical']}
+      layout="scrollable"
+      stickyRightColumns={2}
+    >
+      <Table.Header>
+        <Table.Row>
+          <Table.Head minWidth="100px">1月</Table.Head>
+          <Table.Head minWidth="100px">2月</Table.Head>
+          <Table.Head minWidth="100px">3月</Table.Head>
+          <Table.Head minWidth="100px">4月</Table.Head>
+          <Table.Head minWidth="100px">5月</Table.Head>
+          <Table.Head minWidth="100px">6月</Table.Head>
+          <Table.Head minWidth="100px">7月</Table.Head>
+          <Table.Head minWidth="100px">8月</Table.Head>
+          <Table.Head minWidth="100px">9月</Table.Head>
+          <Table.Head minWidth="100px">10月</Table.Head>
+          <Table.Head minWidth="100px">11月</Table.Head>
+          <Table.Head minWidth="100px">12月</Table.Head>
+          <Table.Head width="110px">年間合計</Table.Head>
+          <Table.Head width="80px">前年比</Table.Head>
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        <Table.Row>
+          <Table.Cell>850</Table.Cell>
+          <Table.Cell>920</Table.Cell>
+          <Table.Cell>1,100</Table.Cell>
+          <Table.Cell>980</Table.Cell>
+          <Table.Cell>1,050</Table.Cell>
+          <Table.Cell>1,200</Table.Cell>
+          <Table.Cell>1,150</Table.Cell>
+          <Table.Cell>1,080</Table.Cell>
+          <Table.Cell>990</Table.Cell>
+          <Table.Cell>1,120</Table.Cell>
+          <Table.Cell>1,250</Table.Cell>
+          <Table.Cell>1,400</Table.Cell>
+          <Table.Cell>13,090</Table.Cell>
+          <Table.Cell>+12%</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell>650</Table.Cell>
+          <Table.Cell>720</Table.Cell>
+          <Table.Cell>800</Table.Cell>
+          <Table.Cell>750</Table.Cell>
+          <Table.Cell>780</Table.Cell>
+          <Table.Cell>850</Table.Cell>
+          <Table.Cell>820</Table.Cell>
+          <Table.Cell>790</Table.Cell>
+          <Table.Cell>760</Table.Cell>
+          <Table.Cell>810</Table.Cell>
+          <Table.Cell>880</Table.Cell>
+          <Table.Cell>950</Table.Cell>
+          <Table.Cell>9,560</Table.Cell>
+          <Table.Cell>-3%</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell>1,200</Table.Cell>
+          <Table.Cell>1,150</Table.Cell>
+          <Table.Cell>1,300</Table.Cell>
+          <Table.Cell>1,250</Table.Cell>
+          <Table.Cell>1,280</Table.Cell>
+          <Table.Cell>1,400</Table.Cell>
+          <Table.Cell>1,350</Table.Cell>
+          <Table.Cell>1,300</Table.Cell>
+          <Table.Cell>1,220</Table.Cell>
+          <Table.Cell>1,350</Table.Cell>
+          <Table.Cell>1,450</Table.Cell>
+          <Table.Cell>1,600</Table.Cell>
+          <Table.Cell>15,850</Table.Cell>
+          <Table.Cell>+8%</Table.Cell>
+        </Table.Row>
+      </Table.Body>
+    </Table.Frame>
+  ),
+};
+
+export const StickyColumnsBoth: Story = {
+  render: () => (
+    <Table.Frame
+      borderTypes={['horizontal', 'vertical']}
+      layout="scrollable"
+      stickyLeftColumns={1}
+      stickyRightColumns={1}
+      striped
+    >
+      <Table.Header>
+        <Table.Row>
+          <Table.Head width="150px">商品名</Table.Head>
+          <Table.Head minWidth="100px">1月</Table.Head>
+          <Table.Head minWidth="100px">2月</Table.Head>
+          <Table.Head minWidth="100px">3月</Table.Head>
+          <Table.Head minWidth="100px">4月</Table.Head>
+          <Table.Head minWidth="100px">5月</Table.Head>
+          <Table.Head minWidth="100px">6月</Table.Head>
+          <Table.Head minWidth="100px">7月</Table.Head>
+          <Table.Head minWidth="100px">8月</Table.Head>
+          <Table.Head minWidth="100px">9月</Table.Head>
+          <Table.Head minWidth="100px">10月</Table.Head>
+          <Table.Head minWidth="100px">11月</Table.Head>
+          <Table.Head minWidth="100px">12月</Table.Head>
+          <Table.Head width="110px">年間合計</Table.Head>
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        <Table.Row>
+          <Table.Head scope="row">スマートフォン</Table.Head>
+          <Table.Cell>850</Table.Cell>
+          <Table.Cell>920</Table.Cell>
+          <Table.Cell>1,100</Table.Cell>
+          <Table.Cell>980</Table.Cell>
+          <Table.Cell>1,050</Table.Cell>
+          <Table.Cell>1,200</Table.Cell>
+          <Table.Cell>1,150</Table.Cell>
+          <Table.Cell>1,080</Table.Cell>
+          <Table.Cell>990</Table.Cell>
+          <Table.Cell>1,120</Table.Cell>
+          <Table.Cell>1,250</Table.Cell>
+          <Table.Cell>1,400</Table.Cell>
+          <Table.Cell>13,090</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Head scope="row">タブレット</Table.Head>
+          <Table.Cell>650</Table.Cell>
+          <Table.Cell>720</Table.Cell>
+          <Table.Cell>800</Table.Cell>
+          <Table.Cell>750</Table.Cell>
+          <Table.Cell>780</Table.Cell>
+          <Table.Cell>850</Table.Cell>
+          <Table.Cell>820</Table.Cell>
+          <Table.Cell>790</Table.Cell>
+          <Table.Cell>760</Table.Cell>
+          <Table.Cell>810</Table.Cell>
+          <Table.Cell>880</Table.Cell>
+          <Table.Cell>950</Table.Cell>
+          <Table.Cell>9,560</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Head scope="row">ノートPC</Table.Head>
+          <Table.Cell>1,200</Table.Cell>
+          <Table.Cell>1,150</Table.Cell>
+          <Table.Cell>1,300</Table.Cell>
+          <Table.Cell>1,250</Table.Cell>
+          <Table.Cell>1,280</Table.Cell>
+          <Table.Cell>1,400</Table.Cell>
+          <Table.Cell>1,350</Table.Cell>
+          <Table.Cell>1,300</Table.Cell>
+          <Table.Cell>1,220</Table.Cell>
+          <Table.Cell>1,350</Table.Cell>
+          <Table.Cell>1,450</Table.Cell>
+          <Table.Cell>1,600</Table.Cell>
+          <Table.Cell>15,850</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Head scope="row">デスクトップPC</Table.Head>
+          <Table.Cell>550</Table.Cell>
+          <Table.Cell>580</Table.Cell>
+          <Table.Cell>620</Table.Cell>
+          <Table.Cell>590</Table.Cell>
+          <Table.Cell>600</Table.Cell>
+          <Table.Cell>650</Table.Cell>
+          <Table.Cell>630</Table.Cell>
+          <Table.Cell>610</Table.Cell>
+          <Table.Cell>580</Table.Cell>
+          <Table.Cell>620</Table.Cell>
+          <Table.Cell>670</Table.Cell>
+          <Table.Cell>720</Table.Cell>
+          <Table.Cell>7,420</Table.Cell>
+        </Table.Row>
+      </Table.Body>
+    </Table.Frame>
+  ),
+};
+
 export const CustomStyle: Story = {
   render: () => (
     <div

@@ -39,6 +39,9 @@
   --Table-caption-fontSize: 0.75em;
   --Table-caption-lineHeight: 1.6;
   --Table-caption-fontWeight: normal;
+
+  /* Sticky・固定列関連 */
+  --Table-sticky-z-index: 1;
 }
 
 /*
@@ -127,6 +130,27 @@
 
 .spui-Table--vertical .spui-Table-head:last-child,
 .spui-Table--vertical .spui-Table-cell:last-child {
+  border-right: none;
+}
+
+/*
+ * Sticky列のvertical border調整
+ */
+/* 右側sticky列の最初の列（非stickyとの境界）にborder-leftを追加 */
+.spui-Table--vertical .spui-Table-head.spui-Table-sticky-right-edge,
+.spui-Table--vertical .spui-Table-cell.spui-Table-sticky-right-edge {
+  border-left: 1px solid var(--Table-cell-borderColor);
+}
+
+/* 非sticky列と右側sticky列の境界で非sticky側のborder-rightを削除 */
+.spui-Table--vertical
+  .spui-Table-head:not(.spui-Table-sticky-right):has(
+    + .spui-Table-head.spui-Table-sticky-right
+  ),
+.spui-Table--vertical
+  .spui-Table-cell:not(.spui-Table-sticky-right):has(
+    + .spui-Table-cell.spui-Table-sticky-right
+  ) {
   border-right: none;
 }
 
@@ -349,6 +373,90 @@
 
 .spui-Table-cell--alignRight {
   text-align: right;
+}
+
+/*
+ * Sticky columns
+ */
+.spui-Table--sticky {
+  position: relative;
+}
+
+/* Ensure scrollable wrapper when using sticky */
+.spui-Table-frame--scrollable {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/*
+ * Sticky columns
+ */
+.spui-Table-sticky-left,
+.spui-Table-sticky-right {
+  position: sticky;
+  z-index: var(--Table-sticky-z-index);
+}
+
+/* Sticky列の不透明背景: 2層のlinear-gradientで透過を防止 */
+.spui-Table-head.spui-Table-sticky-left,
+.spui-Table-head.spui-Table-sticky-right {
+  background-clip: border-box, border-box;
+  background-image: linear-gradient(
+      var(--Table-head-backgroundColor),
+      var(--Table-head-backgroundColor)
+    ),
+    linear-gradient(var(--color-surface-primary), var(--color-surface-primary));
+  background-origin: border-box, border-box;
+}
+
+.spui-Table-cell.spui-Table-sticky-left,
+.spui-Table-cell.spui-Table-sticky-right {
+  background-clip: border-box, border-box;
+  background-image: linear-gradient(
+      var(--Table-cell-backgroundColor),
+      var(--Table-cell-backgroundColor)
+    ),
+    linear-gradient(var(--color-surface-primary), var(--color-surface-primary));
+  background-origin: border-box, border-box;
+}
+
+.spui-Table--striped
+  .spui-Table-body
+  .spui-Table-row:nth-child(even)
+  .spui-Table-cell.spui-Table-sticky-left,
+.spui-Table--striped
+  .spui-Table-body
+  .spui-Table-row:nth-child(even)
+  .spui-Table-cell.spui-Table-sticky-right {
+  background-clip: border-box, border-box;
+  background-image: linear-gradient(
+      var(--Table-row-striped-backgroundColor),
+      var(--Table-row-striped-backgroundColor)
+    ),
+    linear-gradient(var(--color-surface-primary), var(--color-surface-primary));
+  background-origin: border-box, border-box;
+}
+
+/* Sticky列の端にshadow */
+.spui-Table-sticky-left-edge::after,
+.spui-Table-sticky-right-edge::after {
+  background-color: transparent;
+  bottom: 0;
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 1px;
+}
+
+.spui-Table-sticky-left-edge::after {
+  box-shadow: 4px 0 8px 0 rgba(8, 18, 26, 0.24);
+  right: 0;
+}
+
+.spui-Table-sticky-right-edge::after {
+  box-shadow: -4px 0 8px 0 rgba(8, 18, 26, 0.24);
+  left: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
