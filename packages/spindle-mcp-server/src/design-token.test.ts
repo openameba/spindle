@@ -11,6 +11,9 @@ describe('Design token functions', () => {
           tokenList: expect.objectContaining({
             color: expect.any(Object),
             animation: expect.any(Object),
+            'spacing-mobile': expect.any(Object),
+            'spacing-tablet': expect.any(Object),
+            'spacing-desktop': expect.any(Object),
           }),
           documentation: expect.any(String),
         }),

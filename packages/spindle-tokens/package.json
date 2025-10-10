@@ -22,11 +22,12 @@
     "test": "tsc --noEmit && yarn jest",
     "stylelint": "stylelint dist/**/*.css",
     "jest": "jest",
-    "build": "style-dictionary build --verbose",
+    "build": "node build-tokens.mjs",
     "postbuild": "yarn stylelint",
     "export": "run-p export:*",
     "export:animation": "tsx scripts/animation.ts",
     "export:color": "tsx scripts/color.ts",
+    "export:spacing": "tsx scripts/spacing.ts",
     "cp": "npx cpx dist/css/spindle-tokens.css ./",
     "prepublishOnly": "yarn build && yarn cp"
   },
