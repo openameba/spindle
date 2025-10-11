@@ -43,7 +43,7 @@
     "jsonabc": "2.3.1",
     "lodash.setwith": "4.3.2",
     "make-dir": "4.0.0",
-    "style-dictionary": "5.1.0",
+    "style-dictionary": "5.1.1",
     "stylelint": "^15.10.2",
     "stylelint-config-standard": "^34.0.0",
     "tsx": "4.20.6"
