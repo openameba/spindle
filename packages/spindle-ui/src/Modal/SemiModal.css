@@ -274,7 +274,7 @@ html:has(.spui-SemiModal[open]) {
   }
 
   .spui-SemiModal-frame {
-    padding: 0 20px 24px;
+    padding: 0 12px 24px 20px;
   }
 
   .spui-SemiModal-footer {
