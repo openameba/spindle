@@ -5,16 +5,24 @@ import CheckBold from '../../Icon/CheckBold';
 interface Props
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'className'> {
   children?: React.ReactNode;
+  inverse?: boolean;
 }
 
 const BLOCK_NAME = 'spui-Checkbox';
 
 export const Checkbox = forwardRef<HTMLInputElement, Props>(function Checkbox(
-  { children, ...rest }: Props,
+  { children, inverse = false, ...rest }: Props,
   ref,
 ) {
   return (
-    <label className={`${BLOCK_NAME}-label`}>
+    <label
+      className={[
+        `${BLOCK_NAME}-label`,
+        inverse && `${BLOCK_NAME}-label--inverse`,
+      ]
+        .filter(Boolean)
+        .join(' ')}
+    >
       <input
         className={`${BLOCK_NAME}-input`}
         ref={ref}

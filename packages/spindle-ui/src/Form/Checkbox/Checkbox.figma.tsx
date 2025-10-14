@@ -12,19 +12,21 @@ figma.connect(
     ],
     props: {
       active: figma.boolean('Active'),
+      inverse: figma.boolean('Inverse'),
       hover: figma.boolean('Focus Ring'),
       label: figma.string('Label'),
       name: figma.string('Name'),
       id: figma.string('id'),
       value: figma.string('value'),
     },
-    example: ({ active, label, name, id, value }) => (
+    example: ({ active, inverse, label, name, id, value }) => (
       <Checkbox
         id={id}
         name={name}
         value={value}
         aria-label={label}
         checked={active}
+        inverse={inverse}
       ></Checkbox>
     ),
   },
