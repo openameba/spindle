@@ -1,6 +1,7 @@
 @import '../../ButtonGroup/ButtonGroup.css';
 @import '../../IconButton/IconButton.css';
 @import '../../SubtleButton/SubtleButton.css';
+@import '../../TextLink/TextLink.css';
 /*
  * AppealModal
  * NOTE: Styles can be overridden with "--AppealModal-*" variables
@@ -238,6 +239,190 @@ html:has(.spui-AppealModal[open]) {
   }
 
   .spui-AppealModal-closeTextButton {
+    display: none;
+  }
+}
+
+/* Caption: キャプション */
+.spui-AppealModal-caption {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 16px 24px 0;
+}
+
+.spui-AppealModal-caption-icon {
+  display: inline-flex;
+  font-size: 12px;
+  color: var(--color-text-low-emphasis);
+}
+
+.spui-AppealModal-caption-text {
+  color: var(--color-text-low-emphasis);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Topics: 横スクロールコンテナ（モバイル） */
+.spui-AppealModal-topics {
+  display: flex;
+  gap: 48px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 24px;
+  margin: 16px 0 0;
+  position: relative;
+}
+
+/* スクロールバーを非表示 */
+.spui-AppealModal-topics::-webkit-scrollbar {
+  display: none;
+}
+
+.spui-AppealModal-topics {
+  scrollbar-width: none;
+}
+
+/* Topic: 個別のトピックス */
+.spui-AppealModal-topic {
+  flex: 0 0 calc(100% - 48px);
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Topic内の画像 */
+.spui-AppealModal-topic .spui-AppealModal-image {
+  border: 1px solid var(--color-border-low-emphasis);
+  border-radius: 14px;
+  overflow: hidden;
+  grid-area: unset;
+}
+
+/* stylelint-disable-next-line plugin/selector-bem-pattern */
+.spui-AppealModal-topic .spui-AppealModal-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+
+/* Topic内のタイトル */
+.spui-AppealModal-topic .spui-AppealModal-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--color-text-high-emphasis);
+  margin: 0;
+  padding: 0 4px;
+  text-align: left;
+  grid-area: unset;
+}
+
+/* Topic内の本文 */
+.spui-AppealModal-topic .spui-AppealModal-body {
+  font-size: 0.8125rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--color-text-medium-emphasis);
+  margin: 0;
+  padding: 0 4px;
+  text-align: left;
+  grid-area: unset;
+}
+
+/* PageIndicator: ページインジケーター */
+.spui-AppealModal-pageIndicator {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin: 20px 0 0;
+}
+
+.spui-AppealModal-pageIndicator-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-object-disable);
+  transition: background-color 200ms ease;
+}
+
+.spui-AppealModal-pageIndicator-dot--active {
+  background-color: var(--color-object-medium-emphasis);
+}
+
+/* TopicNavigation: ナビゲーション矢印 */
+.spui-AppealModal-topicNavigation {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.spui-AppealModal-topicNavigation--prev {
+  left: 14px;
+}
+
+.spui-AppealModal-topicNavigation--next {
+  right: 14px;
+}
+
+/* SubtleLink */
+.spui-AppealModal-subtleLink {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 0;
+}
+
+/* PC版（768px以上）: 2カラムグリッド */
+@media screen and (min-width: 768px) {
+  .spui-AppealModal-caption {
+    margin: 8px 36px 0;
+  }
+
+  .spui-AppealModal-topics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    overflow-x: visible;
+    scroll-snap-type: none;
+    padding: 0;
+    margin: 32px 36px 0;
+  }
+
+  .spui-AppealModal-topic {
+    flex: none;
+    scroll-snap-align: none;
+    gap: 16px;
+  }
+
+  .spui-AppealModal-topic .spui-AppealModal-image {
+    border-radius: 16px;
+  }
+
+  /* stylelint-disable-next-line plugin/selector-bem-pattern */
+  .spui-AppealModal-topic .spui-AppealModal-image img {
+    border-radius: 16px;
+  }
+
+  .spui-AppealModal-topic .spui-AppealModal-title {
+    padding: 0 8px;
+  }
+
+  .spui-AppealModal-topic .spui-AppealModal-body {
+    padding: 0 8px;
+  }
+
+  /* PC版ではPageIndicatorとTopicNavigationを非表示 */
+  .spui-AppealModal-pageIndicator,
+  .spui-AppealModal-topicNavigation {
+    display: none;
+  }
+
+  /* PC版ではSubtleLinkを非表示 */
+  .spui-AppealModal-subtleLink {
     display: none;
   }
 }

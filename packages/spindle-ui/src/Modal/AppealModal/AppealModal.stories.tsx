@@ -7,6 +7,8 @@ import {
   StyleOnlyMedium,
   StyleOnlySmall,
   StyleOnlyCustomized,
+  MultipleTopics,
+  StyleOnlyMultipleTopics,
 } from './AppealModal.stories.example';
 
 const meta: Meta<typeof AppealModal.Frame> = {
@@ -34,4 +36,12 @@ export const StyleOnlySmallSize: Story = {
 
 export const StyleOnlyCustomizedVersion: Story = {
   render: () => <StyleOnlyCustomized />,
+};
+
+export const WithMultipleTopics: Story = {
+  render: () => <MultipleTopics />,
+};
+
+export const StyleOnlyWithMultipleTopics: Story = {
+  render: () => <StyleOnlyMultipleTopics />,
 };

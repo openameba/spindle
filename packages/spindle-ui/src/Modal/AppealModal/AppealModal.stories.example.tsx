@@ -3,6 +3,8 @@ import dialogPolyfill from 'dialog-polyfill';
 import { Button } from '../../Button';
 import { LinkButton } from '../../LinkButton';
 import { AppealModal } from './AppealModal';
+import Megaphone from '../../Icon/Megaphone';
+import CheckCircleFill from '../../Icon/CheckCircleFill';
 
 import 'dialog-polyfill/dist/dialog-polyfill.css';
 import { Checkbox } from '../../Form';
@@ -214,6 +216,161 @@ export function StyleOnlyCustomized() {
             次回から表示しない
           </label>
         </p>
+      </AppealModal.ButtonGroup>
+    </AppealModal.StyleOnly>
+  );
+}
+
+export function MultipleTopics() {
+  const [open, setOpen] = useState(false);
+  const dialogRef = useRef<HTMLDialogElement>(null);
+
+  const handleOpenButtonClick = () => setOpen(true);
+  const handleDialogCancel = () => setOpen(false);
+  const handleDialogClose = () => setOpen(false);
+
+  useDialogpolyfill(dialogRef);
+
+  return (
+    <>
+      <Button
+        aria-haspopup="true"
+        size="medium"
+        variant="neutral"
+        onClick={handleOpenButtonClick}
+      >
+        開く
+      </Button>
+      <AppealModal.Frame
+        aria-describedby="multitopics-description"
+        aria-labelledby="multitopics-title"
+        ref={dialogRef}
+        open={open}
+        size="large"
+        onCancel={handleDialogCancel}
+        onClose={handleDialogClose}
+      >
+        <AppealModal.Caption icon={<Megaphone aria-hidden="true" />}>
+          新機能の紹介
+        </AppealModal.Caption>
+        <AppealModal.Title id="multitopics-title">
+          代替テキスト(alt)を自動で追加できるようになりました
+        </AppealModal.Title>
+
+        <AppealModal.Topics>
+          <AppealModal.Topic>
+            <AppealModal.Image>
+              <img
+                style={{ height: 'auto', width: '100%' }}
+                width="640"
+                height="336"
+                src="https://images.microcms-assets.io/assets/24995dc41d5c40808fe4a9e3f6fb2b20/e2526e7bfa494168a2e547cfe55ac89f/top_mv.jpg?w=640&h=336&fit=crop&fm=webp&q=85"
+                alt=""
+              />
+            </AppealModal.Image>
+            <AppealModal.Title>一行のトピック</AppealModal.Title>
+            <AppealModal.Body>
+              長めの説明文の場合はこのくらい長めの説明文の場合長めの説明文
+            </AppealModal.Body>
+          </AppealModal.Topic>
+
+          <AppealModal.Topic>
+            <AppealModal.Image>
+              <img
+                style={{ height: 'auto', width: '100%' }}
+                width="640"
+                height="336"
+                src="https://images.microcms-assets.io/assets/24995dc41d5c40808fe4a9e3f6fb2b20/4d28a6ed12194558a76ee4adfbab4e3b/ogp.png?w=640&h=336&fit=crop&fm=webp&q=85"
+                alt=""
+              />
+            </AppealModal.Image>
+            <AppealModal.Title>
+              二行のトピック二行のトピック二行のトピック二行のトピック
+            </AppealModal.Title>
+            <AppealModal.Body>
+              長めの説明文の場合はこのくらい長めの説明文の場合はこのくらい長めの説明文の場合はこのくらい長めの説明文の場合
+            </AppealModal.Body>
+          </AppealModal.Topic>
+        </AppealModal.Topics>
+
+        <AppealModal.SubtleLink
+          icon={<CheckCircleFill aria-hidden="true" />}
+          href="#"
+        >
+          Subtle Link
+        </AppealModal.SubtleLink>
+
+        <AppealModal.ButtonGroup>
+          <Button variant="contained" size="medium" layout="fullWidth">
+            次へ
+          </Button>
+        </AppealModal.ButtonGroup>
+      </AppealModal.Frame>
+    </>
+  );
+}
+
+export function StyleOnlyMultipleTopics() {
+  return (
+    <AppealModal.StyleOnly
+      aria-describedby="styleonly-multitopics-description"
+      aria-labelledby="styleonly-multitopics-title"
+      size="large"
+    >
+      <AppealModal.Caption icon={<Megaphone aria-hidden="true" />}>
+        新機能の紹介
+      </AppealModal.Caption>
+      <AppealModal.Title id="styleonly-multitopics-title">
+        代替テキスト(alt)を自動で追加できるようになりました
+      </AppealModal.Title>
+
+      <AppealModal.Topics>
+        <AppealModal.Topic>
+          <AppealModal.Image>
+            <img
+              style={{ height: 'auto', width: '100%' }}
+              width="640"
+              height="336"
+              src="https://images.microcms-assets.io/assets/24995dc41d5c40808fe4a9e3f6fb2b20/e2526e7bfa494168a2e547cfe55ac89f/top_mv.jpg?w=640&h=336&fit=crop&fm=webp&q=85"
+              alt=""
+            />
+          </AppealModal.Image>
+          <AppealModal.Title>一行のトピック</AppealModal.Title>
+          <AppealModal.Body>
+            長めの説明文の場合はこのくらい長めの説明文の場合長めの説明文
+          </AppealModal.Body>
+        </AppealModal.Topic>
+
+        <AppealModal.Topic>
+          <AppealModal.Image>
+            <img
+              style={{ height: 'auto', width: '100%' }}
+              width="640"
+              height="336"
+              src="https://images.microcms-assets.io/assets/24995dc41d5c40808fe4a9e3f6fb2b20/4d28a6ed12194558a76ee4adfbab4e3b/ogp.png?w=640&h=336&fit=crop&fm=webp&q=85"
+              alt=""
+            />
+          </AppealModal.Image>
+          <AppealModal.Title>
+            二行のトピック二行のトピック二行のトピック二行のトピック
+          </AppealModal.Title>
+          <AppealModal.Body>
+            長めの説明文の場合はこのくらい長めの説明文の場合はこのくらい長めの説明文の場合はこのくらい長めの説明文の場合
+          </AppealModal.Body>
+        </AppealModal.Topic>
+      </AppealModal.Topics>
+
+      <AppealModal.SubtleLink
+        icon={<CheckCircleFill aria-hidden="true" />}
+        href="#"
+      >
+        Subtle Link
+      </AppealModal.SubtleLink>
+
+      <AppealModal.ButtonGroup>
+        <Button variant="contained" size="medium" layout="fullWidth">
+          次へ
+        </Button>
       </AppealModal.ButtonGroup>
     </AppealModal.StyleOnly>
   );
