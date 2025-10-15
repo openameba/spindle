@@ -343,15 +343,13 @@ export const Visible: Story = {
 export const WithFragment: Story = {
   render: () => (
     <InlineNotification.Frame variant="error" emphasis visible>
-      <>
-        <InlineNotification.Icon>
-          <Information aria-hidden="true" />
-        </InlineNotification.Icon>
-        <InlineNotification.Text>
-          Fragmentを使った例：ブログの管理者が承認するまで、コメントが反映されない場合があります
-        </InlineNotification.Text>
-        <InlineNotification.Button>確認</InlineNotification.Button>
-      </>
+      <InlineNotification.Icon>
+        <Information aria-hidden="true" />
+      </InlineNotification.Icon>
+      <InlineNotification.Text>
+        Fragmentを使った例：ブログの管理者が承認するまで、コメントが反映されない場合があります
+      </InlineNotification.Text>
+      <InlineNotification.Button>確認</InlineNotification.Button>
     </InlineNotification.Frame>
   ),
 };

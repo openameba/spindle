@@ -47,11 +47,9 @@ figma.connect(
         layout={layout}
         emphasis={emphasis}
       >
-        <>
-          {leftIcon}
-          <InlineNotification.Text>{label}</InlineNotification.Text>
-          {closeButton}
-        </>
+        {leftIcon}
+        <InlineNotification.Text>{label}</InlineNotification.Text>
+        {closeButton}
       </InlineNotification.Frame>
     ),
   },

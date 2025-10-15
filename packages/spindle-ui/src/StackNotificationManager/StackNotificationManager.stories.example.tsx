@@ -51,20 +51,16 @@ const SnackBarExample: React.FC<
   usePoliteAnnouncer(!!stackProps.active, text);
 
   return (
-    <>
-      <SnackBar.Frame
-        variant={variant}
-        onHide={handleOnHide}
-        {...rest}
-        {...stackProps}
-      >
-        <>
-          {icon && <SnackBar.Icon>{icon}</SnackBar.Icon>}
-          <SnackBar.Text>{text}</SnackBar.Text>
-          <SnackBar.TextButton>取り消し</SnackBar.TextButton>
-        </>
-      </SnackBar.Frame>
-    </>
+    <SnackBar.Frame
+      variant={variant}
+      onHide={handleOnHide}
+      {...rest}
+      {...stackProps}
+    >
+      {icon && <SnackBar.Icon>{icon}</SnackBar.Icon>}
+      <SnackBar.Text>{text}</SnackBar.Text>
+      <SnackBar.TextButton>取り消し</SnackBar.TextButton>
+    </SnackBar.Frame>
   );
 };
 

@@ -44,22 +44,20 @@ describe('<DropdownMenu />', () => {
     expect(result.current.open).toBe(true);
 
     const { rerender } = render(
-      <>
-        <DropdownMenu.Frame>
-          <Button onClick={result.current.onClick} ref={triggerRef}>
-            triggerButton
-          </Button>
-          <DropdownMenu.List
-            onClose={onClose}
-            open={result.current.open}
-            triggerRef={triggerRef}
-          >
-            <DropdownMenu.ListItem onClick={onMenuButtonClick}>
-              <DropdownMenu.Title>testTitle</DropdownMenu.Title>
-            </DropdownMenu.ListItem>
-          </DropdownMenu.List>
-        </DropdownMenu.Frame>
-      </>,
+      <DropdownMenu.Frame>
+        <Button onClick={result.current.onClick} ref={triggerRef}>
+          triggerButton
+        </Button>
+        <DropdownMenu.List
+          onClose={onClose}
+          open={result.current.open}
+          triggerRef={triggerRef}
+        >
+          <DropdownMenu.ListItem onClick={onMenuButtonClick}>
+            <DropdownMenu.Title>testTitle</DropdownMenu.Title>
+          </DropdownMenu.ListItem>
+        </DropdownMenu.List>
+      </DropdownMenu.Frame>,
     );
 
     const button = screen.getByText(/triggerButton/);
@@ -70,22 +68,20 @@ describe('<DropdownMenu />', () => {
     await user.click(button);
 
     rerender(
-      <>
-        <DropdownMenu.Frame>
-          <Button onClick={result.current.onClick} ref={triggerRef}>
-            triggerButton
-          </Button>
-          <DropdownMenu.List
-            onClose={onClose}
-            open={result.current.open}
-            triggerRef={triggerRef}
-          >
-            <DropdownMenu.ListItem onClick={onMenuButtonClick}>
-              <DropdownMenu.Title>testTitle</DropdownMenu.Title>
-            </DropdownMenu.ListItem>
-          </DropdownMenu.List>
-        </DropdownMenu.Frame>
-      </>,
+      <DropdownMenu.Frame>
+        <Button onClick={result.current.onClick} ref={triggerRef}>
+          triggerButton
+        </Button>
+        <DropdownMenu.List
+          onClose={onClose}
+          open={result.current.open}
+          triggerRef={triggerRef}
+        >
+          <DropdownMenu.ListItem onClick={onMenuButtonClick}>
+            <DropdownMenu.Title>testTitle</DropdownMenu.Title>
+          </DropdownMenu.ListItem>
+        </DropdownMenu.List>
+      </DropdownMenu.Frame>,
     );
 
     expect(result.current.open).toBe(false);
@@ -171,22 +167,20 @@ describe('<DropdownMenu />', () => {
     expect(result.current.open).toBe(true);
 
     const { rerender } = render(
-      <>
-        <DropdownMenu.Frame>
-          <Button onClick={result.current.onClick} ref={triggerRef}>
-            triggerButton
-          </Button>
-          <DropdownMenu.List
-            onClose={result.current.onClose}
-            open={result.current.open}
-            triggerRef={triggerRef}
-          >
-            <DropdownMenu.ListItem onClick={onMenuButtonClick}>
-              <DropdownMenu.Title>testTitle</DropdownMenu.Title>
-            </DropdownMenu.ListItem>
-          </DropdownMenu.List>
-        </DropdownMenu.Frame>
-      </>,
+      <DropdownMenu.Frame>
+        <Button onClick={result.current.onClick} ref={triggerRef}>
+          triggerButton
+        </Button>
+        <DropdownMenu.List
+          onClose={result.current.onClose}
+          open={result.current.open}
+          triggerRef={triggerRef}
+        >
+          <DropdownMenu.ListItem onClick={onMenuButtonClick}>
+            <DropdownMenu.Title>testTitle</DropdownMenu.Title>
+          </DropdownMenu.ListItem>
+        </DropdownMenu.List>
+      </DropdownMenu.Frame>,
     );
 
     const menu = screen.getByText(/triggerButton/).nextElementSibling;
@@ -209,22 +203,20 @@ describe('<DropdownMenu />', () => {
     });
 
     rerender(
-      <>
-        <DropdownMenu.Frame>
-          <Button onClick={result.current.onClick} ref={triggerRef}>
-            triggerButton
-          </Button>
-          <DropdownMenu.List
-            onClose={result.current.onClose}
-            open={result.current.open}
-            triggerRef={triggerRef}
-          >
-            <DropdownMenu.ListItem onClick={onMenuButtonClick}>
-              <DropdownMenu.Title>testTitle</DropdownMenu.Title>
-            </DropdownMenu.ListItem>
-          </DropdownMenu.List>
-        </DropdownMenu.Frame>
-      </>,
+      <DropdownMenu.Frame>
+        <Button onClick={result.current.onClick} ref={triggerRef}>
+          triggerButton
+        </Button>
+        <DropdownMenu.List
+          onClose={result.current.onClose}
+          open={result.current.open}
+          triggerRef={triggerRef}
+        >
+          <DropdownMenu.ListItem onClick={onMenuButtonClick}>
+            <DropdownMenu.Title>testTitle</DropdownMenu.Title>
+          </DropdownMenu.ListItem>
+        </DropdownMenu.List>
+      </DropdownMenu.Frame>,
     );
 
     expect(result.current.open).toBe(false);
@@ -242,22 +234,20 @@ describe('<DropdownMenu />', () => {
     expect(result.current.open).toBe(true);
 
     const { rerender } = render(
-      <>
-        <DropdownMenu.Frame>
-          <Button onClick={result.current.onClick} ref={triggerRef}>
-            triggerButton
-          </Button>
-          <DropdownMenu.List
-            onClose={result.current.onClose}
-            open={result.current.open}
-            triggerRef={triggerRef}
-          >
-            <DropdownMenu.ListItem onClick={onMenuButtonClick}>
-              <DropdownMenu.Title>testTitle</DropdownMenu.Title>
-            </DropdownMenu.ListItem>
-          </DropdownMenu.List>
-        </DropdownMenu.Frame>
-      </>,
+      <DropdownMenu.Frame>
+        <Button onClick={result.current.onClick} ref={triggerRef}>
+          triggerButton
+        </Button>
+        <DropdownMenu.List
+          onClose={result.current.onClose}
+          open={result.current.open}
+          triggerRef={triggerRef}
+        >
+          <DropdownMenu.ListItem onClick={onMenuButtonClick}>
+            <DropdownMenu.Title>testTitle</DropdownMenu.Title>
+          </DropdownMenu.ListItem>
+        </DropdownMenu.List>
+      </DropdownMenu.Frame>,
     );
 
     const menu = screen.getByText(/triggerButton/).nextElementSibling;
@@ -274,22 +264,20 @@ describe('<DropdownMenu />', () => {
     });
 
     rerender(
-      <>
-        <DropdownMenu.Frame>
-          <Button onClick={result.current.onClick} ref={triggerRef}>
-            triggerButton
-          </Button>
-          <DropdownMenu.List
-            onClose={result.current.onClose}
-            open={result.current.open}
-            triggerRef={triggerRef}
-          >
-            <DropdownMenu.ListItem onClick={onMenuButtonClick}>
-              <DropdownMenu.Title>testTitle</DropdownMenu.Title>
-            </DropdownMenu.ListItem>
-          </DropdownMenu.List>
-        </DropdownMenu.Frame>
-      </>,
+      <DropdownMenu.Frame>
+        <Button onClick={result.current.onClick} ref={triggerRef}>
+          triggerButton
+        </Button>
+        <DropdownMenu.List
+          onClose={result.current.onClose}
+          open={result.current.open}
+          triggerRef={triggerRef}
+        >
+          <DropdownMenu.ListItem onClick={onMenuButtonClick}>
+            <DropdownMenu.Title>testTitle</DropdownMenu.Title>
+          </DropdownMenu.ListItem>
+        </DropdownMenu.List>
+      </DropdownMenu.Frame>,
     );
 
     expect(result.current.open).toBe(false);
@@ -307,22 +295,20 @@ describe('<DropdownMenu />', () => {
     expect(result.current.open).toBe(true);
 
     render(
-      <>
-        <DropdownMenu.Frame>
-          <Button onClick={result.current.onClick} ref={triggerRef}>
-            triggerButton
-          </Button>
-          <DropdownMenu.List
-            onClose={result.current.onClose}
-            open={result.current.open}
-            triggerRef={triggerRef}
-          >
-            <DropdownMenu.ListItem onClick={onMenuButtonClick}>
-              <DropdownMenu.Title>testTitle</DropdownMenu.Title>
-            </DropdownMenu.ListItem>
-          </DropdownMenu.List>
-        </DropdownMenu.Frame>
-      </>,
+      <DropdownMenu.Frame>
+        <Button onClick={result.current.onClick} ref={triggerRef}>
+          triggerButton
+        </Button>
+        <DropdownMenu.List
+          onClose={result.current.onClose}
+          open={result.current.open}
+          triggerRef={triggerRef}
+        >
+          <DropdownMenu.ListItem onClick={onMenuButtonClick}>
+            <DropdownMenu.Title>testTitle</DropdownMenu.Title>
+          </DropdownMenu.ListItem>
+        </DropdownMenu.List>
+      </DropdownMenu.Frame>,
     );
 
     await user.keyboard('{esc}');
@@ -341,22 +327,20 @@ describe('<DropdownMenu />', () => {
     expect(result.current.open).toBe(false);
 
     render(
-      <>
-        <DropdownMenu.Frame>
-          <Button onClick={result.current.onClick} ref={triggerRef}>
-            triggerButton
-          </Button>
-          <DropdownMenu.List
-            onClose={result.current.onClose}
-            open={result.current.open}
-            triggerRef={triggerRef}
-          >
-            <DropdownMenu.ListItem onClick={onMenuButtonClick}>
-              <DropdownMenu.Title>testTitle</DropdownMenu.Title>
-            </DropdownMenu.ListItem>
-          </DropdownMenu.List>
-        </DropdownMenu.Frame>
-      </>,
+      <DropdownMenu.Frame>
+        <Button onClick={result.current.onClick} ref={triggerRef}>
+          triggerButton
+        </Button>
+        <DropdownMenu.List
+          onClose={result.current.onClose}
+          open={result.current.open}
+          triggerRef={triggerRef}
+        >
+          <DropdownMenu.ListItem onClick={onMenuButtonClick}>
+            <DropdownMenu.Title>testTitle</DropdownMenu.Title>
+          </DropdownMenu.ListItem>
+        </DropdownMenu.List>
+      </DropdownMenu.Frame>,
     );
 
     await user.keyboard('{esc}');

@@ -77,27 +77,22 @@ const ActivateButton: React.FC<ActivateButtonProps> = ({
         position={position}
         onHide={() => setMessage('')}
       >
-        <>
-          {icon && <SnackBar.Icon>{icon}</SnackBar.Icon>}
-          <SnackBar.Text>{message}</SnackBar.Text>
-          {label &&
-            (!isLink ? (
-              <SnackBar.TextButton
-                icon={buttonIcon}
-                onClick={action('onClick')}
-              >
-                {label}
-              </SnackBar.TextButton>
-            ) : (
-              <SnackBar.TextLink
-                icon={buttonIcon}
-                href="https://example.com/"
-                onClick={action('onClick')}
-              >
-                {label}
-              </SnackBar.TextLink>
-            ))}
-        </>
+        {icon && <SnackBar.Icon>{icon}</SnackBar.Icon>}
+        <SnackBar.Text>{message}</SnackBar.Text>
+        {label &&
+          (!isLink ? (
+            <SnackBar.TextButton icon={buttonIcon} onClick={action('onClick')}>
+              {label}
+            </SnackBar.TextButton>
+          ) : (
+            <SnackBar.TextLink
+              icon={buttonIcon}
+              href="https://example.com/"
+              onClick={action('onClick')}
+            >
+              {label}
+            </SnackBar.TextLink>
+          ))}
       </SnackBar.Frame>
     </div>
   );
@@ -144,10 +139,8 @@ const MultiActivateButton: React.FC<MultiActivateButtonProps> = ({
         position={position}
         onHide={() => setMessage1('')}
       >
-        <>
-          {icon && <SnackBar.Icon>{icon}</SnackBar.Icon>}
-          <SnackBar.Text>{message1}</SnackBar.Text>
-        </>
+        {icon && <SnackBar.Icon>{icon}</SnackBar.Icon>}
+        <SnackBar.Text>{message1}</SnackBar.Text>
       </SnackBar.Frame>
       <SnackBar.Frame
         active={!!message2}
@@ -156,10 +149,8 @@ const MultiActivateButton: React.FC<MultiActivateButtonProps> = ({
         position={position}
         onHide={() => setMessage2('')}
       >
-        <>
-          {icon && <SnackBar.Icon>{icon}</SnackBar.Icon>}
-          <SnackBar.Text>{message2}</SnackBar.Text>
-        </>
+        {icon && <SnackBar.Icon>{icon}</SnackBar.Icon>}
+        <SnackBar.Text>{message2}</SnackBar.Text>
       </SnackBar.Frame>
     </div>
   );

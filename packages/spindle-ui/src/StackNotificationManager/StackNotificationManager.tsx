@@ -123,13 +123,10 @@ export const StackNotificationManagerProvider: FC<
   // To clear unnecessary stack items in unmount process, we need to use useRef.
   const [, forceRender] = useReducer(() => ({}), {});
   const stackRef = useRef<ManagedStack>({});
-  const setStack = useCallback(
-    (cb: (prev: ManagedStack) => ManagedStack) => {
-      stackRef.current = cb(stackRef.current);
-      forceRender();
-    },
-    [forceRender],
-  );
+  const setStack = useCallback((cb: (prev: ManagedStack) => ManagedStack) => {
+    stackRef.current = cb(stackRef.current);
+    forceRender();
+  }, []);
 
   const [offset, setOffset] = useState<StackOffset>({});
 

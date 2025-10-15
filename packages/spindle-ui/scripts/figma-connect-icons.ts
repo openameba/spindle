@@ -1,6 +1,6 @@
+import fs from 'node:fs';
 import dotenv from 'dotenv';
 import * as Figma from 'figma-api';
-import fs from 'fs';
 
 dotenv.config();
 

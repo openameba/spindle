@@ -50,9 +50,7 @@ export const Pagination = (props: Props) => {
 
   const onChangeView = useCallback(() => {
     const isMatchMedia = handleMatchMedia;
-    setMatches(
-      isMatchMedia && isMatchMedia.matches ? isMatchMedia.matches : false,
-    );
+    setMatches(isMatchMedia?.matches ? isMatchMedia.matches : false);
   }, [handleMatchMedia]);
 
   const onOrientationchange = useCallback(() => {

@@ -1,6 +1,6 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import type { GetLocalVariablesResponse } from '@figma/rest-api-spec';
-import fs from 'fs';
-import path from 'path';
 import {
   transformPrimitiveColor,
   transformThemeColor,
@@ -38,11 +38,11 @@ const FIGMA_TOKEN = process.env.FIGMA_TOKEN || '';
 
   fs.writeFileSync(
     path.resolve(__dirname, '../tokens/theme-light.tokens.json'),
-    JSON.stringify({ Color: transformedThemeColor['Light'] }, null, 2),
+    JSON.stringify({ Color: transformedThemeColor.Light }, null, 2),
   );
 
   fs.writeFileSync(
     path.resolve(__dirname, '../tokens/theme-dark.tokens.json'),
-    JSON.stringify({ Color: transformedThemeColor['Dark'] }, null, 2),
+    JSON.stringify({ Color: transformedThemeColor.Dark }, null, 2),
   );
 })();

@@ -1,6 +1,6 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import type { GetLocalVariablesResponse } from '@figma/rest-api-spec';
-import fs from 'fs';
-import path from 'path';
 import {
   transformAnimation,
   transformAnimationProperty,

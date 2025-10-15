@@ -207,7 +207,7 @@ export function useCarousel<Item>({
     };
     // this effect should be called only once
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [onMouseUp, onTouchEnd]);
 
   return {
     handleSlideToPrev,

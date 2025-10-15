@@ -57,7 +57,7 @@ const Frame = forwardRef<HTMLDialogElement, SemiModalProps>(function SemiModal(
     } else {
       dialogEl.current?.close?.();
     }
-  }, [open, dialogEl]);
+  }, [open]);
 
   return (
     <dialog

@@ -384,14 +384,14 @@ export const useStackNotificationComponent = <
         setIsShow(false);
       }, displayingTimeout);
     }
-  }, [isShow, timeoutID, setIsShow, displayingTimeout]);
+  }, [isShow, displayingTimeout]);
 
   const resetTimeout = useCallback(() => {
     if (timeoutID.current) {
       window.clearTimeout(timeoutID.current);
       timeoutID.current = null;
     }
-  }, [timeoutID]);
+  }, []);
 
   const handleTransitionEnd = useCallback(() => {
     if (onHide && !isShow) {
