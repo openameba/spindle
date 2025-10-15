@@ -1,3 +1,9 @@
+---
+description: Create an issue in Linear or GitHub
+argument-hint: [title]
+allowed-tools: mcp__linear-server__*, mcp__github__*
+---
+
 # Create Issue Command
 
 ## Requirements
