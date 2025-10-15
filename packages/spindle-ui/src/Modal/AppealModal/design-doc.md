@@ -91,7 +91,7 @@ AppealModal.Frame
 #### 新規追加コンポーネント
 
 ```tsx
-AppealModal.Caption        // キャプション（アイコン + テキスト）
+AppealModal.Caption        // キャプション（Megaphoneアイコン + テキスト、Object Accent Primary色）
 AppealModal.Topics         // 複数トピックスのコンテナ
 AppealModal.Topic          // 個別のトピックス
 AppealModal.PageIndicator  // ページインジケーター（自動表示）
@@ -122,9 +122,7 @@ AppealModal.SubtleLink     // Subtle Link
 
 ```tsx
 <AppealModal.Frame size="large" open={open} onClose={handleClose}>
-  <AppealModal.Caption icon={<Megaphone />}>
-    新機能の紹介
-  </AppealModal.Caption>
+  <AppealModal.Caption>新機能の紹介</AppealModal.Caption>
   <AppealModal.Title>
     代替テキスト(alt)を自動で追加できるようになりました
   </AppealModal.Title>
@@ -169,8 +167,9 @@ AppealModal.SubtleLink     // Subtle Link
 ### 新規追加コンポーネント
 
 #### Caption
-- キャプション（アイコン + テキスト）を表示
-- Props: `icon?: React.ReactNode`, `children`, その他div属性
+- キャプション（Megaphoneアイコン + テキスト）を表示
+- アイコンはMegaphone固定で、色はObject Accent Primaryを使用
+- Props: `children`, その他div属性
 
 #### Topics
 - 複数トピックスのコンテナ
