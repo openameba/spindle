@@ -91,7 +91,7 @@ const Frame: FC<Props> = ({
   );
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// biome-ignore lint/suspicious/noExplicitAny: Needed for flexible internal props conversion
 type OwnProps = Record<string, any>;
 type InternalChildProps = {
   variant?: Variant;
@@ -134,10 +134,7 @@ const Text: FC<{
 const Button: FC<
   { children: ReactNode } & HTMLAttributes<HTMLButtonElement>
 > = ({ children, ...rest }) => {
-  const [props, internalProps] = useMemo(
-    () => convertInternalChildProps(rest),
-    [rest],
-  );
+  const [props, internalProps] = convertInternalChildProps(rest);
   const variant = internalProps.variant || DEFAULT_VARIANT;
   const emphasis = internalProps.emphasis || DEFAULT_EMPHASIS;
   const buttonVariant: ButtonVariant = computedButtonVariant(variant, emphasis);
@@ -163,10 +160,7 @@ const TextButton: FC<
   );
 };
 const IconButton: FC<{ children: ReactNode }> = ({ children, ...rest }) => {
-  const [props, internalProps] = useMemo(
-    () => convertInternalChildProps(rest),
-    [rest],
-  );
+  const [props, internalProps] = convertInternalChildProps(rest);
   const variant = internalProps.variant || DEFAULT_VARIANT;
   const emphasis = internalProps.emphasis || DEFAULT_EMPHASIS;
   const buttonVariant: ButtonVariant = computedButtonVariant(variant, emphasis);

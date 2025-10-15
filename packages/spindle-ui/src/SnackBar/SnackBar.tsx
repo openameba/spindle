@@ -8,7 +8,6 @@ import React, {
   type MouseEventHandler,
   type ReactNode,
   type SetStateAction,
-  useMemo,
 } from 'react';
 import CrossBold from '../Icon/CrossBold';
 import { IconButton } from '../IconButton';
@@ -128,7 +127,7 @@ const Frame = ({
   );
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// biome-ignore lint/suspicious/noExplicitAny: Needed for flexible internal props conversion
 type OwnProps = Record<string, any>;
 
 const convertInternalChildProps = (
@@ -163,10 +162,7 @@ const Text: FC<{ children: ReactNode }> = ({ children }) => (
 const TextButton: FC<
   { icon?: ReactNode; children: ReactNode } & HTMLAttributes<HTMLButtonElement>
 > = ({ icon, children, onClick, ...rest }) => {
-  const [props, internalProps] = useMemo(
-    () => convertInternalChildProps(rest),
-    [rest],
-  );
+  const [props, internalProps] = convertInternalChildProps(rest);
   const variant = internalProps.variant || DEFAULT_VARIANT;
   const setIsShow = internalProps.setIsShow;
   const handleOnClick: MouseEventHandler<HTMLButtonElement> = (e) => {
@@ -187,10 +183,7 @@ const TextLink: FC<
     children: ReactNode;
   } & AnchorHTMLAttributes<HTMLAnchorElement>
 > = ({ icon, children, onClick, ...rest }) => {
-  const [props, internalProps] = useMemo(
-    () => convertInternalChildProps(rest),
-    [rest],
-  );
+  const [props, internalProps] = convertInternalChildProps(rest);
   const variant = internalProps.variant || DEFAULT_VARIANT;
   const setIsShow = internalProps.setIsShow;
   const handleOnClick: MouseEventHandler<HTMLAnchorElement> = (e) => {

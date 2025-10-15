@@ -35,6 +35,8 @@ export function useSliderMoveEvent() {
     setDiffY(touch.clientY - startYRef.current);
   };
 
+  // this effect should be called only once
+  // biome-ignore lint/correctness/useExhaustiveDependencies: Effect should run only once on mount, handlers use refs for latest values
   useEffect(() => {
     document.body.addEventListener('mousemove', onMouseMove);
     document.body.addEventListener('touchmove', onTouchMove, {
@@ -45,9 +47,7 @@ export function useSliderMoveEvent() {
       document.body.removeEventListener('mousemove', onMouseMove);
       document.body.removeEventListener('touchmove', onTouchMove);
     };
-    // this effect should be called only once
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [onMouseMove, onTouchMove]);
+  }, []);
 
   return {
     diffXRef,

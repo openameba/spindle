@@ -140,7 +140,7 @@ export const Confirmation: Story = {
   ),
 };
 
-export const Error: Story = {
+export const ErrorVariant: Story = {
   render: () => (
     <ActivateButton variant="error" icon={<ExclamationmarkCircleFill />} />
   ),

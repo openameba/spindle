@@ -139,12 +139,12 @@ const HeroCarousel = () => {
             ...listStyles,
           }}
         >
-          {itemsToRender.map((item, index) => (
+          {itemsToRender.map((item) => (
             <HeroCarouselItem
               carouselItem={item}
               isLinkClicked={isLinkClicked}
               itemLinkClassName={ITEM_LINK_CLASS_NAME}
-              key={`hero-carousel-${index}`}
+              key={item.link}
             />
           ))}
         </ul>

@@ -13,11 +13,12 @@ interface DesignTokens {
 function parseCssCustomProperties(cssContent: string): object {
   const properties: Record<string, string> = {};
   const regex = /--([^:]+):\s*([^;]+);/g;
-  let match;
+  let match: RegExpExecArray | null = regex.exec(cssContent);
 
-  while ((match = regex.exec(cssContent)) !== null) {
+  while (match !== null) {
     const [, name, value] = match;
     properties[name.trim()] = value.trim();
+    match = regex.exec(cssContent);
   }
 
   return properties;

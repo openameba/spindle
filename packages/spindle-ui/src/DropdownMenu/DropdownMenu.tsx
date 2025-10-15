@@ -150,9 +150,9 @@ const List = ({
     return null;
   }
 
-  let top;
-  let bottom;
-  let left;
+  let top: string | undefined;
+  let bottom: string | undefined;
+  let left: string | undefined;
   if (['topLeft', 'topCenter', 'topRight'].includes(position)) {
     bottom = `${triggerHeight}px`;
   }
@@ -226,9 +226,9 @@ const Position = ({
     setMenuHeight(height);
   }, []);
 
-  let top;
-  let bottom;
-  let left;
+  let top: string | undefined;
+  let bottom: string | undefined;
+  let left: string | undefined;
   if (['topLeft', 'topCenter', 'topRight'].includes(position)) {
     bottom = `${triggerHeight}px`;
   }
