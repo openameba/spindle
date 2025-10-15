@@ -23,7 +23,7 @@
 - Keep titles under 50 characters; may exceed if scope is long
 
 ## Issue Creation
-- Use the `create-issue` command (.claude/commands/create-issue.md) to ensure proper formatting and tracking
+- Use the `create-issue` command (@.claude/commands/create-issue.md) to ensure proper formatting and tracking
 
 ## Pull Request Creation
 - Write the PR summary in Japanese, providing a concise overview of the changes
