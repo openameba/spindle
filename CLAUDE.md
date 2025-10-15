@@ -1,5 +1,8 @@
 # Spindle Agents Guide
 
+## Development Setup
+- Use the `dev-setup` command (@.claude/commands/dev-setup.md) to set up the development environment
+
 ## Code Quality Guidelines
 - Write clean, readable, and maintainable code
 - Follow existing code patterns and conventions in the project
