@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/openameba/spindle/compare/@openameba/spindle-mcp-server@1.2.0...@openameba/spindle-mcp-server@1.3.0) (2025-10-15)
+
+**Note:** Version bump only for package @openameba/spindle-mcp-server
+
 # [1.2.0](https://github.com/openameba/spindle/compare/@openameba/spindle-mcp-server@1.1.1...@openameba/spindle-mcp-server@1.2.0) (2025-10-10)
 
 ### Features

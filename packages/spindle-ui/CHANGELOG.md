@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.11.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.10.0...@openameba/spindle-ui@2.11.0) (2025-10-15)
+
+### Features
+
+- **spindle-ui:** add inverse style to Checkbox component ([885559e](https://github.com/openameba/spindle/commit/885559e823afea1a7b995259fafb2560a2af7d7b))
+
 # [2.10.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.9.1...@openameba/spindle-ui@2.10.0) (2025-10-10)
 
 ### Features
