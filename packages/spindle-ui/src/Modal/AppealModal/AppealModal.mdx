@@ -34,7 +34,7 @@ Appeal Modalは、利用者に何かお知らせをする用途で利用され�
 
 - `<AppealModal.Frame>` 大枠(dialog要素)です
 - `<AppealModal.StyleOnly>` [HTMLDialogElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement)を利用しない場合に、`<AppealModal.Frame>`の代わりに利用します
-- `<AppealModal.Caption>` キャプションを指定します。アイコンと短いテキストを表示できます
+- `<AppealModal.Caption>` キャプションを指定します。Megaphoneアイコンと短いテキストを表示します
 - `<AppealModal.Title>` タイトルを指定します
 - `<AppealModal.Image>` 画像を指定します。内部にはimg要素単体もしくはpicture要素に囲われたimg要素を指定します。また、表示したい内容に応じたアスペクト比の指定、レスポンシブ対応を利用時にしてください
 - `<AppealModal.Body>` 本文を指定します
@@ -305,14 +305,12 @@ AppealModalで定義されていない要素は利用時に追加してカスタ
 
 ### Caption
 
-キャプションはアイコンと短いテキストを表示するために使用します。
+キャプションは、Megaphoneアイコンと短いテキストを表示するために使用します。
 
 <Source
   code={`
 <AppealModal.Frame open={true}>
-  <AppealModal.Caption icon={<Megaphone aria-hidden="true" />}>
-    新機能の紹介
-  </AppealModal.Caption>
+  <AppealModal.Caption>新機能の紹介</AppealModal.Caption>
   <AppealModal.Title>タイトル</AppealModal.Title>
   <AppealModal.Body>本文</AppealModal.Body>
   <AppealModal.ButtonGroup>
@@ -390,9 +388,7 @@ function MultipleTopics() {
         onCancel={handleDialogCancel}
         onClose={handleDialogClose}
       >
-        <AppealModal.Caption icon={<Megaphone aria-hidden="true" />}>
-          新機能の紹介
-        </AppealModal.Caption>
+        <AppealModal.Caption>新機能の紹介</AppealModal.Caption>
         <AppealModal.Title id="multitopics-title">
           代替テキスト(alt)を自動で追加できるようになりました
         </AppealModal.Title>
@@ -463,9 +459,7 @@ function MultipleTopics() {
   aria-labelledby="styleonly-multitopics-title"
   size="large"
 >
-  <AppealModal.Caption icon={<Megaphone aria-hidden="true" />}>
-    新機能の紹介
-  </AppealModal.Caption>
+  <AppealModal.Caption>新機能の紹介</AppealModal.Caption>
   <AppealModal.Title id="styleonly-multitopics-title">
     代替テキスト(alt)を自動で追加できるようになりました
   </AppealModal.Title>
