@@ -34,9 +34,13 @@ Appeal Modalは、利用者に何かお知らせをする用途で利用され�
 
 - `<AppealModal.Frame>` 大枠(dialog要素)です
 - `<AppealModal.StyleOnly>` [HTMLDialogElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement)を利用しない場合に、`<AppealModal.Frame>`の代わりに利用します
+- `<AppealModal.Caption>` キャプションを指定します。アイコンと短いテキストを表示できます
 - `<AppealModal.Title>` タイトルを指定します
 - `<AppealModal.Image>` 画像を指定します。内部にはimg要素単体もしくはpicture要素に囲われたimg要素を指定します。また、表示したい内容に応じたアスペクト比の指定、レスポンシブ対応を利用時にしてください
 - `<AppealModal.Body>` 本文を指定します
+- `<AppealModal.Topics>` 複数のトピックを表示する際に使用します。内部に`<AppealModal.Topic>`を配置します
+- `<AppealModal.Topic>` 個別のトピックを表示します。`<AppealModal.Topics>`の内部で使用します
+- `<AppealModal.SubtleLink>` 控えめなリンクを表示します
 - `<AppealModal.ButtonGroup>` ボタンを指定します。なお、閉じるボタンは自動的に表示されるため、指定する必要はありません
 
 利用方法は、各サンプルコードを参照してください。
@@ -290,6 +294,229 @@ AppealModalで定義されていない要素は利用時に追加してカスタ
         次回から表示しない
       </label>
     </p>
+  </AppealModal.ButtonGroup>
+</AppealModal.StyleOnly>
+  `}
+/>
+
+## Caption と SubtleLink の利用
+
+`<AppealModal.Caption>`と`<AppealModal.SubtleLink>`は、単一のトピックや複数のトピックに関係なく利用できます。
+
+### Caption
+
+キャプションはアイコンと短いテキストを表示するために使用します。
+
+<Source
+  code={`
+<AppealModal.Frame open={true}>
+  <AppealModal.Caption icon={<Megaphone aria-hidden="true" />}>
+    新機能の紹介
+  </AppealModal.Caption>
+  <AppealModal.Title>タイトル</AppealModal.Title>
+  <AppealModal.Body>本文</AppealModal.Body>
+  <AppealModal.ButtonGroup>
+    <Button variant="contained">ボタン</Button>
+  </AppealModal.ButtonGroup>
+</AppealModal.Frame>
+  `}
+/>
+
+### SubtleLink
+
+控えめなリンクを表示するために使用します。
+
+<Source
+  code={`
+<AppealModal.Frame open={true}>
+  <AppealModal.Title>タイトル</AppealModal.Title>
+  <AppealModal.Body>本文</AppealModal.Body>
+  <AppealModal.SubtleLink
+    icon={<CheckCircleFill aria-hidden="true" />}
+    href="#"
+  >
+    詳細を見る
+  </AppealModal.SubtleLink>
+  <AppealModal.ButtonGroup>
+    <Button variant="contained">ボタン</Button>
+  </AppealModal.ButtonGroup>
+</AppealModal.Frame>
+  `}
+/>
+
+## Multiple Topics
+
+複数のトピックを表示する場合は、`<AppealModal.Topics>`と`<AppealModal.Topic>`を使用します。また、`<AppealModal.Caption>`や`<AppealModal.SubtleLink>`を組み合わせることもできます。訴求内容が増えることにより読まれずに閉じられることが想定されるため、3個以上の配置は推奨していません。
+
+### レイアウト
+
+- **768px以上**: 2カラムのグリッドレイアウトで表示されます
+- **768px未満**: 横スクロールで表示され、ページインジケーターとナビゲーション矢印が自動的に表示されます
+
+<Story of={AppealModalStories.WithMultipleTopics} />
+
+<Source
+  code={`
+function MultipleTopics() {
+  const [open, setOpen] = useState(false);
+  const dialogRef = useRef(null);
+
+  const handleOpenButtonClick = () => setOpen(true);
+  const handleDialogCancel = () => setOpen(false);
+  const handleDialogClose = () => setOpen(false);
+
+  useEffect(() => {
+    if (dialogRef.current) {
+      dialogPolyfill.registerDialog(dialogRef.current);
+    }
+  }, [dialogRef]);
+
+  return (
+    <>
+      <Button
+        aria-haspopup="true"
+        size="medium"
+        variant="neutral"
+        onClick={handleOpenButtonClick}
+      >
+        開く
+      </Button>
+      <AppealModal.Frame
+        aria-describedby="multitopics-description"
+        aria-labelledby="multitopics-title"
+        ref={dialogRef}
+        open={open}
+        size="large"
+        onCancel={handleDialogCancel}
+        onClose={handleDialogClose}
+      >
+        <AppealModal.Caption icon={<Megaphone aria-hidden="true" />}>
+          新機能の紹介
+        </AppealModal.Caption>
+        <AppealModal.Title id="multitopics-title">
+          代替テキスト(alt)を自動で追加できるようになりました
+        </AppealModal.Title>
+
+        <AppealModal.Topics>
+          <AppealModal.Topic>
+            <AppealModal.Image>
+              <img
+                style={{ height: 'auto', width: '100%' }}
+                width="640"
+                height="336"
+                src="https://images.microcms-assets.io/assets/24995dc41d5c40808fe4a9e3f6fb2b20/e2526e7bfa494168a2e547cfe55ac89f/top_mv.jpg?w=640&h=336&fit=crop&fm=webp&q=85"
+                alt=""
+              />
+            </AppealModal.Image>
+            <AppealModal.Title>一行のトピック</AppealModal.Title>
+            <AppealModal.Body>
+              長めの説明文の場合はこのくらい長めの説明文の場合長めの説明文
+            </AppealModal.Body>
+          </AppealModal.Topic>
+
+          <AppealModal.Topic>
+            <AppealModal.Image>
+              <img
+                style={{ height: 'auto', width: '100%' }}
+                width="640"
+                height="336"
+                src="https://images.microcms-assets.io/assets/24995dc41d5c40808fe4a9e3f6fb2b20/4d28a6ed12194558a76ee4adfbab4e3b/ogp.png?w=640&h=336&fit=crop&fm=webp&q=85"
+                alt=""
+              />
+            </AppealModal.Image>
+            <AppealModal.Title>
+              二行のトピック二行のトピック二行のトピック二行のトピック
+            </AppealModal.Title>
+            <AppealModal.Body>
+              長めの説明文の場合はこのくらい長めの説明文の場合はこのくらい長めの説明文の場合はこのくらい長めの説明文の場合
+            </AppealModal.Body>
+          </AppealModal.Topic>
+        </AppealModal.Topics>
+
+        <AppealModal.SubtleLink
+          icon={<CheckCircleFill aria-hidden="true" />}
+          href="#"
+        >
+          Subtle Link
+        </AppealModal.SubtleLink>
+
+        <AppealModal.ButtonGroup>
+          <Button variant="contained" size="medium" layout="fullWidth">
+            次へ
+          </Button>
+        </AppealModal.ButtonGroup>
+      </AppealModal.Frame>
+    </>
+  );
+}
+  `}
+/>
+
+## StyleOnly with Multiple Topics
+
+<Story of={AppealModalStories.StyleOnlyWithMultipleTopics} />
+
+<Source
+  code={`
+<AppealModal.StyleOnly
+  aria-describedby="styleonly-multitopics-description"
+  aria-labelledby="styleonly-multitopics-title"
+  size="large"
+>
+  <AppealModal.Caption icon={<Megaphone aria-hidden="true" />}>
+    新機能の紹介
+  </AppealModal.Caption>
+  <AppealModal.Title id="styleonly-multitopics-title">
+    代替テキスト(alt)を自動で追加できるようになりました
+  </AppealModal.Title>
+
+  <AppealModal.Topics>
+    <AppealModal.Topic>
+      <AppealModal.Image>
+        <img
+          style={{ height: 'auto', width: '100%' }}
+          width="640"
+          height="336"
+          src="https://images.microcms-assets.io/assets/24995dc41d5c40808fe4a9e3f6fb2b20/e2526e7bfa494168a2e547cfe55ac89f/top_mv.jpg?w=640&h=336&fit=crop&fm=webp&q=85"
+          alt=""
+        />
+      </AppealModal.Image>
+      <AppealModal.Title>一行のトピック</AppealModal.Title>
+      <AppealModal.Body>
+        長めの説明文の場合はこのくらい長めの説明文の場合長めの説明文
+      </AppealModal.Body>
+    </AppealModal.Topic>
+
+    <AppealModal.Topic>
+      <AppealModal.Image>
+        <img
+          style={{ height: 'auto', width: '100%' }}
+          width="640"
+          height="336"
+          src="https://images.microcms-assets.io/assets/24995dc41d5c40808fe4a9e3f6fb2b20/4d28a6ed12194558a76ee4adfbab4e3b/ogp.png?w=640&h=336&fit=crop&fm=webp&q=85"
+          alt=""
+        />
+      </AppealModal.Image>
+      <AppealModal.Title>
+        二行のトピック二行のトピック二行のトピック二行のトピック
+      </AppealModal.Title>
+      <AppealModal.Body>
+        長めの説明文の場合はこのくらい長めの説明文の場合はこのくらい長めの説明文の場合はこのくらい長めの説明文の場合
+      </AppealModal.Body>
+    </AppealModal.Topic>
+  </AppealModal.Topics>
+
+  <AppealModal.SubtleLink
+    icon={<CheckCircleFill aria-hidden="true" />}
+    href="#"
+  >
+    Subtle Link
+  </AppealModal.SubtleLink>
+
+  <AppealModal.ButtonGroup>
+    <Button variant="contained" size="medium" layout="fullWidth">
+      次へ
+    </Button>
   </AppealModal.ButtonGroup>
 </AppealModal.StyleOnly>
   `}
