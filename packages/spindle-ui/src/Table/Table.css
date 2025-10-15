@@ -300,7 +300,6 @@
  */
 .spui-Table-head {
   background-color: var(--Table-head-backgroundColor);
-  box-sizing: border-box;
   color: var(--Table-head-color);
   font-size: var(--Table-head-fontSize);
   font-weight: var(--Table-head-fontWeight);
@@ -328,7 +327,6 @@
  */
 .spui-Table-cell {
   background-color: var(--Table-cell-backgroundColor);
-  box-sizing: border-box;
   color: var(--Table-cell-color);
   font-size: var(--Table-cell-fontSize);
   font-weight: var(--Table-cell-fontWeight);
