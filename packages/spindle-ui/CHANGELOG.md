@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.11.0...@openameba/spindle-ui@3.0.0) (2025-10-15)
+
+### Bug Fixes
+
+- **spindle-ui:** セルにbox-sizing border-boxを指定する ([736ec21](https://github.com/openameba/spindle/commit/736ec211f557c51f02fa2c89c2b139964f193ed2))
+
+- fix(spindle-ui)!: tableからdivにrefを移動 ([ee49a86](https://github.com/openameba/spindle/commit/ee49a86d894de269c998b34ca6b7da4c828b18f1))
+- fix(spindle-ui)!: layoutの種類に関わらずdivでwrapしdivにclassNameを当てるよう変更 ([45b14f3](https://github.com/openameba/spindle/commit/45b14f3a89386efd1288054e854a6aa32936893f))
+
+### BREAKING CHANGES
+
+- Table コンポーネントの ref 属性が変更されました：
+
+* ref プロパティが table 要素から外側の div 要素に移動されました
+* ref の型が HTMLTableElement から HTMLDivElement に変更されました
+
+- Table コンポーネントの DOM 構造が変更されました：
+
+* すべての layout タイプで table 要素が div 要素でラップされるようになりました（以前は scrollable のみ）
+* className プロパティの適用先が table 要素から外側の div 要素に変更されました
+
 # [2.11.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.10.0...@openameba/spindle-ui@2.11.0) (2025-10-15)
 
 ### Features
