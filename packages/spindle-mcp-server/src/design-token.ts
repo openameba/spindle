@@ -1,6 +1,6 @@
-import path from 'path';
-import fs from 'fs';
-import { fileURLToPath } from 'url';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,11 +13,12 @@ interface DesignTokens {
 function parseCssCustomProperties(cssContent: string): object {
   const properties: Record<string, string> = {};
   const regex = /--([^:]+):\s*([^;]+);/g;
-  let match;
+  let match: RegExpExecArray | null = regex.exec(cssContent);
 
-  while ((match = regex.exec(cssContent)) !== null) {
+  while (match !== null) {
     const [, name, value] = match;
     properties[name.trim()] = value.trim();
+    match = regex.exec(cssContent);
   }
 
   return properties;

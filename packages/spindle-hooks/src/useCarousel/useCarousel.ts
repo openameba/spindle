@@ -197,6 +197,8 @@ export function useCarousel<Item>({
     setDisableAutoFocus(false);
   };
 
+  // this effect should be called only once
+  // biome-ignore lint/correctness/useExhaustiveDependencies: Effect should run only once on mount, handlers use refs for latest values
   useEffect(() => {
     document.body.addEventListener('mouseup', onMouseUp);
     document.body.addEventListener('touchend', onTouchEnd);
@@ -205,8 +207,6 @@ export function useCarousel<Item>({
       document.body.removeEventListener('mouseup', onMouseUp);
       document.body.removeEventListener('touchend', onTouchEnd);
     };
-    // this effect should be called only once
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return {

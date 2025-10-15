@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 type Variant =
   | 'text'
@@ -76,13 +76,13 @@ const List = ({
 
       setFadeOut(true);
     },
-    [open, setFadeOut, triggerRef],
+    [open, triggerRef],
   );
 
   const onClickCloser = useCallback(() => {
     setFadeOut(true);
     triggerRef.current?.focus();
-  }, [setFadeOut, triggerRef]);
+  }, [triggerRef]);
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -100,7 +100,7 @@ const List = ({
       onClose();
       setFadeOut(false);
     },
-    [onClose, setFadeOut],
+    [onClose],
   );
 
   // Triggerボタンの縦横幅を取得
@@ -129,7 +129,7 @@ const List = ({
 
     return () =>
       menu?.removeEventListener('animationend', handleAnimationEnd, false);
-  }, [menuEl, handleAnimationEnd, open]);
+  }, [handleAnimationEnd, open]);
 
   useEffect(() => {
     if (open) {
@@ -150,9 +150,9 @@ const List = ({
     return null;
   }
 
-  let top;
-  let bottom;
-  let left;
+  let top: string | undefined;
+  let bottom: string | undefined;
+  let left: string | undefined;
   if (['topLeft', 'topCenter', 'topRight'].includes(position)) {
     bottom = `${triggerHeight}px`;
   }
@@ -226,9 +226,9 @@ const Position = ({
     setMenuHeight(height);
   }, []);
 
-  let top;
-  let bottom;
-  let left;
+  let top: string | undefined;
+  let bottom: string | undefined;
+  let left: string | undefined;
   if (['topLeft', 'topCenter', 'topRight'].includes(position)) {
     bottom = `${triggerHeight}px`;
   }

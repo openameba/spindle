@@ -46,7 +46,7 @@ export function useAutoSlide({ onTimeOut, shouldAutoPlaying = true }: Payload) {
     if (shouldAutoPlaying) {
       activateAutoSlide();
     }
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [activateAutoSlide, shouldAutoPlaying]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return {
     isAutoPlaying,

@@ -5,7 +5,7 @@
 
 import ReactDOM from 'react-dom';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// biome-ignore lint/suspicious/noExplicitAny: Polyfill for React@16 where flushSync is not typed
 const flushSync = (ReactDOM as any).flushSync;
 type FlushSyncCallback = () => void;
 

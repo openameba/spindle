@@ -1,5 +1,5 @@
-import React, { FC } from 'react';
 import { useCarousel } from '@openameba/spindle-hooks';
+import React, { type FC } from 'react';
 import ChevronLeftBold from '../Icon/ChevronLeftBold';
 import ChevronRightBold from '../Icon/ChevronRightBold';
 import Pause from '../Icon/Pause';
@@ -64,12 +64,12 @@ export const HeroCarousel: FC<Props> = React.memo(function HeroCarousel({
           role="group"
           style={listStyles}
         >
-          {itemsToRender.map((item: CarouselItem, index: number) => (
+          {itemsToRender.map((item: CarouselItem) => (
             <HeroCarouselItem
               carouselItem={item}
               isLinkClicked={isLinkClicked}
               itemLinkClassName={ITEM_LINK_CLASS_NAME}
-              key={`hero-carousel-${index}`}
+              key={item.link}
             />
           ))}
         </ul>

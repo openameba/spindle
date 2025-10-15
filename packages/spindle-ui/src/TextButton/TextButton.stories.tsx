@@ -1,8 +1,8 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 import { action } from 'storybook/actions';
-import { TextButton } from './TextButton';
 import { ChevronRightBold, PencilAdd } from '../Icon';
+import { TextButton } from './TextButton';
 
 const meta: Meta<typeof TextButton> = {
   title: 'TextButton',

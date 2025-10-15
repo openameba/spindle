@@ -1,12 +1,12 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Dialog } from './Dialog';
+import React from 'react';
+import type { Dialog } from './Dialog';
 import {
-  DialogExample,
-  StyleOnly as StyleOnlyComponent,
-  ButtonRow as ButtonRowComponent,
   ButtonColumn as ButtonColumnComponent,
   ButtonColumnWithSubtleButton as ButtonColumnWithSubtleButtonComponent,
+  ButtonRow as ButtonRowComponent,
+  DialogExample,
+  StyleOnly as StyleOnlyComponent,
 } from './DialogExample';
 
 const meta: Meta<typeof Dialog.Frame> = {

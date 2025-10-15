@@ -1,9 +1,8 @@
-import React, { useCallback, useEffect, useState, useRef } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import MenuHorizontal from '../Icon/MenuHorizontal';
-
-import PaginationItem from './PaginationItem';
-import { useShowItem } from './hooks/useShowItem';
 import { getLinkRelAttribute } from './helpers/getLinkRelAttribute';
+import { useShowItem } from './hooks/useShowItem';
+import PaginationItem from './PaginationItem';
 
 export type LinkFollowType = 'all' | 'none' | 'firstPage';
 
@@ -51,9 +50,7 @@ export const Pagination = (props: Props) => {
 
   const onChangeView = useCallback(() => {
     const isMatchMedia = handleMatchMedia;
-    setMatches(
-      isMatchMedia && isMatchMedia.matches ? isMatchMedia.matches : false,
-    );
+    setMatches(isMatchMedia?.matches ? isMatchMedia.matches : false);
   }, [handleMatchMedia]);
 
   const onOrientationchange = useCallback(() => {

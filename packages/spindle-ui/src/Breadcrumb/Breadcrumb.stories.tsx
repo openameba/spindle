@@ -1,7 +1,7 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { BreadcrumbList as BreadcrumbListComponent } from './BreadcrumbList';
+import React from 'react';
 import { BreadcrumbItem } from './BreadcrumbItem';
+import { BreadcrumbList as BreadcrumbListComponent } from './BreadcrumbList';
 
 const meta: Meta<typeof BreadcrumbListComponent> = {
   title: 'Breadcrumb',

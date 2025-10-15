@@ -1,4 +1,4 @@
-import React, { forwardRef, ReactNode, useEffect, useRef } from 'react';
+import React, { forwardRef, type ReactNode, useEffect, useRef } from 'react';
 import { useMergeRefs } from 'use-callback-ref';
 import CrossBold from '../../Icon/CrossBold';
 import { IconButton } from '../../IconButton';
@@ -57,7 +57,7 @@ const Frame = forwardRef<HTMLDialogElement, SemiModalProps>(function SemiModal(
     } else {
       dialogEl.current?.close?.();
     }
-  }, [open, dialogEl]);
+  }, [open]);
 
   return (
     <dialog

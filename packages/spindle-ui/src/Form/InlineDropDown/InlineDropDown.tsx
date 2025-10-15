@@ -24,7 +24,7 @@ export const InlineDropDown = forwardRef<HTMLSelectElement, Props>(
     const [text, setText] = useState('');
 
     const update = () => {
-      if (selectEl && selectEl.current) {
+      if (selectEl?.current) {
         const selectedEl =
           selectEl.current.options[selectEl.current.selectedIndex];
         const value = selectedEl.text;

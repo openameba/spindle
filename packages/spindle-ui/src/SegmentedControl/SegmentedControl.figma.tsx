@@ -1,6 +1,6 @@
+import figma from '@figma/code-connect';
 import React from 'react';
 import { SegmentedControl } from './SegmentedControl';
-import figma from '@figma/code-connect';
 
 figma.connect(
   SegmentedControl,

@@ -1,4 +1,4 @@
-import React, { useCallback, FC } from 'react';
+import React, { type FC, useCallback } from 'react';
 
 export type CarouselItem = {
   imageUrl: string;
