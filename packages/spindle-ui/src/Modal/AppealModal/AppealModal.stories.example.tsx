@@ -3,7 +3,6 @@ import dialogPolyfill from 'dialog-polyfill';
 import { Button } from '../../Button';
 import { LinkButton } from '../../LinkButton';
 import { AppealModal } from './AppealModal';
-import Megaphone from '../../Icon/Megaphone';
 import CheckCircleFill from '../../Icon/CheckCircleFill';
 
 import 'dialog-polyfill/dist/dialog-polyfill.css';
@@ -250,9 +249,7 @@ export function MultipleTopics() {
         onCancel={handleDialogCancel}
         onClose={handleDialogClose}
       >
-        <AppealModal.Caption icon={<Megaphone aria-hidden="true" />}>
-          新機能の紹介
-        </AppealModal.Caption>
+        <AppealModal.Caption>新機能の紹介</AppealModal.Caption>
         <AppealModal.Title id="multitopics-title">
           代替テキスト(alt)を自動で追加できるようになりました
         </AppealModal.Title>
@@ -317,9 +314,7 @@ export function StyleOnlyMultipleTopics() {
       aria-labelledby="styleonly-multitopics-title"
       size="large"
     >
-      <AppealModal.Caption icon={<Megaphone aria-hidden="true" />}>
-        新機能の紹介
-      </AppealModal.Caption>
+      <AppealModal.Caption>新機能の紹介</AppealModal.Caption>
       <AppealModal.Title id="styleonly-multitopics-title">
         代替テキスト(alt)を自動で追加できるようになりました
       </AppealModal.Title>

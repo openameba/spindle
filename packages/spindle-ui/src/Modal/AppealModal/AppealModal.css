@@ -254,7 +254,7 @@ html:has(.spui-AppealModal[open]) {
 .spui-AppealModal-caption-icon {
   display: inline-flex;
   font-size: 12px;
-  color: var(--color-text-low-emphasis);
+  color: var(--color-object-accent-primary);
 }
 
 .spui-AppealModal-caption-text {

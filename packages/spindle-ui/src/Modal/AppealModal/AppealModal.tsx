@@ -4,6 +4,7 @@ import { ButtonGroup as Group } from '../../ButtonGroup';
 import CrossBold from '../../Icon/CrossBold';
 import ChevronLeft from '../../Icon/ChevronLeft';
 import ChevronRight from '../../Icon/ChevronRight';
+import Megaphone from '../../Icon/Megaphone';
 import { IconButton } from '../../IconButton';
 import { SubtleButton } from '../../SubtleButton';
 import { TextLink } from '../../TextLink';
@@ -163,11 +164,10 @@ const ButtonGroup: typeof Group = ({ children, ...rest }) => {
 };
 
 const Caption = ({
-  icon,
   children,
   className,
   ...rest
-}: React.ComponentProps<'div'> & { icon?: React.ReactNode }) => {
+}: React.ComponentProps<'div'>) => {
   return (
     <div
       className={[`${BLOCK_NAME}-caption`, className]
@@ -176,7 +176,9 @@ const Caption = ({
         .trim()}
       {...rest}
     >
-      {icon && <span className={`${BLOCK_NAME}-caption-icon`}>{icon}</span>}
+      <span className={`${BLOCK_NAME}-caption-icon`}>
+        <Megaphone aria-hidden="true" />
+      </span>
       <span className={`${BLOCK_NAME}-caption-text`}>{children}</span>
     </div>
   );
