@@ -1,14 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import React, { useEffect, useRef, useState } from 'react';
 import { action } from 'storybook/actions';
-import { SnackBar } from './SnackBar';
 import { Button } from '../Button';
 import {
-  Information,
   CheckCircleFill,
-  Openblank,
   ExclamationmarkCircleFill,
+  Information,
+  Openblank,
 } from '../Icon';
+import { SnackBar } from './SnackBar';
 
 const usePoliteAnnouncer = (message: string) => {
   const announcer = useRef<HTMLElement | null>(null);

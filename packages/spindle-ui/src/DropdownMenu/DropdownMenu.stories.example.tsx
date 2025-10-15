@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { actions } from 'storybook/actions';
 
 import { Button } from '../Button';

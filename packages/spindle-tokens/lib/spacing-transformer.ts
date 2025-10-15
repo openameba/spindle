@@ -1,4 +1,4 @@
-import { GetLocalVariablesResponse } from '@figma/rest-api-spec';
+import type { GetLocalVariablesResponse } from '@figma/rest-api-spec';
 
 type SpacingToken = {
   $type: 'dimension';

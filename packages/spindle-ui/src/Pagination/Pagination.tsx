@@ -1,9 +1,8 @@
-import React, { useCallback, useEffect, useState, useRef } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import MenuHorizontal from '../Icon/MenuHorizontal';
-
-import PaginationItem from './PaginationItem';
-import { useShowItem } from './hooks/useShowItem';
 import { getLinkRelAttribute } from './helpers/getLinkRelAttribute';
+import { useShowItem } from './hooks/useShowItem';
+import PaginationItem from './PaginationItem';
 
 export type LinkFollowType = 'all' | 'none' | 'firstPage';
 

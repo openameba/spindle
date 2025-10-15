@@ -1,15 +1,15 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { SemiModal } from './SemiModal';
+import React from 'react';
+import type { SemiModal } from './SemiModal';
 import {
   PopupModalExample,
   SheetModalExample,
-  StyleOnlyPopupSmall,
-  StyleOnlyPopupMedium,
   StyleOnlyPopupLarge,
-  StyleOnlySheetSmall,
-  StyleOnlySheetMedium,
+  StyleOnlyPopupMedium,
+  StyleOnlyPopupSmall,
   StyleOnlySheetLarge,
+  StyleOnlySheetMedium,
+  StyleOnlySheetSmall,
 } from './SemiModal.stories.example';
 
 const meta: Meta<typeof SemiModal.Frame> = {

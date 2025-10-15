@@ -1,6 +1,6 @@
-import { promises as fsPromise, createWriteStream } from 'fs';
-import { dirname } from 'path';
 import axios from 'axios';
+import { createWriteStream, promises as fsPromise } from 'fs';
+import { dirname } from 'path';
 
 const checkOrCreateDestDir = (destDir: string): Promise<void> => {
   return fsPromise.access(destDir).catch((err) => {

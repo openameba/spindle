@@ -1,17 +1,17 @@
+import type { GetLocalVariablesResponse } from '@figma/rest-api-spec';
 import fs from 'fs';
 import path from 'path';
-import { GetLocalVariablesResponse } from '@figma/rest-api-spec';
-import { fetchLocalVariables } from '../lib/figma';
 import {
   transformPrimitiveColor,
   transformThemeColor,
 } from '../lib/color-transformer';
+import { fetchLocalVariables } from '../lib/figma';
 
 const FIGMA_FILE_KEY_PRIMITIVE = 'GIWwD96N0dDLzv0YxKZXTf';
 const FIGMA_FILE_KEY_THEME = 'jbyORMGXjv9Cr770bWEKna';
 const FIGMA_TOKEN = process.env.FIGMA_TOKEN || '';
 
-(async function () {
+(async () => {
   const variablesPrimitive =
     await fetchLocalVariables<GetLocalVariablesResponse>(
       FIGMA_FILE_KEY_PRIMITIVE,

@@ -1,21 +1,21 @@
 import React, {
+  type AnchorHTMLAttributes,
   Children,
   cloneElement,
-  Dispatch,
-  FC,
-  HTMLAttributes,
-  AnchorHTMLAttributes,
-  MouseEventHandler,
-  ReactNode,
-  SetStateAction,
+  type Dispatch,
+  type FC,
+  type HTMLAttributes,
+  type MouseEventHandler,
+  type ReactNode,
+  type SetStateAction,
   useMemo,
 } from 'react';
-import { useStackNotificationComponent } from '../StackNotificationManager';
 import CrossBold from '../Icon/CrossBold';
 import { IconButton } from '../IconButton';
-import { TextLink as SpindleTextLink } from '../TextLink/TextLink';
+import { useStackNotificationComponent } from '../StackNotificationManager';
+import type { StackNotificationComponentProps } from '../StackNotificationManager/StackNotificationManager';
 import { TextButton as SpindleTextButton } from '../TextButton/TextButton';
-import { StackNotificationComponentProps } from '../StackNotificationManager/StackNotificationManager';
+import { TextLink as SpindleTextLink } from '../TextLink/TextLink';
 
 type Variant = 'information' | 'confirmation' | 'error';
 
@@ -137,8 +137,7 @@ const convertInternalChildProps = (
   const hasInternalChildProps = (
     props: OwnProps,
   ): props is InternalChildProps =>
-    ({}).hasOwnProperty.call(props, 'setIsShow') ||
-    {}.hasOwnProperty.call(props, 'variant');
+    Object.hasOwn(props, 'setIsShow') || Object.hasOwn(props, 'variant');
 
   if (hasInternalChildProps(props)) {
     const result = {

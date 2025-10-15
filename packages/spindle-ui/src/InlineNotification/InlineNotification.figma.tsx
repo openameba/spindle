@@ -1,8 +1,8 @@
-import React from 'react';
-import { InlineNotification } from './InlineNotification';
 import figma from '@figma/code-connect';
+import React from 'react';
 import CrossBold from 'src/Icon/CrossBold';
 import Information from 'src/Icon/Information';
+import { InlineNotification } from './InlineNotification';
 
 figma.connect(
   InlineNotification,

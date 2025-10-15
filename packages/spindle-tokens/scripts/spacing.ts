@@ -1,13 +1,13 @@
+import type { GetLocalVariablesResponse } from '@figma/rest-api-spec';
 import fs from 'fs';
 import path from 'path';
-import { GetLocalVariablesResponse } from '@figma/rest-api-spec';
 import { fetchLocalVariables } from '../lib/figma';
 import { transformSpacing } from '../lib/spacing-transformer';
 
 const FIGMA_FILE_KEY = '0tRwTKb08qL3PGF8c18hWL';
 const FIGMA_TOKEN = process.env.FIGMA_TOKEN || '';
 
-(async function () {
+(async () => {
   const variables = await fetchLocalVariables<GetLocalVariablesResponse>(
     FIGMA_FILE_KEY,
     FIGMA_TOKEN,

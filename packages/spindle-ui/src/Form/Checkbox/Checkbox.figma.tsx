@@ -1,6 +1,6 @@
+import figma from '@figma/code-connect';
 import React from 'react';
 import { Checkbox } from './Checkbox';
-import figma from '@figma/code-connect';
 
 figma.connect(
   Checkbox,

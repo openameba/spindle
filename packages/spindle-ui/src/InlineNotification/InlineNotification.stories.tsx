@@ -1,7 +1,7 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+import { CrossBold, ExclamationmarkCircleFill, Information } from '../Icon';
 import { InlineNotification } from './InlineNotification';
-import { Information, ExclamationmarkCircleFill, CrossBold } from '../Icon';
 import { VisiblePropsSample } from './InlineNotification.stories.example';
 
 const meta: Meta<typeof InlineNotification.Frame> = {

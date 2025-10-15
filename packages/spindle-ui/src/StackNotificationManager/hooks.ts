@@ -1,11 +1,11 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
-  ManagedStack,
-  StackNotificationManagerProperties,
-  StackNotificationManagerProps,
-  StackOffset,
-  StackPosition,
-  StackPositionOffset,
+  type ManagedStack,
+  type StackNotificationManagerProperties,
+  type StackNotificationManagerProps,
+  type StackOffset,
+  type StackPosition,
+  type StackPositionOffset,
   useStackNotificationManagerContext,
 } from './StackNotificationManager';
 

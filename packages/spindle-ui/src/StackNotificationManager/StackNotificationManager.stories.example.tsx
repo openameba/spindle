@@ -1,13 +1,13 @@
 import React, { useCallback, useEffect, useRef } from 'react';
-import { SnackBar } from '../SnackBar';
-import { useStackNotificationManager } from '.';
-import {
-  StackNotificationManagerProvider,
-  StackPosition,
-} from './StackNotificationManager';
 import { Button } from '../Button';
 import Information from '../Icon/Information';
+import { SnackBar } from '../SnackBar';
+import { useStackNotificationManager } from '.';
 import { useRepeatedStackItem } from './hooks';
+import {
+  StackNotificationManagerProvider,
+  type StackPosition,
+} from './StackNotificationManager';
 
 const usePoliteAnnouncer = (active: boolean, message: string) => {
   const announcer = useRef<HTMLElement | null>(null);

@@ -1,8 +1,8 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 import { action } from 'storybook/actions';
-import { TextLink } from './TextLink';
 import { ChevronRightBold, PencilAdd } from '../Icon';
+import { TextLink } from './TextLink';
 
 const meta: Meta<typeof TextLink> = {
   title: 'TextLink',

@@ -1,6 +1,6 @@
 import React, {
-  RefObject,
   createRef,
+  type RefObject,
   useCallback,
   useEffect,
   useRef,

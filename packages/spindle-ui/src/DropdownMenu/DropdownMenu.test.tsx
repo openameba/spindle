@@ -1,13 +1,13 @@
-import React, { createRef, useState } from 'react';
+import { jest } from '@jest/globals';
 import {
-  render,
   act,
-  renderHook,
   fireEvent,
+  render,
+  renderHook,
   screen,
 } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { jest } from '@jest/globals';
+import React, { createRef, useState } from 'react';
 
 import { Button } from '../Button';
 import { BLOCK_NAME, DropdownMenu } from './DropdownMenu';

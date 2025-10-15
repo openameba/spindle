@@ -1,5 +1,5 @@
-import React, { FC } from 'react';
 import { useCarousel } from '@openameba/spindle-hooks';
+import React, { type FC } from 'react';
 import ChevronLeftBold from '../Icon/ChevronLeftBold';
 import ChevronRightBold from '../Icon/ChevronRightBold';
 import Pause from '../Icon/Pause';
