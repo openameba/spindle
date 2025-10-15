@@ -51,6 +51,10 @@
   width: 18px;
 }
 
+.spui-Checkbox-label--inverse .spui-Checkbox-icon {
+  border: 1px solid var(--color-border-low-emphasis-inverse);
+}
+
 .spui-Checkbox-input:checked + .spui-Checkbox-icon {
   background-color: var(--color-object-accent-primary);
   border: solid 1px var(--color-object-accent-primary);
@@ -59,6 +63,14 @@
 
 .spui-Checkbox-input:disabled + .spui-Checkbox-icon {
   opacity: 0.3;
+}
+
+.spui-Checkbox-label--inverse
+  .spui-Checkbox-input:checked
+  + .spui-Checkbox-icon {
+  background-color: var(--color-surface-primary);
+  border: solid 1px var(--color-surface-primary);
+  color: var(--color-object-accent-primary);
 }
 
 /* To add 2px space for outline */

@@ -87,3 +87,45 @@ import '@openameba/spindle-ui/Form/Checkbox.css';
   `}
 />
 
+## Checkbox Inverse
+
+<Story of={CheckboxStories.CheckboxInverse} />
+
+<Source
+  code={`
+<Checkbox aria-label="Amebaブログ" name="blog" value="amebaBlog" inverse />
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<label class="spui-Checkbox-label spui-Checkbox-label--inverse">
+  <input aria-label="Amebaブログ" class="spui-Checkbox-input" type="checkbox" name="blog" value="amebaBlog">
+  <span class="spui-Checkbox-icon"></span>
+  <span class="spui-Checkbox-outline"></span>
+</label>
+  `}
+/>
+
+## Checkbox Inverse With Text
+
+<Story of={CheckboxStories.CheckboxInverseWithText} />
+
+<Source
+  code={`
+<Checkbox name="blog" value="amebaBlog" inverse>Amebaブログ</Checkbox>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<label class="spui-Checkbox-label spui-Checkbox-label--inverse">
+  <input class="spui-Checkbox-input" type="checkbox" name="blog" value="amebaBlog">
+  <span class="spui-Checkbox-icon"></span>
+  <span class="spui-Checkbox-outline"></span>
+  <span class="spui-Checkbox-text">Amebaブログ</span>
+</label>
+  `}
+/>

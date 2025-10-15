@@ -41,3 +41,21 @@ export const CheckboxWithText: Story = {
     children: 'Amebaブログ',
   },
 };
+
+export const CheckboxInverse: Story = {
+  args: {
+    'aria-label': 'Amebaブログ',
+    name: 'blog',
+    value: 'amebaBlog',
+    inverse: true,
+  },
+};
+
+export const CheckboxInverseWithText: Story = {
+  args: {
+    name: 'blog',
+    value: 'amebaBlog',
+    children: 'Amebaブログ',
+    inverse: true,
+  },
+};
