@@ -6,3 +6,6 @@ packages/spindle-tokens/lib/*.js
 *.jsx
 *.ts
 *.tsx
+*.json
+*.jsonc
+*.css
