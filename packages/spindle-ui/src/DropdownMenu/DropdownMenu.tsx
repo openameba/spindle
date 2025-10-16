@@ -41,6 +41,7 @@ interface ListProps extends DefaultProps {
 export const BLOCK_NAME = 'spui-DropdownMenu';
 const FADE_IN_ANIMATION = 'spui-DropdownMenu-fade-in';
 const CLOSE_KEY_LIST = ['ESCAPE', 'ESC'];
+const ACTIVATE_KEYS = ['Enter', ' ', 'Spacebar'];
 const MENU_WIDTH = 256;
 
 const Caption = ({ children }: DefaultProps) => {
@@ -87,6 +88,17 @@ const List = ({
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (CLOSE_KEY_LIST.includes(e.key.toUpperCase())) {
+        onClickCloser();
+      }
+    },
+    [onClickCloser],
+  );
+
+  const handleMenuKeyDown = useCallback(
+    (e: React.KeyboardEvent<HTMLUListElement>) => {
+      if (ACTIVATE_KEYS.includes(e.key)) {
+        e.preventDefault();
+        e.stopPropagation();
         onClickCloser();
       }
     },
@@ -170,6 +182,7 @@ const List = ({
     <ul
       id={id}
       onClick={onClickCloser}
+      onKeyDown={handleMenuKeyDown}
       className={[
         `${BLOCK_NAME}-menu`,
         `${BLOCK_NAME}-menu--${variant}`,
@@ -179,7 +192,6 @@ const List = ({
         .filter(Boolean)
         .join(' ')}
       ref={menuEl}
-      role="menu"
       style={{ bottom, left, top }}
     >
       {children}
@@ -189,8 +201,13 @@ const List = ({
 
 const ListItem = ({ children, icon, onClick }: ListItemProps) => {
   return (
-    <li className={`${BLOCK_NAME}-menuItem`} role="menuItem">
-      <button className={`${BLOCK_NAME}-menuButton`} onClick={onClick}>
+    <li className={`${BLOCK_NAME}-menuItem`}>
+      <button
+        className={`${BLOCK_NAME}-menuButton`}
+        type="button"
+        role="menuitem"
+        onClick={onClick}
+      >
         {icon && <div className={`${BLOCK_NAME}-iconContainer`}>{icon}</div>}
         <div className={`${BLOCK_NAME}-textContainer`}>{children}</div>
       </button>
@@ -252,7 +269,6 @@ const Position = ({
         .filter(Boolean)
         .join(' ')}
       ref={menuEl}
-      role="menu"
       style={{ bottom, left, top }}
     >
       {children}
