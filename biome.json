@@ -42,7 +42,7 @@
         "noUselessFragments": "error"
       },
       "a11y": {
-        "recommended": false
+        "recommended": true
       }
     }
   },
