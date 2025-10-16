@@ -71,7 +71,7 @@
 /* To expand tap area */
 .spui-Breadcrumb a::before {
   border-radius: 4px;
-  content: '';
+  content: "";
   left: 0;
   position: absolute;
   top: -50%;

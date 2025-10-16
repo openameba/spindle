@@ -1,12 +1,10 @@
 {
   "extends": "stylelint-config-standard",
   "plugins": [
-    "stylelint-prettier",
     "stylelint-order",
     "stylelint-selector-bem-pattern"
   ],
   "rules": {
-    "prettier/prettier": true,
     "order/properties-alphabetical-order": true,
     "plugin/selector-bem-pattern": {
       "implicitComponents": "src/**/*.css",

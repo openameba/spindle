@@ -47,7 +47,7 @@
   border: solid 1px var(--color-border-low-emphasis);
   border-radius: 100%;
   box-sizing: border-box;
-  content: '';
+  content: "";
   display: inline-block;
   height: 24px;
   left: 4px;

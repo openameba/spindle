@@ -26,7 +26,7 @@
 
 /* Add margin for Subtle button */
 .spui-ButtonGroup--large.spui-ButtonGroup--column
-  > .spui-SubtleButton:not(:first-child) {
+> .spui-SubtleButton:not(:first-child) {
   margin-top: 4px;
 }
 

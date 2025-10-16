@@ -31,20 +31,20 @@
   background-color: var(--color-hover-neutral-button);
 }
 
-.spui-ButtonSwitch-button[aria-pressed='true'] {
+.spui-ButtonSwitch-button[aria-pressed="true"] {
   background-color: var(--color-surface-accent-primary);
   font-weight: bold;
 }
 
-.spui-ButtonSwitch-button[aria-pressed='true'] .spui-ButtonSwitch-icon {
+.spui-ButtonSwitch-button[aria-pressed="true"] .spui-ButtonSwitch-icon {
   color: var(--color-object-high-emphasis-inverse);
 }
 
-.spui-ButtonSwitch-button[aria-pressed='true'] .spui-ButtonSwitch-label {
+.spui-ButtonSwitch-button[aria-pressed="true"] .spui-ButtonSwitch-label {
   color: var(--color-text-high-emphasis-inverse);
 }
 
-.spui-ButtonSwitch-button[aria-pressed='true']:hover {
+.spui-ButtonSwitch-button[aria-pressed="true"]:hover {
   background-color: var(--color-hover-contained-button);
 }
 
@@ -65,7 +65,7 @@
 
 .spui-ButtonSwitch-button + .spui-ButtonSwitch-button::after {
   background-color: var(--color-border-low-emphasis);
-  content: '';
+  content: "";
   height: 100%;
   left: -0.5px;
   position: absolute;

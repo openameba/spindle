@@ -10,7 +10,7 @@
   /**
    * Layout should be set to have appropriate width with longest option text.
    * Browsers automatically get the width from select element
-  */
+   */
   appearance: none; /* To apply layout (font size, padding etc) to <select> in WebKit */
   box-sizing: border-box;
   font-size: 1em;

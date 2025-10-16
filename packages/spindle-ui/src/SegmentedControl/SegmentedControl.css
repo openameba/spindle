@@ -37,7 +37,7 @@
     background-color 0.15s ease;
 }
 
-.spui-SegmentedControl-button[aria-checked='true'] {
+.spui-SegmentedControl-button[aria-checked="true"] {
   color: var(--color-text-high-emphasis);
   cursor: inherit;
   font-weight: bold;
@@ -46,7 +46,7 @@
 .spui-SegmentedControl--divider .spui-SegmentedControl-button::before {
   background-color: var(--color-border-low-emphasis);
   bottom: 50%;
-  content: '';
+  content: "";
   height: 20px;
   left: -5px;
   position: absolute;
@@ -61,13 +61,13 @@
   content: none;
 }
 
-.spui-SegmentedControl-button[aria-checked='true']::before,
-.spui-SegmentedControl-button[aria-checked='true']
-  + .spui-SegmentedControl-button[aria-checked='false']::before {
+.spui-SegmentedControl-button[aria-checked="true"]::before,
+.spui-SegmentedControl-button[aria-checked="true"]
+  + .spui-SegmentedControl-button[aria-checked="false"]::before {
   background-color: transparent;
 }
 
-.spui-SegmentedControl-button[aria-checked='false']:hover {
+.spui-SegmentedControl-button[aria-checked="false"]:hover {
   background-color: var(--color-surface-tertiary);
 }
 
@@ -76,7 +76,7 @@
   outline-offset: 1px;
 }
 
-.spui-SegmentedControl-button[aria-checked='false']:focus {
+.spui-SegmentedControl-button[aria-checked="false"]:focus {
   background-color: var(--color-surface-secondary);
 }
 
@@ -100,7 +100,7 @@
   bottom: 4px;
   /* TODO: replace color with color palette */
   box-shadow: 0 3.25px 7.75px rgba(8, 18, 26, 0.06);
-  content: '';
+  content: "";
   height: auto;
   left: 0;
   position: absolute;

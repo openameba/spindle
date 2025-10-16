@@ -84,8 +84,7 @@
 }
 
 /* tbodyの最後の行のbottom borderを削除 */
-.spui-Table--horizontal
-  .spui-Table-body
+.spui-Table--horizontal .spui-Table-body
   .spui-Table-row:last-child
   .spui-Table-head,
 .spui-Table--horizontal
@@ -96,8 +95,7 @@
 }
 
 /* footerの最初の行に強調された区切り線 */
-.spui-Table--horizontal
-  .spui-Table-footer
+.spui-Table--horizontal .spui-Table-footer
   .spui-Table-row:first-child
   .spui-Table-head,
 .spui-Table--horizontal
@@ -108,8 +106,7 @@
 }
 
 /* footerの最後の行のbottom borderを削除 */
-.spui-Table--horizontal
-  .spui-Table-footer
+.spui-Table--horizontal .spui-Table-footer
   .spui-Table-row:last-child
   .spui-Table-head,
 .spui-Table--horizontal
@@ -170,8 +167,7 @@
 }
 
 /* 内部要素の角丸処理 */
-.spui-Table--rounded
-  .spui-Table-header
+.spui-Table--rounded .spui-Table-header
   .spui-Table-row:first-child
   .spui-Table-head:first-child {
   border-top-left-radius: calc(var(--Table-borderRadius) - 1px);
@@ -185,8 +181,7 @@
 }
 
 /* ヘッダー行がない場合のボディ最初の行 */
-.spui-Table--rounded:not(:has(.spui-Table-header))
-  .spui-Table-body
+.spui-Table--rounded:not(:has(.spui-Table-header)) .spui-Table-body
   .spui-Table-row:first-child
   .spui-Table-head:first-child,
 .spui-Table--rounded:not(:has(.spui-Table-header))
@@ -250,8 +245,7 @@
 }
 
 /* footerがある場合の角丸処理 */
-.spui-Table--rounded
-  .spui-Table-footer
+.spui-Table--rounded .spui-Table-footer
   .spui-Table-row:last-child
   .spui-Table-head:first-child,
 .spui-Table--rounded
@@ -275,8 +269,7 @@
 /*
  * ストライプ行 - セルのみ、行見出しは除外
  */
-.spui-Table--striped
-  .spui-Table-body
+.spui-Table--striped .spui-Table-body
   .spui-Table-row:nth-child(even)
   .spui-Table-cell {
   background-color: var(--Table-row-striped-backgroundColor);

@@ -83,8 +83,9 @@
 }
 
 /* Outline without text */
-.spui-Checkbox-label:has(:not(.spui-Checkbox-text))
-  .spui-Checkbox-input:focus-visible
+.spui-Checkbox-label:has(
+    :not(.spui-Checkbox-text)
+  ) .spui-Checkbox-input:focus-visible
   ~ .spui-Checkbox-outline {
   box-shadow: 0 0 0 2px var(--color-focus-clarity);
 }

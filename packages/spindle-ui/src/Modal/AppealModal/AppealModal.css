@@ -1,6 +1,6 @@
-@import '../../ButtonGroup/ButtonGroup.css';
-@import '../../IconButton/IconButton.css';
-@import '../../SubtleButton/SubtleButton.css';
+@import "../../ButtonGroup/ButtonGroup.css";
+@import "../../IconButton/IconButton.css";
+@import "../../SubtleButton/SubtleButton.css";
 /*
  * AppealModal
  * NOTE: Styles can be overridden with "--AppealModal-*" variables
@@ -79,12 +79,12 @@ html:has(.spui-AppealModal[open]) {
  * - Safari does not support radius outline
 */
 .spui-AppealModal
-  :is(
-    .spui-Button,
-    .spui-LinkButton,
-    .spui-IconButton,
-    .spui-SubtleButton
-  ):focus {
+:is(
+  .spui-Button,
+  .spui-LinkButton,
+  .spui-IconButton,
+  .spui-SubtleButton
+):focus {
   box-shadow:
     0 0 0 1px var(--color-surface-secondary),
     0 0 0 3px var(--color-focus-clarity);
@@ -107,11 +107,11 @@ html:has(.spui-AppealModal[open]) {
   gap: 0;
   grid-auto-flow: row;
   grid-template:
-    'Image'
-    'Title'
-    'Body'
-    'ButtonGroup'
-    'CloseButton' / 1fr;
+    "Image"
+    "Title"
+    "Body"
+    "ButtonGroup"
+    "CloseButton" / 1fr;
   padding: 0 0 24px;
   width: 100%;
 }
@@ -193,10 +193,10 @@ html:has(.spui-AppealModal[open]) {
   .spui-AppealModal-frame {
     grid-auto-flow: row;
     grid-template:
-      'Title CloseButton'
-      'Body CloseButton'
-      'Image Image'
-      'ButtonGroup ButtonGroup' / 1fr 72px;
+      "Title CloseButton"
+      "Body CloseButton"
+      "Image Image"
+      "ButtonGroup ButtonGroup" / 1fr 72px;
     padding: 0 0 36px;
   }
 

@@ -113,7 +113,7 @@
 
 .spui-DropdownMenu-menuItem .spui-DropdownMenu-menuButton::before {
   background-color: var(--color-border-low-emphasis);
-  content: '';
+  content: "";
   height: 1px;
   position: absolute;
   top: 0;
@@ -176,6 +176,7 @@
     bottom: auto;
     left: 0;
     margin-top: 8px;
+    /* biome-ignore lint/complexity/noImportantStyles: Need to override desktop positioning */
     top: auto !important;
   }
 
@@ -186,6 +187,7 @@
     left: auto;
     margin-top: 8px;
     right: 0;
+    /* biome-ignore lint/complexity/noImportantStyles: Need to override desktop positioning */
     top: auto !important;
   }
 }

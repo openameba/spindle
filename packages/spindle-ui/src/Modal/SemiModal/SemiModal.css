@@ -1,4 +1,4 @@
-@import '../../IconButton/IconButton.css';
+@import "../../IconButton/IconButton.css";
 /*
  * SemiModal
  * NOTE: Styles can be overridden with "--SemiModal-*" variables
@@ -26,7 +26,7 @@
   width: fit-content;
 }
 
-.spui-SemiModal[data-type='sheet'] {
+.spui-SemiModal[data-type="sheet"] {
   border-radius: 20px 20px 0 0;
   bottom: 0;
   margin: auto auto 0;
@@ -55,7 +55,7 @@
     overlay 350ms allow-discrete;
 }
 
-.spui-SemiModal[data-type='sheet'][open] {
+.spui-SemiModal[data-type="sheet"][open] {
   transform: translateY(0);
 }
 
@@ -69,7 +69,7 @@
     opacity: 0;
   }
 
-  .spui-SemiModal[data-type='sheet'][open] {
+  .spui-SemiModal[data-type="sheet"][open] {
     transform: translateY(100%);
   }
 }
@@ -101,12 +101,12 @@ html:has(.spui-SemiModal[open]) {
  * - Safari does not support radius outline
 */
 .spui-SemiModal
-  :is(
-    .spui-Button,
-    .spui-LinkButton,
-    .spui-IconButton,
-    .spui-SubtleButton
-  ):focus {
+:is(
+  .spui-Button,
+  .spui-LinkButton,
+  .spui-IconButton,
+  .spui-SubtleButton
+):focus {
   box-shadow:
     0 0 0 1px var(--color-surface-secondary),
     0 0 0 2px var(--color-focus-clarity);
@@ -196,34 +196,34 @@ html:has(.spui-SemiModal[open]) {
 }
 
 @media screen and (min-width: 768px) {
-  .spui-SemiModal[data-type='popup'][data-size='small'] .spui-SemiModal-frame {
+  .spui-SemiModal[data-type="popup"][data-size="small"] .spui-SemiModal-frame {
     max-height: 400px;
     max-width: 480px;
   }
 
-  .spui-SemiModal[data-type='popup'][data-size='medium'] .spui-SemiModal-frame {
+  .spui-SemiModal[data-type="popup"][data-size="medium"] .spui-SemiModal-frame {
     max-height: 700px;
     max-width: 840px;
   }
 
-  .spui-SemiModal[data-type='popup'][data-size='large'] .spui-SemiModal-frame {
+  .spui-SemiModal[data-type="popup"][data-size="large"] .spui-SemiModal-frame {
     max-height: 840px;
     max-width: 1024px;
   }
 
-  .spui-SemiModal[data-type='sheet'] .spui-SemiModal-frame {
+  .spui-SemiModal[data-type="sheet"] .spui-SemiModal-frame {
     max-height: calc(100dvh - 200px);
   }
 
-  .spui-SemiModal[data-type='sheet'][data-size='small'] .spui-SemiModal-frame {
+  .spui-SemiModal[data-type="sheet"][data-size="small"] .spui-SemiModal-frame {
     max-width: 480px;
   }
 
-  .spui-SemiModal[data-type='sheet'][data-size='medium'] .spui-SemiModal-frame {
+  .spui-SemiModal[data-type="sheet"][data-size="medium"] .spui-SemiModal-frame {
     max-width: 840px;
   }
 
-  .spui-SemiModal[data-type='sheet'][data-size='large'] .spui-SemiModal-frame {
+  .spui-SemiModal[data-type="sheet"][data-size="large"] .spui-SemiModal-frame {
     max-width: 1024px;
   }
 
@@ -237,15 +237,15 @@ html:has(.spui-SemiModal[open]) {
 }
 
 @media screen and (max-width: 768px) {
-  .spui-SemiModal[data-type='sheet'] {
+  .spui-SemiModal[data-type="sheet"] {
     margin: auto 0 0;
     /* useragent stylesheetによるmax-width指定の上書き */
     max-width: 100%;
     width: 100%;
   }
 
-  .spui-SemiModal[data-type='popup'] .spui-SemiModal-frame,
-  .spui-SemiModal[data-type='sheet'] .spui-SemiModal-frame {
+  .spui-SemiModal[data-type="popup"] .spui-SemiModal-frame,
+  .spui-SemiModal[data-type="sheet"] .spui-SemiModal-frame {
     /*
      * popup時は上下に20pxずつの余白を持つ
      * sheet時は上に40pxの余白を持つ
@@ -253,7 +253,7 @@ html:has(.spui-SemiModal[open]) {
     max-height: calc(100dvh - (20px * 2));
   }
 
-  .spui-SemiModal[data-type='popup'] {
+  .spui-SemiModal[data-type="popup"] {
     margin: auto 20px;
   }
 
