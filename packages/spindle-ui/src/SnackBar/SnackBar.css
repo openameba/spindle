@@ -1,6 +1,6 @@
-@import '../IconButton/IconButton.css';
-@import '../TextLink/TextLink.css';
-@import '../TextButton/TextButton.css';
+@import "../IconButton/IconButton.css";
+@import "../TextLink/TextLink.css";
+@import "../TextButton/TextButton.css";
 
 :root {
   --SnackBar-z-index: 1;
@@ -25,7 +25,7 @@
   box-shadow: 0 11px 28px rgba(8, 18, 26, 0.24);
   box-sizing: border-box;
   display: inline-grid;
-  grid-template: 'Icon Text Button IconButton' auto / auto 1fr auto auto;
+  grid-template: "Icon Text Button IconButton" auto / auto 1fr auto auto;
   max-width: 440px;
   min-height: 52px;
   min-width: 360px;
@@ -64,7 +64,7 @@
 
 .spui-SnackBar-button::after {
   bottom: 0;
-  content: '';
+  content: "";
   display: inline-block;
   position: absolute;
   right: -12px;
@@ -83,8 +83,11 @@
   bottom: 0;
   transform: translateY(
     calc(
-      (var(--SnackBar--initial-height-bottom) - var(--SnackBar--offset-bottom)) *
-        -1
+      (
+        var(--SnackBar--initial-height-bottom) -
+        var(--SnackBar--offset-bottom)
+      ) *
+      -1
     )
   );
 }
@@ -234,9 +237,10 @@
     transform: translateY(
       calc(
         (
-            var(--SnackBar--initial-height-bottom) -
-              var(--SnackBar--offset-bottom)
-          ) * -1
+          var(--SnackBar--initial-height-bottom) -
+          var(--SnackBar--offset-bottom)
+        ) *
+        -1
       )
     );
   }

@@ -71,8 +71,7 @@
 }
 
 /* Outline without text */
-.spui-Radio-label:has(:not(.spui-Radio-text))
-  .spui-Radio-input:focus-visible
+.spui-Radio-label:has(:not(.spui-Radio-text)) .spui-Radio-input:focus-visible
   ~ .spui-Radio-outline {
   box-shadow: 0 0 0 2px var(--color-focus-clarity);
 }

@@ -3,11 +3,11 @@
  * NOTE: Styles can be overridden with "--InlineNotification-*" variables
 */
 
-@import '../Button/Button.css';
-@import '../IconButton/IconButton.css';
-@import '../LinkButton/LinkButton.css';
-@import '../TextLink/TextLink.css';
-@import '../TextButton/TextButton.css';
+@import "../Button/Button.css";
+@import "../IconButton/IconButton.css";
+@import "../LinkButton/LinkButton.css";
+@import "../TextLink/TextLink.css";
+@import "../TextButton/TextButton.css";
 
 :root {
   --InlineNotification--neutral-backgroundColor: var(--white-20-alpha);
@@ -70,7 +70,7 @@
   border: solid 1px var(--color-border-low-emphasis);
   border-radius: 50%;
   box-sizing: border-box;
-  content: '';
+  content: "";
   height: 100%;
   position: absolute;
   width: 100%;

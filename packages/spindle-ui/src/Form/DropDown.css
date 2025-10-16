@@ -1,3 +1,3 @@
 /* Re-export for backward compatibility after directory structure refactoring */
 /* TODO: Remove this file in a future major version */
-@import './DropDown/DropDown.css';
+@import "./DropDown/DropDown.css";
