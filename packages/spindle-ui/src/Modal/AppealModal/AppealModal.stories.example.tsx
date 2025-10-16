@@ -7,7 +7,7 @@ import { AppealModal } from './AppealModal';
 import 'dialog-polyfill/dist/dialog-polyfill.css';
 import { Checkbox } from '../../Form';
 
-function useDialogpolyfill(ref: React.RefObject<HTMLDialogElement>) {
+function useDialogpolyfill(ref: React.RefObject<HTMLDialogElement | null>) {
   useEffect(() => {
     if (ref.current) {
       dialogPolyfill.registerDialog(ref.current);

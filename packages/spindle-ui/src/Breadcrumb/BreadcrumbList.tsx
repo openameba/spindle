@@ -41,7 +41,10 @@ export const BreadcrumbList = (props: Props) => {
     >
       <ol className={`${BLOCK_NAME}-list`}>
         {React.Children.map(children, (child) => {
-          return React.isValidElement(child) ? (
+          return React.isValidElement<{
+            current?: boolean;
+            'aria-current'?: string;
+          }>(child) ? (
             <li
               className={`${BLOCK_NAME}-item`}
               {...(child.props.current || child.props['aria-current']

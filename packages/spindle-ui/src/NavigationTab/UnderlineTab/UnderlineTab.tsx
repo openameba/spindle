@@ -44,7 +44,7 @@ export const UnderlineTab: React.FC<Props> = ({
   const [showPrevButton, setShowPrevButton] = useState(false);
   const [showNextButton, setShowNextButton] = useState(false);
 
-  const buttonsRef = useRef<RefObject<HTMLButtonElement>[]>([]);
+  const buttonsRef = useRef<RefObject<HTMLButtonElement | null>[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const handleScroll = useCallback((direction: 'prev' | 'next') => {
