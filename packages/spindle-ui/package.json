@@ -101,10 +101,8 @@
     "scaffdog": "4.1.0",
     "storybook": "9.1.10",
     "stylelint": "16.25.0",
-    "stylelint-config-prettier": "9.0.5",
     "stylelint-config-standard": "39.0.1",
     "stylelint-order": "7.0.0",
-    "stylelint-prettier": "5.0.3",
     "stylelint-selector-bem-pattern": "4.0.1"
   }
 }
