@@ -1,6 +1,5 @@
 import React, {
   createRef,
-  type RefObject,
   useCallback,
   useEffect,
   useMemo,
