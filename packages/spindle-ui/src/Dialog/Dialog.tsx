@@ -57,6 +57,7 @@ const Frame = forwardRef<HTMLDialogElement, DialogProps>(function Dialog(
   }, [open]);
 
   return (
+    /* biome-ignore lint/a11y/useKeyWithClickEvents: Backdrop click only; keyboard is handled by native dialog */
     <dialog
       ref={useMergeRefs([dialogEl, ref])}
       className={[BLOCK_NAME, className].filter(Boolean).join(' ').trim()}

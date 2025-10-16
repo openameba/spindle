@@ -53,6 +53,7 @@ export function AppealModalExample() {
               media="(min-width: 768px)"
             ></source>
             <img
+              alt=""
               style={{ height: 'auto', width: '100%' }}
               width="640"
               height="336"
@@ -86,6 +87,7 @@ export function StyleOnly() {
     >
       <AppealModal.Image>
         <img
+          alt=""
           style={{ height: 'auto', width: '100%' }}
           width="640"
           height="336"
@@ -118,6 +120,7 @@ export function StyleOnlyMedium() {
     >
       <AppealModal.Image>
         <img
+          alt=""
           style={{ height: 'auto', width: '100%' }}
           width="640"
           height="336"
@@ -152,6 +155,7 @@ export function StyleOnlySmall() {
     >
       <AppealModal.Image>
         <img
+          alt=""
           style={{ height: 'auto', width: '100%' }}
           width="640"
           height="336"
@@ -186,6 +190,7 @@ export function StyleOnlyCustomized() {
     >
       <AppealModal.Image>
         <img
+          alt=""
           style={{ height: 'auto', width: '100%' }}
           width="640"
           height="336"

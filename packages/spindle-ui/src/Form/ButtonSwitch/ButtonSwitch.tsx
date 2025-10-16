@@ -61,6 +61,7 @@ export const ButtonSwitch: React.FC<Props> = ({
   );
 
   return (
+    // biome-ignore lint/a11y/useSemanticElements: intentionally using div + role="group" for grouping and labeling
     <div
       role="group"
       id={id}

@@ -101,7 +101,7 @@ const Frame = ({
       onTransitionEnd={handleTransitionEnd}
       ref={(ref) => setClientHeight(ref?.clientHeight || 0)}
     >
-      <div
+      <output
         className={`${BLOCK_NAME}-content ${BLOCK_NAME}-content--${variant}`}
         onMouseOver={resetTimeout}
         onMouseOut={setIsShowWithTimeout}
@@ -128,7 +128,7 @@ const Frame = ({
             <CrossBold aria-label="閉じる" />
           </IconButton>
         </div>
-      </div>
+      </output>
     </div>
   );
 };

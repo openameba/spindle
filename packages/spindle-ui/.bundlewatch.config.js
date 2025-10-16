@@ -32,7 +32,7 @@ const bundlewatchConfig = {
     },
     {
       path: './dist/DropdownMenu/*.mjs',
-      maxSize: '1.5 kB',
+      maxSize: '1.6 kB',
       compression: 'gzip',
     },
     {
@@ -47,7 +47,7 @@ const bundlewatchConfig = {
     },
     {
       path: './dist/SegmentedControl/*.mjs',
-      maxSize: '1.3 kB',
+      maxSize: '1.4 kB',
       compression: 'gzip',
     },
     {

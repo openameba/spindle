@@ -47,8 +47,11 @@ export const HeroCarousel: FC<Props> = React.memo(function HeroCarousel({
 
   return (
     <div>
+      {/* biome-ignore lint/a11y/useSemanticElements: Carousel wrapper needs region without visible heading */}
       <div
+        role="region"
         className={`${BLOCK_NAME}-container`}
+        aria-label="カルーセル"
         onBlur={handleBlur}
         onFocus={handleFocus}
         onMouseDown={handleMouseDown}
@@ -61,7 +64,6 @@ export const HeroCarousel: FC<Props> = React.memo(function HeroCarousel({
           aria-roledescription="カルーセル"
           className={`${BLOCK_NAME}-list`}
           ref={listRef}
-          role="group"
           style={listStyles}
         >
           {itemsToRender.map((item: CarouselItem) => (
