@@ -15,6 +15,7 @@ interface PartsProps {
 }
 
 const BLOCK_NAME = 'spui-Dialog';
+const ACTIVATE_KEYS = ['Enter', ' ', 'Spacebar'];
 
 const Frame = forwardRef<HTMLDialogElement, DialogProps>(function Dialog(
   { children, className, open, onClose, ...rest },
@@ -43,6 +44,25 @@ const Frame = forwardRef<HTMLDialogElement, DialogProps>(function Dialog(
     }
   };
 
+  const handleDialogKeyDown = React.useCallback(
+    (e: React.KeyboardEvent<HTMLDialogElement>) => {
+      const composing = (e.nativeEvent as KeyboardEvent).isComposing === true;
+      const isProcessKey = e.key === 'Process';
+
+      if (composing || isProcessKey) return;
+
+      if (
+        ACTIVATE_KEYS.includes(e.key) &&
+        e.currentTarget === dialogEl.current
+      ) {
+        e.preventDefault();
+        e.stopPropagation();
+        onClose?.(e);
+      }
+    },
+    [onClose],
+  );
+
   useEffect(() => {
     const dialog = dialogEl.current;
     if (!dialog) {
@@ -62,6 +82,7 @@ const Frame = forwardRef<HTMLDialogElement, DialogProps>(function Dialog(
       className={[BLOCK_NAME, className].filter(Boolean).join(' ').trim()}
       onClick={handleDialogClick}
       onClose={handleDialogClose}
+      onKeyDown={handleDialogKeyDown}
       {...rest}
     >
       <form method="dialog" onSubmit={handleFormSubmit}>
