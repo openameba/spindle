@@ -5,10 +5,10 @@ import React, {
   type Dispatch,
   type FC,
   type HTMLAttributes,
+  isValidElement,
   type MouseEventHandler,
   type ReactNode,
   type SetStateAction,
-  isValidElement,
 } from 'react';
 import CrossBold from '../Icon/CrossBold';
 import { IconButton } from '../IconButton';
