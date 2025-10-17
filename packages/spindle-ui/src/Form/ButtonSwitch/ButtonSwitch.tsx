@@ -59,7 +59,7 @@ export const ButtonSwitch: React.FC<Props> = ({
   );
 
   return (
-    <div id={id} className={BLOCK_NAME} role="group">
+    <fieldset id={id} className={BLOCK_NAME}>
       {options.map((option, index) => (
         <button
           type="button"
@@ -81,6 +81,6 @@ export const ButtonSwitch: React.FC<Props> = ({
           <span className={`${BLOCK_NAME}-label`}>{option.label}</span>
         </button>
       ))}
-    </div>
+    </fieldset>
   );
 };
