@@ -213,18 +213,34 @@ const Topics = ({
 
   return (
     <div
-      ref={scrollRef}
-      className={[`${BLOCK_NAME}-topics`, className]
+      className={[`${BLOCK_NAME}-topics-wrapper`, className]
         .filter(Boolean)
         .join(' ')
         .trim()}
-      role="region"
-      aria-label="トピック一覧"
       {...rest}
     >
-      {children}
+      <div
+        ref={scrollRef}
+        className={`${BLOCK_NAME}-topics`}
+        role="region"
+        aria-label="トピック一覧"
+      >
+        {children}
+      </div>
       {totalTopics > 1 && (
         <>
+          <TopicNavigation
+            currentIndex={currentIndex}
+            totalTopics={totalTopics}
+            onNavigate={(index) => {
+              if (!scrollRef.current) return;
+              const width = scrollRef.current.clientWidth;
+              scrollRef.current.scrollTo({
+                left: width * index,
+                behavior: 'smooth',
+              });
+            }}
+          />
           <div
             className={`${BLOCK_NAME}-pageIndicator`}
             aria-label={`${totalTopics}件中${currentIndex + 1}件目`}
@@ -241,18 +257,6 @@ const Topics = ({
               />
             ))}
           </div>
-          <TopicNavigation
-            currentIndex={currentIndex}
-            totalTopics={totalTopics}
-            onNavigate={(index) => {
-              if (!scrollRef.current) return;
-              const width = scrollRef.current.clientWidth;
-              scrollRef.current.scrollTo({
-                left: width * index,
-                behavior: 'smooth',
-              });
-            }}
-          />
         </>
       )}
     </div>
@@ -319,34 +323,38 @@ const TopicNavigation = ({
 
   return (
     <>
-      {showPrev && (
-        <div
-          className={`${BLOCK_NAME}-topicNavigation ${BLOCK_NAME}-topicNavigation--prev`}
+      <div
+        className={`${BLOCK_NAME}-topicNavigation ${BLOCK_NAME}-topicNavigation--prev ${
+          showPrev ? `${BLOCK_NAME}-topicNavigation--visible` : ''
+        }`}
+      >
+        <IconButton
+          type="button"
+          aria-label="前のトピック"
+          variant="neutral"
+          size="small"
+          onClick={() => onNavigate(currentIndex - 1)}
+          disabled={!showPrev}
         >
-          <IconButton
-            aria-label="前のトピック"
-            variant="neutral"
-            size="small"
-            onClick={() => onNavigate(currentIndex - 1)}
-          >
-            <ChevronLeft aria-hidden="true" />
-          </IconButton>
-        </div>
-      )}
-      {showNext && (
-        <div
-          className={`${BLOCK_NAME}-topicNavigation ${BLOCK_NAME}-topicNavigation--next`}
+          <ChevronLeft aria-hidden="true" />
+        </IconButton>
+      </div>
+      <div
+        className={`${BLOCK_NAME}-topicNavigation ${BLOCK_NAME}-topicNavigation--next ${
+          showNext ? `${BLOCK_NAME}-topicNavigation--visible` : ''
+        }`}
+      >
+        <IconButton
+          type="button"
+          aria-label="次のトピック"
+          variant="neutral"
+          size="small"
+          onClick={() => onNavigate(currentIndex + 1)}
+          disabled={!showNext}
         >
-          <IconButton
-            aria-label="次のトピック"
-            variant="neutral"
-            size="small"
-            onClick={() => onNavigate(currentIndex + 1)}
-          >
-            <ChevronRight aria-hidden="true" />
-          </IconButton>
-        </div>
-      )}
+          <ChevronRight aria-hidden="true" />
+        </IconButton>
+      </div>
     </>
   );
 };

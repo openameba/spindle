@@ -9,6 +9,7 @@ import {
   StyleOnlyCustomized,
   MultipleTopics,
   StyleOnlyMultipleTopics,
+  StyleOnlySingleTopic,
 } from './AppealModal.stories.example';
 
 const meta: Meta<typeof AppealModal.Frame> = {
@@ -44,4 +45,8 @@ export const WithMultipleTopics: Story = {
 
 export const StyleOnlyWithMultipleTopics: Story = {
   render: () => <StyleOnlyMultipleTopics />,
+};
+
+export const StyleOnlyWithSingleTopic: Story = {
+  render: () => <StyleOnlySingleTopic />,
 };

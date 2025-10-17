@@ -55,7 +55,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .spui-AppealModal,
-  .spui-AppealModal::backdrop {
+  .spui-AppealModal::backdrop,
+  .spui-AppealModal-topicNavigation {
     transition-duration: 0.01s;
   }
 }
@@ -108,13 +109,35 @@ html:has(.spui-AppealModal[open]) {
   gap: 0;
   grid-auto-flow: row;
   grid-template:
-    'Image'
+    'Caption'
     'Title'
+    'Image'
     'Body'
     'ButtonGroup'
     'CloseButton' / 1fr;
   padding: 0 0 24px;
   width: 100%;
+}
+
+.spui-AppealModal-caption {
+  align-items: center;
+  display: flex;
+  gap: 4px;
+  grid-area: Caption;
+  margin: 16px 24px 0;
+}
+
+.spui-AppealModal-caption-icon {
+  color: var(--color-object-accent-primary);
+  display: inline-flex;
+  font-size: 12px;
+}
+
+.spui-AppealModal-caption-text {
+  color: var(--color-text-low-emphasis);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.3;
 }
 
 .spui-AppealModal-image {
@@ -135,6 +158,10 @@ html:has(.spui-AppealModal[open]) {
   margin: 24px 24px 0;
   padding: 0;
   text-align: center;
+}
+
+.spui-AppealModal-caption + .spui-AppealModal-title {
+  margin-top: 8px;
 }
 
 .spui-AppealModal-body {
@@ -173,6 +200,115 @@ html:has(.spui-AppealModal[open]) {
   max-width: 240px;
 }
 
+.spui-AppealModal-topics-wrapper {
+  margin: 16px 0 0;
+  position: relative;
+}
+
+.spui-AppealModal-topics {
+  display: flex;
+  gap: 48px;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+
+.spui-AppealModal-topic {
+  display: flex;
+  flex: 0 0 calc(100% - 48px);
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 24px;
+  scroll-snap-align: start;
+}
+
+.spui-AppealModal-topic .spui-AppealModal-image {
+  grid-area: unset;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* stylelint-disable-next-line plugin/selector-bem-pattern */
+.spui-AppealModal-topic .spui-AppealModal-image img {
+  border-radius: 14px;
+  height: auto;
+  width: 100%;
+}
+
+.spui-AppealModal-topic .spui-AppealModal-title {
+  color: var(--color-text-high-emphasis);
+  font-size: 0.875rem;
+  font-weight: 600;
+  grid-area: unset;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0 4px;
+  text-align: left;
+}
+
+.spui-AppealModal-topic .spui-AppealModal-body {
+  color: var(--color-text-medium-emphasis);
+  font-size: 0.8125rem;
+  font-weight: 300;
+  grid-area: unset;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0 4px;
+  text-align: left;
+}
+
+.spui-AppealModal-pageIndicator {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin: 20px 0 0;
+}
+
+.spui-AppealModal-pageIndicator-dot {
+  background-color: var(--color-object-disable);
+  border-radius: 50%;
+  height: 6px;
+  transition: background-color 200ms ease;
+  width: 6px;
+}
+
+.spui-AppealModal-pageIndicator-dot--active {
+  background-color: var(--color-object-medium-emphasis);
+}
+
+.spui-AppealModal-topicNavigation {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 200ms ease;
+  z-index: 1;
+
+  --IconButton--neutral-backgroundColor: var(
+    --color-surface-accent-neutral-medium-emphasis
+  );
+  --IconButton--neutral-color: var(--color-object-high-emphasis-inverse);
+}
+
+.spui-AppealModal-topicNavigation--prev {
+  left: 14px;
+}
+
+.spui-AppealModal-topicNavigation--next {
+  right: 14px;
+}
+
+.spui-AppealModal-topicNavigation--visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.spui-AppealModal-subtleLink {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 0;
+}
+
 @media screen and (min-width: 768px) {
   .spui-AppealModal {
     min-height: 300px;
@@ -194,6 +330,7 @@ html:has(.spui-AppealModal[open]) {
   .spui-AppealModal-frame {
     grid-auto-flow: row;
     grid-template:
+      'Caption CloseButton'
       'Title CloseButton'
       'Body CloseButton'
       'Image Image'
@@ -201,9 +338,17 @@ html:has(.spui-AppealModal[open]) {
     padding: 0 0 36px;
   }
 
+  .spui-AppealModal-caption {
+    margin: 32px 36px 0;
+  }
+
   .spui-AppealModal-title {
     margin: 32px 16px 0 36px;
     text-align: left;
+  }
+
+  .spui-AppealModal-caption + .spui-AppealModal-title {
+    margin-top: 12px;
   }
 
   .spui-AppealModal-body {
@@ -241,161 +386,25 @@ html:has(.spui-AppealModal[open]) {
   .spui-AppealModal-closeTextButton {
     display: none;
   }
-}
 
-/* Caption: キャプション */
-.spui-AppealModal-caption {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  margin: 16px 24px 0;
-}
-
-.spui-AppealModal-caption-icon {
-  display: inline-flex;
-  font-size: 12px;
-  color: var(--color-object-accent-primary);
-}
-
-.spui-AppealModal-caption-text {
-  color: var(--color-text-low-emphasis);
-  font-size: 0.75rem;
-  font-weight: 600;
-  line-height: 1.3;
-}
-
-/* Topics: 横スクロールコンテナ（モバイル） */
-.spui-AppealModal-topics {
-  display: flex;
-  gap: 48px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  padding: 0 24px;
-  margin: 16px 0 0;
-  position: relative;
-}
-
-/* スクロールバーを非表示 */
-.spui-AppealModal-topics::-webkit-scrollbar {
-  display: none;
-}
-
-.spui-AppealModal-topics {
-  scrollbar-width: none;
-}
-
-/* Topic: 個別のトピックス */
-.spui-AppealModal-topic {
-  flex: 0 0 calc(100% - 48px);
-  scroll-snap-align: start;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-/* Topic内の画像 */
-.spui-AppealModal-topic .spui-AppealModal-image {
-  border: 1px solid var(--color-border-low-emphasis);
-  border-radius: 14px;
-  overflow: hidden;
-  grid-area: unset;
-}
-
-/* stylelint-disable-next-line plugin/selector-bem-pattern */
-.spui-AppealModal-topic .spui-AppealModal-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 14px;
-}
-
-/* Topic内のタイトル */
-.spui-AppealModal-topic .spui-AppealModal-title {
-  font-size: 0.875rem;
-  font-weight: 600;
-  line-height: 1.4;
-  color: var(--color-text-high-emphasis);
-  margin: 0;
-  padding: 0 4px;
-  text-align: left;
-  grid-area: unset;
-}
-
-/* Topic内の本文 */
-.spui-AppealModal-topic .spui-AppealModal-body {
-  font-size: 0.8125rem;
-  font-weight: 300;
-  line-height: 1.6;
-  color: var(--color-text-medium-emphasis);
-  margin: 0;
-  padding: 0 4px;
-  text-align: left;
-  grid-area: unset;
-}
-
-/* PageIndicator: ページインジケーター */
-.spui-AppealModal-pageIndicator {
-  display: flex;
-  gap: 6px;
-  justify-content: center;
-  margin: 20px 0 0;
-}
-
-.spui-AppealModal-pageIndicator-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: var(--color-object-disable);
-  transition: background-color 200ms ease;
-}
-
-.spui-AppealModal-pageIndicator-dot--active {
-  background-color: var(--color-object-medium-emphasis);
-}
-
-/* TopicNavigation: ナビゲーション矢印 */
-.spui-AppealModal-topicNavigation {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-}
-
-.spui-AppealModal-topicNavigation--prev {
-  left: 14px;
-}
-
-.spui-AppealModal-topicNavigation--next {
-  right: 14px;
-}
-
-/* SubtleLink */
-.spui-AppealModal-subtleLink {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0 0;
-}
-
-/* PC版（768px以上）: 2カラムグリッド */
-@media screen and (min-width: 768px) {
-  .spui-AppealModal-caption {
-    margin: 8px 36px 0;
+  .spui-AppealModal-topics-wrapper {
+    margin: 32px 36px 0;
+    width: 100%;
   }
 
   .spui-AppealModal-topics {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 32px;
+    grid-template-columns: 1fr 1fr;
     overflow-x: visible;
-    scroll-snap-type: none;
     padding: 0;
-    margin: 32px 36px 0;
+    scroll-snap-type: none;
   }
 
   .spui-AppealModal-topic {
     flex: none;
-    scroll-snap-align: none;
     gap: 16px;
+    scroll-snap-align: none;
   }
 
   .spui-AppealModal-topic .spui-AppealModal-image {
@@ -415,13 +424,11 @@ html:has(.spui-AppealModal[open]) {
     padding: 0 8px;
   }
 
-  /* PC版ではPageIndicatorとTopicNavigationを非表示 */
   .spui-AppealModal-pageIndicator,
   .spui-AppealModal-topicNavigation {
     display: none;
   }
 
-  /* PC版ではSubtleLinkを非表示 */
   .spui-AppealModal-subtleLink {
     display: none;
   }
