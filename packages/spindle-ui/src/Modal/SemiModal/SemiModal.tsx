@@ -16,7 +16,6 @@ interface SemiModalProps
 }
 
 const BLOCK_NAME = 'spui-SemiModal';
-const CLOSE_KEY_LIST = ['ESCAPE', 'ESC'];
 
 const Frame = forwardRef<HTMLDialogElement, SemiModalProps>(function SemiModal(
   { children, open, size = 'medium', type = 'popup', onClose, ...rest },
@@ -48,16 +47,6 @@ const Frame = forwardRef<HTMLDialogElement, SemiModalProps>(function SemiModal(
     }
   };
 
-  const handleDialogKeyDown = React.useCallback(
-    (event: React.KeyboardEvent<HTMLDialogElement>) => {
-      if (event.currentTarget !== dialogEl.current) return;
-      if (CLOSE_KEY_LIST.includes(event.key.toUpperCase())) {
-        onClose?.(event);
-      }
-    },
-    [onClose],
-  );
-
   useEffect(() => {
     if (!dialogEl.current) {
       return;
@@ -71,12 +60,12 @@ const Frame = forwardRef<HTMLDialogElement, SemiModalProps>(function SemiModal(
   }, [open]);
 
   return (
+    /* biome-ignore lint/a11y/useKeyWithClickEvents: Backdrop click only; keyboard is handled by native dialog */
     <dialog
       className={BLOCK_NAME}
       ref={useMergeRefs([dialogEl, ref])}
       onClick={handleDialogClick}
       onClose={handleDialogClose}
-      onKeyDown={handleDialogKeyDown}
       data-type={type}
       data-size={size}
       {...rest}

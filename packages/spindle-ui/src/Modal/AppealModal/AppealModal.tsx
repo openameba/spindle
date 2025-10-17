@@ -15,7 +15,6 @@ interface AppealModalProps extends React.DialogHTMLAttributes<HTMLElement> {
 }
 
 const BLOCK_NAME = 'spui-AppealModal';
-const CLOSE_KEY_LIST = ['ESCAPE', 'ESC'];
 
 const Frame = forwardRef<HTMLDialogElement, AppealModalProps>(
   function AppealModal(
@@ -45,16 +44,6 @@ const Frame = forwardRef<HTMLDialogElement, AppealModalProps>(
       }
     };
 
-    const handleDialogKeyDown = React.useCallback(
-      (event: React.KeyboardEvent<HTMLDialogElement>) => {
-        if (event.currentTarget !== dialogEl.current) return;
-        if (CLOSE_KEY_LIST.includes(event.key.toUpperCase())) {
-          onClose?.(event);
-        }
-      },
-      [onClose],
-    );
-
     useEffect(() => {
       const dialog = dialogEl.current;
       if (!dialog) {
@@ -69,6 +58,7 @@ const Frame = forwardRef<HTMLDialogElement, AppealModalProps>(
     }, [open]);
 
     return (
+      /* biome-ignore lint/a11y/useKeyWithClickEvents: Backdrop click only; keyboard is handled by native dialog */
       <dialog
         className={[BLOCK_NAME, `${BLOCK_NAME}--${size}`, className]
           .filter(Boolean)
@@ -77,7 +67,6 @@ const Frame = forwardRef<HTMLDialogElement, AppealModalProps>(
         ref={useMergeRefs([dialogEl, ref])}
         onClick={handleDialogClick}
         onClose={handleDialogClose}
-        onKeyDown={handleDialogKeyDown}
         {...rest}
       >
         <form
