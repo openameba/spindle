@@ -18,13 +18,15 @@ Checkboxは、ラベルテキスト付きで使用することを推奨します
 </Checkbox>
 ```
 
-テキストなしで使用する場合:
+#### テキストなしで使用する場合
 
 ```tsx
 <Checkbox aria-label="Amebaブログ" name="blog" value="amebaBlog" />
 ```
 
-暗い背景で使用する場合は、`inverse`プロパティを指定します:
+#### 暗い背景で使用する場合
+
+暗い背景で使用する場合は、`inverse`プロパティを指定します。
 
 ```tsx
 <Checkbox name="blog" value="amebaBlog" inverse>
@@ -65,7 +67,7 @@ type Props = {
 
 ## 実装例
 
-React実装の例:
+### React実装の例
 
 ```tsx
 <Checkbox name="blog" value="amebaBlog">
@@ -73,7 +75,7 @@ React実装の例:
 </Checkbox>
 ```
 
-上記の実装から書き出されるマークアップ:
+### 書き出されるマークアップ
 
 ```html
 <label class="spui-Checkbox-label">
