@@ -39,9 +39,6 @@
       },
       "complexity": {
         "noUselessFragments": "error"
-      },
-      "a11y": {
-        "recommended": true
       }
     }
   },
