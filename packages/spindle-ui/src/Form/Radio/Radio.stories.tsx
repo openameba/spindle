@@ -26,11 +26,30 @@ export const Radio: Story = {
   },
 };
 
+export const RadioChecked: Story = {
+  args: {
+    'aria-label': 'Amebaブログ',
+    checked: true,
+    id: 'checked',
+    name: 'blog',
+  },
+};
+
 export const RadioDisabled: Story = {
   args: {
     'aria-label': 'Amebaブログ',
     disabled: true,
     id: 'disabled',
+    name: 'blog',
+  },
+};
+
+export const RadioDisabledChecked: Story = {
+  args: {
+    'aria-label': 'Amebaブログ',
+    checked: true,
+    disabled: true,
+    id: 'disabledChecked',
     name: 'blog',
   },
 };
