@@ -44,7 +44,7 @@
   "devDependencies": {
     "@openameba/spindle-tokens": "1.8.0",
     "@openameba/spindle-ui": "3.0.0",
-    "@types/node": "20.19.21",
+    "@types/node": "20.19.22",
     "cpx2": "8.0.0",
     "vitest": "3.2.4"
   }
