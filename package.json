@@ -54,6 +54,7 @@
     ]
   },
   "resolutions": {
-    "zod": "3.25.76"
+    "zod": "3.25.76",
+    "superstatic": "10.0.0"
   }
 }
