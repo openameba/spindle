@@ -16121,10 +16121,10 @@ sudachi-synonyms-dictionary@^5.0.1:
   resolved "https://registry.yarnpkg.com/sudachi-synonyms-dictionary/-/sudachi-synonyms-dictionary-5.0.1.tgz#e51c3bd57c72b1aece0fe8b37558858356bd6b53"
   integrity sha512-MSLBwyztRT4BPstyfM8M8DntQ/sJhRyq43S/vGfRq3/JuBbKFUzrI9rpoiQOc+35el5WrIm4K3fJyLhsSEOIqw==
 
-superstatic@^9.2.0:
-  version "9.2.0"
-  resolved "https://registry.yarnpkg.com/superstatic/-/superstatic-9.2.0.tgz#c3d338e87fb1b695670c79db5affb18288441c32"
-  integrity sha512-QrJAJIpAij0jJT1nEwYTB0SzDi4k0wYygu6GxK0ko8twiQgfgaOAZ7Hu99p02MTAsGho753zhzSvsw8We4PBEQ==
+superstatic@10.0.0, superstatic@^9.2.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/superstatic/-/superstatic-10.0.0.tgz#64d07e969b387a2567754205d10305a390dddfa4"
+  integrity sha512-4xIenBdrIIYuqXrIVx/lejyCh4EJwEMPCwfk9VGFfRlhZcdvzTd3oVOUILrAGfC4pFUWixzPgaOVzAEZgeYI3w==
   dependencies:
     basic-auth-connect "^1.1.0"
     commander "^10.0.0"
