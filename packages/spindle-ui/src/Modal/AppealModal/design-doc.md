@@ -221,4 +221,3 @@ Storybookを使用したビジュアルリグレッションテストでは、�
 
 - [HTMLDialogElement - MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement)
 - [dialog polyfill](https://github.com/GoogleChrome/dialog-polyfill)
-- [Ameba Accessibility Guidelines](https://a11y-guidelines.ameba.design/)
