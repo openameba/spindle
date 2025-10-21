@@ -25,6 +25,10 @@
 ## Issue Creation
 - Use the `create-issue` command (@.claude/commands/create-issue.md) to ensure proper formatting and tracking
 
+## Code Review
+- Use the `review-changes` command (@.claude/commands/review-changes.md) to review code changes based on Spindle guidelines
+- Review guidelines are defined in `.github/copilot-instructions.md`
+
 ## Pull Request Creation
 - Write the PR summary in Japanese, providing a concise overview of the changes
 
