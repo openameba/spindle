@@ -47,7 +47,8 @@
   min-height: 44px;
 }
 
-.spui-Breadcrumb a {
+.spui-Breadcrumb a,
+.spui-Breadcrumb span {
   align-items: center;
   border-radius: 4px;
   display: flex;
@@ -69,7 +70,8 @@
 }
 
 /* To expand tap area */
-.spui-Breadcrumb a::before {
+.spui-Breadcrumb a::before,
+.spui-Breadcrumb span::before {
   border-radius: 4px;
   content: "";
   left: 0;
@@ -121,12 +123,14 @@
     min-height: 36px;
   }
 
-  .spui-Breadcrumb a {
+  .spui-Breadcrumb a,
+  .spui-Breadcrumb span {
     font-size: 0.8125em;
     padding: 2px 6px;
   }
 
-  .spui-Breadcrumb--standard.spui-Breadcrumb--wrap a {
+  .spui-Breadcrumb--standard.spui-Breadcrumb--wrap a,
+  .spui-Breadcrumb--standard.spui-Breadcrumb--wrap span {
     padding-bottom: 4px;
     padding-top: 4px;
   }
