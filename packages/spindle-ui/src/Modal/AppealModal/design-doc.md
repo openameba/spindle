@@ -45,7 +45,7 @@ AppealModalは、各要素を指定された子コンポーネントを使って
 <AppealModal.Image>
   <picture>
     <source srcSet="..." media="(min-width: 768px)" />
-    <img src="..." width="640" height="336" />
+    <img src="..." width="640" height="336" alt="..." />
   </picture>
 </AppealModal.Image>
 ```
@@ -129,6 +129,7 @@ React実装の一例です。
       width="640"
       height="336"
       src="..."
+      alt="..."
     />
   </AppealModal.Image>
   <AppealModal.Title id="dialog-title">About Ameba</AppealModal.Title>
@@ -154,7 +155,7 @@ React実装の一例です。
       </button>
     </div>
     <div class="spui-AppealModal-image">
-      <img width="640" height="336" src="..." style="height: auto; width: 100%;">
+      <img width="640" height="336" src="..." style="height: auto; width: 100%;" alt="...">
     </div>
     <p class="spui-AppealModal-title" id="dialog-title">About Ameba</p>
     <p class="spui-AppealModal-body" id="dialog-description">
