@@ -9,6 +9,7 @@ type Props = {
     value: string;
   }[];
   onClick: (value: string) => void;
+  ariaLabelledby?: string;
 };
 
 const BLOCK_NAME = 'spui-ButtonSwitch';
@@ -18,6 +19,7 @@ export const ButtonSwitch: React.FC<Props> = ({
   value,
   options,
   onClick,
+  ariaLabelledby,
 }) => {
   const buttonsRef = useRef<React.RefObject<HTMLButtonElement | null>[]>([]);
 
@@ -59,7 +61,12 @@ export const ButtonSwitch: React.FC<Props> = ({
   );
 
   return (
-    <div id={id} className={BLOCK_NAME} role="group">
+    <div
+      role="group"
+      id={id}
+      className={BLOCK_NAME}
+      aria-labelledby={ariaLabelledby}
+    >
       {options.map((option, index) => (
         <button
           type="button"

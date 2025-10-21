@@ -4,9 +4,11 @@ import { ButtonSwitch } from './ButtonSwitch';
 export const ButtonSwitchExample = ({
   options,
   defaultValue,
+  ariaLabelledby,
 }: {
   options: { label: string; value: string }[];
   defaultValue: string | null;
+  ariaLabelledby?: string;
 }) => {
   const [value, setValue] = useState(defaultValue);
   return (
@@ -18,6 +20,7 @@ export const ButtonSwitchExample = ({
         onClick={(newValue) => {
           setValue(value === newValue ? null : newValue);
         }}
+        ariaLabelledby={ariaLabelledby}
       />
     </div>
   );

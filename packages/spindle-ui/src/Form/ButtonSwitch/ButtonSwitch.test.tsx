@@ -137,4 +137,21 @@ describe('<ButtonSwitch />', () => {
     expect(button1.getAttribute('aria-pressed')).toEqual('true');
     expect(button2.getAttribute('aria-pressed')).toEqual('false');
   });
+
+  test('group has accessible name aria labelledby', () => {
+    const onClick = jest.fn();
+    render(
+      <>
+        <span id="label-id">ラベル</span>
+        <ButtonSwitch
+          ariaLabelledby="label-id"
+          value={options[0].value}
+          options={options}
+          onClick={onClick}
+        />
+      </>,
+    );
+
+    expect(screen.getByRole('group', { name: 'ラベル' })).toBeInTheDocument();
+  });
 });
