@@ -63,7 +63,7 @@
   font-weight: bold;
 }
 
-.spui-Breadcrumb a[aria-current] {
+.spui-Breadcrumb span[aria-current] {
   color: var(--color-text-low-emphasis);
   font-weight: normal;
 }
@@ -80,10 +80,6 @@
 
 .spui-Breadcrumb a:hover {
   text-decoration: underline;
-}
-
-.spui-Breadcrumb a:not([href]):hover {
-  text-decoration: none;
 }
 
 .spui-Breadcrumb a:focus {
