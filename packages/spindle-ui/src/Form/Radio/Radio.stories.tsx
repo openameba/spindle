@@ -26,6 +26,15 @@ export const Radio: Story = {
   },
 };
 
+export const RadioChecked: Story = {
+  args: {
+    'aria-label': 'Amebaブログ',
+    checked: true,
+    id: 'checked',
+    name: 'blog',
+  },
+};
+
 export const RadioDisabled: Story = {
   args: {
     'aria-label': 'Amebaブログ',
@@ -35,10 +44,42 @@ export const RadioDisabled: Story = {
   },
 };
 
+export const RadioDisabledChecked: Story = {
+  args: {
+    'aria-label': 'Amebaブログ',
+    checked: true,
+    disabled: true,
+    id: 'disabledChecked',
+    name: 'blog',
+  },
+};
+
 export const RadioWithText: Story = {
   render: (args) => (
     <>
-      <div style={{ display: 'flex', gap: '20px', flexDirection: 'column' }}>
+      <fieldset
+        style={{
+          display: 'flex',
+          gap: '20px',
+          flexDirection: 'column',
+          border: 'none',
+          padding: 0,
+          margin: 0,
+        }}
+      >
+        <legend
+          style={{
+            color: 'var(--color-text-medium-emphasis)',
+            display: 'block',
+            fontSize: '0.875em',
+            fontWeight: 'bold',
+            lineHeight: 1.4,
+            padding: 0,
+            marginBottom: '16px',
+          }}
+        >
+          サービスを選択
+        </legend>
         <RadioComponent {...args} id="withText1" name="select">
           選択肢１
         </RadioComponent>
@@ -48,7 +89,7 @@ export const RadioWithText: Story = {
         <RadioComponent {...args} id="withText3" name="select">
           選択肢３
         </RadioComponent>
-      </div>
+      </fieldset>
     </>
   ),
 };
