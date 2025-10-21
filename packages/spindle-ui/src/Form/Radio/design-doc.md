@@ -29,6 +29,25 @@ Radioボタンは、排他的な選択肢を提供する際に使用します。
 <Radio aria-label="Amebaブログ" id="blog" name="service" />
 ```
 
+#### グループ化して提示する場合
+
+関連するラジオボタンを1つの質問として提示する場合は、`fieldset`と`legend`を用いて意味づけを行い、支援技術にグループ名を提供することを推奨します。
+
+```tsx
+<fieldset>
+  <legend>サービスを選択</legend>
+  <Radio id="service-1" name="service">
+    Amebaブログ
+  </Radio>
+  <Radio id="service-2" name="service">
+    Amebaマンガ
+  </Radio>
+  <Radio id="service-3" name="service">
+    Amebaピグ
+  </Radio>
+</fieldset>
+```
+
 ### DO NOT
 
 ラベルテキストがなく、かつ`aria-label`も指定しない実装は避けてください。スクリーンリーダーユーザーがラジオボタンの目的を理解できません。
@@ -93,6 +112,7 @@ type Props = {
 - [情報や関係性を明確にする](https://a11y-guidelines.ameba.design/1/3/1/)[基本必須]
   - [ ] label要素でinput要素とラベルテキストを関連付けている
   - [ ] テキストがない場合は`aria-label`属性でラベルを提供している
+  - [ ] 関連するラジオボタンをグループ化する場合は`fieldset`と`legend`を使用している
 - [色だけで伝えない](https://a11y-guidelines.ameba.design/1/4/1/)[基本必須]
   - [ ] 選択状態を色だけでなく、チェックアイコンの表示で伝えている
 - [テキストや文字画像のコントラストを確保する](https://a11y-guidelines.ameba.design/1/4/3/)[基本必須]

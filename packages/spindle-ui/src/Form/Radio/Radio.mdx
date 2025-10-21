@@ -67,23 +67,45 @@ import '@openameba/spindle-ui/Form/Radio.css';
 
 ## Radio With Text
 
+関連するラジオボタンをグルーピングして提示する場合は、`fieldset`と`legend`を用いて意味づけを行い、支援技術にグループ名を提供することを推奨します。
+
 <Story of={RadioStories.RadioWithText} />
 
 <Source
   code={`
-<Radio id="withText" name="blog">Amebaブログ</Radio>
+<fieldset>
+  <legend>サービスを選択</legend>
+  <Radio id="withText1" name="select">選択肢１</Radio>
+  <Radio id="withText2" name="select">選択肢２：文言が長い時の表示を確認するための選択肢です。基本的にはここまで長い文言は推奨されませんが表示の確認用です</Radio>
+  <Radio id="withText3" name="select">選択肢３</Radio>
+</fieldset>
   `}
 />
 
 <Source
   language='html'
   code={`
-<label class="spui-Radio-label" for="withText">
-  <input class="spui-Radio-input" id="withText" type="radio" name="blog">
-  <span class="spui-Radio-icon"></span>
-  <span class="spui-Radio-outline"></span>
-  <span class="spui-Radio-text">Amebaブログ</span>
-</label>
+<fieldset>
+  <legend>サービスを選択</legend>
+  <label class="spui-Radio-label" for="withText1">
+    <input class="spui-Radio-input" id="withText1" type="radio" name="select">
+    <span class="spui-Radio-icon"></span>
+    <span class="spui-Radio-outline"></span>
+    <span class="spui-Radio-text">選択肢１</span>
+  </label>
+  <label class="spui-Radio-label" for="withText2">
+    <input class="spui-Radio-input" id="withText2" type="radio" name="select">
+    <span class="spui-Radio-icon"></span>
+    <span class="spui-Radio-outline"></span>
+    <span class="spui-Radio-text">選択肢２：文言が長い時の表示を確認するための選択肢です。基本的にはここまで長い文言は推奨されませんが表示の確認用です</span>
+  </label>
+  <label class="spui-Radio-label" for="withText3">
+    <input class="spui-Radio-input" id="withText3" type="radio" name="select">
+    <span class="spui-Radio-icon"></span>
+    <span class="spui-Radio-outline"></span>
+    <span class="spui-Radio-text">選択肢３</span>
+  </label>
+</fieldset>
   `}
 />
 
