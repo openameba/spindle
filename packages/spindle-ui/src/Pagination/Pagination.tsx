@@ -187,11 +187,7 @@ export const Pagination = (props: Props) => {
         )}
       </ul>
       {showTotal && (
-        /* biome-ignore lint/a11y/useAriaPropsSupportedByRole: Temporarily allow aria-label on paragraph element */
-        <p
-          className={`${BLOCK_NAME}-total`}
-          aria-label={`${total}ページ中の${current}ページ目`}
-        >
+        <p className={`${BLOCK_NAME}-total`}>
           {current}/{total}ページ
         </p>
       )}
