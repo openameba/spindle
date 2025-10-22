@@ -26,7 +26,15 @@ Different tools use different file reference syntax. **Do not suggest unifying t
 For ./packages/spindle-ui/ changes, review the following:
 
 - Verify related files are updated together (e.g., when updating a component, check if tests, stories, and docs also need updates)
-  - Each component has: index.ts (export), .tsx (implementation), .css (styles), .test.tsx (tests), .stories.tsx (component examples), .mdx (detailed docs), design-doc.md (design documentation), .figma.tsx (Code Connect)
+  - Each component has:
+    - `index.ts` (export)
+    - `.tsx` (implementation)
+    - `.css` (styles)
+    - `.test.tsx` (tests)
+    - `.stories.tsx` (component examples)
+    - `.mdx` (detailed docs)
+    - `design-doc.md` (design documentation)
+    - `.figma.tsx` (Code Connect)
   - Tests cover updated functionality
   - Stories cover key component variants and use cases
   - Documentation reflects current behavior
