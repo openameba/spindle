@@ -40,3 +40,8 @@
 ### Storybook
 - When updating Storybook, use the official migration command: `npx storybook@{VERSION} upgrade`
 - Use Chrome DevTools MCP to verify that all pages display without errors (errors may occur during rendering)
+
+## Note
+
+### File Reference Notation
+This guide uses relative path notation (e.g., `.cursor/commands/...`) for command references. This differs from CLAUDE.md which uses `@` prefix notation for Claude-specific syntax (e.g., `@.claude/commands/...`). Both notations are intentional based on each tool's requirements.

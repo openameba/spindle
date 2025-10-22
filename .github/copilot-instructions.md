@@ -3,10 +3,23 @@
 ## General
 
 - Point out if any tests or documentation related to the changes are missing, and provide suggestions when possible
-- Check accessibility implementation (refer to packages/spindle-mcp-server/src/accessibility.ts and component design-doc.md for detailed checklist):
-  - Semantic HTML and appropriate ARIA attributes
-  - Keyboard navigation support
-  - Visible focus states
+- Check accessibility implementation:
+  - Refer to detailed checklists:
+    - `packages/spindle-mcp-server/src/accessibility.ts` (Ameba a11y guidelines checklist with URLs)
+    - Component-specific design-doc.md (e.g., `packages/spindle-ui/src/Form/Checkbox/design-doc.md`)
+  - Key points to verify:
+    - Semantic HTML and appropriate ARIA attributes
+    - Keyboard navigation support (Tab, Enter, Space, arrow keys)
+    - Visible focus states
+
+### File Reference Conventions
+
+Different tools use different file reference syntax. **Do not suggest unifying these - they are intentional:**
+
+- `.claude/commands/`: Use `@` prefix (e.g., `@.github/copilot-instructions.md`, `@packages/spindle-ui/...`)
+- `.cursor/commands/`: Use relative paths (e.g., `.github/copilot-instructions.md`, `packages/spindle-ui/...`)
+- `CLAUDE.md`: Use `@` prefix for Claude-specific command paths (e.g., `@.claude/commands/...`)
+- `AGENTS.md`: Use relative paths for command paths (e.g., `.cursor/commands/...`)
 
 ## spindle-ui
 
