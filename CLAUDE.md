@@ -25,6 +25,10 @@
 ## Issue Creation
 - Use the `create-issue` command (@.claude/commands/create-issue.md) to ensure proper formatting and tracking
 
+## Code Review
+- Use the `review-changes` command (@.claude/commands/review-changes.md) to review code changes based on Spindle guidelines
+- Review guidelines are defined in `.github/copilot-instructions.md`
+
 ## Pull Request Creation
 - Write the PR summary in Japanese, providing a concise overview of the changes
 
@@ -36,3 +40,8 @@
 ### Storybook
 - When updating Storybook, use the official migration command: `npx storybook@{VERSION} upgrade`
 - Use Chrome DevTools MCP to verify that all pages display without errors (errors may occur during rendering)
+
+## Note
+
+### File Reference Notation
+This guide uses `@` prefix notation (e.g., `@.claude/commands/...`) for Claude-specific command references. This differs from AGENTS.md which uses relative path notation (e.g., `.cursor/commands/...`). Both notations are intentional based on each tool's requirements.
