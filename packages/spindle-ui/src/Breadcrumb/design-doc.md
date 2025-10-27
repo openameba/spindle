@@ -27,7 +27,7 @@
 <BreadcrumbList>
   <BreadcrumbItem href="/top">Top</BreadcrumbItem>
   <BreadcrumbItem href="/team">Team</BreadcrumbItem>
-  <BreadcrumbItem current>Amebaとは</BreadcrumbItem>
+  <BreadcrumbItem href="/about" current>Amebaとは</BreadcrumbItem>
 </BreadcrumbList>
 ```
 
