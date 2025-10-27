@@ -32,9 +32,14 @@ export const DropDown: Story = {
 export const DropDownWithSelectedAndDisabled: Story = {
   render: (args) => (
     <>
-      <DropDownComponent {...args} aria-label="期間を選択" name="term">
+      <DropDownComponent
+        {...args}
+        aria-label="期間を選択"
+        name="term"
+        defaultValue="seven_days"
+      >
         <option value="today">今日</option>
-        <option value="seven_days" selected disabled>
+        <option value="seven_days" disabled>
           7日間
         </option>
         <option value="thirty_days">30日間</option>
