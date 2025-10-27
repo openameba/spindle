@@ -98,8 +98,7 @@
 }
 
 .spui-Toast-content--information {
-  /* TODO: use --color-surface-accent-neutral-high-emphasis */
-  background-color: var(--gray-80);
+  background-color: var(--color-surface-accent-neutral-high-emphasis);
   color: var(--color-text-high-emphasis-inverse);
 }
 

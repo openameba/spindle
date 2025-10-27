@@ -50,7 +50,7 @@ Toastは、見落とされても影響のない「重要ではないお知らせ
 ### Design Tokens
 
 #### Information
-- `--gray-80` (背景色) ※ TODO: `--color-surface-accent-neutral-high-emphasis`に置き換え予定
+- `--color-surface-accent-neutral-high-emphasis` (背景色)
 - `--color-text-high-emphasis-inverse` (テキスト色)
 - `--color-object-high-emphasis-inverse` (アイコン色)
 - `--white-20-alpha` (ホバー時・アクティブ時の背景色)
