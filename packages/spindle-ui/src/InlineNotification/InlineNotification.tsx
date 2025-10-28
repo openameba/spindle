@@ -151,9 +151,10 @@ const TextButton: FC<
     children: ReactNode;
   } & HTMLAttributes<HTMLButtonElement>
 > = ({ children, ...rest }) => {
+  const [props] = convertInternalChildProps(rest);
   return (
     <div className={`${BLOCK_NAME}-textButton`}>
-      <SpindleTextButton underline="hover" {...rest}>
+      <SpindleTextButton underline="hover" {...props}>
         {children}
       </SpindleTextButton>
     </div>
