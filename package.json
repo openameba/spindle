@@ -19,10 +19,14 @@
     "build": "run-s build:*",
     "build:package": "lerna run build",
     "build:extensionReplace": "jscodeshift -t ./bin/outputExtensionReplace.js packages/*/dist/** --extensions=mjs",
-    "prepare": "is-ci || husky install"
+    "prepare": "is-ci || husky install",
+    "version-packages": "changeset version",
+    "release": "changeset publish"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.1",
+    "@changesets/changelog-github": "0.5.1",
+    "@changesets/cli": "2.29.7",
     "@commitlint/cli": "20.1.0",
     "@commitlint/config-conventional": "20.0.0",
     "@commitlint/config-lerna-scopes": "20.0.0",
