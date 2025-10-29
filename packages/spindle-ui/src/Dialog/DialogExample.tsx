@@ -120,3 +120,24 @@ export function ButtonColumnWithSubtleButton() {
     </Dialog.StyleOnly>
   );
 }
+
+export function LongText() {
+  return (
+    <Dialog.StyleOnly>
+      <Dialog.Title>
+        これは非常に長いタイトルです。ダイアログのタイトルが長い場合、適切に折り返されることを確認するためのストーリーです。
+      </Dialog.Title>
+      <Dialog.Body>
+        これは長い本文のテストです。本文が複数行にわたる場合、適切に表示されることを確認します。ダイアログ内のコンテンツが長くなった場合でも、レイアウトが崩れることなく、適切に表示されることを確認するための例です。
+        <br />
+        <br />
+        複数の段落を含む場合でも、読みやすさを維持しながら情報を提供できることが重要です。ユーザーが内容を理解し、適切な判断を下せるよう、十分な情報を提供する必要があります。
+      </Dialog.Body>
+      <Dialog.ButtonGroup>
+        <Button layout="fullWidth" size="medium">
+          OK
+        </Button>
+      </Dialog.ButtonGroup>
+    </Dialog.StyleOnly>
+  );
+}
