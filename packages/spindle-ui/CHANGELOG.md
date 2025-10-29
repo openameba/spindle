@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.1](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@3.0.0...@openameba/spindle-ui@3.0.1) (2025-10-29)
+
+### Bug Fixes
+
+- **spindle-ui:** ランタイムのエラーを修正 ([febdb8a](https://github.com/openameba/spindle/commit/febdb8a7adac39e26b0cb3f16335d94a421af87f))
+
 # [3.0.0](https://github.com/openameba/spindle/compare/@openameba/spindle-ui@2.11.0...@openameba/spindle-ui@3.0.0) (2025-10-15)
 
 ### Bug Fixes
