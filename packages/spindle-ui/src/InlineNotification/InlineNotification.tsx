@@ -58,9 +58,11 @@ const Frame: FC<Props> = ({
         if (!isValidElement(child)) {
           return child;
         }
-        if (child.type === Fragment) {
-          const fragmentChildren = child.props.children;
-          return processChildren(fragmentChildren);
+        if (
+          child.type === Fragment &&
+          isValidElement<{ children?: ReactNode }>(child)
+        ) {
+          return processChildren(child.props.children);
         }
         const additionalProps = { variant, emphasis };
         return cloneElement(child, additionalProps);

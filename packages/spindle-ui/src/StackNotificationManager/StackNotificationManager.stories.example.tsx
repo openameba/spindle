@@ -35,7 +35,7 @@ const SnackBarExample: React.FC<
     id: string;
     position: StackPosition;
     text: string;
-    icon?: React.ReactElement;
+    icon?: React.ReactNode;
     onHide: (id: string) => void;
   }
 > = ({ id, position, icon, text, variant, onHide, ...rest }) => {
@@ -69,7 +69,7 @@ const SnackBarWithButtonExample: React.FC<
     id: string;
     position: StackPosition;
     text: string;
-    icon?: React.ReactElement;
+    icon?: React.ReactNode;
   }
 > = ({ id, position, text, variant, ...rest }) => {
   const { idList, append, onHide } = useRepeatedStackItem({ id, position });
