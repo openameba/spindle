@@ -188,7 +188,6 @@ const List = ({
           .join(' ')}
         ref={menuEl}
         role="menu"
-        aria-orientation="vertical"
         style={{ bottom, left, top }}
       >
         {children}
@@ -200,7 +199,7 @@ const List = ({
 const ListItem = ({ children, icon, onClick }: ListItemProps) => {
   const closeMenu = useContext(CloseMenuContext);
   return (
-    <div className={`${BLOCK_NAME}-menuItem`} role="none">
+    <div className={`${BLOCK_NAME}-menuItem`}>
       <button
         className={`${BLOCK_NAME}-menuButton`}
         type="button"
@@ -272,7 +271,6 @@ const Position = ({
         .join(' ')}
       ref={menuEl}
       role="menu"
-      aria-orientation="vertical"
       style={{ bottom, left, top }}
     >
       {children}
