@@ -8,7 +8,7 @@ import {
   DialogExample,
   LongText as LongTextComponent,
   StyleOnly as StyleOnlyComponent,
-} from './DialogExample';
+} from './Dialog.stories.example';
 
 const meta: Meta<typeof Dialog.Frame> = {
   title: 'Dialog',
