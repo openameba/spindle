@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://github.com/openameba/spindle/compare/@openameba/spindle-hooks@1.9.1...@openameba/spindle-hooks@1.10.0) (2025-10-29)
+
+### Features
+
+- **spindle-ui,spindle-hooks:** upgrade to React 19 ([ee8980d](https://github.com/openameba/spindle/commit/ee8980ddd1215f685a000afd6a36971d4095d9ab))
+
 ## [1.9.1](https://github.com/openameba/spindle/compare/@openameba/spindle-hooks@1.9.0...@openameba/spindle-hooks@1.9.1) (2025-10-29)
 
 **Note:** Version bump only for package @openameba/spindle-hooks
