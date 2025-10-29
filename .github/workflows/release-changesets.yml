@@ -1,0 +1,67 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write # Needed for npm Trusted Publishing (OIDC)
+      pull-requests: write # Needed for creating pull requests
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
+        with:
+          node-version-file: package.json
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Restore cache
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-v2
+
+      # Update npm (>=11.5.1 required for OIDC/provenance); install latest
+      - name: Update npm
+        run: npm install -g npm@latest
+
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build spindle-hooks
+        run: yarn lerna run --scope @openameba/spindle-hooks build
+
+      - name: Create Release Pull Request or Publish to npm
+        id: changesets
+        uses: changesets/action@c5d966aac7c5a2c0be98081e4a81ab1be81eae90 # v1.5.2
+        with:
+          publish: yarn release
+          version: yarn version-packages
+          commit: 'chore: publish'
+          title: 'chore: publish'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create GitHub Releases
+        if: steps.changesets.outputs.published == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # 公開されたパッケージのタグすべてに対してReleaseを作成
+          for package in $(echo '${{ steps.changesets.outputs.publishedPackages }}' | jq -r '.[] | "\(.name)@\(.version)"'); do
+            gh release create "${package}" --title "${package}" --generate-notes
+          done
