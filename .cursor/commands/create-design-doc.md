@@ -55,3 +55,4 @@ This command creates a Design Doc for a Spindle UI component. It generates docum
 - Design Docs don't need to be perfect. The goal is to document the background and design decisions that can't be understood from code alone
 - They also serve as a review tool to identify unclear points or unconsidered aspects
 - For components that don't accept `className` prop, add a note in the DO NOT section
+- Use headings (e.g., `###`, `####`) to represent hierarchy in the markdown, not bold text
