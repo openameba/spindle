@@ -39,9 +39,9 @@ This command creates a Design Doc for a Spindle UI component. It generates docum
    - Propose additional Stories if needed
    - Review existing tests and suggest missing test cases if needed
 
-6. **Run Auto-fix**
-   - Run `yarn fix` in the project root to automatically fix linting and formatting issues
-   - This will run Biome, lerna format, and textlint auto-fix
+6. **Fix Linting and Formatting Issues**
+   - Run `yarn fix` in the project root to automatically fix code formatting issues (Biome and lerna format will run)
+   - Run `yarn textlint <path-to-design-doc>` and manually fix any errors or warnings until the command passes cleanly
 
 ## Usage
 
