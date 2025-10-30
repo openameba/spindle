@@ -47,7 +47,12 @@
 }
 
 .spui-TextLink-icon {
+  color: var(--TextLink-icon-color);
   line-height: 0;
+}
+
+.spui-TextLink--subtle .spui-TextLink-icon {
+  color: var(--TextLink--subtle-icon-color);
 }
 
 .spui-TextLink--iconstart .spui-TextLink-icon {
