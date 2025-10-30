@@ -6,8 +6,9 @@ import {
   ButtonColumnWithSubtleButton as ButtonColumnWithSubtleButtonComponent,
   ButtonRow as ButtonRowComponent,
   DialogExample,
+  LongText as LongTextComponent,
   StyleOnly as StyleOnlyComponent,
-} from './DialogExample';
+} from './Dialog.stories.example';
 
 const meta: Meta<typeof Dialog.Frame> = {
   title: 'Dialog',
@@ -34,4 +35,8 @@ export const ButtonColumn: Story = {
 
 export const ButtonColumnWithSubtleButton: Story = {
   render: () => <ButtonColumnWithSubtleButtonComponent />,
+};
+
+export const LongText: Story = {
+  render: () => <LongTextComponent />,
 };
