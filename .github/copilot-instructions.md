@@ -36,7 +36,7 @@ For ./packages/spindle-ui/ changes, review the following:
     - `design-doc.md` (design documentation)
     - `.figma.tsx` (Code Connect)
   - Tests cover updated functionality
-  - Stories cover key component variants and use cases
+  - Stories cover updated functionality (key component variants, props combinations, and use cases)
   - Documentation reflects current behavior
   - Code Connect mapping is updated if component API changed
 - For new components, verify required files are created: index.ts, .tsx, .css, .test.tsx, .stories.tsx, .mdx, design-doc.md, .figma.tsx
