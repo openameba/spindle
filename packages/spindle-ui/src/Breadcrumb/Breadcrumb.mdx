@@ -27,7 +27,7 @@ import '@openameba/spindle-ui/Breadcrumb/Breadcrumb.css';
 
 <Story of={BreadcrumbStories.BreadcrumbList} />
 
-通常は`<BreadcrumbItem>`と一緒に使います。現在地のリンクには`current`を指定します。
+通常は`<BreadcrumbItem>`と一緒に使います。現在地には`current`を指定し、リンクではなく非インタラクティブ要素（`<span aria-current="page">`）で表現します。
 
 <Source
   code={`
@@ -46,7 +46,7 @@ import '@openameba/spindle-ui/Breadcrumb/Breadcrumb.css';
   <ol class="spui-Breadcrumb-list">
     <li class="spui-Breadcrumb-item"><a href="/top">Top</a><svg class="spui-Breadcrumb-chevron" role="img" aria-hidden="true"></svg></li>
     <li class="spui-Breadcrumb-item"><a href="/team">Team</a><svg class="spui-Breadcrumb-chevron" role="img" aria-hidden="true"></svg></li>
-    <li class="spui-Breadcrumb-item"><a href="#" aria-current="page">Amebaとは</a><svg class="spui-Breadcrumb-chevron" role="img" aria-hidden="true"></svg></li>
+    <li class="spui-Breadcrumb-item"><span aria-current="page">Amebaとは</span><svg class="spui-Breadcrumb-chevron" role="img" aria-hidden="true"></svg></li>
   </ol>
 </nav>
   `}
@@ -56,14 +56,14 @@ import '@openameba/spindle-ui/Breadcrumb/Breadcrumb.css';
 
 <Story of={BreadcrumbStories.BreadcrumbListWithoutBreadcrumbItem} />
 
-`<BreadcrumbItem>`を使わず、直接`<a>`要素を指定できます。各種フレームワークで定義された`<Link>`も同様に指定できます。その際には、現在地となるa要素にaria-current属性を付与してください。
+`<BreadcrumbItem>`を使わず、直接`<a>`要素を指定できます。各種フレームワークで定義された`<Link>`も同様に指定できます。その際には、現在地はリンクではなく`<span aria-current="page">`で表現するか、`<a aria-current="page">`を直接書く場合は`BreadcrumbItem`を使わないパターンに限定してください。
 
 <Source
   code={`
 <BreadcrumbList variant="emphasized">
   <a href="#">Top</a>
   <a href="#">Team</a>
-  <a href="#" aria-current="page">Amebaとは</a>
+  <span aria-current="page">Amebaとは</span>
 </BreadcrumbList>
   `}
 />
@@ -79,7 +79,7 @@ hrefを指定せずに使用できます。その場合、hrefを指定してい
 <BreadcrumbList variant="standard">
   <a href="#">Top</a>
   <a href="#">Team</a>
-  <a aria-current="page">Amebaとは</a>
+  <span aria-current="page">Amebaとは</span>
 </BreadcrumbList>
   `}
 />
@@ -170,4 +170,3 @@ Standard variantにwrapオプションを指定すると、画面幅に入り切
 </BreadcrumbList>
   `}
 />
-

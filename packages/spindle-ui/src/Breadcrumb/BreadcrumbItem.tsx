@@ -6,16 +6,16 @@ interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
 }
 
 export const BreadcrumbItem = forwardRef<HTMLAnchorElement, Props>(
-  function Item({ children, current, ...rest }: Props, ref) {
+  function Item({ children, current, href, target, rel, ...rest }: Props, ref) {
     if (current) {
       return (
-        <a ref={ref} aria-current="page" {...rest}>
+        <span aria-current="page" {...rest}>
           {children}
-        </a>
+        </span>
       );
     }
     return (
-      <a ref={ref} {...rest}>
+      <a ref={ref} href={href} target={target} rel={rel} {...rest}>
         {children}
       </a>
     );

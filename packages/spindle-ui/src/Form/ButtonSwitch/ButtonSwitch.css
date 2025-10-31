@@ -1,7 +1,10 @@
 .spui-ButtonSwitch {
   align-items: stretch;
+  border: none;
   display: flex;
   flex-direction: row;
+  margin: 0;
+  padding: 0;
 }
 
 .spui-ButtonSwitch-button {

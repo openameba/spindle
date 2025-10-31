@@ -14,9 +14,9 @@ export const BreadcrumbList: Story = {
   render: () => (
     <>
       <BreadcrumbListComponent variant="emphasized">
-        <BreadcrumbItem href="#">Top</BreadcrumbItem>
-        <BreadcrumbItem href="#">Team</BreadcrumbItem>
-        <BreadcrumbItem href="#" current>
+        <BreadcrumbItem href="https://about.ameba.jp/">Top</BreadcrumbItem>
+        <BreadcrumbItem href="https://about.ameba.jp/">Team</BreadcrumbItem>
+        <BreadcrumbItem href="https://about.ameba.jp/" current>
           Amebaとは
         </BreadcrumbItem>
       </BreadcrumbListComponent>
@@ -28,11 +28,9 @@ export const BreadcrumbListWithoutBreadcrumbItem: Story = {
   render: () => (
     <>
       <BreadcrumbListComponent variant="emphasized">
-        <a href="#">Top</a>
-        <a href="#">Team</a>
-        <a href="#" aria-current="page">
-          Amebaとは
-        </a>
+        <a href="https://about.ameba.jp/">Top</a>
+        <a href="https://about.ameba.jp/">Team</a>
+        <span aria-current="page">Amebaとは</span>
       </BreadcrumbListComponent>
     </>
   ),
@@ -42,9 +40,9 @@ export const NoHref: Story = {
   render: () => (
     <>
       <BreadcrumbListComponent variant="emphasized">
-        <a href="#">Top</a>
-        <a href="#">Team</a>
-        <a aria-current="page">Amebaとは</a>
+        <a href="https://about.ameba.jp/">Top</a>
+        <a href="https://about.ameba.jp/">Team</a>
+        <span aria-current="page">Amebaとは</span>
       </BreadcrumbListComponent>
     </>
   ),
@@ -54,9 +52,9 @@ export const Standard: Story = {
   render: () => (
     <>
       <BreadcrumbListComponent variant="standard">
-        <BreadcrumbItem href="#">Top</BreadcrumbItem>
-        <BreadcrumbItem href="#">Team</BreadcrumbItem>
-        <BreadcrumbItem href="#" current>
+        <BreadcrumbItem href="https://about.ameba.jp/">Top</BreadcrumbItem>
+        <BreadcrumbItem href="https://about.ameba.jp/">Team</BreadcrumbItem>
+        <BreadcrumbItem href="https://about.ameba.jp/" current>
           Amebaとは
         </BreadcrumbItem>
       </BreadcrumbListComponent>
@@ -68,9 +66,9 @@ export const Emphasized: Story = {
   render: () => (
     <>
       <BreadcrumbListComponent variant="emphasized">
-        <BreadcrumbItem href="#">Top</BreadcrumbItem>
-        <BreadcrumbItem href="#">Team</BreadcrumbItem>
-        <BreadcrumbItem href="#" current>
+        <BreadcrumbItem href="https://about.ameba.jp/">Top</BreadcrumbItem>
+        <BreadcrumbItem href="https://about.ameba.jp/">Team</BreadcrumbItem>
+        <BreadcrumbItem href="https://about.ameba.jp/" current>
           Amebaとは
         </BreadcrumbItem>
       </BreadcrumbListComponent>
@@ -82,10 +80,16 @@ export const Wrap: Story = {
   render: () => (
     <>
       <BreadcrumbListComponent variant="standard" wrap="wrap">
-        <BreadcrumbItem href="#">Amebaとは</BreadcrumbItem>
-        <BreadcrumbItem href="#">Ameヨコ (アメヨコ)</BreadcrumbItem>
-        <BreadcrumbItem href="#">福利厚生・社内制度</BreadcrumbItem>
-        <BreadcrumbItem href="#" current>
+        <BreadcrumbItem href="https://about.ameba.jp/">
+          Amebaとは
+        </BreadcrumbItem>
+        <BreadcrumbItem href="https://about.ameba.jp/">
+          Ameヨコ (アメヨコ)
+        </BreadcrumbItem>
+        <BreadcrumbItem href="https://about.ameba.jp/">
+          福利厚生・社内制度
+        </BreadcrumbItem>
+        <BreadcrumbItem href="https://about.ameba.jp/" current>
           「わたしたち、育休取得した経営陣です！」育休が2秒で快諾される、&quot;取るのが当たり前&quot;な環境とは
         </BreadcrumbItem>
       </BreadcrumbListComponent>
@@ -97,10 +101,16 @@ export const StandardOverflow: Story = {
   render: () => (
     <>
       <BreadcrumbListComponent variant="standard">
-        <BreadcrumbItem href="#">Amebaとは</BreadcrumbItem>
-        <BreadcrumbItem href="#">Ameヨコ (アメヨコ)</BreadcrumbItem>
-        <BreadcrumbItem href="#">福利厚生・社内制度</BreadcrumbItem>
-        <BreadcrumbItem href="#" current>
+        <BreadcrumbItem href="https://about.ameba.jp/">
+          Amebaとは
+        </BreadcrumbItem>
+        <BreadcrumbItem href="https://about.ameba.jp/">
+          Ameヨコ (アメヨコ)
+        </BreadcrumbItem>
+        <BreadcrumbItem href="https://about.ameba.jp/">
+          福利厚生・社内制度
+        </BreadcrumbItem>
+        <BreadcrumbItem href="https://about.ameba.jp/" current>
           「わたしたち、育休取得した経営陣です！」育休が2秒で快諾される、&quot;取るのが当たり前&quot;な環境とは
         </BreadcrumbItem>
       </BreadcrumbListComponent>
@@ -112,12 +122,16 @@ export const StandardOverflowMiddleItem: Story = {
   render: () => (
     <>
       <BreadcrumbListComponent variant="standard">
-        <BreadcrumbItem href="#">Amebaとは</BreadcrumbItem>
-        <BreadcrumbItem href="#" current>
+        <BreadcrumbItem href="https://about.ameba.jp/">
+          Amebaとは
+        </BreadcrumbItem>
+        <BreadcrumbItem href="https://about.ameba.jp/" current>
           Ameヨコ (アメヨコ)
         </BreadcrumbItem>
-        <BreadcrumbItem href="#">福利厚生・社内制度</BreadcrumbItem>
-        <BreadcrumbItem href="#">
+        <BreadcrumbItem href="https://about.ameba.jp/">
+          福利厚生・社内制度
+        </BreadcrumbItem>
+        <BreadcrumbItem href="https://about.ameba.jp/">
           「わたしたち、育休取得した経営陣です！」育休が2秒で快諾される、&quot;取るのが当たり前&quot;な環境とは
         </BreadcrumbItem>
       </BreadcrumbListComponent>

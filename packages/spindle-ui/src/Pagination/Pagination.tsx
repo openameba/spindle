@@ -187,10 +187,7 @@ export const Pagination = (props: Props) => {
         )}
       </ul>
       {showTotal && (
-        <p
-          className={`${BLOCK_NAME}-total`}
-          aria-label={`${total}ページ中の${current}ページ目`}
-        >
+        <p className={`${BLOCK_NAME}-total`}>
           {current}/{total}ページ
         </p>
       )}
