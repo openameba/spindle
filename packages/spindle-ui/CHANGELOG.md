@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.1.1
+
+### Patch Changes
+
+- [#1561](https://github.com/openameba/spindle/pull/1561) [`96d5e14`](https://github.com/openameba/spindle/commit/96d5e14c1be6e6d817ad28bb533e4a8c4d260804) Thanks [@yasuda-shin](https://github.com/yasuda-shin)! - ButtonSwitchに`ariaLabelledby`プロパティを追加し、外部ラベルとの関連付けをサポート
+
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
