@@ -57,3 +57,27 @@ export const UnderlineHover: Story = {
     underline: 'hover',
   },
 };
+
+export const CustomStyle: Story = {
+  decorators: [
+    (Story) => (
+      <div
+        style={
+          {
+            '--TextLink-color': 'var(--color-text-medium-emphasis)',
+            '--TextLink-icon-color': 'var(--color-object-accent-primary)',
+            '--TextLink-fontWeight': 'normal',
+          } as React.CSSProperties
+        }
+      >
+        <Story />
+      </div>
+    ),
+  ],
+  args: {
+    href: '#custom',
+    children: 'カスタマイズされたリンク',
+    icon: <ChevronRightBold aria-hidden="true" />,
+    iconPosition: 'end',
+  },
+};

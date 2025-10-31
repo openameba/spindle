@@ -99,18 +99,34 @@ import '@openameba/spindle-ui/TextLink/TextLink.css';
 ## スタイルの上書き
 `TextLink`を利用する際には、ますデフォルト定義されているスタイルで要件を満たせないか検討してください。ただし、`TextLink`は様々な箇所での利用が想定されるため、以下のようにスタイルを上書きして利用できます。
 
+<Story of={TextLinkStories.CustomStyle} />
+
 <Source
+  code={`<div style={{
+  '--TextLink-color': 'var(--color-text-medium-emphasis)',
+  '--TextLink-icon-color': 'var(--color-object-accent-primary)',
+  '--TextLink-fontWeight': 'normal',
+}}>
+  <TextLink href="#" icon={<ChevronRightBold aria-hidden="true" />} iconPosition="end">
+    カスタマイズされたリンク
+  </TextLink>
+</div>`}
+/>
+
+<Source
+  language='html'
   code={`<style>
   .container {
     --TextLink-color: var(--color-text-medium-emphasis);
-    --TextLink-icon-color: var(--color-object-medium-emphasis);
+    --TextLink-icon-color: var(--color-object-accent-primary);
     --TextLink-fontWeight: normal;
   }
 </style>
 <div class="container">
-  <ul>
-    <li><a class="spui-TextLink" href="#">もっと見る</a></li>
-  </ul>
+  <a class="spui-TextLink spui-TextLink--hasIcon spui-TextLink--iconend" href="#">
+    <span class="spui-TextLink-icon"><svg>...</svg></span>
+    カスタマイズされたリンク
+  </a>
 </div>`}
 />
 
