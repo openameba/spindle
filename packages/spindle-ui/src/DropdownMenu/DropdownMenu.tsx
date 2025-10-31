@@ -1,4 +1,10 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 
 type Variant =
   | 'text'
@@ -43,6 +49,8 @@ const FADE_IN_ANIMATION = 'spui-DropdownMenu-fade-in';
 const CLOSE_KEY_LIST = ['ESCAPE', 'ESC'];
 const MENU_WIDTH = 256;
 
+const CloseMenuContext = React.createContext<(() => void) | null>(null);
+
 const Caption = ({ children }: DefaultProps) => {
   return <p className={`${BLOCK_NAME}-caption`}>{children}</p>;
 };
@@ -60,7 +68,7 @@ const List = ({
   triggerRef,
   variant = 'text',
 }: ListProps) => {
-  const menuEl = useRef<HTMLUListElement>(null);
+  const menuEl = useRef<HTMLDivElement>(null);
   const [fadeOut, setFadeOut] = useState(false);
   const [triggerHeight, setTriggerHeight] = useState(0);
   const [triggerWidth, setTriggerWidth] = useState(0);
@@ -167,34 +175,44 @@ const List = ({
   }
 
   return (
-    <ul
-      id={id}
-      onClick={onClickCloser}
-      className={[
-        `${BLOCK_NAME}-menu`,
-        `${BLOCK_NAME}-menu--${variant}`,
-        `${BLOCK_NAME}-menu--${position}`,
-        fadeOut && 'is-fade-out',
-      ]
-        .filter(Boolean)
-        .join(' ')}
-      ref={menuEl}
-      role="menu"
-      style={{ bottom, left, top }}
-    >
-      {children}
-    </ul>
+    <CloseMenuContext.Provider value={onClickCloser}>
+      <div
+        id={id}
+        className={[
+          `${BLOCK_NAME}-menu`,
+          `${BLOCK_NAME}-menu--${variant}`,
+          `${BLOCK_NAME}-menu--${position}`,
+          fadeOut && 'is-fade-out',
+        ]
+          .filter(Boolean)
+          .join(' ')}
+        ref={menuEl}
+        role="menu"
+        style={{ bottom, left, top }}
+      >
+        {children}
+      </div>
+    </CloseMenuContext.Provider>
   );
 };
 
 const ListItem = ({ children, icon, onClick }: ListItemProps) => {
+  const closeMenu = useContext(CloseMenuContext);
   return (
-    <li className={`${BLOCK_NAME}-menuItem`} role="menuItem">
-      <button className={`${BLOCK_NAME}-menuButton`} onClick={onClick}>
+    <div className={`${BLOCK_NAME}-menuItem`}>
+      <button
+        className={`${BLOCK_NAME}-menuButton`}
+        type="button"
+        role="menuitem"
+        onClick={() => {
+          onClick();
+          closeMenu?.();
+        }}
+      >
         {icon && <div className={`${BLOCK_NAME}-iconContainer`}>{icon}</div>}
         <div className={`${BLOCK_NAME}-textContainer`}>{children}</div>
       </button>
-    </li>
+    </div>
   );
 };
 
@@ -204,7 +222,7 @@ const Position = ({
   position = 'leftTop',
   triggerRef,
 }: Omit<ListProps, 'onClose' | 'open'>) => {
-  const menuEl = useRef<HTMLUListElement>(null);
+  const menuEl = useRef<HTMLDivElement>(null);
   const [triggerHeight, setTriggerHeight] = useState(0);
   const [triggerWidth, setTriggerWidth] = useState(0);
   const [menuHeight, setMenuHeight] = useState(0);
@@ -243,7 +261,7 @@ const Position = ({
   }
 
   return (
-    <ul
+    <div
       className={[
         `${BLOCK_NAME}-menu`,
         `${BLOCK_NAME}-menu--text`,
@@ -256,7 +274,7 @@ const Position = ({
       style={{ bottom, left, top }}
     >
       {children}
-    </ul>
+    </div>
   );
 };
 

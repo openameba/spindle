@@ -110,13 +110,16 @@ const HeroCarousel = () => {
   }
   return (
     <div>
+      {/* biome-ignore lint/a11y/useSemanticElements: Carousel wrapper needs region without visible heading */}
       <div
+        role="region"
         style={{
           alignItems: 'center',
           display: 'flex',
           overflow: 'hidden',
           justifyContent: 'center',
         }}
+        aria-label="カルーセル"
         onBlur={handleBlur}
         onFocus={handleFocus}
         onMouseDown={handleMouseDown}
@@ -128,7 +131,6 @@ const HeroCarousel = () => {
         <ul
           aria-roledescription="カルーセル"
           ref={listRef}
-          role="group"
           style={{
             display: 'flex',
             marginRight: '0.88em',
