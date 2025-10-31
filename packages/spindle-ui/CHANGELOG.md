@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.1.2
+
+### Patch Changes
+
+- [#1568](https://github.com/openameba/spindle/pull/1568) [`9cf0c95`](https://github.com/openameba/spindle/commit/9cf0c95ade1152087929f1741e854bb4ff799d49) Thanks [@herablog](https://github.com/herablog)! - TextLinkのアイコン色をCSSカスタムプロパティで制御できるように修正
+
 ## 3.1.1
 
 ### Patch Changes
