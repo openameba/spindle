@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import type { ButtonSwitch } from './ButtonSwitch';
+import { ButtonSwitch } from './ButtonSwitch';
 import { ButtonSwitchExample } from './ButtonSwitch.stories.example';
 
 const meta: Meta<typeof ButtonSwitch> = {
@@ -32,5 +32,21 @@ export const Threeoptions: Story = {
         { value: 'all', label: '全部' },
       ]}
     />
+  ),
+};
+
+export const WithExternalLabel: Story = {
+  render: () => (
+    <div className="preview">
+      <h2 id="label-id">ラベル</h2>
+      <ButtonSwitchExample
+        defaultValue="prefer"
+        ariaLabelledby="label-id"
+        options={[
+          { value: 'prefer', label: 'できれば' },
+          { value: 'required', label: '必須' },
+        ]}
+      />
+    </div>
   ),
 };

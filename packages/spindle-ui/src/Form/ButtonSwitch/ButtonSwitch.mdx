@@ -31,12 +31,13 @@ import '@openameba/spindle-ui/ButtonSwitch/ButtonSwitch.css';
 
 ## 指定できるプロパティ
 
-- `id`: コンポーネントを識別するためのIDです。ラベルを表示する場合は`for`属性に同じ値を指定してください。ページ内でユニークな値を指定してください。
+- `id`: コンポーネントを識別するためのIDです。ページ内でユニークな値を指定してください。
 - `options`(必須): 表示する項目について配列で指定してください。
   - `value`: 項目を識別するための値です。配列内で一意である必要があります。
   - `label`: 画面に表示される値です。推奨する最大文字数は5文字です。
 - `value`(必須): `options`プロパティに指定した配列に含まれる`value`のうちはじめから選択されている状態とする項目の`value`を指定します。値が`null`の場合、どの項目も選択していない状態になります。
 - `onClick`(必須):項目がクリックされたときに追加で行いたい処理がある場合は指定してください。
+- `ariaLabelledby`: 外部ラベルの要素IDを指定します。指定された要素のテキストがこのコンポーネント（`role="group"`）の名前として関連付けられます。
 
 ## 項目数
 
@@ -98,3 +99,31 @@ const ButtonSwitchExample = ({ options, defaultValue }) => {
 `}
 />
 
+## ラベルの付け方
+
+<Story of={ButtonSwitchStories.WithExternalLabel} />
+
+<Source
+  language="tsx"
+  code={`
+const ButtonSwitchExample = ({ options, defaultValue }) => {
+  const [value, setValue] = useState(defaultValue);
+  return (
+    <div className="preview">
+      <h2 id="label-id">ラベル</h2>
+      <ButtonSwitch
+        options={[
+          { value: 'prefer', label: 'できれば' },
+          { value: 'required', label: '必須' },
+        ]}
+        value={value}
+        onClick={(newValue) => {
+          setValue(value === newValue ? null : newValue);
+        }}
+        ariaLabelledby="label-id"
+      />
+    </div>
+  );
+};
+`}
+/>

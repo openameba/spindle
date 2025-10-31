@@ -10,7 +10,7 @@
 
 ### DO
 
-ラベルには「できれば」「必須」「すべて」など、フィルタリングの条件に類する言葉を使用することを想定しています。また、文字数は最大5文字程度を目安とします。
+ラベルには「できれば」「必須」「すべて」など、フィルタリングの条件に類する言葉を使用することを想定しています。また、文字数は最大5文字程度を目安とします。外部の見出し等と関連付けるために、`aria-labelledby` を用いた名前付けを行ってください。
 
 ```tsx
 <ButtonSwitch
@@ -24,6 +24,21 @@
       label: '必須',
       value: 'required',
     },
+  ]}
+  onClick={(value) => console.log(value)}
+/>
+```
+
+#### ラベルとの関連付け
+
+```tsx
+<h2 id="label-id">公開範囲</h2>
+<ButtonSwitch
+  ariaLabelledby="label-id"
+  value="prefer"
+  options={[
+    { label: 'できれば', value: 'prefer' },
+    { label: '必須', value: 'required' },
   ]}
   onClick={(value) => console.log(value)}
 />
@@ -67,13 +82,9 @@ type Props = {
 書き出されるマークアップです。
 
 ```html
-<div class="spui-ButtonSwitch" role="group">
-  <button type="button" aria-pressed="true" class="spui-ButtonSwitch-button">
-    選択肢1
-  </button>
-  <button type="button" aria-pressed="false" class="spui-ButtonSwitch-button">
-    選択肢2
-  </button>
+<div class="spui-ButtonSwitch" role="group" aria-labelledby="label-id">
+  <button type="button" aria-pressed="true" class="spui-ButtonSwitch-button">選択肢1</button>
+  <button type="button" aria-pressed="false" class="spui-ButtonSwitch-button">選択肢2</button>
 </div>
 ```
 
@@ -101,5 +112,5 @@ type Props = {
 - [HTMLを正しく記述する](https://a11y-guidelines.ameba.design/4/1/1/)
   - [ ] HTML仕様に準拠した実装をしている
 - [カスタムコントロールの操作性を担保する](https://a11y-guidelines.ameba.design/4/1/2/)
-  - [ ] ボタンスイッチをラップしているdiv要素に`role="group"`、選択中のボタンに`aria-pressed="true"`、選択されていないボタンに`aria-pressed="false"`を付与している
+- [ ] ボタンスイッチをラップしている要素は`div role="group"`で、外部テキストと名前付けできる（`aria-labelledby`）。選択中のボタンに`aria-pressed="true"`、選択されていないボタンに`aria-pressed="false"`を付与している
   - [ ] スクリーンリーダーでも機能落ちがなく、どのボタンが選択状態かが過不足なく読み上げられている
