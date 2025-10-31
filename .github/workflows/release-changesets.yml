@@ -55,13 +55,3 @@ jobs:
           title: 'chore: publish'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Create GitHub Releases
-        if: steps.changesets.outputs.published == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          # 公開されたパッケージのタグすべてに対してReleaseを作成
-          for package in $(echo '${{ steps.changesets.outputs.publishedPackages }}' | jq -r '.[] | "\(.name)@\(.version)"'); do
-            gh release create "${package}" --title "${package}" --generate-notes
-          done
