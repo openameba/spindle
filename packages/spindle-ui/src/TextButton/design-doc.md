@@ -113,7 +113,11 @@ TextButtonコンポーネントは`--TextButton-*`変数を使用してスタイ
 React実装の一例です。
 
 ```tsx
-<TextButton icon={<ChevronRightBold aria-hidden="true" />} iconPosition="end">
+<TextButton
+  type="button"
+  icon={<ChevronRightBold aria-hidden="true" />}
+  iconPosition="end"
+>
   コメントを表示
 </TextButton>
 ```
@@ -121,13 +125,15 @@ React実装の一例です。
 上記の実装から書き出されるマークアップです。
 
 ```html
-<button class="spui-TextButton spui-TextButton--hasIcon spui-TextButton--iconend">
+<button type="button" class="spui-TextButton spui-TextButton--hasIcon spui-TextButton--iconend">
   <span class="spui-TextButton-icon">
     <svg aria-hidden="true"></svg>
   </span>
   コメントを表示
 </button>
 ```
+
+フォーム内で意図的に`type="submit"`としたい場合を除き、`type="button"`を指定することを推奨します。`type`属性を省略した場合、デフォルトで`type="submit"`となるため、予期しないフォーム送信を引き起こす可能性があります。
 
 ## アクセシビリティ
 
