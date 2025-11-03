@@ -1336,7 +1336,7 @@
   resolved "https://registry.yarnpkg.com/@google-cloud/promisify/-/promisify-4.0.0.tgz#a906e533ebdd0f754dca2509933334ce58b8c8b1"
   integrity sha512-Orxzlfb9c67A15cq2JQEyVc7wEsmFBmHjZWZYQMUyJ1qivXyMwdyNOs9odi79hze+2zqdTtu1E19IM/FtqZ10g==
 
-"@google-cloud/pubsub@^4.5.0":
+"@google-cloud/pubsub@^4.11.0":
   version "4.11.0"
   resolved "https://registry.yarnpkg.com/@google-cloud/pubsub/-/pubsub-4.11.0.tgz#cafbd135a66585b32a124d388169a06992e75c9c"
   integrity sha512-xWxJAlyUGd6OPp97u8maMcI3xVXuHjxfwh6Dr7P/P+6NK9o446slJobsbgsmK0xKY4nTK8m5uuJrhEKapfZSmQ==
@@ -8294,17 +8294,17 @@ find-up@^7.0.0:
     path-exists "^5.0.0"
     unicorn-magic "^0.1.0"
 
-firebase-tools@14.22.0:
-  version "14.22.0"
-  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-14.22.0.tgz#6580223857a9af49c3f8c3025c1ba44036a2ca9e"
-  integrity sha512-ZudDdmP0pFR6jztKHoAFcIE19Qo2izfoMvbLxf7pvd5HY/MknVnhL+87mopWZGGv3Cmfc/gsUOcNW60n/my8cw==
+firebase-tools@14.23.0:
+  version "14.23.0"
+  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-14.23.0.tgz#a7e9a8f25d712f811b766e6dcca5a229f307eaac"
+  integrity sha512-JiW1JUlFCIdhj2pIu1vEXJCg0beuHwUSFYTntDSZCE3Z2bzsVFh3zpX3uWG5pL+BpoOjxmhvDjYVbf5c7Sia8A==
   dependencies:
     "@apphosting/build" "^0.1.6"
     "@apphosting/common" "^0.0.8"
     "@electric-sql/pglite" "^0.3.3"
     "@electric-sql/pglite-tools" "^0.2.8"
     "@google-cloud/cloud-sql-connector" "^1.3.3"
-    "@google-cloud/pubsub" "^4.5.0"
+    "@google-cloud/pubsub" "^4.11.0"
     "@inquirer/prompts" "^7.4.0"
     "@modelcontextprotocol/sdk" "^1.10.2"
     abort-controller "^3.0.0"
