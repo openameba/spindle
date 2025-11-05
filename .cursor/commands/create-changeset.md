@@ -56,11 +56,19 @@ This command analyzes the current branch changes and creates an appropriate chan
      "@openameba/spindle-tokens": patch
      ---
 
-     Add new color tokens and update Button component
+     - spindle-ui: Add new Button variant for secondary actions
+     - spindle-tokens: Fix color token contrast ratio
      ```
    - The description should be user-friendly as it will appear in CHANGELOG
+   - Split changesets into separate files when the same package has changes with different purposes (e.g., new feature + bug fix, breaking change + internal refactoring). This creates individual top-level items in release notes, making it easier for readers to understand the intent of each change.
+     - Example: Create `.changeset/add-secondary-button.md` for a new feature and `.changeset/fix-button-layout.md` for a bug fix, even if both target the same package
 
-5. **Verify and Commit**
+5. **Lint Changeset**
+   - Run textlint to check the changeset file: `yarn textlint .changeset/<filename>.md`
+   - If there are any linting errors, fix them before proceeding
+   - Re-run textlint to confirm all issues are resolved
+
+6. **Verify and Commit**
    - Display the generated changeset for review
    - Confirm it accurately reflects the changes
    - Once verified, commit the changeset file:
