@@ -121,7 +121,7 @@ React実装の一例です。
   class="spui-Toast spui-Toast--top spui-Toast--slide spui-Toast-slide--in"
   aria-hidden="false"
 >
-  <output class="spui-Toast-content spui-Toast-content--information">
+  <div class="spui-Toast-content spui-Toast-content--information">
     <div class="spui-Toast-contentInfo">
       <svg><!-- icon --></svg>
     </div>
@@ -131,7 +131,7 @@ React実装の一例です。
         <svg><!-- close icon --></svg>
       </button>
     </div>
-  </output>
+  </div>
 </div>
 ```
 
@@ -147,14 +147,14 @@ React実装の一例です。
 ### 利用時に注意してほしいこと
 
 - Toastは自動で消えてしまうため、見落とされても影響のない、「重要ではないお知らせ」に用います
-- 本コンポーネントの内部は `<output>` を用いており、HTML仕様上のライブリージョン（`role="status"`/`aria-live="polite"` 相当）として振る舞います。アプリ側で重複するライブリージョンの実装は不要です（参考：[実装方法 - 4.1.3 コンテンツの変更をユーザーに知らせる - Ameba Accessibility Guidelines](https://a11y-guidelines.ameba.design/4/1/3/#%E5%AE%9F%E8%A3%85%E6%96%B9%E6%B3%95)）。
+- このコンポーネントでは関与しませんが、ライブリージョンをアプリケーションで実装してください（参考：[実装方法 - 4.1.3 コンテンツの変更をユーザーに知らせる - Ameba Accessibility Guidelines](https://a11y-guidelines.ameba.design/4/1/3/#%E5%AE%9F%E8%A3%85%E6%96%B9%E6%B3%95)）
 
 ### チェックリスト
 
 - [画像に代替テキストを提供する](https://a11y-guidelines.ameba.design/1/1/1/)[基本必須]
   - [ ] アイコンは適切な代替テキストまたはaria-labelを持っている
 - [情報や関係性を明確にする](https://a11y-guidelines.ameba.design/1/3/1/)[基本必須]
-  - [ ] `<output>` によりコンテンツ更新が適切に通知される（重複する`aria-live`の付与は不要）
+  - [ ] ライブリージョン（`aria-live="polite"`及び`role="status"`）を実装し、スクリーンリーダーでコンテンツが読み上げられる
 - [表示の向きを固定しない](https://a11y-guidelines.ameba.design/1/3/4/)[できれば]
   - [ ] 端末を横向きにしても、適切に文字が折り返されレイアウトが変わり、コンテンツが見切れていない
 - [色だけで伝えない](https://a11y-guidelines.ameba.design/1/4/1/)[基本必須]
@@ -174,7 +174,7 @@ React実装の一例です。
 - [HTMLを正しく記述する](https://a11y-guidelines.ameba.design/4/1/1/)[基本必須]
   - [ ] HTML仕様に準拠した実装をしている
 - [コンテンツの変更をユーザーに知らせる](https://a11y-guidelines.ameba.design/4/1/3/)[基本必須]
-  - [ ] `<output>`（ライブリージョン相当）により、Toast表示時にスクリーンリーダーが自動で読み上げる
+  - [ ] ライブリージョンを実装し、Toastが表示されたときにスクリーンリーダーが自動でコンテンツを読み上げる
 
 ## テスト方針
 

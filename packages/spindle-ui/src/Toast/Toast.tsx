@@ -93,7 +93,8 @@ export const Toast: FC<Props> = ({
       onTransitionEnd={handleTransitionEnd}
       ref={(ref) => setClientHeight(ref?.clientHeight || 0)}
     >
-      <output
+      {/* biome-ignore lint: non-interactive wrapper needs mouse/focus handlers for timeout control */}
+      <div
         className={`${BLOCK_NAME}-content ${BLOCK_NAME}-content--${variant}`}
         onMouseOver={resetTimeout}
         onMouseOut={setIsShowWithTimeout}
@@ -114,7 +115,7 @@ export const Toast: FC<Props> = ({
             <CrossBold aria-label="閉じる" />
           </IconButton>
         </div>
-      </output>
+      </div>
     </div>
   );
 };
