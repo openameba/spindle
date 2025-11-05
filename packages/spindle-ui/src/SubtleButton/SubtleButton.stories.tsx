@@ -34,3 +34,19 @@ export const Small: Story = {
     children: 'とじる',
   },
 };
+
+export const Disabled: Story = {
+  render: () => (
+    <>
+      <SubtleButton disabled size="large">
+        とじる
+      </SubtleButton>
+      <SubtleButton disabled size="medium">
+        とじる
+      </SubtleButton>
+      <SubtleButton disabled size="small">
+        とじる
+      </SubtleButton>
+    </>
+  ),
+};

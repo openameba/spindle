@@ -74,3 +74,24 @@ import '@openameba/spindle-ui/SubtleButton/SubtleButton.css';
   `}
 />
 
+## Disabled
+
+<Story of={SubtleButtonStories.Disabled} />
+
+<Source
+  code={`
+<SubtleButton disabled size="large">とじる</SubtleButton>
+<SubtleButton disabled size="medium">とじる</SubtleButton>
+<SubtleButton disabled size="small">とじる</SubtleButton>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<button class="spui-SubtleButton spui-SubtleButton--large" disabled>とじる</button>
+<button class="spui-SubtleButton spui-SubtleButton--medium" disabled>とじる</button>
+<button class="spui-SubtleButton spui-SubtleButton--small" disabled>とじる</button>
+  `}
+/>
+
