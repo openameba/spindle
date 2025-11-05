@@ -169,57 +169,9 @@ import '@openameba/spindle-ui/Toast/Toast.css';
 - アイコンの設定は利用者に委ねられていますが、基本的には設定します。**`information`のみアイコンを外すことができます**
 - `z-index`はdefaultでは`1`になっていますが、必要に応じて`--Toast-z-index`を設定してください
 - 自動的に消えてしまうため、画面内で的確に認知できる必要があります。画面拡大時にもToast内の情報が見切れることのないよう注意してください（参考：[1.4.10 リフローできる - Ameba Accessibility Guidelines](https://a11y-guidelines.ameba.design/1/4/10)）
-- このコンポーネントでは関与しませんが、ライブリージョンをアプリケーションで実装してください（参考：[実装方法 - 4.1.3 コンテンツの変更をユーザーに知らせる - Ameba Accessibility Guidelines](https://a11y-guidelines.ameba.design/4/1/3/#%E5%AE%9F%E8%A3%85%E6%96%B9%E6%B3%95)）
-- ライブリージョンは次のように実装します。 `html` 側に `aria-live="polite"` 及び `role="status"` を持つ要素を予め埋め込んでおき、この要素にコンテンツを動的に挿入することで、スクリーンリーダーが自動でコンテンツを読み上げてくれます
+- 本コンポーネントの内部は `<output>` を用いており、HTML仕様上のライブリージョン（`role="status"`/`aria-live="polite"` 相当）として振る舞います。アプリ側で重複するライブリージョンの実装は不要です（参考：[実装方法 - 4.1.3 コンテンツの変更をユーザーに知らせる - Ameba Accessibility Guidelines](https://a11y-guidelines.ameba.design/4/1/3/#%E5%AE%9F%E8%A3%85%E6%96%B9%E6%B3%95)）。
 
-<Source
-  code={`<html>
-  <body>
-    ...
-    <div
-      aria-live="polite"
-      id="polite-announcer"
-      role="status"
-      class="visually-hidden"
-    ></div>
-    ...
-  </body>
-</html>`}
-/>
 
-<Source
-  code={`const usePoliteAnnouncer = (message) => {
-  const announcer = useRef(null);
-  useEffect(() => {
-    announcer.current = document.getElementById('polite-announcer');
-    return () => {
-      announcer.current = null;
-    };
-  }, []);
-  useEffect(() => {
-    const announcerContent = announcer.current;
-    if (announcerContent && message) {
-      announcerContent.textContent = message;
-    }
-    return () => {
-      if(message) {
-        announcerContent.textContent = '';
-      }
-    };
-  }, [message]);
-};`}
-/>
-
-<Source
-  code={`.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  clip: rect(1px, 1px, 1px, 1px);
-}`}
-/>
 
 ## スタック機能
 
