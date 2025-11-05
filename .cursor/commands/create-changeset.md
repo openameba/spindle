@@ -60,7 +60,12 @@ This command analyzes the current branch changes and creates an appropriate chan
      ```
    - The description should be user-friendly as it will appear in CHANGELOG
 
-5. **Verify and Commit**
+5. **Lint Changeset**
+   - Run textlint to check the changeset file: `yarn textlint .changeset/<filename>.md`
+   - If there are any linting errors, fix them before proceeding
+   - Re-run textlint to confirm all issues are resolved
+
+6. **Verify and Commit**
    - Display the generated changeset for review
    - Confirm it accurately reflects the changes
    - Once verified, commit the changeset file:
