@@ -32,7 +32,7 @@
     "@lhci/cli": "0.15.1",
     "csso-cli": "4.0.2",
     "firebase-tools": "14.23.0",
-    "puppeteer": "24.27.0",
+    "puppeteer": "24.28.0",
     "stylelint": "15.11.0",
     "stylelint-config-standard": "34.0.0"
   }
