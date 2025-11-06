@@ -2747,10 +2747,10 @@
     tar-fs "^3.1.0"
     yargs "^17.7.2"
 
-"@puppeteer/browsers@2.10.12":
-  version "2.10.12"
-  resolved "https://registry.yarnpkg.com/@puppeteer/browsers/-/browsers-2.10.12.tgz#9d9376c205aa38e7344cadb2809e786df2cf3e78"
-  integrity sha512-mP9iLFZwH+FapKJLeA7/fLqOlSUwYpMwjR1P5J23qd4e7qGJwecJccJqHYrjw33jmIZYV4dtiTHPD/J+1e7cEw==
+"@puppeteer/browsers@2.10.13":
+  version "2.10.13"
+  resolved "https://registry.yarnpkg.com/@puppeteer/browsers/-/browsers-2.10.13.tgz#42c8b7df14e992f311ca9dca5fed3f0c2182fd17"
+  integrity sha512-a9Ruw3j3qlnB5a/zHRTkruppynxqaeE4H9WNj5eYGRWqw0ZauZ23f4W2ARf3hghF5doozyD+CRtt7XSYuYRI/Q==
   dependencies:
     debug "^4.4.3"
     extract-zip "^2.0.1"
@@ -14583,12 +14583,12 @@ pupa@^3.1.0:
   dependencies:
     escape-goat "^4.0.0"
 
-puppeteer-core@24.27.0:
-  version "24.27.0"
-  resolved "https://registry.yarnpkg.com/puppeteer-core/-/puppeteer-core-24.27.0.tgz#dd81d615fc8e4bafad500442e798323f920c89b8"
-  integrity sha512-yubwj2XXmTM3wRIpbhO5nCjbByPgpFHlgrsD4IK+gMPqO7/a5FfnoSXDKjmqi8A2M1Ewusz0rTI/r+IN0GU0MA==
+puppeteer-core@24.28.0:
+  version "24.28.0"
+  resolved "https://registry.yarnpkg.com/puppeteer-core/-/puppeteer-core-24.28.0.tgz#5f7353338d38c131dd229d4d5a69b7ab727bc02e"
+  integrity sha512-QpAqaYgeZHF5/xAZ4jAOzsU+l0Ed4EJoWkRdfw8rNqmSN7itcdYeCJaSPQ0s5Pyn/eGNC4xNevxbgY+5bzNllw==
   dependencies:
-    "@puppeteer/browsers" "2.10.12"
+    "@puppeteer/browsers" "2.10.13"
     chromium-bidi "10.5.1"
     debug "^4.4.3"
     devtools-protocol "0.0.1521046"
@@ -14609,16 +14609,16 @@ puppeteer-core@^24.10.0:
     webdriver-bidi-protocol "0.3.6"
     ws "^8.18.3"
 
-puppeteer@24.27.0:
-  version "24.27.0"
-  resolved "https://registry.yarnpkg.com/puppeteer/-/puppeteer-24.27.0.tgz#4867c3a3f028de8491114d253808f20757436830"
-  integrity sha512-eEcAFGxmHRSrk74DVkFAMAwfj4l3Ak8avBuA2bZaAoocY1+Fb9WLS3I7jlOc/tIOU7EmGLiDdVP08R44wADpHw==
+puppeteer@24.28.0:
+  version "24.28.0"
+  resolved "https://registry.yarnpkg.com/puppeteer/-/puppeteer-24.28.0.tgz#fe79687f6ae2d1039d80992a54c59a3624648860"
+  integrity sha512-KLRGFNCGmXJpocEBbEIoHJB0vNRZLQNBjl5ExXEv0z7MIU+qqVEQcfWTyat+qxPDk/wZvSf+b30cQqAfWxX0zg==
   dependencies:
-    "@puppeteer/browsers" "2.10.12"
+    "@puppeteer/browsers" "2.10.13"
     chromium-bidi "10.5.1"
     cosmiconfig "^9.0.0"
     devtools-protocol "0.0.1521046"
-    puppeteer-core "24.27.0"
+    puppeteer-core "24.28.0"
     typed-query-selector "^2.12.0"
 
 pure-rand@^7.0.0:
