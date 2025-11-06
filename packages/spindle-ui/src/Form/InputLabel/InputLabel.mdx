@@ -40,3 +40,25 @@ import '@openameba/spindle-ui/Form/InputLabel.css';
   `}
 />
 
+## Long Text
+
+<Story of={InputLabelStories.LongText} />
+
+<Source
+  code={`
+<InputLabel id="long-comment">
+  これはとても長いラベルテキストです。画面幅が狭い場合や、テキストサイズを200%に拡大した場合でも、このテキストは適切に折り返されて表示されることを確認するためのストーリーです。アクセシビリティガイドラインに準拠し、情報が欠落しないことを確認します。
+</InputLabel>
+  `}
+/>
+
+## Empty Children
+
+<Story of={InputLabelStories.EmptyChildren} />
+
+<Source
+  code={`
+<InputLabel id="empty" />
+  `}
+/>
+
