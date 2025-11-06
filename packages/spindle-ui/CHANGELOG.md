@@ -1,5 +1,13 @@
 # Change Log
 
+## 3.1.3
+
+### Patch Changes
+
+- [#1527](https://github.com/openameba/spindle/pull/1527) [`80852a8`](https://github.com/openameba/spindle/commit/80852a87ef7f2ae8e3d867f73e88e22668eed52f) Thanks [@yasuda-shin](https://github.com/yasuda-shin)! - 複数コンポーネントのアクセシビリティ改善（ロール/フォーカス/配置の見直し）と、Toastの不具合修正、細かなDOM出力の調整（`div` への統一など）を行いました。
+
+- [#1539](https://github.com/openameba/spindle/pull/1539) [`35253a1`](https://github.com/openameba/spindle/commit/35253a1b4dfc6ca039264b9857fa24c86e80a8bd) Thanks [@yasuda-shin](https://github.com/yasuda-shin)! - fix(spindle-ui): パンくずリストの現在地に関する仕様を変更
+
 ## 3.1.2
 
 ### Patch Changes
