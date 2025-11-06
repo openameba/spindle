@@ -37,8 +37,8 @@
 <BreadcrumbList variant="emphasized">
   {/* aでもLinkでもok */}
   <a href="/team">Team</a>
-  {/* 現在地に `aria-current` 属性が必要 */}
-  <a aria-current="page">Amebaとは</a>
+  {/* 現在地は非リンク要素で表現 */}
+  <span aria-current="page">Amebaとは</span>
 </BreadcrumbList>
 ```
 
@@ -100,7 +100,7 @@ type Props {
   <ol>
     <li><a href="/top">Top</a><svg role="img" aria-hidden="true"></svg></li>
     <li><a href="/team">Team</a><svg role="img" aria-hidden="true"></svg></li>
-    <li><a aria-current="page">Amebaの人と文化</a><svg role="img" aria-hidden="true"></svg></li>
+    <li><span aria-current="page">Amebaの人と文化</span><svg role="img" aria-hidden="true"></svg></li>
   </ol>
 </nav>
 ```

@@ -30,9 +30,7 @@ export const BreadcrumbListWithoutBreadcrumbItem: Story = {
       <BreadcrumbListComponent variant="emphasized">
         <a href="https://about.ameba.jp/">Top</a>
         <a href="https://about.ameba.jp/">Team</a>
-        <a href="https://about.ameba.jp/" aria-current="page">
-          Amebaとは
-        </a>
+        <span aria-current="page">Amebaとは</span>
       </BreadcrumbListComponent>
     </>
   ),
@@ -44,9 +42,7 @@ export const NoHref: Story = {
       <BreadcrumbListComponent variant="emphasized">
         <a href="https://about.ameba.jp/">Top</a>
         <a href="https://about.ameba.jp/">Team</a>
-        <a href="https://about.ameba.jp/" aria-current="page">
-          Amebaとは
-        </a>
+        <span aria-current="page">Amebaとは</span>
       </BreadcrumbListComponent>
     </>
   ),
