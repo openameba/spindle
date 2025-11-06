@@ -285,28 +285,28 @@ React実装の一例です。
 ```html
 <div class="spui-DropdownMenu">
   <button aria-controls="example" aria-expanded="true" type="button">開く</button>
-  <ul id="example" class="spui-DropdownMenu-menu spui-DropdownMenu-menu--text spui-DropdownMenu-menu--rightTop" role="menu">
-    <li class="spui-DropdownMenu-menuItem" role="menuItem">
-      <button class="spui-DropdownMenu-menuButton">
+  <div id="example" class="spui-DropdownMenu-menu spui-DropdownMenu-menu--text spui-DropdownMenu-menu--rightTop" role="menu">
+    <div class="spui-DropdownMenu-menuItem">
+      <button class="spui-DropdownMenu-menuButton" type="button" role="menuitem">
         <div class="spui-DropdownMenu-textContainer">
           <p class="spui-DropdownMenu-title">ここにテキストが入ります</p>
         </div>
       </button>
-    </li>
-    <li class="spui-DropdownMenu-menuItem" role="menuItem">
-      <button class="spui-DropdownMenu-menuButton">
+    </div>
+    <div class="spui-DropdownMenu-menuItem">
+      <button class="spui-DropdownMenu-menuButton" type="button" role="menuitem">
         <div class="spui-DropdownMenu-textContainer">
           <p class="spui-DropdownMenu-title">ここにテキストが入ります</p>
         </div>
       </button>
-    </li>
-  </ul>
+    </div>
+  </div>
 </div>
 ```
 
 ## アクセシビリティ
 - [情報や関係性を明確にする](https://a11y-guidelines.ameba.design/1/3/1/)[基本必須]
-  - [ ] リストはulタグ（`role="menu"`）とliタグ（`role="menuItem"`）、ボタンはbuttonタグで実装している
+  - [ ] メニューは`div`（`role="menu"`）、各アイテムは`button`（`type="button"` + `role="menuitem"`）で実装している
 - [表示の向きを固定しない](https://a11y-guidelines.ameba.design/1/3/4/)[できれば]
   - [ ] 端末を横向きにしても、表示されるメニューの位置が変わりメニューやテキストが見切れない
   - [ ] 端末の向きが縦向き（portrait）を前提としたデザインになっていない
@@ -329,7 +329,7 @@ React実装の一例です。
 - [HTMLを正しく記述する](https://a11y-guidelines.ameba.design/4/1/1/)[基本必須]
   - [ ] HTML仕様に準拠した実装をしている
 - [カスタムコントロールの操作性を担保する](https://a11y-guidelines.ameba.design/4/1/2/)[基本必須]
-  - [ ] メニューに`role="menu"`、メニューアイテムに`role="menuItem"`を適切に設定している。また、トリガーボタンに`aria-controls`と`aria-expanded`を適切に設定している。
+  - [ ] メニューに`role="menu"`、メニューアイテムのボタンに`role="menuitem"`を適切に設定している。また、トリガーボタンに`aria-controls`と`aria-expanded`を適切に設定している。
   - [ ] スクリーンリーダーでも機能落ちがなく、読み上げが過不足なく行われている
 
 ## リンク集

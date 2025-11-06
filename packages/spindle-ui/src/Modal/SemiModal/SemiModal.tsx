@@ -60,8 +60,8 @@ const Frame = forwardRef<HTMLDialogElement, SemiModalProps>(function SemiModal(
   }, [open]);
 
   return (
+    /* biome-ignore lint/a11y/useKeyWithClickEvents: Backdrop click only; keyboard is handled by native dialog */
     <dialog
-      role="dialog"
       className={BLOCK_NAME}
       ref={useMergeRefs([dialogEl, ref])}
       onClick={handleDialogClick}
@@ -86,7 +86,7 @@ const Header = ({
   ...rest
 }: React.ComponentProps<'header'> & { children: ReactNode }) => {
   return (
-    <header role="heading" className={`${BLOCK_NAME}-header`} {...rest}>
+    <header className={`${BLOCK_NAME}-header`} {...rest}>
       {children}
       <div className={`${BLOCK_NAME}-closeIconButton`}>
         <IconButton

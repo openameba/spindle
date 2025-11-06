@@ -101,6 +101,7 @@ const Frame = ({
       onTransitionEnd={handleTransitionEnd}
       ref={(ref) => setClientHeight(ref?.clientHeight || 0)}
     >
+      {/* biome-ignore lint: non-interactive wrapper needs mouse/focus handlers for timeout control */}
       <div
         className={`${BLOCK_NAME}-content ${BLOCK_NAME}-content--${variant}`}
         onMouseOver={resetTimeout}

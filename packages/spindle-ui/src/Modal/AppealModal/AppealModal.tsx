@@ -58,6 +58,7 @@ const Frame = forwardRef<HTMLDialogElement, AppealModalProps>(
     }, [open]);
 
     return (
+      /* biome-ignore lint/a11y/useKeyWithClickEvents: Backdrop click only; keyboard is handled by native dialog */
       <dialog
         className={[BLOCK_NAME, `${BLOCK_NAME}--${size}`, className]
           .filter(Boolean)

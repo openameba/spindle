@@ -143,6 +143,7 @@ export const SegmentedControl: React.FC<Props> = ({
       {options.map((option, index) => {
         const isSelected = option.id === selectedId;
         return (
+          // biome-ignore lint/a11y/useSemanticElements: Custom segmented control uses button + radio roles for accessibility
           <button
             key={option.id}
             className={`${BLOCK_NAME}-button`}

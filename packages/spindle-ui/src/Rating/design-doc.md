@@ -109,6 +109,7 @@ React実装の一例です。
 
 - [画像に代替テキストを提供する](https://a11y-guidelines.ameba.design/1/1/1/)[基本必須]
   - [ ] テキスト表記がない場合、星の総数とスコアを提供できている
+  - [ ] 各アイコンSVGには`<title>`要素で名称を付与している（本コンポーネントでは付与済み）。全体はコンテナ（`role="img"` + `aria-label`）で名称を提供するため、重複読み上げにならないよう実装・検証する
 - [情報や関係性を明確にする](https://a11y-guidelines.ameba.design/1/3/1/)[基本必須]
 - [意味のある順序でコンテンツを表現する](https://a11y-guidelines.ameba.design/1/3/2/)[基本必須]
 - [感覚的な特徴だけで説明しない](https://a11y-guidelines.ameba.design/1/3/3/)[基本必須]
