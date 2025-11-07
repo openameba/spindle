@@ -1,4 +1,3 @@
-import { jest } from '@jest/globals';
 import {
   act,
   fireEvent,
@@ -25,21 +24,12 @@ const useDropdownMenuOpen = (initialState?: boolean) => {
 };
 
 describe('<DropdownMenu />', () => {
-  beforeEach(() => {
-    jest.useFakeTimers();
-  });
-
-  afterEach(() => {
-    jest.runOnlyPendingTimers();
-    jest.useRealTimers();
-  });
-
   test('The DropdownMenu should be closed when you click the trigger button', async () => {
     const triggerRef = createRef<HTMLButtonElement>();
-    const onMenuButtonClick = jest.fn();
-    const onClose = jest.fn();
+    const onMenuButtonClick = vi.fn();
+    const onClose = vi.fn();
     const { result } = renderHook(() => useDropdownMenuOpen());
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup({ delay: null });
 
     expect(result.current.open).toBe(true);
 
@@ -92,9 +82,9 @@ describe('<DropdownMenu />', () => {
 
   test('The DropdownMenu should be closed when you click outside the DropdownMenu', async () => {
     const triggerRef = createRef<HTMLButtonElement>();
-    const onMenuButtonClick = jest.fn();
+    const onMenuButtonClick = vi.fn();
     const { result } = renderHook(() => useDropdownMenuOpen());
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup({ delay: null });
 
     expect(result.current.open).toBe(true);
 
@@ -128,7 +118,9 @@ describe('<DropdownMenu />', () => {
     expect(menu).toHaveClass('is-fade-out');
 
     act(() => {
-      jest.advanceTimersByTime(ANIMATION_DURATION);
+      vi.useFakeTimers();
+      vi.advanceTimersByTime(ANIMATION_DURATION);
+      vi.useRealTimers();
       if (menu) fireEvent.animationEnd(menu);
     });
 
@@ -160,9 +152,9 @@ describe('<DropdownMenu />', () => {
 
   test('A click event should occur and the DropdownMenu should be closed when you click in the DropdownMenu', async () => {
     const triggerRef = createRef<HTMLButtonElement>();
-    const onMenuButtonClick = jest.fn();
+    const onMenuButtonClick = vi.fn();
     const { result } = renderHook(() => useDropdownMenuOpen());
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup({ delay: null });
 
     expect(result.current.open).toBe(true);
 
@@ -198,7 +190,9 @@ describe('<DropdownMenu />', () => {
     expect(menu).toHaveClass('is-fade-out');
 
     act(() => {
-      jest.advanceTimersByTime(ANIMATION_DURATION);
+      vi.useFakeTimers();
+      vi.advanceTimersByTime(ANIMATION_DURATION);
+      vi.useRealTimers();
       if (menu) fireEvent.animationEnd(menu);
     });
 
@@ -227,9 +221,9 @@ describe('<DropdownMenu />', () => {
 
   test('The DropdownMenu should be closed when you trigger esc key.', async () => {
     const triggerRef = createRef<HTMLButtonElement>();
-    const onMenuButtonClick = jest.fn();
+    const onMenuButtonClick = vi.fn();
     const { result } = renderHook(() => useDropdownMenuOpen());
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup({ delay: null });
 
     expect(result.current.open).toBe(true);
 
@@ -259,7 +253,9 @@ describe('<DropdownMenu />', () => {
     expect(menu).toHaveClass('is-fade-out');
 
     act(() => {
-      jest.advanceTimersByTime(ANIMATION_DURATION);
+      vi.useFakeTimers();
+      vi.advanceTimersByTime(ANIMATION_DURATION);
+      vi.useRealTimers();
       if (menu) fireEvent.animationEnd(menu);
     });
 
@@ -288,9 +284,9 @@ describe('<DropdownMenu />', () => {
 
   test('The active element should be trigger element after the escape keydown when the Dropdown menu is opened.', async () => {
     const triggerRef = createRef<HTMLButtonElement>();
-    const onMenuButtonClick = jest.fn();
+    const onMenuButtonClick = vi.fn();
     const { result } = renderHook(() => useDropdownMenuOpen());
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup({ delay: null });
 
     expect(result.current.open).toBe(true);
 
@@ -313,16 +309,18 @@ describe('<DropdownMenu />', () => {
 
     await user.keyboard('{esc}');
     act(() => {
-      jest.advanceTimersByTime(ANIMATION_DURATION);
+      vi.useFakeTimers();
+      vi.advanceTimersByTime(ANIMATION_DURATION);
+      vi.useRealTimers();
     });
     expect(document.activeElement).toBe(triggerRef.current);
   });
 
   test('The active element should not be trigger element after the escape keydown when the Dropdown menu is closed.', async () => {
     const triggerRef = createRef<HTMLButtonElement>();
-    const onMenuButtonClick = jest.fn();
+    const onMenuButtonClick = vi.fn();
     const { result } = renderHook(() => useDropdownMenuOpen(false));
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+    const user = userEvent.setup({ delay: null });
 
     expect(result.current.open).toBe(false);
 
@@ -345,7 +343,9 @@ describe('<DropdownMenu />', () => {
 
     await user.keyboard('{esc}');
     act(() => {
-      jest.advanceTimersByTime(ANIMATION_DURATION);
+      vi.useFakeTimers();
+      vi.advanceTimersByTime(ANIMATION_DURATION);
+      vi.useRealTimers();
     });
     expect(document.activeElement).not.toBe(triggerRef.current);
   });

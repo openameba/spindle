@@ -1,4 +1,3 @@
-import { jest } from '@jest/globals';
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 
@@ -7,12 +6,12 @@ import { Dialog } from './Dialog';
 
 describe('<Dialog.Frame />', () => {
   beforeAll(() => {
-    HTMLDialogElement.prototype.showModal = jest.fn(function (
+    HTMLDialogElement.prototype.showModal = vi.fn(function (
       this: HTMLDialogElement,
     ) {
       this.open = true;
     });
-    HTMLDialogElement.prototype.close = jest.fn(function (
+    HTMLDialogElement.prototype.close = vi.fn(function (
       this: HTMLDialogElement,
     ) {
       this.open = false;
@@ -49,7 +48,7 @@ describe('<Dialog.Frame />', () => {
   });
 
   test('should call onClose when backdrop is clicked', () => {
-    const onClose = jest.fn();
+    const onClose = vi.fn();
     render(
       <Dialog.Frame open onClose={onClose}>
         <Dialog.Title>Test Title</Dialog.Title>
@@ -64,7 +63,7 @@ describe('<Dialog.Frame />', () => {
   });
 
   test('should not call onClose when dialog content is clicked', () => {
-    const onClose = jest.fn();
+    const onClose = vi.fn();
     render(
       <Dialog.Frame open onClose={onClose}>
         <Dialog.Title>Test Title</Dialog.Title>
@@ -78,7 +77,7 @@ describe('<Dialog.Frame />', () => {
   });
 
   test('should call onClose when form is submitted', () => {
-    const onClose = jest.fn();
+    const onClose = vi.fn();
     render(
       <Dialog.Frame open onClose={onClose}>
         <Dialog.Title>Test Title</Dialog.Title>
@@ -97,7 +96,7 @@ describe('<Dialog.Frame />', () => {
   });
 
   test('should call onClose when dialog close event is fired', () => {
-    const onClose = jest.fn();
+    const onClose = vi.fn();
     render(
       <Dialog.Frame open onClose={onClose}>
         <Dialog.Title>Test Title</Dialog.Title>
@@ -112,7 +111,7 @@ describe('<Dialog.Frame />', () => {
   });
 
   test('should call onCancel when cancel event is fired', () => {
-    const onCancel = jest.fn();
+    const onCancel = vi.fn();
     render(
       <Dialog.Frame open onCancel={onCancel}>
         <Dialog.Title>Test Title</Dialog.Title>
