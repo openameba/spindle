@@ -33,7 +33,7 @@ describe('<Radio />', () => {
 
   test('disabled Radio is inert (no toggle, no events, no focus)', async () => {
     const user = userEvent.setup();
-    const onChange = jest.fn();
+    const onChange = vi.fn();
 
     render(
       <Radio disabled id="test" onChange={onChange}>
