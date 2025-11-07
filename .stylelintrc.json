@@ -1,0 +1,67 @@
+{
+  "extends": "stylelint-config-standard",
+  "overrides": [
+    {
+      "files": ["packages/spindle-ui/**/*.css"],
+      "plugins": [
+        "stylelint-order",
+        "stylelint-selector-bem-pattern"
+      ],
+      "rules": {
+        "color-function-notation": "legacy",
+        "alpha-value-notation": "number",
+        "selector-class-pattern": null,
+        "custom-property-pattern": null,
+        "keyframes-name-pattern": null,
+        "import-notation": null,
+        "color-function-alias-notation": null,
+        "comment-empty-line-before": null,
+        "media-feature-range-notation": null,
+        "no-descending-specificity": null,
+        "property-no-deprecated": null,
+        "order/properties-alphabetical-order": true,
+        "plugin/selector-bem-pattern": {
+          "implicitComponents": "packages/spindle-ui/src/**/*.css",
+          "preset": "suit",
+          "presetOptions": {
+            "namespace": "spui"
+          }
+        },
+        "value-keyword-case": ["lower", {
+          "ignoreKeywords": ["/^--/"]
+        }]
+      }
+    },
+    {
+      "files": ["packages/spindle-tokens/**/*.css"],
+      "rules": {
+        "color-function-notation": "legacy",
+        "alpha-value-notation": "number",
+        "declaration-property-value-allowed-list": {
+          "/^--animation-easing-/": "/^cubic-bezier\\([\\d.]+, [\\d.]+, [\\d.]+, [\\d.]+\\)/"
+        },
+        "color-hex-length": "long",
+        "value-keyword-case": ["lower", {
+          "ignoreProperties": [
+            "/^--font-/"
+          ]
+        }]
+      }
+    },
+    {
+      "files": ["packages/spindle-syntax-themes/**/*.css"],
+      "rules": {
+        "color-function-notation": "legacy",
+        "selector-class-pattern": null
+      }
+    },
+    {
+      "files": ["packages/spindle-theme-switch/**/*.css"],
+      "rules": {
+        "color-function-notation": "legacy",
+        "alpha-value-notation": "number",
+        "color-function-alias-notation": null
+      }
+    }
+  ]
+}

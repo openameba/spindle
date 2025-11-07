@@ -18,9 +18,8 @@
     "access": "public"
   },
   "scripts": {
-    "test": "yarn lint && yarn test:a11y",
+    "test": "yarn test:a11y",
     "test:a11y": "lhci autorun",
-    "lint": "stylelint *.css",
     "minify": "csso highlightjs-light.css --output highlightjs-light.min.css && csso highlightjs-dark.css --output highlightjs-dark.min.css",
     "prepublishOnly": "yarn minify",
     "build:example": "npx rimraf public && npx cpx '*.{html,css,ico}' public",
@@ -32,8 +31,6 @@
     "@lhci/cli": "0.15.1",
     "csso-cli": "4.0.2",
     "firebase-tools": "14.23.0",
-    "puppeteer": "24.28.0",
-    "stylelint": "15.11.0",
-    "stylelint-config-standard": "34.0.0"
+    "puppeteer": "24.28.0"
   }
 }
