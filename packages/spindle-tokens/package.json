@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "@figma/rest-api-spec": "0.34.0",
+    "@swc/core": "1.14.0",
     "@swc/jest": "0.2.39",
     "@types/jest": "30.0.0",
     "@types/lodash.setwith": "4.3.9",
