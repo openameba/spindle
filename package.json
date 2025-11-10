@@ -65,7 +65,7 @@
     ]
   },
   "resolutions": {
-    "zod": "3.25.76",
+    "zod": "4.1.12",
     "superstatic": "10.0.0"
   },
   "lint-staged": {
