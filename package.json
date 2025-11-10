@@ -37,6 +37,7 @@
     "jest": "30.2.0",
     "jscodeshift": "17.3.0",
     "lerna": "9.0.0",
+    "lint-staged": "16.2.6",
     "npm-run-all2": "8.0.4",
     "prettier": "3.6.2",
     "stylelint": "16.25.0",
