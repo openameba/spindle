@@ -70,10 +70,10 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "biome check"
+      "biome check --no-errors-on-unmatched --files-ignore-unknown=true"
     ],
     "*.css": [
-      "biome check",
+      "biome check --no-errors-on-unmatched --files-ignore-unknown=true",
       "stylelint"
     ],
     "*.{md,mdx}": [
