@@ -63,13 +63,13 @@
   },
   "devDependencies": {
     "@figma/code-connect": "1.3.8",
-    "@storybook/addon-a11y": "10.0.3",
-    "@storybook/addon-docs": "10.0.3",
+    "@storybook/addon-a11y": "10.0.5",
+    "@storybook/addon-docs": "10.0.5",
     "@storybook/addon-webpack5-compiler-swc": "4.0.1",
-    "@storybook/react": "10.0.3",
-    "@storybook/react-webpack5": "10.0.3",
+    "@storybook/react": "10.0.5",
+    "@storybook/react-webpack5": "10.0.5",
     "@svgr/cli": "8.1.0",
-    "@swc/core": "1.14.0",
+    "@swc/core": "1.15.0",
     "@swc/jest": "0.2.39",
     "@testing-library/dom": "10.4.1",
     "@testing-library/jest-dom": "6.9.1",
@@ -83,7 +83,7 @@
     "dialog-polyfill": "0.5.6",
     "dotenv": "17.2.3",
     "figma-api": "1.12.0",
-    "firebase-tools": "14.23.0",
+    "firebase-tools": "14.24.0",
     "jest": "30.2.0",
     "jest-environment-jsdom": "30.2.0",
     "postcss": "8.5.6",
@@ -96,6 +96,6 @@
     "reg-publish-gcs-plugin": "0.14.4",
     "reg-suit": "0.14.5",
     "scaffdog": "4.1.0",
-    "storybook": "10.0.3"
+    "storybook": "10.0.5"
   }
 }
