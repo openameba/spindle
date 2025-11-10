@@ -67,5 +67,20 @@
   "resolutions": {
     "zod": "3.25.76",
     "superstatic": "10.0.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "biome check"
+    ],
+    "*.css": [
+      "biome check",
+      "stylelint"
+    ],
+    "*.{md,mdx}": [
+      "textlint --quiet"
+    ],
+    ".github/workflows/*.yml": [
+      "yamllint"
+    ]
   }
 }
