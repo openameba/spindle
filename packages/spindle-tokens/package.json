@@ -20,10 +20,8 @@
   },
   "scripts": {
     "test": "tsc --noEmit && yarn jest",
-    "stylelint": "stylelint dist/**/*.css",
     "jest": "jest",
     "build": "node build-tokens.mjs",
-    "postbuild": "yarn stylelint",
     "export": "run-p export:*",
     "export:animation": "tsx scripts/animation.ts",
     "export:color": "tsx scripts/color.ts",
@@ -45,8 +43,6 @@
     "lodash.setwith": "4.3.2",
     "make-dir": "4.0.0",
     "style-dictionary": "5.1.1",
-    "stylelint": "15.11.0",
-    "stylelint-config-standard": "34.0.0",
     "tsx": "4.20.6"
   }
 }

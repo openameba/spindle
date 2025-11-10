@@ -10,10 +10,7 @@
   ],
   "scripts": {
     "generate": "scaffdog generate",
-    "test": "run-p size lint test:interaction",
-    "lint": "yarn lint:style",
-    "lint:style": "stylelint '**/*.css'",
-    "fix": "yarn lint:style --fix",
+    "test": "run-p size test:interaction",
     "test:interaction": "jest",
     "presize": "yarn build",
     "size": "bundlewatch --config .bundlewatch.config.js",
@@ -99,10 +96,6 @@
     "reg-publish-gcs-plugin": "0.14.4",
     "reg-suit": "0.14.5",
     "scaffdog": "4.1.0",
-    "storybook": "10.0.5",
-    "stylelint": "16.25.0",
-    "stylelint-config-standard": "39.0.1",
-    "stylelint-order": "7.0.0",
-    "stylelint-selector-bem-pattern": "4.0.1"
+    "storybook": "10.0.5"
   }
 }
