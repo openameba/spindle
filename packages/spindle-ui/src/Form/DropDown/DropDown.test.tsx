@@ -51,4 +51,48 @@ describe('<DropDown />', () => {
 
     expect(screen.getByRole('combobox')).toEqual(ref.current);
   });
+
+  test('hasError prop applies error class', () => {
+    const { container } = render(
+      <DropDown hasError aria-label="test">
+        <option value="a">A</option>
+        <option value="b">B</option>
+      </DropDown>,
+    );
+
+    const label = container.querySelector('.spui-DropDown-label');
+    expect(label).toHaveClass('is-error');
+  });
+
+  test('disabled prop disables select element', () => {
+    render(
+      <DropDown disabled aria-label="test">
+        <option value="a">A</option>
+        <option value="b">B</option>
+      </DropDown>,
+    );
+
+    const select = screen.getByRole('combobox');
+    expect(select).toBeDisabled();
+  });
+
+  test('visual text updates when selection changes', async () => {
+    const { container } = render(
+      <DropDown aria-label="test">
+        <option value="a">Option A</option>
+        <option value="b">Option B</option>
+        <option value="c">Option C</option>
+      </DropDown>,
+    );
+
+    const user = userEvent.setup();
+    const select = screen.getByRole('combobox');
+    const visual = container.querySelector('.spui-DropDown-visual');
+
+    await user.selectOptions(select, 'b');
+    expect(visual).toHaveTextContent('Option B');
+
+    await user.selectOptions(select, 'c');
+    expect(visual).toHaveTextContent('Option C');
+  });
 });
