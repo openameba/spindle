@@ -13,13 +13,19 @@ interface Props
 const BLOCK_NAME = 'spui-DropDown';
 
 export const DropDown = forwardRef<HTMLSelectElement, Props>(function DropDown(
-  { children, hasError = false, onChange, ...rest }: Props,
+  {
+    children,
+    hasError = false,
+    onChange,
+    disabled: selectDisabled,
+    ...rest
+  }: Props,
   ref,
 ) {
   const selectEl = useRef<HTMLSelectElement>(null);
 
   const [text, setText] = useState('');
-  const [disabled, setDisabled] = useState(false);
+  const [optionDisabled, setOptionDisabled] = useState(false);
 
   const update = () => {
     if (selectEl?.current) {
@@ -28,7 +34,7 @@ export const DropDown = forwardRef<HTMLSelectElement, Props>(function DropDown(
       const value = selectedEl.text;
       const disabled = selectedEl.disabled;
       setText(value);
-      setDisabled(disabled);
+      setOptionDisabled(disabled);
     }
   };
 
@@ -42,11 +48,13 @@ export const DropDown = forwardRef<HTMLSelectElement, Props>(function DropDown(
   // Update text once
   useEffect(update, []);
 
+  const isActive = !selectDisabled && !optionDisabled;
+
   return (
     <label
       className={[
         `${BLOCK_NAME}-label`,
-        !disabled ? 'is-active' : '',
+        isActive ? 'is-active' : '',
         hasError ? 'is-error' : '',
       ]
         .filter(Boolean)
@@ -60,6 +68,7 @@ export const DropDown = forwardRef<HTMLSelectElement, Props>(function DropDown(
         className={`${BLOCK_NAME}-select`}
         ref={useMergeRefs([selectEl, ref])}
         onChange={handleChange}
+        disabled={selectDisabled}
         {...rest}
       >
         {children}
