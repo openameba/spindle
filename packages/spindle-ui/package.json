@@ -96,6 +96,7 @@
     "reg-publish-gcs-plugin": "0.14.4",
     "reg-suit": "0.14.5",
     "scaffdog": "4.1.0",
-    "storybook": "10.0.6"
+    "storybook": "10.0.6",
+    "@vscode/web-custom-data": "0.6.1"
   }
 }
