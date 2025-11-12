@@ -51,7 +51,7 @@
     "@storybook/addon-webpack5-compiler-swc": "4.0.1",
     "@storybook/react": "10.0.6",
     "@storybook/react-webpack5": "10.0.6",
-    "@swc/core": "1.15.0",
+    "@swc/core": "1.15.1",
     "@swc/jest": "0.2.39",
     "@testing-library/dom": "10.4.1",
     "@testing-library/jest-dom": "6.9.1",
