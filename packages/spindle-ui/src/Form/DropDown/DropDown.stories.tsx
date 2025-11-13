@@ -64,3 +64,34 @@ export const DropDownWithError: Story = {
     </>
   ),
 };
+
+export const DropDownDisabled: Story = {
+  render: (args) => (
+    <>
+      <DropDownComponent
+        {...args}
+        aria-label="期間を選択"
+        disabled
+        name="termDisabled"
+        defaultValue="seven_days"
+      >
+        <option value="today">今日</option>
+        <option value="seven_days">7日間</option>
+        <option value="thirty_days">30日間</option>
+      </DropDownComponent>
+    </>
+  ),
+};
+
+export const DropDownWithoutInitialSelection: Story = {
+  render: (args) => (
+    <>
+      <DropDownComponent {...args} aria-label="期間を選択" name="termEmpty">
+        <option value="">選択してください</option>
+        <option value="today">今日</option>
+        <option value="seven_days">7日間</option>
+        <option value="thirty_days">30日間</option>
+      </DropDownComponent>
+    </>
+  ),
+};

@@ -115,6 +115,68 @@ import '@openameba/spindle-ui/Form/DropDown.css';
   `}
 />
 
+## DropDown Disabled
+
+<Story of={DropDownStories.DropDownDisabled} />
+
+<Source
+  code={`
+<DropDown aria-label="期間を選択" disabled name="term" defaultValue="seven_days">
+  <option value="today">今日</option>
+  <option value="seven_days">7日間</option>
+  <option value="thirty_days">30日間</option>
+</DropDown>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<label class="spui-DropDown-label">
+  <span class="spui-DropDown-visual">7日間</span>
+  <span class="spui-DropDown-icon"><svg>...</svg></span>
+  <select aria-label="期間を選択" class="spui-DropDown-select" name="term" disabled>
+    <option value="today">今日</option>
+    <option value="seven_days" selected>7日間</option>
+    <option value="thirty_days">30日間</option>
+  </select>
+  <span class="spui-DropDown-outline"></span>
+</label>
+  `}
+/>
+
+## DropDown Without Initial Selection
+
+<Story of={DropDownStories.DropDownWithoutInitialSelection} />
+
+<Source
+  code={`
+<DropDown aria-label="期間を選択" name="term">
+  <option value="">選択してください</option>
+  <option value="today">今日</option>
+  <option value="seven_days">7日間</option>
+  <option value="thirty_days">30日間</option>
+</DropDown>
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<label class="spui-DropDown-label">
+  <span class="spui-DropDown-visual">選択してください</span>
+  <span class="spui-DropDown-icon"><svg>...</svg></span>
+  <select aria-label="期間を選択" class="spui-DropDown-select" name="term">
+    <option value="" selected>選択してください</option>
+    <option value="today">今日</option>
+    <option value="seven_days">7日間</option>
+    <option value="thirty_days">30日間</option>
+  </select>
+  <span class="spui-DropDown-outline"></span>
+</label>
+  `}
+/>
+
 ## Accessibility
 
 aria-label属性やlabel要素で適切なラベリングをしてください。
