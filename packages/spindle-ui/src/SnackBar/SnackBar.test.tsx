@@ -1,4 +1,3 @@
-import { jest } from '@jest/globals';
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 
@@ -6,12 +5,12 @@ import { BLOCK_NAME, DISPLAYING_TIMEOUT_DURATION, SnackBar } from './SnackBar';
 
 describe('<SnackBar />', () => {
   beforeEach(() => {
-    jest.useFakeTimers();
+    vi.useFakeTimers();
   });
 
   afterEach(() => {
-    jest.runOnlyPendingTimers();
-    jest.useRealTimers();
+    vi.runOnlyPendingTimers();
+    vi.useRealTimers();
   });
 
   test('Inner isShow state should be changed by timer', () => {
@@ -23,7 +22,7 @@ describe('<SnackBar />', () => {
       ).toHaveClass(`${BLOCK_NAME}-slide--in`);
 
       act(() => {
-        jest.advanceTimersByTime(DISPLAYING_TIMEOUT_DURATION);
+        vi.advanceTimersByTime(DISPLAYING_TIMEOUT_DURATION);
       });
 
       expect(
@@ -42,7 +41,7 @@ describe('<SnackBar />', () => {
       expect(onHide).toHaveBeenCalledTimes(1);
     };
 
-    const onHide = jest.fn();
+    const onHide = vi.fn();
     const { rerender } = render(
       <SnackBar.Frame active onHide={onHide}>
         <SnackBar.Text>content</SnackBar.Text>
@@ -74,7 +73,7 @@ describe('<SnackBar />', () => {
   });
 
   test('When it is hovered, duration should be reset', () => {
-    const onHide = jest.fn();
+    const onHide = vi.fn();
     render(
       <SnackBar.Frame active onHide={onHide}>
         <SnackBar.Text>content</SnackBar.Text>
@@ -84,7 +83,7 @@ describe('<SnackBar />', () => {
     fireEvent.mouseOver(screen.getByText(/content/));
 
     act(() => {
-      jest.advanceTimersByTime(DISPLAYING_TIMEOUT_DURATION);
+      vi.advanceTimersByTime(DISPLAYING_TIMEOUT_DURATION);
     });
 
     expect(
@@ -94,7 +93,7 @@ describe('<SnackBar />', () => {
     fireEvent.mouseOut(screen.getByText(/content/));
 
     act(() => {
-      jest.advanceTimersByTime(DISPLAYING_TIMEOUT_DURATION);
+      vi.advanceTimersByTime(DISPLAYING_TIMEOUT_DURATION);
     });
 
     expect(
@@ -120,7 +119,7 @@ describe('<SnackBar />', () => {
         fireEvent[evtName](parentElement);
       }
     };
-    const onHide = jest.fn();
+    const onHide = vi.fn();
     render(
       <SnackBar.Frame active onHide={onHide}>
         <SnackBar.Text>content</SnackBar.Text>
@@ -130,7 +129,7 @@ describe('<SnackBar />', () => {
     handleCloseButtonEvent('focus');
 
     act(() => {
-      jest.advanceTimersByTime(DISPLAYING_TIMEOUT_DURATION);
+      vi.advanceTimersByTime(DISPLAYING_TIMEOUT_DURATION);
     });
 
     expect(
@@ -140,7 +139,7 @@ describe('<SnackBar />', () => {
     handleCloseButtonEvent('blur');
 
     act(() => {
-      jest.advanceTimersByTime(DISPLAYING_TIMEOUT_DURATION);
+      vi.advanceTimersByTime(DISPLAYING_TIMEOUT_DURATION);
     });
 
     expect(
@@ -160,7 +159,7 @@ describe('<SnackBar />', () => {
   });
 
   test('it should close when close button is clicked', () => {
-    const onHide = jest.fn();
+    const onHide = vi.fn();
     render(
       <SnackBar.Frame active onHide={onHide}>
         <SnackBar.Text>content</SnackBar.Text>

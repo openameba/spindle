@@ -1,4 +1,3 @@
-import { jest } from '@jest/globals';
 import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
@@ -8,14 +7,12 @@ import { AppealModal } from './AppealModal';
 
 // Mock HTMLDialogElement methods as they are not fully supported in JSDOM
 beforeAll(() => {
-  HTMLDialogElement.prototype.showModal = jest.fn(function (
+  HTMLDialogElement.prototype.showModal = vi.fn(function (
     this: HTMLDialogElement,
   ) {
     this.open = true;
   }) as () => void;
-  HTMLDialogElement.prototype.close = jest.fn(function (
-    this: HTMLDialogElement,
-  ) {
+  HTMLDialogElement.prototype.close = vi.fn(function (this: HTMLDialogElement) {
     this.open = false;
   }) as () => void;
 });
@@ -85,7 +82,7 @@ describe('<AppealModal />', () => {
     });
 
     test('onClose callback is called when close button is clicked', async () => {
-      const onClose = jest.fn();
+      const onClose = vi.fn();
       const user = userEvent.setup();
 
       render(
@@ -102,7 +99,7 @@ describe('<AppealModal />', () => {
     });
 
     test('onClose callback is called when backdrop is clicked', async () => {
-      const onClose = jest.fn();
+      const onClose = vi.fn();
       const user = userEvent.setup();
 
       const { container } = render(
@@ -120,7 +117,7 @@ describe('<AppealModal />', () => {
     });
 
     test('onClose callback is not called when clicking inside the dialog', async () => {
-      const onClose = jest.fn();
+      const onClose = vi.fn();
       const user = userEvent.setup();
 
       render(
@@ -137,7 +134,7 @@ describe('<AppealModal />', () => {
     });
 
     test('onCancel callback is called on cancel event', () => {
-      const onCancel = jest.fn();
+      const onCancel = vi.fn();
 
       const { container } = render(
         <AppealModal.Frame open={true} onCancel={onCancel}>
@@ -155,7 +152,7 @@ describe('<AppealModal />', () => {
     });
 
     test('onClose callback is called on dialog close event', () => {
-      const onClose = jest.fn();
+      const onClose = vi.fn();
 
       const { container } = render(
         <AppealModal.Frame open={true} onClose={onClose}>

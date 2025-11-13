@@ -19,8 +19,8 @@
     "directory": "packages/spindle-tokens"
   },
   "scripts": {
-    "test": "tsc --noEmit && yarn jest",
-    "jest": "jest",
+    "test": "tsc --noEmit && vitest run",
+    "stylelint": "stylelint dist/**/*.css",
     "build": "node build-tokens.mjs",
     "export": "run-p export:*",
     "export:animation": "tsx scripts/animation.ts",
@@ -34,15 +34,16 @@
   },
   "devDependencies": {
     "@figma/rest-api-spec": "0.34.0",
-    "@swc/core": "1.15.1",
-    "@swc/jest": "0.2.39",
-    "@types/jest": "30.0.0",
     "@types/lodash.setwith": "4.3.9",
-    "jest": "30.2.0",
+    "@types/node": "24.10.0",
+    "@vitest/ui": "4.0.7",
     "jsonabc": "2.3.1",
     "lodash.setwith": "4.3.2",
     "make-dir": "4.0.0",
     "style-dictionary": "5.1.1",
-    "tsx": "4.20.6"
+    "stylelint": "15.11.0",
+    "stylelint-config-standard": "34.0.0",
+    "tsx": "4.20.6",
+    "vitest": "4.0.7"
   }
 }

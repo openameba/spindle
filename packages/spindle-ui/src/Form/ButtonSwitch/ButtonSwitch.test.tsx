@@ -1,4 +1,3 @@
-import { jest } from '@jest/globals';
 import { render, renderHook, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
@@ -22,7 +21,7 @@ const useButtonSwitch = (initialValue = options[0].value) => {
 
 describe('<ButtonSwitch />', () => {
   test('Should aria-pressed="true" be set for the currently selected button', () => {
-    const onClick = jest.fn();
+    const onClick = vi.fn();
     render(
       <ButtonSwitch
         value={options[0].value}
@@ -39,7 +38,7 @@ describe('<ButtonSwitch />', () => {
   });
 
   test('onClick should be called when the button is clicked', async () => {
-    const onClick = jest.fn();
+    const onClick = vi.fn();
     const user = userEvent.setup();
 
     render(
@@ -73,7 +72,7 @@ describe('<ButtonSwitch />', () => {
   });
 
   test('Should be reflected if the received value changes', async () => {
-    const onClick = jest.fn();
+    const onClick = vi.fn();
     const { rerender } = render(
       <ButtonSwitch
         value={options[0].value}
@@ -107,7 +106,7 @@ describe('<ButtonSwitch />', () => {
   });
 
   test('a11y', async () => {
-    const onClick = jest.fn();
+    const onClick = vi.fn();
     const user = userEvent.setup();
 
     render(
@@ -139,7 +138,7 @@ describe('<ButtonSwitch />', () => {
   });
 
   test('group has accessible name aria labelledby', () => {
-    const onClick = jest.fn();
+    const onClick = vi.fn();
     render(
       <>
         <span id="label-id">ラベル</span>

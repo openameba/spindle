@@ -2,9 +2,8 @@
   "name": "spindle",
   "private": true,
   "scripts": {
-    "test": "run-p codecheck test:*",
-    "test:packages": "lerna run test",
-    "test:bin": "jest bin",
+    "test": "run-p codecheck test:packages",
+    "test:packages": "vitest run",
     "codecheck": "run-p check:* lint:*",
     "check:code": "biome check",
     "lint": "run-p lint:*",
@@ -34,7 +33,6 @@
     "@commitlint/config-lerna-scopes": "20.0.0",
     "husky": "9.1.7",
     "is-ci": "4.1.0",
-    "jest": "30.2.0",
     "jscodeshift": "17.3.0",
     "lerna": "9.0.0",
     "lint-staged": "16.2.6",
@@ -47,6 +45,7 @@
     "textlint": "15.3.0",
     "textlint-rule-preset-ameba": "openameba/textlint-rule-preset-ameba#v0.5.1",
     "typescript": "5.9.3",
+    "vitest": "4.0.7",
     "yaml-lint": "1.7.0"
   },
   "engines": {

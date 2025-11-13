@@ -2,7 +2,7 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "lib": ["ESNext", "DOM"],
-    "types": ["jest", "@testing-library/jest-dom"],
+    "types": ["vitest/globals", "@testing-library/jest-dom"],
     "jsx": "react",
     "skipLibCheck": true
   },
