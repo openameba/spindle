@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.1.4
+
+### Patch Changes
+
+- [#1613](https://github.com/openameba/spindle/pull/1613) [`9663434`](https://github.com/openameba/spindle/commit/966343454ae60c783acc0e0e50d8563c0c2098fe) Thanks [@herablog](https://github.com/herablog)! - Fix DropDown disabled state styling to match the appearance when a selected option is disabled
+
 ## 3.1.3
 
 ### Patch Changes
