@@ -198,6 +198,13 @@ function DialogExample() {
 </Dialog.ButtonGroup>
 ```
 
+## Baseline
+
+- HTMLDialogElement (Widely available) - [MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement)
+  - `<dialog>`要素と`showModal()`メソッドを使用してモーダルダイアログを実装しています
+- `:has()` (Newly available) - [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/:has)
+  - `html:has(.spui-Dialog:modal)`を使用して、モーダル表示時にページのスクロールを無効化しています
+
 ## アクセシビリティ
 
 - [画像に代替テキストを提供する](https://a11y-guidelines.ameba.design/1/1/1/)[基本必須]

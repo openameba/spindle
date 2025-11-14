@@ -60,6 +60,10 @@ type Props = {
 <label class="spui-InputLabel" for="comment">コメントを入力</label>
 ```
 
+## Baseline
+
+Widely available
+
 ## アクセシビリティ
 
 - [情報や関係性を明確にする](https://a11y-guidelines.ameba.design/1/3/1/)[基本必須]

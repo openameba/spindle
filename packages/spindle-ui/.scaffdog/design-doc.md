@@ -59,6 +59,46 @@ type Props = {
 ## 実装例
 <!-- オプション項目です。大まかなコードを書いたり、複数の実装を比較する際に利用します -->
 
+## Baseline
+<!-- オプション項目です。コンポーネントが使用しているWeb Platform機能のBaselineステータスを記載します。
+Baseline情報は`@vscode/web-custom-data`パッケージのJSONデータから取得してください。
+コンポーネントの実装（.tsx）だけでなく、CSS（.css）も確認して、使用しているHTML要素やCSS機能を特定してください。
+
+Baseline情報の取得方法:
+`@vscode/web-custom-data`パッケージのJSONデータから取得します。
+
+1. 以下のコードでデータを取得します:
+   ```javascript
+   const htmlData = require('@vscode/web-custom-data/data/browsers.html-data.json');
+   const cssData = require('@vscode/web-custom-data/data/browsers.css-data.json');
+   ```
+2. HTML機能の場合、種類に応じて検索します:
+   - HTML要素（`<dialog>`, `<div>`など）: `htmlData.tags.find(t => t.name === 'dialog')`で検索し、`status.baseline`を確認します
+   - HTML属性（`accesskey`など）: `htmlData.globalAttributes.find(a => a.name === 'accesskey')`で検索し、`status.baseline`を確認します
+3. CSS機能の場合、種類に応じて検索します:
+   - 疑似クラス（`:has()`, `:user-invalid`など）: `cssData.pseudoClasses.find(p => p.name === ':has')`
+   - 疑似要素（`::before`, `::after`など）: `cssData.pseudoElements.find(p => p.name === '::before')`
+   - CSSプロパティ（`display`, `color`など）: `cssData.properties.find(p => p.name === 'display')`
+   - @ルール（`@media`, `@keyframes`など）: `cssData.atDirectives.find(a => a.name === '@media')`
+   - 検索後、`baseline.status`を確認します
+4. Baseline statusの判定方法:
+   - `status: "high"` または `baseline.status: "high"` → "Widely available"
+   - `status: "low"` または `baseline.status: "low"` → "Newly available"
+   - `baseline_low_date`からBaseline年を判定します（例: "2023-12-19" → Baseline 2023）
+
+記載例は以下の通りです。
+
+- 標準的なHTML要素のみを使用している場合:「Widely available」。
+- Newly availableな機能を使用している場合:
+  - HTMLDialogElement(Baseline 2022) - [MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement)
+    - `<dialog>`要素と`showModal()`メソッドを使用してモーダルダイアログを実装しています
+  - `:has()`(Baseline 2023) - [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/:has)
+    - `html:has(.spui-Dialog:modal)`を使用して、モーダル表示時にページのスクロールを無効化しています
+- Limited availabilityな機能を使用している場合:
+  - 機能名(Limited availability) - [MDN](リンク)
+    - 機能の説明
+-->
+
 ## アクセシビリティ
 <!-- 必須項目です。「Ameba Accessibility Checklist」を使って対応する項目をリストアップします。対応する項目を以下の形式で記述します。
 - [項目](ガイドラインURL) [重要度]

@@ -77,6 +77,10 @@ React実装の一例です。
 <button class="spui-SubtleButton spui-SubtleButton--medium">とじる</button>
 ```
 
+## Baseline
+
+Widely available
+
 ## インタラクション
 
 ### ホバースタイル

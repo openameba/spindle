@@ -294,3 +294,10 @@ AppealModalで定義されていない要素は利用時に追加してカスタ
 </AppealModal.StyleOnly>
   `}
 />
+
+## Baseline
+
+- HTMLDialogElement (Widely available) - [MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement)
+  - `<dialog>`要素と`showModal()`メソッドを使用してモーダルダイアログを実装しています
+- `:has()` (Newly available) - [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/:has)
+  - `html:has(.spui-AppealModal[open])`を使用して、モーダル表示時にページのスクロールを無効化しています
