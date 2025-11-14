@@ -65,7 +65,7 @@
     "@figma/code-connect": "1.3.8",
     "@storybook/addon-a11y": "10.0.6",
     "@storybook/addon-docs": "10.0.6",
-    "@storybook/addon-webpack5-compiler-swc": "4.0.1",
+    "@storybook/addon-webpack5-compiler-swc": "4.0.2",
     "@storybook/react": "10.0.6",
     "@storybook/react-webpack5": "10.0.6",
     "@svgr/cli": "8.1.0",

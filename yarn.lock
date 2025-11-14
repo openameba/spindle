@@ -3203,10 +3203,10 @@
     react-dom "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-webpack5-compiler-swc@4.0.1":
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-webpack5-compiler-swc/-/addon-webpack5-compiler-swc-4.0.1.tgz#178d45951dcce0d54b2c1032b0a6cf3b64c0cdaa"
-  integrity sha512-ZwdELxsMAnkE2loDP8mgogcMaMcSvY1xwifIze4TM3rgn2AXjS6QmWCM32MQOn3ej2hK681MPI5y2NLVB7m4hQ==
+"@storybook/addon-webpack5-compiler-swc@4.0.2":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-webpack5-compiler-swc/-/addon-webpack5-compiler-swc-4.0.2.tgz#91f10a02cf9a917fd1ced5f3c836bf049d94b416"
+  integrity sha512-I/B4zXnpk+wLs2YA/VcCzUjF/TtB26X4zIoXw3xaPPUvk5aPc76/dhmZHLMXkICQEur5FkFQv0YGHNxWHbhnfw==
   dependencies:
     "@swc/core" "^1.13.5"
     swc-loader "^0.2.6"
