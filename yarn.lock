@@ -8343,10 +8343,10 @@ find-up@^7.0.0:
     path-exists "^5.0.0"
     unicorn-magic "^0.1.0"
 
-firebase-tools@14.24.2:
-  version "14.24.2"
-  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-14.24.2.tgz#afd31321045eed91640d875db7665ffb87432fd6"
-  integrity sha512-e4uMTFqWtDL+G1JfJ4iS/7gillSORSgihaej3ooah/h8DCdbAlB5idXZHOz82RjWMuZG+RwyCnMH7IyeI9FNFQ==
+firebase-tools@14.25.0:
+  version "14.25.0"
+  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-14.25.0.tgz#c076a63037cd95934607d3a0cef9a7c380136b4e"
+  integrity sha512-nwZA9TAnd5FWJQGJpJ/xTKmmROq33U1c7ilqr6KFoZSYtBv3iomdGxjvs7gI329vxgQBuqT/93/Ivkj0TNmJDw==
   dependencies:
     "@apphosting/build" "^0.1.6"
     "@apphosting/common" "^0.0.8"
@@ -8410,7 +8410,7 @@ firebase-tools@14.24.2:
     sql-formatter "^15.3.0"
     stream-chain "^2.2.4"
     stream-json "^1.7.3"
-    superstatic "^9.2.0"
+    superstatic "^10.0.0"
     tar "^6.1.11"
     tcp-port-used "^1.0.2"
     tmp "^0.2.3"
@@ -16603,7 +16603,7 @@ sudachi-synonyms-dictionary@^5.0.1:
   resolved "https://registry.yarnpkg.com/sudachi-synonyms-dictionary/-/sudachi-synonyms-dictionary-5.0.1.tgz#e51c3bd57c72b1aece0fe8b37558858356bd6b53"
   integrity sha512-MSLBwyztRT4BPstyfM8M8DntQ/sJhRyq43S/vGfRq3/JuBbKFUzrI9rpoiQOc+35el5WrIm4K3fJyLhsSEOIqw==
 
-superstatic@10.0.0, superstatic@^9.2.0:
+superstatic@10.0.0, superstatic@^10.0.0:
   version "10.0.0"
   resolved "https://registry.yarnpkg.com/superstatic/-/superstatic-10.0.0.tgz#64d07e969b387a2567754205d10305a390dddfa4"
   integrity sha512-4xIenBdrIIYuqXrIVx/lejyCh4EJwEMPCwfk9VGFfRlhZcdvzTd3oVOUILrAGfC4pFUWixzPgaOVzAEZgeYI3w==
