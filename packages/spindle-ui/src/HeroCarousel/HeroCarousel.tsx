@@ -71,7 +71,7 @@ export const HeroCarousel: FC<Props> = React.memo(function HeroCarousel({
               carouselItem={item}
               isLinkClicked={isLinkClicked}
               itemLinkClassName={ITEM_LINK_CLASS_NAME}
-              key={item.link}
+              key={item.title}
             />
           ))}
         </ul>
