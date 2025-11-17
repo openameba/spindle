@@ -40,7 +40,7 @@
 
 ### Storybook
 - When updating Storybook, use the official migration command: `npx storybook@{VERSION} upgrade`
-- Use Chrome DevTools MCP to verify that all pages display without errors (errors may occur during rendering)
+- Use the `fix-storybook-errors` command (@.claude/commands/fix-storybook-errors.md) to verify that all pages display without errors
 
 ## Note
 
