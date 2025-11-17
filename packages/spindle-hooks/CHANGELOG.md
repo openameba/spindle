@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.10.1
+
+### Patch Changes
+
+- [#1602](https://github.com/openameba/spindle/pull/1602) [`94e9c2e`](https://github.com/openameba/spindle/commit/94e9c2e37d6eeac96d4bf6d0d9138df014abae00) Thanks [@herablog](https://github.com/herablog)! - Migrate from Jest to Vitest for internal testing. This includes a minor fix to use `window.setTimeout` and `window.clearTimeout` for better browser environment compatibility.
+
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
