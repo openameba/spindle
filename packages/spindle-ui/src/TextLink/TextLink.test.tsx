@@ -36,7 +36,7 @@ describe('<TextLink />', () => {
   });
 
   test('passes through onClick handler', () => {
-    const handleClick = jest.fn();
+    const handleClick = vi.fn();
 
     render(
       <TextLink href="#contact" onClick={handleClick}>

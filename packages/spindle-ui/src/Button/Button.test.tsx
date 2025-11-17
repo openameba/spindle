@@ -1,4 +1,3 @@
-import { jest } from '@jest/globals';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
@@ -7,7 +6,7 @@ import { Button } from './Button';
 
 describe('<Button />', () => {
   test('click', async () => {
-    const onButtonClick = jest.fn();
+    const onButtonClick = vi.fn();
 
     const user = userEvent.setup();
 

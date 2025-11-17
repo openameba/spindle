@@ -6,7 +6,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "test": "run-p size test:interaction",
-    "test:interaction": "jest --passWithNoTests",
+    "test:interaction": "vitest run --passWithNoTests",
     "dev": "yarn storybook:start",
     "storybook:start": "storybook dev -p 6006 -c .storybook",
     "storybook:build": "storybook build -o public -c .storybook",
@@ -51,21 +51,19 @@
     "@storybook/addon-webpack5-compiler-swc": "4.0.2",
     "@storybook/react": "10.0.7",
     "@storybook/react-webpack5": "10.0.7",
-    "@swc/core": "1.15.1",
-    "@swc/jest": "0.2.39",
     "@testing-library/dom": "10.4.1",
     "@testing-library/jest-dom": "6.9.1",
     "@testing-library/react": "16.3.0",
     "@testing-library/user-event": "14.6.1",
-    "@types/jest": "30.0.0",
     "@types/react": "19.2.4",
     "@types/react-dom": "19.2.3",
+    "@vitest/ui": "4.0.7",
     "bundlewatch": "0.4.1",
-    "jest": "30.2.0",
-    "jest-environment-jsdom": "30.2.0",
+    "jsdom": "27.1.0",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "storybook": "10.0.7",
+    "vitest": "4.0.7",
     "webpack": "5.102.1"
   }
 }

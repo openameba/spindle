@@ -1,4 +1,3 @@
-import { jest } from '@jest/globals';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
@@ -7,7 +6,7 @@ import { SubtleButton } from './SubtleButton';
 
 describe('<SubtleButton />', () => {
   test('click', async () => {
-    const onButtonClick = jest.fn();
+    const onButtonClick = vi.fn();
 
     const user = userEvent.setup();
 
@@ -33,7 +32,7 @@ describe('<SubtleButton />', () => {
   });
 
   test('disabled button does not trigger onClick', async () => {
-    const onClick = jest.fn();
+    const onClick = vi.fn();
     const user = userEvent.setup();
 
     render(

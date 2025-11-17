@@ -1,4 +1,3 @@
-import { jest } from '@jest/globals';
 import { render, renderHook, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React, { useState } from 'react';
@@ -47,7 +46,7 @@ describe('<SegmentedControl />', () => {
   });
 
   test('onClick should be called when the button is clicked', async () => {
-    const onClick = jest.fn();
+    const onClick = vi.fn();
     const user = userEvent.setup();
 
     render(

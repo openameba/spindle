@@ -1,4 +1,3 @@
-import { jest } from '@jest/globals';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
@@ -22,7 +21,7 @@ describe('<InlineDropDown />', () => {
   });
 
   test('change', async () => {
-    const onChange = jest.fn();
+    const onChange = vi.fn();
     const user = userEvent.setup();
 
     render(

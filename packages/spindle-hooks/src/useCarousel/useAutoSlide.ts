@@ -13,14 +13,14 @@ export function useAutoSlide({ onTimeOut, shouldAutoPlaying = true }: Payload) {
 
   const resetTimeOut = useCallback(() => {
     if (timeoutId) {
-      clearTimeout(timeoutId);
+      window.clearTimeout(timeoutId);
     }
   }, [timeoutId]);
 
   const activateAutoSlide = useCallback(() => {
     resetTimeOut();
 
-    const newTimeoutId = setTimeout(() => {
+    const newTimeoutId = window.setTimeout(() => {
       onTimeOut();
     }, AUTO_SLIDE_SPEED);
 

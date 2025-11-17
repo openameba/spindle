@@ -1,4 +1,3 @@
-import { jest } from '@jest/globals';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
@@ -132,7 +131,7 @@ describe('<UnderlineTab />', () => {
     test('The selected item should change when onClick is called.', async () => {
       const defaultSelectedId = options[0].id;
       const selectedId = options[1].id;
-      const onClick = jest.fn();
+      const onClick = vi.fn();
       const user = userEvent.setup();
 
       render(
