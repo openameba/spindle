@@ -1,0 +1,43 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --view-transition-root-old-animation: var(--view-transition-root-old-fade-duration) var(--view-transition-root-old-fade-easing) both spindle-view-transition-fade-out, var(--view-transition-root-old-slide-duration) var(--view-transition-root-old-slide-easing) both spindle-view-transition-slide-to-left;
+  --view-transition-root-new-animation: var(--view-transition-root-new-fade-duration) var(--view-transition-root-new-fade-easing) both spindle-view-transition-fade-in, var(--view-transition-root-new-slide-duration) var(--view-transition-root-new-slide-easing) both spindle-view-transition-slide-from-right;
+  --view-transition-root-old-fade-duration: var(--animation-disappear-duration);
+  --view-transition-root-old-fade-easing: var(--animation-disappear-easing);
+  --view-transition-root-old-slide-duration: var(--animation-in-view-duration);
+  --view-transition-root-old-slide-easing: var(--animation-in-view-easing);
+  --view-transition-root-new-fade-duration: var(--animation-appear-in-duration);
+  --view-transition-root-new-fade-easing: var(--animation-appear-in-easing);
+  --view-transition-root-new-slide-duration: var(--animation-in-view-duration);
+  --view-transition-root-new-slide-easing: var(--animation-in-view-easing);
+}
+
+
+/* View Transition API */
+::view-transition-old(root) {
+  animation: var(--view-transition-root-old-animation);
+}
+
+::view-transition-new(root) {
+  animation: var(--view-transition-root-new-animation);
+}
+
+/* Keyframes (fixed with Spindle namespace) */
+@keyframes spindle-view-transition-fade-in {
+  from { opacity: 0; }
+}
+
+@keyframes spindle-view-transition-fade-out {
+  to { opacity: 0; }
+}
+
+@keyframes spindle-view-transition-slide-from-right {
+  from { transform: translateX(30px); }
+}
+
+@keyframes spindle-view-transition-slide-to-left {
+  to { transform: translateX(-30px); }
+}

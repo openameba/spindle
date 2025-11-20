@@ -98,21 +98,77 @@ npm install @openameba/spindle-tokens
 @import '@openameba/spindle-tokens/dist/css/spindle-tokens-animation.css';
 @import '@openameba/spindle-tokens/dist/css/spindle-tokens-font.css';
 @import '@openameba/spindle-tokens/dist/css/spindle-tokens-shadow.css';
+@import '@openameba/spindle-tokens/dist/css/view-transition.css';
 \`\`\`
 
 \`\`\`javascript
 import '@openameba/spindle-tokens/dist/css/spindle-tokens-animation.css';
 import '@openameba/spindle-tokens/dist/css/spindle-tokens-font.css';
 import '@openameba/spindle-tokens/dist/css/spindle-tokens-shadow.css';
+import '@openameba/spindle-tokens/dist/css/view-transition.css';
 \`\`\`
 
 \`\`\`html
 <link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-tokens/dist/css/spindle-tokens-animation.css">
 <link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-tokens/dist/css/spindle-tokens-font.css">
 <link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-tokens/dist/css/spindle-tokens-shadow.css">
+<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-tokens/dist/css/view-transition.css">
 \`\`\`
 
-**Spacingトークンについて**
+### View Transitionトークンについて
+
+View Transition API (https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API) を利用する際は、view-transition.cssを読み込むことで、Spindleのアニメーショントークンに基づいた一貫したトランジション体験を提供できます。
+
+#### 注意事項
+
+- view-transition.cssは spindle-tokens-animation.cssとの併用が必須です
+- 現在は ページ全体でのトランジション（root要素）のみ対応 しています
+- 個別要素に対するView Transitionは、プロジェクトごとに都度実装してください
+
+#### 基本的な使い方
+
+\`\`\`css
+/* spindle-tokens-animation.cssの読み込みが必須 */
+@import '@openameba/spindle-tokens/dist/css/spindle-tokens-animation.css';
+@import '@openameba/spindle-tokens/dist/css/view-transition.css';
+\`\`\`
+
+#### カスタマイズ可能なトークン
+
+##### 分割トークン（細かい調整用）
+
+- \`--view-transition-root-old-fade-duration\` - 消えていく要素のフェード時間
+- \`--view-transition-root-old-fade-easing\` - 消えていく要素のフェードイージング
+- \`--view-transition-root-old-slide-duration\` - 消えていく要素のスライド時間
+- \`--view-transition-root-old-slide-easing\` - 消えていく要素のスライドイージング
+- \`--view-transition-root-new-fade-duration\` - 出現する要素のフェード時間
+- \`--view-transition-root-new-fade-easing\` - 出現する要素のフェードイージング
+- \`--view-transition-root-new-slide-duration\` - 出現する要素のスライド時間
+- \`--view-transition-root-new-slide-easing\` - 出現する要素のスライドイージング
+
+##### shorthand トークン（パターン丸ごと差し替え用）
+
+- \`--view-transition-root-old-animation\` - 消えていく要素のアニメーション全体
+- \`--view-transition-root-new-animation\` - 出現する要素のアニメーション全体
+
+#### カスタマイズ例
+
+\`\`\`css
+/* 少しだけ遅くしたいページ */
+.page--slow-transition {
+  --view-transition-root-new-fade-duration: 400ms;
+}
+
+/* LPだけはパターン丸ごと別のアニメーションにしたい */
+.page--lp {
+  --view-transition-root-old-animation:
+    300ms ease-in both spindle-view-transition-fade-out;
+  --view-transition-root-new-animation:
+    300ms ease-out both spindle-view-transition-fade-in;
+}
+\`\`\`
+
+### Spacingトークンについて
 
 Spacingトークンはデバイスサイズに応じて異なる値を持ちます。対象デバイスに合わせて適切なファイルを読み込むか、メディアクエリで切り替えてください。
 
