@@ -22,6 +22,14 @@ StyleDictionary.registerAction({
   animation: var(--view-transition-root-new-animation);
 }
 
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
+
 /* Keyframes (fixed with Spindle namespace) */
 @keyframes spindle-view-transition-fade-in {
   from { opacity: 0; }
