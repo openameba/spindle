@@ -21,4 +21,28 @@ describe('<TextField />', () => {
 
     expect(screen.getByRole('textbox')).toEqual(ref.current);
   });
+
+  test('renders with id attribute', () => {
+    render(<TextField id="username" />);
+
+    expect(screen.getByRole('textbox')).toHaveAttribute('id', 'username');
+  });
+
+  test('renders with placeholder', () => {
+    render(<TextField id="text" placeholder="Enter text" />);
+
+    expect(screen.getByPlaceholderText('Enter text')).toBeInTheDocument();
+  });
+
+  test('renders with disabled attribute', () => {
+    render(<TextField id="text" disabled />);
+
+    expect(screen.getByRole('textbox')).toBeDisabled();
+  });
+
+  test('renders with type attribute', () => {
+    render(<TextField id="email" type="email" />);
+
+    expect(screen.getByRole('textbox')).toHaveAttribute('type', 'email');
+  });
 });
