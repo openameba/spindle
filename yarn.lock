@@ -2832,23 +2832,23 @@
   resolved "https://registry.yarnpkg.com/@standard-schema/spec/-/spec-1.0.0.tgz#f193b73dc316c4170f2e82a881da0f550d551b9c"
   integrity sha512-m2bOd0f2RT9k8QJx1JN85cZYyH1RqFBdlwtkSlf4tBDYLCiiZnv1fIIwacK6cqwXavOydf0NPToMQgpKq+dVlA==
 
-"@storybook/addon-a11y@10.0.7":
-  version "10.0.7"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-10.0.7.tgz#ac049e20d0fcdb0df66f1523adcc72799793993a"
-  integrity sha512-JsYPpZ/n67/2bI1XJeyrAWHHQkHemPkPHjCA0tAUnMz1Shlo/LV2q1Ahgpxoihx4strbHwZz71bcS4MqkHBduA==
+"@storybook/addon-a11y@10.0.8":
+  version "10.0.8"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-10.0.8.tgz#61bcbbb80fa1d78ffa95caf52f7c05df102907e6"
+  integrity sha512-rXJuSfujuRqkz1v26wLttVRkXzZur3LtMTH1/K+rb1epXq305vRm/bYql0FYGvrq0idJWYo4WbU65YRig9sfuA==
   dependencies:
     "@storybook/global" "^5.0.0"
     axe-core "^4.2.0"
 
-"@storybook/addon-docs@10.0.7":
-  version "10.0.7"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-docs/-/addon-docs-10.0.7.tgz#5ff988cfa23934dd0235fe5a7bb20c08d3156e8c"
-  integrity sha512-qQQMoeYZC4W+/8ubfOZiTrE8nYC/f4wWP1uq4peRyDy1N2nIN9SwhyxwMn0m3VpeGmRBga5dLvJY9ko6SnJekg==
+"@storybook/addon-docs@10.0.8":
+  version "10.0.8"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-docs/-/addon-docs-10.0.8.tgz#0a45db23d324cefc0c54552447886a6e78d6d918"
+  integrity sha512-PYuaGXGycsamK/7OrFoE4syHGy22mdqqArl67cfosRwmRxZEI9ManQK0jTjNQM9ZX14NpThMOSWNGoWLckkxog==
   dependencies:
     "@mdx-js/react" "^3.0.0"
-    "@storybook/csf-plugin" "10.0.7"
+    "@storybook/csf-plugin" "10.0.8"
     "@storybook/icons" "^1.6.0"
-    "@storybook/react-dom-shim" "10.0.7"
+    "@storybook/react-dom-shim" "10.0.8"
     react "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
     react-dom "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
     ts-dedent "^2.0.0"
@@ -2861,12 +2861,12 @@
     "@swc/core" "^1.13.5"
     swc-loader "^0.2.6"
 
-"@storybook/builder-webpack5@10.0.7":
-  version "10.0.7"
-  resolved "https://registry.yarnpkg.com/@storybook/builder-webpack5/-/builder-webpack5-10.0.7.tgz#780d1041a828f94487e8988bf72263ed408ae0d7"
-  integrity sha512-zGLVCllY6taKpLRTILsb7SVf71qe8KISsGxR9XEiKf1CV4P4ikFj94Gj9UEafXxfDa+pGGrB+45911KSnJ3rWg==
+"@storybook/builder-webpack5@10.0.8":
+  version "10.0.8"
+  resolved "https://registry.yarnpkg.com/@storybook/builder-webpack5/-/builder-webpack5-10.0.8.tgz#3e8463128e2747ec46b38693279c98daf6974cda"
+  integrity sha512-uufIrphiv0BoaZ0kE/jk7q3tRs7+hjxnesRceeE3TAUI38EFs3Ppv3UBkwjl1NxL2h7skJhQ45rogtBFLwkyew==
   dependencies:
-    "@storybook/core-webpack" "10.0.7"
+    "@storybook/core-webpack" "10.0.8"
     case-sensitive-paths-webpack-plugin "^2.4.0"
     cjs-module-lexer "^1.2.3"
     css-loader "^7.1.2"
@@ -2882,17 +2882,17 @@
     webpack-hot-middleware "^2.25.1"
     webpack-virtual-modules "^0.6.0"
 
-"@storybook/core-webpack@10.0.7":
-  version "10.0.7"
-  resolved "https://registry.yarnpkg.com/@storybook/core-webpack/-/core-webpack-10.0.7.tgz#9b49be15505d44c158bd4b6d2448638134a98f35"
-  integrity sha512-C1Q7TvMtqIInGHECObh153kWUzJzV8fmtsGhOpnW8h2fP727G2XJ4IRZdCh9Ogwq2KO2Dac6/jo8tW6N2mrFUA==
+"@storybook/core-webpack@10.0.8":
+  version "10.0.8"
+  resolved "https://registry.yarnpkg.com/@storybook/core-webpack/-/core-webpack-10.0.8.tgz#095ad14969e074c1bb10b7cc1aa14ffcd4f580d3"
+  integrity sha512-WFpbzUY9lfXMvNo9YTDG9CeGlWhn79V/pVqj6nOYwCO4wrF+yeizm61zXvZdDofFOtrw4vzzmzgbjkBQJefa5Q==
   dependencies:
     ts-dedent "^2.0.0"
 
-"@storybook/csf-plugin@10.0.7":
-  version "10.0.7"
-  resolved "https://registry.yarnpkg.com/@storybook/csf-plugin/-/csf-plugin-10.0.7.tgz#e2f6a6e948c66786e6527a82282ca3bbf969681e"
-  integrity sha512-YaYYlCyJBwxaMk7yREOdz+9MDSgxIYGdeJ9EIq/bUndmkoj9SRo1P9/0lC5dseWQoiGy4T3PbZiWruD8uM5m3g==
+"@storybook/csf-plugin@10.0.8":
+  version "10.0.8"
+  resolved "https://registry.yarnpkg.com/@storybook/csf-plugin/-/csf-plugin-10.0.8.tgz#ed5e41c7c963770ff97209728ea5e5495d08a1bc"
+  integrity sha512-OtLUWHIm3SDGtclQn6Mdd/YsWizLBgdEBRAdekGtwI/TvICfT7gpWYIycP53v2t9ufu2MIXjsxtV2maZKs8sZg==
   dependencies:
     unplugin "^2.3.5"
 
@@ -2906,12 +2906,12 @@
   resolved "https://registry.yarnpkg.com/@storybook/icons/-/icons-1.6.0.tgz#9fa6eb9c82922b79f75a2cf83c38af30ba7fd696"
   integrity sha512-hcFZIjW8yQz8O8//2WTIXylm5Xsgc+lW9ISLgUk1xGmptIJQRdlhVIXCpSyLrQaaRiyhQRaVg7l3BD9S216BHw==
 
-"@storybook/preset-react-webpack@10.0.7":
-  version "10.0.7"
-  resolved "https://registry.yarnpkg.com/@storybook/preset-react-webpack/-/preset-react-webpack-10.0.7.tgz#70c683de0614207f75a7218619044ce2c0411218"
-  integrity sha512-1QPE7+RuXERY4Yep30j15YKEpMK379YBaqarf8C2VwzUb4vfS+RvvRzRPikWCcZXviMnhMSlczE330YXedqkKg==
+"@storybook/preset-react-webpack@10.0.8":
+  version "10.0.8"
+  resolved "https://registry.yarnpkg.com/@storybook/preset-react-webpack/-/preset-react-webpack-10.0.8.tgz#2d867fd5945bab45aac58716e20349aeb22c2cf3"
+  integrity sha512-RM12Y4WnNN2+dTT1jCLbnrkp+rb4bResYhgi+QY4Yf2hc2Tq9OaApiFTiFaZqO8h4/X4UKgPto6ZY2kMMtlg4w==
   dependencies:
-    "@storybook/core-webpack" "10.0.7"
+    "@storybook/core-webpack" "10.0.8"
     "@storybook/react-docgen-typescript-plugin" "1.0.6--canary.9.0c3f3b7.0"
     "@types/semver" "^7.3.4"
     magic-string "^0.30.5"
@@ -2934,27 +2934,27 @@
     react-docgen-typescript "^2.2.2"
     tslib "^2.0.0"
 
-"@storybook/react-dom-shim@10.0.7":
-  version "10.0.7"
-  resolved "https://registry.yarnpkg.com/@storybook/react-dom-shim/-/react-dom-shim-10.0.7.tgz#8104232022a3238fabea0a277cdad230b101ea13"
-  integrity sha512-bp4OnMtZGwPJQDqNRi4K5iibLbZ2TZZMkWW7oSw5jjPFpGSreSjCe8LH9yj/lDnK8Ox9bGMCBFE5RV5XuML29w==
+"@storybook/react-dom-shim@10.0.8":
+  version "10.0.8"
+  resolved "https://registry.yarnpkg.com/@storybook/react-dom-shim/-/react-dom-shim-10.0.8.tgz#9f5a430f64fa4f9aa29626bfe7bb4461767cf85e"
+  integrity sha512-ojuH22MB9Sz6rWbhTmC5IErZr0ZADbZijtPteUdydezY7scORT00UtbNoBcG0V6iVjdChgDtSKw2KHUUfchKqg==
 
-"@storybook/react-webpack5@10.0.7":
-  version "10.0.7"
-  resolved "https://registry.yarnpkg.com/@storybook/react-webpack5/-/react-webpack5-10.0.7.tgz#564139553c0401ac8d67ef64f9608697557c49cf"
-  integrity sha512-mfw0CubRKeb5sC+iplnszEdVQhdsWshmajlzpol/bCRQS+gGLEeTtd0l5EY1ylhy0iT4NIclPWuU1Q08v2eyWg==
+"@storybook/react-webpack5@10.0.8":
+  version "10.0.8"
+  resolved "https://registry.yarnpkg.com/@storybook/react-webpack5/-/react-webpack5-10.0.8.tgz#8c63998b7fc9868f7199e11fed4e1f65a98e82d8"
+  integrity sha512-NvDRRmSPPQ/TYWY1iwsYMDZtUdUYEbOei0FvdKXtqxkmtLonRyG/a7nNOVWk5+rkj2CjQbnTFKNhv4qWGzuVsg==
   dependencies:
-    "@storybook/builder-webpack5" "10.0.7"
-    "@storybook/preset-react-webpack" "10.0.7"
-    "@storybook/react" "10.0.7"
+    "@storybook/builder-webpack5" "10.0.8"
+    "@storybook/preset-react-webpack" "10.0.8"
+    "@storybook/react" "10.0.8"
 
-"@storybook/react@10.0.7":
-  version "10.0.7"
-  resolved "https://registry.yarnpkg.com/@storybook/react/-/react-10.0.7.tgz#9879f14a95ee38e17a27999c99589b9f16991ff8"
-  integrity sha512-1GSDIMo2GkdG55DhpIIFaAJv+QzmsRb36qWsKqfbtFjEhnqu5/3zqyys2dCIiHOG1Czba4SGsTS4cay3KDQJgA==
+"@storybook/react@10.0.8":
+  version "10.0.8"
+  resolved "https://registry.yarnpkg.com/@storybook/react/-/react-10.0.8.tgz#924689fabc27e07a62153122612d479537541605"
+  integrity sha512-PkuPb8sAqmjjkowSzm3rutiSuETvZI2F8SnjbHE6FRqZWWK4iFoaUrQbrg5kpPAtX//xIrqkdFwlbmQ3skhiPA==
   dependencies:
     "@storybook/global" "^5.0.0"
-    "@storybook/react-dom-shim" "10.0.7"
+    "@storybook/react-dom-shim" "10.0.8"
 
 "@svgr/babel-plugin-add-jsx-attribute@8.0.0":
   version "8.0.0"
@@ -15181,10 +15181,10 @@ stop-iteration-iterator@^1.1.0:
     es-errors "^1.3.0"
     internal-slot "^1.1.0"
 
-storybook@10.0.7:
-  version "10.0.7"
-  resolved "https://registry.yarnpkg.com/storybook/-/storybook-10.0.7.tgz#dc28612008783f63c91edbf6f15cf3a227a9a775"
-  integrity sha512-7smAu0o+kdm378Q2uIddk32pn0UdIbrtTVU+rXRVtTVTCrK/P2cCui2y4JH+Bl3NgEq1bbBQpCAF/HKrDjk2Qw==
+storybook@10.0.8:
+  version "10.0.8"
+  resolved "https://registry.yarnpkg.com/storybook/-/storybook-10.0.8.tgz#9f3bf25f7db45e7f3778907834586cd9d1ade555"
+  integrity sha512-vQMufKKA9TxgoEDHJv3esrqUkjszuuRiDkThiHxENFPdQawHhm2Dei+iwNRwH5W671zTDy9iRT9P1KDjcU5Iyw==
   dependencies:
     "@storybook/global" "^5.0.0"
     "@storybook/icons" "^1.6.0"
