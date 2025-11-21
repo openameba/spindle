@@ -133,6 +133,10 @@ View Transition API (https://developer.mozilla.org/en-US/docs/Web/API/View_Trans
 @import '@openameba/spindle-tokens/dist/css/view-transition.css';
 \`\`\`
 
+view-transition.cssには \`@view-transition { navigation: auto; }\` が含まれているため、CSSを読み込むだけで条件に合う場合は自動的にトランジションが発生します。
+
+条件の詳細は [MDN - @view-transition](https://developer.mozilla.org/ja/docs/Web/CSS/Reference/At-rules/@view-transition#navigation) を参照してください。
+
 #### カスタマイズ可能なトークン
 
 ##### 分割トークン（細かい調整用）

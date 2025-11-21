@@ -14,6 +14,10 @@ StyleDictionary.registerAction({
     const staticCss = `
 
 /* View Transition API */
+@view-transition {
+  navigation: auto;
+}
+
 ::view-transition-old(root) {
   animation: var(--view-transition-root-old-animation);
 }
