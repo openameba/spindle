@@ -1,5 +1,15 @@
 # Change Log
 
+## 1.5.0
+
+### Minor Changes
+
+- [#1643](https://github.com/openameba/spindle/pull/1643) [`0fb0d0a`](https://github.com/openameba/spindle/commit/0fb0d0a63386289b1bdaa989365e4fc7eff2b846) Thanks [@herablog](https://github.com/herablog)! - View Transition API用のトークンを追加。
+  - view-transition.cssを追加（root要素用のfade/slideアニメーション）
+  - 既存のAnimationトークンを参照することで一貫性を確保
+  - spindle-tokens-animation.cssとの併用が必須
+  - カスタマイズ可能なトークン（duration、easing、animation shorthand）を提供
+
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
