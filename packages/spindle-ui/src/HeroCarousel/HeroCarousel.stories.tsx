@@ -46,3 +46,20 @@ const carouselList: CarouselItem[] = [
 export const Normal: Story = {
   render: () => <HeroCarousel carouselList={carouselList} autoplay={false} />,
 };
+
+const longTitleCarouselList: CarouselItem[] = [
+  {
+    title:
+      'タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル',
+    imageUrl:
+      'https://images.microcms-assets.io/assets/24995dc41d5c40808fe4a9e3f6fb2b20/e2526e7bfa494168a2e547cfe55ac89f/top_mv.jpg?w=640&h=336&fit=crop&fm=webp&q=85',
+    link: 'https://about.ameba.jp/',
+  },
+  ...carouselList.slice(1),
+];
+
+export const LongTitle: Story = {
+  render: () => (
+    <HeroCarousel carouselList={longTitleCarouselList} autoplay={false} />
+  ),
+};
