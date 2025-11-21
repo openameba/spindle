@@ -1,9 +1,61 @@
 import StyleDictionary from 'style-dictionary';
+import fs from 'node:fs';
+import path from 'node:path';
 
 const commonPlatform = {
   transformGroup: 'css',
   buildPath: 'dist/css/',
 };
+
+StyleDictionary.registerAction({
+  name: 'append_view_transition_styles',
+  do: (dictionary, config) => {
+    const filePath = path.join(config.buildPath, 'view-transition-tokens.css');
+    const staticCss = `
+
+/* View Transition API */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  animation: var(--view-transition-root-old-animation);
+}
+
+::view-transition-new(root) {
+  animation: var(--view-transition-root-new-animation);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
+
+/* Keyframes (fixed with Spindle namespace) */
+@keyframes spindle-view-transition-fade-in {
+  from { opacity: 0; }
+}
+
+@keyframes spindle-view-transition-fade-out {
+  to { opacity: 0; }
+}
+
+@keyframes spindle-view-transition-slide-from-right {
+  from { transform: translateX(30px); }
+}
+
+@keyframes spindle-view-transition-slide-to-left {
+  to { transform: translateX(-30px); }
+}
+`;
+    fs.appendFileSync(filePath, staticCss);
+    fs.renameSync(filePath, path.join(config.buildPath, 'view-transition.css'));
+  },
+  undo: () => {},
+});
 
 // Base tokens (animation, font, shadow, primitive color)
 await new StyleDictionary({
@@ -133,6 +185,25 @@ await new StyleDictionary({
           options: { outputReferences: true },
         },
       ],
+    },
+  },
+}).buildAllPlatforms();
+
+// View Transition
+await new StyleDictionary({
+  source: ['tokens/animation.tokens.json', 'tokens/view-transition.tokens.json'],
+  platforms: {
+    css: {
+      ...commonPlatform,
+      files: [
+        {
+          destination: 'view-transition-tokens.css',
+          format: 'css/variables',
+          options: { outputReferences: true },
+          filter: (token) => token.path[0] === 'viewTransition',
+        },
+      ],
+      actions: ['append_view_transition_styles'],
     },
   },
 }).buildAllPlatforms();

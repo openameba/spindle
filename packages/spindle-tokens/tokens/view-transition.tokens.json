@@ -1,0 +1,58 @@
+{
+  "viewTransition": {
+    "root": {
+      "old": {
+        "fade": {
+          "duration": {
+            "$type": "transition",
+            "$value": "{Animation.Disappear/Duration}"
+          },
+          "easing": {
+            "$type": "transition",
+            "$value": "{Animation.Disappear/Easing}"
+          }
+        },
+        "slide": {
+          "duration": {
+            "$type": "transition",
+            "$value": "{Animation.In View/Duration}"
+          },
+          "easing": {
+            "$type": "transition",
+            "$value": "{Animation.In View/Easing}"
+          }
+        },
+        "animation": {
+          "$type": "other",
+          "$value": "var(--view-transition-root-old-fade-duration) var(--view-transition-root-old-fade-easing) both spindle-view-transition-fade-out, var(--view-transition-root-old-slide-duration) var(--view-transition-root-old-slide-easing) both spindle-view-transition-slide-to-left"
+        }
+      },
+      "new": {
+        "fade": {
+          "duration": {
+            "$type": "transition",
+            "$value": "{Animation.Appear In/Duration}"
+          },
+          "easing": {
+            "$type": "transition",
+            "$value": "{Animation.Appear In/Easing}"
+          }
+        },
+        "slide": {
+          "duration": {
+            "$type": "transition",
+            "$value": "{Animation.In View/Duration}"
+          },
+          "easing": {
+            "$type": "transition",
+            "$value": "{Animation.In View/Easing}"
+          }
+        },
+        "animation": {
+          "$type": "other",
+          "$value": "var(--view-transition-root-new-fade-duration) var(--view-transition-root-new-fade-easing) both spindle-view-transition-fade-in, var(--view-transition-root-new-slide-duration) var(--view-transition-root-new-slide-easing) both spindle-view-transition-slide-from-right"
+        }
+      }
+    }
+  }
+}
