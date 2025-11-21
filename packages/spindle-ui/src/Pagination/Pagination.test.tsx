@@ -159,4 +159,120 @@ describe('<Pagination />', () => {
     const first = screen.getByRole('link', { name: '最初へ' });
     expect(first).toBeInTheDocument();
   });
+
+  test('has navigation landmark with aria-label', () => {
+    render(
+      <Pagination
+        total={5}
+        current={3}
+        linkFollowType="all"
+        createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      />,
+    );
+    expect(
+      screen.getByRole('navigation', { name: 'ページネーション' }),
+    ).toBeInTheDocument();
+  });
+
+  test('current page has aria-current="page"', () => {
+    render(
+      <Pagination
+        total={5}
+        current={3}
+        linkFollowType="all"
+        createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      />,
+    );
+    expect(screen.getByRole('link', { name: '3ページ目' })).toHaveAttribute(
+      'aria-current',
+      'page',
+    );
+  });
+
+  test('showTotal=true shows "{current}/{total}ページ"', () => {
+    render(
+      <Pagination
+        total={20}
+        current={8}
+        linkFollowType="all"
+        showTotal={true}
+        createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      />,
+    );
+    expect(screen.getByText('8/20ページ')).toBeInTheDocument();
+  });
+
+  test('renders 3 numeric items when small viewport (matchMedia=true)', () => {
+    const originalMatchMedia = window.matchMedia;
+    Object.defineProperty(window, 'matchMedia', {
+      writable: true,
+      value: (query: string) => ({
+        matches: true,
+        media: query,
+        onchange: null,
+        addListener: vi.fn(),
+        removeListener: vi.fn(),
+        addEventListener: vi.fn(),
+        removeEventListener: vi.fn(),
+        dispatchEvent: vi.fn(),
+      }),
+    });
+
+    render(
+      <Pagination
+        total={10}
+        current={5}
+        linkFollowType="all"
+        createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      />,
+    );
+
+    const numericLinks = screen.getAllByRole('link', {
+      name: /ページ目$/,
+    });
+    expect(numericLinks).toHaveLength(3);
+
+    // restore
+    Object.defineProperty(window, 'matchMedia', {
+      writable: true,
+      value: originalMatchMedia,
+    });
+  });
+
+  test('renders 5 numeric items when normal viewport (matchMedia=false)', () => {
+    const originalMatchMedia = window.matchMedia;
+    Object.defineProperty(window, 'matchMedia', {
+      writable: true,
+      value: (query: string) => ({
+        matches: false,
+        media: query,
+        onchange: null,
+        addListener: vi.fn(),
+        removeListener: vi.fn(),
+        addEventListener: vi.fn(),
+        removeEventListener: vi.fn(),
+        dispatchEvent: vi.fn(),
+      }),
+    });
+
+    render(
+      <Pagination
+        total={10}
+        current={5}
+        linkFollowType="all"
+        createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      />,
+    );
+
+    const numericLinks = screen.getAllByRole('link', {
+      name: /ページ目$/,
+    });
+    expect(numericLinks).toHaveLength(5);
+
+    // restore
+    Object.defineProperty(window, 'matchMedia', {
+      writable: true,
+      value: originalMatchMedia,
+    });
+  });
 });
