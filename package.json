@@ -35,7 +35,7 @@
     "is-ci": "4.1.0",
     "jscodeshift": "17.3.0",
     "lerna": "9.0.1",
-    "lint-staged": "16.2.6",
+    "lint-staged": "16.2.7",
     "npm-run-all2": "8.0.4",
     "prettier": "3.6.2",
     "stylelint": "16.25.0",
