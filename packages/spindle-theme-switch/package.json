@@ -31,6 +31,6 @@
     "dark-mode-toggle": "^0.17.0"
   },
   "devDependencies": {
-    "firebase-tools": "14.25.1"
+    "firebase-tools": "14.26.0"
   }
 }
