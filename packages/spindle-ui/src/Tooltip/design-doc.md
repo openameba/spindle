@@ -138,11 +138,12 @@ function TooltipExample() {
   <div id=":r1:" class="spui-Tooltip-frame spui-Tooltip-frame--information spui-Tooltip-frame--top spui-Tooltip-frame--center" role="tooltip">
     <div class="spui-Tooltip-content">
       <div class="spui-Tooltip-text">ここに補足情報が入ります。</div>
-      <button type="button" aria-label="閉じる">
-        <svg aria-hidden="true"><!-- Cross icon --></svg>
-      </button>
+      <div class="spui-Tooltip-closeButton">
+        <button class="spui-IconButton spui-IconButton--exSmall spui-IconButton--neutral" type="button" aria-label="閉じる">
+          <svg aria-hidden="true"><!-- Cross icon --></svg>
+        </button>
+      </div>
     </div>
-    <div class="spui-Tooltip-arrow"></div>
   </div>
 </div>
 ```
