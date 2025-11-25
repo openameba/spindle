@@ -359,6 +359,10 @@ export const UnderlineTabItem = forwardRef<HTMLAnchorElement, Props>(
 />
 ```
 
+## Baseline
+
+Widely available
+
 ## アクセシビリティ
 - [情報や関係性を明確にする](https://a11y-guidelines.ameba.design/1/3/1/)[基本必須]
   - [ ] リスト、ボタンやリンクを適切な要素で実装する

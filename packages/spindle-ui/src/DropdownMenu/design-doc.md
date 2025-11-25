@@ -304,6 +304,10 @@ React実装の一例です。
 </div>
 ```
 
+## Baseline
+
+Widely available
+
 ## アクセシビリティ
 - [情報や関係性を明確にする](https://a11y-guidelines.ameba.design/1/3/1/)[基本必須]
   - [ ] メニューは`div`（`role="menu"`）、各アイテムは`button`（`type="button"` + `role="menuitem"`）で実装している
