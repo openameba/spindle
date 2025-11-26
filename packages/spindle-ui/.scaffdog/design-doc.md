@@ -59,6 +59,39 @@ type Props = {
 ## 実装例
 <!-- オプション項目です。大まかなコードを書いたり、複数の実装を比較する際に利用します -->
 
+## Figma Code Connect
+<!-- オプション項目です。Figmaのデザインコンポーネントと実装コードを連携させる設計を記述します。
+
+Figma Code Connectを使うと、Figma上でコンポーネントを選択した際に、実装コードが自動的に表示されるようになります。
+
+Figmaのデザインデータと実装方針を踏まえ以下の項目を記載してください。
+
+(例)
+### マッピング
+- Figmaバリアント "Size" (Large/Medium/Small) → React prop `size` (large/medium/small)
+- Figmaバリアント "Active" (True/False) → React prop `active` (boolean)
+
+### 実装例
+```tsx
+figma.connect(
+  'https://www.figma.com/design/FILE_KEY/FILE_NAME?node-id=NODE_ID',
+  {
+    props: {
+      size: figma.enum('Size', {
+        'Large': 'large',
+        'Medium': 'medium',
+        'Small': 'small',
+      }),
+      active: figma.boolean('Active'),
+    },
+    example: ({ size, active }) => (
+      <Component size={size} active={active} />
+    ),
+  }
+)
+```
+-->
+
 ## Baseline
 <!-- オプション項目です。コンポーネントが使用する（または使用予定の）Web Platform機能のBaselineステータスを記載します。
 
@@ -113,7 +146,6 @@ Baseline情報の取得方法（どちらかの方法で取得してください
 例:
 - `:has()` (Baseline 2023) - [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/:has)
   - `html:has(.spui-Dialog:modal)`を使用して、モーダル表示時にページのスクロールを無効化しています
--->
 
 ## アクセシビリティ
 <!-- 必須項目です。「Ameba Accessibility Checklist」を使って対応する項目をリストアップします。対応する項目を以下の形式で記述します。
