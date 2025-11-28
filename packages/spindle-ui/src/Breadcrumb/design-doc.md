@@ -160,6 +160,10 @@ ListとItemは一緒に利用する可能性が高いので、`Breadcrumb.List`,
 
 厳密なスタイル定義もあまり意味のない、かつスタイルを書き換えられる可能性もあまりないコンポーネントなので、classNameは受け取れるようにしようかと考えています。
 
+## Baseline
+
+Widely available
+
 ## アクセシビリティ
 - [画像に代替テキストを提供する](https://a11y-guidelines.ameba.design/1/1/1/)[MUST]
   - [ ] アイコンは代替テキストが空になっている

@@ -88,6 +88,10 @@ type Props = {
 </div>
 ```
 
+## Baseline
+
+Widely available
+
 ## アクセシビリティ
 
 - [画像に代替テキストを提供する](https://a11y-guidelines.ameba.design/1/1/1/)
