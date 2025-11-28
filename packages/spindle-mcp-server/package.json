@@ -46,6 +46,6 @@
     "@openameba/spindle-ui": "^3.1.0",
     "@types/node": "24.10.1",
     "cpx2": "8.0.0",
-    "vitest": "4.0.13"
+    "vitest": "4.0.14"
   }
 }

@@ -36,7 +36,7 @@
     "@figma/rest-api-spec": "0.34.0",
     "@types/lodash.setwith": "4.3.9",
     "@types/node": "24.10.1",
-    "@vitest/ui": "4.0.13",
+    "@vitest/ui": "4.0.14",
     "jsonabc": "2.3.1",
     "lodash.setwith": "4.3.2",
     "make-dir": "4.0.0",
@@ -44,6 +44,6 @@
     "stylelint": "15.11.0",
     "stylelint-config-standard": "34.0.0",
     "tsx": "4.20.6",
-    "vitest": "4.0.13"
+    "vitest": "4.0.14"
   }
 }
