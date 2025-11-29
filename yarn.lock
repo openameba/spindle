@@ -1174,10 +1174,10 @@
   resolved "https://registry.yarnpkg.com/@fastify/busboy/-/busboy-2.1.1.tgz#b9da6a878a371829a0502c9b6c1c143ef6663f4d"
   integrity sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==
 
-"@figma/code-connect@1.3.10":
-  version "1.3.10"
-  resolved "https://registry.yarnpkg.com/@figma/code-connect/-/code-connect-1.3.10.tgz#c49dae3e160be76e9dd0fe5dd6eb4ec947596f98"
-  integrity sha512-TwyybGMPb28HIKSPEkyxsIaOpk/uhFfzuezOINE0bQ0s8AXWjxStf6JLE3i6F8O2l8NuwE+9xAgNoraGaWMATQ==
+"@figma/code-connect@1.3.11":
+  version "1.3.11"
+  resolved "https://registry.yarnpkg.com/@figma/code-connect/-/code-connect-1.3.11.tgz#b36734ecd6011e2ded2a3bc90b8eca557c9ac556"
+  integrity sha512-JhQwWGX8Jr6aGGUsQlX4Wuq2RKEym7es6QUXzvQkZM5ZiYAHhOpqbsTSSH+w771UTi2nQahTbQsHkxlFX5MTJg==
   dependencies:
     boxen "5.1.1"
     chalk "^4.1.2"
