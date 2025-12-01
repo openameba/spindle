@@ -65,19 +65,20 @@
     "use-callback-ref": "^1.3.3"
   },
   "devDependencies": {
-    "@figma/code-connect": "1.3.10",
-    "@storybook/addon-a11y": "10.0.8",
-    "@storybook/addon-docs": "10.0.8",
+    "@figma/code-connect": "1.3.11",
+    "@storybook/addon-a11y": "10.1.0",
+    "@storybook/addon-docs": "10.1.0",
     "@storybook/addon-webpack5-compiler-swc": "4.0.2",
-    "@storybook/react": "10.0.8",
-    "@storybook/react-webpack5": "10.0.8",
+    "@storybook/react": "10.1.0",
+    "@storybook/react-webpack5": "10.1.0",
     "@svgr/cli": "8.1.0",
     "@testing-library/dom": "10.4.1",
     "@testing-library/jest-dom": "6.9.1",
     "@testing-library/react": "16.3.0",
     "@testing-library/user-event": "14.6.1",
-    "@types/react": "19.2.6",
-    "@vitest/ui": "4.0.13",
+    "@types/react": "19.2.7",
+    "@vitest/ui": "4.0.14",
+    "@vscode/web-custom-data": "0.6.1"
     "autoprefixer": "10.4.22",
     "bundlewatch": "0.4.1",
     "cssnano": "7.1.2",
@@ -96,12 +97,11 @@
     "reg-publish-gcs-plugin": "0.14.4",
     "reg-suit": "0.14.5",
     "scaffdog": "4.1.0",
-    "storybook": "10.0.8",
+    "storybook": "10.1.0",
     "stylelint": "16.26.0",
     "stylelint-config-standard": "39.0.1",
     "stylelint-order": "7.0.0",
     "stylelint-selector-bem-pattern": "4.0.1",
-    "vitest": "4.0.13",
-    "@vscode/web-custom-data": "0.6.1"
+    "vitest": "4.0.14"
   }
 }
