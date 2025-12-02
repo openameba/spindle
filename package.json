@@ -37,7 +37,7 @@
     "lerna": "9.0.3",
     "lint-staged": "16.2.7",
     "npm-run-all2": "8.0.4",
-    "prettier": "3.7.1",
+    "prettier": "3.7.2",
     "stylelint": "16.26.1",
     "stylelint-config-standard": "39.0.1",
     "stylelint-order": "7.0.0",
