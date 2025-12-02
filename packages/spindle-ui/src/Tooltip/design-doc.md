@@ -6,96 +6,66 @@ Tooltipは、UI要素に関連する補足的な説明や情報を提供する�
 
 FigmaではTooltip（モードレス形式）とToggletip（モード形式）の2種類が定義されていますが、実装上は別Componentとして実装します。ToggletipはTooltipコンポーネントとしての対応予定はありません。
 
-Tooltipコンポーネントは、表示方法によって次の2つのモードをサポートします。
+## スクリーンショット
 
-### Controlled Mode
-`open`と`onClose`プロパティを指定して、表示/非表示を外部から制御します。
+<img width="528" height="232" alt="image" src="https://github.com/user-attachments/assets/01689360-af4f-4cf6-bee5-79b397563346" />
 
-- **クリック表示**: トリガー要素をクリックして表示/非表示を切り替える
-- **初期表示**: `open={true}`で最初から表示する
+### 表示トリガー
 
-閉じるボタンが表示され、閉じるボタン・Escapeキー・外側クリック・トリガー再クリックで非表示にできます。
+デバイスに応じて自動的に最適なトリガーを選択します。
 
-### Uncontrolled Mode
-`open`プロパティを指定しない場合、内部で自動的にhover/focusで表示/非表示を管理します。
+- **ポインティングデバイス**: hover/focusで表示、マウスを離す/フォーカスを外すと非表示
+- **タッチデバイス**: click/tapで表示/非表示を切り替え
 
-- **hover表示**: トリガー要素にマウスホバーで表示
-- **focus表示**: トリガー要素にフォーカスで表示
+### 初期表示の挙動
 
-閉じるボタンは表示されず、マウスを離す/フォーカスを外すと自動的に非表示になります。
+Tooltipは3つの表示パターンをサポートします。
+
+#### 初期表示なし
+
+デフォルトでは初期状態で非表示です。hover/focusまたはclick/tapで表示されます。
+
+#### 初期表示ありかつ、再表示可能
+
+`defaultOpen={true}`を指定すると、初期状態から表示されます。閉じた後も再度表示できます。
+
+**動作：**
+
+- 初期状態で表示される
+- **初期表示時のみ**閉じるボタンが表示される
+- 一度閉じた後、hover/focusまたはclick/tapで再表示できる
+- **再表示時は閉じるボタンが表示されない**（通常のTooltipと同じ挙動）
+
+#### 初期表示ありかつ、再表示しない
+
+一度閉じたらページをリロードするまで再表示しないパターンです。永続的な状態管理はアプリケーション側の責任となります。
+
+**重要**: `defaultOpen`プロパティは初期表示の制御のみを行うため、状態が変わっても再評価されません。一度閉じたら表示しないようにするには、Tooltipコンポーネント自体を条件付きでレンダリングする必要があります。`localStorage`などで状態を永続化し、条件付きレンダリングと組み合わせて実装します。
+
+### バリアント
+
+通知の内容によって、3種類のバリアントを使い分けて使用します。
+
+- **`information`**: 補足情報を伝えるため（デフォルト）
+- **`confirmation`**: 訴求したい内容を伝えるため
+- **`error`**: 特定の要素に対してエラーメッセージを表示するため
 
 ## 使用例
 
-### Controlled Mode: クリック表示
-
-トリガー要素をクリックして表示する形式です。補足的な情報や説明の提供に使用します。
-
-```tsx
-const [open, setOpen] = useState(false);
-
-<Tooltip.Frame open={open} onClose={() => setOpen(false)}>
-  <Tooltip.Trigger>
-    <IconButton aria-label="詳細情報" onClick={() => setOpen(!open)}>
-      <Information aria-hidden="true" />
-    </IconButton>
-  </Tooltip.Trigger>
-  <Tooltip.Content>補足情報</Tooltip.Content>
-</Tooltip.Frame>
-```
-
-- トリガー要素は基本的にインフォメーションアイコンやはてなアイコンを使用します
-- 閉じるボタンが表示されます
-
-### Controlled Mode: 初期表示
-
-ページ読み込み時から表示する形式です。チュートリアルや初回訪問時の説明など、補足的な情報を最初から表示したい場合に使用します。
-
-```tsx
-const [open, setOpen] = useState(true);  // 初期状態から表示
-
-<Tooltip.Frame open={open} onClose={() => setOpen(false)}>
-  <Tooltip.Trigger>
-    <IconButton aria-label="詳細情報">
-      <Information aria-hidden="true" />
-    </IconButton>
-  </Tooltip.Trigger>
-  <Tooltip.Content>チュートリアル: この機能の使い方</Tooltip.Content>
-</Tooltip.Frame>
-```
-
-- 閉じるボタンが表示されます
-
-### Uncontrolled Mode: hover/focus表示
-
-トリガー要素にマウスホバーまたはフォーカスで自動的に表示されます。補足的な情報を提供する一般的なtooltipの動作です。
-
-```tsx
-<Tooltip.Frame>
-  <Tooltip.Trigger>
-    <IconButton aria-label="詳細情報">
-      <Information aria-hidden="true" />
-    </IconButton>
-  </Tooltip.Trigger>
-  <Tooltip.Content>マウスホバーまたはフォーカスで表示されます。</Tooltip.Content>
-</Tooltip.Frame>
-```
-
-- 閉じるボタンは表示されません
-- マウスを離す、またはフォーカスを外すと自動的に非表示になります
-
 ### DO
 
-- **操作に必須でない補足的な説明や情報を提供する際に使用する**
-  - ツールチップは、UIの見た目をすっきり保ちながら、必要な時にのみ補足情報を提供するために使用します
+- **操作に必須でない補足的な説明や情報を提供する**
+  - Tooltipは、UIの見た目をすっきり保ちながら、必要な時にのみ補足情報を提供するために使用します。操作に必要な情報は予め表示しておき、Tooltipの使用はできる限り控えめにすることが理想です
+- **トリガーにはインフォメーションアイコンやはてなアイコンを使用する**
+  - 機能を持つ要素（ボタンなど）に直接付けず、その隣にアイコンを配置します
+  - ユーザーのメンタルモデルに合致し、ボタンの本来の機能を妨げません
 
 ### DO NOT
 
-- **ツールチップ内に操作にとって必須の情報を含めない**
-  - ツールチップはユーザーがトリガーして初めて表示されるため、操作にとって必要な情報は予め表示しておくようにしましょう。ツールチップの使用はできる限り控えめにすることが理想です
-- **クリックして表示するトリガーは基本的にアイコン以外使用しない**
-  - テキストやリンクにツールチップを付けると、ユーザーのメンタルモデルに反した挙動となり、混乱を招く可能性があります。基本的には、インフォメーションアイコンやはてなアイコンをクリックした際に表示されるようにしましょう
-- **ツールチップ内に多くの情報やインタラクションを含めない**
-  - ツールチップはあくまで補足の情報になります。情報が多くなる場合やインタラクションを多数含めたい場合にはモーダルの使用や別ページへの遷移を検討しましょう
+- **多くの情報やインタラクションを含めない**
+  - 情報が多くなる場合やインタラクションを多数含めたい場合にはモーダルの使用や別ページへの遷移を検討しましょう
+- **テキストやリンクに付けない**
+  - ユーザーのメンタルモデルに反した挙動となり、混乱を招く可能性があります
 
 ## 要素
 
@@ -123,14 +93,6 @@ const [open, setOpen] = useState(true);  // 初期状態から表示
 - Animation Disappear Duration (非表示時のアニメーション時間)
 - Animation Disappear Easing (非表示時のイージング)
 
-### Variantの使い分け
-
-通知の内容によって、3種類を使い分けて使用してください。
-
-- **`information`**: 補足情報を伝えるため（デフォルト）
-- **`confirmation`**: 訴求したい内容を伝えるため
-- **`error`**: 特定の要素に対してエラーメッセージを表示するため
-
 ### プロパティ
 
 #### Tooltip.Frame
@@ -142,16 +104,18 @@ type Variant = 'information' | 'confirmation' | 'error';
 
 type Props = {
   children: React.ReactNode;
-  // Tooltipの開閉状態。指定しない場合はUncontrolled Mode（hover/focus表示）
-  open?: boolean;
+  // 初期状態で表示するかどうか。デフォルト値はfalseです
+  defaultOpen?: boolean;
+  // Tooltipが閉じられたときのコールバック
+  onClose?: () => void;
+  // Tooltipの外側をクリックした時に閉じるかどうか。デフォルト値はfalseです
+  closeOnClickOutside?: boolean;
   // Tooltipの色バリエーション。デフォルト値はinformationです
   variant?: Variant;
   // ポインターが指す向き。デフォルト値はtopです
   direction?: Direction;
   // ポインターの位置。デフォルト値はcenterです
   position?: Position;
-  // 閉じるボタンがクリックされたときのコールバック。Controlled Modeの場合のみ使用
-  onClose?: () => void;
 };
 ```
 
@@ -192,29 +156,112 @@ Tooltipには三角形のポインターが表示され、トリガー要素を�
 - `edgeStart`: トリガーが画面端から16-36pxの範囲にある場合に使用
 - `edgeEnd`: トリガーが画面端から16-36pxの範囲にある場合に使用
 
-#### モードの判定と動作
+#### 閉じるボタンの表示
 
-**Controlled Mode（`open`プロパティあり）:**
-- クリック表示または初期表示
-- 閉じるボタンが表示される
-- `role`属性なし
-- `aria-expanded`が設定される
-- 外側クリック、Escapeキー、閉じるボタン、トリガー再クリックで閉じる
-- `Tooltip.Trigger`に`aria-describedby`、`aria-expanded`、`ref`を自動付与
+閉じるボタンは**初期表示時のみ**表示されます：
 
-**Uncontrolled Mode（`open`プロパティなし）:**
-- hover/focus表示
-- 閉じるボタンは表示されない
-- `role="tooltip"`が設定される
-- `aria-expanded`は設定されない
-- マウスを離す、フォーカスを外すと自動的に非表示
-- `Tooltip.Trigger`に`aria-describedby`、`ref`を自動付与
-- トリガー要素の`onMouseEnter`、`onMouseLeave`、`onFocus`、`onBlur`を内部で管理
+- `defaultOpen={true}`の場合、初期表示時に閉じるボタンが表示される
+- 一度閉じた後、hover/focusまたはclick/tapで再表示された時は閉じるボタンは表示されない
+- `defaultOpen={false}`または未指定の場合、閉じるボタンは表示されない
+
+#### ARIA 属性
+
+Tooltipは、初期表示の設定に応じて適切なARIA属性を自動的に付与します。
+
+**`defaultOpen={false}`または未指定の場合：**
+
+- `role="tooltip"`を使用
+- トリガー要素に`aria-describedby`でTooltipのIDを関連付け
+- `aria-expanded`は使用しない（自動表示のため）
+
+**`defaultOpen={true}`の場合：**
+
+- `role="tooltip"`は使用しない（手動制御のため）
+- トリガー要素に`aria-describedby`でTooltipのIDを関連付け
+- トリガー要素に`aria-expanded`で開閉状態を示す
 
 #### 共通動作
 - `Tooltip.Trigger`内のトリガー要素に、自動的に`aria-describedby`、`ref`を付与します
 - Tooltipの`id`を自動生成し、`aria-describedby`で関連付けます
 - トリガー要素のサイズを取得し、ポインターがトリガーの中央に配置されるように位置を計算します
+
+## 実装例
+
+React実装の一例です。
+
+
+```tsx
+<Tooltip.Frame defaultOpen={true} closeOnClickOutside={true} variant="information" direction="top" position="center">
+  <Tooltip.Trigger>
+    <IconButton aria-label="詳細情報">
+      <Information aria-hidden="true" />
+    </IconButton>
+  </Tooltip.Trigger>
+  <Tooltip.Content>補足情報</Tooltip.Content>
+</Tooltip.Frame>
+```
+
+上記の実装から書き出されるマークアップです。
+
+```html
+<div class="spui-Tooltip">
+  <button
+    class="spui-IconButton spui-IconButton--large spui-IconButton--contained"
+    aria-label="詳細情報"
+    aria-describedby="tooltip-1"
+    aria-expanded="true"
+  >
+    <svg aria-hidden="true"><!-- Information icon --></svg>
+  </button>
+  <div
+    id="tooltip-1"
+    class="spui-Tooltip-frame spui-Tooltip-frame--information spui-Tooltip-frame--top spui-Tooltip-frame--center"
+    role="tooltip"
+    style="--Tooltip-trigger-width: 48px; --Tooltip-trigger-height: 48px;"
+  >
+    <div class="spui-Tooltip-content">
+      <div class="spui-Tooltip-text">
+        補足情報
+      </div>
+      <div class="spui-Tooltip-closeButton">
+        <button
+          class="spui-IconButton spui-IconButton--exSmall spui-IconButton--neutral"
+          aria-label="閉じる"
+        >
+          <svg aria-hidden="true"><!-- Close icon --></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+### 初期表示（再表示しない）
+
+一度閉じたらページをリロードするまで再表示しないパターンです。`defaultOpen`は初期表示の制御のみを行うため、条件付きレンダリングで実装します。
+
+```tsx
+const [hasSeenTooltip, setHasSeenTooltip] = useState(() => {
+  return localStorage.getItem('tutorial-tooltip-seen') === 'true';
+});
+
+{!hasSeenTooltip && (
+  <Tooltip.Frame
+    defaultOpen={true}
+    onClose={() => {
+      localStorage.setItem('tutorial-tooltip-seen', 'true');
+      setHasSeenTooltip(true);
+    }}
+  >
+    <Tooltip.Trigger>
+      <IconButton aria-label="詳細情報">
+        <Information aria-hidden="true" />
+      </IconButton>
+    </Tooltip.Trigger>
+    <Tooltip.Content>新機能: 機能が追加されました</Tooltip.Content>
+  </Tooltip.Frame>
+)}
+```
 
 ## アクセシビリティ
 
@@ -238,59 +285,69 @@ Tooltipには三角形のポインターが表示され、トリガー要素を�
   - [ ] トリガーボタンに`aria-describedby`でTooltipのIDを関連付けている（自動）
   - [ ] スクリーンリーダーでも機能落ちがなく、読み上げが過不足なく行われている
 
-### Controlled Modeのみ
-
-- [画像に代替テキストを提供する](https://a11y-guidelines.ameba.design/1/1/1/)[基本必須]
-  - [ ] 閉じるボタンには`aria-label="閉じる"`が付与され、アイコンには`aria-hidden="true"`が付与されている
-- [情報や関係性を明確にする](https://a11y-guidelines.ameba.design/1/3/1/)[基本必須]
-  - [ ] トリガーボタンに`aria-expanded`で開閉状態が自動的に示されている
-- [ホバーまたはフォーカスで表示されるコンテンツを制御できる](https://a11y-guidelines.ameba.design/1/4/13/)[基本必須]
-  - [ ] クリックで表示したTooltipは、閉じるボタン・Escapeキー・外側クリックで非表示にできる
-  - [ ] Tooltipは自動で消えない(ユーザーが明示的に閉じるまで表示される)
-- [キーボード、タッチデバイスで操作できる](https://a11y-guidelines.ameba.design/2/1/1/)[基本必須]
-  - [ ] トリガーボタンと閉じるボタンにTabキーでフォーカスでき、EnterキーまたはSpaceキーで操作できる
-  - [ ] Escapeキーでtooltipを閉じることができる
-- [適切なフォーカス順序にする](https://a11y-guidelines.ameba.design/2/4/3/)[基本必須]
-  - [ ] キーボード操作時に、トリガーボタン→Tooltip内の閉じるボタン→次の要素の順でフォーカスが移動する
-- [フォーカス時にコンテンツを大きく変更しない](https://a11y-guidelines.ameba.design/3/2/1/)[基本必須]
-  - [ ] トリガーボタンにフォーカスしただけでは、Tooltipは表示されない(クリックが必要)
-
-### Uncontrolled Modeのみ
+### 初期表示なし（`defaultOpen={false}`）
 
 - [情報や関係性を明確にする](https://a11y-guidelines.ameba.design/1/3/1/)[基本必須]
   - [ ] Tooltipに`role="tooltip"`が設定されている
+  - [ ] `aria-expanded`は使用していない
 - [ホバーまたはフォーカスで表示されるコンテンツを制御できる](https://a11y-guidelines.ameba.design/1/4/13/)[基本必須]
   - [ ] マウスホバーまたはフォーカスで表示したTooltipは、マウスを離す/フォーカスを外すと非表示になる
   - [ ] Tooltip表示中も、Tooltipの内容にマウスホバーできる
   - [ ] Tooltipは自動で消える（マウスを離す/フォーカスを外すと消える）
 
+### 初期表示あり（`defaultOpen={true}`）
+
+- [画像に代替テキストを提供する](https://a11y-guidelines.ameba.design/1/1/1/)[基本必須]
+  - [ ] 閉じるボタンには`aria-label="閉じる"`が付与され、アイコンには`aria-hidden="true"`が付与されている
+- [情報や関係性を明確にする](https://a11y-guidelines.ameba.design/1/3/1/)[基本必須]
+  - [ ] トリガーボタンに`aria-expanded`で開閉状態が自動的に示されている
+  - [ ] `role="tooltip"`は使用していない
+- [ホバーまたはフォーカスで表示されるコンテンツを制御できる](https://a11y-guidelines.ameba.design/1/4/13/)[基本必須]
+  - [ ] 初期表示または手動で開いたTooltipは、閉じるボタン・Escapeキーで非表示にできる
+  - [ ] `closeOnClickOutside={true}`の場合、領域外クリックでも非表示にできる
+  - [ ] Tooltipは自動で消えない（ユーザーが明示的に閉じるまで表示される）
+- [キーボード、タッチデバイスで操作できる](https://a11y-guidelines.ameba.design/2/1/1/)[基本必須]
+  - [ ] トリガーボタンと閉じるボタンにTabキーでフォーカスでき、EnterキーまたはSpaceキーで操作できる
+  - [ ] EscapeキーでTooltipを閉じることができる
+- [適切なフォーカス順序にする](https://a11y-guidelines.ameba.design/2/4/3/)[基本必須]
+  - [ ] キーボード操作時に、トリガーボタン→Tooltip内の閉じるボタン→次の要素の順でフォーカスが移動する
+
 ## テスト方針
 
 ### ユニットテスト（Testing Library）
 
-#### Controlled Mode
-- `open`プロパティによる開閉の動作確認
-- `onClose`コールバックが適切に呼び出されることの確認
-- Escapeキー押下時に閉じることの確認
-- 閉じるボタンクリック時に閉じることの確認
-- 外側クリック時に閉じることの確認
-- `aria-describedby`と`aria-expanded`が自動的に設定されることの確認
+#### 初期表示なし（`defaultOpen={false}` または未指定）
 
-#### Uncontrolled Mode
-- マウスホバー時に表示されることの確認
-- フォーカス時に表示されることの確認
+- hover時に表示されることの確認
+- focus時に表示されることの確認
 - マウスを離すと非表示になることの確認
 - フォーカスを外すと非表示になることの確認
-- `aria-describedby`が自動的に設定されることの確認
-- `aria-expanded`が設定されないことの確認
+- `aria-describedby` が自動的に設定されることの確認
+- `role="tooltip"` が設定されることの確認
 - 閉じるボタンが表示されないことの確認
+
+#### 初期表示あり（`defaultOpen={true}`）
+
+- 初期状態で表示されることの確認
+- **初期表示時に**閉じるボタンが表示されることの確認
+- 閉じるボタンクリック時に閉じることの確認
+- Escapeキー押下時に閉じることの確認
+- 一度閉じた後、hover/focusで再表示されることの確認
+- **再表示時に閉じるボタンが表示されない**ことの確認
+- `aria-describedby`と`aria-expanded`が自動的に設定されることの確認
+- `role="tooltip"`が設定されないことの確認
+
+#### 領域外クリック
+
+- `closeOnClickOutside={false}`（デフォルト）の場合、領域外クリックで閉じないことの確認
+- `closeOnClickOutside={true}` の場合、領域外クリックで閉じることの確認
 
 ### ヴィジュアルリグレッションテスト（Storybook）
 
 - 各variant（information、confirmation、error）の表示確認
 - 各direction（top、right、bottom、left）の表示確認
 - 各position（edgeStart、start、center、end、edgeEnd）の表示確認
-- Controlled ModeとUncontrolled Modeの表示確認
+- defaultOpenの各設定値における表示確認
 - モバイルとデスクトップでのサイズの確認
 - 長いテキストの折り返し表示確認
 
