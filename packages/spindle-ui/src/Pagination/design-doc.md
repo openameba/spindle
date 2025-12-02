@@ -8,6 +8,8 @@
 
 ### DO
 
+ページ数が多い箇所、現在ページを明示しつつリンク遷移も可能にしたい時での利用を想定しています。`createUrl`で各ページの詳細URLを生成し、`onPageChange`はページ遷移時に必要な周辺処理のトリガーとして利用します。
+
 ```tsx
 <Pagination
   total={20}
@@ -56,6 +58,8 @@ interface Props extends React.HTMLAttributes<HTMLElement> {
   createUrl: (pageNumber: number) => string;
 }
 ```
+
+`LinkFollowType`は`rel`属性に対して付与するためのプロパティです。検索インデックスを積極的に持たせたい一覧では`all`を指定し、クローラに辿らせたくない動的一覧やアプリケーション内でのページングでは`none`を指定します。`firstPage`は1ページ目のみをインデックス対象にします。
 
 ## 実装例
 
