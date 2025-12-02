@@ -57,6 +57,10 @@ return (
 );
 ```
 
+## Baseline
+
+Widely available
+
 ## アクセシビリティ
 - [表示の向きを固定しない](https://a11y-guidelines.ameba.design/1/3/4/)[できれば]
   - [ ] 画面の向きに関わらず画面下部に表示されるように実装している

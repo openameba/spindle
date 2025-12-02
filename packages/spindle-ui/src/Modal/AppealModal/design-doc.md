@@ -171,6 +171,11 @@ React実装の一例です。
 </dialog>
 ```
 
+## Baseline
+
+- `:has()` (Baseline 2023) - [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/:has)
+  - `html:has(.spui-AppealModal[open])`を使用して、モーダル表示時にページのスクロールを無効化しています
+
 ## アクセシビリティ
 
 - [画像に代替テキストを提供する](https://a11y-guidelines.ameba.design/1/1/1/)[基本必須]

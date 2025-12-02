@@ -504,6 +504,10 @@ Tableコンポーネントでは、Web標準のtable要素の機能を最大限�
 - もっと見る
 - 列の固定
 
+## Baseline
+
+Widely available
+
 ## アクセシビリティ
 - [情報や関係性を明確にする](https://a11y-guidelines.ameba.design/1/3/1/)[基本必須]
   - [ ] `<table>`, `<thead>`, `<tbody>`, `<caption>`要素を適切に使用している
