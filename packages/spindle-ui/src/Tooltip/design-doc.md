@@ -158,30 +158,29 @@ Tooltipには三角形のポインターが表示され、トリガー要素を�
 
 #### 閉じる動作
 
-Tooltipの閉じる動作は`defaultOpen`の値に応じて自動的に最適化されます：
+Tooltipの閉じる動作は表示状態に応じて自動的に最適化されます：
 
-**`defaultOpen={true}`の場合：**
+**`defaultOpen={false}`または`defaultOpen={true}`で一度閉じた後の再表示の場合：**
+- ポインティングデバイス: マウスを離す/フォーカスを外すと自動で閉じる
+- タッチデバイス: 再度クリック/タップ、または領域外クリックで閉じる
+
+**`defaultOpen={true}`で初期表示されている場合：**
 - 閉じるボタンで閉じる
 - Tooltipまたはその内部要素にフォーカスが当たっている時、Escapeキーで閉じる
 - 領域外クリックでは閉じない（閉じるボタンがあるため）
 
-**`defaultOpen={false}`または未指定の場合：**
-- ポインティングデバイス: マウスを離す/フォーカスを外すと自動で閉じる
-- タッチデバイス: 再度クリック/タップ、または領域外クリックで閉じる
-
 #### ARIA 属性
 
-Tooltipは、初期表示の設定に応じて適切なARIA属性を自動的に付与します。
+Tooltipは、表示状態に応じて適切なARIA属性を自動的に付与します。
 
-**`defaultOpen={false}`または未指定の場合：**
+**`defaultOpen={false}`または`defaultOpen={true}`で一度閉じた後の再表示の場合：**
 
 - `role="tooltip"`を使用
 - トリガー要素に`aria-describedby`でTooltipのIDを関連付け
 - `aria-expanded`は使用しない（自動表示のため）
 
-**`defaultOpen={true}`の場合：**
+**`defaultOpen={true}`で初期表示されている場合：**
 
-- `role="tooltip"`は使用しない
 - `role="group"`を使用
 - トリガー要素に`aria-describedby`でTooltipのIDを関連付け
 - トリガー要素に`aria-expanded`で開閉状態を示す
@@ -291,7 +290,7 @@ const [hasSeenTooltip, setHasSeenTooltip] = useState(() => {
   - [ ] トリガーボタンに`aria-describedby`でTooltipのIDを関連付けている（自動）
   - [ ] トリガーボタンにフォーカスした際、ボタンの内容に加えてTooltipの説明内容（`aria-describedby`）が読み上げられる
 
-### 初期表示なし（`defaultOpen={false}`）
+### `defaultOpen={false}`の場合
 
 - [情報や関係性を明確にする](https://a11y-guidelines.ameba.design/1/3/1/)[基本必須]
   - [ ] Tooltipに`role="tooltip"`が設定されている
@@ -301,14 +300,13 @@ const [hasSeenTooltip, setHasSeenTooltip] = useState(() => {
   - [ ] Tooltip表示中も、Tooltipの内容にマウスホバーできる
   - [ ] Tooltipは自動で消える（マウスを離す/フォーカスを外すと消える）
 
-### 初期表示あり（`defaultOpen={true}`）
+### `defaultOpen={true}`の初期表示時のみ
 
 - [画像に代替テキストを提供する](https://a11y-guidelines.ameba.design/1/1/1/)[基本必須]
   - [ ] 閉じるボタンには`aria-label="閉じる"`が付与され、アイコンには`aria-hidden="true"`が付与されている
 - [情報や関係性を明確にする](https://a11y-guidelines.ameba.design/1/3/1/)[基本必須]
-  - [ ] トリガーボタンに`aria-expanded`で開閉状態が自動的に示されている
-  - [ ] `role="tooltip"`は使用していない
   - [ ] `role="group"`が設定されている
+  - [ ] トリガーボタンに`aria-expanded`で開閉状態が自動的に示されている
 - [ホバーまたはフォーカスで表示されるコンテンツを制御できる](https://a11y-guidelines.ameba.design/1/4/13/)[基本必須]
   - [ ] 初期表示または手動で開いたTooltipは、閉じるボタンで非表示にできる
   - [ ] Tooltipまたはその内部要素にフォーカスが当たっている時は、Escapeキーで非表示にできる
@@ -319,36 +317,49 @@ const [hasSeenTooltip, setHasSeenTooltip] = useState(() => {
 - [適切なフォーカス順序にする](https://a11y-guidelines.ameba.design/2/4/3/)[基本必須]
   - [ ] キーボード操作時に、トリガーボタン→Tooltip内の閉じるボタン→次の要素の順でフォーカスが移動する
 
+### `defaultOpen={true}`で一度閉じた後の再表示時
+
+- [情報や関係性を明確にする](https://a11y-guidelines.ameba.design/1/3/1/)[基本必須]
+  - [ ] `role="group"`から`role="tooltip"`に切り替わっている
+  - [ ] `aria-expanded`は使用していない
+  - [ ] 上記「`defaultOpen={false}`の場合」の全てのチェック項目を満たしている
+
 ## テスト方針
 
 ### ユニットテスト（Testing Library）
 
-#### 初期表示なし（`defaultOpen={false}` または未指定）
+#### 共通
+
+- `aria-describedby` が自動的に設定されることの確認
+
+#### `defaultOpen={false}`の場合
 
 - hover時に表示されることの確認
 - focus時に表示されることの確認
 - マウスを離すと非表示になることの確認
 - フォーカスを外すと非表示になることの確認
-- `aria-describedby` が自動的に設定されることの確認
 - `role="tooltip"` が設定されることの確認
+- `aria-expanded`が設定されていないことの確認
 - 閉じるボタンが表示されないことの確認
+- タッチデバイスで領域外クリックで閉じることの確認
 
-#### 初期表示あり（`defaultOpen={true}`）
+#### `defaultOpen={true}`の初期表示時の場合
 
 - 初期状態で表示されることの確認
-- **初期表示時に**閉じるボタンが表示されることの確認
+- `role="group"`が設定されることの確認
+- `aria-expanded="true"`が設定されることの確認
+- 閉じるボタンが表示されることの確認
 - 閉じるボタンクリック時に閉じることの確認
 - Tooltipまたはその内部要素にフォーカスが当たっている時、Escapeキー押下で閉じることの確認
-- 一度閉じた後、hover/focusで再表示されることの確認
-- **再表示時に閉じるボタンが表示されない**ことの確認
-- `aria-describedby`と`aria-expanded`が自動的に設定されることの確認
-- `role="tooltip"`が設定されないことの確認
-- `role="group"`が設定されることの確認
+- 領域外クリックでは閉じないことの確認
 
-#### 領域外クリック
+#### `defaultOpen={true}`で一度閉じた後の再表示時
 
-- `defaultOpen={true}`の場合、領域外クリックで閉じないことの確認
-- `defaultOpen={false}`の場合（タッチデバイス）、領域外クリックで閉じることの確認
+- hover/focusで再表示されることの確認
+- `role="group"`から`role="tooltip"`に切り替わることの確認
+- `aria-expanded`が設定されていないことの確認
+- 閉じるボタンが表示されないことの確認
+- 上記「`defaultOpen={false}`の場合」の全てのテストが通ることの確認
 
 ### ヴィジュアルリグレッションテスト（Storybook）
 
