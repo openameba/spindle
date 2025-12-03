@@ -108,8 +108,6 @@ type Props = {
   defaultOpen?: boolean;
   // Tooltipが閉じられたときのコールバック
   onClose?: () => void;
-  // Tooltipの外側をクリックした時に閉じるかどうか。デフォルト値はfalseです
-  closeOnClickOutside?: boolean;
   // Tooltipの色バリエーション。デフォルト値はinformationです
   variant?: Variant;
   // ポインターが指す向き。デフォルト値はtopです
@@ -164,6 +162,19 @@ Tooltipには三角形のポインターが表示され、トリガー要素を�
 - 一度閉じた後、hover/focusまたはclick/tapで再表示された時は閉じるボタンは表示されない
 - `defaultOpen={false}`または未指定の場合、閉じるボタンは表示されない
 
+#### 閉じる動作
+
+Tooltipの閉じる動作は`defaultOpen`の値に応じて自動的に最適化されます：
+
+**`defaultOpen={true}`の場合：**
+- 閉じるボタンで閉じる
+- Escapeキーで閉じる
+- 領域外クリックでは閉じない（閉じるボタンがあるため）
+
+**`defaultOpen={false}`または未指定の場合：**
+- ポインティングデバイス: マウスを離す/フォーカスを外すと自動で閉じる
+- タッチデバイス: 再度クリック/タップ、または領域外クリックで閉じる
+
 #### ARIA 属性
 
 Tooltipは、初期表示の設定に応じて適切なARIA属性を自動的に付与します。
@@ -191,7 +202,7 @@ React実装の一例です。
 
 
 ```tsx
-<Tooltip.Frame defaultOpen={true} closeOnClickOutside={true} variant="information" direction="top" position="center">
+<Tooltip.Frame defaultOpen={true} variant="information" direction="top" position="center">
   <Tooltip.Trigger>
     <IconButton aria-label="詳細情報">
       <Information aria-hidden="true" />
@@ -304,7 +315,7 @@ const [hasSeenTooltip, setHasSeenTooltip] = useState(() => {
   - [ ] `role="tooltip"`は使用していない
 - [ホバーまたはフォーカスで表示されるコンテンツを制御できる](https://a11y-guidelines.ameba.design/1/4/13/)[基本必須]
   - [ ] 初期表示または手動で開いたTooltipは、閉じるボタン・Escapeキーで非表示にできる
-  - [ ] `closeOnClickOutside={true}`の場合、領域外クリックでも非表示にできる
+  - [ ] 領域外クリックでは閉じない（閉じるボタンがあるため）
   - [ ] Tooltipは自動で消えない（ユーザーが明示的に閉じるまで表示される）
 - [キーボード、タッチデバイスで操作できる](https://a11y-guidelines.ameba.design/2/1/1/)[基本必須]
   - [ ] トリガーボタンと閉じるボタンにTabキーでフォーカスでき、EnterキーまたはSpaceキーで操作できる
@@ -339,8 +350,8 @@ const [hasSeenTooltip, setHasSeenTooltip] = useState(() => {
 
 #### 領域外クリック
 
-- `closeOnClickOutside={false}`（デフォルト）の場合、領域外クリックで閉じないことの確認
-- `closeOnClickOutside={true}` の場合、領域外クリックで閉じることの確認
+- `defaultOpen={true}`の場合、領域外クリックで閉じないことの確認
+- `defaultOpen={false}`の場合（タッチデバイス）、領域外クリックで閉じることの確認
 
 ### ヴィジュアルリグレッションテスト（Storybook）
 
