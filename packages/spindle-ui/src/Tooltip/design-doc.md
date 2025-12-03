@@ -181,7 +181,8 @@ Tooltipは、初期表示の設定に応じて適切なARIA属性を自動的に
 
 **`defaultOpen={true}`の場合：**
 
-- `role="tooltip"`は使用しない（手動制御のため）
+- `role="tooltip"`は使用しない
+- `role="group"`を使用
 - トリガー要素に`aria-describedby`でTooltipのIDを関連付け
 - トリガー要素に`aria-expanded`で開閉状態を示す
 
@@ -196,7 +197,7 @@ React実装の一例です。
 
 
 ```tsx
-<Tooltip.Frame defaultOpen={true} variant="information" direction="top" position="center">
+<Tooltip.Frame defaultOpen={false} variant="information" direction="top" position="center">
   <Tooltip.Trigger>
     <IconButton aria-label="詳細情報">
       <Information aria-hidden="true" />
@@ -221,7 +222,7 @@ React実装の一例です。
   <div
     id="tooltip-1"
     class="spui-Tooltip-frame spui-Tooltip-frame--information spui-Tooltip-frame--top spui-Tooltip-frame--center"
-    role="tooltip"
+    role="group"
     style="--Tooltip-trigger-width: 48px; --Tooltip-trigger-height: 48px;"
   >
     <div class="spui-Tooltip-content">
@@ -307,6 +308,7 @@ const [hasSeenTooltip, setHasSeenTooltip] = useState(() => {
 - [情報や関係性を明確にする](https://a11y-guidelines.ameba.design/1/3/1/)[基本必須]
   - [ ] トリガーボタンに`aria-expanded`で開閉状態が自動的に示されている
   - [ ] `role="tooltip"`は使用していない
+  - [ ] `role="group"`が設定されている
 - [ホバーまたはフォーカスで表示されるコンテンツを制御できる](https://a11y-guidelines.ameba.design/1/4/13/)[基本必須]
   - [ ] 初期表示または手動で開いたTooltipは、閉じるボタンで非表示にできる
   - [ ] Tooltipまたはその内部要素にフォーカスが当たっている時は、Escapeキーで非表示にできる
@@ -341,6 +343,7 @@ const [hasSeenTooltip, setHasSeenTooltip] = useState(() => {
 - **再表示時に閉じるボタンが表示されない**ことの確認
 - `aria-describedby`と`aria-expanded`が自動的に設定されることの確認
 - `role="tooltip"`が設定されないことの確認
+- `role="group"`が設定されることの確認
 
 #### 領域外クリック
 
