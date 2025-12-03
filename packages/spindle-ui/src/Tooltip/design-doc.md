@@ -169,7 +169,7 @@ Tooltipの閉じる動作は`defaultOpen`の値に応じて自動的に最適化
 
 **`defaultOpen={true}`の場合：**
 - 閉じるボタンで閉じる
-- Escapeキーで閉じる
+- Tooltipまたはその内部要素にフォーカスが当たっている時、Escapeキーで閉じる
 - 領域外クリックでは閉じない（閉じるボタンがあるため）
 
 **`defaultOpen={false}`または未指定の場合：**
@@ -295,7 +295,7 @@ const [hasSeenTooltip, setHasSeenTooltip] = useState(() => {
   - [ ] HTML仕様に準拠した実装をしている
 - [カスタムコントロールの操作性を担保する](https://a11y-guidelines.ameba.design/4/1/2/)[基本必須]
   - [ ] トリガーボタンに`aria-describedby`でTooltipのIDを関連付けている（自動）
-  - [ ] スクリーンリーダーでも機能落ちがなく、読み上げが過不足なく行われている
+  - [ ] トリガーボタンにフォーカスした際、ボタンの内容に加えてTooltipの説明内容（`aria-describedby`）が読み上げられる
 
 ### 初期表示なし（`defaultOpen={false}`）
 
@@ -315,12 +315,12 @@ const [hasSeenTooltip, setHasSeenTooltip] = useState(() => {
   - [ ] トリガーボタンに`aria-expanded`で開閉状態が自動的に示されている
   - [ ] `role="tooltip"`は使用していない
 - [ホバーまたはフォーカスで表示されるコンテンツを制御できる](https://a11y-guidelines.ameba.design/1/4/13/)[基本必須]
-  - [ ] 初期表示または手動で開いたTooltipは、閉じるボタン・Escapeキーで非表示にできる
+  - [ ] 初期表示または手動で開いたTooltipは、閉じるボタンで非表示にできる
+  - [ ] Tooltipまたはその内部要素にフォーカスが当たっている時は、Escapeキーで非表示にできる
   - [ ] 領域外クリックでは閉じない（閉じるボタンがあるため）
   - [ ] Tooltipは自動で消えない（ユーザーが明示的に閉じるまで表示される）
 - [キーボード、タッチデバイスで操作できる](https://a11y-guidelines.ameba.design/2/1/1/)[基本必須]
   - [ ] トリガーボタンと閉じるボタンにTabキーでフォーカスでき、EnterキーまたはSpaceキーで操作できる
-  - [ ] EscapeキーでTooltipを閉じることができる
 - [適切なフォーカス順序にする](https://a11y-guidelines.ameba.design/2/4/3/)[基本必須]
   - [ ] キーボード操作時に、トリガーボタン→Tooltip内の閉じるボタン→次の要素の順でフォーカスが移動する
 
@@ -343,7 +343,7 @@ const [hasSeenTooltip, setHasSeenTooltip] = useState(() => {
 - 初期状態で表示されることの確認
 - **初期表示時に**閉じるボタンが表示されることの確認
 - 閉じるボタンクリック時に閉じることの確認
-- Escapeキー押下時に閉じることの確認
+- Tooltipまたはその内部要素にフォーカスが当たっている時、Escapeキー押下で閉じることの確認
 - 一度閉じた後、hover/focusで再表示されることの確認
 - **再表示時に閉じるボタンが表示されない**ことの確認
 - `aria-describedby`と`aria-expanded`が自動的に設定されることの確認
