@@ -4120,10 +4120,10 @@
     "@vitest/pretty-format" "4.0.14"
     tinyrainbow "^3.0.3"
 
-"@vscode/web-custom-data@0.6.1":
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/@vscode/web-custom-data/-/web-custom-data-0.6.1.tgz#3cf5238bbbe8026bf7e979f0764247ae5d63bf2a"
-  integrity sha512-l7IFt7wzngj8WumWEAOsZMV7OhurQvDFBbtcPq8eUiYAouk0bNcqw1NZXMsAfwt6KDnOfNXYVhp2iOE0R40qoA==
+"@vscode/web-custom-data@0.6.2":
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/@vscode/web-custom-data/-/web-custom-data-0.6.2.tgz#cb292c285e8ffed490b0be7b062ace115521dc26"
+  integrity sha512-PIZNbMb3WkPWzXeCIe2HBkykVlX/MeASXyQ0IPcGA6HkMW5dcJyNhv+xkxjza60aCVQnsCHnZduO7D/cUgdFXw==
 
 "@webassemblyjs/ast@1.14.1", "@webassemblyjs/ast@^1.14.1":
   version "1.14.1"
