@@ -74,10 +74,10 @@ importers:
         version: 4.0.1(stylelint@16.26.1(typescript@5.9.3))
       textlint:
         specifier: 15.4.0
-        version: 15.4.0
+        version: 15.4.0(@cfworker/json-schema@4.1.1)
       textlint-rule-preset-ameba:
         specifier: openameba/textlint-rule-preset-ameba#v0.5.1
-        version: '@openameba/textlint-rule-preset-ameba@https://codeload.github.com/openameba/textlint-rule-preset-ameba/tar.gz/e3101ee1ee6a39b1f539ffa729e57efa112ce134(textlint@15.4.0)'
+        version: '@openameba/textlint-rule-preset-ameba@https://codeload.github.com/openameba/textlint-rule-preset-ameba/tar.gz/e3101ee1ee6a39b1f539ffa729e57efa112ce134(textlint@15.4.0(@cfworker/json-schema@4.1.1))'
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -179,11 +179,14 @@ importers:
     dependencies:
       '@modelcontextprotocol/sdk':
         specifier: ^1.3.1
-        version: 1.23.0(zod@3.25.76)
+        version: 1.23.0(@cfworker/json-schema@4.1.1)(zod@3.25.76)
       zod:
         specifier: 3.25.76
         version: 3.25.76
     devDependencies:
+      '@cfworker/json-schema':
+        specifier: 4.1.1
+        version: 4.1.1
       '@openameba/spindle-tokens':
         specifier: ^1.9.0
         version: 1.9.0
@@ -210,7 +213,7 @@ importers:
         version: 4.0.2
       firebase-tools:
         specifier: 14.26.0
-        version: 14.26.0(@swc/core@1.15.3)(@types/node@24.10.1)(encoding@0.1.13)(typescript@5.9.3)
+        version: 14.26.0(@cfworker/json-schema@4.1.1)(@swc/core@1.15.3)(@types/node@24.10.1)(encoding@0.1.13)(typescript@5.9.3)
       puppeteer:
         specifier: 24.31.0
         version: 24.31.0(typescript@5.9.3)
@@ -223,7 +226,7 @@ importers:
     devDependencies:
       firebase-tools:
         specifier: 14.26.0
-        version: 14.26.0(@swc/core@1.15.3)(@types/node@24.10.1)(encoding@0.1.13)(typescript@5.9.3)
+        version: 14.26.0(@cfworker/json-schema@4.1.1)(@swc/core@1.15.3)(@types/node@24.10.1)(encoding@0.1.13)(typescript@5.9.3)
 
   packages/spindle-tokens:
     devDependencies:
@@ -338,7 +341,7 @@ importers:
         version: 1.12.0
       firebase-tools:
         specifier: 14.26.0
-        version: 14.26.0(@swc/core@1.15.3)(@types/node@24.10.1)(encoding@0.1.13)(typescript@5.9.3)
+        version: 14.26.0(@cfworker/json-schema@4.1.1)(@swc/core@1.15.3)(@types/node@24.10.1)(encoding@0.1.13)(typescript@5.9.3)
       jsdom:
         specifier: 27.2.0
         version: 27.2.0
@@ -682,6 +685,9 @@ packages:
 
   '@cacheable/utils@2.3.2':
     resolution: {integrity: sha512-8kGE2P+HjfY8FglaOiW+y8qxcaQAfAhVML+i66XJR3YX5FtyDqn6Txctr3K2FrbxLKixRRYYBWMbuGciOhYNDg==}
+
+  '@cfworker/json-schema@4.1.1':
+    resolution: {integrity: sha512-gAmrUZSGtKc3AiBL71iNWxDsyUC5uMaKKGdvzYsBoTW/xi42JQHl7eKV2OYzCUqvc+D2RCcf7EXY2iCyFIk6og==}
 
   '@changesets/apply-release-plan@7.0.14':
     resolution: {integrity: sha512-ddBvf9PHdy2YY0OUiEl3TV78mH9sckndJR14QAt87KLEbIov81XO0q0QAmvooBxXlqRRP8I9B7XOzZwQG7JkWA==}
@@ -10474,6 +10480,8 @@ snapshots:
       hashery: 1.3.0
       keyv: 5.5.4
 
+  '@cfworker/json-schema@4.1.1': {}
+
   '@changesets/apply-release-plan@7.0.14':
     dependencies:
       '@changesets/config': 3.1.2
@@ -11535,7 +11543,7 @@ snapshots:
       '@types/react': 19.2.7
       react: 19.2.0
 
-  '@modelcontextprotocol/sdk@1.23.0(zod@3.25.76)':
+  '@modelcontextprotocol/sdk@1.23.0(@cfworker/json-schema@4.1.1)(zod@3.25.76)':
     dependencies:
       ajv: 8.17.1
       ajv-formats: 3.0.1
@@ -11550,6 +11558,8 @@ snapshots:
       raw-body: 3.0.2
       zod: 3.25.76
       zod-to-json-schema: 3.25.0(zod@3.25.76)
+    optionalDependencies:
+      '@cfworker/json-schema': 4.1.1
     transitivePeerDependencies:
       - supports-color
 
@@ -11879,14 +11889,14 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.2.7
 
-  '@openameba/textlint-rule-preset-ameba@https://codeload.github.com/openameba/textlint-rule-preset-ameba/tar.gz/e3101ee1ee6a39b1f539ffa729e57efa112ce134(textlint@15.4.0)':
+  '@openameba/textlint-rule-preset-ameba@https://codeload.github.com/openameba/textlint-rule-preset-ameba/tar.gz/e3101ee1ee6a39b1f539ffa729e57efa112ce134(textlint@15.4.0(@cfworker/json-schema@4.1.1))':
     dependencies:
       '@textlint-ja/textlint-rule-no-dropping-i': 1.1.0
       '@textlint-ja/textlint-rule-no-insert-dropping-sa': 1.0.2
       '@textlint-ja/textlint-rule-no-insert-re': 1.0.2
       '@textlint-ja/textlint-rule-no-synonyms': 1.3.0(sudachi-synonyms-dictionary@5.0.1)
       sudachi-synonyms-dictionary: 5.0.1
-      textlint-filter-rule-allowlist: 4.0.0(textlint@15.4.0)
+      textlint-filter-rule-allowlist: 4.0.0(textlint@15.4.0(@cfworker/json-schema@4.1.1))
       textlint-rule-ja-nakaguro-or-halfwidth-space-between-katakana: 2.4.3
       textlint-rule-ja-no-abusage: 2.0.1
       textlint-rule-ja-no-mixed-period: 2.1.3
@@ -15229,7 +15239,7 @@ snapshots:
       path-exists: 5.0.0
       unicorn-magic: 0.1.0
 
-  firebase-tools@14.26.0(@swc/core@1.15.3)(@types/node@24.10.1)(encoding@0.1.13)(typescript@5.9.3):
+  firebase-tools@14.26.0(@cfworker/json-schema@4.1.1)(@swc/core@1.15.3)(@types/node@24.10.1)(encoding@0.1.13)(typescript@5.9.3):
     dependencies:
       '@apphosting/build': 0.1.7(@swc/core@1.15.3)(@types/node@24.10.1)(typescript@5.9.3)
       '@apphosting/common': 0.0.8
@@ -15238,7 +15248,7 @@ snapshots:
       '@google-cloud/cloud-sql-connector': 1.8.4
       '@google-cloud/pubsub': 5.2.0
       '@inquirer/prompts': 7.10.1(@types/node@24.10.1)
-      '@modelcontextprotocol/sdk': 1.23.0(zod@3.25.76)
+      '@modelcontextprotocol/sdk': 1.23.0(@cfworker/json-schema@4.1.1)(zod@3.25.76)
       abort-controller: 3.0.0
       ajv: 8.17.1
       ajv-formats: 3.0.1
@@ -20504,13 +20514,13 @@ snapshots:
 
   text-table@0.2.0: {}
 
-  textlint-filter-rule-allowlist@4.0.0(textlint@15.4.0):
+  textlint-filter-rule-allowlist@4.0.0(textlint@15.4.0(@cfworker/json-schema@4.1.1)):
     dependencies:
       '@textlint/ast-node-types': 12.6.1
       '@textlint/get-config-base-dir': 2.0.0
       '@textlint/regexp-string-matcher': 1.1.1
       js-yaml: 4.1.1
-      textlint: 15.4.0
+      textlint: 15.4.0(@cfworker/json-schema@4.1.1)
 
   textlint-rule-helper@1.2.0:
     dependencies:
@@ -20654,9 +20664,9 @@ snapshots:
       structured-source: 4.0.0
       unified: 8.4.2
 
-  textlint@15.4.0:
+  textlint@15.4.0(@cfworker/json-schema@4.1.1):
     dependencies:
-      '@modelcontextprotocol/sdk': 1.23.0(zod@3.25.76)
+      '@modelcontextprotocol/sdk': 1.23.0(@cfworker/json-schema@4.1.1)(zod@3.25.76)
       '@textlint/ast-node-types': 15.4.0
       '@textlint/ast-traverse': 15.4.0
       '@textlint/config-loader': 15.4.0
