@@ -1,23 +1,23 @@
 ---
 description: Set up development environment for Spindle
-allowed-tools: Bash(yarn:*), Bash(npm:*)
+allowed-tools: Bash(pnpm:*), Bash(npx:*), Bash(npm:*)
 ---
 
 # Development Setup Command
 
 ## Overview
 
-This command sets up the development environment by ensuring Yarn v1 is installed and running `yarn install` to install dependencies.
+This command sets up the development environment by ensuring pnpm v10 is installed and running `pnpm install` to install dependencies.
 
 ## Steps
 
-1. **Install/Verify Yarn v1**
-   - Check if Yarn is installed by running `yarn --version`
-   - If Yarn is not installed or version is not 1.x, install it using `npm install --global yarn`
+1. **Install/Verify pnpm v10**
+   - Check if pnpm is installed by running `pnpm --version`
+   - If pnpm is not installed or version is not 10.x, install it using `npm install --global pnpm@10`
    - Verify installation succeeded
 
 2. **Install Dependencies**
-   - Run `yarn install` to install all project dependencies
+   - Run `pnpm install --frozen-lockfile` to install all project dependencies
    - Report any errors that occur during installation
 
 ## Usage

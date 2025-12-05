@@ -27,7 +27,7 @@
     "export:color": "tsx scripts/color.ts",
     "export:spacing": "tsx scripts/spacing.ts",
     "cp": "npx cpx dist/css/spindle-tokens.css ./",
-    "prepublishOnly": "yarn build && yarn cp"
+    "prepublishOnly": "pnpm build && pnpm cp"
   },
   "bugs": {
     "url": "https://github.com/openameba/spindle/issues"

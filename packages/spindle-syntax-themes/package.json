@@ -18,12 +18,12 @@
     "access": "public"
   },
   "scripts": {
-    "test": "yarn test:a11y",
+    "test": "pnpm test:a11y",
     "test:a11y": "lhci autorun",
     "minify": "csso highlightjs-light.css --output highlightjs-light.min.css && csso highlightjs-dark.css --output highlightjs-dark.min.css",
-    "prepublishOnly": "yarn minify",
-    "build:example": "npx rimraf public && npx cpx '*.{html,css,ico}' public",
-    "predeploy": "yarn build:example",
+    "prepublishOnly": "pnpm minify",
+    "build:example": "rm -rf public && npx cpx '*.{html,css,ico}' public",
+    "predeploy": "pnpm build:example",
     "deploy": "firebase deploy --only hosting",
     "serve": "npx serve -p 5001"
   },

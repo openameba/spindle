@@ -21,36 +21,33 @@ jobs:
         with:
           fetch-depth: 0
 
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.24.0
+
       - name: Setup Node.js
         uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6.1.0
         with:
           node-version-file: package.json
           registry-url: 'https://registry.npmjs.org'
-
-      - name: Restore cache
-        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
-        with:
-          path: |
-            node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-v2
+          cache: pnpm
 
       # Update npm (>=11.5.1 required for OIDC/provenance); install latest
       - name: Update npm
         run: npm install -g npm@latest
 
       - name: Install Dependencies
-        run: yarn install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Build spindle-hooks
-        run: yarn lerna run --scope @openameba/spindle-hooks build
+        run: pnpm lerna run --scope @openameba/spindle-hooks build
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@e0145edc7d9d8679003495b11f87bd8ef63c0cba # v1.5.3
         with:
-          publish: yarn release
-          version: yarn version-packages
+          publish: pnpm release
+          version: pnpm version-packages
           commit: 'chore: publish'
           title: 'chore: publish'
         env:

@@ -2,7 +2,7 @@
   "name": "@openameba/spindle-icons",
   "version": "2.2.2",
   "scripts": {
-    "clean": "npx rimraf dist",
+    "clean": "rm -rf dist",
     "mkdir": "npx mkdirp dist",
     "build": "run-s icon:get icon:optimize icon:sprite",
     "postbuild": "ts-node scripts/icon-doc.ts",
