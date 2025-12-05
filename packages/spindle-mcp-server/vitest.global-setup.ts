@@ -4,7 +4,7 @@ export async function setup() {
   console.log('Building spindle-mcp-server...');
 
   try {
-    execSync('yarn build', {
+    execSync('pnpm build', {
       cwd: __dirname,
       stdio: 'inherit',
     });
