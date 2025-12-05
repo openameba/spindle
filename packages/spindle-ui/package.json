@@ -77,7 +77,7 @@
     "@testing-library/react": "16.3.0",
     "@testing-library/user-event": "14.6.1",
     "@types/react": "19.2.7",
-    "@vitest/ui": "4.0.14",
+    "@vitest/ui": "4.0.15",
     "@vscode/web-custom-data": "0.6.2",
     "autoprefixer": "10.4.22",
     "bundlewatch": "0.4.1",
@@ -102,6 +102,6 @@
     "stylelint-config-standard": "39.0.1",
     "stylelint-order": "7.0.0",
     "stylelint-selector-bem-pattern": "4.0.1",
-    "vitest": "4.0.14"
+    "vitest": "4.0.15"
   }
 }
