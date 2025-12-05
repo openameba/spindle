@@ -12,7 +12,6 @@ const VERSION = pkg.version;
 export function createServer(): McpServer {
   const server = new McpServer({
     name: 'ameba-spindle',
-    description: 'MCP server for Ameba Design System Spindle',
     version: VERSION,
   });
 
