@@ -10,20 +10,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.24.0
       - uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6.1.0
         with:
           node-version-file: package.json
-      - name: restore lerna
-        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
-        with:
-          path: |
-            node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-v2
-      - run: yarn install --frozen-lockfile
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
       # Build all packages except spindle-icons to check if the system works or not
       # spindle-icons is excluded because it requires FIGMA_TOKEN and fetches data from Figma API on every build
       - name: build all packages
         run: |
-          yarn lerna run --ignore @openameba/spindle-icons build
-          yarn build:extensionReplace
+          pnpm lerna run --ignore @openameba/spindle-icons build
+          pnpm build:extensionReplace
