@@ -7948,10 +7948,10 @@ find-up@^7.0.0:
     path-exists "^5.0.0"
     unicorn-magic "^0.1.0"
 
-firebase-tools@14.26.0:
-  version "14.26.0"
-  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-14.26.0.tgz#9a7f10d7392e1c3b2e771b4cec6ed1ad4cb40c39"
-  integrity sha512-pjVNDvmY4s3HkBe0iI5mum4hGpNzVwrf0J68KP51XRvhU/tYDXzMr6N+FBjdJtkJM6I7wx1KqgHsqvJurCun/A==
+firebase-tools@14.27.0:
+  version "14.27.0"
+  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-14.27.0.tgz#762a2de407f9df188952cd942ef67a144776a053"
+  integrity sha512-HrucHJ69mLM9pQhZFO1rb0N/QMpZD4iznoOtKd2lctEELPtbSMN5JHgdgzLlf+EXn5aQy87u5zlPd/0xwwyYTQ==
   dependencies:
     "@apphosting/build" "^0.1.6"
     "@apphosting/common" "^0.0.8"
