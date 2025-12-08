@@ -13,7 +13,7 @@ npm install @openameba/spindle-icons
 ```
 
 ```
-yarn add @openameba/spindle-icons
+pnpm add @openameba/spindle-icons
 ```
 
 アイコンをReactコンポーネントとして利用したい場合には、`@openameba/spindle-ui` をインストールしてください。
@@ -23,7 +23,7 @@ npm install @openameba/spindle-ui
 ```
 
 ```
-yarn add @openameba/spindle-ui
+pnpm add @openameba/spindle-ui
 ```
 
 ## 利用方法

@@ -79,20 +79,20 @@ SpindleのMCPサーバーの開発には以下の手順が必要です。
 ### 前提条件
 
 - Node.jsがインストールされていること
-- このリポジトリのルートディレクトリで `yarn` を実行して依存関係をインストール済みであること
+- このリポジトリのルートディレクトリで `pnpm install --frozen-lockfile` を実行して依存関係をインストール済みであること
 
 ### 開発手順
 
 1. 依存パッケージのインストール
 
 ```bash
-yarn
+pnpm install --frozen-lockfile
 ```
 
 2. ビルド
 
 ```bash
-yarn build
+pnpm build
 ```
 
 3. 生成されたファイルを利用して動作確認
@@ -113,7 +113,7 @@ yarn build
 4. テスト
 
 ```bash
-yarn test
+pnpm test
 ```
 
 ### 注意事項
