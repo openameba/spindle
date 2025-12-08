@@ -47,30 +47,30 @@ https://www.figma.com/file/${FILE_ID}/icon?node-id=${NODE_ID}
 SVGの生成をするには以下のコマンドを実行します。`${FIGMA_PERSONAL_ACCESS_TOKEN}`には、事前準備で取得したパーソナルアクセストークンを指定します。
 
 ```
-FIGMA_TOKEN=${FIGMA_PERSONAL_ACCESS_TOKEN} yarn build
+FIGMA_TOKEN=${FIGMA_PERSONAL_ACCESS_TOKEN} pnpm build
 ```
 
 ### 各コマンド
-`yarn build`内部では、以下の処理をしており、それぞれ個別に実行できます。
+`pnpm build`内部では、以下の処理をしており、それぞれ個別に実行できます。
 
 #### アイコンの取得
 Figmaからアイコンを取得し、SVGファイルとして保存します。Figma APIへのリクエストが多くなりすぎないように1アイコンずつゆっくりと取得するため、時間がかかります。
 ```
-FIGMA_TOKEN=${FIGMA_PERSONAL_ACCESS_TOKEN} yarn icon:get
+FIGMA_TOKEN=${FIGMA_PERSONAL_ACCESS_TOKEN} pnpm icon:get
 ```
 
 #### SVGの最適化
 [svg/svgo](https://github.com/svg/svgo)を利用して、取得したSVGを最適化します。最適化する項目は`.svgo.yaml`に記述されています。
 
 ```
-yarn icon:optimize
+pnpm icon:optimize
 ```
 
 #### SVG Spriteの作成
 [kphl/svg-sprite](https://github.com/jkphl/svg-sprite)を利用して、取得したSVGからSVG Spriteを作成します。SVG Spriteを生成する設定は`sprite.json`に、最適化する項目は`sprite.svgo.json`に記述されています。
 
 ```
-yarn icon:sprite
+pnpm icon:sprite
 ```
 
 ## 関連リンク / Related link

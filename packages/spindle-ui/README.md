@@ -16,7 +16,7 @@ Spindle UIは、Amebaのデザインシステム「Spindle」で定義された�
 npm install @openameba/spindle-ui
 ```
 ```
-yarn add @openameba/spindle-ui
+pnpm add @openameba/spindle-ui
 ```
 
 ## 利用方法
@@ -84,22 +84,22 @@ Spindle UIはGoogle Chrome最新版で動作確認しています。それ以外
 ## 開発方法
 
 ```
-yarn install
-yarn dev # storybookが起動します
+pnpm install --frozen-lockfile
+pnpm dev # storybookが起動します
 ```
 
 NOTE: 事前に [spindle-hooks](https://github.com/openameba/spindle/tree/main/packages/spindle-hooks) を以下のようにbuildしておく必要があります。
 
 ```
 cd ../spindle-hooks
-yarn build
+pnpm build
 cd -
 ```
 
 新規コンポーネントを作成する際にはgenerateコマンドが便利です。推奨されるフローは、まずDesign Docを作成しPull Requestします。レビューが終わったらマージし、コンポーネント実装を進めます。
 
 ```
-yarn generate
+pnpm generate
 ? Please select a document. (Use arrow keys)
 ❯ design doc 
 ? Please select the output destination directory. (Use arrow keys or type to search)
@@ -112,7 +112,7 @@ yarn generate
 ```
 
 ```
-yarn generate
+pnpm generate
 ? Please select a document. (Use arrow keys)
 ❯ component 
 ? Please select the output destination directory. (Use arrow keys or type to search)
