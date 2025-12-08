@@ -34,7 +34,7 @@
     "build:script:esm:rename": "npx renamer --find js --replace mjs 'dist/**'",
     "build:script:esm:extensionReplace": "jscodeshift -t ../../bin/outputExtensionReplace.js dist/** --extensions=mjs",
     "build:style": "postcss src/**/*.css src/*.css --base src -d dist/",
-    "preicon": "find src/Icon -type f ! -name '*.stories.tsx' -name '*.tsx' -delete && npx cpx '../spindle-icons/dist/svg/!(sprite).svg' icon-tmp",
+    "preicon": "find src/Icon -type f -name '*.tsx' ! -name '*.stories.tsx' -delete && npx cpx '../spindle-icons/dist/svg/!(sprite).svg' icon-tmp",
     "icon": "run-s icon:react icon:connect",
     "posticon": "rm -rf icon-tmp",
     "icon:react": "svgr --out-dir src/Icon icon-tmp",
