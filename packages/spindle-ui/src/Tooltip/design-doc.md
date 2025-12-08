@@ -114,10 +114,18 @@ type Props = {
 #### Tooltip.Trigger
 
 ```ts
+type TriggerProps = {
+  ref: React.RefCallback<HTMLElement>;
+  'aria-describedby': string;
+  'aria-expanded'?: boolean;
+};
+
 type Props = {
-  children: React.ReactNode;
+  children: (props: TriggerProps) => React.ReactNode;
 };
 ```
+
+childrenは関数として定義します。関数の引数にはトリガー要素に必要なprops（ref、aria属性）が渡されます。
 
 #### Tooltip.Content
 
@@ -186,21 +194,26 @@ Tooltipは、表示状態に応じて適切なARIA属性を自動的に付与し
 - トリガー要素に`aria-expanded`で開閉状態を示す
 
 #### 共通動作
-- `Tooltip.Trigger`内のトリガー要素に、自動的に`aria-describedby`を付与します
+- `Tooltip.Trigger`のchildrenとして渡された関数に、トリガー要素に必要なprops（ref、`aria-describedby`、`aria-expanded`）を渡します
 - Tooltipの`id`を自動生成し、`aria-describedby`で関連付けます
 - トリガー要素のサイズを取得し、ポインターがトリガーに対して相対的に適切な位置に配置されるように計算します
+
+#### トリガー要素の要件
+
+`ref`と`aria-describedby`、`aria-expanded`属性を適切に受け取れるようにしてください。
 
 ## 実装例
 
 React実装の一例です。
 
-
 ```tsx
 <Tooltip.Frame defaultOpen={false} variant="information" direction="top" position="center">
   <Tooltip.Trigger>
-    <IconButton aria-label="詳細情報">
-      <Information aria-hidden="true" />
-    </IconButton>
+    {props => (
+      <IconButton {...props} aria-label="詳細情報">
+        <Information aria-hidden="true" />
+      </IconButton>
+    )}
   </Tooltip.Trigger>
   <Tooltip.Content>補足情報</Tooltip.Content>
 </Tooltip.Frame>
@@ -259,9 +272,11 @@ const [hasSeenTooltip, setHasSeenTooltip] = useState(() => {
     }}
   >
     <Tooltip.Trigger>
-      <IconButton aria-label="詳細情報">
-        <Information aria-hidden="true" />
-      </IconButton>
+      {props => (
+        <IconButton {...props} aria-label="詳細情報">
+          <Information aria-hidden="true" />
+        </IconButton>
+      )}
     </Tooltip.Trigger>
     <Tooltip.Content>新機能: 機能が追加されました</Tooltip.Content>
   </Tooltip.Frame>
