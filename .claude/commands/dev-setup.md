@@ -1,6 +1,6 @@
 ---
 description: Set up development environment for Spindle
-allowed-tools: Bash(pnpm:*), Bash(npx:*), Bash(npm:*)
+allowed-tools: Bash(pnpm:*), Bash(npm:*)
 ---
 
 # Development Setup Command
