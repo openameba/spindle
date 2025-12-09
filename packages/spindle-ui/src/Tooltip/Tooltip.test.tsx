@@ -287,7 +287,9 @@ describe('<Tooltip />', () => {
       const tooltipText = await screen.findByText('補足情報');
       expect(tooltipText).toBeInTheDocument();
 
-      const outsideButton = screen.getByRole('button', { name: '外部のボタン' });
+      const outsideButton = screen.getByRole('button', {
+        name: '外部のボタン',
+      });
 
       await act(async () => {
         const event = new PointerEvent('pointerdown', {
@@ -373,7 +375,9 @@ describe('<Tooltip />', () => {
         </Tooltip.Frame>,
       );
 
-      expect(screen.getByRole('button', { name: '閉じる' })).toBeInTheDocument();
+      expect(
+        screen.getByRole('button', { name: '閉じる' }),
+      ).toBeInTheDocument();
     });
 
     test('closes when close button is clicked', async () => {
@@ -447,7 +451,9 @@ describe('<Tooltip />', () => {
         </div>,
       );
 
-      const outsideButton = screen.getByRole('button', { name: '外部のボタン' });
+      const outsideButton = screen.getByRole('button', {
+        name: '外部のボタン',
+      });
       fireEvent.click(outsideButton);
 
       expect(screen.getByText('補足情報')).toBeInTheDocument();
