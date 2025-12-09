@@ -54,18 +54,6 @@
   "engines": {
     "node": ">=22"
   },
-  "pnpm": {
-    "overrides": {
-      "zod": "3.25.76",
-      "superstatic": "10.0.0",
-      "axios": "1.13.2",
-      "undici": "7.16.0",
-      "undici-types": "7.16.0",
-      "semver": "7.7.3",
-      "chokidar": "5.0.0",
-      "@octokit/endpoint": "11.0.2"
-    }
-  },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "biome check --no-errors-on-unmatched --files-ignore-unknown=true"
