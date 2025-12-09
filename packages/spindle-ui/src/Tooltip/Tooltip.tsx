@@ -142,7 +142,7 @@ const Frame = ({
     [isInitialOpen, handlePointerUp],
   );
 
-  // ポインターデバイス: hover
+  // ポインティングデバイス: hover
   const handleMouseEnter = useCallback(
     (_e: React.MouseEvent) => {
       if (isPointerDownRef.current) return;
@@ -153,14 +153,14 @@ const Frame = ({
     [isInitialOpen, openTooltip],
   );
 
-  // ポインターデバイス: focus（pointerdown中は無視）
+  // ポインティングデバイス: focus（pointerdown中は無視）
   const handleFocus = useCallback(() => {
     if (isPointerDownRef.current) return;
     if (isInitialOpen) return;
     openTooltip();
   }, [isInitialOpen, openTooltip]);
 
-  // ポインターデバイス: blur
+  // ポインティングデバイス: blur
   const handleBlur = useCallback(() => {
     if (isPointerDownRef.current) return;
     if (isInitialOpen) return;
