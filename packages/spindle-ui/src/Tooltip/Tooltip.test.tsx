@@ -1,25 +1,30 @@
 import { jest } from '@jest/globals';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import {
+  act,
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+} from '@testing-library/react';
 import React from 'react';
 
 import Information from '../Icon/Information';
 import { IconButton } from '../IconButton';
 import { Tooltip } from './Tooltip';
 
-describe('<Tooltip />', () => {
-  beforeEach(() => {
-    Object.defineProperty(window, 'ontouchstart', {
-      writable: true,
-      value: undefined,
-    });
-    Object.defineProperty(navigator, 'maxTouchPoints', {
-      writable: true,
-      value: 0,
-    });
+// JSDOMでpointerTypeを正しく扱うためのヘルパー
+const fireTouchPointerDown = (element: Element) => {
+  const event = new PointerEvent('pointerdown', {
+    bubbles: true,
+    cancelable: true,
+    pointerType: 'touch',
   });
+  element.dispatchEvent(event);
+};
 
-  describe('共通', () => {
-    test('aria-describedby が自動的に設定される', () => {
+describe('<Tooltip />', () => {
+  describe('Common', () => {
+    test('sets aria-describedby automatically', () => {
       render(
         <Tooltip.Frame>
           <Tooltip.Trigger>
@@ -38,8 +43,8 @@ describe('<Tooltip />', () => {
     });
   });
 
-  describe('defaultOpen={false}の場合', () => {
-    test('初期状態では表示されない', () => {
+  describe('when defaultOpen={false}', () => {
+    test('is not visible initially', () => {
       render(
         <Tooltip.Frame defaultOpen={false}>
           <Tooltip.Trigger>
@@ -56,7 +61,7 @@ describe('<Tooltip />', () => {
       expect(screen.queryByText('補足情報')).not.toBeInTheDocument();
     });
 
-    test('hover時に表示される', async () => {
+    test('shows on hover (pointer devices)', async () => {
       render(
         <Tooltip.Frame defaultOpen={false}>
           <Tooltip.Trigger>
@@ -78,35 +83,7 @@ describe('<Tooltip />', () => {
       });
     });
 
-    test('マウスを離すと非表示になる', async () => {
-      render(
-        <Tooltip.Frame defaultOpen={false}>
-          <Tooltip.Trigger>
-            {(props) => (
-              <IconButton {...props} aria-label="詳細情報">
-                <Information aria-hidden="true" />
-              </IconButton>
-            )}
-          </Tooltip.Trigger>
-          <Tooltip.Content>補足情報</Tooltip.Content>
-        </Tooltip.Frame>,
-      );
-
-      const trigger = screen.getByRole('button', { name: '詳細情報' });
-      fireEvent.mouseEnter(trigger);
-
-      await waitFor(() => {
-        expect(screen.getByText('補足情報')).toBeInTheDocument();
-      });
-
-      fireEvent.mouseLeave(trigger);
-
-      await waitFor(() => {
-        expect(screen.queryByText('補足情報')).not.toBeInTheDocument();
-      });
-    });
-
-    test('focus時に表示される', async () => {
+    test('shows on focus (pointer devices)', async () => {
       render(
         <Tooltip.Frame defaultOpen={false}>
           <Tooltip.Trigger>
@@ -128,7 +105,7 @@ describe('<Tooltip />', () => {
       });
     });
 
-    test('フォーカスを外すと非表示になる', async () => {
+    test('hides on blur (pointer devices)', async () => {
       render(
         <Tooltip.Frame defaultOpen={false}>
           <Tooltip.Trigger>
@@ -156,7 +133,35 @@ describe('<Tooltip />', () => {
       });
     });
 
-    test('role="tooltip"が設定される', async () => {
+    test('hides on Escape key press', async () => {
+      render(
+        <Tooltip.Frame defaultOpen={false}>
+          <Tooltip.Trigger>
+            {(props) => (
+              <IconButton {...props} aria-label="詳細情報">
+                <Information aria-hidden="true" />
+              </IconButton>
+            )}
+          </Tooltip.Trigger>
+          <Tooltip.Content>補足情報</Tooltip.Content>
+        </Tooltip.Frame>,
+      );
+
+      const trigger = screen.getByRole('button', { name: '詳細情報' });
+      fireEvent.mouseEnter(trigger);
+
+      await waitFor(() => {
+        expect(screen.getByText('補足情報')).toBeInTheDocument();
+      });
+
+      fireEvent.keyDown(window, { key: 'Escape' });
+
+      await waitFor(() => {
+        expect(screen.queryByText('補足情報')).not.toBeInTheDocument();
+      });
+    });
+
+    test('has role="tooltip"', async () => {
       render(
         <Tooltip.Frame defaultOpen={false}>
           <Tooltip.Trigger>
@@ -179,7 +184,7 @@ describe('<Tooltip />', () => {
       });
     });
 
-    test('aria-expandedが設定されない', () => {
+    test('does not have aria-expanded', () => {
       render(
         <Tooltip.Frame defaultOpen={false}>
           <Tooltip.Trigger>
@@ -197,7 +202,7 @@ describe('<Tooltip />', () => {
       expect(trigger).not.toHaveAttribute('aria-expanded');
     });
 
-    test('閉じるボタンが表示されない', async () => {
+    test('does not show close button', async () => {
       render(
         <Tooltip.Frame defaultOpen={false}>
           <Tooltip.Trigger>
@@ -223,12 +228,7 @@ describe('<Tooltip />', () => {
       ).not.toBeInTheDocument();
     });
 
-    test('タッチデバイスでclick時に表示/非表示を切り替える', async () => {
-      Object.defineProperty(window, 'ontouchstart', {
-        writable: true,
-        value: {},
-      });
-
+    test('toggles visibility on touch (pointerdown with pointerType=touch)', async () => {
       render(
         <Tooltip.Frame defaultOpen={false}>
           <Tooltip.Trigger>
@@ -244,25 +244,24 @@ describe('<Tooltip />', () => {
 
       const trigger = screen.getByRole('button', { name: '詳細情報' });
 
-      fireEvent.click(trigger);
+      await act(async () => {
+        fireTouchPointerDown(trigger);
+      });
 
       await waitFor(() => {
         expect(screen.getByText('補足情報')).toBeInTheDocument();
       });
 
-      fireEvent.click(trigger);
+      await act(async () => {
+        fireTouchPointerDown(trigger);
+      });
 
       await waitFor(() => {
         expect(screen.queryByText('補足情報')).not.toBeInTheDocument();
       });
     });
 
-    test('タッチデバイスで領域外クリックで閉じる', async () => {
-      Object.defineProperty(window, 'ontouchstart', {
-        writable: true,
-        value: {},
-      });
-
+    test('starts fade-out on outside touch', async () => {
       render(
         <div>
           <Tooltip.Frame defaultOpen={false}>
@@ -280,23 +279,34 @@ describe('<Tooltip />', () => {
       );
 
       const trigger = screen.getByRole('button', { name: '詳細情報' });
-      fireEvent.click(trigger);
 
-      await waitFor(() => {
-        expect(screen.getByText('補足情報')).toBeInTheDocument();
+      await act(async () => {
+        fireTouchPointerDown(trigger);
       });
 
-      const outsideButton = screen.getByRole('button', { name: '外部のボタン' });
-      fireEvent.click(outsideButton);
+      const tooltipText = await screen.findByText('補足情報');
+      expect(tooltipText).toBeInTheDocument();
 
+      const outsideButton = screen.getByRole('button', { name: '外部のボタン' });
+
+      await act(async () => {
+        const event = new PointerEvent('pointerdown', {
+          bubbles: true,
+          cancelable: true,
+          pointerType: 'touch',
+        });
+        outsideButton.dispatchEvent(event);
+      });
+
+      const tooltipFrame = tooltipText.closest('.spui-Tooltip-frame');
       await waitFor(() => {
-        expect(screen.queryByText('補足情報')).not.toBeInTheDocument();
+        expect(tooltipFrame).toHaveClass('is-fade-out');
       });
     });
   });
 
-  describe('defaultOpen={true}の初期表示時', () => {
-    test('初期状態で表示される', () => {
+  describe('when defaultOpen={true} (initial display)', () => {
+    test('is visible initially', () => {
       render(
         <Tooltip.Frame defaultOpen>
           <Tooltip.Trigger>
@@ -313,7 +323,7 @@ describe('<Tooltip />', () => {
       expect(screen.getByText('補足情報')).toBeInTheDocument();
     });
 
-    test('role="group"が設定される', () => {
+    test('has role="group"', () => {
       render(
         <Tooltip.Frame defaultOpen>
           <Tooltip.Trigger>
@@ -331,7 +341,7 @@ describe('<Tooltip />', () => {
       expect(group).toBeInTheDocument();
     });
 
-    test('aria-expanded="true"が設定される', () => {
+    test('has aria-expanded="true"', () => {
       render(
         <Tooltip.Frame defaultOpen>
           <Tooltip.Trigger>
@@ -349,7 +359,7 @@ describe('<Tooltip />', () => {
       expect(trigger).toHaveAttribute('aria-expanded', 'true');
     });
 
-    test('閉じるボタンが表示される', () => {
+    test('shows close button', () => {
       render(
         <Tooltip.Frame defaultOpen>
           <Tooltip.Trigger>
@@ -366,7 +376,7 @@ describe('<Tooltip />', () => {
       expect(screen.getByRole('button', { name: '閉じる' })).toBeInTheDocument();
     });
 
-    test('閉じるボタンクリック時に閉じる', async () => {
+    test('closes when close button is clicked', async () => {
       const onClose = jest.fn();
 
       render(
@@ -392,7 +402,7 @@ describe('<Tooltip />', () => {
       expect(onClose).toHaveBeenCalledTimes(1);
     });
 
-    test('Tooltipまたはその内部要素にフォーカスが当たっている時、Escapeキー押下で閉じる', async () => {
+    test('closes on Escape key when tooltip or its content is focused', async () => {
       const onClose = jest.fn();
 
       render(
@@ -420,7 +430,7 @@ describe('<Tooltip />', () => {
       expect(onClose).toHaveBeenCalledTimes(1);
     });
 
-    test('領域外クリックでは閉じない', async () => {
+    test('does not close on outside click', async () => {
       render(
         <div>
           <Tooltip.Frame defaultOpen>
@@ -444,8 +454,8 @@ describe('<Tooltip />', () => {
     });
   });
 
-  describe('defaultOpen={true}で一度閉じた後の再表示時', () => {
-    test('hover/focusで再表示される', async () => {
+  describe('when defaultOpen={true} and reopened after closing', () => {
+    test('reopens on hover/focus', async () => {
       render(
         <Tooltip.Frame defaultOpen>
           <Tooltip.Trigger>
@@ -474,7 +484,7 @@ describe('<Tooltip />', () => {
       });
     });
 
-    test('role="group"からrole="tooltip"に切り替わる', async () => {
+    test('changes from role="group" to role="tooltip"', async () => {
       render(
         <Tooltip.Frame defaultOpen>
           <Tooltip.Trigger>
@@ -506,7 +516,7 @@ describe('<Tooltip />', () => {
       });
     });
 
-    test('aria-expandedが設定されない', async () => {
+    test('does not have aria-expanded after reopen', async () => {
       render(
         <Tooltip.Frame defaultOpen>
           <Tooltip.Trigger>
@@ -533,7 +543,7 @@ describe('<Tooltip />', () => {
       expect(trigger).not.toHaveAttribute('aria-expanded');
     });
 
-    test('閉じるボタンが表示されない', async () => {
+    test('does not show close button after reopen', async () => {
       render(
         <Tooltip.Frame defaultOpen>
           <Tooltip.Trigger>
@@ -568,7 +578,7 @@ describe('<Tooltip />', () => {
   });
 
   describe('variants', () => {
-    test('variant="information"でクラスが適用される', () => {
+    test('applies class for variant="information"', () => {
       render(
         <Tooltip.Frame defaultOpen variant="information">
           <Tooltip.Trigger>
@@ -586,7 +596,7 @@ describe('<Tooltip />', () => {
       expect(group).toHaveClass('spui-Tooltip-frame--information');
     });
 
-    test('variant="confirmation"でクラスが適用される', () => {
+    test('applies class for variant="confirmation"', () => {
       render(
         <Tooltip.Frame defaultOpen variant="confirmation">
           <Tooltip.Trigger>
@@ -604,7 +614,7 @@ describe('<Tooltip />', () => {
       expect(group).toHaveClass('spui-Tooltip-frame--confirmation');
     });
 
-    test('variant="error"でクラスが適用される', () => {
+    test('applies class for variant="error"', () => {
       render(
         <Tooltip.Frame defaultOpen variant="error">
           <Tooltip.Trigger>
@@ -624,7 +634,7 @@ describe('<Tooltip />', () => {
   });
 
   describe('direction and position', () => {
-    test('direction="top"とposition="center"でクラスが適用される', () => {
+    test('applies classes for direction="top" and position="center"', () => {
       render(
         <Tooltip.Frame defaultOpen direction="top" position="center">
           <Tooltip.Trigger>
@@ -643,7 +653,7 @@ describe('<Tooltip />', () => {
       expect(group).toHaveClass('spui-Tooltip-frame--center');
     });
 
-    test('direction="bottom"とposition="start"でクラスが適用される', () => {
+    test('applies classes for direction="bottom" and position="start"', () => {
       render(
         <Tooltip.Frame defaultOpen direction="bottom" position="start">
           <Tooltip.Trigger>
