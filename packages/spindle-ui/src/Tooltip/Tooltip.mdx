@@ -1,0 +1,383 @@
+import { Meta, Story, Source } from '@storybook/addon-docs/blocks';
+import * as TooltipStories from './Tooltip.stories';
+
+<Meta of={TooltipStories} />
+
+# Tooltip
+
+Tooltipは、トリガー要素に対して**補足情報や訴求内容を一時的に表示する**ためのコンポーネントです。UIの見た目をすっきり保ちながら、必要な時にのみ情報を提供します。アイコンボタンなどラベルがない要素の説明や、新機能の案内などに使用します。
+
+<Source
+  language="javascript"
+  code={`
+import { Tooltip } from '@openameba/spindle-ui';
+import '@openameba/spindle-ui/Tooltip.css';
+  `}
+/>
+
+<Source
+  language="css"
+  code={`@import './node_modules/@openameba/spindle-ui/Tooltip.css'`}
+/>
+
+<Source
+  language="html"
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Tooltip.css">`}
+/>
+
+## このコンポーネントでやっていること
+
+- デバイスに応じて自動的に表示トリガーを切り替えます（ポインティングデバイスではhover/focus、タッチデバイスではclick/tap）
+- 初期表示オプション（`defaultOpen={true}`）でチュートリアルや新機能案内として最初から表示できます
+- 表示状態に応じて`role="tooltip"`または`role="group"`を自動的に切り替えます
+- `defaultOpen={true}`の初期表示時のみ閉じるボタンを表示し、再表示時は自動的に非表示にします
+- トリガー要素のサイズを取得し、ポインターが適切な位置に配置されるように自動計算します
+
+## 利用時に注意してほしいこと
+
+- **操作に必須でない補足的な説明や情報を提供する**: 操作に必要な情報は予め表示しておき、Tooltipの使用はできる限り控えめにすることが理想です
+- **トリガーにはインフォメーションアイコンやはてなアイコンを使用する**: 原則として、機能を持つ要素（ボタンなど）に直接付けず、その隣にアイコンを配置します
+  - 例外: 初期表示ありかつ再表示しないケース（チュートリアルや新機能案内など）では、機能を持つ要素に直接付けることも許容されます
+- **多くの情報やインタラクションを含めない**: 情報が多くなる場合やインタラクションを多数含めたい場合にはモーダルの使用や別ページへの遷移を検討しましょう
+- **テキストやリンクに付けない**: ユーザーのメンタルモデルに反した挙動となり、混乱を招く可能性があります
+- `Tooltip.Trigger`のchildrenとして渡す関数は、受け取ったprops（`ref`、`aria-describedby`、`aria-expanded`、`onMouseEnter`、`onMouseLeave`、`onFocus`、`onBlur`、`onClick`）をトリガー要素に必ず適用してください
+- `z-index`はdefaultでは`1`になっていますが、必要に応じて`--Tooltip-z-index`を設定してください
+
+## 基本的な使い方
+
+デフォルトでは、トリガー要素にhoverまたはfocusすることでTooltipが表示されます。トリガー要素から離れると自動的に非表示になります。
+
+<Story of={TooltipStories.Normal} />
+
+<Source
+  code={`<Tooltip.Frame defaultOpen={false}>
+  <Tooltip.Trigger>
+    {(props) => (
+      <IconButton {...props} aria-label="詳細情報">
+        <Information aria-hidden="true" />
+      </IconButton>
+    )}
+  </Tooltip.Trigger>
+  <Tooltip.Content>
+    これは補足情報です。hover または focus で表示されます。
+  </Tooltip.Content>
+</Tooltip.Frame>`}
+/>
+
+### トリガー動作の違い
+
+- **ポインティングデバイス**: hoverで表示、トリガーから離れると非表示
+- **タッチデバイス**: click/tapで表示、再度click/tapで非表示
+
+## 初期表示
+
+`defaultOpen={true}`を指定すると、初期状態でTooltipが表示されます。閉じるボタンをクリックすることで非表示にできます。
+
+チュートリアルや新機能案内などで使用します。
+
+<Story of={TooltipStories.InitialOpen} />
+
+<Source
+  code={`<Tooltip.Frame defaultOpen>
+  <Tooltip.Trigger>
+    {(props) => (
+      <IconButton {...props} aria-label="詳細情報">
+        <Information aria-hidden="true" />
+      </IconButton>
+    )}
+  </Tooltip.Trigger>
+  <Tooltip.Content>
+    これは初期表示のTooltipです。閉じるボタンをクリックして閉じることができます。
+  </Tooltip.Content>
+</Tooltip.Frame>`}
+/>
+
+### 閉じるボタンの表示
+
+閉じるボタンは**初期表示時のみ**表示されます：
+
+- `defaultOpen={true}`の場合、初期表示時に閉じるボタンが表示される
+- 一度閉じた後、hover/focusまたはclick/tapで再表示された時は閉じるボタンは表示されない
+- `defaultOpen={false}`または未指定の場合、閉じるボタンは表示されない
+
+### 閉じる動作
+
+Tooltipの閉じる動作は表示状態に応じて自動的に最適化されます。
+
+**通常のTooltip（`defaultOpen={false}`または再表示時）**
+
+- **ポインティングデバイス**: マウスを離す/フォーカスを外すと自動で閉じる
+- **タッチデバイス**: 再度click/tap、または領域外clickで閉じる
+
+**初期表示のTooltip（`defaultOpen={true}`の初回表示）**
+
+- 閉じるボタンで閉じる
+- Tooltipまたはその内部要素にフォーカスが当たっている時、Escapeキーで閉じる
+- 領域外clickでは閉じない（閉じるボタンがあるため）
+
+### 一度だけ表示する実装
+
+`onClose`コールバックを使用して、Tooltipを閉じた際の処理を実装できます。
+
+<Story of={TooltipStories.OnceOnly} />
+
+<Source
+  code={`const [hasSeenTooltip, setHasSeenTooltip] = useState(false);
+
+{!hasSeenTooltip ? (
+  <Tooltip.Frame
+    defaultOpen
+    onClose={() => {
+      setHasSeenTooltip(true);
+    }}
+  >
+    <Tooltip.Trigger>
+      {(props) => (
+        <IconButton {...props} aria-label="詳細情報">
+          <Information aria-hidden="true" />
+        </IconButton>
+      )}
+    </Tooltip.Trigger>
+    <Tooltip.Content>
+      これは一度閉じたら再表示されないTooltipです。チュートリアルや新機能案内などに使用します。
+    </Tooltip.Content>
+  </Tooltip.Frame>
+) : (
+  <IconButton aria-label="詳細情報">
+    <Information aria-hidden="true" />
+  </IconButton>
+)}
+`} />
+
+**注意**: `defaultOpen`プロパティは初期表示の制御のみを行うため、状態が変わっても再評価されません。一度閉じたら表示しないようにするには、上記のようにTooltipコンポーネント自体を条件付きでレンダリングする必要があります。
+
+## Variants
+
+### Information
+
+<Story of={TooltipStories.VariantInformation} />
+
+<Source
+  code={`<Tooltip.Frame defaultOpen variant="information">
+  <Tooltip.Trigger>
+    {(props) => (
+      <IconButton {...props} aria-label="詳細情報">
+        <Information aria-hidden="true" />
+      </IconButton>
+    )}
+  </Tooltip.Trigger>
+  <Tooltip.Content>補足情報を伝えるためのTooltipです。</Tooltip.Content>
+</Tooltip.Frame>`}
+/>
+
+### Confirmation
+
+<Story of={TooltipStories.VariantConfirmation} />
+
+<Source
+  code={`<Tooltip.Frame defaultOpen variant="confirmation">
+  <Tooltip.Trigger>
+    {(props) => (
+      <IconButton {...props} aria-label="詳細情報">
+        <Information aria-hidden="true" />
+      </IconButton>
+    )}
+  </Tooltip.Trigger>
+  <Tooltip.Content>訴求したい内容を伝えるためのTooltipです。</Tooltip.Content>
+</Tooltip.Frame>`}
+/>
+
+### Error
+
+<Story of={TooltipStories.VariantError} />
+
+<Source
+  code={`<Tooltip.Frame defaultOpen variant="error">
+  <Tooltip.Trigger>
+    {(props) => (
+      <IconButton {...props} aria-label="詳細情報">
+        <Information aria-hidden="true" />
+      </IconButton>
+    )}
+  </Tooltip.Trigger>
+  <Tooltip.Content>エラーメッセージを表示するためのTooltipです。</Tooltip.Content>
+</Tooltip.Frame>`}
+/>
+
+## Direction
+
+### Top
+
+<Story of={TooltipStories.DirectionTop} />
+
+<Source
+  code={`<Tooltip.Frame defaultOpen direction="top">
+  <Tooltip.Trigger>
+    {(props) => (
+      <IconButton {...props} aria-label="詳細情報">
+        <Information aria-hidden="true" />
+      </IconButton>
+    )}
+  </Tooltip.Trigger>
+  <Tooltip.Content>トリガーの下に表示され、ポインターが上を指します。</Tooltip.Content>
+</Tooltip.Frame>`}
+/>
+
+### Bottom
+
+<Story of={TooltipStories.DirectionBottom} />
+
+<Source
+  code={`<Tooltip.Frame defaultOpen direction="bottom">
+  <Tooltip.Trigger>
+    {(props) => (
+      <IconButton {...props} aria-label="詳細情報">
+        <Information aria-hidden="true" />
+      </IconButton>
+    )}
+  </Tooltip.Trigger>
+  <Tooltip.Content>トリガーの上に表示され、ポインターが下を指します。</Tooltip.Content>
+</Tooltip.Frame>`}
+/>
+
+### Left
+
+<Story of={TooltipStories.DirectionLeft} />
+
+<Source
+  code={`<Tooltip.Frame defaultOpen direction="left">
+  <Tooltip.Trigger>
+    {(props) => (
+      <IconButton {...props} aria-label="詳細情報">
+        <Information aria-hidden="true" />
+      </IconButton>
+    )}
+  </Tooltip.Trigger>
+  <Tooltip.Content>トリガーの右に表示され、ポインターが左を指します。</Tooltip.Content>
+</Tooltip.Frame>`}
+/>
+
+### Right
+
+<Story of={TooltipStories.DirectionRight} />
+
+<Source
+  code={`<Tooltip.Frame defaultOpen direction="right">
+  <Tooltip.Trigger>
+    {(props) => (
+      <IconButton {...props} aria-label="詳細情報">
+        <Information aria-hidden="true" />
+      </IconButton>
+    )}
+  </Tooltip.Trigger>
+  <Tooltip.Content>トリガーの左に表示され、ポインターが右を指します。</Tooltip.Content>
+</Tooltip.Frame>`}
+/>
+
+## Position
+
+### Center
+
+<Story of={TooltipStories.PositionCenter} />
+
+<Source
+  code={`<Tooltip.Frame defaultOpen position="center">
+  <Tooltip.Trigger>
+    {(props) => (
+      <IconButton {...props} aria-label="詳細情報">
+        <Information aria-hidden="true" />
+      </IconButton>
+    )}
+  </Tooltip.Trigger>
+  <Tooltip.Content>ポインターがトリガーの中央に配置されます。</Tooltip.Content>
+</Tooltip.Frame>`}
+/>
+
+### Start
+
+<Story of={TooltipStories.PositionStart} />
+
+<Source
+  code={`<Tooltip.Frame defaultOpen position="start">
+  <Tooltip.Trigger>
+    {(props) => (
+      <IconButton {...props} aria-label="詳細情報">
+        <Information aria-hidden="true" />
+      </IconButton>
+    )}
+  </Tooltip.Trigger>
+  <Tooltip.Content>ポインターがTooltipの開始位置寄りに配置されます。</Tooltip.Content>
+</Tooltip.Frame>`}
+/>
+
+### End
+
+<Story of={TooltipStories.PositionEnd} />
+
+<Source
+  code={`<Tooltip.Frame defaultOpen position="end">
+  <Tooltip.Trigger>
+    {(props) => (
+      <IconButton {...props} aria-label="詳細情報">
+        <Information aria-hidden="true" />
+      </IconButton>
+    )}
+  </Tooltip.Trigger>
+  <Tooltip.Content>ポインターがTooltipの終了位置寄りに配置されます。</Tooltip.Content>
+</Tooltip.Frame>`}
+/>
+
+### EdgeStart
+
+<Story of={TooltipStories.PositionEdgeStart} />
+
+<Source
+  code={`<Tooltip.Frame defaultOpen position="edgeStart">
+  <Tooltip.Trigger>
+    {(props) => (
+      <IconButton {...props} aria-label="詳細情報">
+        <Information aria-hidden="true" />
+      </IconButton>
+    )}
+  </Tooltip.Trigger>
+  <Tooltip.Content>トリガーが画面端から 16-36px の範囲にある場合に使用します。</Tooltip.Content>
+</Tooltip.Frame>`}
+/>
+
+### EdgeEnd
+
+<Story of={TooltipStories.PositionEdgeEnd} />
+
+<Source
+  code={`<Tooltip.Frame defaultOpen position="edgeEnd">
+  <Tooltip.Trigger>
+    {(props) => (
+      <IconButton {...props} aria-label="詳細情報">
+        <Information aria-hidden="true" />
+      </IconButton>
+    )}
+  </Tooltip.Trigger>
+  <Tooltip.Content>トリガーが画面端から 16-36px の範囲にある場合に使用します。</Tooltip.Content>
+</Tooltip.Frame>`}
+/>
+
+## テキストの折り返し
+
+### LongText
+
+<Story of={TooltipStories.LongText} />
+
+<Source
+  code={`<Tooltip.Frame defaultOpen>
+  <Tooltip.Trigger>
+    {(props) => (
+      <IconButton {...props} aria-label="詳細情報">
+        <Information aria-hidden="true" />
+      </IconButton>
+    )}
+  </Tooltip.Trigger>
+  <Tooltip.Content>
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa...
+  </Tooltip.Content>
+</Tooltip.Frame>`}
+/>

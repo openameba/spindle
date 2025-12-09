@@ -1,0 +1,336 @@
+@import "../IconButton/IconButton.css";
+
+:root {
+  --Tooltip-z-index: 1;
+  --Tooltip-arrow-offset: 4px;
+}
+
+.spui-Tooltip {
+  display: inline-block;
+  position: relative;
+  width: fit-content;
+}
+
+.spui-Tooltip-frame {
+  animation: var(--animation-appear-in-duration) var(--animation-appear-in-easing) spui-Tooltip-fade-in;
+  border-radius: 8px;
+  box-shadow: 0 11px 28px 0 rgba(8, 18, 26, 0.24);
+  box-sizing: border-box;
+  max-width: 242px;
+  min-width: 116px;
+  overflow: visible;
+  padding: 16px 10px 16px 16px;
+  position: absolute;
+  width: max-content;
+  z-index: var(--Tooltip-z-index);
+}
+
+/* stylelint-disable-next-line plugin/selector-bem-pattern */
+.spui-Tooltip-frame.is-fade-out {
+  animation: var(--animation-disappear-duration) var(--animation-disappear-easing) spui-Tooltip-fade-out;
+  opacity: 0;
+}
+
+.spui-Tooltip-frame::before {
+  content: '';
+  height: 13px;
+  position: absolute;
+  width: 13px;
+}
+
+/* Variants */
+.spui-Tooltip-frame--information {
+  background-color: var(--color-surface-accent-neutral-high-emphasis);
+  color: var(--color-text-high-emphasis-inverse);
+}
+
+.spui-Tooltip-frame--information::before {
+  background-color: var(--color-surface-accent-neutral-high-emphasis);
+}
+
+.spui-Tooltip-frame--confirmation {
+  background-color: var(--color-surface-accent-primary);
+  color: var(--color-text-high-emphasis-inverse);
+}
+
+.spui-Tooltip-frame--confirmation::before {
+  background-color: var(--color-surface-accent-primary);
+}
+
+.spui-Tooltip-frame--error {
+  background-color: var(--color-surface-caution);
+  color: var(--color-text-high-emphasis-inverse);
+}
+
+.spui-Tooltip-frame--error::before {
+  background-color: var(--color-surface-caution);
+}
+
+/* Direction: top */
+.spui-Tooltip-frame--top {
+  top: calc(var(--Tooltip-trigger-height) + 6px + var(--Tooltip-arrow-offset));
+}
+
+.spui-Tooltip-frame--top::before {
+  border-radius: 5px 0 0;
+  top: -6px;
+  transform: rotate(45deg);
+}
+
+/* Direction: bottom */
+.spui-Tooltip-frame--bottom {
+  bottom: calc(var(--Tooltip-trigger-height) + 6px + var(--Tooltip-arrow-offset));
+}
+
+.spui-Tooltip-frame--bottom::before {
+  border-radius: 0 0 5px;
+  bottom: -6px;
+  transform: rotate(45deg);
+}
+
+/* Direction: left */
+.spui-Tooltip-frame--left {
+  left: calc(var(--Tooltip-trigger-width) + 6px + var(--Tooltip-arrow-offset));
+}
+
+.spui-Tooltip-frame--left::before {
+  border-radius: 0 0 0 5px;
+  left: -6px;
+  transform: rotate(45deg);
+}
+
+/* Direction: right */
+.spui-Tooltip-frame--right {
+  right: calc(var(--Tooltip-trigger-width) + 6px + var(--Tooltip-arrow-offset));
+}
+
+.spui-Tooltip-frame--right::before {
+  border-radius: 0 5px 0 0;
+  right: -6px;
+  transform: rotate(45deg);
+}
+
+/* Position: center (for top/bottom) */
+.spui-Tooltip-frame--top.spui-Tooltip-frame--center,
+.spui-Tooltip-frame--bottom.spui-Tooltip-frame--center {
+  animation: var(--animation-appear-in-duration) var(--animation-appear-in-easing) spui-Tooltip-fade-in;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.spui-Tooltip-frame--top.spui-Tooltip-frame--center::before,
+.spui-Tooltip-frame--bottom.spui-Tooltip-frame--center::before {
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+/* Position: center (for left/right) */
+.spui-Tooltip-frame--left.spui-Tooltip-frame--center,
+.spui-Tooltip-frame--right.spui-Tooltip-frame--center {
+  animation: var(--animation-appear-in-duration) var(--animation-appear-in-easing) spui-Tooltip-fade-in;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.spui-Tooltip-frame--left.spui-Tooltip-frame--center::before,
+.spui-Tooltip-frame--right.spui-Tooltip-frame--center::before {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+/* Position: start (for top/bottom) */
+.spui-Tooltip-frame--top.spui-Tooltip-frame--start,
+.spui-Tooltip-frame--bottom.spui-Tooltip-frame--start {
+  left: 0;
+}
+
+.spui-Tooltip-frame--top.spui-Tooltip-frame--start::before,
+.spui-Tooltip-frame--bottom.spui-Tooltip-frame--start::before {
+  left: calc(var(--Tooltip-trigger-width) / 2 - 6.5px);
+}
+
+/* Position: start (for left/right) */
+.spui-Tooltip-frame--left.spui-Tooltip-frame--start,
+.spui-Tooltip-frame--right.spui-Tooltip-frame--start {
+  top: 0;
+}
+
+.spui-Tooltip-frame--left.spui-Tooltip-frame--start::before,
+.spui-Tooltip-frame--right.spui-Tooltip-frame--start::before {
+  top: calc(var(--Tooltip-trigger-height) / 2 - 6.5px);
+}
+
+/* Position: end (for top/bottom) */
+.spui-Tooltip-frame--top.spui-Tooltip-frame--end,
+.spui-Tooltip-frame--bottom.spui-Tooltip-frame--end {
+  right: 0;
+}
+
+.spui-Tooltip-frame--top.spui-Tooltip-frame--end::before,
+.spui-Tooltip-frame--bottom.spui-Tooltip-frame--end::before {
+  right: calc(var(--Tooltip-trigger-width) / 2 - 6.5px);
+}
+
+/* Position: end (for left/right) */
+.spui-Tooltip-frame--left.spui-Tooltip-frame--end,
+.spui-Tooltip-frame--right.spui-Tooltip-frame--end {
+  bottom: 0;
+}
+
+.spui-Tooltip-frame--left.spui-Tooltip-frame--end::before,
+.spui-Tooltip-frame--right.spui-Tooltip-frame--end::before {
+  bottom: calc(var(--Tooltip-trigger-height) / 2 - 6.5px);
+}
+
+/* Position: edgeStart (for top/bottom) */
+.spui-Tooltip-frame--top.spui-Tooltip-frame--edgeStart,
+.spui-Tooltip-frame--bottom.spui-Tooltip-frame--edgeStart {
+  left: calc(var(--Tooltip-trigger-width) / 2);
+}
+
+.spui-Tooltip-frame--top.spui-Tooltip-frame--edgeStart::before {
+  border-radius: 0 3px 0 0;
+  clip-path: polygon(0 100%, 0 0, 100% 0);
+  height: 11px;
+  left: 8px;
+  transform: none;
+  width: 13px;
+}
+
+.spui-Tooltip-frame--bottom.spui-Tooltip-frame--edgeStart::before {
+  border-radius: 0 0 3px;
+  clip-path: polygon(0 0, 0 100%, 100% 100%);
+  height: 11px;
+  left: 8px;
+  transform: none;
+  width: 13px;
+}
+
+/* Position: edgeStart (for left/right) */
+.spui-Tooltip-frame--left.spui-Tooltip-frame--edgeStart,
+.spui-Tooltip-frame--right.spui-Tooltip-frame--edgeStart {
+  top: calc(var(--Tooltip-trigger-height) / 2);
+}
+
+.spui-Tooltip-frame--left.spui-Tooltip-frame--edgeStart::before {
+  border-radius: 0 0 0 3px;
+  clip-path: polygon(0 0, 0 100%, 100% 0);
+  height: 13px;
+  top: 8px;
+  transform: none;
+  width: 11px;
+}
+
+.spui-Tooltip-frame--right.spui-Tooltip-frame--edgeStart::before {
+  border-radius: 0 0 3px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+  height: 13px;
+  top: 8px;
+  transform: none;
+  width: 11px;
+}
+
+/* Position: edgeEnd (for top/bottom) */
+.spui-Tooltip-frame--top.spui-Tooltip-frame--edgeEnd,
+.spui-Tooltip-frame--bottom.spui-Tooltip-frame--edgeEnd {
+  right: calc(var(--Tooltip-trigger-width) / 2);
+}
+
+.spui-Tooltip-frame--top.spui-Tooltip-frame--edgeEnd::before {
+  border-radius: 3px 0 0;
+  clip-path: polygon(100% 100%, 0 0, 100% 0);
+  height: 11px;
+  right: 8px;
+  transform: none;
+  width: 13px;
+}
+
+.spui-Tooltip-frame--bottom.spui-Tooltip-frame--edgeEnd::before {
+  border-radius: 0 0 0 3px;
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  height: 11px;
+  right: 8px;
+  transform: none;
+  width: 13px;
+}
+
+/* Position: edgeEnd (for left/right) */
+.spui-Tooltip-frame--left.spui-Tooltip-frame--edgeEnd,
+.spui-Tooltip-frame--right.spui-Tooltip-frame--edgeEnd {
+  bottom: calc(var(--Tooltip-trigger-height) / 2);
+}
+
+.spui-Tooltip-frame--left.spui-Tooltip-frame--edgeEnd::before {
+  border-radius: 0 3px 0 0;
+  bottom: 8px;
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  height: 13px;
+  transform: none;
+  width: 11px;
+}
+
+.spui-Tooltip-frame--right.spui-Tooltip-frame--edgeEnd::before {
+  border-radius: 3px 0 0;
+  bottom: 8px;
+  clip-path: polygon(0 0, 0 100%, 100% 100%);
+  height: 13px;
+  transform: none;
+  width: 11px;
+}
+
+.spui-Tooltip-content {
+  align-items: flex-start;
+  display: flex;
+  gap: 16px;
+}
+
+.spui-Tooltip-text {
+  align-self: center;
+  flex: 1;
+  font-size: 0.875em;
+  font-weight: bold;
+  line-height: 1.4;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+
+.spui-Tooltip-closeButton {
+  /* stylelint-disable plugin/selector-bem-pattern */
+  --IconButton--neutral-backgroundColor: transparent;
+  --IconButton--neutral-onActive-backgroundColor: var(--white-20-alpha);
+  --IconButton--neutral-onHover-backgroundColor: var(--white-20-alpha);
+  --IconButton--neutral-color: var(--color-object-high-emphasis-inverse);
+  /* stylelint-enable plugin/selector-bem-pattern */
+
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+}
+
+/* Animations */
+@keyframes spui-Tooltip-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes spui-Tooltip-fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .spui-Tooltip-frame {
+    max-width: 732px;
+  }
+}
