@@ -9,7 +9,6 @@ import React, {
   useState,
 } from 'react';
 import Cross from '../Icon/Cross';
-import { IconButton } from '../IconButton';
 import { createGraceArea, isPointInPolygon, type Polygon } from './graceArea';
 
 type Direction = 'top' | 'right' | 'bottom' | 'left';
@@ -441,16 +440,17 @@ const Content = ({ children }: ContentProps) => {
       <div className={`${BLOCK_NAME}-content`}>
         <div className={`${BLOCK_NAME}-text`}>{children}</div>
         {showCloseButton && (
-          <div className={`${BLOCK_NAME}-closeButton`}>
-            <IconButton
-              size="exSmall"
-              variant="neutral"
-              aria-label="閉じる"
-              onClick={handleClose}
-            >
-              <Cross aria-hidden="true" />
-            </IconButton>
-          </div>
+          <button
+            type="button"
+            className={`${BLOCK_NAME}-closeButton`}
+            aria-label="閉じる"
+            onClick={handleClose}
+          >
+            <Cross
+              aria-hidden="true"
+              className={`${BLOCK_NAME}-closeButtonIcon`}
+            />
+          </button>
         )}
       </div>
     </div>
