@@ -16,7 +16,12 @@ export function DefaultOpen() {
       <Tooltip.Frame defaultOpen={false}>
         <Tooltip.Trigger>
           {(props) => (
-            <IconButton {...props} aria-label="詳細情報">
+            <IconButton
+              {...props}
+              size="exSmall"
+              variant="neutral"
+              aria-label="詳細情報"
+            >
               <Information aria-hidden="true" />
             </IconButton>
           )}
@@ -41,7 +46,12 @@ export function InitialOpen() {
       <Tooltip.Frame defaultOpen>
         <Tooltip.Trigger>
           {(props) => (
-            <IconButton {...props} aria-label="詳細情報">
+            <IconButton
+              {...props}
+              size="exSmall"
+              variant="neutral"
+              aria-label="詳細情報"
+            >
               <Information aria-hidden="true" />
             </IconButton>
           )}
@@ -75,7 +85,12 @@ export function WithOnClose() {
         >
           <Tooltip.Trigger>
             {(props) => (
-              <IconButton {...props} aria-label="詳細情報">
+              <IconButton
+                {...props}
+                size="exSmall"
+                variant="neutral"
+                aria-label="詳細情報"
+              >
                 <Information aria-hidden="true" />
               </IconButton>
             )}
@@ -86,7 +101,7 @@ export function WithOnClose() {
           </Tooltip.Content>
         </Tooltip.Frame>
       ) : (
-        <IconButton aria-label="詳細情報">
+        <IconButton size="exSmall" variant="neutral" aria-label="詳細情報">
           <Information aria-hidden="true" />
         </IconButton>
       )}
@@ -106,12 +121,17 @@ export function VariantInformation() {
       <Tooltip.Frame defaultOpen variant="information">
         <Tooltip.Trigger>
           {(props) => (
-            <IconButton {...props} aria-label="詳細情報">
+            <IconButton
+              {...props}
+              size="exSmall"
+              variant="neutral"
+              aria-label="詳細情報"
+            >
               <Information aria-hidden="true" />
             </IconButton>
           )}
         </Tooltip.Trigger>
-        <Tooltip.Content>補足情報を伝えるための Tooltip です。</Tooltip.Content>
+        <Tooltip.Content>補足情報を伝えるためのTooltipです。</Tooltip.Content>
       </Tooltip.Frame>
     </div>
   );
@@ -129,12 +149,19 @@ export function VariantConfirmation() {
       <Tooltip.Frame defaultOpen variant="confirmation">
         <Tooltip.Trigger>
           {(props) => (
-            <IconButton {...props} aria-label="詳細情報">
+            <IconButton
+              {...props}
+              size="exSmall"
+              variant="neutral"
+              aria-label="詳細情報"
+            >
               <Information aria-hidden="true" />
             </IconButton>
           )}
         </Tooltip.Trigger>
-        <Tooltip.Content>訴求したい内容を伝えるための Tooltip です。</Tooltip.Content>
+        <Tooltip.Content>
+          訴求したい内容を伝えるためのTooltipです。
+        </Tooltip.Content>
       </Tooltip.Frame>
     </div>
   );
@@ -152,13 +179,18 @@ export function VariantError() {
       <Tooltip.Frame defaultOpen variant="error">
         <Tooltip.Trigger>
           {(props) => (
-            <IconButton {...props} aria-label="詳細情報">
+            <IconButton
+              {...props}
+              size="exSmall"
+              variant="neutral"
+              aria-label="詳細情報"
+            >
               <Information aria-hidden="true" />
             </IconButton>
           )}
         </Tooltip.Trigger>
         <Tooltip.Content>
-          エラーメッセージを表示するための Tooltip です。
+          エラーメッセージを表示するためのTooltipです。
         </Tooltip.Content>
       </Tooltip.Frame>
     </div>
@@ -177,12 +209,19 @@ export function DirectionTop() {
       <Tooltip.Frame defaultOpen direction="top">
         <Tooltip.Trigger>
           {(props) => (
-            <IconButton {...props} aria-label="詳細情報">
+            <IconButton
+              {...props}
+              size="exSmall"
+              variant="neutral"
+              aria-label="詳細情報"
+            >
               <Information aria-hidden="true" />
             </IconButton>
           )}
         </Tooltip.Trigger>
-        <Tooltip.Content>トリガーの下に表示され、ポインターが上を指します。</Tooltip.Content>
+        <Tooltip.Content>
+          トリガーの下に表示され、ポインターが上を指します。
+        </Tooltip.Content>
       </Tooltip.Frame>
     </div>
   );
@@ -200,12 +239,19 @@ export function DirectionBottom() {
       <Tooltip.Frame defaultOpen direction="bottom">
         <Tooltip.Trigger>
           {(props) => (
-            <IconButton {...props} aria-label="詳細情報">
+            <IconButton
+              {...props}
+              size="exSmall"
+              variant="neutral"
+              aria-label="詳細情報"
+            >
               <Information aria-hidden="true" />
             </IconButton>
           )}
         </Tooltip.Trigger>
-        <Tooltip.Content>トリガーの上に表示され、ポインターが下を指します。</Tooltip.Content>
+        <Tooltip.Content>
+          トリガーの上に表示され、ポインターが下を指します。
+        </Tooltip.Content>
       </Tooltip.Frame>
     </div>
   );
@@ -223,12 +269,19 @@ export function DirectionLeft() {
       <Tooltip.Frame defaultOpen direction="left">
         <Tooltip.Trigger>
           {(props) => (
-            <IconButton {...props} aria-label="詳細情報">
+            <IconButton
+              {...props}
+              size="exSmall"
+              variant="neutral"
+              aria-label="詳細情報"
+            >
               <Information aria-hidden="true" />
             </IconButton>
           )}
         </Tooltip.Trigger>
-        <Tooltip.Content>トリガーの右に表示され、ポインターが左を指します。</Tooltip.Content>
+        <Tooltip.Content>
+          トリガーの右に表示され、ポインターが左を指します。
+        </Tooltip.Content>
       </Tooltip.Frame>
     </div>
   );
@@ -246,12 +299,19 @@ export function DirectionRight() {
       <Tooltip.Frame defaultOpen direction="right">
         <Tooltip.Trigger>
           {(props) => (
-            <IconButton {...props} aria-label="詳細情報">
+            <IconButton
+              {...props}
+              size="exSmall"
+              variant="neutral"
+              aria-label="詳細情報"
+            >
               <Information aria-hidden="true" />
             </IconButton>
           )}
         </Tooltip.Trigger>
-        <Tooltip.Content>トリガーの左に表示され、ポインターが右を指します。</Tooltip.Content>
+        <Tooltip.Content>
+          トリガーの左に表示され、ポインターが右を指します。
+        </Tooltip.Content>
       </Tooltip.Frame>
     </div>
   );
@@ -269,12 +329,19 @@ export function PositionCenter() {
       <Tooltip.Frame defaultOpen position="center">
         <Tooltip.Trigger>
           {(props) => (
-            <IconButton {...props} aria-label="詳細情報">
+            <IconButton
+              {...props}
+              size="exSmall"
+              variant="neutral"
+              aria-label="詳細情報"
+            >
               <Information aria-hidden="true" />
             </IconButton>
           )}
         </Tooltip.Trigger>
-        <Tooltip.Content>ポインターがトリガーの中央に配置されます。</Tooltip.Content>
+        <Tooltip.Content>
+          ポインターがトリガーの中央に配置されます。
+        </Tooltip.Content>
       </Tooltip.Frame>
     </div>
   );
@@ -286,19 +353,24 @@ export function PositionStart() {
       style={{
         padding: '100px',
         display: 'flex',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
       }}
     >
       <Tooltip.Frame defaultOpen position="start">
         <Tooltip.Trigger>
           {(props) => (
-            <IconButton {...props} aria-label="詳細情報">
+            <IconButton
+              {...props}
+              size="exSmall"
+              variant="neutral"
+              aria-label="詳細情報"
+            >
               <Information aria-hidden="true" />
             </IconButton>
           )}
         </Tooltip.Trigger>
         <Tooltip.Content>
-          ポインターが Tooltip の開始位置寄りに配置されます。
+          ポインターがTooltipの開始位置寄りに配置されます。
         </Tooltip.Content>
       </Tooltip.Frame>
     </div>
@@ -317,13 +389,18 @@ export function PositionEnd() {
       <Tooltip.Frame defaultOpen position="end">
         <Tooltip.Trigger>
           {(props) => (
-            <IconButton {...props} aria-label="詳細情報">
+            <IconButton
+              {...props}
+              size="exSmall"
+              variant="neutral"
+              aria-label="詳細情報"
+            >
               <Information aria-hidden="true" />
             </IconButton>
           )}
         </Tooltip.Trigger>
         <Tooltip.Content>
-          ポインターが Tooltip の終了位置寄りに配置されます。
+          ポインターがTooltipの終了位置寄りに配置されます。
         </Tooltip.Content>
       </Tooltip.Frame>
     </div>
@@ -336,7 +413,12 @@ export function PositionEdgeStart() {
       <Tooltip.Frame defaultOpen position="edgeStart">
         <Tooltip.Trigger>
           {(props) => (
-            <IconButton {...props} aria-label="詳細情報">
+            <IconButton
+              {...props}
+              size="exSmall"
+              variant="neutral"
+              aria-label="詳細情報"
+            >
               <Information aria-hidden="true" />
             </IconButton>
           )}
@@ -361,7 +443,12 @@ export function PositionEdgeEnd() {
       <Tooltip.Frame defaultOpen position="edgeEnd">
         <Tooltip.Trigger>
           {(props) => (
-            <IconButton {...props} aria-label="詳細情報">
+            <IconButton
+              {...props}
+              size="exSmall"
+              variant="neutral"
+              aria-label="詳細情報"
+            >
               <Information aria-hidden="true" />
             </IconButton>
           )}
@@ -386,7 +473,12 @@ export function LongText() {
       <Tooltip.Frame defaultOpen>
         <Tooltip.Trigger>
           {(props) => (
-            <IconButton {...props} aria-label="詳細情報">
+            <IconButton
+              {...props}
+              size="exSmall"
+              variant="neutral"
+              aria-label="詳細情報"
+            >
               <Information aria-hidden="true" />
             </IconButton>
           )}
