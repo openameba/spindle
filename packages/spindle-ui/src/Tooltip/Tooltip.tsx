@@ -10,6 +10,7 @@ import React, {
 } from 'react';
 import Cross from '../Icon/Cross';
 import { IconButton } from '../IconButton';
+import { createGraceArea, isPointInPolygon, type Polygon } from './graceArea';
 
 type Direction = 'top' | 'right' | 'bottom' | 'left';
 type Position = 'edgeStart' | 'start' | 'center' | 'end' | 'edgeEnd';
@@ -28,11 +29,10 @@ type TriggerProps = {
   ref: React.RefCallback<HTMLElement>;
   'aria-describedby': string;
   'aria-expanded'?: boolean;
-  onMouseEnter?: () => void;
-  onMouseLeave?: () => void;
-  onFocus?: () => void;
-  onBlur?: () => void;
-  onClick?: () => void;
+  onMouseEnter: (e: React.MouseEvent) => void;
+  onFocus: () => void;
+  onBlur: () => void;
+  onPointerDown: (e: React.PointerEvent) => void;
 };
 
 type TriggerComponentProps = {
@@ -47,21 +47,20 @@ type TooltipContextValue = {
   tooltipId: string;
   isOpen: boolean;
   isInitialOpen: boolean;
-  isTouchDevice: boolean;
   setIsOpen: (open: boolean) => void;
   handleClose: () => void;
-  cancelClose: () => void;
   triggerRef: React.RefObject<HTMLElement | null>;
+  contentRef: React.RefObject<HTMLElement | null>;
   triggerWidth: number;
   triggerHeight: number;
   variant: Variant;
   direction: Direction;
   position: Position;
-  handleMouseEnter: () => void;
-  handleMouseLeave: () => void;
+  handleMouseEnter: (e: React.MouseEvent) => void;
   handleFocus: () => void;
   handleBlur: () => void;
-  handleClick: () => void;
+  handlePointerDown: (e: React.PointerEvent) => void;
+  isPointerInTransitRef: React.RefObject<boolean>;
 };
 
 const BLOCK_NAME = 'spui-Tooltip';
@@ -90,13 +89,16 @@ const Frame = ({
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const [isInitialOpen, setIsInitialOpen] = useState(defaultOpen);
   const triggerRef = useRef<HTMLElement | null>(null);
+  const contentRef = useRef<HTMLElement | null>(null);
   const [triggerWidth, setTriggerWidth] = useState(0);
   const [triggerHeight, setTriggerHeight] = useState(0);
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
-  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  useEffect(() => {
-    setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
+  const isPointerInTransitRef = useRef(false);
+  // pointerdown中はfocusイベントを無視
+  const isPointerDownRef = useRef(false);
+
+  const handlePointerUp = useCallback(() => {
+    isPointerDownRef.current = false;
   }, []);
 
   useLayoutEffect(() => {
@@ -106,83 +108,84 @@ const Frame = ({
     setTriggerHeight(height);
   }, []);
 
+  useEffect(() => {
+    return () => document.removeEventListener('pointerup', handlePointerUp);
+  }, [handlePointerUp]);
+
   const handleClose = useCallback(() => {
     setIsOpen(false);
     setIsInitialOpen(false);
     onClose?.();
   }, [onClose]);
 
-  const cancelClose = useCallback(() => {
-    if (closeTimeoutRef.current) {
-      clearTimeout(closeTimeoutRef.current);
-      closeTimeoutRef.current = null;
-    }
+  const openTooltip = useCallback(() => {
+    if (!triggerRef.current) return;
+    const { width, height } = triggerRef.current.getBoundingClientRect();
+    setTriggerWidth(width);
+    setTriggerHeight(height);
+    setIsOpen(true);
   }, []);
 
-  const scheduleClose = useCallback(() => {
-    if (isTouchDevice || isInitialOpen) return;
-    closeTimeoutRef.current = setTimeout(() => {
-      setIsOpen(false);
-    }, 100);
-  }, [isTouchDevice, isInitialOpen]);
+  const handlePointerDown = useCallback(
+    (e: React.PointerEvent) => {
+      isPointerDownRef.current = true;
+      document.addEventListener('pointerup', handlePointerUp, { once: true });
 
-  const handleMouseEnter = useCallback(() => {
-    if (isTouchDevice || isInitialOpen) return;
-    cancelClose();
-    if (!triggerRef.current) return;
-    const { width, height } = triggerRef.current.getBoundingClientRect();
-    setTriggerWidth(width);
-    setTriggerHeight(height);
-    setIsOpen(true);
-  }, [isTouchDevice, isInitialOpen, cancelClose]);
+      // タッチデバイス: トグル
+      if (e.pointerType === 'touch' && !isInitialOpen) {
+        if (!triggerRef.current) return;
+        const { width, height } = triggerRef.current.getBoundingClientRect();
+        setTriggerWidth(width);
+        setTriggerHeight(height);
+        setIsOpen((prev) => !prev);
+      }
+    },
+    [isInitialOpen, handlePointerUp],
+  );
 
-  const handleMouseLeave = useCallback(() => {
-    scheduleClose();
-  }, [scheduleClose]);
+  // ポインターデバイス: hover
+  const handleMouseEnter = useCallback(
+    (_e: React.MouseEvent) => {
+      if (isPointerDownRef.current) return;
+      if (isInitialOpen) return;
+      if (isPointerInTransitRef.current) return;
+      openTooltip();
+    },
+    [isInitialOpen, openTooltip],
+  );
 
+  // ポインターデバイス: focus（pointerdown中は無視）
   const handleFocus = useCallback(() => {
-    if (isTouchDevice || isInitialOpen) return;
-    cancelClose();
-    if (!triggerRef.current) return;
-    const { width, height } = triggerRef.current.getBoundingClientRect();
-    setTriggerWidth(width);
-    setTriggerHeight(height);
-    setIsOpen(true);
-  }, [isTouchDevice, isInitialOpen, cancelClose]);
+    if (isPointerDownRef.current) return;
+    if (isInitialOpen) return;
+    openTooltip();
+  }, [isInitialOpen, openTooltip]);
 
+  // ポインターデバイス: blur
   const handleBlur = useCallback(() => {
-    scheduleClose();
-  }, [scheduleClose]);
-
-  const handleClick = useCallback(() => {
-    if (!isTouchDevice || isInitialOpen) return;
-    if (!triggerRef.current) return;
-    const { width, height } = triggerRef.current.getBoundingClientRect();
-    setTriggerWidth(width);
-    setTriggerHeight(height);
-    setIsOpen((prev) => !prev);
-  }, [isTouchDevice, isInitialOpen]);
-
+    if (isPointerDownRef.current) return;
+    if (isInitialOpen) return;
+    setIsOpen(false);
+  }, [isInitialOpen]);
 
   const contextValue: TooltipContextValue = {
     tooltipId,
     isOpen,
     isInitialOpen,
-    isTouchDevice,
     setIsOpen,
     handleClose,
-    cancelClose,
     triggerRef,
+    contentRef,
     triggerWidth,
     triggerHeight,
     variant,
     direction,
     position,
     handleMouseEnter,
-    handleMouseLeave,
     handleFocus,
     handleBlur,
-    handleClick,
+    handlePointerDown,
+    isPointerInTransitRef,
   };
 
   return (
@@ -199,10 +202,9 @@ const Trigger = ({ children }: TriggerComponentProps) => {
     isInitialOpen,
     triggerRef,
     handleMouseEnter,
-    handleMouseLeave,
     handleFocus,
     handleBlur,
-    handleClick,
+    handlePointerDown,
   } = useTooltipContext();
 
   const triggerProps: TriggerProps = {
@@ -212,10 +214,9 @@ const Trigger = ({ children }: TriggerComponentProps) => {
     'aria-describedby': tooltipId,
     ...(isInitialOpen ? { 'aria-expanded': isOpen } : {}),
     onMouseEnter: handleMouseEnter,
-    onMouseLeave: handleMouseLeave,
     onFocus: handleFocus,
     onBlur: handleBlur,
-    onClick: handleClick,
+    onPointerDown: handlePointerDown,
   };
 
   return children(triggerProps);
@@ -226,29 +227,126 @@ const Content = ({ children }: ContentProps) => {
     tooltipId,
     isOpen,
     isInitialOpen,
-    isTouchDevice,
     handleClose,
-    cancelClose,
-    handleMouseLeave,
     triggerRef,
+    contentRef,
     triggerWidth,
     triggerHeight,
     variant,
     direction,
     position,
+    setIsOpen,
+    isPointerInTransitRef,
   } = useTooltipContext();
 
-  const contentRef = useRef<HTMLDivElement>(null);
+  const localContentRef = useRef<HTMLDivElement>(null);
   const [fadeOut, setFadeOut] = useState(false);
-
-  const handleClickOutsideRef = useRef<((e: MouseEvent) => void) | null>(null);
-  const handleKeyDownRef = useRef<((e: KeyboardEvent) => void) | null>(null);
+  const [graceArea, setGraceArea] = useState<Polygon | null>(null);
+  const prevIsOpenRef = useRef(isOpen);
 
   useEffect(() => {
-    handleClickOutsideRef.current = (e: MouseEvent) => {
-      if (!isOpen || !isTouchDevice || isInitialOpen) return;
+    contentRef.current = localContentRef.current;
+  });
 
-      const content = contentRef.current;
+  // 再表示時にfadeOutをリセット
+  useEffect(() => {
+    if (isOpen && !prevIsOpenRef.current) {
+      setFadeOut(false);
+    }
+    prevIsOpenRef.current = isOpen;
+  }, [isOpen]);
+
+  // Grace area: triggerとtooltip間のポインター移動を許容
+  const handleRemoveGraceArea = useCallback(() => {
+    setGraceArea(null);
+    isPointerInTransitRef.current = false;
+  }, [isPointerInTransitRef]);
+
+  const handleCreateGraceArea = useCallback(
+    (event: PointerEvent, targetElement: HTMLElement) => {
+      const currentTarget = event.currentTarget as HTMLElement;
+      if (!currentTarget) return;
+
+      const exitPoint = { x: event.clientX, y: event.clientY };
+      const polygon = createGraceArea(exitPoint, currentTarget, targetElement);
+      setGraceArea(polygon);
+      isPointerInTransitRef.current = true;
+    },
+    [isPointerInTransitRef],
+  );
+
+  // pointerleaveでgrace areaを生成
+  useEffect(() => {
+    if (isInitialOpen || !isOpen) return;
+
+    const trigger = triggerRef.current;
+    const content = localContentRef.current;
+    if (!trigger || !content) return;
+
+    const handleTriggerLeave = (event: PointerEvent) => {
+      if (event.pointerType === 'touch') return;
+      handleCreateGraceArea(event, content);
+    };
+
+    const handleContentLeave = (event: PointerEvent) => {
+      if (event.pointerType === 'touch') return;
+      handleCreateGraceArea(event, trigger);
+    };
+
+    trigger.addEventListener('pointerleave', handleTriggerLeave);
+    content.addEventListener('pointerleave', handleContentLeave);
+
+    return () => {
+      trigger.removeEventListener('pointerleave', handleTriggerLeave);
+      content.removeEventListener('pointerleave', handleContentLeave);
+    };
+  }, [triggerRef, isOpen, isInitialOpen, handleCreateGraceArea]);
+
+  // grace area内のポインター移動を追跡
+  useEffect(() => {
+    if (!graceArea || isInitialOpen) return;
+
+    const trigger = triggerRef.current;
+    const content = localContentRef.current;
+
+    const handlePointerMove = (event: PointerEvent) => {
+      if (event.pointerType === 'touch') return;
+
+      const target = event.target as HTMLElement;
+      const pointerPosition = { x: event.clientX, y: event.clientY };
+      const hasEnteredTarget =
+        trigger?.contains(target) || content?.contains(target);
+      const isPointerOutsideGraceArea = !isPointInPolygon(
+        pointerPosition,
+        graceArea,
+      );
+
+      if (hasEnteredTarget) {
+        handleRemoveGraceArea();
+      } else if (isPointerOutsideGraceArea) {
+        handleRemoveGraceArea();
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('pointermove', handlePointerMove);
+    return () => document.removeEventListener('pointermove', handlePointerMove);
+  }, [graceArea, triggerRef, isInitialOpen, setIsOpen, handleRemoveGraceArea]);
+
+  useEffect(() => {
+    if (!isOpen) {
+      handleRemoveGraceArea();
+    }
+  }, [isOpen, handleRemoveGraceArea]);
+
+  // タッチデバイス: 外部タップで閉じる
+  useEffect(() => {
+    if (!isOpen || isInitialOpen) return;
+
+    const handlePointerDownOutside = (e: PointerEvent) => {
+      if (e.pointerType !== 'touch') return;
+
+      const content = localContentRef.current;
       const trigger = triggerRef.current;
       const target = e.target as Node;
 
@@ -261,14 +359,21 @@ const Content = ({ children }: ContentProps) => {
         setFadeOut(true);
       }
     };
-  }, [isOpen, isTouchDevice, isInitialOpen, triggerRef]);
 
+    window.addEventListener('pointerdown', handlePointerDownOutside);
+    return () =>
+      window.removeEventListener('pointerdown', handlePointerDownOutside);
+  }, [isOpen, isInitialOpen, triggerRef]);
+
+  // Escapeキーで閉じる
   useEffect(() => {
-    handleKeyDownRef.current = (e: KeyboardEvent) => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
       if (!CLOSE_KEY_LIST.includes(e.key.toUpperCase())) return;
 
-      if (isInitialOpen && isOpen) {
-        const content = contentRef.current;
+      if (isInitialOpen) {
+        const content = localContentRef.current;
         if (
           content &&
           (content.contains(document.activeElement) ||
@@ -277,14 +382,19 @@ const Content = ({ children }: ContentProps) => {
           e.preventDefault();
           handleClose();
         }
+      } else {
+        e.preventDefault();
+        setIsOpen(false);
       }
     };
-  }, [isInitialOpen, isOpen, handleClose]);
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, isInitialOpen, handleClose, setIsOpen]);
 
   const handleAnimationEnd = useCallback(
     (event: AnimationEvent) => {
       if (event.animationName === FADE_IN_ANIMATION) return;
-
       handleClose();
       setFadeOut(false);
     },
@@ -292,27 +402,7 @@ const Content = ({ children }: ContentProps) => {
   );
 
   useEffect(() => {
-    const handleClick = (e: MouseEvent) => {
-      handleClickOutsideRef.current?.(e);
-    };
-
-    const handleKey = (e: KeyboardEvent) => {
-      handleKeyDownRef.current?.(e);
-    };
-
-    if (isOpen) {
-      window.addEventListener('click', handleClick);
-      window.addEventListener('keydown', handleKey);
-    }
-
-    return () => {
-      window.removeEventListener('click', handleClick);
-      window.removeEventListener('keydown', handleKey);
-    };
-  }, [isOpen]);
-
-  useEffect(() => {
-    const content = contentRef.current;
+    const content = localContentRef.current;
     if (!content) return;
 
     content.addEventListener('animationend', handleAnimationEnd);
@@ -328,11 +418,9 @@ const Content = ({ children }: ContentProps) => {
   const showCloseButton = isInitialOpen;
 
   return (
-
-    // biome-ignore lint/a11y/noStaticElementInteractions: non-interactive wrapper needs mouse handlers for timeout control
-<div
+    <div
       id={tooltipId}
-      ref={contentRef}
+      ref={localContentRef}
       className={[
         `${BLOCK_NAME}-frame`,
         `${BLOCK_NAME}-frame--${variant}`,
@@ -343,8 +431,6 @@ const Content = ({ children }: ContentProps) => {
         .filter(Boolean)
         .join(' ')}
       role={role}
-      onMouseEnter={isInitialOpen ? undefined : cancelClose}
-      onMouseLeave={isInitialOpen ? undefined : handleMouseLeave}
       style={
         {
           '--Tooltip-trigger-width': `${triggerWidth}px`,
