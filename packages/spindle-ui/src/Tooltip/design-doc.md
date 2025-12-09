@@ -15,7 +15,7 @@ FigmaではTooltip（モードレス形式）とToggletip（モード形式）�
 デバイスに応じて自動的に最適なトリガーを選択します。
 
 - **ポインティングデバイス**: hover/focusで表示、マウスを離す/フォーカスを外すと非表示
-- **タッチデバイス**: click/tapで表示/非表示を切り替え
+- **タッチデバイス**: tapで表示/非表示を切り替え
 
 ### 初期表示の挙動
 
@@ -118,6 +118,10 @@ type TriggerProps = {
   ref: React.RefCallback<HTMLElement>;
   'aria-describedby': string;
   'aria-expanded'?: boolean;
+  onMouseEnter: (e: React.MouseEvent) => void;
+  onFocus: () => void;
+  onBlur: () => void;
+  onPointerDown: (e: React.PointerEvent) => void;
 };
 
 type Props = {
@@ -125,7 +129,7 @@ type Props = {
 };
 ```
 
-childrenは関数として定義します。関数の引数にはトリガー要素に必要なprops（ref、aria属性）が渡されます。
+childrenは関数として定義します。関数の引数にはトリガー要素に必要なprops（`ref`、`aria-describedby`、`aria-expanded`、`onMouseEnter`、`onFocus`、`onBlur`、`onPointerDown`）が渡されます。
 
 #### Tooltip.Content
 
@@ -200,7 +204,7 @@ Tooltipは、表示状態に応じて適切なARIA属性を自動的に付与し
 
 #### トリガー要素の要件
 
-`ref`と`aria-describedby`、`aria-expanded`属性を適切に受け取れるようにしてください。
+`Tooltip.Trigger`から渡されるprops（`ref`、`aria-describedby`、`aria-expanded`、`onMouseEnter`、`onFocus`、`onBlur`、`onPointerDown`）を適切に受け取れるようにしてください。
 
 ## 実装例
 
@@ -210,7 +214,7 @@ React実装の一例です。
 <Tooltip.Frame defaultOpen={false} variant="information" direction="top" position="center">
   <Tooltip.Trigger>
     {props => (
-      <IconButton {...props} aria-label="詳細情報">
+      <IconButton {...props} size="exSmall" variant="neutral" aria-label="詳細情報">
         <Information aria-hidden="true" />
       </IconButton>
     )}
@@ -224,7 +228,7 @@ React実装の一例です。
 ```html
 <div class="spui-Tooltip">
   <button
-    class="spui-IconButton spui-IconButton--large spui-IconButton--contained"
+    class="spui-IconButton spui-IconButton--exSmall spui-IconButton--neutral"
     aria-label="詳細情報"
     aria-describedby="tooltip-1"
     aria-expanded="true"
@@ -241,14 +245,9 @@ React実装の一例です。
       <div class="spui-Tooltip-text">
         補足情報
       </div>
-      <div class="spui-Tooltip-closeButton">
-        <button
-          class="spui-IconButton spui-IconButton--exSmall spui-IconButton--neutral"
-          aria-label="閉じる"
-        >
-          <svg aria-hidden="true"><!-- Close icon --></svg>
-        </button>
-      </div>
+      <button class="spui-Tooltip-closeButton" aria-label="閉じる">
+        <svg class="spui-Tooltip-closeButtonIcon" aria-hidden="true"><!-- Close icon --></svg>
+      </button>
     </div>
   </div>
 </div>
@@ -263,7 +262,7 @@ const [hasSeenTooltip, setHasSeenTooltip] = useState(() => {
   return localStorage.getItem('tutorial-tooltip-seen') === 'true';
 });
 
-{!hasSeenTooltip && (
+{!hasSeenTooltip ? (
   <Tooltip.Frame
     defaultOpen={true}
     onClose={() => {
@@ -273,13 +272,17 @@ const [hasSeenTooltip, setHasSeenTooltip] = useState(() => {
   >
     <Tooltip.Trigger>
       {props => (
-        <IconButton {...props} aria-label="詳細情報">
+        <IconButton {...props} size="exSmall" variant="neutral" aria-label="詳細情報">
           <Information aria-hidden="true" />
         </IconButton>
       )}
     </Tooltip.Trigger>
     <Tooltip.Content>新機能: 機能が追加されました</Tooltip.Content>
   </Tooltip.Frame>
+) : (
+  <IconButton size="exSmall" variant="neutral" aria-label="詳細情報">
+    <Information aria-hidden="true" />
+  </IconButton>
 )}
 ```
 
@@ -351,12 +354,13 @@ const [hasSeenTooltip, setHasSeenTooltip] = useState(() => {
 
 - hover時に表示されることの確認
 - focus時に表示されることの確認
-- マウスを離すと非表示になることの確認
 - フォーカスを外すと非表示になることの確認
+- Escapeキーで非表示になることの確認
 - `role="tooltip"` が設定されることの確認
 - `aria-expanded`が設定されていないことの確認
 - 閉じるボタンが表示されないことの確認
-- タッチデバイスで領域外クリックで閉じることの確認
+- タッチデバイスでタップでトグルすることの確認
+- タッチデバイスで領域外タップでフェードアウトすることの確認
 
 #### `defaultOpen={true}`の初期表示時の場合
 
