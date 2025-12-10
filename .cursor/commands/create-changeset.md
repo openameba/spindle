@@ -64,7 +64,7 @@ This command analyzes the current branch changes and creates an appropriate chan
      - Example: Create `.changeset/add-secondary-button.md` for a new feature and `.changeset/fix-button-layout.md` for a bug fix, even if both target the same package
 
 5. **Lint Changeset**
-   - Run textlint to check the changeset file: `yarn textlint .changeset/<filename>.md`
+   - Run textlint to check the changeset file: `pnpm textlint .changeset/<filename>.md`
    - If there are any linting errors, fix them before proceeding
    - Re-run textlint to confirm all issues are resolved
 

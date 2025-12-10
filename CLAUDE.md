@@ -36,7 +36,7 @@
 ## Dependency Updates
 
 ### Package Installation
-- Install devDependencies with exact versions: `yarn add --exact --dev <package>`
+- Install devDependencies with exact versions: `pnpm add --save-exact --save-dev <package>`
 
 ### Storybook
 - When updating Storybook, use the official migration command: `npx storybook@{VERSION} upgrade`

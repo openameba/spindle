@@ -16,7 +16,7 @@ Amebaとして提供される成果物は、それらに則って開発される
 4. Pull Requestを作成します
 5. changesetを作成します
     - **AI使用時**: AIエージェントを使っている場合、push前やPR作成時にchangesetの必要性を判断して自動作成します
-    - **手動で作成したい場合**: `/create-changeset` コマンドを実行、または `yarn changeset` で対話形式で作成
+    - **手動で作成したい場合**: `/create-changeset` コマンドを実行、または `pnpm changeset` で対話形式で作成
     - PR作成後、changesets-botがコメントで案内するので、それに従って追加することもできます
     - **changesetが不要な場合**: ドキュメント更新、README修正、CI/CD設定変更など、パッケージのリリースが不要な変更の場合は、changesetを追加せずにマージして構いません
 
