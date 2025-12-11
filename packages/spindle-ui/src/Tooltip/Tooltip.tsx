@@ -32,6 +32,7 @@ type TriggerProps = {
   onFocus: () => void;
   onBlur: () => void;
   onPointerDown: (e: React.PointerEvent) => void;
+  onPointerUp: (e: React.PointerEvent) => void;
 };
 
 type TriggerComponentProps = {
@@ -59,6 +60,7 @@ type TooltipContextValue = {
   handleFocus: () => void;
   handleBlur: () => void;
   handlePointerDown: (e: React.PointerEvent) => void;
+  handleTriggerPointerUp: (e: React.PointerEvent) => void;
   isPointerInTransitRef: React.RefObject<boolean>;
 };
 
@@ -95,9 +97,12 @@ const Frame = ({
   const isPointerInTransitRef = useRef(false);
   // pointerdown中はfocusイベントを無視
   const isPointerDownRef = useRef(false);
+  // pointerdownした要素を記録（キャンセル判定用）
+  const pointerDownTargetRef = useRef<EventTarget | null>(null);
 
   const handlePointerUp = useCallback(() => {
     isPointerDownRef.current = false;
+    pointerDownTargetRef.current = null;
   }, []);
 
   useLayoutEffect(() => {
@@ -128,10 +133,20 @@ const Frame = ({
   const handlePointerDown = useCallback(
     (e: React.PointerEvent) => {
       isPointerDownRef.current = true;
+      pointerDownTargetRef.current = e.currentTarget;
       document.addEventListener('pointerup', handlePointerUp, { once: true });
+    },
+    [handlePointerUp],
+  );
 
-      // タッチデバイス: トグル
-      if (e.pointerType === 'touch' && !isInitialOpen) {
+  const handleTriggerPointerUp = useCallback(
+    (e: React.PointerEvent) => {
+      // タッチデバイスでpointerdownと同じ要素でpointerupした場合のみトグル
+      if (
+        e.pointerType === 'touch' &&
+        !isInitialOpen &&
+        pointerDownTargetRef.current === e.currentTarget
+      ) {
         if (!triggerRef.current) return;
         const { width, height } = triggerRef.current.getBoundingClientRect();
         setTriggerWidth(width);
@@ -139,7 +154,7 @@ const Frame = ({
         setIsOpen((prev) => !prev);
       }
     },
-    [isInitialOpen, handlePointerUp],
+    [isInitialOpen],
   );
 
   // ポインティングデバイス: hover
@@ -184,6 +199,7 @@ const Frame = ({
     handleFocus,
     handleBlur,
     handlePointerDown,
+    handleTriggerPointerUp,
     isPointerInTransitRef,
   };
 
@@ -204,6 +220,7 @@ const Trigger = ({ children }: TriggerComponentProps) => {
     handleFocus,
     handleBlur,
     handlePointerDown,
+    handleTriggerPointerUp,
   } = useTooltipContext();
 
   const triggerProps: TriggerProps = {
@@ -216,6 +233,7 @@ const Trigger = ({ children }: TriggerComponentProps) => {
     onFocus: handleFocus,
     onBlur: handleBlur,
     onPointerDown: handlePointerDown,
+    onPointerUp: handleTriggerPointerUp,
   };
 
   return children(triggerProps);

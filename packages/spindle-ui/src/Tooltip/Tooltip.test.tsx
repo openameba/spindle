@@ -22,6 +22,15 @@ const fireTouchPointerDown = (element: Element) => {
   element.dispatchEvent(event);
 };
 
+const fireTouchPointerUp = (element: Element) => {
+  const event = new PointerEvent('pointerup', {
+    bubbles: true,
+    cancelable: true,
+    pointerType: 'touch',
+  });
+  element.dispatchEvent(event);
+};
+
 describe('<Tooltip />', () => {
   describe('Common', () => {
     test('sets aria-describedby automatically', () => {
@@ -228,7 +237,7 @@ describe('<Tooltip />', () => {
       ).not.toBeInTheDocument();
     });
 
-    test('toggles visibility on touch (pointerdown with pointerType=touch)', async () => {
+    test('toggles visibility on touch (pointerdown + pointerup with pointerType=touch)', async () => {
       render(
         <Tooltip.Frame defaultOpen={false}>
           <Tooltip.Trigger>
@@ -244,18 +253,50 @@ describe('<Tooltip />', () => {
 
       const trigger = screen.getByRole('button', { name: '詳細情報' });
 
+      // タップして開く
       await act(async () => {
         fireTouchPointerDown(trigger);
+        fireTouchPointerUp(trigger);
       });
 
       await waitFor(() => {
         expect(screen.getByText('補足情報')).toBeInTheDocument();
       });
 
+      // もう一度タップして閉じる
       await act(async () => {
         fireTouchPointerDown(trigger);
+        fireTouchPointerUp(trigger);
       });
 
+      await waitFor(() => {
+        expect(screen.queryByText('補足情報')).not.toBeInTheDocument();
+      });
+    });
+
+    test('cancels when touch starts on trigger but ends outside', async () => {
+      render(
+        <Tooltip.Frame defaultOpen={false}>
+          <Tooltip.Trigger>
+            {(props) => (
+              <IconButton {...props} aria-label="詳細情報">
+                <Information aria-hidden="true" />
+              </IconButton>
+            )}
+          </Tooltip.Trigger>
+          <Tooltip.Content>補足情報</Tooltip.Content>
+        </Tooltip.Frame>,
+      );
+
+      const trigger = screen.getByRole('button', { name: '詳細情報' });
+
+      // トリガーでpointerdownしたが、外でpointerup
+      await act(async () => {
+        fireTouchPointerDown(trigger);
+        fireTouchPointerUp(document.body); // 外で離す
+      });
+
+      // Tooltipは開かない
       await waitFor(() => {
         expect(screen.queryByText('補足情報')).not.toBeInTheDocument();
       });
@@ -280,8 +321,10 @@ describe('<Tooltip />', () => {
 
       const trigger = screen.getByRole('button', { name: '詳細情報' });
 
+      // タップして開く（pointerdown + pointerup）
       await act(async () => {
         fireTouchPointerDown(trigger);
+        fireTouchPointerUp(trigger);
       });
 
       const tooltipText = await screen.findByText('補足情報');
@@ -291,6 +334,7 @@ describe('<Tooltip />', () => {
         name: '外部のボタン',
       });
 
+      // 外部をタップ（pointerdownのみでフェードアウト開始）
       await act(async () => {
         const event = new PointerEvent('pointerdown', {
           bubbles: true,
