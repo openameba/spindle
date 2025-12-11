@@ -122,6 +122,7 @@ type TriggerProps = {
   onFocus: () => void;
   onBlur: () => void;
   onPointerDown: (e: React.PointerEvent) => void;
+  onPointerUp: (e: React.PointerEvent) => void;
 };
 
 type Props = {
@@ -129,7 +130,7 @@ type Props = {
 };
 ```
 
-childrenは関数として定義します。関数の引数にはトリガー要素に必要なprops（`ref`、`aria-describedby`、`aria-expanded`、`onMouseEnter`、`onFocus`、`onBlur`、`onPointerDown`）が渡されます。
+childrenは関数として定義します。関数の引数にはトリガー要素に必要なprops（`ref`、`aria-describedby`、`aria-expanded`、`onMouseEnter`、`onFocus`、`onBlur`、`onPointerDown`、`onPointerUp`）が渡されます。
 
 #### Tooltip.Content
 
@@ -198,13 +199,13 @@ Tooltipは、表示状態に応じて適切なARIA属性を自動的に付与し
 - トリガー要素に`aria-expanded`で開閉状態を示す
 
 #### 共通動作
-- `Tooltip.Trigger`のchildrenとして渡された関数に、トリガー要素に必要なprops（ref、`aria-describedby`、`aria-expanded`）を渡します
+- `Tooltip.Trigger`のchildrenとして渡された関数に、トリガー要素に必要なprops（`ref`、`aria-describedby`、`aria-expanded`、`onMouseEnter`、`onFocus`、`onBlur`、`onPointerDown`、`onPointerUp`）を渡します
 - Tooltipの`id`を自動生成し、`aria-describedby`で関連付けます
 - トリガー要素のサイズを取得し、ポインターがトリガーに対して相対的に適切な位置に配置されるように計算します
 
 #### トリガー要素の要件
 
-`Tooltip.Trigger`から渡されるprops（`ref`、`aria-describedby`、`aria-expanded`、`onMouseEnter`、`onFocus`、`onBlur`、`onPointerDown`）を適切に受け取れるようにしてください。
+`Tooltip.Trigger`から渡されるprops（`ref`、`aria-describedby`、`aria-expanded`、`onMouseEnter`、`onFocus`、`onBlur`、`onPointerDown`、`onPointerUp`）を適切に受け取れるようにしてください。
 
 ## 実装例
 
@@ -307,6 +308,8 @@ const [hasSeenTooltip, setHasSeenTooltip] = useState(() => {
 - [カスタムコントロールの操作性を担保する](https://a11y-guidelines.ameba.design/4/1/2/)[基本必須]
   - [ ] トリガーボタンに`aria-describedby`でTooltipのIDを関連付けている（自動）
   - [ ] トリガーボタンにフォーカスした際、ボタンの内容に加えてTooltipの説明内容（`aria-describedby`）が読み上げられる
+- [ポインタ操作のキャンセルができる](https://a11y-guidelines.ameba.design/2/5/2/)[基本必須]
+  - [ ] タッチデバイスで、トリガーを押したまま指をずらして外で離した場合、操作がキャンセルされる
 
 ### `defaultOpen={false}`の場合
 
@@ -360,6 +363,7 @@ const [hasSeenTooltip, setHasSeenTooltip] = useState(() => {
 - `aria-expanded`が設定されていないことの確認
 - 閉じるボタンが表示されないことの確認
 - タッチデバイスでタップでトグルすることの確認
+- タッチデバイスでトリガーを押したまま外で離した場合、キャンセルされる（開かない）ことの確認
 - タッチデバイスで領域外タップでフェードアウトすることの確認
 
 #### `defaultOpen={true}`の初期表示時の場合
