@@ -1,0 +1,484 @@
+:root {
+  --Tooltip-z-index: 1;
+  --Tooltip-arrow-offset: 4px;
+}
+
+.spui-Tooltip {
+  display: inline-block;
+  position: relative;
+  width: fit-content;
+}
+
+.spui-Tooltip-frame {
+  --Tooltip-arrow-depth: 6px;
+  --Tooltip-arrow-size: 11px;
+  --Tooltip-position-offset: 24px;
+
+  animation: var(--animation-appear-in-duration)
+    var(--animation-appear-in-easing) spui-Tooltip-fade-in;
+  border-radius: 8px;
+  box-shadow: 0 11px 28px 0 rgba(8, 18, 26, 0.24);
+  box-sizing: border-box;
+  max-width: 242px;
+  min-width: 116px;
+  overflow: visible;
+  padding: 16px 10px 16px 16px;
+  position: absolute;
+  width: max-content;
+  z-index: var(--Tooltip-z-index);
+}
+
+/* stylelint-disable-next-line plugin/selector-bem-pattern */
+.spui-Tooltip-frame.is-fade-out {
+  animation: var(--animation-disappear-duration)
+    var(--animation-disappear-easing) spui-Tooltip-fade-out;
+  opacity: 0;
+}
+
+.spui-Tooltip-frame::before {
+  content: "";
+  height: var(--Tooltip-arrow-size);
+  position: absolute;
+  width: var(--Tooltip-arrow-size);
+}
+
+/* Variants */
+.spui-Tooltip-frame--information {
+  background-color: var(--color-surface-accent-neutral-high-emphasis);
+  color: var(--color-text-high-emphasis-inverse);
+}
+
+.spui-Tooltip-frame--information::before {
+  background-color: var(--color-surface-accent-neutral-high-emphasis);
+}
+
+.spui-Tooltip-frame--confirmation {
+  background-color: var(--color-surface-accent-primary);
+  color: var(--color-text-high-emphasis-inverse);
+}
+
+.spui-Tooltip-frame--confirmation::before {
+  background-color: var(--color-surface-accent-primary);
+}
+
+.spui-Tooltip-frame--error {
+  background-color: var(--color-surface-caution);
+  color: var(--color-text-high-emphasis-inverse);
+}
+
+.spui-Tooltip-frame--error::before {
+  background-color: var(--color-surface-caution);
+}
+
+/* Direction: top */
+.spui-Tooltip-frame--top {
+  top: calc(
+    var(--Tooltip-trigger-height) +
+    var(--Tooltip-arrow-depth) +
+    var(--Tooltip-arrow-offset)
+  );
+}
+
+.spui-Tooltip-frame--top::before {
+  border-radius: 5px 0 0;
+  top: calc(-1 * var(--Tooltip-arrow-depth));
+  transform: rotate(45deg);
+}
+
+/* Direction: bottom */
+.spui-Tooltip-frame--bottom {
+  bottom: calc(
+    var(--Tooltip-trigger-height) +
+    var(--Tooltip-arrow-depth) +
+    var(--Tooltip-arrow-offset)
+  );
+}
+
+.spui-Tooltip-frame--bottom::before {
+  border-radius: 0 0 5px;
+  bottom: calc(-1 * var(--Tooltip-arrow-depth));
+  transform: rotate(45deg);
+}
+
+/* Direction: left */
+.spui-Tooltip-frame--left {
+  left: calc(
+    var(--Tooltip-trigger-width) +
+    var(--Tooltip-arrow-depth) +
+    var(--Tooltip-arrow-offset)
+  );
+}
+
+.spui-Tooltip-frame--left::before {
+  border-radius: 0 0 0 5px;
+  left: calc(-1 * var(--Tooltip-arrow-depth));
+  transform: rotate(45deg);
+}
+
+/* Direction: right */
+.spui-Tooltip-frame--right {
+  right: calc(
+    var(--Tooltip-trigger-width) +
+    var(--Tooltip-arrow-depth) +
+    var(--Tooltip-arrow-offset)
+  );
+}
+
+.spui-Tooltip-frame--right::before {
+  border-radius: 0 5px 0 0;
+  right: calc(-1 * var(--Tooltip-arrow-depth));
+  transform: rotate(45deg);
+}
+
+/* Position: center (for top/bottom) */
+.spui-Tooltip-frame--top.spui-Tooltip-frame--center,
+.spui-Tooltip-frame--bottom.spui-Tooltip-frame--center {
+  animation: var(--animation-appear-in-duration)
+    var(--animation-appear-in-easing) spui-Tooltip-fade-in;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.spui-Tooltip-frame--top.spui-Tooltip-frame--center::before,
+.spui-Tooltip-frame--bottom.spui-Tooltip-frame--center::before {
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+/* Position: center (for left/right) */
+.spui-Tooltip-frame--left.spui-Tooltip-frame--center,
+.spui-Tooltip-frame--right.spui-Tooltip-frame--center {
+  animation: var(--animation-appear-in-duration)
+    var(--animation-appear-in-easing) spui-Tooltip-fade-in;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.spui-Tooltip-frame--left.spui-Tooltip-frame--center::before,
+.spui-Tooltip-frame--right.spui-Tooltip-frame--center::before {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+/* Position: start (for top/bottom) */
+.spui-Tooltip-frame--top.spui-Tooltip-frame--start,
+.spui-Tooltip-frame--bottom.spui-Tooltip-frame--start {
+  left: calc(var(--Tooltip-trigger-width) / 2 - var(--Tooltip-position-offset));
+}
+
+.spui-Tooltip-frame--top.spui-Tooltip-frame--start::before,
+.spui-Tooltip-frame--bottom.spui-Tooltip-frame--start::before {
+  left: calc(var(--Tooltip-position-offset) - var(--Tooltip-arrow-size) / 2);
+}
+
+/* Position: start (for left/right) */
+.spui-Tooltip-frame--left.spui-Tooltip-frame--start,
+.spui-Tooltip-frame--right.spui-Tooltip-frame--start {
+  top: calc(var(--Tooltip-trigger-height) / 2 - var(--Tooltip-position-offset));
+}
+
+.spui-Tooltip-frame--left.spui-Tooltip-frame--start::before,
+.spui-Tooltip-frame--right.spui-Tooltip-frame--start::before {
+  top: calc(var(--Tooltip-position-offset) - var(--Tooltip-arrow-size) / 2);
+}
+
+/* Position: end (for top/bottom) */
+.spui-Tooltip-frame--top.spui-Tooltip-frame--end,
+.spui-Tooltip-frame--bottom.spui-Tooltip-frame--end {
+  right: calc(
+    var(--Tooltip-trigger-width) /
+    2 -
+    var(--Tooltip-position-offset)
+  );
+}
+
+.spui-Tooltip-frame--top.spui-Tooltip-frame--end::before,
+.spui-Tooltip-frame--bottom.spui-Tooltip-frame--end::before {
+  right: calc(var(--Tooltip-position-offset) - var(--Tooltip-arrow-size) / 2);
+}
+
+/* Position: end (for left/right) */
+.spui-Tooltip-frame--left.spui-Tooltip-frame--end,
+.spui-Tooltip-frame--right.spui-Tooltip-frame--end {
+  bottom: calc(
+    var(--Tooltip-trigger-height) /
+    2 -
+    var(--Tooltip-position-offset)
+  );
+}
+
+.spui-Tooltip-frame--left.spui-Tooltip-frame--end::before,
+.spui-Tooltip-frame--right.spui-Tooltip-frame--end::before {
+  bottom: calc(var(--Tooltip-position-offset) - var(--Tooltip-arrow-size) / 2);
+}
+
+.spui-Tooltip-frame--edgeStart,
+.spui-Tooltip-frame--edgeEnd {
+  --Tooltip-arrow-depth: 9px;
+  --Tooltip-edge-arrow-depth: 10px;
+  --Tooltip-edge-arrow-breadth: 13px;
+  --Tooltip-position-offset: 8px;
+}
+
+.spui-Tooltip-frame--edgeStart::before,
+.spui-Tooltip-frame--edgeEnd::before {
+  border-radius: 0;
+  mask-size: 100% 100%;
+  transform: none;
+}
+
+.spui-Tooltip-frame--top.spui-Tooltip-frame--edgeStart,
+.spui-Tooltip-frame--bottom.spui-Tooltip-frame--edgeStart {
+  left: calc(var(--Tooltip-trigger-width) / 2 - var(--Tooltip-position-offset));
+}
+
+.spui-Tooltip-frame--top.spui-Tooltip-frame--edgeStart::before {
+  height: var(--Tooltip-edge-arrow-depth);
+  inset: calc(-1 * var(--Tooltip-arrow-depth)) auto auto
+    var(--Tooltip-position-offset);
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 10'%3E%3Cpath d='M0 9.8457L13 9.8457L1.64595 0.238426C0.996028 -0.311504 0 0.150452 0 1.00181L0 9.8457Z'/%3E%3C/svg%3E");
+  width: var(--Tooltip-edge-arrow-breadth);
+}
+
+.spui-Tooltip-frame--bottom.spui-Tooltip-frame--edgeStart::before {
+  height: var(--Tooltip-edge-arrow-depth);
+  inset: auto auto calc(-1 * var(--Tooltip-arrow-depth))
+    var(--Tooltip-position-offset);
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 10'%3E%3Cpath d='M0 0L13 0L1.64595 9.60728C0.996028 10.1572 0 9.69525 0 8.84389L0 0Z'/%3E%3C/svg%3E");
+  width: var(--Tooltip-edge-arrow-breadth);
+}
+
+.spui-Tooltip-frame--left.spui-Tooltip-frame--edgeStart,
+.spui-Tooltip-frame--right.spui-Tooltip-frame--edgeStart {
+  top: calc(var(--Tooltip-trigger-height) / 2 - var(--Tooltip-position-offset));
+}
+
+.spui-Tooltip-frame--left.spui-Tooltip-frame--edgeStart::before {
+  height: var(--Tooltip-edge-arrow-breadth);
+  inset: var(--Tooltip-position-offset) auto auto
+    calc(-1 * var(--Tooltip-arrow-depth));
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 13'%3E%3Cpath d='M9.84583 0V13L0.238548 1.64595C-0.311382 0.996028 0.150574 0 1.00194 0L9.84583 0Z'/%3E%3C/svg%3E");
+  width: var(--Tooltip-edge-arrow-depth);
+}
+
+.spui-Tooltip-frame--right.spui-Tooltip-frame--edgeStart::before {
+  height: var(--Tooltip-edge-arrow-breadth);
+  inset: var(--Tooltip-position-offset) calc(-1 * var(--Tooltip-arrow-depth))
+    auto auto;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 13'%3E%3Cpath d='M0 0L0 13L9.60728 1.64595C10.1572 0.996028 9.69525 0 8.84389 0L0 0Z'/%3E%3C/svg%3E");
+  width: var(--Tooltip-edge-arrow-depth);
+}
+
+.spui-Tooltip-frame--top.spui-Tooltip-frame--edgeEnd,
+.spui-Tooltip-frame--bottom.spui-Tooltip-frame--edgeEnd {
+  right: calc(
+    var(--Tooltip-trigger-width) /
+    2 -
+    var(--Tooltip-position-offset)
+  );
+}
+
+.spui-Tooltip-frame--top.spui-Tooltip-frame--edgeEnd::before {
+  height: var(--Tooltip-edge-arrow-depth);
+  inset: calc(-1 * var(--Tooltip-arrow-depth)) var(--Tooltip-position-offset)
+    auto auto;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 10'%3E%3Cpath d='M13 9.8457L0 9.8457L11.3541 0.238426C12.004 -0.311504 13 0.150452 13 1.00181L13 9.8457Z'/%3E%3C/svg%3E");
+  width: var(--Tooltip-edge-arrow-breadth);
+}
+
+.spui-Tooltip-frame--bottom.spui-Tooltip-frame--edgeEnd::before {
+  height: var(--Tooltip-edge-arrow-depth);
+  inset: auto var(--Tooltip-position-offset)
+    calc(-1 * var(--Tooltip-arrow-depth)) auto;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 10'%3E%3Cpath d='M13 0L0 0L11.3541 9.60728C12.004 10.1572 13 9.69525 13 8.84389L13 0Z'/%3E%3C/svg%3E");
+  width: var(--Tooltip-edge-arrow-breadth);
+}
+
+.spui-Tooltip-frame--left.spui-Tooltip-frame--edgeEnd,
+.spui-Tooltip-frame--right.spui-Tooltip-frame--edgeEnd {
+  bottom: calc(
+    var(--Tooltip-trigger-height) /
+    2 -
+    var(--Tooltip-position-offset)
+  );
+}
+
+.spui-Tooltip-frame--left.spui-Tooltip-frame--edgeEnd::before {
+  height: var(--Tooltip-edge-arrow-breadth);
+  inset: auto auto var(--Tooltip-position-offset)
+    calc(-1 * var(--Tooltip-arrow-depth));
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 13'%3E%3Cpath d='M9.84583 13V0L0.238548 11.3541C-0.311382 12.004 0.150574 13 1.00194 13L9.84583 13Z'/%3E%3C/svg%3E");
+  width: var(--Tooltip-edge-arrow-depth);
+}
+
+.spui-Tooltip-frame--right.spui-Tooltip-frame--edgeEnd::before {
+  height: var(--Tooltip-edge-arrow-breadth);
+  inset: auto calc(-1 * var(--Tooltip-arrow-depth))
+    var(--Tooltip-position-offset) auto;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 13'%3E%3Cpath d='M0 13L0 0L9.60728 11.3541C10.1572 12.004 9.69525 13 8.84389 13L0 13Z'/%3E%3C/svg%3E");
+  width: var(--Tooltip-edge-arrow-depth);
+}
+
+.spui-Tooltip-content {
+  align-items: flex-start;
+  display: flex;
+  gap: 16px;
+}
+
+.spui-Tooltip-text {
+  align-self: center;
+  flex: 1;
+  font-size: 0.875em;
+  font-weight: bold;
+  line-height: 1.4;
+  max-width: 180px;
+  min-width: 48px;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+
+.spui-Tooltip-closeButton {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  border-radius: 100%;
+  color: var(--color-object-high-emphasis-inverse);
+  display: flex;
+  flex-shrink: 0;
+  height: 20px;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s;
+  width: 20px;
+}
+
+.spui-Tooltip-closeButton:hover {
+  background-color: var(--white-20-alpha);
+}
+
+.spui-Tooltip-closeButton:active {
+  background-color: var(--white-20-alpha);
+}
+
+.spui-Tooltip-closeButton:focus {
+  outline: 2px solid var(--color-focus-clarity);
+  outline-offset: 1px;
+}
+
+.spui-Tooltip-closeButton:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.spui-Tooltip-closeButtonIcon {
+  height: 12px;
+  width: 12px;
+}
+
+/* Animations */
+@keyframes spui-Tooltip-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes spui-Tooltip-fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .spui-Tooltip-frame {
+    --Tooltip-arrow-size: 14px;
+
+    max-width: 732px;
+    padding: 16px;
+  }
+
+  .spui-Tooltip-text {
+    max-width: 640px;
+    min-width: 200px;
+  }
+
+  .spui-Tooltip-frame--edgeStart,
+  .spui-Tooltip-frame--edgeEnd {
+    --Tooltip-arrow-depth: 14px;
+    --Tooltip-edge-arrow-depth: 15px;
+    --Tooltip-edge-arrow-breadth: 19px;
+  }
+
+  .spui-Tooltip-frame--top.spui-Tooltip-frame--edgeStart::before {
+    height: var(--Tooltip-edge-arrow-depth);
+    inset: calc(-1 * var(--Tooltip-arrow-depth)) auto auto
+      var(--Tooltip-position-offset);
+    width: var(--Tooltip-edge-arrow-breadth);
+  }
+
+  .spui-Tooltip-frame--bottom.spui-Tooltip-frame--edgeStart::before {
+    height: var(--Tooltip-edge-arrow-depth);
+    inset: auto auto calc(-1 * var(--Tooltip-arrow-depth))
+      var(--Tooltip-position-offset);
+    width: var(--Tooltip-edge-arrow-breadth);
+  }
+
+  .spui-Tooltip-frame--left.spui-Tooltip-frame--edgeStart::before {
+    height: var(--Tooltip-edge-arrow-breadth);
+    inset: var(--Tooltip-position-offset) auto auto
+      calc(-1 * var(--Tooltip-arrow-depth));
+    width: var(--Tooltip-edge-arrow-depth);
+  }
+
+  .spui-Tooltip-frame--right.spui-Tooltip-frame--edgeStart::before {
+    height: var(--Tooltip-edge-arrow-breadth);
+    inset: var(--Tooltip-position-offset) calc(-1 * var(--Tooltip-arrow-depth))
+      auto auto;
+    width: var(--Tooltip-edge-arrow-depth);
+  }
+
+  .spui-Tooltip-frame--top.spui-Tooltip-frame--edgeEnd::before {
+    height: var(--Tooltip-edge-arrow-depth);
+    inset: calc(-1 * var(--Tooltip-arrow-depth)) var(--Tooltip-position-offset)
+      auto auto;
+    width: var(--Tooltip-edge-arrow-breadth);
+  }
+
+  .spui-Tooltip-frame--bottom.spui-Tooltip-frame--edgeEnd::before {
+    height: var(--Tooltip-edge-arrow-depth);
+    inset: auto var(--Tooltip-position-offset)
+      calc(-1 * var(--Tooltip-arrow-depth)) auto;
+    width: var(--Tooltip-edge-arrow-breadth);
+  }
+
+  .spui-Tooltip-frame--left.spui-Tooltip-frame--edgeEnd::before {
+    height: var(--Tooltip-edge-arrow-breadth);
+    inset: auto auto var(--Tooltip-position-offset)
+      calc(-1 * var(--Tooltip-arrow-depth));
+    width: var(--Tooltip-edge-arrow-depth);
+  }
+
+  .spui-Tooltip-frame--right.spui-Tooltip-frame--edgeEnd::before {
+    height: var(--Tooltip-edge-arrow-breadth);
+    inset: auto calc(-1 * var(--Tooltip-arrow-depth))
+      var(--Tooltip-position-offset) auto;
+    width: var(--Tooltip-edge-arrow-depth);
+  }
+
+  .spui-Tooltip-closeButton {
+    height: 24px;
+    width: 24px;
+  }
+
+  .spui-Tooltip-closeButtonIcon {
+    height: 14px;
+    width: 14px;
+  }
+}
