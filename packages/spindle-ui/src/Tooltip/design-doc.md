@@ -8,7 +8,8 @@ FigmaではTooltip（モードレス形式）とToggletip（モード形式）�
 
 ## スクリーンショット
 
-<img width="528" height="232" alt="image" src="https://github.com/user-attachments/assets/01689360-af4f-4cf6-bee5-79b397563346" />
+<img width="1924" height="814" alt="4種類のツールチップの表示形式、トリガー、目的について説明されている" src="https://github.com/user-attachments/assets/21b6889e-7d1e-43f8-aba0-e5e2ab517f58" />
+
 
 ### 表示トリガー
 
