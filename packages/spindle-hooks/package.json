@@ -59,7 +59,7 @@
     "@types/react-dom": "19.2.3",
     "@vitest/ui": "4.0.15",
     "bundlewatch": "0.4.1",
-    "jsdom": "27.2.0",
+    "jsdom": "27.3.0",
     "react": "19.2.1",
     "react-dom": "19.2.1",
     "storybook": "10.1.4",
