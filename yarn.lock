@@ -7948,10 +7948,10 @@ find-up@^7.0.0:
     path-exists "^5.0.0"
     unicorn-magic "^0.1.0"
 
-firebase-tools@14.27.0:
-  version "14.27.0"
-  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-14.27.0.tgz#762a2de407f9df188952cd942ef67a144776a053"
-  integrity sha512-HrucHJ69mLM9pQhZFO1rb0N/QMpZD4iznoOtKd2lctEELPtbSMN5JHgdgzLlf+EXn5aQy87u5zlPd/0xwwyYTQ==
+firebase-tools@15.0.0:
+  version "15.0.0"
+  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-15.0.0.tgz#b9a7c99dd8633729b055a570dd0a92c7f01100ed"
+  integrity sha512-6HSF3meQwMNzDK5BIEFEq4jVMPqR6PBdqpuSLBE+3zpLlcmLknMVBDhdN32jhd2lj/wvfHBZV6ZSqTCNF7AtWw==
   dependencies:
     "@apphosting/build" "^0.1.6"
     "@apphosting/common" "^0.0.8"
@@ -8016,7 +8016,6 @@ firebase-tools@14.27.0:
     stream-chain "^2.2.4"
     stream-json "^1.7.3"
     superstatic "^10.0.0"
-    tar "^6.1.11"
     tcp-port-used "^1.0.2"
     tmp "^0.2.3"
     triple-beam "^1.3.0"
@@ -16231,7 +16230,7 @@ tar-stream@~2.2.0:
     inherits "^2.0.3"
     readable-stream "^3.1.1"
 
-tar@6.2.1, tar@^6.1.11:
+tar@6.2.1:
   version "6.2.1"
   resolved "https://registry.yarnpkg.com/tar/-/tar-6.2.1.tgz#717549c541bc3c2af15751bea94b1dd068d4b03a"
   integrity sha512-DZ4yORTwrbTj/7MZYq2w+/ZFdI6OZ/f9SFHR+71gIVUZhOQPHzVCLpvRnPgyaMpfWxxk/4ONva3GQSyNIKRv6A==
