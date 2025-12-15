@@ -221,8 +221,8 @@ importers:
   packages/spindle-theme-switch:
     dependencies:
       dark-mode-toggle:
-        specifier: ^0.17.0
-        version: 0.17.0
+        specifier: ^0.18.0
+        version: 0.18.0
     devDependencies:
       firebase-tools:
         specifier: 15.0.0
@@ -4091,8 +4091,8 @@ packages:
     resolution: {integrity: sha512-wAV9QHOsNbwnWdNW2FYvE1P56wtgSbM+3SZcdGiWQILwVjACCXDCI3Ai8QlCjMDB8YK5zySiXZYBiwGmNY3lnw==}
     engines: {node: '>=12'}
 
-  dark-mode-toggle@0.17.0:
-    resolution: {integrity: sha512-o8Edp4y83e2cpVUNd86+4iJaRgNvK9kmtPVwZ++ZK3D/9/oxRofK+dc16leF05An1tTJeiXUQ8nIlMA9zwGzAw==}
+  dark-mode-toggle@0.18.0:
+    resolution: {integrity: sha512-XwUEZfX2rvM87ARPNkEN1kNWChKUq5BSuGqu/Hj+iwEclaWSAceF/ldgwjKHDUJeuRkTGn/8WV6/RzFPO7Fn3A==}
 
   dashify@2.0.0:
     resolution: {integrity: sha512-hpA5C/YrPjucXypHPPc0oJ1l9Hf6wWbiOL7Ik42cxnsUOhWiCB/fylKbKqqJalW9FgkNQCw16YO8uW9Hs0Iy1A==}
@@ -14417,7 +14417,7 @@ snapshots:
 
   dargs@8.1.0: {}
 
-  dark-mode-toggle@0.17.0: {}
+  dark-mode-toggle@0.18.0: {}
 
   dashify@2.0.0: {}
 
