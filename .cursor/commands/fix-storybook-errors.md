@@ -42,10 +42,10 @@ This command uses Chrome DevTools MCP to check all Storybook pages, detect conso
 
 2. **Start Storybook in Background**
    - Navigate to `packages/spindle-ui` directory
-   - Run `yarn storybook:start` in background
+   - Run `pnpm storybook:start` in background
    - Capture and store the process ID (PID) immediately after starting
    - Save the PID to a temporary file (e.g., `/tmp/storybook_pid.txt`) for later cleanup
-   - Example: `yarn storybook:start & echo $! > /tmp/storybook_pid.txt`
+   - Example: `pnpm storybook:start & echo $! > /tmp/storybook_pid.txt`
 
 3. **Wait for Storybook to be Ready**
    - Poll `http://localhost:6006` until it responds (max 60 seconds)
@@ -156,7 +156,7 @@ For each URL in the complete list (starting from the first URL):
      ```bash
      lsof -ti:6006 | xargs kill -9
      cd packages/spindle-ui && rm -rf node_modules/.cache/storybook
-     yarn storybook:start
+     pnpm storybook:start
      ```
    - Wait for server to be ready (poll `http://localhost:6006`)
    - Navigate to the page with `ignoreCache: true`

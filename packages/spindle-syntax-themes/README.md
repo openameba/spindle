@@ -15,13 +15,13 @@ Spindle Syntax Themesは、Spindleで定義された色を利用したコード�
 # Usage
 Spindle Syntax Themesを利用するには、npm経由で読み込む(推奨)もしくは、CDN経由で読み込む方法があります。現在は、Highlight.jsに対応しています。Highlight.jsの使い方は[公式サイト](https://highlightjs.org/)を参照してください。
 
-## npm or Yarn
+## npm or pnpm
 ```
 npm install @openameba/spindle-syntax-themes
 ```
 
 ```
-yarn add @openameba/spindle-syntax-themes
+pnpm add @openameba/spindle-syntax-themes
 ```
 
 インストールしたCSSは、SassやPostCSSなどで読み込んで利用します。

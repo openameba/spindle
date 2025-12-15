@@ -17,7 +17,7 @@ npm install @openameba/spindle-hooks
 ```
 
 ```
-yarn add @openameba/spindle-hooks
+pnpm add @openameba/spindle-hooks
 ```
 
 ## 利用方法
@@ -51,8 +51,8 @@ Spindle HooksはGoogle Chrome最新版で動作確認しています。それ以
 ## 開発方法
 
 ```
-yarn install
-yarn dev # storybookが起動します
+pnpm install --frozen-lockfile
+pnpm dev # storybookが起動します
 ```
 
 新規Hooksを追加する際には利用方法がイメージしやすいようにStorybookも追加します。
@@ -61,7 +61,7 @@ yarn dev # storybookが起動します
 ユニットテストは以下のように実行します。
 
 ```sh
-yarn test:interaction
+pnpm test:interaction
 ```
 
 ## ライセンス

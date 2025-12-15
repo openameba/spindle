@@ -21,11 +21,11 @@
   "scripts": {
     "build": "tsc",
     "cp": "npx cpx dist/spindle-theme-switch.js public",
-    "preserve": "yarn cp",
+    "preserve": "pnpm cp",
     "serve": "npx serve",
-    "predeploy": "yarn cp",
+    "predeploy": "pnpm cp",
     "deploy": "firebase deploy --only hosting",
-    "prepublishOnly": "yarn build && yarn cp"
+    "prepublishOnly": "pnpm build && pnpm cp"
   },
   "dependencies": {
     "dark-mode-toggle": "^0.17.0"
