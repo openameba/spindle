@@ -26,8 +26,8 @@ jobs:
           FIGMA_COLOR_THEME_DARK_FILE_ID: ${{ secrets.FIGMA_COLOR_THEME_DARK_FILE_ID }}
           FIGMA_DROP_SHADOW_FILE_ID: ${{ secrets.FIGMA_DROP_SHADOW_FILE_ID }}
         run: |
-          pnpm lerna run --scope @openameba/spindle-tokens export
-          # pnpm lerna run --scope @openameba/spindle-tokens build
+          pnpm --filter @openameba/spindle-tokens export
+          # pnpm --filter @openameba/spindle-tokens build
           pnpm fix
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@98357b18bf14b5342f975ff684046ec3b2a07725 # v8.0.0
