@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.5.1
+
+### Patch Changes
+
+- [#1694](https://github.com/openameba/spindle/pull/1694) [`35527a0`](https://github.com/openameba/spindle/commit/35527a0e4835754f90394b8929902ead09115222) Thanks [@herablog](https://github.com/herablog)! - MCP SDK 1.23.0でMcpServerコンストラクタからdescriptionプロパティが削除されたことに対応。
+
 ## 1.5.0
 
 ### Minor Changes
