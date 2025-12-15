@@ -212,8 +212,8 @@ importers:
         specifier: 4.0.2
         version: 4.0.2
       firebase-tools:
-        specifier: 14.27.0
-        version: 14.27.0(@cfworker/json-schema@4.1.1)(@swc/core@1.15.3)(@types/node@24.10.3)(encoding@0.1.13)(typescript@5.9.3)
+        specifier: 15.0.0
+        version: 15.0.0(@cfworker/json-schema@4.1.1)(@swc/core@1.15.3)(@types/node@24.10.3)(encoding@0.1.13)(typescript@5.9.3)
       puppeteer:
         specifier: 24.33.0
         version: 24.33.0(typescript@5.9.3)
@@ -225,8 +225,8 @@ importers:
         version: 0.17.0
     devDependencies:
       firebase-tools:
-        specifier: 14.27.0
-        version: 14.27.0(@cfworker/json-schema@4.1.1)(@swc/core@1.15.3)(@types/node@24.10.3)(encoding@0.1.13)(typescript@5.9.3)
+        specifier: 15.0.0
+        version: 15.0.0(@cfworker/json-schema@4.1.1)(@swc/core@1.15.3)(@types/node@24.10.3)(encoding@0.1.13)(typescript@5.9.3)
 
   packages/spindle-tokens:
     devDependencies:
@@ -340,8 +340,8 @@ importers:
         specifier: 1.12.0
         version: 1.12.0
       firebase-tools:
-        specifier: 14.27.0
-        version: 14.27.0(@cfworker/json-schema@4.1.1)(@swc/core@1.15.3)(@types/node@24.10.3)(encoding@0.1.13)(typescript@5.9.3)
+        specifier: 15.0.0
+        version: 15.0.0(@cfworker/json-schema@4.1.1)(@swc/core@1.15.3)(@types/node@24.10.3)(encoding@0.1.13)(typescript@5.9.3)
       jsdom:
         specifier: 27.3.0
         version: 27.3.0(postcss@8.5.6)
@@ -4851,8 +4851,8 @@ packages:
     resolution: {integrity: sha512-YyZM99iHrqLKjmt4LJDj58KI+fYyufRLBSYcqycxf//KpBk9FoewoGX0450m9nB44qrZnovzC2oeP5hUibxc/g==}
     engines: {node: '>=18'}
 
-  firebase-tools@14.27.0:
-    resolution: {integrity: sha512-HrucHJ69mLM9pQhZFO1rb0N/QMpZD4iznoOtKd2lctEELPtbSMN5JHgdgzLlf+EXn5aQy87u5zlPd/0xwwyYTQ==}
+  firebase-tools@15.0.0:
+    resolution: {integrity: sha512-6HSF3meQwMNzDK5BIEFEq4jVMPqR6PBdqpuSLBE+3zpLlcmLknMVBDhdN32jhd2lj/wvfHBZV6ZSqTCNF7AtWw==}
     engines: {node: '>=20.0.0 || >=22.0.0 || >=24.0.0'}
     hasBin: true
 
@@ -15301,7 +15301,7 @@ snapshots:
       path-exists: 5.0.0
       unicorn-magic: 0.1.0
 
-  firebase-tools@14.27.0(@cfworker/json-schema@4.1.1)(@swc/core@1.15.3)(@types/node@24.10.3)(encoding@0.1.13)(typescript@5.9.3):
+  firebase-tools@15.0.0(@cfworker/json-schema@4.1.1)(@swc/core@1.15.3)(@types/node@24.10.3)(encoding@0.1.13)(typescript@5.9.3):
     dependencies:
       '@apphosting/build': 0.1.7(@swc/core@1.15.3)(@types/node@24.10.3)(typescript@5.9.3)
       '@apphosting/common': 0.0.8
@@ -15366,7 +15366,6 @@ snapshots:
       stream-chain: 2.2.5
       stream-json: 1.9.1
       superstatic: 10.0.0(encoding@0.1.13)
-      tar: 6.2.1
       tcp-port-used: 1.0.2
       tmp: 0.2.5
       triple-beam: 1.4.1
@@ -17815,7 +17814,7 @@ snapshots:
       array-differ: 3.0.0
       array-union: 2.1.0
       arrify: 2.0.1
-      minimatch: 3.0.5
+      minimatch: 3.1.2
 
   mustache@4.2.0: {}
 
@@ -18237,9 +18236,9 @@ snapshots:
   ora@5.3.0:
     dependencies:
       bl: 4.1.0
-      chalk: 4.1.0
+      chalk: 4.1.2
       cli-cursor: 3.1.0
-      cli-spinners: 2.6.1
+      cli-spinners: 2.9.2
       is-interactive: 1.0.0
       log-symbols: 4.1.0
       strip-ansi: 6.0.1
@@ -20092,7 +20091,7 @@ snapshots:
 
   string-length@6.0.0:
     dependencies:
-      strip-ansi: 7.1.0
+      strip-ansi: 7.1.2
 
   string-width@2.1.1:
     dependencies:
@@ -20115,7 +20114,7 @@ snapshots:
     dependencies:
       emoji-regex: 10.6.0
       get-east-asian-width: 1.4.0
-      strip-ansi: 7.1.0
+      strip-ansi: 7.1.2
 
   string-width@8.1.0:
     dependencies:
