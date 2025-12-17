@@ -63,8 +63,8 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: |
-          pnpm lerna run --scope @openameba/spindle-hooks build
-          pnpm lerna run --scope @openameba/spindle-ui storybook:build
+          pnpm --filter @openameba/spindle-hooks build
+          pnpm --filter @openameba/spindle-ui storybook:build
       - name: capture stories
         run: >
           npx storycap
@@ -76,7 +76,7 @@ jobs:
       - run: |
           printf -- '%s' "$GOOGLE_APPLICATION_CREDENTIALS_JSON" | base64 --decode > "${PWD}/storage-key.json"
           export GOOGLE_APPLICATION_CREDENTIALS="${PWD}/storage-key.json"
-          pnpm lerna run --scope @openameba/spindle-ui test:regression
+          pnpm --filter @openameba/spindle-ui test:regression
         env:
           GCS_BUCKET_NAME_REG_SUIT: ${{ secrets.GCS_BUCKET_NAME_REG_SUIT }}
           GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}

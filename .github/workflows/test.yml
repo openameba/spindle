@@ -20,7 +20,7 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: |
-          pnpm lerna run --scope @openameba/spindle-hooks build
+          pnpm --filter @openameba/spindle-hooks build
           pnpm test
         env:
           CHROME_PATH: /usr/bin/google-chrome-stable

@@ -20,7 +20,7 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - name: Update UI catalog
-        run: pnpm lerna run --scope @openameba/spindle-hooks storybook:build
+        run: pnpm --filter @openameba/spindle-hooks storybook:build
       - name: deploy to live channel
         uses: FirebaseExtended/action-hosting-deploy@e2eda2e106cfa35cdbcf4ac9ddaf6c4756df2c8c # v0
         with:

@@ -20,5 +20,5 @@ jobs:
       # spindle-icons is excluded because it requires FIGMA_TOKEN and fetches data from Figma API on every build
       - name: build all packages
         run: |
-          pnpm lerna run --ignore @openameba/spindle-icons build
+          pnpm --filter '!@openameba/spindle-icons' -r build
           pnpm build:extensionReplace
