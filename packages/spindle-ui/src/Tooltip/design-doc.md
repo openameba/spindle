@@ -203,6 +203,7 @@ Tooltipは、表示状態に応じて適切なARIA属性を自動的に付与し
 - `Tooltip.Trigger`のchildrenとして渡された関数に、トリガー要素に必要なprops（`ref`、`aria-describedby`、`aria-expanded`、`onMouseEnter`、`onFocus`、`onBlur`、`onPointerDown`、`onPointerUp`）を渡します
 - Tooltipの`id`を自動生成し、`aria-describedby`で関連付けます
 - トリガー要素のサイズを取得し、ポインターがトリガーに対して相対的に適切な位置に配置されるように計算します
+- デバイスタイプの判定には`onPointerDown`/`onPointerUp`の`e.pointerType`を使用します。`'ontouchstart' in window`や`navigator.maxTouchPoints`等の環境全体の判定も可能ですが、タッチとポインティングデバイスが共存する環境（タッチ対応PC等）では実際にどちらで操作されたかを判定できません。なお、`onClick`は`MouseEvent`のため`pointerType`が取得できません
 
 #### トリガー要素の要件
 
