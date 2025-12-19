@@ -52,4 +52,4 @@ jobs:
 
       - name: Publish to npm with prepublishOnly
         if: steps.changesets.outputs.hasChangesets == 'false'
-        run: pnpm publish -r --ignore-scripts=false
+        run: npm_config_ignore_scripts=false pnpm changeset publish
