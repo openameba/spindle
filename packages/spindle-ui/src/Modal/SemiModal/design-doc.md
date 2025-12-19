@@ -204,6 +204,95 @@ function SemiModalExample() {
 </dialog>
 ```
 
+## Figma Code Connect
+
+### マッピング
+
+#### PC向け（popup型）
+- Figmaバリアント "size" (Large/Medium/Small) → React prop `size` (large/medium/small)
+- Figmaバリアント "Title" (True/False) → `SemiModal.Header` と `SemiModal.HeaderTitle` の表示制御
+- Figmaバリアント "Contents" (True/False) → `SemiModal.Contents` の表示制御
+- Figmaバリアント "Footer" (True/False) → `SemiModal.Footer` の表示制御
+- React prop `type` は "popup" に固定
+
+#### SP向け（sheet型）
+- Figmaバリアント "size" (Large/Medium/Small) → React prop `size` (large/medium/small)
+- Figmaバリアント "Title" (True/False) → `SemiModal.Header` と `SemiModal.HeaderTitle` の表示制御
+- Figmaバリアント "Contents" (True/False) → `SemiModal.Contents` の表示制御
+- Figmaバリアント "Footer" (True/False) → `SemiModal.Footer` の表示制御
+- React prop `type` は "sheet" に固定
+
+### 実装例
+
+PC向け（popup型）とSP向け（sheet型）それぞれのFigmaコンポーネントに対応するCode Connectを実装しています。
+
+```tsx
+// PC向け（popup）
+figma.connect(
+  SemiModal,
+  'https://www.figma.com/design/FSgvRthUiMMXWgrSE4RUgr/Spindle-UI?node-id=454-39096',
+  {
+    props: {
+      size: figma.enum('size', {
+        Large: 'large',
+        Medium: 'medium',
+        Small: 'small',
+      }),
+      title: figma.boolean('Title', {
+        true: (
+          <SemiModal.Header>
+            <SemiModal.HeaderTitle></SemiModal.HeaderTitle>
+          </SemiModal.Header>
+        ),
+        false: undefined,
+      }),
+      contents: figma.boolean('Contents', {
+        true: <SemiModal.Contents></SemiModal.Contents>,
+        false: undefined,
+      }),
+      footer: figma.boolean('Footer', {
+        true: (
+          <SemiModal.Footer>
+            <Button layout="fullWidth" size="medium"></Button>
+          </SemiModal.Footer>
+        ),
+        false: undefined,
+      }),
+    },
+    example: ({ size, title, contents, footer }) => (
+      <SemiModal.Frame type="popup" size={size}>
+        {title}
+        {contents}
+        {footer}
+      </SemiModal.Frame>
+    ),
+  },
+);
+
+// SP向け（sheet）
+figma.connect(
+  SemiModal,
+  'https://www.figma.com/design/FSgvRthUiMMXWgrSE4RUgr/Spindle-UI?node-id=457-38844',
+  {
+    props: {
+      size: figma.enum('size', {
+        Large: 'large',
+        Medium: 'medium',
+        Small: 'small',
+      }),
+      // ... PC向けと同様のprops
+    },
+    example: ({ size, title, contents, footer }) => (
+      <SemiModal.Frame type="sheet" size={size}>
+        {title}
+        {contents}
+        {footer}
+      </SemiModal.Frame>
+    ),
+  },
+);
+```
+
 ## Baseline
 
 - `:has()` (Baseline 2023) - [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/:has)
