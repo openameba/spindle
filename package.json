@@ -1,7 +1,7 @@
 {
   "name": "spindle",
   "private": true,
-  "packageManager": "pnpm@10.25.0",
+  "packageManager": "pnpm@10.26.0",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "test": "run-p codecheck test:packages",
@@ -38,7 +38,7 @@
     "jscodeshift": "17.3.0",
     "lint-staged": "16.2.7",
     "npm-run-all2": "8.0.4",
-    "pnpm": "10.25.0",
+    "pnpm": "10.26.0",
     "prettier": "3.7.4",
     "stylelint": "16.26.1",
     "stylelint-config-standard": "39.0.1",
