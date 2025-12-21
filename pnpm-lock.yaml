@@ -227,8 +227,8 @@ importers:
   packages/spindle-tokens:
     devDependencies:
       '@figma/rest-api-spec':
-        specifier: 0.34.0
-        version: 0.34.0
+        specifier: 0.35.0
+        version: 0.35.0
       '@types/lodash.setwith':
         specifier: 4.3.9
         version: 4.3.9
@@ -1239,8 +1239,8 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  '@figma/rest-api-spec@0.34.0':
-    resolution: {integrity: sha512-eyKqo1S1e2dzpfF6WGNgMT1XPciUwH6MeZDi3qfrSAp4kqNauHwuGHOMTnZFTydF93FYpdg0T6Hp9lsJu8bDcg==}
+  '@figma/rest-api-spec@0.35.0':
+    resolution: {integrity: sha512-0v/KJmCWzKBp/wmsqjOas7tLauD1s0nrJJ70vzOCqEEgNrZvugi6/Myssfy+BsfpU5bcC66KrgApqoRRnsbJ4Q==}
 
   '@formatjs/ecma402-abstract@2.3.6':
     resolution: {integrity: sha512-HJnTFeRM2kVFVr5gr5kH1XP6K0JcJtE7Lzvtr3FS/so5f1kpsqqqxy5JF+FRaO6H2qmcMfAUIox7AJteieRtVw==}
@@ -10128,7 +10128,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@figma/rest-api-spec@0.34.0': {}
+  '@figma/rest-api-spec@0.35.0': {}
 
   '@formatjs/ecma402-abstract@2.3.6':
     dependencies:
