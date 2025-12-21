@@ -208,8 +208,8 @@ importers:
         specifier: 4.0.2
         version: 4.0.2
       firebase-tools:
-        specifier: 15.0.0
-        version: 15.0.0(@cfworker/json-schema@4.1.1)(@swc/core@1.15.3)(@types/node@24.10.4)(encoding@0.1.13)(typescript@5.9.3)
+        specifier: 15.1.0
+        version: 15.1.0(@cfworker/json-schema@4.1.1)(@swc/core@1.15.3)(@types/node@24.10.4)(encoding@0.1.13)(typescript@5.9.3)
       puppeteer:
         specifier: 24.33.1
         version: 24.33.1(typescript@5.9.3)
@@ -221,8 +221,8 @@ importers:
         version: 0.18.0
     devDependencies:
       firebase-tools:
-        specifier: 15.0.0
-        version: 15.0.0(@cfworker/json-schema@4.1.1)(@swc/core@1.15.3)(@types/node@24.10.4)(encoding@0.1.13)(typescript@5.9.3)
+        specifier: 15.1.0
+        version: 15.1.0(@cfworker/json-schema@4.1.1)(@swc/core@1.15.3)(@types/node@24.10.4)(encoding@0.1.13)(typescript@5.9.3)
 
   packages/spindle-tokens:
     devDependencies:
@@ -336,8 +336,8 @@ importers:
         specifier: 1.12.0
         version: 1.12.0
       firebase-tools:
-        specifier: 15.0.0
-        version: 15.0.0(@cfworker/json-schema@4.1.1)(@swc/core@1.15.3)(@types/node@24.10.4)(encoding@0.1.13)(typescript@5.9.3)
+        specifier: 15.1.0
+        version: 15.1.0(@cfworker/json-schema@4.1.1)(@swc/core@1.15.3)(@types/node@24.10.4)(encoding@0.1.13)(typescript@5.9.3)
       jsdom:
         specifier: 27.3.0
         version: 27.3.0(postcss@8.5.6)
@@ -4451,8 +4451,8 @@ packages:
     resolution: {integrity: sha512-YyZM99iHrqLKjmt4LJDj58KI+fYyufRLBSYcqycxf//KpBk9FoewoGX0450m9nB44qrZnovzC2oeP5hUibxc/g==}
     engines: {node: '>=18'}
 
-  firebase-tools@15.0.0:
-    resolution: {integrity: sha512-6HSF3meQwMNzDK5BIEFEq4jVMPqR6PBdqpuSLBE+3zpLlcmLknMVBDhdN32jhd2lj/wvfHBZV6ZSqTCNF7AtWw==}
+  firebase-tools@15.1.0:
+    resolution: {integrity: sha512-sVDiFTXiRd2tszJzttb6e5yzhJdljIVm8Q0Atg6MyHMirJrvrOJzxPis9MAg/R6RrfLo/+oYgx83suZfAAimPw==}
     engines: {node: '>=20.0.0 || >=22.0.0 || >=24.0.0'}
     hasBin: true
 
@@ -13999,7 +13999,7 @@ snapshots:
       path-exists: 5.0.0
       unicorn-magic: 0.1.0
 
-  firebase-tools@15.0.0(@cfworker/json-schema@4.1.1)(@swc/core@1.15.3)(@types/node@24.10.4)(encoding@0.1.13)(typescript@5.9.3):
+  firebase-tools@15.1.0(@cfworker/json-schema@4.1.1)(@swc/core@1.15.3)(@types/node@24.10.4)(encoding@0.1.13)(typescript@5.9.3):
     dependencies:
       '@apphosting/build': 0.1.7(@swc/core@1.15.3)(@types/node@24.10.4)(typescript@5.9.3)
       '@apphosting/common': 0.0.8
