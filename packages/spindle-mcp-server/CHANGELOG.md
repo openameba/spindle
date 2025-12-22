@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.5.2
+
+### Patch Changes
+
+- [#1721](https://github.com/openameba/spindle/pull/1721) [`f0d9876`](https://github.com/openameba/spindle/commit/f0d9876ed996f041330c2830bb6a4fac252027cc) Thanks [@herablog](https://github.com/herablog)! - ビルド成果物を含むパッケージを再公開
+
 ## 1.5.1
 
 ### Patch Changes
