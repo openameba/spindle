@@ -44,9 +44,12 @@ jobs:
         id: changesets
         uses: changesets/action@e0145edc7d9d8679003495b11f87bd8ef63c0cba # v1.5.3
         with:
-          publish: pnpm release
           version: pnpm version-packages
           commit: 'chore: publish'
           title: 'chore: publish'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish to npm with prepublishOnly
+        if: steps.changesets.outputs.hasChangesets == 'false'
+        run: npm_config_ignore_scripts=false pnpm changeset publish
