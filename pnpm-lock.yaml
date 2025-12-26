@@ -51,8 +51,8 @@ importers:
         specifier: 8.0.4
         version: 8.0.4
       pnpm:
-        specifier: 10.26.1
-        version: 10.26.1
+        specifier: 10.26.2
+        version: 10.26.2
       prettier:
         specifier: 3.7.4
         version: 3.7.4
@@ -73,7 +73,7 @@ importers:
         version: 15.5.0(@cfworker/json-schema@4.1.1)
       textlint-rule-preset-ameba:
         specifier: openameba/textlint-rule-preset-ameba#v0.5.1
-        version: '@openameba/textlint-rule-preset-ameba@https://codeload.github.com/openameba/textlint-rule-preset-ameba/tar.gz/e3101ee1ee6a39b1f539ffa729e57efa112ce134(textlint@15.5.0(@cfworker/json-schema@4.1.1))'
+        version: '@openameba/textlint-rule-preset-ameba@https://codeload.github.com/openameba/textlint-rule-preset-ameba/tar.gz/e22b25089b6ab737ca03cedb8a089f2377d3386e(textlint@15.5.0(@cfworker/json-schema@4.1.1))'
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -1642,8 +1642,8 @@ packages:
       '@types/react':
         optional: true
 
-  '@openameba/textlint-rule-preset-ameba@https://codeload.github.com/openameba/textlint-rule-preset-ameba/tar.gz/e3101ee1ee6a39b1f539ffa729e57efa112ce134':
-    resolution: {tarball: https://codeload.github.com/openameba/textlint-rule-preset-ameba/tar.gz/e3101ee1ee6a39b1f539ffa729e57efa112ce134}
+  '@openameba/textlint-rule-preset-ameba@https://codeload.github.com/openameba/textlint-rule-preset-ameba/tar.gz/e22b25089b6ab737ca03cedb8a089f2377d3386e':
+    resolution: {tarball: https://codeload.github.com/openameba/textlint-rule-preset-ameba/tar.gz/e22b25089b6ab737ca03cedb8a089f2377d3386e}
     version: 0.5.1
 
   '@opentelemetry/api@1.9.0':
@@ -6809,8 +6809,8 @@ packages:
     resolution: {integrity: sha512-LKWqWJRhstyYo9pGvgor/ivk2w94eSjE3RGVuzLGlr3NmD8bf7RcYGze1mNdEHRP6TRP6rMuDHk5t44hnTRyow==}
     engines: {node: '>=14.19.0'}
 
-  pnpm@10.26.1:
-    resolution: {integrity: sha512-ZkB0q8Nn0skyT9wYA3CXzgqPEmA0Fg9wmSjp6fldmHFDRwROXDFk1lvV2mxZxr42KxB1Rikqjuy3mZGW5c5Y+g==}
+  pnpm@10.26.2:
+    resolution: {integrity: sha512-DjCP8gBfx0EDZvFU9iX2YxqysWsdLnAjhETdaunWMKhILZKkURRN68SSQWiW7Rb3sRSobsaLhASyRDhp5o/9pg==}
     engines: {node: '>=18.12'}
     hasBin: true
 
@@ -10643,7 +10643,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.2.7
 
-  '@openameba/textlint-rule-preset-ameba@https://codeload.github.com/openameba/textlint-rule-preset-ameba/tar.gz/e3101ee1ee6a39b1f539ffa729e57efa112ce134(textlint@15.5.0(@cfworker/json-schema@4.1.1))':
+  '@openameba/textlint-rule-preset-ameba@https://codeload.github.com/openameba/textlint-rule-preset-ameba/tar.gz/e22b25089b6ab737ca03cedb8a089f2377d3386e(textlint@15.5.0(@cfworker/json-schema@4.1.1))':
     dependencies:
       '@textlint-ja/textlint-rule-no-dropping-i': 1.1.0
       '@textlint-ja/textlint-rule-no-insert-dropping-sa': 1.0.2
@@ -16774,7 +16774,7 @@ snapshots:
 
   pngjs@7.0.0: {}
 
-  pnpm@10.26.1: {}
+  pnpm@10.26.2: {}
 
   portfinder@1.0.38:
     dependencies:
