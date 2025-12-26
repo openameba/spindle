@@ -127,7 +127,7 @@ type Props = {
 - [ターゲットのサイズを理解する](https://a11y-guidelines.ameba.design/2/5/5/)[できれば]
   - [ ] タップ領域は最小でも40px x 40px以上確保している
 - [入力を補助する](https://a11y-guidelines.ameba.design/3/3/2/)[できれば]
-  - [ ] 適切な`type`属性（`email`、`tel`、`url`など）を指定している
+  - [ ] 適切な`type`属性を指定している
   - [ ] 適切な`autocomplete`属性を指定している
 - [エラーを特定できる](https://a11y-guidelines.ameba.design/3/3/1/)[基本必須]
   - [ ] エラー時に`aria-invalid="true"`を指定している
