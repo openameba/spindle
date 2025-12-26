@@ -144,6 +144,7 @@ type Props = {
 - キーボードで文字入力ができること
 - `ref`が適切に転送されること
 - 標準のHTML属性（`placeholder`、`disabled`、`type`など）が適切に反映されること
+- エラー状態時のアクセシビリティ属性（`aria-invalid`、`aria-errormessage`、`aria-describedby`）が適切に反映されること
 
 ### ヴィジュアルリグレッションテスト (Storybook)
 
