@@ -38,7 +38,7 @@
   },
   "license": "SEE LICENSE IN README.md",
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.3.1",
+    "@modelcontextprotocol/sdk": "^1.25.1",
     "zod": "^4.1.9"
   },
   "devDependencies": {

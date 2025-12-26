@@ -2,7 +2,6 @@ packages:
   - 'packages/*'
 
 overrides:
-  zod: 3.25.76
   superstatic: 10.0.0
   axios: 1.13.2
   undici: 7.16.0
