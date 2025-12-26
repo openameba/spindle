@@ -30,7 +30,6 @@
 - Review guidelines are defined in `.github/copilot-instructions.md`
 
 ## Pull Request Creation
-- Use the `create-changeset` command (@.claude/commands/create-changeset.md) to create a changeset before pushing or creating a PR
 - Write the PR summary in Japanese, providing a concise overview of the changes
 
 ## Dependency Updates
