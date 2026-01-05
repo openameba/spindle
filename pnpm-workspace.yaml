@@ -1,6 +1,11 @@
 packages:
   - 'packages/*'
 
+pnpm:
+  peerDependencyRules:
+    ignoreMissing:
+      - hono
+
 overrides:
   superstatic: 10.0.0
   axios: 1.13.2
