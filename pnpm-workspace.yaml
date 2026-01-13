@@ -1,10 +1,9 @@
 packages:
   - 'packages/*'
 
-pnpm:
-  peerDependencyRules:
-    ignoreMissing:
-      - hono
+peerDependencyRules:
+  ignoreMissing:
+    - hono
 
 overrides:
   superstatic: 10.0.0
