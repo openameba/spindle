@@ -57,13 +57,13 @@
     "@testing-library/user-event": "14.6.1",
     "@types/react": "19.2.8",
     "@types/react-dom": "19.2.3",
-    "@vitest/ui": "4.0.16",
+    "@vitest/ui": "4.0.17",
     "bundlewatch": "0.4.1",
     "jsdom": "27.4.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "storybook": "10.1.11",
-    "vitest": "4.0.16",
+    "vitest": "4.0.17",
     "webpack": "5.104.1"
   }
 }
