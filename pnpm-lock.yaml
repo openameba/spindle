@@ -207,8 +207,8 @@ importers:
         specifier: 4.0.2
         version: 4.0.2
       firebase-tools:
-        specifier: 15.2.1
-        version: 15.2.1(@cfworker/json-schema@4.1.1)(@swc/core@1.15.3)(@types/node@24.10.8)(encoding@0.1.13)(typescript@5.9.3)
+        specifier: 15.3.0
+        version: 15.3.0(@cfworker/json-schema@4.1.1)(@swc/core@1.15.3)(@types/node@24.10.8)(encoding@0.1.13)(typescript@5.9.3)
       puppeteer:
         specifier: 24.35.0
         version: 24.35.0(typescript@5.9.3)
@@ -220,8 +220,8 @@ importers:
         version: 0.18.0
     devDependencies:
       firebase-tools:
-        specifier: 15.2.1
-        version: 15.2.1(@cfworker/json-schema@4.1.1)(@swc/core@1.15.3)(@types/node@24.10.8)(encoding@0.1.13)(typescript@5.9.3)
+        specifier: 15.3.0
+        version: 15.3.0(@cfworker/json-schema@4.1.1)(@swc/core@1.15.3)(@types/node@24.10.8)(encoding@0.1.13)(typescript@5.9.3)
 
   packages/spindle-tokens:
     devDependencies:
@@ -335,8 +335,8 @@ importers:
         specifier: 1.12.0
         version: 1.12.0
       firebase-tools:
-        specifier: 15.2.1
-        version: 15.2.1(@cfworker/json-schema@4.1.1)(@swc/core@1.15.3)(@types/node@24.10.8)(encoding@0.1.13)(typescript@5.9.3)
+        specifier: 15.3.0
+        version: 15.3.0(@cfworker/json-schema@4.1.1)(@swc/core@1.15.3)(@types/node@24.10.8)(encoding@0.1.13)(typescript@5.9.3)
       jsdom:
         specifier: 27.4.0
         version: 27.4.0(postcss@8.5.6)
@@ -2732,6 +2732,11 @@ packages:
 
   ajv-formats@2.1.1:
     resolution: {integrity: sha512-Wx0Kx52hxE7C18hkMEggYlEifqWZtYaRgouJor+WMdPnQyEK13vgEWyVNup7SoeeoLMsr4kf5h6dOW11I15MUA==}
+    peerDependencies:
+      ajv: ^8.0.0
+    peerDependenciesMeta:
+      ajv:
+        optional: true
 
   ajv-formats@3.0.1:
     resolution: {integrity: sha512-8iUql50EUR+uUcdRQ3HDqa6EVyo3docL8g5WJ3FNcWmu62IbkGUue/pEyLBW8VGKKucTPgqeks4fIU1DA4yowQ==}
@@ -4465,8 +4470,8 @@ packages:
     resolution: {integrity: sha512-YyZM99iHrqLKjmt4LJDj58KI+fYyufRLBSYcqycxf//KpBk9FoewoGX0450m9nB44qrZnovzC2oeP5hUibxc/g==}
     engines: {node: '>=18'}
 
-  firebase-tools@15.2.1:
-    resolution: {integrity: sha512-S75K4L/CsYSpyoOZAWHeTrx5TrpNCdUeSutr9oto+yBgg5qfbtnrGUxP+iPiBK6g4pdQFzf4p6rN1c7RoGE09A==}
+  firebase-tools@15.3.0:
+    resolution: {integrity: sha512-LeeZ45R0iBvKvwhj8er7tBskChJGYBr9PsJYffzCQwB7KRklTVVDlq8c81bFdKU5Zsqbv1bLPEb4wBNjW3UO1g==}
     engines: {node: '>=20.0.0 || >=22.0.0 || >=24.0.0'}
     hasBin: true
 
@@ -12094,8 +12099,8 @@ snapshots:
       clean-stack: 2.2.0
       indent-string: 4.0.0
 
-  ajv-formats@2.1.1:
-    dependencies:
+  ajv-formats@2.1.1(ajv@8.17.1):
+    optionalDependencies:
       ajv: 8.17.1
 
   ajv-formats@3.0.1:
@@ -13785,7 +13790,7 @@ snapshots:
     dependencies:
       '@apidevtools/json-schema-ref-parser': 9.1.2
       ajv: 8.17.1
-      ajv-formats: 2.1.1
+      ajv-formats: 2.1.1(ajv@8.17.1)
       body-parser: 1.20.4
       content-type: 1.0.5
       deep-freeze: 0.0.1
@@ -14077,7 +14082,7 @@ snapshots:
       path-exists: 5.0.0
       unicorn-magic: 0.1.0
 
-  firebase-tools@15.2.1(@cfworker/json-schema@4.1.1)(@swc/core@1.15.3)(@types/node@24.10.8)(encoding@0.1.13)(typescript@5.9.3):
+  firebase-tools@15.3.0(@cfworker/json-schema@4.1.1)(@swc/core@1.15.3)(@types/node@24.10.8)(encoding@0.1.13)(typescript@5.9.3):
     dependencies:
       '@apphosting/build': 0.1.7(@swc/core@1.15.3)(@types/node@24.10.8)(typescript@5.9.3)
       '@apphosting/common': 0.0.8
@@ -15310,7 +15315,7 @@ snapshots:
       whatwg-encoding: 3.1.1
       whatwg-mimetype: 4.0.0
       whatwg-url: 14.2.0
-      ws: 8.18.3
+      ws: 8.19.0
       xml-name-validator: 5.0.0
     transitivePeerDependencies:
       - bufferutil
@@ -17272,7 +17277,7 @@ snapshots:
       devtools-protocol: 0.0.1534754
       typed-query-selector: 2.12.0
       webdriver-bidi-protocol: 0.3.10
-      ws: 8.18.3
+      ws: 8.19.0
     transitivePeerDependencies:
       - bare-abort-controller
       - bare-buffer
@@ -17930,7 +17935,7 @@ snapshots:
     dependencies:
       '@types/json-schema': 7.0.15
       ajv: 8.17.1
-      ajv-formats: 2.1.1
+      ajv-formats: 2.1.1(ajv@8.17.1)
       ajv-keywords: 5.1.0(ajv@8.17.1)
 
   secure-keys@1.0.0: {}
