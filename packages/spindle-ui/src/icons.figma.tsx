@@ -152,6 +152,9 @@ import {
   FileFill,
   Filter,
   FilterCheck,
+  FilterCheckNew,
+  FilterNew,
+  FilterSearch,
   FlagFill,
   FlagRanking,
   FlagRankingTrim,
@@ -323,6 +326,14 @@ import {
   StarFaceFill,
   StarFill,
   StarHalf,
+  StarPart10,
+  StarPart20,
+  StarPart30,
+  StarPart40,
+  StarPart60,
+  StarPart70,
+  StarPart80,
+  StarPart90,
   StopFill,
   Strikethrough,
   Sun,
@@ -2228,14 +2239,14 @@ figma.connect(
   { imports: ["import { PauseBold } from '@openameba/spindle-ui/Icon';"] },
 );
 figma.connect(
-  Cards,
-  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=8131-4152',
-  { imports: ["import { Cards } from '@openameba/spindle-ui/Icon';"] },
-);
-figma.connect(
   Cart,
   'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=8184-4151',
   { imports: ["import { Cart } from '@openameba/spindle-ui/Icon';"] },
+);
+figma.connect(
+  Cards,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=8131-4152',
+  { imports: ["import { Cards } from '@openameba/spindle-ui/Icon';"] },
 );
 figma.connect(
   CartFill,
@@ -2408,4 +2419,59 @@ figma.connect(
   Table,
   'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=13653-495',
   { imports: ["import { Table } from '@openameba/spindle-ui/Icon';"] },
+);
+figma.connect(
+  StarPart90,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=13765-508',
+  { imports: ["import { StarPart90 } from '@openameba/spindle-ui/Icon';"] },
+);
+figma.connect(
+  StarPart80,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=13765-507',
+  { imports: ["import { StarPart80 } from '@openameba/spindle-ui/Icon';"] },
+);
+figma.connect(
+  StarPart70,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=13765-506',
+  { imports: ["import { StarPart70 } from '@openameba/spindle-ui/Icon';"] },
+);
+figma.connect(
+  StarPart60,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=13764-474',
+  { imports: ["import { StarPart60 } from '@openameba/spindle-ui/Icon';"] },
+);
+figma.connect(
+  StarPart40,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=13764-472',
+  { imports: ["import { StarPart40 } from '@openameba/spindle-ui/Icon';"] },
+);
+figma.connect(
+  StarPart30,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=13764-471',
+  { imports: ["import { StarPart30 } from '@openameba/spindle-ui/Icon';"] },
+);
+figma.connect(
+  StarPart20,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=13764-470',
+  { imports: ["import { StarPart20 } from '@openameba/spindle-ui/Icon';"] },
+);
+figma.connect(
+  StarPart10,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=13764-473',
+  { imports: ["import { StarPart10 } from '@openameba/spindle-ui/Icon';"] },
+);
+figma.connect(
+  FilterNew,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=14224-4633',
+  { imports: ["import { FilterNew } from '@openameba/spindle-ui/Icon';"] },
+);
+figma.connect(
+  FilterCheckNew,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=14224-4685',
+  { imports: ["import { FilterCheckNew } from '@openameba/spindle-ui/Icon';"] },
+);
+figma.connect(
+  FilterSearch,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=14224-4838',
+  { imports: ["import { FilterSearch } from '@openameba/spindle-ui/Icon';"] },
 );
