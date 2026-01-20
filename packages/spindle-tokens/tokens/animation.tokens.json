@@ -27,6 +27,15 @@
         1
       ]
     },
+    "Easing/Ease Out Soft": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.24,
+        0.27,
+        0.15,
+        0.99
+      ]
+    },
     "Duration/Fast": {
       "$type": "transition",
       "$value": "150ms"
@@ -38,6 +47,10 @@
     "Duration/Slow": {
       "$type": "transition",
       "$value": "500ms"
+    },
+    "Duration/Slower": {
+      "$type": "transition",
+      "$value": "1000ms"
     },
     "Move/Easing": {
       "$type": "transition",

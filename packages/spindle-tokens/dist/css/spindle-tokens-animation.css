@@ -31,9 +31,11 @@
   --animation-move-pop-easing: var(--animation-easing-ease-out-bounce);
   --animation-move-duration: var(--animation-duration-neutral);
   --animation-move-easing: var(--animation-easing-ease-out);
+  --animation-duration-slower: 1000ms;
   --animation-duration-slow: 500ms;
   --animation-duration-neutral: 350ms;
   --animation-duration-fast: 150ms;
+  --animation-easing-ease-out-soft: cubic-bezier(0.24, 0.27, 0.15, 0.99);
   --animation-easing-ease-in-out: cubic-bezier(0.5, 0, 0.5, 1);
   --animation-easing-ease-out-bounce: cubic-bezier(0.55, 2.05, 0.65, 0.75);
   --animation-easing-ease-out: cubic-bezier(0, 0, 0, 1);
