@@ -44,7 +44,7 @@
   "devDependencies": {
     "@cfworker/json-schema": "4.1.1",
     "@openameba/spindle-tokens": "1.9.0",
-    "@openameba/spindle-ui": "3.1.4",
+    "@openameba/spindle-ui": "3.1.5",
     "@types/node": "24.10.9",
     "cpx2": "8.0.0",
     "vitest": "4.0.17"

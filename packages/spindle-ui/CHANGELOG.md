@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.1.5
+
+### Patch Changes
+
+- [#1770](https://github.com/openameba/spindle/pull/1770) [`34bb047`](https://github.com/openameba/spindle/commit/34bb04789f6ed92dc33c8649feeccdd6afff75f5) Thanks [@github-actions](https://github.com/apps/github-actions)! - feat(spindle-icons): update filter icon
+
 ## 3.1.4
 
 ### Patch Changes
