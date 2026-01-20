@@ -1,5 +1,13 @@
 # Change Log
 
+## 1.10.0
+
+### Minor Changes
+
+- [#1772](https://github.com/openameba/spindle/pull/1772) [`3ad36a8`](https://github.com/openameba/spindle/commit/3ad36a8113d44a837f6cec776ecd0f5e2d875133) Thanks [@yasuda-shin](https://github.com/yasuda-shin)! - feat(spindle-tokens): add Ease Out Soft easing and Slower duration tokens
+  - Add Easing/Ease Out Soft: cubic-bezier(0.24, 0.27, 0.15, 0.99)
+  - Add Duration/Slower: 1000ms
+
 ## 1.9.0
 
 ### Minor Changes
