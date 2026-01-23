@@ -4,6 +4,12 @@
 
 ### Patch Changes
 
+- [#1775](https://github.com/openameba/spindle/pull/1775) [`bd22a93`](https://github.com/openameba/spindle/commit/bd22a93b464303ee22b23af699fbd25bfe247697) Thanks [@herablog](https://github.com/herablog)! - feat(spindle-icons): update filter icon
+
+## 2.2.3
+
+### Patch Changes
+
 - [#1770](https://github.com/openameba/spindle/pull/1770) [`34bb047`](https://github.com/openameba/spindle/commit/34bb04789f6ed92dc33c8649feeccdd6afff75f5) Thanks [@github-actions](https://github.com/apps/github-actions)! - feat(spindle-icons): update filter icon
 
 All notable changes to this project will be documented in this file.
