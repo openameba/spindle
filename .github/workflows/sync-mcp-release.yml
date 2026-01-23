@@ -28,10 +28,10 @@ jobs:
         id: check
         run: |
           # spindle-ui/tokensの更新があるか
-          HAS_UI_TOKENS=$(grep -rl "spindle-ui\|spindle-tokens" .changeset/*.md 2>/dev/null && echo "true" || echo "false")
+          HAS_UI_TOKENS=$(grep -rql "spindle-ui\|spindle-tokens" .changeset/*.md 2>/dev/null && echo "true" || echo "false")
 
           # spindle-mcp-serverのchangesetが既にあるか
-          HAS_MCP=$(grep -rl "spindle-mcp-server" .changeset/*.md 2>/dev/null && echo "true" || echo "false")
+          HAS_MCP=$(grep -rql "spindle-mcp-server" .changeset/*.md 2>/dev/null && echo "true" || echo "false")
 
           echo "has_ui_tokens=$HAS_UI_TOKENS" >> $GITHUB_OUTPUT
           echo "has_mcp=$HAS_MCP" >> $GITHUB_OUTPUT
