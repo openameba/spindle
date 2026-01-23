@@ -18,7 +18,9 @@ jobs:
       - run: pnpm install --frozen-lockfile
       # Build all packages except spindle-icons to check if the system works or not
       # spindle-icons is excluded because it requires FIGMA_TOKEN and fetches data from Figma API on every build
+      # Note: pnpm v10.28.1+ has a bug that includes root package when using negation filter (pnpm/pnpm#10485)
+      # Workaround: use positive filter to select packages from ./packages/* then exclude spindle-icons
       - name: build all packages
         run: |
-          pnpm --filter '!@openameba/spindle-icons' -r build
+          pnpm --filter './packages/*' --filter '!@openameba/spindle-icons' -r build
           pnpm build:extensionReplace
