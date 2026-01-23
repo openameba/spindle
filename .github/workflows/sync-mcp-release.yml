@@ -1,0 +1,64 @@
+name: Sync MCP Server Release
+
+on:
+  pull_request:
+    paths:
+      - '.changeset/*.md'
+    types: [opened, synchronize]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref }}
+  cancel-in-progress: true
+
+jobs:
+  sync-mcp-changeset:
+    # Version PRでのみ実行
+    if: startsWith(github.head_ref, 'changeset-release/')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+
+      - name: Check changesets
+        id: check
+        run: |
+          # spindle-ui/tokensの更新があるか
+          HAS_UI_TOKENS=$(grep -rql "spindle-ui\|spindle-tokens" .changeset/*.md 2>/dev/null && echo "true" || echo "false")
+
+          # spindle-mcp-serverのchangesetが既にあるか
+          HAS_MCP=$(grep -rql "spindle-mcp-server" .changeset/*.md 2>/dev/null && echo "true" || echo "false")
+
+          echo "has_ui_tokens=$HAS_UI_TOKENS" >> $GITHUB_OUTPUT
+          echo "has_mcp=$HAS_MCP" >> $GITHUB_OUTPUT
+
+          # 両方の条件をチェック
+          if [[ "$HAS_UI_TOKENS" == "true" && "$HAS_MCP" == "false" ]]; then
+            echo "needs_auto_changeset=true" >> $GITHUB_OUTPUT
+          else
+            echo "needs_auto_changeset=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Generate MCP server changeset
+        if: steps.check.outputs.needs_auto_changeset == 'true'
+        run: |
+          cat > .changeset/auto-mcp-sync-$(date +%s).md << 'EOF'
+          ---
+          "@openameba/spindle-mcp-server": patch
+          ---
+
+          chore(spindle-mcp-server): sync with spindle-ui/spindle-tokens update
+          EOF
+
+      - name: Commit and push
+        if: steps.check.outputs.needs_auto_changeset == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .changeset/
+          git commit -m "chore(spindle-mcp-server): add sync changeset"
+          git push
