@@ -247,8 +247,8 @@ importers:
         specifier: 4.0.0
         version: 4.0.0
       style-dictionary:
-        specifier: 5.1.4
-        version: 5.1.4
+        specifier: 5.2.0
+        version: 5.2.0
       stylelint:
         specifier: 15.11.0
         version: 15.11.0(typescript@5.9.3)
@@ -7863,8 +7863,8 @@ packages:
   stubs@3.0.0:
     resolution: {integrity: sha512-PdHt7hHUJKxvTCgbKX9C1V/ftOcjJQgz8BZwNfV5c4B6dcGqlpelTbJ999jBGZ2jYiPAwcX5dP6oBwVlBlUbxw==}
 
-  style-dictionary@5.1.4:
-    resolution: {integrity: sha512-ig12xIuflWzvIQ+q+WlOynKS7B3+sE6Tj2XUeqtjv8mB+ljcomWJcc8PGcgrbYWXWY1GXw1rBEcsKY31qsmcNQ==}
+  style-dictionary@5.2.0:
+    resolution: {integrity: sha512-9jPX4uVOc+EXFaRFk7kR9+IzvW3Yy0DJTRAqrndvV5rOTAPF+DSDK7q+YKTzCIB2MGjv1KXtKzMcozprZcRfcg==}
     engines: {node: '>=22.0.0'}
     hasBin: true
 
@@ -18034,7 +18034,7 @@ snapshots:
 
   stubs@3.0.0: {}
 
-  style-dictionary@5.1.4:
+  style-dictionary@5.2.0:
     dependencies:
       '@bundled-es-modules/deepmerge': 4.3.1
       '@bundled-es-modules/glob': 11.1.0
