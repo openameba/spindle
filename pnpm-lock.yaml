@@ -210,8 +210,8 @@ importers:
         specifier: 15.3.1
         version: 15.3.1(@cfworker/json-schema@4.1.1)(@swc/core@1.15.8)(@types/node@24.10.9)(encoding@0.1.13)(typescript@5.9.3)
       puppeteer:
-        specifier: 24.35.0
-        version: 24.35.0(typescript@5.9.3)
+        specifier: 24.36.0
+        version: 24.36.0(typescript@5.9.3)
 
   packages/spindle-theme-switch:
     dependencies:
@@ -3100,6 +3100,11 @@ packages:
     peerDependencies:
       devtools-protocol: '*'
 
+  chromium-bidi@13.0.1:
+    resolution: {integrity: sha512-c+RLxH0Vg2x2syS9wPw378oJgiJNXtYXUvnVAldUlt5uaHekn0CCU7gPksNgHjrH1qFhmjVXQj4esvuthuC7OQ==}
+    peerDependencies:
+      devtools-protocol: '*'
+
   ci-env@1.17.0:
     resolution: {integrity: sha512-NtTjhgSEqv4Aj90TUYHQLxHdnCPXnjdtuGG1X8lTfp/JqeXTdw0FTWl/vUAPuvbWZTF8QVpv6ASe/XacE+7R2A==}
 
@@ -3781,6 +3786,9 @@ packages:
 
   devtools-protocol@0.0.1534754:
     resolution: {integrity: sha512-26T91cV5dbOYnXdJi5qQHoTtUoNEqwkHcAyu/IKtjIAxiEqPMrDiRkDOPWVsGfNZGmlQVHQbZRSjD8sxagWVsQ==}
+
+  devtools-protocol@0.0.1551306:
+    resolution: {integrity: sha512-CFx8QdSim8iIv+2ZcEOclBKTQY6BI1IEDa7Tm9YkwAXzEWFndTEzpTo5jAUhSnq24IC7xaDw0wvGcm96+Y3PEg==}
 
   dialog-polyfill@0.5.6:
     resolution: {integrity: sha512-ZbVDJI9uvxPAKze6z146rmfUZjBqNEwcnFTVamQzXH+svluiV7swmVIGr7miwADgfgt1G2JQIytypM9fbyhX4w==}
@@ -7073,8 +7081,12 @@ packages:
     resolution: {integrity: sha512-vt1zc2ME0kHBn7ZDOqLvgvrYD5bqNv5y2ZNXzYnCv8DEtZGw/zKhljlrGuImxptZ4rq+QI9dFGrUIYqG4/IQzA==}
     engines: {node: '>=18'}
 
-  puppeteer@24.35.0:
-    resolution: {integrity: sha512-sbjB5JnJ+3nwgSdRM/bqkFXqLxRz/vsz0GRIeTlCk+j+fGpqaF2dId9Qp25rXz9zfhqnN9s0krek1M/C2GDKtA==}
+  puppeteer-core@24.36.0:
+    resolution: {integrity: sha512-P3Ou0MAFDCQ0dK1d9F9+8jTrg6JvXjUacgG0YkJQP4kbEnUOGokSDEMmMId5ZhXD5HwsHM202E9VwEpEjWfwxg==}
+    engines: {node: '>=18'}
+
+  puppeteer@24.36.0:
+    resolution: {integrity: sha512-BD/VCyV/Uezvd6o7Fd1DmEJSxTzofAKplzDy6T9d4WbLTQ5A+06zY7VwO91ZlNU22vYE8sidVEsTpTrKc+EEnQ==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -8741,6 +8753,9 @@ packages:
 
   webdriver-bidi-protocol@0.3.10:
     resolution: {integrity: sha512-5LAE43jAVLOhB/QqX4bwSiv0Hg1HBfMmOuwBSXHdvg4GMGu9Y0lIq7p4R/yySu6w74WmaR4GM4H9t2IwLW7hgw==}
+
+  webdriver-bidi-protocol@0.4.0:
+    resolution: {integrity: sha512-U9VIlNRrq94d1xxR9JrCEAx5Gv/2W7ERSv8oWRoNe/QYbfccS0V3h/H6qeNeCRJxXGMhhnkqvwNrvPAYeuP9VA==}
 
   webidl-conversions@3.0.1:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
@@ -12410,6 +12425,12 @@ snapshots:
       mitt: 3.0.1
       zod: 3.25.76
 
+  chromium-bidi@13.0.1(devtools-protocol@0.0.1551306):
+    dependencies:
+      devtools-protocol: 0.0.1551306
+      mitt: 3.0.1
+      zod: 3.25.76
+
   ci-env@1.17.0: {}
 
   ci-info@2.0.0: {}
@@ -13096,6 +13117,8 @@ snapshots:
   devtools-protocol@0.0.1467305: {}
 
   devtools-protocol@0.0.1534754: {}
+
+  devtools-protocol@0.0.1551306: {}
 
   dialog-polyfill@0.5.6: {}
 
@@ -16952,13 +16975,30 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  puppeteer@24.35.0(typescript@5.9.3):
+  puppeteer-core@24.36.0:
     dependencies:
       '@puppeteer/browsers': 2.11.1
-      chromium-bidi: 12.0.1(devtools-protocol@0.0.1534754)
+      chromium-bidi: 13.0.1(devtools-protocol@0.0.1551306)
+      debug: 4.4.3
+      devtools-protocol: 0.0.1551306
+      typed-query-selector: 2.12.0
+      webdriver-bidi-protocol: 0.4.0
+      ws: 8.19.0
+    transitivePeerDependencies:
+      - bare-abort-controller
+      - bare-buffer
+      - bufferutil
+      - react-native-b4a
+      - supports-color
+      - utf-8-validate
+
+  puppeteer@24.36.0(typescript@5.9.3):
+    dependencies:
+      '@puppeteer/browsers': 2.11.1
+      chromium-bidi: 13.0.1(devtools-protocol@0.0.1551306)
       cosmiconfig: 9.0.0(typescript@5.9.3)
-      devtools-protocol: 0.0.1534754
-      puppeteer-core: 24.35.0
+      devtools-protocol: 0.0.1551306
+      puppeteer-core: 24.36.0
       typed-query-selector: 2.12.0
     transitivePeerDependencies:
       - bare-abort-controller
@@ -19220,6 +19260,8 @@ snapshots:
   web-streams-polyfill@3.3.3: {}
 
   webdriver-bidi-protocol@0.3.10: {}
+
+  webdriver-bidi-protocol@0.4.0: {}
 
   webidl-conversions@3.0.1: {}
 
