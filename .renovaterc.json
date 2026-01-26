@@ -8,5 +8,13 @@
   ],
   "reviewers": [
     "team:spindle-working-group"
+  ],
+  "packageRules": [
+    {
+      "groupName": "stylelint packages",
+      "matchPackagePatterns": [
+        "^stylelint"
+      ]
+    }
   ]
 }
