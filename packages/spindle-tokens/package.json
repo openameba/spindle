@@ -42,7 +42,7 @@
     "make-dir": "4.0.0",
     "style-dictionary": "5.2.0",
     "stylelint": "15.11.0",
-    "stylelint-config-standard": "34.0.0",
+    "stylelint-config-standard": "36.0.1",
     "tsx": "4.21.0",
     "vitest": "4.0.18"
   }
