@@ -41,7 +41,7 @@
     "lodash.setwith": "4.3.2",
     "make-dir": "4.0.0",
     "style-dictionary": "5.2.0",
-    "stylelint": "15.11.0",
+    "stylelint": "17.0.0",
     "stylelint-config-standard": "34.0.0",
     "tsx": "4.21.0",
     "vitest": "4.0.18"
