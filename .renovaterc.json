@@ -7,6 +7,9 @@
     "local>openameba/renovate-config:automerge-minor.json5"
   ],
   "reviewers": ["team:spindle-working-group"],
+  "allowScripts": true,
+  "ignoreScripts": false,
+  "postUpdateOptions": ["pnpmDedupe"],
   "packageRules": [
     {
       "groupName": "stylelint packages",
