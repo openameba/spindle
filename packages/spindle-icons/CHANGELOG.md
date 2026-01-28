@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.3.0
+
+### Minor Changes
+
+- [#1813](https://github.com/openameba/spindle/pull/1813) [`31a6dde`](https://github.com/openameba/spindle/commit/31a6ddef2ee7f6271235e672d60c71480f9d5d9e) Thanks [@github-actions](https://github.com/apps/github-actions)! - Add new icons (arrowwaveup, arrowwaveup_bold, arrowwaveup_rectangle, arrowwaveup_rectangle_fill)
+
 ## 2.2.3
 
 ### Patch Changes
