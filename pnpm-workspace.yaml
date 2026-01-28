@@ -4,6 +4,8 @@ packages:
 peerDependencyRules:
   ignoreMissing:
     - hono
+  allowedVersions:
+    stylelint-selector-bem-pattern>stylelint: '17'
 
 overrides:
   superstatic: 10.0.0
