@@ -43,6 +43,10 @@
 | arrowpaging_right_circle | ![](../dist/svg/arrowpaging_right_circle.svg) |
 | arrowpaging_up | ![](../dist/svg/arrowpaging_up.svg) |
 | arrowpaging_up_circle | ![](../dist/svg/arrowpaging_up_circle.svg) |
+| arrowwaveup | ![](../dist/svg/arrowwaveup.svg) |
+| arrowwaveup_bold | ![](../dist/svg/arrowwaveup_bold.svg) |
+| arrowwaveup_rectangle | ![](../dist/svg/arrowwaveup_rectangle.svg) |
+| arrowwaveup_rectangle_fill | ![](../dist/svg/arrowwaveup_rectangle_fill.svg) |
 | article | ![](../dist/svg/article.svg) |
 | article_slash | ![](../dist/svg/article_slash.svg) |
 | articledesign | ![](../dist/svg/articledesign.svg) |
