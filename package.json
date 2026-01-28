@@ -16,7 +16,7 @@
     "fix": "run-p fix:*",
     "fix:code": "biome check --write",
     "fix:css": "stylelint '**/*.css' --fix",
-    "fix:packages": "pnpm -r --parallel format",
+    "fix:packages": "pnpm -r --parallel --if-present format",
     "fix:text": "textlint --fix .",
     "bootstrap": "pnpm install",
     "build": "run-s build:*",
