@@ -42,6 +42,10 @@ import {
   ArrowUp,
   ArrowUpBold,
   ArrowUpdown,
+  Arrowwaveup,
+  ArrowwaveupBold,
+  ArrowwaveupRectangle,
+  ArrowwaveupRectangleFill,
   Article,
   Articledesign,
   ArticleSlash,
@@ -352,8 +356,6 @@ import {
   TranscriptOn,
   Transmission,
   Trashcan,
-  Trend,
-  TrendFill,
   TrianglearrowDown,
   TrianglearrowDownright,
   TrianglearrowRight,
@@ -1777,16 +1779,6 @@ figma.connect(
   { imports: ["import { Trashcan } from '@openameba/spindle-ui/Icon';"] },
 );
 figma.connect(
-  Trend,
-  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=3229-1691',
-  { imports: ["import { Trend } from '@openameba/spindle-ui/Icon';"] },
-);
-figma.connect(
-  TrendFill,
-  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=3226-9',
-  { imports: ["import { TrendFill } from '@openameba/spindle-ui/Icon';"] },
-);
-figma.connect(
   TriangleDown,
   'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4299-205',
   { imports: ["import { TriangleDown } from '@openameba/spindle-ui/Icon';"] },
@@ -2474,4 +2466,34 @@ figma.connect(
   FilterSearch,
   'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=14224-4838',
   { imports: ["import { FilterSearch } from '@openameba/spindle-ui/Icon';"] },
+);
+figma.connect(
+  ArrowwaveupRectangle,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=14546-565',
+  {
+    imports: [
+      "import { ArrowwaveupRectangle } from '@openameba/spindle-ui/Icon';",
+    ],
+  },
+);
+figma.connect(
+  ArrowwaveupRectangleFill,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=14546-566',
+  {
+    imports: [
+      "import { ArrowwaveupRectangleFill } from '@openameba/spindle-ui/Icon';",
+    ],
+  },
+);
+figma.connect(
+  ArrowwaveupBold,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=14546-568',
+  {
+    imports: ["import { ArrowwaveupBold } from '@openameba/spindle-ui/Icon';"],
+  },
+);
+figma.connect(
+  Arrowwaveup,
+  'https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=14546-567',
+  { imports: ["import { Arrowwaveup } from '@openameba/spindle-ui/Icon';"] },
 );

@@ -1,0 +1,16 @@
+import type { SVGProps } from 'react';
+import * as React from 'react';
+
+const SvgArrowwaveupBold = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    width="1em"
+    height="1em"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    role="img"
+    {...props}
+  >
+    <path d="M20.43 6.5h-4.87c-.43 0-.82.26-.98.66-.17.4-.08.86.23 1.16l1.37 1.37-3.44 3.44-2.23-2.23c-.97-.97-2.56-.97-3.54 0l-4.04 4.04a1.49 1.49 0 0 0 0 2.12c.29.29.68.44 1.06.44s.77-.15 1.06-.44l3.69-3.69 2.23 2.23c.97.97 2.56.97 3.54 0l3.79-3.79 1.37 1.37c.21.2.48.31.75.31a1.065 1.065 0 0 0 1.07-1.06V7.56c0-.59-.48-1.07-1.07-1.07z" />
+  </svg>
+);
+export default SvgArrowwaveupBold;
