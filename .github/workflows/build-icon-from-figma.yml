@@ -3,15 +3,6 @@ name: build icon from Figma
 on:
   workflow_dispatch:
     inputs:
-      fileKey:
-        description: Figma file key
-        type: string
-        required: true
-      page:
-        description: Stringified selected page (id, name)
-        type: string
-        default: '{}'
-        required: true
       selection:
         description: Stringified array of the selected nodes (id, name)
         type: string
