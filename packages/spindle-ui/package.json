@@ -76,7 +76,7 @@
     "@testing-library/jest-dom": "6.9.1",
     "@testing-library/react": "16.3.2",
     "@testing-library/user-event": "14.6.1",
-    "@types/react": "19.2.9",
+    "@types/react": "19.2.10",
     "@vitest/ui": "4.0.18",
     "@vscode/web-custom-data": "0.6.2",
     "autoprefixer": "10.4.23",
