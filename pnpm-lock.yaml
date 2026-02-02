@@ -207,8 +207,8 @@ importers:
         specifier: 4.0.2
         version: 4.0.2
       firebase-tools:
-        specifier: 15.4.0
-        version: 15.4.0(@cfworker/json-schema@4.1.1)(@swc/core@1.15.11)(@types/node@24.10.9)(encoding@0.1.13)(typescript@5.9.3)
+        specifier: 15.5.1
+        version: 15.5.1(@cfworker/json-schema@4.1.1)(@swc/core@1.15.11)(@types/node@24.10.9)(encoding@0.1.13)(typescript@5.9.3)
       puppeteer:
         specifier: 24.36.1
         version: 24.36.1(typescript@5.9.3)
@@ -220,8 +220,8 @@ importers:
         version: 0.18.0
     devDependencies:
       firebase-tools:
-        specifier: 15.4.0
-        version: 15.4.0(@cfworker/json-schema@4.1.1)(@swc/core@1.15.11)(@types/node@24.10.9)(encoding@0.1.13)(typescript@5.9.3)
+        specifier: 15.5.1
+        version: 15.5.1(@cfworker/json-schema@4.1.1)(@swc/core@1.15.11)(@types/node@24.10.9)(encoding@0.1.13)(typescript@5.9.3)
 
   packages/spindle-tokens:
     devDependencies:
@@ -335,8 +335,8 @@ importers:
         specifier: 1.12.0
         version: 1.12.0
       firebase-tools:
-        specifier: 15.4.0
-        version: 15.4.0(@cfworker/json-schema@4.1.1)(@swc/core@1.15.11)(@types/node@24.10.9)(encoding@0.1.13)(typescript@5.9.3)
+        specifier: 15.5.1
+        version: 15.5.1(@cfworker/json-schema@4.1.1)(@swc/core@1.15.11)(@types/node@24.10.9)(encoding@0.1.13)(typescript@5.9.3)
       jsdom:
         specifier: 27.4.0
         version: 27.4.0
@@ -2671,6 +2671,11 @@ packages:
 
   ajv-formats@2.1.1:
     resolution: {integrity: sha512-Wx0Kx52hxE7C18hkMEggYlEifqWZtYaRgouJor+WMdPnQyEK13vgEWyVNup7SoeeoLMsr4kf5h6dOW11I15MUA==}
+    peerDependencies:
+      ajv: ^8.0.0
+    peerDependenciesMeta:
+      ajv:
+        optional: true
 
   ajv-formats@3.0.1:
     resolution: {integrity: sha512-8iUql50EUR+uUcdRQ3HDqa6EVyo3docL8g5WJ3FNcWmu62IbkGUue/pEyLBW8VGKKucTPgqeks4fIU1DA4yowQ==}
@@ -4403,8 +4408,8 @@ packages:
     resolution: {integrity: sha512-YyZM99iHrqLKjmt4LJDj58KI+fYyufRLBSYcqycxf//KpBk9FoewoGX0450m9nB44qrZnovzC2oeP5hUibxc/g==}
     engines: {node: '>=18'}
 
-  firebase-tools@15.4.0:
-    resolution: {integrity: sha512-1AFDFy9j0Q9IV7TrSrhhranZZQ2kw39NXpTbGtOhV/Z2leeFoKI9dMQ2ps5UByVWChcZgcoO76qXE6yLohjOvg==}
+  firebase-tools@15.5.1:
+    resolution: {integrity: sha512-9O05782lt45YTLsaV3IvVKop99Ah3BEFDiBHfzvZfFgPMS2liwIhpcbaNboYjDbhE6poyIRUlaAv1pSqNWvf0w==}
     engines: {node: '>=20.0.0 || >=22.0.0 || >=24.0.0'}
     hasBin: true
 
@@ -12059,8 +12064,8 @@ snapshots:
 
   agent-base@7.1.4: {}
 
-  ajv-formats@2.1.1:
-    dependencies:
+  ajv-formats@2.1.1(ajv@8.17.1):
+    optionalDependencies:
       ajv: 8.17.1
 
   ajv-formats@3.0.1:
@@ -13720,7 +13725,7 @@ snapshots:
     dependencies:
       '@apidevtools/json-schema-ref-parser': 9.1.2
       ajv: 8.17.1
-      ajv-formats: 2.1.1
+      ajv-formats: 2.1.1(ajv@8.17.1)
       body-parser: 1.20.4
       content-type: 1.0.5
       deep-freeze: 0.0.1
@@ -14012,7 +14017,7 @@ snapshots:
       path-exists: 5.0.0
       unicorn-magic: 0.1.0
 
-  firebase-tools@15.4.0(@cfworker/json-schema@4.1.1)(@swc/core@1.15.11)(@types/node@24.10.9)(encoding@0.1.13)(typescript@5.9.3):
+  firebase-tools@15.5.1(@cfworker/json-schema@4.1.1)(@swc/core@1.15.11)(@types/node@24.10.9)(encoding@0.1.13)(typescript@5.9.3):
     dependencies:
       '@apphosting/build': 0.1.7(@swc/core@1.15.11)(@types/node@24.10.9)(typescript@5.9.3)
       '@apphosting/common': 0.0.8
@@ -17869,7 +17874,7 @@ snapshots:
     dependencies:
       '@types/json-schema': 7.0.15
       ajv: 8.17.1
-      ajv-formats: 2.1.1
+      ajv-formats: 2.1.1(ajv@8.17.1)
       ajv-keywords: 5.1.0(ajv@8.17.1)
 
   secure-keys@1.0.0: {}
@@ -18203,7 +18208,7 @@ snapshots:
 
   string-length@6.0.0:
     dependencies:
-      strip-ansi: 7.1.0
+      strip-ansi: 7.1.2
 
   string-width@2.1.1:
     dependencies:
@@ -18226,7 +18231,7 @@ snapshots:
     dependencies:
       emoji-regex: 10.6.0
       get-east-asian-width: 1.4.0
-      strip-ansi: 7.1.0
+      strip-ansi: 7.1.2
 
   string-width@8.1.1:
     dependencies:
