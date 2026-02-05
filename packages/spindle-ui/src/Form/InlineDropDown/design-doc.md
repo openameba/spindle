@@ -14,9 +14,9 @@ InlineDropDownは試験的なコンポーネントであるため、破壊的な
 
 ### DO
 
-ラベルを`aria-label`で設定し、`select`要素のサイズに応じて`visualSize`を選択してください。
-
 余白を含めてタップターゲットが44px以上になるよう配置してください。
+
+ラベルを`aria-label`で設定し、`select`要素のサイズに応じて`visualSize`を選択してください。
 
 ```tsx
 <InlineDropDown aria-label="期間を選択" name="term">
