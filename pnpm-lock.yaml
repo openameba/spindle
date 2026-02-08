@@ -202,7 +202,7 @@ importers:
     devDependencies:
       '@lhci/cli':
         specifier: 0.15.1
-        version: 0.15.1(encoding@0.1.13)
+        version: 0.15.1(encoding@0.1.13)(typescript@5.9.3)
       csso-cli:
         specifier: 4.0.2
         version: 4.0.2
@@ -210,8 +210,8 @@ importers:
         specifier: 15.5.1
         version: 15.5.1(@cfworker/json-schema@4.1.1)(@swc/core@1.15.11)(@types/node@24.10.11)(encoding@0.1.13)(typescript@5.9.3)
       puppeteer:
-        specifier: 24.37.0
-        version: 24.37.0(typescript@5.9.3)
+        specifier: 24.37.1
+        version: 24.37.1(typescript@5.9.3)
 
   packages/spindle-theme-switch:
     dependencies:
@@ -1698,11 +1698,6 @@ packages:
 
   '@protobufjs/utf8@1.1.0':
     resolution: {integrity: sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==}
-
-  '@puppeteer/browsers@2.11.2':
-    resolution: {integrity: sha512-GBY0+2lI9fDrjgb5dFL9+enKXqyOPok9PXg/69NVkjW3bikbK9RQrNrI3qccQXmDNN7ln4j/yL89Qgvj/tfqrw==}
-    engines: {node: '>=18'}
-    hasBin: true
 
   '@puppeteer/browsers@2.12.0':
     resolution: {integrity: sha512-Xuq42yxcQJ54ti8ZHNzF5snFvtpgXzNToJ1bXUGQRaiO8t+B6UM8sTUJfvV+AJnqtkJU/7hdy6nbKyA12aHtRw==}
@@ -3202,13 +3197,13 @@ packages:
     resolution: {integrity: sha512-rNjApaLzuwaOTjCiT8lSDdGN1APCiqkChLMJxJPWLunPAt5fy8xgU9/jNOchV84wfIxrA0lRQB7oCT8jrn/wrQ==}
     engines: {node: '>=6.0'}
 
-  chromium-bidi@13.0.1:
-    resolution: {integrity: sha512-c+RLxH0Vg2x2syS9wPw378oJgiJNXtYXUvnVAldUlt5uaHekn0CCU7gPksNgHjrH1qFhmjVXQj4esvuthuC7OQ==}
+  chromium-bidi@13.1.0:
+    resolution: {integrity: sha512-IdGNojX6S04+wgJOALzvkkIyLelhEGqI8xSctwiYJJGSi9T2eBjwAQW2UjBD/mCXv/rUkNlH2+h7jz+58vT74A==}
     peerDependencies:
       devtools-protocol: '*'
 
-  chromium-bidi@13.1.0:
-    resolution: {integrity: sha512-IdGNojX6S04+wgJOALzvkkIyLelhEGqI8xSctwiYJJGSi9T2eBjwAQW2UjBD/mCXv/rUkNlH2+h7jz+58vT74A==}
+  chromium-bidi@13.1.1:
+    resolution: {integrity: sha512-zB9MpoPd7VJwjowQqiW3FKOvQwffFMjQ8Iejp5ZW+sJaKLRhZX1sTxzl3Zt22TDB4zP0OOqs8lRoY7eAW5geyQ==}
     peerDependencies:
       devtools-protocol: '*'
 
@@ -3890,9 +3885,6 @@ packages:
 
   devtools-protocol@0.0.1467305:
     resolution: {integrity: sha512-LxwMLqBoPPGpMdRL4NkLFRNy3QLp6Uqa7GNp1v6JaBheop2QrB9Q7q0A/q/CYYP9sBfZdHOyszVx4gc9zyk7ow==}
-
-  devtools-protocol@0.0.1551306:
-    resolution: {integrity: sha512-CFx8QdSim8iIv+2ZcEOclBKTQY6BI1IEDa7Tm9YkwAXzEWFndTEzpTo5jAUhSnq24IC7xaDw0wvGcm96+Y3PEg==}
 
   devtools-protocol@0.0.1566079:
     resolution: {integrity: sha512-MJfAEA1UfVhSs7fbSQOG4czavUp1ajfg6prlAN0+cmfa2zNjaIbvq8VneP7do1WAQQIvgNJWSMeP6UyI90gIlQ==}
@@ -7175,16 +7167,16 @@ packages:
     resolution: {integrity: sha512-LjgDO2zPtoXP2wJpDjZrGdojii1uqO0cnwKoIoUzkfS98HDmbeiGmYiXo3lXeFlq2xvne1QFQhwYXSUCLKtEuA==}
     engines: {node: '>=12.20'}
 
-  puppeteer-core@24.36.1:
-    resolution: {integrity: sha512-L7ykMWc3lQf3HS7ME3PSjp7wMIjJeW6+bKfH/RSTz5l6VUDGubnrC2BKj3UvM28Y5PMDFW0xniJOZHBZPpW1dQ==}
-    engines: {node: '>=18'}
-
   puppeteer-core@24.37.0:
     resolution: {integrity: sha512-WoCBK36cBlbaxwuvPWhOp2+lR6O6ynHdDuvD8rEIkxPOPpUoMXSJuyiOWhHtexJBCLaMCAJk33QdYambvQl+og==}
     engines: {node: '>=18'}
 
-  puppeteer@24.37.0:
-    resolution: {integrity: sha512-s1jHugVhPtQjiJE6wUyonj4VEGWF+mfRDASqPMPsXgKcjZX0GaznBmcT9nLQ7bBL90phuQUqO4jiV5vTecZg4g==}
+  puppeteer-core@24.37.1:
+    resolution: {integrity: sha512-ylRJReaA6kd/CrahdrxxnSZf5S2hf1QR0S39QeoS55fuBoOl4UggGPW94zheu9lmCokpRQpa7q8r98xYyiQl0Q==}
+    engines: {node: '>=18'}
+
+  puppeteer@24.37.1:
+    resolution: {integrity: sha512-iugAcwjRIX6XsMS1dzWbjKKUcEE0ZmmRbV0T6RyTtXNSHyBdss0r9GYJ9eOjUZfOoWeKCIOAptogdHYoBbJDeA==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -10527,16 +10519,16 @@ snapshots:
 
   '@kvs/types@2.2.2': {}
 
-  '@lhci/cli@0.15.1(encoding@0.1.13)':
+  '@lhci/cli@0.15.1(encoding@0.1.13)(typescript@5.9.3)':
     dependencies:
-      '@lhci/utils': 0.15.1(encoding@0.1.13)
+      '@lhci/utils': 0.15.1(encoding@0.1.13)(typescript@5.9.3)
       chrome-launcher: 0.13.4
       compression: 1.8.1
       debug: 4.4.3
       express: 4.22.1
       inquirer: 6.5.2
       isomorphic-fetch: 3.0.0(encoding@0.1.13)
-      lighthouse: 12.6.1
+      lighthouse: 12.6.1(typescript@5.9.3)
       lighthouse-logger: 1.2.0
       open: 7.4.2
       proxy-agent: 6.5.0
@@ -10551,14 +10543,15 @@ snapshots:
       - encoding
       - react-native-b4a
       - supports-color
+      - typescript
       - utf-8-validate
 
-  '@lhci/utils@0.15.1(encoding@0.1.13)':
+  '@lhci/utils@0.15.1(encoding@0.1.13)(typescript@5.9.3)':
     dependencies:
       debug: 4.4.3
       isomorphic-fetch: 3.0.0(encoding@0.1.13)
       js-yaml: 3.14.2
-      lighthouse: 12.6.1
+      lighthouse: 12.6.1(typescript@5.9.3)
       tree-kill: 1.2.2
     transitivePeerDependencies:
       - bare-abort-controller
@@ -10567,6 +10560,7 @@ snapshots:
       - encoding
       - react-native-b4a
       - supports-color
+      - typescript
       - utf-8-validate
 
   '@manypkg/find-root@1.1.0':
@@ -10822,21 +10816,6 @@ snapshots:
   '@protobufjs/pool@1.1.0': {}
 
   '@protobufjs/utf8@1.1.0': {}
-
-  '@puppeteer/browsers@2.11.2':
-    dependencies:
-      debug: 4.4.3
-      extract-zip: 2.0.1
-      progress: 2.0.3
-      proxy-agent: 6.5.0
-      semver: 7.7.3
-      tar-fs: 3.1.1
-      yargs: 17.7.2
-    transitivePeerDependencies:
-      - bare-abort-controller
-      - bare-buffer
-      - react-native-b4a
-      - supports-color
 
   '@puppeteer/browsers@2.12.0':
     dependencies:
@@ -12649,17 +12628,11 @@ snapshots:
 
   chrome-trace-event@1.0.4: {}
 
-  chromium-bidi@13.0.1(devtools-protocol@0.0.1551306):
-    dependencies:
-      devtools-protocol: 0.0.1551306
-      mitt: 3.0.1
-      zod: 3.25.76
-
   chromium-bidi@13.1.0(devtools-protocol@0.0.1566079)(typescript@5.9.3):
     dependencies:
       devtools-protocol: 0.0.1566079
       mitt: 3.0.1
-      puppeteer: 24.37.0(typescript@5.9.3)
+      puppeteer: 24.37.1(typescript@5.9.3)
       zod: 3.25.76
     transitivePeerDependencies:
       - bare-abort-controller
@@ -12669,6 +12642,12 @@ snapshots:
       - supports-color
       - typescript
       - utf-8-validate
+
+  chromium-bidi@13.1.1(devtools-protocol@0.0.1566079):
+    dependencies:
+      devtools-protocol: 0.0.1566079
+      mitt: 3.0.1
+      zod: 3.25.76
 
   ci-env@1.17.0: {}
 
@@ -13351,8 +13330,6 @@ snapshots:
   detect-indent@6.1.0: {}
 
   devtools-protocol@0.0.1467305: {}
-
-  devtools-protocol@0.0.1551306: {}
 
   devtools-protocol@0.0.1566079: {}
 
@@ -15438,7 +15415,7 @@ snapshots:
 
   lighthouse-stack-packs@1.12.2: {}
 
-  lighthouse@12.6.1:
+  lighthouse@12.6.1(typescript@5.9.3):
     dependencies:
       '@paulirish/trace_engine': 0.0.53
       '@sentry/node': 7.120.4
@@ -15459,7 +15436,7 @@ snapshots:
       metaviewport-parser: 0.3.0
       open: 8.4.2
       parse-cache-control: 1.0.1
-      puppeteer-core: 24.36.1
+      puppeteer-core: 24.37.0(typescript@5.9.3)
       robots-parser: 3.0.1
       semver: 7.7.3
       speedline-core: 1.4.3
@@ -15474,6 +15451,7 @@ snapshots:
       - bufferutil
       - react-native-b4a
       - supports-color
+      - typescript
       - utf-8-validate
 
   lilconfig@3.1.3: {}
@@ -17193,24 +17171,7 @@ snapshots:
     dependencies:
       escape-goat: 4.0.0
 
-  puppeteer-core@24.36.1:
-    dependencies:
-      '@puppeteer/browsers': 2.11.2
-      chromium-bidi: 13.0.1(devtools-protocol@0.0.1551306)
-      debug: 4.4.3
-      devtools-protocol: 0.0.1551306
-      typed-query-selector: 2.12.0
-      webdriver-bidi-protocol: 0.4.0
-      ws: 8.19.0
-    transitivePeerDependencies:
-      - bare-abort-controller
-      - bare-buffer
-      - bufferutil
-      - react-native-b4a
-      - supports-color
-      - utf-8-validate
-
-  puppeteer-core@24.37.0:
+  puppeteer-core@24.37.0(typescript@5.9.3):
     dependencies:
       '@puppeteer/browsers': 2.12.0
       chromium-bidi: 13.1.0(devtools-protocol@0.0.1566079)(typescript@5.9.3)
@@ -17225,15 +17186,33 @@ snapshots:
       - bufferutil
       - react-native-b4a
       - supports-color
+      - typescript
       - utf-8-validate
 
-  puppeteer@24.37.0(typescript@5.9.3):
+  puppeteer-core@24.37.1:
     dependencies:
       '@puppeteer/browsers': 2.12.0
-      chromium-bidi: 13.1.0(devtools-protocol@0.0.1566079)(typescript@5.9.3)
+      chromium-bidi: 13.1.1(devtools-protocol@0.0.1566079)
+      debug: 4.4.3
+      devtools-protocol: 0.0.1566079
+      typed-query-selector: 2.12.0
+      webdriver-bidi-protocol: 0.4.0
+      ws: 8.19.0
+    transitivePeerDependencies:
+      - bare-abort-controller
+      - bare-buffer
+      - bufferutil
+      - react-native-b4a
+      - supports-color
+      - utf-8-validate
+
+  puppeteer@24.37.1(typescript@5.9.3):
+    dependencies:
+      '@puppeteer/browsers': 2.12.0
+      chromium-bidi: 13.1.1(devtools-protocol@0.0.1566079)
       cosmiconfig: 9.0.0(typescript@5.9.3)
       devtools-protocol: 0.0.1566079
-      puppeteer-core: 24.37.0
+      puppeteer-core: 24.37.1
       typed-query-selector: 2.12.0
     transitivePeerDependencies:
       - bare-abort-controller
