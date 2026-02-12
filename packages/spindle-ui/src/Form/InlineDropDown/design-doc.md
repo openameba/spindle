@@ -29,11 +29,11 @@ InlineDropDownは試験的なコンポーネントであるため、破壊的な
 #### 小サイズで使う場合
 
 ```tsx
-  <InlineDropDown visualSize="small" aria-label="期間を選択" name="term">
-    <option value="today">今日</option>
-    <option value="seven_days">7日間</option>
-    <option value="thirty_days">30日間</option>
-  </InlineDropDown>
+<InlineDropDown visualSize="small" aria-label="期間を選択" name="term">
+  <option value="today">今日</option>
+  <option value="seven_days">7日間</option>
+  <option value="thirty_days">30日間</option>
+</InlineDropDown>
 ```
 
 ### DO NOT
@@ -60,8 +60,10 @@ InlineDropDownは試験的なコンポーネントであるため、破壊的な
 ### プロパティ
 
 ```ts
-interface Props
-  extends Omit<React.SelectHTMLAttributes<HTMLSelectElement>, 'className'> {
+interface Props extends Omit<
+  React.SelectHTMLAttributes<HTMLSelectElement>,
+  'className'
+> {
   children?: React.ReactNode;
   visualSize?: 'medium' | 'small';
   onChange?: React.ChangeEventHandler<HTMLSelectElement>;
@@ -87,10 +89,19 @@ React実装の一例です。`aria-label`によるラベリングを行うシン
 ```html
 <label class="spui-InlineDropDown-label">
   <span class="spui-InlineDropDown-visual">
-    <span class="spui-InlineDropDown-text spui-InlineDropDown-text--medium">今日</span>
-    <span class="spui-InlineDropDown-icon spui-InlineDropDown-icon--medium"><svg aria-hidden="true"></svg></span>
+    <span class="spui-InlineDropDown-text spui-InlineDropDown-text--medium"
+      >今日</span
+    >
+    <span class="spui-InlineDropDown-icon spui-InlineDropDown-icon--medium"
+      ><svg aria-hidden="true"></svg
+    ></span>
   </span>
-  <select class="spui-InlineDropDown-select spui-InlineDropDown-select--medium" aria-label="期間を選択" name="term" placeholder="期間を選択">
+  <select
+    class="spui-InlineDropDown-select spui-InlineDropDown-select--medium"
+    aria-label="期間を選択"
+    name="term"
+    placeholder="期間を選択"
+  >
     <option value="today">今日</option>
     <option value="seven_days">7日間</option>
     <option value="thirty_days">30日間</option>
@@ -102,7 +113,7 @@ React実装の一例です。`aria-label`によるラベリングを行うシン
 ## アクセシビリティ
 
 - [情報や関係性を明確にする](https://a11y-guidelines.ameba.design/1/3/1/)[基本必須]
-  - [ ] `aria-label`属性を設定し、適切なラベリングを行っている
+  - [ ] ラベル要素と紐づける、または `aria-label`属性を設定し、適切なラベリングを行っている
 - [テキストや文字画像のコントラストを確保する](https://a11y-guidelines.ameba.design/1/4/3/)[基本必須]
   - [ ] SpindleカラーパレットのTheme Colorsを適切に使い分けている
 - [テキストサイズを拡大縮小できる](https://a11y-guidelines.ameba.design/1/4/4/)[基本必須]
