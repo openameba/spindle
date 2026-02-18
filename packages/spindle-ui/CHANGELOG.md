@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.2.1
+
+### Patch Changes
+
+- [#1870](https://github.com/openameba/spindle/pull/1870) [`0ab8d05`](https://github.com/openameba/spindle/commit/0ab8d058786714257d46880aedafc2d272ff3ffd) Thanks [@yu-3in](https://github.com/yu-3in)! - UnderlineTab scrollbar now only appears when needed
+
 ## 3.2.0
 
 ### Minor Changes
