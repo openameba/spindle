@@ -17,7 +17,7 @@
 
 .spui-UnderlineTab--scrollable .spui-UnderlineTab-container {
   column-gap: 16px;
-  overflow-x: scroll;
+  overflow-x: auto;
   padding: 0 16px;
   scroll-behavior: smooth;
 }
