@@ -247,8 +247,8 @@ importers:
         specifier: 4.0.0
         version: 4.0.0
       style-dictionary:
-        specifier: 5.3.0
-        version: 5.3.0
+        specifier: 5.3.1
+        version: 5.3.1
       stylelint:
         specifier: 15.11.0
         version: 15.11.0(typescript@5.9.3)
@@ -676,8 +676,8 @@ packages:
   '@bundled-es-modules/deepmerge@4.3.1':
     resolution: {integrity: sha512-Rk453EklPUPC3NRWc3VUNI/SSUjdBaFoaQvFRmNBNtMHVtOFD5AntiWg5kEE1hqcPqedYFDzxE3ZcMYPcA195w==}
 
-  '@bundled-es-modules/glob@13.0.1':
-    resolution: {integrity: sha512-4YwdXZ7ME9OetSAczXC9khFET03n50xQuIDd6og95UgeByhZRi8drP5Q8DHG2XIT6oo6RvrshSG+DnVolO1d1Q==}
+  '@bundled-es-modules/glob@13.0.3':
+    resolution: {integrity: sha512-eFev/9WFIhDf7XWwDQut7SOjFacVD3kYrkP6OXQBhmU/S/YmPEM/E3p3Mc1xCjSwIhmoMkM+9wnvqqd5ctsB9g==}
 
   '@bundled-es-modules/memfs@4.17.0':
     resolution: {integrity: sha512-ykdrkEmQr9BV804yd37ikXfNnvxrwYfY9Z2/EtMHFEFadEjsQXJ1zL9bVZrKNLDtm91UdUOEHso6Aweg93K6xQ==}
@@ -8008,8 +8008,8 @@ packages:
   stubs@3.0.0:
     resolution: {integrity: sha512-PdHt7hHUJKxvTCgbKX9C1V/ftOcjJQgz8BZwNfV5c4B6dcGqlpelTbJ999jBGZ2jYiPAwcX5dP6oBwVlBlUbxw==}
 
-  style-dictionary@5.3.0:
-    resolution: {integrity: sha512-nl2HzXL2tqFIFRL+CAVKPu/erQ9N6m7yNYcYF1K3BywTYa38ZuKLYa1Wy2O++Pojo8XOaFD6t8wq5Y0au81vIg==}
+  style-dictionary@5.3.1:
+    resolution: {integrity: sha512-JERfy+PNhIaG+EUSHyeznruSaaQpfHZO6kcxRYGPh3HZ3zNKiOJxp3tL4liQCzLTUBwf1geofMjQlVADR26vXA==}
     engines: {node: '>=22.0.0'}
     hasBin: true
 
@@ -9605,7 +9605,7 @@ snapshots:
     dependencies:
       deepmerge: 4.3.1
 
-  '@bundled-es-modules/glob@13.0.1':
+  '@bundled-es-modules/glob@13.0.3':
     dependencies:
       buffer: 6.0.3
       events: 3.3.0
@@ -18366,10 +18366,10 @@ snapshots:
 
   stubs@3.0.0: {}
 
-  style-dictionary@5.3.0:
+  style-dictionary@5.3.1:
     dependencies:
       '@bundled-es-modules/deepmerge': 4.3.1
-      '@bundled-es-modules/glob': 13.0.1
+      '@bundled-es-modules/glob': 13.0.3
       '@bundled-es-modules/memfs': 4.17.0
       '@zip.js/zip.js': 2.8.20
       chalk: 5.6.2
