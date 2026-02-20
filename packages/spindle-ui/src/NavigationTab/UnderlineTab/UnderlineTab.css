@@ -25,6 +25,7 @@
 .spui-UnderlineTab-button {
   background-color: transparent;
   border: none;
+  border-radius: 4px;
   box-sizing: border-box;
   flex-shrink: 0;
   padding: 0 4px;
@@ -44,7 +45,6 @@
 }
 
 .spui-UnderlineTab-button:focus {
-  border-radius: 4px;
   outline: 2px solid var(--color-focus-clarity);
   outline-offset: -2px;
 }
