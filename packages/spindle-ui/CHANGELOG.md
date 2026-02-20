@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.2.2
+
+### Patch Changes
+
+- [#1878](https://github.com/openameba/spindle/pull/1878) [`113ac34`](https://github.com/openameba/spindle/commit/113ac3430f91846987617602ccc00024d9276920) Thanks [@yu-3in](https://github.com/yu-3in)! - UnderlineTab button border-radius now applied consistently
+
 ## 3.2.1
 
 ### Patch Changes
