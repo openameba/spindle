@@ -50,8 +50,8 @@ importers:
         specifier: 8.0.4
         version: 8.0.4
       pnpm:
-        specifier: 10.30.0
-        version: 10.30.0
+        specifier: 10.30.1
+        version: 10.30.1
       prettier:
         specifier: 3.8.1
         version: 3.8.1
@@ -2682,11 +2682,6 @@ packages:
 
   ajv-formats@2.1.1:
     resolution: {integrity: sha512-Wx0Kx52hxE7C18hkMEggYlEifqWZtYaRgouJor+WMdPnQyEK13vgEWyVNup7SoeeoLMsr4kf5h6dOW11I15MUA==}
-    peerDependencies:
-      ajv: ^8.0.0
-    peerDependenciesMeta:
-      ajv:
-        optional: true
 
   ajv-formats@3.0.1:
     resolution: {integrity: sha512-8iUql50EUR+uUcdRQ3HDqa6EVyo3docL8g5WJ3FNcWmu62IbkGUue/pEyLBW8VGKKucTPgqeks4fIU1DA4yowQ==}
@@ -6801,8 +6796,8 @@ packages:
     resolution: {integrity: sha512-LKWqWJRhstyYo9pGvgor/ivk2w94eSjE3RGVuzLGlr3NmD8bf7RcYGze1mNdEHRP6TRP6rMuDHk5t44hnTRyow==}
     engines: {node: '>=14.19.0'}
 
-  pnpm@10.30.0:
-    resolution: {integrity: sha512-K1dT3gFdSA7riPW1th4AUfBbQwGAioLsi4QMnSrfd0jrNSyD9cFZPKcD/xAXKVvD/dMRmruWhu/Ja5/LGCAJNw==}
+  pnpm@10.30.1:
+    resolution: {integrity: sha512-NZDlUNU4TKo5vVx8c59yJwI0svYFnhMBj5dcMTseuf78wJcUBIdl1Nnv6WE4LDEuYkVywEIHYr3F1ZQM35vnOg==}
     engines: {node: '>=18.12'}
     hasBin: true
 
@@ -12075,8 +12070,8 @@ snapshots:
 
   agent-base@7.1.4: {}
 
-  ajv-formats@2.1.1(ajv@8.17.1):
-    optionalDependencies:
+  ajv-formats@2.1.1:
+    dependencies:
       ajv: 8.17.1
 
   ajv-formats@3.0.1:
@@ -13745,7 +13740,7 @@ snapshots:
     dependencies:
       '@apidevtools/json-schema-ref-parser': 9.1.2
       ajv: 8.17.1
-      ajv-formats: 2.1.1(ajv@8.17.1)
+      ajv-formats: 2.1.1
       body-parser: 1.20.4
       content-type: 1.0.5
       deep-freeze: 0.0.1
@@ -16831,7 +16826,7 @@ snapshots:
 
   pngjs@7.0.0: {}
 
-  pnpm@10.30.0: {}
+  pnpm@10.30.1: {}
 
   portfinder@1.0.38:
     dependencies:
@@ -17890,7 +17885,7 @@ snapshots:
     dependencies:
       '@types/json-schema': 7.0.15
       ajv: 8.17.1
-      ajv-formats: 2.1.1(ajv@8.17.1)
+      ajv-formats: 2.1.1
       ajv-keywords: 5.1.0(ajv@8.17.1)
 
   secure-keys@1.0.0: {}
