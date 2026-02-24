@@ -43,7 +43,7 @@
     "stylelint-config-standard": "40.0.0",
     "stylelint-order": "7.0.1",
     "stylelint-selector-bem-pattern": "4.0.1",
-    "textlint": "15.5.1",
+    "textlint": "15.5.2",
     "textlint-rule-preset-ameba": "openameba/textlint-rule-preset-ameba#v0.5.1",
     "typescript": "5.9.3",
     "vitest": "4.0.18",
