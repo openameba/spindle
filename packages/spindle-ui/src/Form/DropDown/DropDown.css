@@ -65,6 +65,10 @@
   width: 40px;
 }
 
+.spui-DropDown-icon > svg {
+  margin-left: -1px;
+}
+
 .spui-DropDown-outline {
   border-radius: 8px;
   display: inline-block;
