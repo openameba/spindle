@@ -32,7 +32,7 @@ interface DefaultProps {
 
 interface ListItemProps extends DefaultProps {
   icon?: React.ReactNode;
-  onClick: () => void;
+  onClick: (event?: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 interface ListProps extends DefaultProps {
@@ -204,8 +204,8 @@ const ListItem = ({ children, icon, onClick }: ListItemProps) => {
         className={`${BLOCK_NAME}-menuButton`}
         type="button"
         role="menuitem"
-        onClick={() => {
-          onClick();
+        onClick={(e) => {
+          onClick(e);
           closeMenu?.();
         }}
       >
