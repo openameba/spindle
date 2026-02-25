@@ -24,7 +24,7 @@
 .spui-DropDown-visual {
   align-items: center;
   background-color: var(--color-surface-primary);
-  border: solid 1px var(--color-border-medium-emphasis);
+  border: solid 1px var(--color-border-high-emphasis);
   border-radius: 8px;
   box-sizing: border-box;
   color: var(--color-text-disabled);
@@ -43,10 +43,15 @@
   color: var(--color-text-high-emphasis);
 }
 
+.spui-DropDown-label.is-disabled .spui-DropDown-visual,
+.spui-DropDown-label.is-disabled .spui-DropDown-icon {
+  border-color: var(--color-border-medium-emphasis);
+}
+
 .spui-DropDown-icon {
   align-items: center;
   background-color: var(--color-surface-secondary);
-  border: solid 1px var(--color-border-medium-emphasis);
+  border-left: solid 1px var(--color-border-high-emphasis);
   border-bottom-right-radius: 8px;
   border-top-right-radius: 8px;
   box-sizing: border-box;
