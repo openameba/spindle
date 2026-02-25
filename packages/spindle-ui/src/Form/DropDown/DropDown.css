@@ -51,9 +51,10 @@
 .spui-DropDown-icon {
   align-items: center;
   background-color: var(--color-surface-secondary);
-  border-left: solid 1px var(--color-border-high-emphasis);
   border-bottom-right-radius: 8px;
+  border-left: solid 1px var(--color-border-high-emphasis);
   border-top-right-radius: 8px;
+  bottom: 1px;
   box-sizing: border-box;
   color: var(--color-object-low-emphasis);
   display: flex;
@@ -61,7 +62,6 @@
   position: absolute;
   right: 0;
   top: 1px;
-  bottom: 1px;
   width: 40px;
 }
 
