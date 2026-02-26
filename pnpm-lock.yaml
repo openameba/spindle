@@ -314,8 +314,8 @@ importers:
         specifier: 4.0.18
         version: 4.0.18(vitest@4.0.18)
       '@vscode/web-custom-data':
-        specifier: 0.6.2
-        version: 0.6.2
+        specifier: 0.6.3
+        version: 0.6.3
       autoprefixer:
         specifier: 10.4.24
         version: 10.4.24(postcss@8.5.6)
@@ -2582,8 +2582,8 @@ packages:
   '@vitest/utils@4.0.18':
     resolution: {integrity: sha512-msMRKLMVLWygpK3u2Hybgi4MNjcYJvwTb0Ru09+fOyCXIgT5raYP041DRRdiJiI3k/2U6SEbAETB3YtBrUkCFA==}
 
-  '@vscode/web-custom-data@0.6.2':
-    resolution: {integrity: sha512-PIZNbMb3WkPWzXeCIe2HBkykVlX/MeASXyQ0IPcGA6HkMW5dcJyNhv+xkxjza60aCVQnsCHnZduO7D/cUgdFXw==}
+  '@vscode/web-custom-data@0.6.3':
+    resolution: {integrity: sha512-3pDUAPGVkra1KjR2L5m3b7BgzLTlWdep4ijsRoqeLcrp+e7cJcyjnae8IkAdF/xS6Zo3B1YZSmIBIhRAEYBIog==}
 
   '@webassemblyjs/ast@1.14.1':
     resolution: {integrity: sha512-nuBEDgQfm1ccRp/8bCQrx1frohyufl4JlbMMZ4P1wpeOfDhF6FQkxZJ1b/e+PLwr6X1Nhw6OLme5usuBWYBvuQ==}
@@ -2989,6 +2989,7 @@ packages:
   basic-ftp@5.1.0:
     resolution: {integrity: sha512-RkaJzeJKDbaDWTIPiJwubyljaEPwpVWkm9Rt5h9Nd6h7tEXTJ3VB4qxdZBioV7JO5yLUaOKwz7vDOzlncUsegw==}
     engines: {node: '>=10.0.0'}
+    deprecated: Security vulnerability fixed in 5.2.0, please upgrade
 
   better-path-resolve@1.0.0:
     resolution: {integrity: sha512-pbnl5XzGBdrFU/wT4jqmJVPn2B6UHPBOhzMQkY/SPUPB6QtUXtmBHBIwCbXJol93mOpGMnQyP/+BB19q04xj7g==}
@@ -11954,7 +11955,7 @@ snapshots:
       '@vitest/pretty-format': 4.0.18
       tinyrainbow: 3.0.3
 
-  '@vscode/web-custom-data@0.6.2': {}
+  '@vscode/web-custom-data@0.6.3': {}
 
   '@webassemblyjs/ast@1.14.1':
     dependencies:
