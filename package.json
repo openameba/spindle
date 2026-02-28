@@ -39,7 +39,7 @@
     "npm-run-all2": "8.0.4",
     "pnpm": "10.30.2",
     "prettier": "3.8.1",
-    "stylelint": "17.3.0",
+    "stylelint": "17.4.0",
     "stylelint-config-standard": "40.0.0",
     "stylelint-order": "7.0.1",
     "stylelint-selector-bem-pattern": "4.0.1",
