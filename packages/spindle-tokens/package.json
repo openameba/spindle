@@ -35,7 +35,7 @@
   "devDependencies": {
     "@figma/rest-api-spec": "0.36.0",
     "@types/lodash.setwith": "4.3.9",
-    "@types/node": "24.10.14",
+    "@types/node": "24.10.15",
     "@vitest/ui": "4.0.18",
     "jsonabc": "2.3.1",
     "lodash.setwith": "4.3.2",
