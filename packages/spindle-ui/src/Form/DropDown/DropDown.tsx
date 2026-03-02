@@ -55,7 +55,6 @@ export const DropDown = forwardRef<HTMLSelectElement, Props>(function DropDown(
       className={[
         `${BLOCK_NAME}-label`,
         isActive ? 'is-active' : '',
-        selectDisabled ? 'is-disabled' : '',
         hasError ? 'is-error' : '',
       ]
         .filter(Boolean)
