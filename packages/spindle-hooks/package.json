@@ -64,6 +64,6 @@
     "react-dom": "19.2.4",
     "storybook": "10.2.12",
     "vitest": "4.0.18",
-    "webpack": "5.105.2"
+    "webpack": "5.105.3"
   }
 }
