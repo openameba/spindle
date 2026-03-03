@@ -1,5 +1,13 @@
 # Change Log
 
+## 3.2.3
+
+### Patch Changes
+
+- [#1895](https://github.com/openameba/spindle/pull/1895) [`809307d`](https://github.com/openameba/spindle/commit/809307d105dd144834469ecf813b7925380a425c) Thanks [@Sora339](https://github.com/Sora339)! - DropDownコンポーネントのボタン部分のborderが二重に重なっていた問題を解消。
+
+- [#1894](https://github.com/openameba/spindle/pull/1894) [`cd0017e`](https://github.com/openameba/spindle/commit/cd0017e0227f9c040394817c60dc7d294bde64fa) Thanks [@yu-3in](https://github.com/yu-3in)! - DropdownMenu ListItem onClick handler now receives event object
+
 ## 3.2.2
 
 ### Patch Changes
