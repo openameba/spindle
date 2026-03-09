@@ -215,6 +215,34 @@ export const AllBorders: Story = {
   ),
 };
 
+export const AutoLayout: Story = {
+  render: () => (
+    <Table.Frame borderTypes={['horizontal']} layout="auto">
+      <Table.Header>
+        <Table.Row>
+          <Table.Head width="100px">商品名</Table.Head>
+          <Table.Head>説明</Table.Head>
+          <Table.Head>価格</Table.Head>
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        <Table.Row>
+          <Table.Head scope="row">商品A</Table.Head>
+          <Table.Cell>
+            高品質な商品Aの詳細説明文です。コンテンツに応じて列幅が自動調整されます。
+          </Table.Cell>
+          <Table.Cell>¥1,200,000</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Head scope="row">商品B</Table.Head>
+          <Table.Cell>商品Bの説明文</Table.Cell>
+          <Table.Cell>¥980,000</Table.Cell>
+        </Table.Row>
+      </Table.Body>
+    </Table.Frame>
+  ),
+};
+
 export const FixedLayout: Story = {
   render: () => (
     <Table.Frame borderTypes={['horizontal']} layout="fixed">
