@@ -35,7 +35,7 @@
     "husky": "9.1.7",
     "is-ci": "4.1.0",
     "jscodeshift": "17.3.0",
-    "lint-staged": "16.3.3",
+    "lint-staged": "16.3.4",
     "npm-run-all2": "8.0.4",
     "pnpm": "10.32.1",
     "prettier": "3.8.1",
