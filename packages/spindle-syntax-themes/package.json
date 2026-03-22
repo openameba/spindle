@@ -30,7 +30,7 @@
   "devDependencies": {
     "@lhci/cli": "0.15.1",
     "csso-cli": "4.0.2",
-    "firebase-tools": "15.10.1",
+    "firebase-tools": "15.11.0",
     "puppeteer": "24.39.1"
   }
 }
