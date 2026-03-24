@@ -67,7 +67,7 @@ export function getAllCssDesignTokens(): DesignTokens {
   // All apps use the ameba color palette instead of the css tokens
   tokenList.color = parseCssCustomProperties(amebaColorPaletteCss);
 
-  const readmePath = path.join(__dirname, '../../spindle-tokens/README.md');
+  const readmePath = path.join(__dirname, '../assets/spindle-tokens/README.md');
   const readmeContent = fs.readFileSync(readmePath, 'utf-8');
 
   const documentation = `
