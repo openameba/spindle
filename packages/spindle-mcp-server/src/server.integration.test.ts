@@ -5,7 +5,7 @@ import { createServer } from './server';
 
 describe('MCP Server Integration', () => {
   let client: Client;
-  let closeTransport: () => Promise<void>;
+  let closeTransport: () => Promise<void> = async () => {};
 
   beforeAll(async () => {
     const server = createServer();
