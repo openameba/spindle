@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.5.3
+
+### Patch Changes
+
+- [#1970](https://github.com/openameba/spindle/pull/1970) [`8b04aa3`](https://github.com/openameba/spindle/commit/8b04aa3e7ad8c9ee547176f081a972b54ab9c7a6) Thanks [@herablog](https://github.com/herablog)! - get_design_tokensツールでREADMEが見つからないエラーを修正
+
 ## 1.5.2
 
 ### Patch Changes
