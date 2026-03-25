@@ -20,6 +20,34 @@ Amebaとして提供される成果物は、それらに則って開発される
     - PR作成後、changesets-botがコメントで案内するので、それに従って追加することもできます
     - **changesetが不要な場合**: ドキュメント更新、README修正、CI/CD設定変更など、パッケージのリリースが不要な変更の場合は、changesetを追加せずにマージして構いません
 
+## MCPサーバーの利用
+
+このリポジトリでは、AIコーディングツールと連携するための[MCP（Model Context Protocol）](https://modelcontextprotocol.io/introduction)サーバーが設定されています。
+
+### Storybook MCPサーバー
+
+`.mcp.json`にStorybookのMCPサーバーが設定されています。Storybookを起動すると、コンポーネントのドキュメントやストーリーの情報がMCPを通じてAIコーディングツールに提供されます。
+
+#### 使い方
+
+1. 対象パッケージのStorybookを起動します
+
+```bash
+# spindle-uiの場合
+pnpm --filter @openameba/spindle-ui dev
+
+# spindle-hooksの場合
+pnpm --filter @openameba/spindle-hooks dev
+```
+
+2. Storybookが起動したら、AIコーディングツールでMCPサーバーに再接続します
+    - **Claude Code**: `/mcp` コマンドを実行し、`storybook`サーバーを再接続します
+    - **Cursor**: MCPの設定画面から`storybook`サーバーを再接続します
+
+### Spindle MCPサーバー
+
+Spindleのデザイントークンやコンポーネント情報を提供するMCPサーバーも利用できます。詳細は[Spindle MCP Server](packages/spindle-mcp-server)を参照してください。
+
 ## リリースのやり方 (Ameba在籍メンバー向け)
 1. Pull Requestを`main`ブランチにマージします
 2. mainにマージされると、GitHub Actionsが自動的に「chore: publish」というタイトルのPull Requestを作成します
