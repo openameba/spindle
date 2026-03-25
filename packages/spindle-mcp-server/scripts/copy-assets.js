@@ -29,6 +29,11 @@ async function copyAssets() {
       dest: 'assets/spindle-tokens/dist/css',
     },
     {
+      name: 'Design Tokens README',
+      source: '../spindle-tokens/README.md',
+      dest: 'assets/spindle-tokens',
+    },
+    {
       name: 'Components',
       source: '../spindle-ui/src/**/*.{tsx,css,mdx,md}',
       dest: 'assets/spindle-ui/src',

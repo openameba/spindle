@@ -18,6 +18,10 @@ describe('Design token functions', () => {
           documentation: expect.any(String),
         }),
       );
+      expect(result.documentation).toContain('Spindle Tokens');
+      expect(result.documentation).toContain(
+        '@openameba/spindle-tokens/dist/css/spindle-tokens-animation.css',
+      );
     });
   });
 
