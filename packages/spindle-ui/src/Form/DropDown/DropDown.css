@@ -34,9 +34,12 @@
   height: 100%;
   left: 0;
   min-height: 40px;
+  overflow: hidden;
   padding: 0.5em calc(40px + 1em) 0.5em 1em;
   position: absolute;
+  text-overflow: ellipsis;
   top: 0;
+  white-space: nowrap;
   width: 100%;
 }
 
