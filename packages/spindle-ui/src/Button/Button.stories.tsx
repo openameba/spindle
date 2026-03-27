@@ -4,8 +4,13 @@ import { action } from 'storybook/actions';
 import { ChevronDownBold, FileAdd, Link, PlusBold } from '../Icon';
 import { Button } from './Button';
 
+/**
+ * ユーザーのアクションを実行するためのボタンコンポーネント。
+ * contained, outlined, neutral, danger, lighted の5つのバリアントを持つ。
+ */
 const meta: Meta<typeof Button> = {
   title: 'Button',
+  component: Button,
   args: {
     onClick: action('clicked'),
     onMouseOver: action('mouse-over'),
@@ -15,6 +20,9 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/**
+ * Large サイズのボタン。画面の主要アクションなど、視認性を高めたい場合に使用する。
+ */
 export const Large: Story = {
   render: (args) => (
     <>
@@ -37,6 +45,9 @@ export const Large: Story = {
   ),
 };
 
+/**
+ * Large サイズの全幅ボタン。モバイル画面下部の固定ボタンなどに使用する。
+ */
 export const LargeFullWidth: Story = {
   render: (args) => (
     <>
@@ -59,6 +70,9 @@ export const LargeFullWidth: Story = {
   ),
 };
 
+/**
+ * Medium サイズのボタン。もっとも汎用的なサイズ。
+ */
 export const Medium: Story = {
   render: (args) => (
     <>
@@ -81,6 +95,9 @@ export const Medium: Story = {
   ),
 };
 
+/**
+ * Medium サイズの全幅ボタン。
+ */
 export const MediumFullWidth: Story = {
   render: (args) => (
     <>
@@ -103,6 +120,9 @@ export const MediumFullWidth: Story = {
   ),
 };
 
+/**
+ * Small サイズのボタン。補助的なアクションやスペースが限られた箇所に使用する。
+ */
 export const Small: Story = {
   render: (args) => (
     <>
@@ -125,6 +145,9 @@ export const Small: Story = {
   ),
 };
 
+/**
+ * Small サイズの全幅ボタン。
+ */
 export const SmallFullWidth: Story = {
   render: (args) => (
     <>
@@ -147,6 +170,9 @@ export const SmallFullWidth: Story = {
   ),
 };
 
+/**
+ * 非活性状態のボタン。処理中やバリデーションエラー時など、操作を防ぎたい場合に使用する。
+ */
 export const Disabled: Story = {
   render: (args) => (
     <>
@@ -169,6 +195,9 @@ export const Disabled: Story = {
   ),
 };
 
+/**
+ * 非活性状態の全幅ボタン。
+ */
 export const DisabledFullWidth: Story = {
   render: (args) => (
     <>
@@ -221,6 +250,9 @@ export const DisabledFullWidth: Story = {
   ),
 };
 
+/**
+ * アイコン付きボタン。テキストだけでは伝わりにくいアクションの意味を補強する場合に使用する。
+ */
 export const WithIcon: Story = {
   render: (args) => (
     <>
@@ -264,6 +296,9 @@ export const WithIcon: Story = {
   ),
 };
 
+/**
+ * アイコン付き全幅ボタン。
+ */
 export const FullWidthWithIcon: Story = {
   render: (args) => (
     <>
