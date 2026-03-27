@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.2.4
+
+### Patch Changes
+
+- [#1978](https://github.com/openameba/spindle/pull/1978) [`8698d29`](https://github.com/openameba/spindle/commit/8698d29508e4cecb432addb5d6cf59c89022625a) Thanks [@yu-3in](https://github.com/yu-3in)! - DropDownコンポーネントのselect要素にfont-family: inheritを追加してvisual要素とフォントメトリクスを一致させ、短いoptionテキストが折り返される問題を修正。
+
 ## 3.2.3
 
 ### Patch Changes
