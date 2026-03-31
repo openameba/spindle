@@ -165,12 +165,9 @@ Widely available
 - `ref`が転送される
 - `layout`と`size`の組み合わせでクラスが適用される
 
-### Storybook
-
-- `icon`有無と`iconPosition`の組み合わせでアイコンが正しく配置されることをStorybook上で担保する
-
 ### Visual Regressionテスト
 
+- Storybookの`Icon`ストーリーで`icon`有無と`iconPosition`の組み合わせ配置を担保する
 - 各バリアント（contained / outlined / lighted / neutral / danger）の見た目
 - 各サイズ（large / medium / small）と`layout="fullWidth"`組み合わせ
 - アイコン有無と左右配置のバリエーション
