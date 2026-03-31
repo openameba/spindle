@@ -163,8 +163,11 @@ Widely available
 
 - `href`、`target`、`rel`などアンカー属性が正しく受け渡される
 - `ref`が転送される
-- `icon`有無と`iconPosition`の組み合わせでアイコンが正しく配置される
 - `layout`と`size`の組み合わせでクラスが適用される
+
+### Storybook
+
+- `icon`有無と`iconPosition`の組み合わせでアイコンが正しく配置されることをStorybook上で担保する
 
 ### Visual Regressionテスト
 
