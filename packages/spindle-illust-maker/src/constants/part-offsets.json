@@ -1,0 +1,1522 @@
+{
+  "head/man/03-dread-green": {
+    "offsetX": 6.5,
+    "offsetY": 0
+  },
+  "head/man/03-dread-yellow-green": {
+    "offsetX": 6.5,
+    "offsetY": 0
+  },
+  "head/man/03-dread-black": {
+    "offsetX": 6.5,
+    "offsetY": 0
+  },
+  "head/man/04-afro-green": {
+    "offsetX": 9.5,
+    "offsetY": 45.56
+  },
+  "head/man/04-afro-yellow-green": {
+    "offsetX": 9.5,
+    "offsetY": 45.56
+  },
+  "head/man/04-afro-black": {
+    "offsetX": 9.5,
+    "offsetY": 45.55
+  },
+  "head/man/05-j-green": {
+    "offsetX": 14.5,
+    "offsetY": 0
+  },
+  "head/man/05-j-yellow-green": {
+    "offsetX": 14.5,
+    "offsetY": 0
+  },
+  "head/man/05-j-black": {
+    "offsetX": 14.64,
+    "offsetY": 0
+  },
+  "head/woman/18-green": {
+    "offsetX": 0,
+    "offsetY": 14.9
+  },
+  "head/woman/18-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 14.9
+  },
+  "head/woman/18-black": {
+    "offsetX": 0,
+    "offsetY": 14.9
+  },
+  "head/woman/09-green": {
+    "offsetX": 6.85,
+    "offsetY": 0
+  },
+  "head/woman/09-yellow-green": {
+    "offsetX": 6.85,
+    "offsetY": 0
+  },
+  "head/woman/09-black": {
+    "offsetX": 1.77,
+    "offsetY": 0
+  },
+  "head/woman/10-green": {
+    "offsetX": 5.55,
+    "offsetY": 26.5
+  },
+  "head/woman/10-yellow-green": {
+    "offsetX": 5.55,
+    "offsetY": 26.5
+  },
+  "head/woman/10-black": {
+    "offsetX": 5.55,
+    "offsetY": 26.5
+  },
+  "head/woman/11-green": {
+    "offsetX": 0.95,
+    "offsetY": 0
+  },
+  "head/woman/11-yellow-green": {
+    "offsetX": 0.95,
+    "offsetY": 0
+  },
+  "head/woman/11-black": {
+    "offsetX": 0.95,
+    "offsetY": 0
+  },
+  "head/woman/12-green": {
+    "offsetX": 9.15,
+    "offsetY": 0
+  },
+  "head/woman/12-yellow-green": {
+    "offsetX": 9.15,
+    "offsetY": 0
+  },
+  "head/woman/12-black": {
+    "offsetX": 9.2,
+    "offsetY": 0
+  },
+  "head/woman/19": {
+    "offsetX": 0,
+    "offsetY": 14.9
+  },
+  "hat/chef-green-1": {
+    "offsetX": 0,
+    "offsetY": 91.99
+  },
+  "hat/chef-green-2": {
+    "offsetX": 0,
+    "offsetY": 91.99
+  },
+  "body/104": {
+    "offsetX": 65,
+    "offsetY": 14
+  },
+  "body/91-green": {
+    "offsetX": 0,
+    "offsetY": 84
+  },
+  "body/91-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 84
+  },
+  "body/91-white": {
+    "offsetX": 0,
+    "offsetY": 84
+  },
+  "body/92-green": {
+    "offsetX": 104.49,
+    "offsetY": 0
+  },
+  "body/92-yellow-green": {
+    "offsetX": 104.49,
+    "offsetY": 0
+  },
+  "body/92-white": {
+    "offsetX": 104.49,
+    "offsetY": 0
+  },
+  "body/95-green": {
+    "offsetX": 104,
+    "offsetY": 0
+  },
+  "body/95-yellow-green": {
+    "offsetX": 104,
+    "offsetY": 0
+  },
+  "body/95-white": {
+    "offsetX": 104,
+    "offsetY": 0
+  },
+  "body/96-green": {
+    "offsetX": 104,
+    "offsetY": 0
+  },
+  "body/96-yellow-green": {
+    "offsetX": 104,
+    "offsetY": 0
+  },
+  "body/96-white": {
+    "offsetX": 104,
+    "offsetY": 0
+  },
+  "body/97-green": {
+    "offsetX": 103,
+    "offsetY": 0
+  },
+  "body/97-yellow-green": {
+    "offsetX": 103,
+    "offsetY": 0
+  },
+  "body/97-white": {
+    "offsetX": 103,
+    "offsetY": 0
+  },
+  "body/98-green": {
+    "offsetX": 169,
+    "offsetY": 2
+  },
+  "body/98-yellow-green": {
+    "offsetX": 169,
+    "offsetY": 2
+  },
+  "body/98-white": {
+    "offsetX": 169,
+    "offsetY": 2
+  },
+  "body/99-green": {
+    "offsetX": 213.99,
+    "offsetY": 0
+  },
+  "body/99-yellow-green": {
+    "offsetX": 213.99,
+    "offsetY": 0
+  },
+  "body/99-white": {
+    "offsetX": 213.99,
+    "offsetY": 0
+  },
+  "body/100-green": {
+    "offsetX": 67,
+    "offsetY": 1.98
+  },
+  "body/100-yellow-green": {
+    "offsetX": 67,
+    "offsetY": 1.98
+  },
+  "body/100-white": {
+    "offsetX": 67,
+    "offsetY": 1.98
+  },
+  "body/101-green": {
+    "offsetX": 0,
+    "offsetY": 275
+  },
+  "body/101-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 275
+  },
+  "body/101-white": {
+    "offsetX": 0,
+    "offsetY": 275
+  },
+  "body/102-green": {
+    "offsetX": 0,
+    "offsetY": 14
+  },
+  "body/102-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 14
+  },
+  "body/102-white": {
+    "offsetX": 0,
+    "offsetY": 14
+  },
+  "body/94-green": {
+    "offsetX": 105.99,
+    "offsetY": 18
+  },
+  "body/94-yellow-green": {
+    "offsetX": 105.99,
+    "offsetY": 18
+  },
+  "body/94-white": {
+    "offsetX": 105.99,
+    "offsetY": 18
+  },
+  "body/93-green": {
+    "offsetX": 103.99,
+    "offsetY": 2
+  },
+  "body/93-yellow-green": {
+    "offsetX": 103.99,
+    "offsetY": 2
+  },
+  "body/93-white": {
+    "offsetX": 103.99,
+    "offsetY": 2
+  },
+  "body/90-green": {
+    "offsetX": 0,
+    "offsetY": 27
+  },
+  "body/90-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 27
+  },
+  "body/90-white": {
+    "offsetX": 0,
+    "offsetY": 27
+  },
+  "body/89-green": {
+    "offsetX": 56,
+    "offsetY": 0
+  },
+  "body/89-yellow-green": {
+    "offsetX": 56,
+    "offsetY": 0
+  },
+  "body/89-white": {
+    "offsetX": 56,
+    "offsetY": 0
+  },
+  "body/88-green": {
+    "offsetX": 65,
+    "offsetY": 14
+  },
+  "body/88-yellow-green": {
+    "offsetX": 65,
+    "offsetY": 14
+  },
+  "body/88-white": {
+    "offsetX": 65,
+    "offsetY": 14
+  },
+  "body/87-green": {
+    "offsetX": 33.8,
+    "offsetY": 45.99
+  },
+  "body/87-yellow-green": {
+    "offsetX": 33.8,
+    "offsetY": 45.99
+  },
+  "body/87-white": {
+    "offsetX": 33.8,
+    "offsetY": 45.99
+  },
+  "body/85-green": {
+    "offsetX": 7,
+    "offsetY": 0
+  },
+  "body/85-yellow-green": {
+    "offsetX": 7,
+    "offsetY": 0
+  },
+  "body/85-white": {
+    "offsetX": 7,
+    "offsetY": 0
+  },
+  "body/84-green": {
+    "offsetX": 11.8,
+    "offsetY": 0
+  },
+  "body/84-yellow-green": {
+    "offsetX": 11.8,
+    "offsetY": 0
+  },
+  "body/84-white": {
+    "offsetX": 11.8,
+    "offsetY": 0
+  },
+  "head/woman/17-green": {
+    "offsetX": 2,
+    "offsetY": 0
+  },
+  "head/woman/17-yellow-green": {
+    "offsetX": 2,
+    "offsetY": 0
+  },
+  "head/woman/17-black": {
+    "offsetX": 2,
+    "offsetY": 0
+  },
+  "body/82-green": {
+    "offsetX": 61,
+    "offsetY": 5
+  },
+  "body/82-yellow-green": {
+    "offsetX": 61,
+    "offsetY": 5
+  },
+  "body/82-white": {
+    "offsetX": 61,
+    "offsetY": 5
+  },
+  "body/81-green": {
+    "offsetX": 60.5,
+    "offsetY": 4.6
+  },
+  "body/81-yellow-green": {
+    "offsetX": 60.5,
+    "offsetY": 4.6
+  },
+  "body/81-white": {
+    "offsetX": 60.5,
+    "offsetY": 4.6
+  },
+  "leg/30-green": {
+    "offsetX": 39,
+    "offsetY": 0
+  },
+  "leg/30-yellow-green": {
+    "offsetX": 39,
+    "offsetY": 0
+  },
+  "leg/30-white": {
+    "offsetX": 39,
+    "offsetY": 0
+  },
+  "body/80-green": {
+    "offsetX": 0,
+    "offsetY": 3
+  },
+  "body/80-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 3
+  },
+  "body/80-white": {
+    "offsetX": 0,
+    "offsetY": 3
+  },
+  "leg/26-green": {
+    "offsetX": 125,
+    "offsetY": 98
+  },
+  "leg/26-yellow-green": {
+    "offsetX": 125,
+    "offsetY": 98
+  },
+  "leg/26-white": {
+    "offsetX": 125,
+    "offsetY": 98
+  },
+  "body/79-green": {
+    "offsetX": 0,
+    "offsetY": 54.21
+  },
+  "body/79-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 54.21
+  },
+  "body/79-white": {
+    "offsetX": 0,
+    "offsetY": 54.21
+  },
+  "leg/25-green": {
+    "offsetX": 109.35,
+    "offsetY": 11.41
+  },
+  "leg/25-yellow-green": {
+    "offsetX": 109.35,
+    "offsetY": 11.41
+  },
+  "leg/25-white": {
+    "offsetX": 109.35,
+    "offsetY": 11.41
+  },
+  "leg/25-variant-4": {
+    "offsetX": 109.4,
+    "offsetY": 11.46
+  },
+  "leg/25-variant-5": {
+    "offsetX": 109.35,
+    "offsetY": 11.41
+  },
+  "body/78-green": {
+    "offsetX": 2,
+    "offsetY": 54.21
+  },
+  "body/78-yellow-green": {
+    "offsetX": 2,
+    "offsetY": 54.21
+  },
+  "body/78-white": {
+    "offsetX": 2,
+    "offsetY": 54.21
+  },
+  "leg/23-green": {
+    "offsetX": 162.5,
+    "offsetY": 0
+  },
+  "leg/23-yellow-green": {
+    "offsetX": 162.45,
+    "offsetY": 0
+  },
+  "leg/23-white": {
+    "offsetX": 162.5,
+    "offsetY": 0
+  },
+  "leg/23-variant-4": {
+    "offsetX": 162.5,
+    "offsetY": 0
+  },
+  "leg/22-green": {
+    "offsetX": 2.95,
+    "offsetY": 0
+  },
+  "leg/22-yellow-green": {
+    "offsetX": 2.95,
+    "offsetY": 0
+  },
+  "leg/22-white": {
+    "offsetX": 2.95,
+    "offsetY": 0
+  },
+  "body/76-green": {
+    "offsetX": 102.99,
+    "offsetY": 132
+  },
+  "body/76-yellow-green": {
+    "offsetX": 102.99,
+    "offsetY": 132
+  },
+  "body/76-white": {
+    "offsetX": 102.99,
+    "offsetY": 132
+  },
+  "leg/20-green": {
+    "offsetX": 25.29,
+    "offsetY": 0
+  },
+  "leg/20-yellow-green": {
+    "offsetX": 25.29,
+    "offsetY": 0
+  },
+  "leg/20-white": {
+    "offsetX": 25.29,
+    "offsetY": 0
+  },
+  "leg/19-green": {
+    "offsetX": 44.95,
+    "offsetY": 0
+  },
+  "leg/19-yellow-green": {
+    "offsetX": 44.95,
+    "offsetY": 0
+  },
+  "leg/19-white": {
+    "offsetX": 44.95,
+    "offsetY": 0
+  },
+  "leg/18-green": {
+    "offsetX": 33.9,
+    "offsetY": 20.69
+  },
+  "leg/18-yellow-green": {
+    "offsetX": 33.9,
+    "offsetY": 20.69
+  },
+  "leg/18-white": {
+    "offsetX": 33.9,
+    "offsetY": 20.7
+  },
+  "leg/18-variant-4": {
+    "offsetX": 34,
+    "offsetY": 20.5
+  },
+  "leg/17-green": {
+    "offsetX": 91.62,
+    "offsetY": 0
+  },
+  "leg/17-yellow-green": {
+    "offsetX": 91.62,
+    "offsetY": 0
+  },
+  "leg/17-white": {
+    "offsetX": 91.62,
+    "offsetY": 0
+  },
+  "body/75-green": {
+    "offsetX": 102.99,
+    "offsetY": 132
+  },
+  "body/75-yellow-green": {
+    "offsetX": 102.99,
+    "offsetY": 132
+  },
+  "body/75-white": {
+    "offsetX": 102.99,
+    "offsetY": 132
+  },
+  "leg/16-green": {
+    "offsetX": 33.75,
+    "offsetY": 31.45
+  },
+  "leg/16-yellow-green": {
+    "offsetX": 33.75,
+    "offsetY": 31.45
+  },
+  "leg/16-white": {
+    "offsetX": 33.75,
+    "offsetY": 31.45
+  },
+  "leg/15-green": {
+    "offsetX": 0.66,
+    "offsetY": 0
+  },
+  "leg/15-yellow-green": {
+    "offsetX": 0.66,
+    "offsetY": 0
+  },
+  "leg/15-white": {
+    "offsetX": 0.66,
+    "offsetY": 0
+  },
+  "leg/14-green": {
+    "offsetX": 85.85,
+    "offsetY": 66.44
+  },
+  "leg/14-yellow-green": {
+    "offsetX": 85.85,
+    "offsetY": 66.44
+  },
+  "leg/14-white": {
+    "offsetX": 85.85,
+    "offsetY": 66.44
+  },
+  "body/74-green": {
+    "offsetX": 57,
+    "offsetY": 126
+  },
+  "body/74-yellow-green": {
+    "offsetX": 57,
+    "offsetY": 126
+  },
+  "body/74-white": {
+    "offsetX": 57,
+    "offsetY": 126
+  },
+  "leg/12-green": {
+    "offsetX": 0,
+    "offsetY": 13.78
+  },
+  "leg/12-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 13.78
+  },
+  "leg/12-white": {
+    "offsetX": 0,
+    "offsetY": 13.78
+  },
+  "leg/11-green": {
+    "offsetX": 0,
+    "offsetY": 0.84
+  },
+  "leg/11-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 0.84
+  },
+  "leg/11-white": {
+    "offsetX": 0,
+    "offsetY": 0.84
+  },
+  "body/73-green": {
+    "offsetX": 57.3,
+    "offsetY": 126
+  },
+  "body/73-yellow-green": {
+    "offsetX": 57.3,
+    "offsetY": 126
+  },
+  "body/73-white": {
+    "offsetX": 57.3,
+    "offsetY": 126
+  },
+  "leg/06-green": {
+    "offsetX": 0,
+    "offsetY": 12.69
+  },
+  "leg/06-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 12.69
+  },
+  "leg/06-white": {
+    "offsetX": 0,
+    "offsetY": 12.69
+  },
+  "body/72-green": {
+    "offsetX": 9.7,
+    "offsetY": 71.5
+  },
+  "body/72-yellow-green": {
+    "offsetX": 9.7,
+    "offsetY": 71.5
+  },
+  "body/72-white": {
+    "offsetX": 9.7,
+    "offsetY": 71.5
+  },
+  "leg/04-green": {
+    "offsetX": 0,
+    "offsetY": 17.62
+  },
+  "leg/04-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 17.62
+  },
+  "leg/04-white": {
+    "offsetX": 0,
+    "offsetY": 17.62
+  },
+  "leg/03-green": {
+    "offsetX": 0,
+    "offsetY": 23.95
+  },
+  "leg/03-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 23.95
+  },
+  "leg/03-white": {
+    "offsetX": 0,
+    "offsetY": 23.95
+  },
+  "body/71-green": {
+    "offsetX": 0,
+    "offsetY": 16
+  },
+  "body/71-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 16
+  },
+  "body/71-white": {
+    "offsetX": 0,
+    "offsetY": 16
+  },
+  "body/70-green": {
+    "offsetX": 66,
+    "offsetY": 72
+  },
+  "body/70-yellow-green": {
+    "offsetX": 66,
+    "offsetY": 72
+  },
+  "body/70-white": {
+    "offsetX": 66,
+    "offsetY": 72
+  },
+  "body/69-green": {
+    "offsetX": 57,
+    "offsetY": 72
+  },
+  "body/69-yellow-green": {
+    "offsetX": 57,
+    "offsetY": 72
+  },
+  "body/69-white": {
+    "offsetX": 57,
+    "offsetY": 72
+  },
+  "body/61-green": {
+    "offsetX": 7.12,
+    "offsetY": 2.78
+  },
+  "body/61-yellow-green": {
+    "offsetX": 7.12,
+    "offsetY": 2.78
+  },
+  "body/61-white": {
+    "offsetX": 7.12,
+    "offsetY": 2.78
+  },
+  "body/60-green": {
+    "offsetX": 0,
+    "offsetY": 6.54
+  },
+  "body/60-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 6.54
+  },
+  "body/60-white": {
+    "offsetX": 0,
+    "offsetY": 6.54
+  },
+  "body/67-green": {
+    "offsetX": 106.99,
+    "offsetY": 0
+  },
+  "body/67-yellow-green": {
+    "offsetX": 106.99,
+    "offsetY": 0
+  },
+  "body/67-white": {
+    "offsetX": 106.99,
+    "offsetY": 0
+  },
+  "body/68-green": {
+    "offsetX": 106.99,
+    "offsetY": 0
+  },
+  "body/68-yellow-green": {
+    "offsetX": 106.99,
+    "offsetY": 0
+  },
+  "body/68-white": {
+    "offsetX": 106.99,
+    "offsetY": 0
+  },
+  "body/62-green": {
+    "offsetX": 0,
+    "offsetY": 54.51
+  },
+  "body/62-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 54.51
+  },
+  "body/62-white": {
+    "offsetX": 0,
+    "offsetY": 54.51
+  },
+  "body/59-green": {
+    "offsetX": 0,
+    "offsetY": 6
+  },
+  "body/59-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 6
+  },
+  "body/59-white": {
+    "offsetX": 0,
+    "offsetY": 6
+  },
+  "body/58-green": {
+    "offsetX": 279,
+    "offsetY": 0
+  },
+  "body/58-yellow-green": {
+    "offsetX": 279,
+    "offsetY": 0
+  },
+  "body/58-white": {
+    "offsetX": 279,
+    "offsetY": 0
+  },
+  "body/57-green": {
+    "offsetX": 18.47,
+    "offsetY": 86.81
+  },
+  "body/57-yellow-green": {
+    "offsetX": 18.47,
+    "offsetY": 86.81
+  },
+  "body/57-white": {
+    "offsetX": 18.47,
+    "offsetY": 86.81
+  },
+  "body/56-green": {
+    "offsetX": 25.68,
+    "offsetY": 93.98
+  },
+  "body/56-yellow-green": {
+    "offsetX": 25.68,
+    "offsetY": 93.98
+  },
+  "body/56-white": {
+    "offsetX": 25.68,
+    "offsetY": 93.98
+  },
+  "body/55-green": {
+    "offsetX": 51.43,
+    "offsetY": 129.84
+  },
+  "body/55-yellow-green": {
+    "offsetX": 51.43,
+    "offsetY": 129.84
+  },
+  "body/55-white": {
+    "offsetX": 51.43,
+    "offsetY": 129.84
+  },
+  "body/54-green": {
+    "offsetX": 94.52,
+    "offsetY": 0
+  },
+  "body/54-yellow-green": {
+    "offsetX": 94.52,
+    "offsetY": 0
+  },
+  "body/54-white": {
+    "offsetX": 94.52,
+    "offsetY": 0
+  },
+  "body/53-green": {
+    "offsetX": 94.52,
+    "offsetY": 2.25
+  },
+  "body/53-yellow-green": {
+    "offsetX": 94.52,
+    "offsetY": 2.25
+  },
+  "body/53-white": {
+    "offsetX": 94.52,
+    "offsetY": 2.25
+  },
+  "body/52-green": {
+    "offsetX": 0,
+    "offsetY": 108.2
+  },
+  "body/52-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 108.2
+  },
+  "body/52-white": {
+    "offsetX": 0,
+    "offsetY": 108.2
+  },
+  "body/51-green": {
+    "offsetX": 52.13,
+    "offsetY": 128.77
+  },
+  "body/51-yellow-green": {
+    "offsetX": 52.13,
+    "offsetY": 128.77
+  },
+  "body/51-white": {
+    "offsetX": 52.13,
+    "offsetY": 128.77
+  },
+  "body/50-green": {
+    "offsetX": 33.76,
+    "offsetY": 112.5
+  },
+  "body/50-yellow-green": {
+    "offsetX": 33.76,
+    "offsetY": 112.5
+  },
+  "body/50-white": {
+    "offsetX": 33.76,
+    "offsetY": 112.5
+  },
+  "body/49-green": {
+    "offsetX": 106.54,
+    "offsetY": 0
+  },
+  "body/49-yellow-green": {
+    "offsetX": 106.54,
+    "offsetY": 0
+  },
+  "body/49-white": {
+    "offsetX": 106.54,
+    "offsetY": 0
+  },
+  "body/48-green": {
+    "offsetX": 110.05,
+    "offsetY": 39.5
+  },
+  "body/48-yellow-green": {
+    "offsetX": 110.05,
+    "offsetY": 39.5
+  },
+  "body/48-white": {
+    "offsetX": 110.05,
+    "offsetY": 39.5
+  },
+  "body/47-green": {
+    "offsetX": 0,
+    "offsetY": 140.25
+  },
+  "body/47-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 140.25
+  },
+  "body/47-white": {
+    "offsetX": 0,
+    "offsetY": 140.25
+  },
+  "body/46-green": {
+    "offsetX": 106.54,
+    "offsetY": 0
+  },
+  "body/46-yellow-green": {
+    "offsetX": 106.54,
+    "offsetY": 0
+  },
+  "body/46-white": {
+    "offsetX": 106.54,
+    "offsetY": 0
+  },
+  "body/45-green": {
+    "offsetX": 0,
+    "offsetY": 2.81
+  },
+  "body/45-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 2.81
+  },
+  "body/45-white": {
+    "offsetX": 0,
+    "offsetY": 2.81
+  },
+  "body/44-green": {
+    "offsetX": 0,
+    "offsetY": 4.6
+  },
+  "body/44-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 4.6
+  },
+  "body/44-white": {
+    "offsetX": 0,
+    "offsetY": 4.6
+  },
+  "body-ride/01-自転車-green": {
+    "offsetX": 164,
+    "offsetY": 1
+  },
+  "body-ride/01-自転車-yellow-green": {
+    "offsetX": 164,
+    "offsetY": 1
+  },
+  "body-ride/01-自転車-white": {
+    "offsetX": 164,
+    "offsetY": 1
+  },
+  "body/42-green": {
+    "offsetX": 0,
+    "offsetY": 50.96
+  },
+  "body/42-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 50.96
+  },
+  "body/42-white": {
+    "offsetX": 0,
+    "offsetY": 50.96
+  },
+  "body/41-green": {
+    "offsetX": 0,
+    "offsetY": 29.25
+  },
+  "body/41-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 29.25
+  },
+  "body/41-white": {
+    "offsetX": 0,
+    "offsetY": 29.25
+  },
+  "body/40-green": {
+    "offsetX": 6.4,
+    "offsetY": 0.05
+  },
+  "body/40-yellow-green": {
+    "offsetX": 6.4,
+    "offsetY": 0.05
+  },
+  "body/40-white": {
+    "offsetX": 6.4,
+    "offsetY": 0.05
+  },
+  "body/39-green": {
+    "offsetX": 65.6,
+    "offsetY": 16.87
+  },
+  "body/39-yellow-green": {
+    "offsetX": 65.6,
+    "offsetY": 16.87
+  },
+  "body/39-white": {
+    "offsetX": 65.6,
+    "offsetY": 16.87
+  },
+  "body/38-green": {
+    "offsetX": 0,
+    "offsetY": 32.64
+  },
+  "body/38-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 32.64
+  },
+  "body/38-white": {
+    "offsetX": 0,
+    "offsetY": 32.64
+  },
+  "body/37-green": {
+    "offsetX": 1.75,
+    "offsetY": 139.66
+  },
+  "body/37-yellow-green": {
+    "offsetX": 1.75,
+    "offsetY": 139.66
+  },
+  "body/37-white": {
+    "offsetX": 1.75,
+    "offsetY": 139.66
+  },
+  "body/34-green": {
+    "offsetX": 0,
+    "offsetY": 9.31
+  },
+  "body/34-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 9.31
+  },
+  "body/34-white": {
+    "offsetX": 0,
+    "offsetY": 9.31
+  },
+  "body/33-green": {
+    "offsetX": 52.02,
+    "offsetY": 9.31
+  },
+  "body/33-yellow-green": {
+    "offsetX": 52.02,
+    "offsetY": 9.31
+  },
+  "body/33-white": {
+    "offsetX": 52.02,
+    "offsetY": 9.31
+  },
+  "head/woman/01-green": {
+    "offsetX": 29.9,
+    "offsetY": 0
+  },
+  "head/woman/01-yellow-green": {
+    "offsetX": 29.9,
+    "offsetY": 0
+  },
+  "head/woman/01-black": {
+    "offsetX": 29.9,
+    "offsetY": 0
+  },
+  "body/32-green": {
+    "offsetX": 46.05,
+    "offsetY": 31.25
+  },
+  "body/32-yellow-green": {
+    "offsetX": 46.05,
+    "offsetY": 31.25
+  },
+  "body/32-white": {
+    "offsetX": 46.05,
+    "offsetY": 31.25
+  },
+  "body/31-green": {
+    "offsetX": 17.6,
+    "offsetY": 0
+  },
+  "body/31-yellow-green": {
+    "offsetX": 17.6,
+    "offsetY": 0
+  },
+  "body/31-white": {
+    "offsetX": 17.6,
+    "offsetY": 0
+  },
+  "body/30-green": {
+    "offsetX": 17.55,
+    "offsetY": 0
+  },
+  "body/30-yellow-green": {
+    "offsetX": 17.55,
+    "offsetY": 0
+  },
+  "body/30-white": {
+    "offsetX": 17.55,
+    "offsetY": 0
+  },
+  "body/29-green": {
+    "offsetX": 33.35,
+    "offsetY": 0
+  },
+  "body/29-yellow-green": {
+    "offsetX": 33.35,
+    "offsetY": 0
+  },
+  "body/29-white": {
+    "offsetX": 33.35,
+    "offsetY": 0
+  },
+  "body/28-green": {
+    "offsetX": 21.8,
+    "offsetY": 0
+  },
+  "body/28-yellow-green": {
+    "offsetX": 21.8,
+    "offsetY": 0
+  },
+  "body/28-white": {
+    "offsetX": 21.8,
+    "offsetY": 0
+  },
+  "body/27-green": {
+    "offsetX": 0,
+    "offsetY": 35.8
+  },
+  "body/27-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 35.8
+  },
+  "body/27-white": {
+    "offsetX": 0,
+    "offsetY": 35.8
+  },
+  "body/26-green": {
+    "offsetX": 0,
+    "offsetY": 36.6
+  },
+  "body/26-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 36.6
+  },
+  "body/26-white": {
+    "offsetX": 0,
+    "offsetY": 36.6
+  },
+  "body/63-green": {
+    "offsetX": 2.09,
+    "offsetY": 13.81
+  },
+  "body/63-yellow-green": {
+    "offsetX": 2.09,
+    "offsetY": 13.81
+  },
+  "body/63-white": {
+    "offsetX": 2.09,
+    "offsetY": 13.81
+  },
+  "body/64-green": {
+    "offsetX": 2.09,
+    "offsetY": 13.82
+  },
+  "body/64-yellow-green": {
+    "offsetX": 2.09,
+    "offsetY": 13.82
+  },
+  "body/64-white": {
+    "offsetX": 2.09,
+    "offsetY": 13.82
+  },
+  "body/24-green": {
+    "offsetX": 0,
+    "offsetY": 51
+  },
+  "body/24-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 51
+  },
+  "body/24-white": {
+    "offsetX": 0,
+    "offsetY": 51
+  },
+  "body/22-green": {
+    "offsetX": 0,
+    "offsetY": 50.6
+  },
+  "body/22-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 50.6
+  },
+  "body/22-white": {
+    "offsetX": 0,
+    "offsetY": 50.6
+  },
+  "body/21-green": {
+    "offsetX": 2,
+    "offsetY": 5
+  },
+  "body/21-yellow-green": {
+    "offsetX": 2,
+    "offsetY": 5
+  },
+  "body/21-white": {
+    "offsetX": 2,
+    "offsetY": 5
+  },
+  "body/20-green": {
+    "offsetX": 0,
+    "offsetY": 50
+  },
+  "body/20-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 50
+  },
+  "body/20-white": {
+    "offsetX": 0,
+    "offsetY": 50
+  },
+  "body/19-green": {
+    "offsetX": 0,
+    "offsetY": 37
+  },
+  "body/19-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 37
+  },
+  "body/19-white": {
+    "offsetX": 0,
+    "offsetY": 37
+  },
+  "body/18-green": {
+    "offsetX": 0,
+    "offsetY": 4
+  },
+  "body/18-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 4
+  },
+  "body/18-white": {
+    "offsetX": 0,
+    "offsetY": 4
+  },
+  "head/man/17-hara-green": {
+    "offsetX": 1.34,
+    "offsetY": 0
+  },
+  "head/man/17-hara-yellow-green": {
+    "offsetX": 1.34,
+    "offsetY": 0
+  },
+  "body/17-green": {
+    "offsetX": 0,
+    "offsetY": 54
+  },
+  "body/17-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 54
+  },
+  "body/17-white": {
+    "offsetX": 0,
+    "offsetY": 54
+  },
+  "body/16-green": {
+    "offsetX": 0,
+    "offsetY": 4
+  },
+  "body/16-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 4
+  },
+  "body/16-white": {
+    "offsetX": 0,
+    "offsetY": 4
+  },
+  "body/15-green": {
+    "offsetX": 2.3,
+    "offsetY": 1.45
+  },
+  "body/15-yellow-green": {
+    "offsetX": 2.3,
+    "offsetY": 1.45
+  },
+  "body/15-white": {
+    "offsetX": 2.3,
+    "offsetY": 1.45
+  },
+  "body/13-green": {
+    "offsetX": 0,
+    "offsetY": 43
+  },
+  "body/13-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 43
+  },
+  "body/13-white": {
+    "offsetX": 0,
+    "offsetY": 43
+  },
+  "body/11-green": {
+    "offsetX": 7,
+    "offsetY": 9
+  },
+  "body/11-yellow-green": {
+    "offsetX": 7,
+    "offsetY": 9
+  },
+  "body/11-white": {
+    "offsetX": 7,
+    "offsetY": 9
+  },
+  "body/10-green": {
+    "offsetX": 0,
+    "offsetY": 5.25
+  },
+  "body/10-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 5.25
+  },
+  "body/10-white": {
+    "offsetX": 0,
+    "offsetY": 5.25
+  },
+  "body/09-green": {
+    "offsetX": 0,
+    "offsetY": 54.7
+  },
+  "body/09-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 54.7
+  },
+  "body/09-white": {
+    "offsetX": 0,
+    "offsetY": 54.7
+  },
+  "body/08-green": {
+    "offsetX": 0,
+    "offsetY": 1.1
+  },
+  "body/08-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 1.1
+  },
+  "body/08-white": {
+    "offsetX": 0,
+    "offsetY": 1.1
+  },
+  "body/07-green": {
+    "offsetX": 0,
+    "offsetY": 44
+  },
+  "body/07-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 44
+  },
+  "body/07-white": {
+    "offsetX": 0,
+    "offsetY": 44
+  },
+  "body/05-green": {
+    "offsetX": 1,
+    "offsetY": 10
+  },
+  "body/05-yellow-green": {
+    "offsetX": 1,
+    "offsetY": 10
+  },
+  "body/05-white": {
+    "offsetX": 1,
+    "offsetY": 10
+  },
+  "body/04-green": {
+    "offsetX": 0,
+    "offsetY": 44
+  },
+  "body/04-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 44
+  },
+  "body/04-white": {
+    "offsetX": 0,
+    "offsetY": 44
+  },
+  "body/02-green": {
+    "offsetX": 0,
+    "offsetY": 1
+  },
+  "body/02-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 1
+  },
+  "body/02-white": {
+    "offsetX": 0,
+    "offsetY": 1
+  },
+  "glasses/rectangle-green": {
+    "offsetX": 1,
+    "offsetY": 0
+  },
+  "glasses/rectangle-yellow-green": {
+    "offsetX": 1,
+    "offsetY": 0
+  },
+  "glasses/rectangle-black": {
+    "offsetX": 1,
+    "offsetY": 0
+  },
+  "glasses/sunglasses-green": {
+    "offsetX": 1,
+    "offsetY": 0
+  },
+  "glasses/sunglasses-yellow-green": {
+    "offsetX": 1,
+    "offsetY": 0
+  },
+  "glasses/sunglasses-black": {
+    "offsetX": 1,
+    "offsetY": 0
+  },
+  "hat/cap-green": {
+    "offsetX": 2,
+    "offsetY": 0
+  },
+  "hat/cap-yellow-green": {
+    "offsetX": 2,
+    "offsetY": 0
+  },
+  "hat/cap-white": {
+    "offsetX": 2,
+    "offsetY": 0
+  },
+  "hat/knit-green": {
+    "offsetX": 0,
+    "offsetY": 2
+  },
+  "hat/knit-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 2
+  },
+  "hat/knit-white": {
+    "offsetX": 0,
+    "offsetY": 2
+  },
+  "hat/hat-green": {
+    "offsetX": 12,
+    "offsetY": 4
+  },
+  "hat/hat-yellow-green": {
+    "offsetX": 12,
+    "offsetY": 4
+  },
+  "hat/hat-white": {
+    "offsetX": 12,
+    "offsetY": 4
+  },
+  "hat/chef-white": {
+    "offsetX": 0,
+    "offsetY": 91.99
+  },
+  "hat/chef-yellow-green": {
+    "offsetX": 0,
+    "offsetY": 91.99
+  },
+  "umbrella/umbrella-green": {
+    "offsetX": 87.01,
+    "offsetY": 110
+  },
+  "umbrella/umbrella-yellow-green": {
+    "offsetX": 87.01,
+    "offsetY": 110
+  },
+  "umbrella/umbrella-white": {
+    "offsetX": 87.01,
+    "offsetY": 110
+  },
+  "beard/7": {
+    "offsetX": 0,
+    "offsetY": 2.8
+  },
+  "beard/8": {
+    "offsetX": 0,
+    "offsetY": 2.9
+  },
+  "beard/9": {
+    "offsetX": 0.5,
+    "offsetY": 2.8
+  },
+  "beard/11": {
+    "offsetX": 0.5,
+    "offsetY": 2.9
+  },
+  "beard/12": {
+    "offsetX": 0,
+    "offsetY": 2.8
+  }
+}
