@@ -1,0 +1,99 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--color-border-low-emphasis);
+  overflow-x: auto;
+}
+
+.tab {
+  --Button--neutral-backgroundColor: transparent;
+  --Button--neutral-color: var(--color-text-medium-emphasis);
+  --Button--neutral-onHover-backgroundColor: var(--color-surface-secondary);
+  --Button--neutral-onActive-backgroundColor: var(--color-surface-tertiary);
+}
+
+.tabActive {
+  --Button--neutral-backgroundColor: var(--color-surface-tertiary);
+  --Button--neutral-color: var(--color-text-high-emphasis);
+  --Button--neutral-onHover-backgroundColor: var(--color-surface-quaternary);
+  --Button--neutral-onActive-backgroundColor: var(--color-surface-quaternary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  padding: 12px;
+  overflow-y: auto;
+  flex: 1;
+  align-content: start;
+}
+
+.thumb {
+  aspect-ratio: 1;
+  border: 0 solid var(--color-border-low-emphasis);
+  border-radius: 6px;
+  background: var(--color-surface-secondary);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s;
+  position: relative;
+  box-shadow: inset 0 0 19px 0 rgba(0, 0, 0, 0.04);
+}
+
+.thumb:hover {
+  box-shadow: inset 0 0 19px 0 rgba(0, 0, 0, 0.1);
+}
+
+.thumbSelected {
+  border: 2px solid var(--color-border-strong-emphasis);
+  background: var(--color-surface-tertiary);
+}
+
+.thumbImg {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.thumbNone {
+  font-size: 11px;
+  color: var(--color-text-low-emphasis);
+}
+
+.headTypeWrap {
+  padding: 16px 12px 8px;
+}
+
+.dropdownRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 12px;
+}
+
+.dropdownRow :global(.spui-InputLabel),
+.toggleRow :global(.spui-InputLabel) {
+  font-size: 0.8125rem;
+}
+
+.toggleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  font-size: 0.8125rem;
+  color: var(--color-text-high-emphasis);
+}
