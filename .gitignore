@@ -125,6 +125,11 @@ dist
 # Lighthouse CI test result
 .lighthouseci/
 
+# Vitest Browser Mode
+.vitest-attachments/
+__screenshots__/
+
 # Files in packages
 packages/spindle-tokens/lib/*.js
+packages/spindle-illust-maker/lib/
 packages/spindle-tokens/output-folder/

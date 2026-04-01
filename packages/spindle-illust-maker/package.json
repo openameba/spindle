@@ -3,21 +3,41 @@
   "version": "0.0.1",
   "private": true,
   "type": "module",
+  "main": "./lib/index.js",
+  "module": "./lib/index.mjs",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "import": "./lib/index.mjs",
+      "require": "./lib/index.js"
+    }
+  },
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:lib": "vite build --config vite.lib.config.ts && tsc --project tsconfig.lib.json",
+    "test": "vitest run",
+    "test:unit": "vitest run --project unit",
+    "test:browser": "BROWSER_TEST=true vitest run --project browser",
+    "test:browser:update": "BROWSER_TEST=true vitest run --project browser --update",
     "preview": "vite preview"
   },
-  "dependencies": {
-    "@openameba/spindle-ui": "^3.1.4",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
-  },
   "devDependencies": {
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
-    "@vitejs/plugin-react": "^4.5.2",
-    "typescript": "~5.9.3",
-    "vite": "6.3.5"
+    "@openameba/spindle-ui": "3.1.4",
+    "@types/react": "19.0.0",
+    "@types/react-dom": "19.0.0",
+    "@vitejs/plugin-react": "4.5.2",
+    "@vitest/browser-playwright": "4.1.2",
+    "playwright": "1.58.2",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "typescript": "5.9.3",
+    "vite": "6.3.5",
+    "vitest": "4.1.2",
+    "vitest-browser-react": "2.1.0"
   }
 }
