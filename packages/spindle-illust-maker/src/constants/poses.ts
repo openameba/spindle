@@ -8,6 +8,8 @@ export const POSES: PoseConfig[] = [
     canvasHeight: 680,
     headTypes: ['man', 'woman'],
     hasAccessories: true,
+    bodySubdir: 'body-standing',
+    legSubdir: 'leg-standing',
     layers: [
       { part: 'leg', x: -3, y: 295, width: 300, height: 400 },
       { part: 'body', x: -3, y: 146, width: 300, height: 250 },
@@ -45,6 +47,8 @@ export const POSES: PoseConfig[] = [
     canvasHeight: 680,
     headTypes: ['man', 'woman'],
     hasAccessories: true,
+    bodySubdir: 'body-sitting',
+    legSubdir: 'leg-sitting',
     layers: [
       { part: 'leg', x: -7.8, y: 479.7, width: 300, height: 400 },
       { part: 'body', x: -11, y: 329, width: 300, height: 250 },
@@ -82,6 +86,7 @@ export const POSES: PoseConfig[] = [
     canvasHeight: 680,
     headTypes: ['man', 'woman'],
     hasAccessories: true,
+    bodySubdir: 'body-desk',
     layers: [
       { part: 'head', x: 80.2, y: 150, width: 180, height: 170 },
       { part: 'body', x: 10.5, y: 307, width: 300, height: 250 },
@@ -116,6 +121,7 @@ export const POSES: PoseConfig[] = [
     canvasHeight: 600,
     headTypes: ['old'],
     hasAccessories: false,
+    bodySubdir: 'body-old',
     layers: [
       { part: 'leg', x: 26.4, y: 214.5, width: 300, height: 400 },
       { part: 'head', x: 20, y: 0, width: 180, height: 170 },
@@ -129,6 +135,7 @@ export const POSES: PoseConfig[] = [
     canvasHeight: 400,
     headTypes: ['child'],
     hasAccessories: false,
+    bodySubdir: 'body-child',
     layers: [
       { part: 'head', x: 43.8, y: -12, width: 180, height: 170 },
       { part: 'body', x: -24.8, y: 141.5, width: 300, height: 250 },
@@ -141,6 +148,7 @@ export const POSES: PoseConfig[] = [
     canvasHeight: 400,
     headTypes: ['baby'],
     hasAccessories: false,
+    bodySubdir: 'body-baby',
     layers: [
       { part: 'body', x: -25, y: 141, width: 300, height: 250 },
       { part: 'head', x: 44, y: -12, width: 180, height: 170 },

@@ -367,6 +367,10 @@ export const HAT: PartOption[] = [
   { id: "knit-yellow-green", label: "knit-yellow-green", path: `${BASE}/hat/knit-yellow-green.svg` },
 ];
 
+export const HEAD_BABY: PartOption[] = [
+  { id: "01", label: "01", path: `${BASE}/head/baby/01.svg` },
+];
+
 export const HEAD_CHILD: PartOption[] = [
   { id: "01-black", label: "01-black", path: `${BASE}/head/child/01-black.svg` },
   { id: "01-green", label: "01-green", path: `${BASE}/head/child/01-green.svg` },
@@ -427,6 +431,11 @@ export const HEAD_MAN: PartOption[] = [
   { id: "17-hara-black", label: "17-hara-black", path: `${BASE}/head/man/17-hara-black.svg` },
   { id: "17-hara-green", label: "17-hara-green", path: `${BASE}/head/man/17-hara-green.svg` },
   { id: "17-hara-yellow-green", label: "17-hara-yellow-green", path: `${BASE}/head/man/17-hara-yellow-green.svg` },
+];
+
+export const HEAD_OLD: PartOption[] = [
+  { id: "01", label: "01", path: `${BASE}/head/old/01.svg` },
+  { id: "02", label: "02", path: `${BASE}/head/old/02.svg` },
 ];
 
 export const HEAD_WOMAN: PartOption[] = [
@@ -625,16 +634,60 @@ export const VECTOR: PartOption[] = [
   { id: "24", label: "24", path: `${BASE}/vector/24.svg` },
 ];
 
+function filterBodyByNumbers(numbers: number[]): PartOption[] {
+  const prefixes = numbers.map((n) => `${n}-`);
+  const exact = numbers.map((n) => `${n}`);
+  return BODY.filter((p) => prefixes.some((pr) => p.id.startsWith(pr)) || exact.includes(p.id));
+}
+
+function filterLegByNumbers(numbers: number[]): PartOption[] {
+  const prefixes = numbers.map((n) => `${n}-`);
+  const exact = numbers.map((n) => `${n}`);
+  return LEG.filter((p) => prefixes.some((pr) => p.id.startsWith(pr)) || exact.includes(p.id));
+}
+
+const BODY_DESK_NUMBERS = [46, 49, 67, 68, 92, 93, 94, 95, 96, 97];
+const BODY_OLD_NUMBERS = [28, 29, 30, 31];
+const BODY_CHILD_NUMBERS = [25, 26];
+const BODY_BABY_NUMBERS = [102, 103];
+
+export const BODY_DESK = filterBodyByNumbers(BODY_DESK_NUMBERS);
+export const BODY_OLD = filterBodyByNumbers(BODY_OLD_NUMBERS);
+export const BODY_CHILD = filterBodyByNumbers(BODY_CHILD_NUMBERS);
+export const BODY_BABY = filterBodyByNumbers(BODY_BABY_NUMBERS);
+
+const BODY_EXCLUDE_FROM_SITTING = new Set([...BODY_DESK_NUMBERS, ...BODY_OLD_NUMBERS, ...BODY_BABY_NUMBERS]);
+export const BODY_SITTING = BODY.filter((p) => {
+  const num = parseInt(p.id, 10);
+  return !BODY_EXCLUDE_FROM_SITTING.has(num);
+});
+
+const BODY_EXCLUDE_FROM_STANDING = new Set([...BODY_DESK_NUMBERS, ...BODY_OLD_NUMBERS, ...BODY_CHILD_NUMBERS, ...BODY_BABY_NUMBERS]);
+export const BODY_STANDING = BODY.filter((p) => {
+  const num = parseInt(p.id, 10);
+  return !BODY_EXCLUDE_FROM_STANDING.has(num);
+});
+
 export const PARTS_BY_CATEGORY: Record<string, PartOption[]> = {
   "beard": BEARD,
   "body": BODY,
+  "body-baby": BODY_BABY,
+  "body-child": BODY_CHILD,
+  "body-desk": BODY_DESK,
+  "body-old": BODY_OLD,
   "body-ride": BODY_RIDE,
+  "body-sitting": BODY_SITTING,
+  "body-standing": BODY_STANDING,
   "glasses": GLASSES,
   "hat": HAT,
+  "head/baby": HEAD_BABY,
   "head/child": HEAD_CHILD,
   "head/man": HEAD_MAN,
+  "head/old": HEAD_OLD,
   "head/woman": HEAD_WOMAN,
   "leg": LEG,
+  "leg-sitting": filterLegByNumbers([14, 19, 20, 21]),
+  "leg-standing": LEG.filter((p) => ![14, 19, 20, 21].some((n) => p.id.startsWith(`${n}-`) || p.id === `${n}`)),
   "mask": MASK,
   "umbrella": UMBRELLA,
   "vector": VECTOR,

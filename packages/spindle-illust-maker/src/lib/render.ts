@@ -62,9 +62,15 @@ function buildEffectiveLayers(state: IllustState, layers: LayerEntry[]): LayerEn
   if (state.headBodySwap) {
     const bodyIdx = effectiveLayers.findIndex((l) => l.part === 'body');
     const headIdx = effectiveLayers.findIndex((l) => l.part === 'head');
-    if (bodyIdx !== -1 && headIdx !== -1 && headIdx > bodyIdx) {
-      const headAndAcc = effectiveLayers.splice(headIdx);
-      effectiveLayers.splice(bodyIdx, 0, ...headAndAcc);
+    if (bodyIdx !== -1 && headIdx !== -1 && bodyIdx !== headIdx) {
+      if (headIdx > bodyIdx) {
+        const headAndAcc = effectiveLayers.splice(headIdx);
+        effectiveLayers.splice(bodyIdx, 0, ...headAndAcc);
+      } else {
+        const [headLayer] = effectiveLayers.splice(headIdx, 1);
+        const newBodyIdx = effectiveLayers.findIndex((l) => l.part === 'body');
+        effectiveLayers.splice(newBodyIdx + 1, 0, headLayer);
+      }
     }
   }
 

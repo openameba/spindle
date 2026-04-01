@@ -47,7 +47,17 @@ async function main() {
     new URL('./illust-nodes.json', import.meta.url),
     'utf-8',
   );
-  const nodes = JSON.parse(nodesJson);
+  const allNodes = JSON.parse(nodesJson);
+  const skipped = allNodes.filter((n) => n.name.endsWith('/ -'));
+  const nodes = allNodes.filter((n) => !n.name.endsWith('/ -'));
+
+  if (skipped.length > 0) {
+    console.log(`Skipping ${skipped.length} placeholder nodes (name ends with "/ -"):`);
+    for (const n of skipped) {
+      console.log(`  ${n.name} (${n.id})`);
+    }
+    console.log();
+  }
 
   console.log(`Total nodes: ${nodes.length}`);
   console.log(`Batch size: ${BATCH_SIZE}`);

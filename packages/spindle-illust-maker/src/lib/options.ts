@@ -26,6 +26,11 @@ export function getOptions(): IllustOptions {
         if (items) {
           parts[category] = toPartOptionInfo(items);
         }
+      } else if (category === 'leg' && pose.legSubdir) {
+        const items = PARTS_BY_CATEGORY[pose.legSubdir];
+        if (items) {
+          parts[category] = toPartOptionInfo(items);
+        }
       } else {
         const items = PARTS_BY_CATEGORY[category];
         if (items) {

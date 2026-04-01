@@ -57,20 +57,28 @@ export function PartsPanel({ state, onPartChange, onNeckTiltChange, onHeadBodySw
   const [activeTab, setActiveTab] = useState<PartCategory>('head');
   const [headType, setHeadType] = useState<HeadType>('man');
 
+  const effectiveHeadType = useMemo(() => {
+    if (!pose) return headType;
+    return pose.headTypes.includes(headType) ? headType : pose.headTypes[0];
+  }, [pose, headType]);
+
   const currentTab = availableParts.includes(activeTab)
     ? activeTab
     : availableParts[0] ?? 'head';
 
   const items = useMemo(() => {
     if (currentTab === 'head') {
-      const key = `head/${headType}`;
+      const key = `head/${effectiveHeadType}`;
       return PARTS_BY_CATEGORY[key] ?? [];
     }
     if (currentTab === 'body' && pose?.bodySubdir) {
       return PARTS_BY_CATEGORY[pose.bodySubdir] ?? [];
     }
+    if (currentTab === 'leg' && pose?.legSubdir) {
+      return PARTS_BY_CATEGORY[pose.legSubdir] ?? [];
+    }
     return PARTS_BY_CATEGORY[currentTab] ?? [];
-  }, [currentTab, headType, pose]);
+  }, [currentTab, effectiveHeadType, pose]);
 
   const selectedPath = state[currentTab];
   const isOptional = ['hat', 'glasses', 'mask', 'beard', 'umbrella'].includes(
@@ -104,7 +112,7 @@ export function PartsPanel({ state, onPartChange, onNeckTiltChange, onHeadBodySw
               id: ht,
               label: HEAD_TYPE_LABELS[ht],
             }))}
-            selectedId={headType}
+            selectedId={effectiveHeadType}
             onClick={(_e, id) => setHeadType(id as HeadType)}
           />
         </div>

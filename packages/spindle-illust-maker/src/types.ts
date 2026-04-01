@@ -41,6 +41,7 @@ export type PoseConfig = {
   hasAccessories: boolean;
   neckTilts?: Partial<Record<NeckTilt, NeckTiltConfig>>;
   bodySubdir?: string;
+  legSubdir?: string;
 };
 
 export type PartOption = {
