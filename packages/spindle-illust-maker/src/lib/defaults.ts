@@ -22,7 +22,8 @@ function getDefaultParts(poseId: PoseId): Partial<IllustState> {
       const bodyKey = pose.bodySubdir ?? 'body';
       result.body = findGreenDefault(PARTS_BY_CATEGORY[bodyKey]);
     } else if (part === 'leg') {
-      result.leg = findGreenDefault(PARTS_BY_CATEGORY['leg']);
+      const legKey = pose.legSubdir ?? 'leg';
+      result.leg = findGreenDefault(PARTS_BY_CATEGORY[legKey]);
     } else {
       (result as Record<string, string | null>)[part] = null;
     }

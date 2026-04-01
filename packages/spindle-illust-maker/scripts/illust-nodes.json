@@ -3562,5 +3562,23 @@
     "name": "Beard / 12",
     "category": "beard",
     "filename": "12"
+  },
+  {
+    "id": "211:6693",
+    "name": "Parts Head / Old / 1",
+    "category": "head/old",
+    "filename": "01"
+  },
+  {
+    "id": "574:4815",
+    "name": "Parts Head / Old / 2",
+    "category": "head/old",
+    "filename": "02"
+  },
+  {
+    "id": "6153:4169",
+    "name": "Parts Head / Baby / 01",
+    "category": "head/baby",
+    "filename": "01"
   }
 ]

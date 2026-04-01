@@ -38,9 +38,9 @@ describe('getDefaultState', () => {
       ['adult-sitting', ['head', 'body', 'leg']],
       ['adult-desk', ['head', 'body']],
       ['adult-riding', ['head', 'body']],
-      ['old', ['body', 'leg']],
-      ['child', ['body']],
-      ['baby', ['body']],
+      ['old', ['head', 'body', 'leg']],
+      ['child', ['head', 'body']],
+      ['baby', ['head', 'body']],
     ];
 
     for (const [poseId, requiredParts] of posesWithParts) {
@@ -57,11 +57,13 @@ describe('getDefaultState', () => {
 
   it('old ポーズで headTypes[0] に基づく head が選ばれる', () => {
     const state = getDefaultState('old');
-    // old ポーズの headTypes は ['old'] だが head/old は PARTS_BY_CATEGORY にないため null
-    // head がレイヤーにあるポーズはデフォルトが設定されるが、データがなければ null
-    // 実際の挙動に合わせて検証
-    if (state.head !== null) {
-      expect(state.head).toContain('head/old');
-    }
+    expect(state.head).not.toBeNull();
+    expect(state.head).toContain('head/old');
+  });
+
+  it('baby ポーズで headTypes[0] に基づく head が選ばれる', () => {
+    const state = getDefaultState('baby');
+    expect(state.head).not.toBeNull();
+    expect(state.head).toContain('head/baby');
   });
 });
