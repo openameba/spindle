@@ -53,7 +53,7 @@ describe('<InlineDropDown />', () => {
   test('選択肢を変更すると表示テキストが更新される', async () => {
     const user = userEvent.setup();
 
-    render(
+    const { container } = render(
       <InlineDropDown>
         <option value="a">選択肢A</option>
         <option value="b">選択肢B</option>
@@ -61,11 +61,12 @@ describe('<InlineDropDown />', () => {
       </InlineDropDown>,
     );
 
-    expect(screen.getByText('選択肢A')).toBeInTheDocument();
+    const displayText = container.querySelector('.spui-InlineDropDown-text');
+    expect(displayText).toHaveTextContent('選択肢A');
 
     await user.selectOptions(screen.getByRole('combobox'), 'b');
-    expect(screen.getByText('選択肢B')).toBeInTheDocument();
-    expect(screen.queryByText('選択肢A')).not.toBeInTheDocument();
+    expect(displayText).toHaveTextContent('選択肢B');
+    expect(displayText).not.toHaveTextContent('選択肢A');
   });
 
   test('disabled状態が正しく適用される', () => {
@@ -82,7 +83,7 @@ describe('<InlineDropDown />', () => {
   test('プレースホルダー状態から選択肢を選ぶと表示が更新される', async () => {
     const user = userEvent.setup();
 
-    render(
+    const { container } = render(
       <InlineDropDown>
         <option value="">選択してください</option>
         <option value="a">選択肢A</option>
@@ -90,11 +91,12 @@ describe('<InlineDropDown />', () => {
       </InlineDropDown>,
     );
 
-    expect(screen.getByText('選択してください')).toBeInTheDocument();
+    const displayText = container.querySelector('.spui-InlineDropDown-text');
+    expect(displayText).toHaveTextContent('選択してください');
 
     await user.selectOptions(screen.getByRole('combobox'), 'a');
-    expect(screen.getByText('選択肢A')).toBeInTheDocument();
-    expect(screen.queryByText('選択してください')).not.toBeInTheDocument();
+    expect(displayText).toHaveTextContent('選択肢A');
+    expect(displayText).not.toHaveTextContent('選択してください');
   });
 
   test('visualSizeがsmallの場合、適切なクラス名が適用される', () => {
@@ -134,7 +136,7 @@ describe('<InlineDropDown />', () => {
   });
 
   test('初期表示時にdefaultValueで指定されたオプションのテキストが表示される', () => {
-    render(
+    const { container } = render(
       <InlineDropDown defaultValue="b">
         <option value="a">選択肢A</option>
         <option value="b">選択肢B</option>
@@ -142,7 +144,8 @@ describe('<InlineDropDown />', () => {
       </InlineDropDown>,
     );
 
-    expect(screen.getByText('選択肢B')).toBeInTheDocument();
+    const displayText = container.querySelector('.spui-InlineDropDown-text');
+    expect(displayText).toHaveTextContent('選択肢B');
     expect(screen.getByRole('combobox')).toHaveValue('b');
   });
 
