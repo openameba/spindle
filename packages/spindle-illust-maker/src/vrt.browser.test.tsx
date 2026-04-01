@@ -41,6 +41,13 @@ describe('VRT: Canvas描画', () => {
     await expect(page.getByRole('main')).toMatchScreenshot('pose-riding.png');
   });
 
+  it('ポーズ: お辞儀', async () => {
+    const { container } = await renderAndWait();
+    await userEvent.click(page.getByRole('button', { name: 'お辞儀', exact: true }));
+    await waitForCanvasRender(container);
+    await expect(page.getByRole('main')).toMatchScreenshot('pose-bowing.png');
+  });
+
   it('ポーズ: Old', async () => {
     const { container } = await renderAndWait();
     await userEvent.click(page.getByText('Old'));

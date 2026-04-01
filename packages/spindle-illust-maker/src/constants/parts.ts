@@ -650,11 +650,13 @@ const BODY_DESK_NUMBERS = [46, 49, 67, 68, 92, 93, 94, 95, 96, 97];
 const BODY_OLD_NUMBERS = [28, 29, 30, 31];
 const BODY_CHILD_NUMBERS = [25, 26];
 const BODY_BABY_NUMBERS = [102, 103];
+const BODY_BOW_NUMBERS = [45];
 
 export const BODY_DESK = filterBodyByNumbers(BODY_DESK_NUMBERS);
 export const BODY_OLD = filterBodyByNumbers(BODY_OLD_NUMBERS);
 export const BODY_CHILD = filterBodyByNumbers(BODY_CHILD_NUMBERS);
 export const BODY_BABY = filterBodyByNumbers(BODY_BABY_NUMBERS);
+export const BODY_BOW = filterBodyByNumbers(BODY_BOW_NUMBERS);
 
 const BODY_EXCLUDE_FROM_SITTING = new Set([...BODY_DESK_NUMBERS, ...BODY_OLD_NUMBERS, ...BODY_BABY_NUMBERS]);
 export const BODY_SITTING = BODY.filter((p) => {
@@ -672,6 +674,7 @@ export const PARTS_BY_CATEGORY: Record<string, PartOption[]> = {
   "beard": BEARD,
   "body": BODY,
   "body-baby": BODY_BABY,
+  "body-bow": BODY_BOW,
   "body-child": BODY_CHILD,
   "body-desk": BODY_DESK,
   "body-old": BODY_OLD,

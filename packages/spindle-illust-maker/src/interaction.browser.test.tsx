@@ -49,6 +49,13 @@ describe('UIインタラクション', () => {
     await expect.element(page.getByText('Beard')).not.toBeInTheDocument();
   });
 
+  it('adult-bowing で首の傾きドロップダウンが非表示', async () => {
+    const { container } = await renderAndWait();
+    await userEvent.click(page.getByRole('button', { name: 'お辞儀', exact: true }));
+    const label = container.querySelector('#neck-tilt-label');
+    expect(label).toBeNull();
+  });
+
   it('adult-desk で首の傾きドロップダウンが非表示', async () => {
     const { container } = await renderAndWait();
     await userEvent.click(page.getByText('机座り'));

@@ -4,14 +4,15 @@ import { getOptions } from './options';
 describe('getOptions', () => {
   const options = getOptions();
 
-  it('全7ポーズを返す', () => {
-    expect(options.poses).toHaveLength(7);
+  it('全8ポーズを返す', () => {
+    expect(options.poses).toHaveLength(8);
     const ids = options.poses.map((p) => p.id);
     expect(ids).toEqual([
       'adult-standing',
       'adult-sitting',
       'adult-desk',
       'adult-riding',
+      'adult-bowing',
       'old',
       'child',
       'baby',
@@ -70,6 +71,31 @@ describe('getOptions', () => {
     const bodyItems = riding.parts['body'];
     expect(bodyItems.length).toBeGreaterThan(0);
     expect(bodyItems[0].path).toContain('body-ride');
+  });
+
+  it('adult-bowing の body が body-bow のデータを使っている', () => {
+    const bowing = options.poses.find((p) => p.id === 'adult-bowing')!;
+    const bodyItems = bowing.parts['body'];
+    expect(bodyItems.length).toBeGreaterThan(0);
+    for (const item of bodyItems) {
+      expect(parseInt(item.id, 10)).toBe(45);
+    }
+  });
+
+  it('adult-bowing に neckTilt がない', () => {
+    const bowing = options.poses.find((p) => p.id === 'adult-bowing')!;
+    expect(bowing.hasNeckTilt).toBe(false);
+  });
+
+  it('adult-bowing に立ちと同じ leg, アクセサリがある', () => {
+    const bowing = options.poses.find((p) => p.id === 'adult-bowing')!;
+    expect(bowing.parts).toHaveProperty('leg');
+    expect(bowing.parts).toHaveProperty('head/man');
+    expect(bowing.parts).toHaveProperty('head/woman');
+    expect(bowing.parts).toHaveProperty('hat');
+    expect(bowing.parts).toHaveProperty('glasses');
+    expect(bowing.parts).toHaveProperty('mask');
+    expect(bowing.parts).toHaveProperty('beard');
   });
 
   it('neckTilts があるポーズだけ hasNeckTilt が true', () => {

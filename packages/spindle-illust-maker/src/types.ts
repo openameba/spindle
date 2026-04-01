@@ -3,6 +3,7 @@ export type PoseId =
   | 'adult-sitting'
   | 'adult-desk'
   | 'adult-riding'
+  | 'adult-bowing'
   | 'old'
   | 'child'
   | 'baby';
@@ -42,6 +43,7 @@ export type PoseConfig = {
   neckTilts?: Partial<Record<NeckTilt, NeckTiltConfig>>;
   bodySubdir?: string;
   legSubdir?: string;
+  defaultHeadBodySwap?: boolean;
 };
 
 export type PartOption = {
