@@ -7,6 +7,8 @@ peerDependencyRules:
   allowedVersions:
     stylelint-selector-bem-pattern>stylelint: '17'
     # Temporary workaround: @storybook/addon-mcp currently resolves valibot 1.2.0 via @tmcp/adapter-valibot.
+    # NOTE: This intentionally permits a peer version mismatch and may hide runtime incompatibilities.
+    # TODO: Remove this once the Storybook MCP dependency chain supports a valibot version compatible with @valibot/to-json-schema.
     '@valibot/to-json-schema>valibot': '1.2.0'
 
 overrides:
