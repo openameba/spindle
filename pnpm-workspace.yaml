@@ -6,6 +6,8 @@ peerDependencyRules:
     - hono
   allowedVersions:
     stylelint-selector-bem-pattern>stylelint: '17'
+    # Temporary workaround: @storybook/addon-mcp currently resolves valibot 1.2.0 via @tmcp/adapter-valibot.
+    '@valibot/to-json-schema>valibot': '1.2.0'
 
 overrides:
   superstatic: 10.0.0
