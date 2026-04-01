@@ -27,13 +27,18 @@ export function ExportButtons({ exportToCanvas }: Props) {
 
   const handleCopy = async () => {
     try {
-      const canvas = await exportToCanvas();
-      const blob = await new Promise<Blob | null>((resolve) =>
-        canvas.toBlob(resolve, 'image/png'),
+      // SafariではClipboardItemにPromise<Blob>を渡す必要がある
+      const blobPromise = exportToCanvas().then(
+        (canvas) =>
+          new Promise<Blob>((resolve, reject) =>
+            canvas.toBlob(
+              (blob) => (blob ? resolve(blob) : reject(new Error('toBlob failed'))),
+              'image/png',
+            ),
+          ),
       );
-      if (!blob) return;
       await navigator.clipboard.write([
-        new ClipboardItem({ 'image/png': blob }),
+        new ClipboardItem({ 'image/png': blobPromise }),
       ]);
       setToastMessage('クリップボードにコピーしました');
     } catch {
