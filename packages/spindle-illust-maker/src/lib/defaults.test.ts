@@ -38,6 +38,7 @@ describe('getDefaultState', () => {
       ['adult-sitting', ['head', 'body', 'leg']],
       ['adult-desk', ['head', 'body']],
       ['adult-riding', ['head', 'body']],
+      ['adult-bowing', ['head', 'body', 'leg']],
       ['old', ['head', 'body', 'leg']],
       ['child', ['head', 'body']],
       ['baby', ['head', 'body']],

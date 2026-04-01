@@ -32,10 +32,11 @@ function getDefaultParts(poseId: PoseId): Partial<IllustState> {
 }
 
 export function getDefaultState(poseId: PoseId = 'adult-standing'): IllustState {
+  const pose = POSE_MAP[poseId];
   return {
     pose: poseId,
     neckTilt: 'normal',
-    headBodySwap: false,
+    headBodySwap: pose?.defaultHeadBodySwap ?? false,
     bodyLegSwap: false,
     head: null,
     body: null,
