@@ -1,0 +1,36 @@
+name: test-illust-maker
+
+on:
+  push:
+    paths:
+      - 'packages/spindle-illust-maker/**'
+  pull_request:
+    paths:
+      - 'packages/spindle-illust-maker/**'
+  workflow_dispatch:
+
+env:
+  TZ: Asia/Tokyo
+
+jobs:
+  test:
+    name: illust-maker unit + browser tests
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.58.2
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5.0.0
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: package.json
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @openameba/spindle-illust-maker test:browser
+      - run: pnpm --filter @openameba/spindle-illust-maker test:unit
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        if: failure()
+        with:
+          name: illust-maker-vrt-diff
+          path: packages/spindle-illust-maker/src/__tests__/__screenshots__/
+          retention-days: 7
