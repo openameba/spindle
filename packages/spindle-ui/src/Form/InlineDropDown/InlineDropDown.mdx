@@ -7,8 +7,6 @@ import * as InlineDropDownStories from './InlineDropDown.stories';
 
 アイテム一覧画面の並び替え等の目的で利用されるDropDown型のコンポーネントです。一般的なフォーム画面の選択UIで利用することは想定していません。 InlineDropDownは試験的なコンポーネントであるため、破壊的な変更や削除等おこなわれる可能性があることに注意して利用してください。
 
-
-
 <Source
   language="javascript"
   code={`
@@ -97,17 +95,7 @@ import '@openameba/spindle-ui/Form/InlineDropDown.css';
 
 ## Accessibility
 
-aria-label属性やlabel要素で適切なラベリングをしてください。
-
-<Source
-  code={`
-<InlineDropDown aria-label="期間を選択" id="term-selection" name="term" placeholder="期間を選択">
-  <option value="today">今日</option>
-  <option value="seven_days">7日間</option>
-  <option value="thirty_days">30日間</option>
-</InlineDropDown>
-  `}
-/>
+label要素やaria-label属性で適切なラベリングをしてください。
 
 <Source
   code={`
@@ -119,5 +107,15 @@ aria-label属性やlabel要素で適切なラベリングをしてください�
     <option value="thirty_days">30日間</option>
   </InlineDropDown>
 </>
+  `}
+/>
+
+<Source
+  code={`
+<InlineDropDown aria-label="期間を選択" id="term-selection" name="term" placeholder="期間を選択">
+  <option value="today">今日</option>
+  <option value="seven_days">7日間</option>
+  <option value="thirty_days">30日間</option>
+</InlineDropDown>
   `}
 />
