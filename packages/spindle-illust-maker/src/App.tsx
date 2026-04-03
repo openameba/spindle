@@ -61,6 +61,14 @@ export function App() {
           <PartsPanel state={state} onPartChange={handlePartChange} onNeckTiltChange={handleNeckTiltChange} onHeadBodySwapChange={handleHeadBodySwapChange} onBodyLegSwapChange={handleBodyLegSwapChange} />
         </div>
       </main>
+      <footer className={styles.footer}>
+        <small>
+          © Ameba - Illustration files are licensed under{' '}
+          <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ja" target="_blank" rel="noreferrer">
+            CC BY-NC-ND 4.0
+          </a>
+        </small>
+      </footer>
     </div>
   );
 }

@@ -44,14 +44,16 @@ const NECK_TILT_OPTIONS = [
   { id: 'down' as const, label: '下向き' },
 ];
 
+const PART_ORDER: PartCategory[] = ['head', 'body', 'leg', 'hat', 'glasses', 'mask', 'beard', 'umbrella'];
+
 const BODY_LEG_POSES: string[] = ['adult-standing', 'adult-sitting'];
 
 export function PartsPanel({ state, onPartChange, onNeckTiltChange, onHeadBodySwapChange, onBodyLegSwapChange }: Props) {
   const pose = POSE_MAP[state.pose];
   const availableParts = useMemo(() => {
     if (!pose) return [];
-    const parts = [...new Set(pose.layers.map((l) => l.part))];
-    return parts;
+    const parts = new Set(pose.layers.map((l) => l.part));
+    return PART_ORDER.filter((p) => parts.has(p));
   }, [pose]);
 
   const [activeTab, setActiveTab] = useState<PartCategory>('head');

@@ -42,6 +42,20 @@
   overflow: auto;
 }
 
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 20px;
+  border-top: 1px solid var(--color-border-low-emphasis);
+  background: var(--color-surface-primary);
+  color: var(--color-text-low-emphasis);
+}
+
+.footer a {
+  color: inherit;
+}
+
 .panel {
   width: 360px;
   border-left: 1px solid var(--color-border-low-emphasis);
