@@ -12,7 +12,8 @@ Ameba Design System
 - [Spindle Hooks](packages/spindle-hooks) (React Hooks)
 - [Spindle Syntax Themes](packages/spindle-syntax-themes) (Syntax themes with Spindle color palette)
 - [Spindle MCS Server](packages/spindle-mcp-server) (MCP Server)
+- [Spindle Illust Maker](packages/spindle-illust-maker) (Illustration maker)
 
 ## License
 
-Spindle is licensed under MIT License, but Icon files in [Spindle Icons](https://github.com/openameba/spindle/tree/main/packages/spindle-icons#%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9) and [Spindle UI](https://github.com/openameba/spindle/tree/main/packages/spindle-ui#%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9) are licensed under Creative Commons BY-NC-ND 4.0.
+Spindle is licensed under MIT License, but Icon files in [Spindle Icons](https://github.com/openameba/spindle/tree/main/packages/spindle-icons#%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9) and [Spindle UI](https://github.com/openameba/spindle/tree/main/packages/spindle-ui#%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9), and illustration files in [Spindle Illust Maker](https://github.com/openameba/spindle/tree/main/packages/spindle-illust-maker#%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9) are licensed under Creative Commons BY-NC-ND 4.0.

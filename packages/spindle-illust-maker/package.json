@@ -2,6 +2,7 @@
   "name": "@openameba/spindle-illust-maker",
   "version": "0.0.1",
   "private": true,
+  "license": "SEE LICENSE IN LICENSE",
   "type": "module",
   "main": "./lib/index.js",
   "module": "./lib/index.mjs",
