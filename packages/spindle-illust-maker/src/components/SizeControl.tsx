@@ -8,10 +8,9 @@ type Props = {
 };
 
 const SCALES = [
-  { value: 0.5, label: '0.5x' },
-  { value: 1, label: '1x' },
-  { value: 2, label: '2x' },
-  { value: 3, label: '3x' },
+  { value: 0.5, label: 'S' },
+  { value: 1, label: 'M' },
+  { value: 2, label: 'L' },
 ];
 
 export function SizeControl({ scale, onChange }: Props) {
