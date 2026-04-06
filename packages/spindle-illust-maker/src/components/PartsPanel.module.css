@@ -40,7 +40,7 @@
 
 .thumb {
   aspect-ratio: 1;
-  border: 0 solid var(--color-border-low-emphasis);
+  border: 2px solid transparent;
   border-radius: 6px;
   background: var(--color-surface-secondary);
   cursor: pointer;
