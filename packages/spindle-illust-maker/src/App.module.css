@@ -34,6 +34,7 @@
 }
 
 .previewArea {
+  position: relative;
   flex: 1;
   min-width: 0;
   display: flex;
@@ -41,6 +42,12 @@
   justify-content: center;
   background: var(--color-background);
   overflow: auto;
+}
+
+.randomButton {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
 }
 
 .previewArea canvas {

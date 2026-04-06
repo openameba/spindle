@@ -1,6 +1,9 @@
 import { useCallback, useState } from 'react';
+import { IconButton } from '@openameba/spindle-ui/IconButton';
+import '@openameba/spindle-ui/IconButton/IconButton.css';
+import Dice from '@openameba/spindle-ui/Icon/Dice';
 import type { IllustState, NeckTilt, PartCategory, PoseId } from './types';
-import { getDefaultState } from './lib/defaults';
+import { getDefaultState, getRandomParts } from './lib/defaults';
 import { useIllustCanvas } from './hooks/useIllustCanvas';
 import { PoseSelector } from './components/PoseSelector';
 import { PartsPanel } from './components/PartsPanel';
@@ -41,6 +44,13 @@ export function App() {
     setState((prev) => ({ ...prev, bodyLegSwap }));
   }, []);
 
+  const handleRandomize = useCallback(() => {
+    setState((prev) => ({
+      ...prev,
+      ...getRandomParts(prev.pose),
+    }));
+  }, []);
+
   const { canvasRef, exportToCanvas } = useIllustCanvas(state);
 
   return (
@@ -55,6 +65,11 @@ export function App() {
       <main className={styles.main}>
         <div className={styles.previewArea}>
           <canvas ref={canvasRef} />
+          <div className={styles.randomButton}>
+            <IconButton size="medium" variant="lighted" onClick={handleRandomize} aria-label="ランダム">
+              <Dice />
+            </IconButton>
+          </div>
         </div>
         <div className={styles.panel}>
           <PoseSelector value={state.pose} onChange={handlePoseChange} />
