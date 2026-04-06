@@ -195,8 +195,8 @@ importers:
         specifier: 24.12.2
         version: 24.12.2
       cpx2:
-        specifier: 8.0.0
-        version: 8.0.0
+        specifier: 8.0.1
+        version: 8.0.1
       vitest:
         specifier: 4.1.2
         version: 4.1.2(@opentelemetry/api@1.9.0)(@types/node@24.12.2)(@vitest/ui@4.1.2)(esbuild@0.27.4)(jiti@2.6.1)(jsdom@29.0.1)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
@@ -3626,8 +3626,8 @@ packages:
     resolution: {integrity: sha512-3scnzFj/94eb7y4wyXRWwvzLFaQp87yyfTnChIjlfYrVqp5lVO3E2hIJMeQIltUT0K2ZAB3An1qXcBmwGyvuwA==}
     engines: {node: '>=10'}
 
-  cpx2@8.0.0:
-    resolution: {integrity: sha512-RxD9jrSVNSOmfcbiPlr3XnKbUKH9K1w2HCv0skczUKhsZTueiDBecxuaSAKQkYSLQaGVA4ZQJZlTj5hVNNEvKg==}
+  cpx2@8.0.1:
+    resolution: {integrity: sha512-K3lrkUNPF+6Du3xxkDpTctKj79iTqo8j/kZtgRqwlKwEU8jnKELxSnWYHA2D8E7gzd3G62crYWoDZZWsaurb4w==}
     engines: {node: ^20.0.0 || >=22.0.0, npm: '>=10'}
     hasBin: true
 
@@ -3806,9 +3806,9 @@ packages:
   dayjs@1.11.20:
     resolution: {integrity: sha512-YbwwqR/uYpeoP4pu043q+LTDLFBLApUP6VxRihdfNTqu4ubqMlGDLd6ErXhEgsyvY0K6nCs7nggYumAN+9uEuQ==}
 
-  debounce@2.2.0:
-    resolution: {integrity: sha512-Xks6RUDLZFdz8LIdR6q0MTH44k7FikOmnh5xkSjMig6ch45afc8sjTjRQf3P6ax8dMgcQrYO/AR2RGWURrruqw==}
-    engines: {node: '>=18'}
+  debounce@3.0.0:
+    resolution: {integrity: sha512-64byRbF0/AirwbuHqB3/ZpMG9/nckDa6ZA0yd6UnaQNwbbemCOwvz2sL5sjXLHhZHADyiwLm0M5qMhltUUx+TA==}
+    engines: {node: '>=20'}
 
   debug@2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
@@ -4987,10 +4987,6 @@ packages:
 
   ignore@5.3.2:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
-    engines: {node: '>= 4'}
-
-  ignore@6.0.2:
-    resolution: {integrity: sha512-InwqeHHN2XpumIkMvpl/DCJVrAHgCsG5+cn1XlnLWGwtZBm8QJfSusItfrwx81CTp5agNZqpKU2J/ccC5nGT4A==}
     engines: {node: '>= 4'}
 
   ignore@7.0.5:
@@ -13236,23 +13232,19 @@ snapshots:
       nested-error-stacks: 2.1.1
       p-event: 4.2.0
 
-  cpx2@8.0.0:
+  cpx2@8.0.1:
     dependencies:
-      debounce: 2.2.0
-      debug: 4.4.3
+      debounce: 3.0.0
       duplexer: 0.1.2
       fs-extra: 11.3.4
-      glob: 11.1.0
+      glob: 13.0.6
       glob2base: 0.0.12
-      ignore: 6.0.2
+      ignore: 7.0.5
       minimatch: 10.2.4
       p-map: 7.0.4
       resolve: 1.22.11
-      safe-buffer: 5.2.1
       shell-quote: 1.8.3
       subarg: 1.0.0
-    transitivePeerDependencies:
-      - supports-color
 
   crc-32@1.2.2: {}
 
@@ -13467,7 +13459,7 @@ snapshots:
 
   dayjs@1.11.20: {}
 
-  debounce@2.2.0: {}
+  debounce@3.0.0: {}
 
   debug@2.6.9:
     dependencies:
@@ -14968,8 +14960,6 @@ snapshots:
   ignore@5.3.1: {}
 
   ignore@5.3.2: {}
-
-  ignore@6.0.2: {}
 
   ignore@7.0.5: {}
 
