@@ -63,9 +63,9 @@ export function App() {
       </main>
       <footer className={styles.footer}>
         <small>
-          © Ameba - Illustration files are licensed under{' '}
+          © Ameba -{' '}
           <a href="https://spindle.ameba.design/styles/illustration/regulation/" target="_blank" rel="noreferrer">
-            CC BY-NC-ND 4.0
+            Illustration Guidelines
           </a>
         </small>
       </footer>
