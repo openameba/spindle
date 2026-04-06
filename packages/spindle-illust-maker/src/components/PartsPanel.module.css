@@ -29,7 +29,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
   gap: 6px;
   padding: 12px;
   overflow-y: auto;

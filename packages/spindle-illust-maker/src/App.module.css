@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  font-family: "Helvetica Neue", Helvetica, Arial, "Segoe UI", "Hiragino Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, "Yu Gothic Medium", sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Segoe UI", "Hiragino Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "Yu Gothic Medium", sans-serif;
   color: var(--color-text-high-emphasis);
 }
 
@@ -35,6 +35,7 @@
 
 .previewArea {
   flex: 1;
+  min-width: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,4 +70,10 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+}
+
+@media (width <= 425px) {
+  .panel {
+    width: 280px;
+  }
 }
