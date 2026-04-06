@@ -31,6 +31,7 @@ export type RenderOptions = {
 export type IllustMaker = {
   getOptions(): IllustOptions;
   getDefaultState(poseId?: PoseId): IllustState;
+  parseUrl(url: string): IllustState | null;
   render(state: IllustState, options?: RenderOptions): Promise<Blob>;
 };
 

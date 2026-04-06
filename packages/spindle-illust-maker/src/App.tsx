@@ -1,9 +1,10 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { IconButton } from '@openameba/spindle-ui/IconButton';
 import '@openameba/spindle-ui/IconButton/IconButton.css';
 import Dice from '@openameba/spindle-ui/Icon/Dice';
 import type { IllustState, NeckTilt, PartCategory, PoseId } from './types';
 import { getDefaultState, getRandomParts } from './lib/defaults';
+import { getStateFromUrl, syncUrlToState } from './lib/url-state';
 import { useIllustCanvas } from './hooks/useIllustCanvas';
 import { PoseSelector } from './components/PoseSelector';
 import { PartsPanel } from './components/PartsPanel';
@@ -12,7 +13,11 @@ import { ExportButtons } from './components/ExportButtons';
 import styles from './App.module.css';
 
 export function App() {
-  const [state, setState] = useState<IllustState>(() => getDefaultState());
+  const [state, setState] = useState<IllustState>(() => getStateFromUrl() ?? getDefaultState());
+
+  useEffect(() => {
+    syncUrlToState(state);
+  }, [state]);
 
   const handlePoseChange = useCallback((poseId: PoseId) => {
     setState((prev) => ({

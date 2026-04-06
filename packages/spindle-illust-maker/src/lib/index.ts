@@ -1,6 +1,7 @@
 import { createImageLoader } from './image-loader';
 import { getOptions } from './options';
 import { getDefaultState } from './defaults';
+import { paramsToState } from './url-state';
 import { renderToBlob } from './render';
 import type { IllustMaker, IllustMakerConfig, RenderOptions } from './types';
 import type { IllustState, PoseId } from '../types';
@@ -17,6 +18,15 @@ export function createIllustMaker(config?: IllustMakerConfig): IllustMaker {
 
     getDefaultState(poseId?: PoseId) {
       return getDefaultState(poseId);
+    },
+
+    parseUrl(url: string) {
+      try {
+        const parsed = new URL(url);
+        return paramsToState(parsed.searchParams);
+      } catch {
+        return null;
+      }
     },
 
     async render(state: IllustState, options?: RenderOptions) {
