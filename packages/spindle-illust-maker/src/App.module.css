@@ -21,7 +21,7 @@
   margin: 0;
 }
 
-.headerActions {
+.header-actions {
   display: flex;
   gap: 8px;
   align-items: center;
@@ -33,7 +33,7 @@
   overflow: hidden;
 }
 
-.previewArea {
+.preview-area {
   position: relative;
   flex: 1;
   min-width: 0;
@@ -44,13 +44,13 @@
   overflow: auto;
 }
 
-.randomButton {
+.random-button {
   position: absolute;
   right: 16px;
   bottom: 16px;
 }
 
-.previewArea canvas {
+.preview-area canvas {
   max-width: 100%;
   max-height: 100%;
   height: auto;

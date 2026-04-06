@@ -1,3 +1,4 @@
+/* stylelint-disable custom-property-pattern */
 .panel {
   display: flex;
   flex-direction: column;
@@ -20,7 +21,7 @@
   --Button--neutral-onActive-backgroundColor: var(--color-surface-tertiary);
 }
 
-.tabActive {
+.tab-active {
   --Button--neutral-backgroundColor: var(--color-surface-tertiary);
   --Button--neutral-color: var(--color-text-high-emphasis);
   --Button--neutral-onHover-backgroundColor: var(--color-surface-quaternary);
@@ -49,34 +50,34 @@
   justify-content: center;
   transition: border-color 0.15s;
   position: relative;
-  box-shadow: inset 0 0 19px 0 rgba(0, 0, 0, 0.04);
+  box-shadow: inset 0 0 19px 0 rgb(0 0 0 / 4%);
 }
 
 .thumb:hover {
-  box-shadow: inset 0 0 19px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 19px 0 rgb(0 0 0 / 10%);
 }
 
-.thumbSelected {
+.thumb-selected {
   border: 2px solid var(--color-border-strong-emphasis);
   background: var(--color-surface-tertiary);
 }
 
-.thumbImg {
+.thumb-img {
   width: 52px;
   height: 52px;
   object-fit: contain;
 }
 
-.thumbNone {
+.thumb-none {
   font-size: 11px;
   color: var(--color-text-low-emphasis);
 }
 
-.headTypeWrap {
+.head-type-wrap {
   padding: 16px 12px 8px;
 }
 
-.dropdownRow {
+.dropdown-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -84,12 +85,14 @@
   padding: 8px 12px;
 }
 
-.dropdownRow :global(.spui-InputLabel),
-.toggleRow :global(.spui-InputLabel) {
+/* stylelint-disable-next-line selector-pseudo-class-no-unknown, selector-class-pattern */
+.dropdown-row :global(.spui-InputLabel),
+/* stylelint-disable-next-line selector-pseudo-class-no-unknown, selector-class-pattern */
+.toggle-row :global(.spui-InputLabel) {
   font-size: 0.8125rem;
 }
 
-.toggleRow {
+.toggle-row {
   display: flex;
   align-items: center;
   justify-content: space-between;

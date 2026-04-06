@@ -1,3 +1,4 @@
+/* stylelint-disable custom-property-pattern */
 .wrap {
   display: flex;
   gap: 4px;

@@ -93,7 +93,7 @@ export function PartsPanel({ state, onPartChange, onNeckTiltChange, onHeadBodySw
         {availableParts.map((part) => (
           <div
             key={part}
-            className={currentTab === part ? styles.tabActive : styles.tab}
+            className={currentTab === part ? styles['tab-active'] : styles.tab}
           >
             <Button
               size="small"
@@ -107,7 +107,7 @@ export function PartsPanel({ state, onPartChange, onNeckTiltChange, onHeadBodySw
       </div>
 
       {currentTab === 'head' && pose && pose.headTypes.length > 1 && (
-        <div className={styles.headTypeWrap}>
+        <div className={styles['head-type-wrap']}>
           <SegmentedControl
             size="medium"
             options={pose.headTypes.map((ht) => ({
@@ -121,7 +121,7 @@ export function PartsPanel({ state, onPartChange, onNeckTiltChange, onHeadBodySw
       )}
 
       {pose?.neckTilts && (
-        <div className={styles.dropdownRow}>
+        <div className={styles['dropdown-row']}>
           <Form.InputLabel id="neck-tilt-label">首の傾き</Form.InputLabel>
           <Form.DropDown
             aria-labelledby="neck-tilt-label"
@@ -137,7 +137,7 @@ export function PartsPanel({ state, onPartChange, onNeckTiltChange, onHeadBodySw
         </div>
       )}
 
-      <div className={styles.toggleRow}>
+      <div className={styles['toggle-row']}>
         <Form.InputLabel id="head-body-swap">Head↔Body 入れ替え</Form.InputLabel>
         <Form.ToggleSwitch
           id="head-body-swap"
@@ -147,7 +147,7 @@ export function PartsPanel({ state, onPartChange, onNeckTiltChange, onHeadBodySw
       </div>
 
       {BODY_LEG_POSES.includes(state.pose) && (
-        <div className={styles.toggleRow}>
+        <div className={styles['toggle-row']}>
           <Form.InputLabel id="body-leg-swap">Body↔Leg 入れ替え</Form.InputLabel>
           <Form.ToggleSwitch
             id="body-leg-swap"
@@ -160,21 +160,21 @@ export function PartsPanel({ state, onPartChange, onNeckTiltChange, onHeadBodySw
       <div className={styles.grid}>
         {isOptional && (
           <button
-            className={`${styles.thumb} ${selectedPath === null ? styles.thumbSelected : ''}`}
+            className={`${styles.thumb} ${selectedPath === null ? styles['thumb-selected'] : ''}`}
             onClick={() => onPartChange(currentTab, null)}
           >
-            <span className={styles.thumbNone}>None</span>
+            <span className={styles['thumb-none']}>None</span>
           </button>
         )}
         {items.map((item) => (
           <button
             key={item.id}
             title={item.label}
-            className={`${styles.thumb} ${selectedPath === item.path ? styles.thumbSelected : ''}`}
+            className={`${styles.thumb} ${selectedPath === item.path ? styles['thumb-selected'] : ''}`}
             onClick={() => onPartChange(currentTab, item.path)}
           >
             <img
-              className={styles.thumbImg}
+              className={styles['thumb-img']}
               src={item.path}
               alt={item.label}
               loading="lazy"

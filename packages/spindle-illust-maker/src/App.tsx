@@ -57,15 +57,15 @@ export function App() {
     <div className={styles.app}>
       <header className={styles.header}>
         <h1 className={styles.title}>Spindle Illustration Maker</h1>
-        <div className={styles.headerActions}>
+        <div className={styles['header-actions']}>
           <SizeControl scale={state.scale} onChange={handleScaleChange} />
           <ExportButtons exportToCanvas={exportToCanvas} />
         </div>
       </header>
       <main className={styles.main}>
-        <div className={styles.previewArea}>
+        <div className={styles['preview-area']}>
           <canvas ref={canvasRef} />
-          <div className={styles.randomButton}>
+          <div className={styles['random-button']}>
             <IconButton size="medium" variant="lighted" onClick={handleRandomize} aria-label="ランダム">
               <Dice />
             </IconButton>
