@@ -47,8 +47,7 @@ jobs:
     needs: check_condition
     if: needs.check_condition.outputs.result == 'true'
     steps:
-      - run: sudo apt-get --yes update
-      - run: sudo apt-get --yes install fonts-noto
+      # Playwright image includes Noto fonts for CJK support
       - if: github.event_name == 'pull_request_target'
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
