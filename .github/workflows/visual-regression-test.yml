@@ -48,6 +48,16 @@ jobs:
     if: needs.check_condition.outputs.result == 'true'
     steps:
       # Playwright image includes Noto fonts for CJK support
+      - name: resolve Chromium path from Playwright image
+        run: |
+          CHROME=$(find /ms-playwright -path '*/chrome-linux*/chrome' -not -path '*headless*' -type f | head -1)
+          if [ -z "$CHROME" ]
+          then
+            echo "::error::Chromium executable not found in /ms-playwright"
+            exit 1
+          fi
+          echo "CHROMIUM_PATH=${CHROME}" >> "$GITHUB_ENV"
+          echo "CHROME_PATH=${CHROME}" >> "$GITHUB_ENV"
       - if: github.event_name == 'pull_request_target'
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
@@ -67,11 +77,12 @@ jobs:
           pnpm --filter @openameba/spindle-hooks build
           pnpm --filter @openameba/spindle-ui storybook:build
       - name: capture stories
-        run: >
-          npx storycap
-          --outDir packages/spindle-ui/.reg-suit/actual_images/
-          --serverCmd 'npx serve -p 5000 packages/spindle-ui/public'
-          http://localhost:5000
+        run: |
+          npx storycap \
+            --chromiumPath "${CHROMIUM_PATH}" \
+            --outDir packages/spindle-ui/.reg-suit/actual_images/ \
+            --serverCmd 'npx serve -p 5000 packages/spindle-ui/public' \
+            http://localhost:5000
       - name: workaround for detached HEAD
         run: git checkout ${{ github.head_ref || github.ref_name }}
       - run: |
