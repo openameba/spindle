@@ -84,7 +84,9 @@ jobs:
             --serverCmd 'npx serve -p 5000 packages/spindle-ui/public' \
             http://localhost:5000
       - name: workaround for detached HEAD
-        run: git checkout ${{ github.head_ref || github.ref_name }}
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git checkout ${{ github.head_ref || github.ref_name }}
       - run: |
           printf -- '%s' "$GOOGLE_APPLICATION_CREDENTIALS_JSON" | base64 --decode > "${PWD}/storage-key.json"
           export GOOGLE_APPLICATION_CREDENTIALS="${PWD}/storage-key.json"
