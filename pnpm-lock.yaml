@@ -8,7 +8,7 @@ overrides:
   superstatic: 10.0.0
   axios: 1.13.2
   undici: 7.24.7
-  undici-types: 7.16.0
+  undici-types: 7.24.7
   semver: 7.7.4
   chokidar: 5.0.0
 
@@ -8707,8 +8707,8 @@ packages:
     resolution: {integrity: sha512-nWJ91DjeOkej/TA8pXQ3myruKpKEYgqvpw9lz4OPHj/NWFNluYrjbz9j01CJ8yKQd2g4jFoOkINCTW2I5LEEyw==}
     engines: {node: '>= 0.4'}
 
-  undici-types@7.16.0:
-    resolution: {integrity: sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw==}
+  undici-types@7.24.7:
+    resolution: {integrity: sha512-XA+gOBkzYD3C74sZowtCLTpgtaCdqZhqCvR6y9LXvrKTt/IVU6bz49T4D+BPi475scshCCkb0IklJRw6T1ZlgQ==}
 
   undici@7.24.7:
     resolution: {integrity: sha512-H/nlJ/h0ggGC+uRL3ovD+G0i4bqhvsDOpbDv7At5eFLlj2b41L8QliGbnl2H7SnDiYhENphh1tQFJZf+MyfLsQ==}
@@ -12049,15 +12049,15 @@ snapshots:
 
   '@types/node@22.19.15':
     dependencies:
-      undici-types: 7.16.0
+      undici-types: 7.24.7
 
   '@types/node@24.12.0':
     dependencies:
-      undici-types: 7.16.0
+      undici-types: 7.24.7
 
   '@types/node@24.12.2':
     dependencies:
-      undici-types: 7.16.0
+      undici-types: 7.24.7
 
   '@types/normalize-package-data@2.4.4': {}
 
@@ -19474,7 +19474,7 @@ snapshots:
       has-symbols: 1.1.0
       which-boxed-primitive: 1.1.1
 
-  undici-types@7.16.0: {}
+  undici-types@7.24.7: {}
 
   undici@7.24.7: {}
 
