@@ -4,6 +4,7 @@ import { StackNotificationManagerExample } from './StackNotificationManager.stor
 
 const meta: Meta<typeof StackNotificationManagerExample> = {
   title: 'StackNotificationManager',
+  component: StackNotificationManagerExample,
 };
 
 export default meta;

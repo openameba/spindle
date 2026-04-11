@@ -5,6 +5,7 @@ import { TextField } from './TextField';
 
 const meta: Meta<typeof TextField> = {
   title: 'Form/TextField',
+  component: TextField,
   args: {
     onClick: action('clicked'),
     onChange: action('changed'),

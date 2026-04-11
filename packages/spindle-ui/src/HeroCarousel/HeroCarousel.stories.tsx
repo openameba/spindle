@@ -5,6 +5,7 @@ import type { CarouselItem } from './HeroCarouselItem';
 
 const meta: Meta<typeof HeroCarousel> = {
   title: 'HeroCarousel',
+  component: HeroCarousel,
 };
 
 export default meta;
