@@ -14,8 +14,7 @@
   --Tooltip-arrow-size: 11px;
   --Tooltip-position-offset: 24px;
 
-  animation: var(--animation-appear-in-duration)
-    var(--animation-appear-in-easing) spui-Tooltip-fade-in;
+  animation: 0.35s cubic-bezier(0.5, 0, 0.5, 1) spui-Tooltip-fade-in;
   border-radius: 8px;
   box-shadow: 0 11px 28px 0 rgba(8, 18, 26, 0.24);
   box-sizing: border-box;
@@ -30,8 +29,7 @@
 
 /* stylelint-disable-next-line plugin/selector-bem-pattern */
 .spui-Tooltip-frame.is-fade-out {
-  animation: var(--animation-disappear-duration)
-    var(--animation-disappear-easing) spui-Tooltip-fade-out;
+  animation: 0.15s cubic-bezier(0.5, 0, 0.5, 1) spui-Tooltip-fade-out;
   opacity: 0;
 }
 
@@ -133,8 +131,7 @@
 /* Position: center (for top/bottom) */
 .spui-Tooltip-frame--top.spui-Tooltip-frame--center,
 .spui-Tooltip-frame--bottom.spui-Tooltip-frame--center {
-  animation: var(--animation-appear-in-duration)
-    var(--animation-appear-in-easing) spui-Tooltip-fade-in;
+  animation: 0.35s cubic-bezier(0.5, 0, 0.5, 1) spui-Tooltip-fade-in;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -148,8 +145,7 @@
 /* Position: center (for left/right) */
 .spui-Tooltip-frame--left.spui-Tooltip-frame--center,
 .spui-Tooltip-frame--right.spui-Tooltip-frame--center {
-  animation: var(--animation-appear-in-duration)
-    var(--animation-appear-in-easing) spui-Tooltip-fade-in;
+  animation: 0.35s cubic-bezier(0.5, 0, 0.5, 1) spui-Tooltip-fade-in;
   top: 50%;
   transform: translateY(-50%);
 }
