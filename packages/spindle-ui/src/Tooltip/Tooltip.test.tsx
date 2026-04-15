@@ -1,4 +1,3 @@
-import { jest } from '@jest/globals';
 import {
   act,
   fireEvent,
@@ -7,6 +6,7 @@ import {
   waitFor,
 } from '@testing-library/react';
 import React from 'react';
+import { vi } from 'vitest';
 
 import Information from '../Icon/Information';
 import { IconButton } from '../IconButton';
@@ -425,7 +425,7 @@ describe('<Tooltip />', () => {
     });
 
     test('closes when close button is clicked', async () => {
-      const onClose = jest.fn();
+      const onClose = vi.fn();
 
       render(
         <Tooltip.Frame defaultOpen onClose={onClose}>
@@ -451,7 +451,7 @@ describe('<Tooltip />', () => {
     });
 
     test('closes on Escape key when tooltip or its content is focused', async () => {
-      const onClose = jest.fn();
+      const onClose = vi.fn();
 
       render(
         <Tooltip.Frame defaultOpen onClose={onClose}>

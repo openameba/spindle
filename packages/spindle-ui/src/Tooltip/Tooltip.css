@@ -1,6 +1,6 @@
 :root {
   --Tooltip-z-index: 1;
-  --Tooltip-arrow-offset: 4px;
+  --Tooltip-arrow-offset: 2px;
 }
 
 .spui-Tooltip {
@@ -10,8 +10,8 @@
 }
 
 .spui-Tooltip-frame {
-  --Tooltip-arrow-depth: 6px;
-  --Tooltip-arrow-size: 11px;
+  --Tooltip-arrow-depth: 8px;
+  --Tooltip-arrow-size: 14px;
   --Tooltip-position-offset: 24px;
 
   animation: 0.35s cubic-bezier(0.5, 0, 0.5, 1) spui-Tooltip-fade-in;
