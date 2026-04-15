@@ -69,6 +69,21 @@ import '@openameba/spindle-ui/Tooltip.css';
 - **ポインティングデバイス**: hoverで表示、トリガーから離れると非表示
 - **タッチデバイス**: click/tapで表示、再度click/tapで非表示
 
+### トリガー要素の hover スタイル
+
+ポインティングデバイスでトリガー要素にhoverした際は、インタラクティブな要素にフォーカスしたフィードバックとして`background-color: var(--color-surface-secondary)`を適用することを推奨します。押せない要素（「？」アイコンなど）であっても、ユーザーに「なぜ吹き出しが出てきたのか」を伝えるために有用です。押せそうに見えることを避けるため、`cursor: default`も併せて指定してください。
+
+<Source
+  code={`.trigger {
+  border-radius: 50%;
+}
+
+.trigger:hover {
+  background-color: var(--color-surface-secondary);
+  cursor: default;
+}`}
+/>
+
 ## 初期表示
 
 `defaultOpen={true}`を指定すると、初期状態でTooltipが表示されます。閉じるボタンをクリックすることで非表示にできます。
