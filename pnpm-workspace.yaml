@@ -15,6 +15,6 @@ overrides:
   superstatic: 10.0.0
   axios: 1.13.2
   undici: 7.25.0
-  undici-types: 7.24.7
+  undici-types: 7.25.0
   semver: 7.7.4
   chokidar: 5.0.0
