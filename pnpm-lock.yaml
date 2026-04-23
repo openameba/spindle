@@ -215,8 +215,8 @@ importers:
         specifier: 15.15.0
         version: 15.15.0(@cfworker/json-schema@4.1.1)(@swc/core@1.15.26)(@types/node@24.12.2)(typescript@5.9.3)
       puppeteer:
-        specifier: 24.41.0
-        version: 24.41.0(typescript@5.9.3)
+        specifier: 24.42.0
+        version: 24.42.0(typescript@5.9.3)
 
   packages/spindle-theme-switch:
     dependencies:
@@ -7333,8 +7333,12 @@ packages:
     resolution: {integrity: sha512-rLIUri7E/NQ3APSEYCCozaSJx0u8Tu9wxO6BJwnvXmIgILSK3L0TombaVh3izp1njAGrO6H2ru0hcIrLF+gWLw==}
     engines: {node: '>=18'}
 
-  puppeteer@24.41.0:
-    resolution: {integrity: sha512-W6Fk0J3TPjjtwjXOyR/qf+YaL0H/Uq8HIgHcXG4mNM/IgbKMCH/HPyK0Fi2qbTU/QpSl9bCte2yBpGHKejTpIw==}
+  puppeteer-core@24.42.0:
+    resolution: {integrity: sha512-T4zXokk/izH01fYPhyyev1A4piWiOKrYq7CUFpdoYQxmOnXoV6YjUabmfIjCYkNspSoAXIxRid3Tw+Vg0fthYg==}
+    engines: {node: '>=18'}
+
+  puppeteer@24.42.0:
+    resolution: {integrity: sha512-94MoPfFp2eY3eYIMdINkez4IOP5TMHntlZbVx06fHlQTtiQiYgaY0L2Zzfod8PVUkPqP7m3Qlre2v8YS8cudPA==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -17463,13 +17467,30 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  puppeteer@24.41.0(typescript@5.9.3):
+  puppeteer-core@24.42.0:
+    dependencies:
+      '@puppeteer/browsers': 2.13.0
+      chromium-bidi: 14.0.0(devtools-protocol@0.0.1595872)
+      debug: 4.4.3
+      devtools-protocol: 0.0.1595872
+      typed-query-selector: 2.12.1
+      webdriver-bidi-protocol: 0.4.1
+      ws: 8.20.0
+    transitivePeerDependencies:
+      - bare-abort-controller
+      - bare-buffer
+      - bufferutil
+      - react-native-b4a
+      - supports-color
+      - utf-8-validate
+
+  puppeteer@24.42.0(typescript@5.9.3):
     dependencies:
       '@puppeteer/browsers': 2.13.0
       chromium-bidi: 14.0.0(devtools-protocol@0.0.1595872)
       cosmiconfig: 9.0.1(typescript@5.9.3)
       devtools-protocol: 0.0.1595872
-      puppeteer-core: 24.41.0
+      puppeteer-core: 24.42.0
       typed-query-selector: 2.12.1
     transitivePeerDependencies:
       - bare-abort-controller
