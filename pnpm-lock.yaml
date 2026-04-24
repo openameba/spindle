@@ -125,8 +125,8 @@ importers:
         specifier: 4.1.4
         version: 4.1.4(vitest@4.1.4)
       bundlewatch:
-        specifier: 0.4.1
-        version: 0.4.1
+        specifier: 0.4.2
+        version: 0.4.2
       jsdom:
         specifier: 29.0.2
         version: 29.0.2
@@ -328,8 +328,8 @@ importers:
         specifier: 10.5.0
         version: 10.5.0(postcss@8.5.10)
       bundlewatch:
-        specifier: 0.4.1
-        version: 0.4.1
+        specifier: 0.4.2
+        version: 0.4.2
       cssnano:
         specifier: 7.1.7
         version: 7.1.7(postcss@8.5.10)
@@ -3155,8 +3155,8 @@ packages:
     resolution: {integrity: sha512-tjwM5exMg6BGRI+kNmTntNsvdZS1X8BFYS6tnJ2hdH0kVxM6/eVZ2xy+FqStSWvYmtfFMDLIxurorHwDKfDz5Q==}
     engines: {node: '>=18'}
 
-  bundlewatch@0.4.1:
-    resolution: {integrity: sha512-SIobIhMX8DhoGiNlZ+IqicXRBkp7NQTKGEoZP82Tu8FQhoykbTdTQlL4zYT7n6swjH9wahJ9RTefz0Xwva5FXA==}
+  bundlewatch@0.4.2:
+    resolution: {integrity: sha512-67hWKEbLZyokB07wF4TFJ8X1TL/bcZWipbTQBAf9wwcc4fHe31vFk8m2CMwByMZa5DcK4ZzeRIn6Ldt8Q9f9aw==}
     engines: {node: '>=16'}
     hasBin: true
 
@@ -12731,7 +12731,7 @@ snapshots:
     dependencies:
       run-applescript: 7.1.0
 
-  bundlewatch@0.4.1:
+  bundlewatch@0.4.2:
     dependencies:
       axios: 1.13.2
       bytes: 3.1.2
