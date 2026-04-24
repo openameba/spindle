@@ -46,7 +46,7 @@
     "textlint": "15.5.4",
     "textlint-rule-preset-ameba": "openameba/textlint-rule-preset-ameba#v0.5.1",
     "typescript": "5.9.3",
-    "vitest": "4.1.4",
+    "vitest": "4.1.5",
     "yaml-lint": "1.7.0"
   },
   "engines": {
