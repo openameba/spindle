@@ -87,7 +87,7 @@
     "dotenv": "17.4.2",
     "figma-api": "1.12.0",
     "firebase-tools": "15.16.0",
-    "jsdom": "29.1.0",
+    "jsdom": "29.1.1",
     "postcss": "8.5.12",
     "postcss-cli": "11.0.1",
     "postcss-import": "16.1.1",
