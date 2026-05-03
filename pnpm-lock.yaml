@@ -78,7 +78,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 4.1.5
-        version: 4.1.5(@opentelemetry/api@1.9.1)(@types/node@24.12.2)(@vitest/ui@4.1.5)(esbuild@0.27.7)(jiti@2.6.1)(jsdom@29.1.0)(terser@5.46.2)(tsx@4.21.0)(yaml@2.8.3)
+        version: 4.1.5(@opentelemetry/api@1.9.1)(@types/node@24.12.2)(@vitest/ui@4.1.5)(esbuild@0.27.7)(jiti@2.6.1)(jsdom@29.1.1)(terser@5.46.2)(tsx@4.21.0)(yaml@2.8.3)
       yaml-lint:
         specifier: 1.7.0
         version: 1.7.0
@@ -128,8 +128,8 @@ importers:
         specifier: 0.4.2
         version: 0.4.2
       jsdom:
-        specifier: 29.1.0
-        version: 29.1.0
+        specifier: 29.1.1
+        version: 29.1.1
       react:
         specifier: 19.2.5
         version: 19.2.5
@@ -141,7 +141,7 @@ importers:
         version: 10.3.6(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       vitest:
         specifier: 4.1.5
-        version: 4.1.5(@opentelemetry/api@1.9.1)(@types/node@24.12.2)(@vitest/ui@4.1.5)(esbuild@0.27.7)(jiti@2.6.1)(jsdom@29.1.0)(terser@5.46.2)(tsx@4.21.0)(yaml@2.8.3)
+        version: 4.1.5(@opentelemetry/api@1.9.1)(@types/node@24.12.2)(@vitest/ui@4.1.5)(esbuild@0.27.7)(jiti@2.6.1)(jsdom@29.1.1)(terser@5.46.2)(tsx@4.21.0)(yaml@2.8.3)
       webpack:
         specifier: 5.106.2
         version: 5.106.2(esbuild@0.27.7)
@@ -199,7 +199,7 @@ importers:
         version: 8.0.2
       vitest:
         specifier: 4.1.5
-        version: 4.1.5(@opentelemetry/api@1.9.1)(@types/node@24.12.2)(@vitest/ui@4.1.5)(esbuild@0.27.7)(jiti@2.6.1)(jsdom@29.1.0)(terser@5.46.2)(tsx@4.21.0)(yaml@2.8.3)
+        version: 4.1.5(@opentelemetry/api@1.9.1)(@types/node@24.12.2)(@vitest/ui@4.1.5)(esbuild@0.27.7)(jiti@2.6.1)(jsdom@29.1.1)(terser@5.46.2)(tsx@4.21.0)(yaml@2.8.3)
 
   packages/spindle-site: {}
 
@@ -265,7 +265,7 @@ importers:
         version: 4.21.0
       vitest:
         specifier: 4.1.5
-        version: 4.1.5(@opentelemetry/api@1.9.1)(@types/node@24.12.2)(@vitest/ui@4.1.5)(esbuild@0.27.7)(jiti@2.6.1)(jsdom@29.1.0)(terser@5.46.2)(tsx@4.21.0)(yaml@2.8.3)
+        version: 4.1.5(@opentelemetry/api@1.9.1)(@types/node@24.12.2)(@vitest/ui@4.1.5)(esbuild@0.27.7)(jiti@2.6.1)(jsdom@29.1.1)(terser@5.46.2)(tsx@4.21.0)(yaml@2.8.3)
 
   packages/spindle-ui:
     dependencies:
@@ -346,8 +346,8 @@ importers:
         specifier: 15.16.0
         version: 15.16.0(@cfworker/json-schema@4.1.1)(@swc/core@1.15.30)(@types/node@24.12.2)(typescript@5.9.3)
       jsdom:
-        specifier: 29.1.0
-        version: 29.1.0
+        specifier: 29.1.1
+        version: 29.1.1
       postcss:
         specifier: 8.5.12
         version: 8.5.12
@@ -398,7 +398,7 @@ importers:
         version: 4.21.0
       vitest:
         specifier: 4.1.5
-        version: 4.1.5(@opentelemetry/api@1.9.1)(@types/node@24.12.2)(@vitest/ui@4.1.5)(esbuild@0.27.7)(jiti@2.6.1)(jsdom@29.1.0)(terser@5.46.2)(tsx@4.21.0)(yaml@2.8.3)
+        version: 4.1.5(@opentelemetry/api@1.9.1)(@types/node@24.12.2)(@vitest/ui@4.1.5)(esbuild@0.27.7)(jiti@2.6.1)(jsdom@29.1.1)(terser@5.46.2)(tsx@4.21.0)(yaml@2.8.3)
 
 packages:
 
@@ -5512,8 +5512,8 @@ packages:
       canvas:
         optional: true
 
-  jsdom@29.1.0:
-    resolution: {integrity: sha512-YNUc7fB9QuvSSQWfrH0xF+TyABkxUwx8sswgIDaCrw4Hol8BghdZDkITtZheRJeMtzWlnTfsM3bBBusRvpO1wg==}
+  jsdom@29.1.1:
+    resolution: {integrity: sha512-ECi4Fi2f7BdJtUKTflYRTiaMxIB0O6zfR1fX0GXpUrf6flp8QIYn1UT20YQqdSOfk2dfkCwS8LAFoJDEppNK5Q==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24.0.0}
     peerDependencies:
       canvas: ^3.0.0
@@ -12095,7 +12095,7 @@ snapshots:
       sirv: 3.0.2
       tinyglobby: 0.2.16
       tinyrainbow: 3.1.0
-      vitest: 4.1.5(@opentelemetry/api@1.9.1)(@types/node@24.12.2)(@vitest/ui@4.1.5)(esbuild@0.27.7)(jiti@2.6.1)(jsdom@29.1.0)(terser@5.46.2)(tsx@4.21.0)(yaml@2.8.3)
+      vitest: 4.1.5(@opentelemetry/api@1.9.1)(@types/node@24.12.2)(@vitest/ui@4.1.5)(esbuild@0.27.7)(jiti@2.6.1)(jsdom@29.1.1)(terser@5.46.2)(tsx@4.21.0)(yaml@2.8.3)
 
   '@vitest/utils@3.2.4':
     dependencies:
@@ -15390,7 +15390,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  jsdom@29.1.0:
+  jsdom@29.1.1:
     dependencies:
       '@asamuzakjp/css-color': 5.1.11
       '@asamuzakjp/dom-selector': 7.1.1
@@ -19599,7 +19599,7 @@ snapshots:
       tsx: 4.21.0
       yaml: 2.8.3
 
-  vitest@4.1.5(@opentelemetry/api@1.9.1)(@types/node@24.12.2)(@vitest/ui@4.1.5)(esbuild@0.27.7)(jiti@2.6.1)(jsdom@29.1.0)(terser@5.46.2)(tsx@4.21.0)(yaml@2.8.3):
+  vitest@4.1.5(@opentelemetry/api@1.9.1)(@types/node@24.12.2)(@vitest/ui@4.1.5)(esbuild@0.27.7)(jiti@2.6.1)(jsdom@29.1.1)(terser@5.46.2)(tsx@4.21.0)(yaml@2.8.3):
     dependencies:
       '@vitest/expect': 4.1.5
       '@vitest/mocker': 4.1.5(vite@8.0.10(@types/node@24.12.2)(esbuild@0.27.7)(jiti@2.6.1)(terser@5.46.2)(tsx@4.21.0)(yaml@2.8.3))
@@ -19625,7 +19625,7 @@ snapshots:
       '@opentelemetry/api': 1.9.1
       '@types/node': 24.12.2
       '@vitest/ui': 4.1.5(vitest@4.1.5)
-      jsdom: 29.1.0
+      jsdom: 29.1.1
     transitivePeerDependencies:
       - '@vitejs/devtools'
       - esbuild
