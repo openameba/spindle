@@ -7,7 +7,7 @@ settings:
 overrides:
   superstatic: 10.0.0
   axios: 1.13.2
-  undici: 7.25.0
+  undici: 8.2.0
   undici-types: 7.25.0
   semver: 7.7.4
   chokidar: 5.0.0
@@ -8667,9 +8667,9 @@ packages:
   undici-types@7.25.0:
     resolution: {integrity: sha512-AXNgS1Byr27fTI+2bsPEkV9CxkT8H6xNyRI68b3TatlZo3RkzlqQBLL+w7SmGPVpokjHbcuNVQUWE7FRTg+LRA==}
 
-  undici@7.25.0:
-    resolution: {integrity: sha512-xXnp4kTyor2Zq+J1FfPI6Eq3ew5h6Vl0F/8d9XU5zZQf1tX9s2Su1/3PiMmUANFULpmksxkClamIZcaUqryHsQ==}
-    engines: {node: '>=20.18.1'}
+  undici@8.2.0:
+    resolution: {integrity: sha512-Z+4Hx9GE26Lh9Upwfnc8C7SsrpBPGaM/Gm6kMFtiG7c+5IvQKlXi/t+9x9DrrCh29cww5TSP9YdVaBcnLDs5fQ==}
+    engines: {node: '>=22.19.0'}
 
   unicode-emoji-modifier-base@1.0.0:
     resolution: {integrity: sha512-yLSH4py7oFH3oG/9K+XWrz1pSi3dfUrWEnInbxMfArOfc1+33BlGPQtLsOYwvdMy11AwUBetYuaRxSPqgkq+8g==}
@@ -10231,7 +10231,7 @@ snapshots:
       strip-ansi: 6.0.1
       ts-morph: 27.0.2
       typescript: 5.9.3
-      undici: 7.25.0
+      undici: 8.2.0
       zod: 3.25.58
       zod-validation-error: 3.5.4(zod@3.25.58)
     transitivePeerDependencies:
@@ -15409,7 +15409,7 @@ snapshots:
       saxes: 6.0.0
       symbol-tree: 3.2.4
       tough-cookie: 6.0.1
-      undici: 7.25.0
+      undici: 8.2.0
       w3c-xmlserializer: 5.0.0
       webidl-conversions: 8.0.1
       whatwg-mimetype: 5.0.0
@@ -16457,7 +16457,7 @@ snapshots:
       semver: 7.7.4
       tar: 7.5.13
       tinyglobby: 0.2.16
-      undici: 7.25.0
+      undici: 8.2.0
       which: 6.0.1
     optional: true
 
@@ -19300,7 +19300,7 @@ snapshots:
 
   undici-types@7.25.0: {}
 
-  undici@7.25.0: {}
+  undici@8.2.0: {}
 
   unicode-emoji-modifier-base@1.0.0: {}
 
