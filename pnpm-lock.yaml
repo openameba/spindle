@@ -6,7 +6,7 @@ settings:
 
 overrides:
   superstatic: 10.0.0
-  axios: 1.13.2
+  axios: 1.16.0
   undici: 7.25.0
   undici-types: 7.25.0
   semver: 7.7.4
@@ -152,8 +152,8 @@ importers:
         specifier: 3.11.6
         version: 3.11.6
       axios:
-        specifier: 1.13.2
-        version: 1.13.2
+        specifier: 1.16.0
+        version: 1.16.0
       cli-progress:
         specifier: 3.12.0
         version: 3.12.0
@@ -2964,8 +2964,8 @@ packages:
     resolution: {integrity: sha512-KunSNx+TVpkAw/6ULfhnx+HWRecjqZGTOyquAoWHYLRSdK1tB5Ihce1ZW+UY3fj33bYAFWPu7W/GRSmmrCGuxA==}
     engines: {node: '>=4'}
 
-  axios@1.13.2:
-    resolution: {integrity: sha512-VPk9ebNqPcy5lRGuSlKx752IlDatOjT9paPlm8A7yOuW2Fbvp4X3JznJtT4f0GzGLLiWE9W8onz51SqLYwzGaA==}
+  axios@1.16.0:
+    resolution: {integrity: sha512-6hp5CwvTPlN2A31g5dxnwAX0orzM7pmCRDLnZSX772mv8WDqICwFjowHuPs04Mc8deIld1+ejhtaMn5vp6b+1w==}
 
   b4a@1.8.0:
     resolution: {integrity: sha512-qRuSmNSkGQaHwNbM7J78Wwy+ghLEYF1zNrSeMxj4Kgw6y33O3mXcQ6Ie9fRvfU/YnxWkOchPXbaLb73TkIsfdg==}
@@ -7260,6 +7260,10 @@ packages:
 
   proxy-from-env@1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
+
+  proxy-from-env@2.1.0:
+    resolution: {integrity: sha512-cJ+oHTW1VAEa8cJslgmUZrc+sjRKgAKl3Zyse6+PV38hZe/V6Z14TbCuXcan9F9ghlz4QrFr2c92TNF82UkYHA==}
+    engines: {node: '>=10'}
 
   pseudomap@1.0.2:
     resolution: {integrity: sha512-b/YwNhb8lk1Zz2+bXXpS/LK9OisiZZ1SNsSLxN1x2OXVEhW2Ckr/7mWE5vrC1ZTiJlD9g19jWszTmJsB+oEpFQ==}
@@ -12457,11 +12461,11 @@ snapshots:
 
   axe-core@4.11.4: {}
 
-  axios@1.13.2:
+  axios@1.16.0:
     dependencies:
       follow-redirects: 1.16.0
       form-data: 4.0.5
-      proxy-from-env: 1.1.0
+      proxy-from-env: 2.1.0
     transitivePeerDependencies:
       - debug
 
@@ -12660,7 +12664,7 @@ snapshots:
 
   bundlewatch@0.4.2:
     dependencies:
-      axios: 1.13.2
+      axios: 1.16.0
       bytes: 3.1.2
       chalk: 4.1.2
       ci-env: 1.17.0
@@ -14049,7 +14053,7 @@ snapshots:
   figma-api@1.12.0:
     dependencies:
       '@types/node': 22.19.17
-      axios: 1.13.2
+      axios: 1.16.0
     transitivePeerDependencies:
       - debug
 
@@ -17289,6 +17293,8 @@ snapshots:
       - supports-color
 
   proxy-from-env@1.1.0: {}
+
+  proxy-from-env@2.1.0: {}
 
   pseudomap@1.0.2: {}
 
