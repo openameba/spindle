@@ -50,8 +50,8 @@ importers:
         specifier: 8.0.4
         version: 8.0.4
       pnpm:
-        specifier: 10.33.3
-        version: 10.33.3
+        specifier: 10.33.4
+        version: 10.33.4
       prettier:
         specifier: 3.8.3
         version: 3.8.3
@@ -1657,7 +1657,7 @@ packages:
         optional: true
 
   '@openameba/textlint-rule-preset-ameba@https://codeload.github.com/openameba/textlint-rule-preset-ameba/tar.gz/e22b25089b6ab737ca03cedb8a089f2377d3386e':
-    resolution: {tarball: https://codeload.github.com/openameba/textlint-rule-preset-ameba/tar.gz/e22b25089b6ab737ca03cedb8a089f2377d3386e}
+    resolution: {gitHosted: true, integrity: sha512-tfgcQNIQnLzetlCPk0YV3192sSj0IQp1jgGo6IKxNCfECfBoAh3DvTarAD7gXWaOoYmgn4rTWN1i+uLn+hohhA==, tarball: https://codeload.github.com/openameba/textlint-rule-preset-ameba/tar.gz/e22b25089b6ab737ca03cedb8a089f2377d3386e}
     version: 0.5.1
 
   '@opentelemetry/api@1.9.1':
@@ -6881,8 +6881,8 @@ packages:
     resolution: {integrity: sha512-LKWqWJRhstyYo9pGvgor/ivk2w94eSjE3RGVuzLGlr3NmD8bf7RcYGze1mNdEHRP6TRP6rMuDHk5t44hnTRyow==}
     engines: {node: '>=14.19.0'}
 
-  pnpm@10.33.3:
-    resolution: {integrity: sha512-oZdENkp+JIuSZXpMpZc/k1TSHK+YJXlnSxxTnzLHQgxHE4rYsSVN8Hq6m8eC2bMCnj2zTV2/+XQybrdNrI/0iQ==}
+  pnpm@10.33.4:
+    resolution: {integrity: sha512-HGezs1my1AgRm6HtKJ80uPw8aHNBK+xv0mT73IJInlEPy+y5zp0i2ufzt2Jp2EQQRgFL3KU7mXnNelYa1jG4AA==}
     engines: {node: '>=18.12'}
     hasBin: true
 
@@ -16921,7 +16921,7 @@ snapshots:
 
   pngjs@7.0.0: {}
 
-  pnpm@10.33.3: {}
+  pnpm@10.33.4: {}
 
   portfinder@1.0.38:
     dependencies:
