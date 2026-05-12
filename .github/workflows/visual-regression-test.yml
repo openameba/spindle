@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-  pull_request_target:
+  pull_request:
     paths:
       - 'packages/spindle-ui/**'
   workflow_dispatch:
@@ -13,47 +13,13 @@ permissions:
   contents: read
 
 jobs:
-  check_condition:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    outputs:
-      result: ${{ steps.condition.outputs.result }}
-    steps:
-      - name: default to not running
-        run: echo 'RESULT=false' >> "$GITHUB_ENV"
-      - name: execute if triggered by members
-        if: >
-          github.event_name == 'push' ||
-          github.event_name == 'workflow_dispatch'
-        run: echo 'RESULT=true' >> "$GITHUB_ENV"
-      - name: execute if the PR from a forked repository, it have the [allow execute workflow] label
-        if: >
-          github.event_name == 'pull_request_target' &&
-          github.event.pull_request.head.repo.full_name != github.repository &&
-          contains(github.event.pull_request.labels.*.name, 'allow execute workflow')
-        run: echo 'RESULT=true' >> "$GITHUB_ENV"
-      - name: execute if the PR from a this repository
-        if: >
-          github.event_name == 'pull_request_target' &&
-          github.event.pull_request.head.repo.full_name == github.repository
-        run: echo 'RESULT=true' >> "$GITHUB_ENV"
-      - id: condition
-        run: echo "result=${RESULT}" >> "$GITHUB_OUTPUT"
   visual_regression_test:
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    needs: check_condition
-    if: needs.check_condition.outputs.result == 'true'
     steps:
       - run: sudo apt-get --yes update
       - run: sudo apt-get --yes install fonts-noto
-      - if: github.event_name == 'pull_request_target'
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          fetch-depth: 0
-          ref: 'refs/pull/${{ github.event.number }}/merge'
-      - if: github.event_name != 'pull_request_target'
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           fetch-depth: 0
       - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5.0.0
