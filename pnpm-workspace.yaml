@@ -1,6 +1,23 @@
 packages:
   - 'packages/*'
 
+# Security and trust
+trustPolicy: no-downgrade
+
+# Peer dependencies handling
+strictPeerDependencies: true
+autoInstallPeers: false
+
+# Performance
+preferOffline: true
+
+# Scripts - disable by default for security
+ignoreScripts: true
+
+# Package updates (align with Renovate's security:minimumReleaseAgeNpm)
+# 3 days = 4320 minutes
+minimumReleaseAge: 4320
+
 peerDependencyRules:
   ignoreMissing:
     - hono
