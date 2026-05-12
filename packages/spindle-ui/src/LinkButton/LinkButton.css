@@ -89,9 +89,9 @@
 
 /* Bordered small buttons exceeds the minimum height with the default padding */
 .spui-LinkButton--small:is(
-    .spui-LinkButton--outlined,
-    .spui-LinkButton--danger
-  ) {
+  .spui-LinkButton--outlined,
+  .spui-LinkButton--danger
+) {
   padding-bottom: 5px;
   padding-top: 5px;
 }

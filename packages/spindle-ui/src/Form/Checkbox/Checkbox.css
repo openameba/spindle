@@ -24,8 +24,8 @@
 }
 
 .spui-Checkbox-label:focus-within:has(
-    .spui-Checkbox-input:not(:focus-visible)
-  ) {
+  .spui-Checkbox-input:not(:focus-visible)
+) {
   box-shadow: none;
 }
 
