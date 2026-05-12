@@ -11,10 +11,12 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    if: github.repository == 'openameba/spindle'
     permissions:
       contents: write
-      id-token: write # Needed for npm Trusted Publishing (OIDC)
       pull-requests: write # Needed for creating pull requests
+    outputs:
+      hasChangesets: ${{ steps.changesets.outputs.hasChangesets }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -23,12 +25,57 @@ jobs:
 
       - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5.0.0
 
+      # pnpm store cache intentionally omitted so this release workflow does
+      # not restore cache entries that may have been written by PR-triggered
+      # workflows. Release runs are infrequent; install-time increase is
+      # acceptable.
+      - name: Setup Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version-file: package.json
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build spindle-hooks
+        run: pnpm --filter @openameba/spindle-hooks build
+
+      - name: Create Release Pull Request
+        id: changesets
+        uses: changesets/action@63a615b9cd06ba9a3e6d13796c7fbcb080a60a0b # v1.8.0
+        with:
+          version: pnpm version-packages
+          commit: 'chore: publish'
+          title: 'chore: publish'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    needs: release
+    if: needs.release.outputs.hasChangesets == 'false'
+    environment: production-npm
+    permissions:
+      contents: read
+      id-token: write # Needed for npm Trusted Publishing (OIDC)
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5.0.0
+
+      # pnpm store cache intentionally omitted so this release workflow does
+      # not restore cache entries that may have been written by PR-triggered
+      # workflows. Release runs are infrequent; install-time increase is
+      # acceptable.
       - name: Setup Node.js
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version-file: package.json
           registry-url: 'https://registry.npmjs.org'
-          cache: pnpm
 
       # Update npm (>=11.5.1 required for OIDC/provenance); install latest
       - name: Update npm
@@ -40,16 +87,5 @@ jobs:
       - name: Build spindle-hooks
         run: pnpm --filter @openameba/spindle-hooks build
 
-      - name: Create Release Pull Request or Publish to npm
-        id: changesets
-        uses: changesets/action@63a615b9cd06ba9a3e6d13796c7fbcb080a60a0b # v1.8.0
-        with:
-          version: pnpm version-packages
-          commit: 'chore: publish'
-          title: 'chore: publish'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Publish to npm with prepublishOnly
-        if: steps.changesets.outputs.hasChangesets == 'false'
         run: npm_config_ignore_scripts=false pnpm changeset publish
