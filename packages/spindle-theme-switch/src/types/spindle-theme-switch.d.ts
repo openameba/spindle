@@ -1,6 +1,6 @@
 import { DarkModeToggle } from 'dark-mode-toggle';
 
-import './jsx';
+import './jsx.js';
 
 export class SpindleThemeSwitch extends DarkModeToggle {
   constructor();

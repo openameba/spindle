@@ -1,7 +1,9 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
+    "paths": {
+      "src/*": ["./src/*"]
+    },
     "lib": ["ESNext", "DOM"],
     "types": ["vitest/globals", "@testing-library/jest-dom"],
     "jsx": "react",

@@ -1,9 +1,11 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "ES2018",
     "outDir": "dist",
-    "moduleResolution": "node"
+    "rootDir": "./src",
+    "module": "ESNext",
+    "moduleResolution": "bundler"
   },
   "exclude": [
     "src/**/*.test.*",

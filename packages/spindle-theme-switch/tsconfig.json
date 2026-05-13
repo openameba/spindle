@@ -3,6 +3,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "outDir": "dist",
+    "rootDir": "./src",
     "module": "Node16",
     "moduleResolution": "node16"
   },
