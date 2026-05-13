@@ -60,7 +60,7 @@
     }
   },
   "dependencies": {
-    "@openameba/spindle-hooks": "^1.10.0",
+    "@openameba/spindle-hooks": "workspace:^",
     "ameba-color-palette.css": "^4.17.0",
     "use-callback-ref": "^1.3.3"
   },

@@ -270,8 +270,8 @@ importers:
   packages/spindle-ui:
     dependencies:
       '@openameba/spindle-hooks':
-        specifier: ^1.10.0
-        version: 1.10.1(@types/react@19.2.14)(react@19.2.6)
+        specifier: workspace:^
+        version: link:../spindle-hooks
       ameba-color-palette.css:
         specifier: ^4.17.0
         version: 4.17.0
@@ -1646,15 +1646,6 @@ packages:
   '@oozcitak/util@10.0.0':
     resolution: {integrity: sha512-hAX0pT/73190NLqBPPWSdBVGtbY6VOhWYK3qqHqtXQ1gK7kS2yz4+ivsN07hpJ6I3aeMtKP6J6npsEKOAzuTLA==}
     engines: {node: '>=20.0'}
-
-  '@openameba/spindle-hooks@1.10.1':
-    resolution: {integrity: sha512-CEas3+PT8Al37xyDS2STtdgg3KTOEMsk7Lo2TUoWm+8//VKXcynoNOMvQt+MmhYG0opwP1IC5M+Kzu8LXxltBA==}
-    peerDependencies:
-      '@types/react': ^16.8.6 || ^17.0.0 || ^18.0.0|| ^19.0.0
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0|| ^19.0.0
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
 
   '@openameba/textlint-rule-preset-ameba@https://codeload.github.com/openameba/textlint-rule-preset-ameba/tar.gz/e22b25089b6ab737ca03cedb8a089f2377d3386e':
     resolution: {gitHosted: true, integrity: sha512-tfgcQNIQnLzetlCPk0YV3192sSj0IQp1jgGo6IKxNCfECfBoAh3DvTarAD7gXWaOoYmgn4rTWN1i+uLn+hohhA==, tarball: https://codeload.github.com/openameba/textlint-rule-preset-ameba/tar.gz/e22b25089b6ab737ca03cedb8a089f2377d3386e}
@@ -10851,12 +10842,6 @@ snapshots:
       '@oozcitak/util': 10.0.0
 
   '@oozcitak/util@10.0.0': {}
-
-  '@openameba/spindle-hooks@1.10.1(@types/react@19.2.14)(react@19.2.6)':
-    dependencies:
-      react: 19.2.6
-    optionalDependencies:
-      '@types/react': 19.2.14
 
   '@openameba/textlint-rule-preset-ameba@https://codeload.github.com/openameba/textlint-rule-preset-ameba/tar.gz/e22b25089b6ab737ca03cedb8a089f2377d3386e(textlint@15.6.0(@cfworker/json-schema@4.1.1))':
     dependencies:
