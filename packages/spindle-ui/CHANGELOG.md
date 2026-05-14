@@ -1,5 +1,14 @@
 # Change Log
 
+## 3.2.5
+
+### Patch Changes
+
+- [#2089](https://github.com/openameba/spindle/pull/2089) [`a2b40f1`](https://github.com/openameba/spindle/commit/a2b40f1bddeaba89cdd1b216e3fcef87228eacee) Thanks [@herablog](https://github.com/herablog)! - TypeScript v6でビルド可能にするため、各パッケージのtsconfigを更新。spindle-hooksとspindle-uiのCJSビルドのtargetを `es5` から `es2018` に引き上げ (IE11等のES2018非対応環境は元々サポート対象外)。
+
+- Updated dependencies [[`a2b40f1`](https://github.com/openameba/spindle/commit/a2b40f1bddeaba89cdd1b216e3fcef87228eacee)]:
+  - @openameba/spindle-hooks@1.10.2
+
 ## 3.2.4
 
 ### Patch Changes
