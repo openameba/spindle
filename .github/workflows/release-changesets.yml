@@ -84,8 +84,12 @@ jobs:
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build spindle-hooks
-        run: pnpm --filter @openameba/spindle-hooks build
+      # Stage publish artifacts here in topological order; letting
+      # `changeset publish` fire prepublishOnly in parallel races a
+      # producer's `rm -rf dist` (via prebuild) against a consumer
+      # reading the same dist through the workspace symlink.
+      - name: Prepare publishable packages
+        run: pnpm -r --if-present run prepublishOnly
 
-      - name: Publish to npm with prepublishOnly
-        run: pnpm_config_ignore_scripts=false pnpm changeset publish
+      - name: Publish to npm
+        run: pnpm changeset publish
