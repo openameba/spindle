@@ -9,10 +9,15 @@ type Variant = 'contained' | 'outlined' | 'lighted' | 'neutral' | 'danger';
 interface Props
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'className'> {
   children?: React.ReactNode;
+  /** ボタンの横幅。fullWidth で親要素いっぱいに広がる */
   layout?: Layout;
+  /** ボタンの大きさ */
   size?: Size;
+  /** ボタンの見た目。アクションの重要度に応じて使い分ける */
   variant?: Variant;
+  /** ボタンテキストの前後に表示するアイコン */
   icon?: React.ReactNode;
+  /** アイコンの表示位置 */
   iconPosition?: 'start' | 'end';
 }
 
