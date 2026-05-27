@@ -33,7 +33,7 @@
     "url": "https://github.com/openameba/spindle/issues"
   },
   "devDependencies": {
-    "@figma/rest-api-spec": "0.38.0",
+    "@figma/rest-api-spec": "0.39.0",
     "@types/lodash.setwith": "4.3.9",
     "@types/node": "24.12.4",
     "@vitest/ui": "4.1.7",
