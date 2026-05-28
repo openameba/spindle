@@ -77,6 +77,18 @@ export function useCarousel<Item>({
     [displayCount, items],
   );
 
+  // Stable keys for each entry in `itemsToRender`. Because head/tail are
+  // reference-equal clones of items, consumers cannot derive a unique React
+  // key from the item itself — use these to avoid duplicate-key warnings.
+  const itemKeys = useMemo(
+    () => [
+      ...items.slice(-displayCount).map((_, i) => `head-${i}`),
+      ...items.map((_, i) => `body-${i}`),
+      ...items.slice(0, displayCount).map((_, i) => `tail-${i}`),
+    ],
+    [displayCount, items],
+  );
+
   const slideToNext = (ignoreHover = false) => {
     const shouldSlideToNext =
       ((!isHoveringRef.current && isAutoPlayingRef.current) || ignoreHover) &&
@@ -220,6 +232,7 @@ export function useCarousel<Item>({
     isAutoPlaying,
     isLinkClicked,
     itemsToRender,
+    itemKeys,
     listRef,
     listStyles,
     toggleAutoPlay,

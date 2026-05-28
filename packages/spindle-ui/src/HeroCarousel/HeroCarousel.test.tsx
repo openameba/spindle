@@ -32,6 +32,7 @@ vi.mock('@openameba/spindle-hooks', () => {
         isAutoPlaying,
         isLinkClicked: true,
         itemsToRender: items,
+        itemKeys: items.map((_, i: number) => `body-${i}`),
         listRef: { current: null },
         listStyles: {},
         toggleAutoPlay,
