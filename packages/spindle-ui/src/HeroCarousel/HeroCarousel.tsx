@@ -30,6 +30,7 @@ export const HeroCarousel: FC<Props> = React.memo(function HeroCarousel({
     isAutoPlaying,
     isLinkClicked,
     itemsToRender,
+    itemKeys,
     listRef,
     listStyles,
     toggleAutoPlay,
@@ -66,12 +67,12 @@ export const HeroCarousel: FC<Props> = React.memo(function HeroCarousel({
           ref={listRef}
           style={listStyles}
         >
-          {itemsToRender.map((item: CarouselItem) => (
+          {itemsToRender.map((item: CarouselItem, index: number) => (
             <HeroCarouselItem
               carouselItem={item}
               isLinkClicked={isLinkClicked}
               itemLinkClassName={ITEM_LINK_CLASS_NAME}
-              key={item.link}
+              key={itemKeys[index]}
             />
           ))}
         </ul>
