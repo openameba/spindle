@@ -212,8 +212,8 @@ importers:
         specifier: 4.0.2
         version: 4.0.2
       firebase-tools:
-        specifier: 15.18.0
-        version: 15.18.0(@cfworker/json-schema@4.1.1)(@types/node@24.12.4)
+        specifier: 15.19.0
+        version: 15.19.0(@cfworker/json-schema@4.1.1)(@types/node@24.12.4)
       puppeteer:
         specifier: 24.43.1
         version: 24.43.1(typescript@6.0.3)
@@ -225,8 +225,8 @@ importers:
         version: 0.18.0
     devDependencies:
       firebase-tools:
-        specifier: 15.18.0
-        version: 15.18.0(@cfworker/json-schema@4.1.1)(@types/node@24.12.4)
+        specifier: 15.19.0
+        version: 15.19.0(@cfworker/json-schema@4.1.1)(@types/node@24.12.4)
 
   packages/spindle-tokens:
     devDependencies:
@@ -343,8 +343,8 @@ importers:
         specifier: 1.12.0
         version: 1.12.0
       firebase-tools:
-        specifier: 15.18.0
-        version: 15.18.0(@cfworker/json-schema@4.1.1)(@types/node@24.12.4)
+        specifier: 15.19.0
+        version: 15.19.0(@cfworker/json-schema@4.1.1)(@types/node@24.12.4)
       jsdom:
         specifier: 29.1.1
         version: 29.1.1
@@ -4878,8 +4878,8 @@ packages:
     resolution: {integrity: sha512-78/PXT1wlLLDgTzDs7sjq9hzz0vXD+zn+7wypEe4fXQxCmdmqfGsEPQxmiCSQI3ajFV91bVSsvNtrJRiW6nGng==}
     engines: {node: '>=10'}
 
-  firebase-tools@15.18.0:
-    resolution: {integrity: sha512-rILpd9JgjifGRUSxXJC4Iu1h6wEZ7BuoYHZerT+CuY9SNopm8ykHOCjoFCANFplQe0xIGMkJtaXdEVN1uCB75A==}
+  firebase-tools@15.19.0:
+    resolution: {integrity: sha512-ZcbyqbYkn+e7rsFVhurbkmeuzkxGBqhmrU1A+V3mzO8yfqsQLBU4MSqfez7Lkmk6LRu8Vl9uXOoDTlzQ2ej9rw==}
     engines: {node: '>=20.0.0 || >=22.0.0 || >=24.0.0'}
     hasBin: true
 
@@ -9232,6 +9232,10 @@ packages:
   utils-merge@1.0.1:
     resolution: {integrity: sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==}
     engines: {node: '>= 0.4.0'}
+
+  uuid@11.1.1:
+    resolution: {integrity: sha512-vIYxrBCC/N/K+Js3qSN88go7kIfNPssr/hHCesKCQNAjmgvYS2oqr69kIufEG+O4+PfezOH4EbIeHCfFov8ZgQ==}
+    hasBin: true
 
   uuid@14.0.0:
     resolution: {integrity: sha512-Qo+uWgilfSmAhXCMav1uYFynlQO7fMFiMVZsQqZRMIXp0O7rR7qjkj+cPvBHLgBqi960QCoo/PH2/6ZtVqKvrg==}
@@ -14877,7 +14881,7 @@ snapshots:
       locate-path: 6.0.0
       path-exists: 4.0.0
 
-  firebase-tools@15.18.0(@cfworker/json-schema@4.1.1)(@types/node@24.12.4):
+  firebase-tools@15.19.0(@cfworker/json-schema@4.1.1)(@types/node@24.12.4):
     dependencies:
       '@apphosting/common': 0.0.8
       '@electric-sql/pglite': 0.3.16
@@ -14947,7 +14951,7 @@ snapshots:
       triple-beam: 1.4.1
       universal-analytics: 0.5.4
       update-notifier-cjs: 5.1.7
-      uuid: 8.3.2
+      uuid: 11.1.1
       winston: 3.19.0
       winston-transport: 4.9.0
       ws: 7.5.10
@@ -19013,7 +19017,7 @@ snapshots:
 
   string-length@6.0.0:
     dependencies:
-      strip-ansi: 7.1.0
+      strip-ansi: 7.2.0
 
   string-width@2.1.1:
     dependencies:
@@ -20271,6 +20275,8 @@ snapshots:
   utila@0.4.0: {}
 
   utils-merge@1.0.1: {}
+
+  uuid@11.1.1: {}
 
   uuid@14.0.0: {}
 
