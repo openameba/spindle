@@ -280,8 +280,8 @@ importers:
         version: 1.3.3(@types/react@19.2.15)(react@19.2.6)
     devDependencies:
       '@figma/code-connect':
-        specifier: 1.4.5
-        version: 1.4.5
+        specifier: 1.4.7
+        version: 1.4.7
       '@storybook/addon-a11y':
         specifier: 10.4.1
         version: 10.4.1(storybook@10.4.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)(@testing-library/dom@10.4.1)(@types/react@19.2.15)(prettier@3.8.3)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))
@@ -1328,8 +1328,8 @@ packages:
       '@noble/hashes':
         optional: true
 
-  '@figma/code-connect@1.4.5':
-    resolution: {integrity: sha512-ZnVtuFP0nNZtGsWV24zalaIFGL1r7wqdffYci6sTf6+JBOZSnNMZL2994+ro+KS4X4A2eDhOVskYGJoEVa3S3A==}
+  '@figma/code-connect@1.4.7':
+    resolution: {integrity: sha512-iWolnm/X/LZVEvbt/D8AQ0IohnNskrTtDcdtGNEZKqUnBh+zDyQQ+m1HnM9+C00NveRbENfhs13QxrTYcOrvEA==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -10711,7 +10711,7 @@ snapshots:
 
   '@exodus/bytes@1.15.1': {}
 
-  '@figma/code-connect@1.4.5':
+  '@figma/code-connect@1.4.7':
     dependencies:
       boxen: 5.1.1
       chalk: 4.1.2
@@ -20766,7 +20766,7 @@ snapshots:
     dependencies:
       ansi-styles: 6.2.3
       string-width: 7.2.0
-      strip-ansi: 7.1.0
+      strip-ansi: 7.2.0
 
   wrappy@1.0.2: {}
 
