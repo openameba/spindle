@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.11.0
+
+### Minor Changes
+
+- [#2136](https://github.com/openameba/spindle/pull/2136) [`c1fe032`](https://github.com/openameba/spindle/commit/c1fe03200092d88f862e622e161f93c4f60e8917) Thanks [@yanagi0602](https://github.com/yanagi0602)! - Add `itemKeys` to `useCarousel` return value so consumers can render `itemsToRender` without React duplicate-key warnings caused by head/tail clones. `HeroCarousel` now uses these stable keys instead of `item.link`.
+
 ## 1.10.2
 
 ### Patch Changes
