@@ -47,6 +47,10 @@ export const Normal: Story = {
   render: () => <HeroCarousel carouselList={carouselList} autoplay={false} />,
 };
 
+export const Autoplay: Story = {
+  render: () => <HeroCarousel carouselList={carouselList} autoplay />,
+};
+
 const longTitleCarouselList: CarouselItem[] = [
   {
     title:
