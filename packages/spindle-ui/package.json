@@ -102,7 +102,7 @@
     "stylelint": "16.26.1",
     "stylelint-config-standard": "39.0.1",
     "stylelint-order": "8.1.1",
-    "stylelint-selector-bem-pattern": "4.0.1",
+    "stylelint-selector-bem-pattern": "5.0.0",
     "tsx": "4.22.4",
     "vitest": "4.1.7"
   }
