@@ -1,5 +1,7 @@
 import { Meta, Story, Source } from '@storybook/addon-docs/blocks';
 import * as ButtonStories from './Button.stories';
+import buttonLayoutVertical from './button-layout-vertical.png';
+import buttonLayoutHorizontal from './button-layout-horizontal.png';
 
 <Meta of={ButtonStories} />
 
@@ -276,6 +278,22 @@ import '@openameba/spindle-ui/Button/Button.css';
 <button class="spui-Button spui-Button--fullWidth spui-Button--small spui-Button--neutral spui-Button--iconend"><span class="spui-Button-icon spui-Button-icon--small"><svg /></span>さらに表示</button>
   `}
 />
+
+## 並び順のガイドライン
+
+ContainedボタンとOutlinedボタンを組み合わせる際は、以下の配置ルールに従ってください。
+
+### 縦に並べる場合
+
+Outlinedボタンを**下**に配置します。
+
+<img src={buttonLayoutVertical} alt="縦並びのボタン配置例：Containedが上、Outlinedが下" />
+
+### 横に並べる場合
+
+Outlinedボタンを**左**に配置します。
+
+<img src={buttonLayoutHorizontal} alt="横並びのボタン配置例：Outlinedが左、Containedが右" />
 
 ## Browser Compatibility
 active時やhover時など各stateのスタイルは、ブラウザごとに異なります。詳しくは[ButtonのStateパターン変更](https://github.com/openameba/spindle/issues/13)を参照してください。
