@@ -30,7 +30,7 @@ peerDependencyRules:
 
 overrides:
   superstatic: 10.0.0
-  axios: 1.16.1
+  axios: 1.17.0
   undici: 7.26.0
   undici-types: 7.26.0
   semver: 7.8.2
