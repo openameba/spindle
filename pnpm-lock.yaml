@@ -195,8 +195,8 @@ importers:
         specifier: 24.12.4
         version: 24.12.4
       cpx2:
-        specifier: 8.0.2
-        version: 8.0.2
+        specifier: 9.0.0
+        version: 9.0.0
       vitest:
         specifier: 4.1.7
         version: 4.1.7(@opentelemetry/api@1.9.1)(@types/node@24.12.4)(@vitest/ui@4.1.7)(esbuild@0.28.0)(jiti@2.6.1)(jsdom@29.1.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0)
@@ -4037,9 +4037,9 @@ packages:
     resolution: {integrity: sha512-3scnzFj/94eb7y4wyXRWwvzLFaQp87yyfTnChIjlfYrVqp5lVO3E2hIJMeQIltUT0K2ZAB3An1qXcBmwGyvuwA==}
     engines: {node: '>=10'}
 
-  cpx2@8.0.2:
-    resolution: {integrity: sha512-exLFEIh8XgWthEtrEq8hs+S6jxM5ZHpjQnRH6D7VU+2uAYS3amLSVOUSuirfx3HeN7WBCq+xFygHpt7l+gQtUA==}
-    engines: {node: ^20.0.0 || >=22.0.0, npm: '>=10'}
+  cpx2@9.0.0:
+    resolution: {integrity: sha512-KRZGQCmHrM10xfLjrCBTQHpEIJgKtZyOOO5fygu9KE00IjQOL76FHjeON62R5PWS/W2J5ofgRJKF8rpUlEuLPQ==}
+    engines: {node: ^22.0.0 || >=24.0.0, npm: '>=10'}
     hasBin: true
 
   crc-32@1.2.2:
@@ -13910,7 +13910,7 @@ snapshots:
       nested-error-stacks: 2.1.1
       p-event: 4.2.0
 
-  cpx2@8.0.2:
+  cpx2@9.0.0:
     dependencies:
       debounce: 3.0.0
       glob: 13.0.6
@@ -13918,7 +13918,6 @@ snapshots:
       ignore: 7.0.5
       minimatch: 10.2.5
       p-map: 7.0.4
-      resolve: 1.22.12
       shell-quote: 1.8.3
       subarg: 1.0.0
 

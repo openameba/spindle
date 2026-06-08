@@ -3,7 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import cpx from 'cpx2';
+import { copy } from 'cpx2';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -52,7 +52,7 @@ async function copyAssets() {
   ];
 
   for (const task of tasks) {
-    await cpx.copy(task.source, task.dest, {
+    await copy(task.source, task.dest, {
       cwd: path.join(__dirname, '..'),
       ignore: task.ignore || [],
     });
