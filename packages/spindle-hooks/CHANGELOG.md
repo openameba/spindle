@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.11.1
+
+### Patch Changes
+
+- [#2157](https://github.com/openameba/spindle/pull/2157) [`711a604`](https://github.com/openameba/spindle/commit/711a604cbd88f212062da8b5415f1ddad1a13f21) Thanks [@yanagi0602](https://github.com/yanagi0602)! - Fix infinite re-render ("Maximum update depth exceeded") in `useAutoSlide` / `HeroCarousel` when `autoplay` is enabled. The timeout id is now held in a ref instead of state so the auto-slide callbacks stay stable and the mount effect no longer re-runs on every commit. Surfaced under React 19.
+
 ## 1.11.0
 
 ### Minor Changes
