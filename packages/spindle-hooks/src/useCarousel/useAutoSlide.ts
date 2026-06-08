@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 const AUTO_SLIDE_SPEED = 4000; // ms
 
@@ -9,44 +9,55 @@ type Payload = {
 
 export function useAutoSlide({ onTimeOut, shouldAutoPlaying = true }: Payload) {
   const [isAutoPlaying, setIsAutoPlaying] = useState(shouldAutoPlaying);
-  const [timeoutId, setTimeoutId] = useState<number | null>(null);
+
+  // Hold the timer id in a ref so setting it neither triggers a re-render nor
+  // invalidates the callbacks below, which would otherwise re-run the mount
+  // effect on every commit and cause an infinite update loop.
+  const timeoutIdRef = useRef<number | null>(null);
+
+  // `onTimeOut` is a fresh closure on every render; read it through a ref so
+  // callbacks can call the latest one while keeping a stable identity.
+  const onTimeOutRef = useRef(onTimeOut);
+  useEffect(() => {
+    onTimeOutRef.current = onTimeOut;
+  }, [onTimeOut]);
 
   const resetTimeOut = useCallback(() => {
-    if (timeoutId) {
-      window.clearTimeout(timeoutId);
+    if (timeoutIdRef.current != null) {
+      window.clearTimeout(timeoutIdRef.current);
+      timeoutIdRef.current = null;
     }
-  }, [timeoutId]);
+  }, []);
 
   const activateAutoSlide = useCallback(() => {
     resetTimeOut();
 
-    const newTimeoutId = window.setTimeout(() => {
-      onTimeOut();
+    timeoutIdRef.current = window.setTimeout(() => {
+      onTimeOutRef.current();
     }, AUTO_SLIDE_SPEED);
+  }, [resetTimeOut]);
 
-    setTimeoutId(newTimeoutId);
-  }, [resetTimeOut, onTimeOut]);
-
-  const resetAutoSlide = () => {
+  const resetAutoSlide = useCallback(() => {
     if (isAutoPlaying) {
       activateAutoSlide();
     }
-  };
+  }, [isAutoPlaying, activateAutoSlide]);
 
-  const toggleAutoPlay = () => {
+  const toggleAutoPlay = useCallback(() => {
     resetTimeOut();
 
     if (!isAutoPlaying) {
       activateAutoSlide();
     }
     setIsAutoPlaying((prev) => !prev);
-  };
+  }, [isAutoPlaying, resetTimeOut, activateAutoSlide]);
 
   useEffect(() => {
     if (shouldAutoPlaying) {
       activateAutoSlide();
     }
-  }, [activateAutoSlide, shouldAutoPlaying]); // eslint-disable-line react-hooks/exhaustive-deps
+    return () => resetTimeOut();
+  }, [shouldAutoPlaying, activateAutoSlide, resetTimeOut]);
 
   return {
     isAutoPlaying,
