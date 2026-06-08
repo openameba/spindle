@@ -212,8 +212,8 @@ importers:
         specifier: 4.0.2
         version: 4.0.2
       firebase-tools:
-        specifier: 15.19.0
-        version: 15.19.0(@cfworker/json-schema@4.1.1)(@types/node@24.12.4)
+        specifier: 15.19.1
+        version: 15.19.1(@cfworker/json-schema@4.1.1)(@types/node@24.12.4)
       puppeteer:
         specifier: 25.1.0
         version: 25.1.0
@@ -225,8 +225,8 @@ importers:
         version: 0.18.0
     devDependencies:
       firebase-tools:
-        specifier: 15.19.0
-        version: 15.19.0(@cfworker/json-schema@4.1.1)(@types/node@24.12.4)
+        specifier: 15.19.1
+        version: 15.19.1(@cfworker/json-schema@4.1.1)(@types/node@24.12.4)
 
   packages/spindle-tokens:
     devDependencies:
@@ -343,8 +343,8 @@ importers:
         specifier: 1.12.0
         version: 1.12.0
       firebase-tools:
-        specifier: 15.19.0
-        version: 15.19.0(@cfworker/json-schema@4.1.1)(@types/node@24.12.4)
+        specifier: 15.19.1
+        version: 15.19.1(@cfworker/json-schema@4.1.1)(@types/node@24.12.4)
       jsdom:
         specifier: 29.1.1
         version: 29.1.1
@@ -4897,8 +4897,8 @@ packages:
     resolution: {integrity: sha512-78/PXT1wlLLDgTzDs7sjq9hzz0vXD+zn+7wypEe4fXQxCmdmqfGsEPQxmiCSQI3ajFV91bVSsvNtrJRiW6nGng==}
     engines: {node: '>=10'}
 
-  firebase-tools@15.19.0:
-    resolution: {integrity: sha512-ZcbyqbYkn+e7rsFVhurbkmeuzkxGBqhmrU1A+V3mzO8yfqsQLBU4MSqfez7Lkmk6LRu8Vl9uXOoDTlzQ2ej9rw==}
+  firebase-tools@15.19.1:
+    resolution: {integrity: sha512-r3BslVykVe0MwvyGf4+oLOcX38vjgEfu2YypfvaQdIW08j505h1mfJrHJGGMmKRAPuvlf35FSekNG9cOfoyh/w==}
     engines: {node: '>=20.0.0 || >=22.0.0 || >=24.0.0'}
     hasBin: true
 
@@ -14944,7 +14944,7 @@ snapshots:
       locate-path: 6.0.0
       path-exists: 4.0.0
 
-  firebase-tools@15.19.0(@cfworker/json-schema@4.1.1)(@types/node@24.12.4):
+  firebase-tools@15.19.1(@cfworker/json-schema@4.1.1)(@types/node@24.12.4):
     dependencies:
       '@apphosting/common': 0.0.8
       '@electric-sql/pglite': 0.3.16
@@ -16159,7 +16159,7 @@ snapshots:
       whatwg-encoding: 3.1.1
       whatwg-mimetype: 4.0.0
       whatwg-url: 14.2.0
-      ws: 8.20.1
+      ws: 8.21.0
       xml-name-validator: 5.0.0
     transitivePeerDependencies:
       - bufferutil
@@ -18119,7 +18119,7 @@ snapshots:
       devtools-protocol: 0.0.1608973
       typed-query-selector: 2.12.2
       webdriver-bidi-protocol: 0.4.1
-      ws: 8.20.1
+      ws: 8.21.0
     transitivePeerDependencies:
       - bare-abort-controller
       - bare-buffer
