@@ -56,17 +56,17 @@ importers:
         specifier: 3.8.3
         version: 3.8.3
       stylelint:
-        specifier: 17.12.0
-        version: 17.12.0(typescript@6.0.3)
+        specifier: 17.13.0
+        version: 17.13.0(typescript@6.0.3)
       stylelint-config-standard:
         specifier: 40.0.0
-        version: 40.0.0(stylelint@17.12.0(typescript@6.0.3))
+        version: 40.0.0(stylelint@17.13.0(typescript@6.0.3))
       stylelint-order:
         specifier: 8.1.1
-        version: 8.1.1(stylelint@17.12.0(typescript@6.0.3))
+        version: 8.1.1(stylelint@17.13.0(typescript@6.0.3))
       stylelint-selector-bem-pattern:
         specifier: 4.0.1
-        version: 4.0.1(stylelint@17.12.0(typescript@6.0.3))
+        version: 4.0.1(stylelint@17.13.0(typescript@6.0.3))
       textlint:
         specifier: 15.7.1
         version: 15.7.1(@cfworker/json-schema@4.1.1)
@@ -8561,8 +8561,8 @@ packages:
     engines: {node: '>=18.12.0'}
     hasBin: true
 
-  stylelint@17.12.0:
-    resolution: {integrity: sha512-KIlzWXMHUvgfPUR0R7TK3H80yCIi0uoivUwf+6Az4yrHJD1Q3c1qIkh/H5Z0i/K3QXgtq/UMEkWyBUSUwnpnOg==}
+  stylelint@17.13.0:
+    resolution: {integrity: sha512-G1WYzMerp7ihOaIe9VJCHLt12MoAD2QLf1AFerYP37+BCRBUK5UCpq8e/mN+zCIaJPKQcaxhE4WlPmqdiOx/gw==}
     engines: {node: '>=20.19.0'}
     hasBin: true
 
@@ -19436,9 +19436,9 @@ snapshots:
     dependencies:
       stylelint: 16.26.1(typescript@6.0.3)
 
-  stylelint-config-recommended@18.0.0(stylelint@17.12.0(typescript@6.0.3)):
+  stylelint-config-recommended@18.0.0(stylelint@17.13.0(typescript@6.0.3)):
     dependencies:
-      stylelint: 17.12.0(typescript@6.0.3)
+      stylelint: 17.13.0(typescript@6.0.3)
 
   stylelint-config-standard@34.0.0(stylelint@15.11.0(typescript@6.0.3)):
     dependencies:
@@ -19450,10 +19450,10 @@ snapshots:
       stylelint: 16.26.1(typescript@6.0.3)
       stylelint-config-recommended: 17.0.0(stylelint@16.26.1(typescript@6.0.3))
 
-  stylelint-config-standard@40.0.0(stylelint@17.12.0(typescript@6.0.3)):
+  stylelint-config-standard@40.0.0(stylelint@17.13.0(typescript@6.0.3)):
     dependencies:
-      stylelint: 17.12.0(typescript@6.0.3)
-      stylelint-config-recommended: 18.0.0(stylelint@17.12.0(typescript@6.0.3))
+      stylelint: 17.13.0(typescript@6.0.3)
+      stylelint-config-recommended: 18.0.0(stylelint@17.13.0(typescript@6.0.3))
 
   stylelint-order@8.1.1(stylelint@16.26.1(typescript@6.0.3)):
     dependencies:
@@ -19461,11 +19461,11 @@ snapshots:
       postcss-sorting: 10.0.0(postcss@8.5.15)
       stylelint: 16.26.1(typescript@6.0.3)
 
-  stylelint-order@8.1.1(stylelint@17.12.0(typescript@6.0.3)):
+  stylelint-order@8.1.1(stylelint@17.13.0(typescript@6.0.3)):
     dependencies:
       postcss: 8.5.15
       postcss-sorting: 10.0.0(postcss@8.5.15)
-      stylelint: 17.12.0(typescript@6.0.3)
+      stylelint: 17.13.0(typescript@6.0.3)
 
   stylelint-selector-bem-pattern@4.0.1(stylelint@16.26.1(typescript@6.0.3)):
     dependencies:
@@ -19474,12 +19474,12 @@ snapshots:
       postcss-bem-linter: 4.0.1(postcss@8.5.15)
       stylelint: 16.26.1(typescript@6.0.3)
 
-  stylelint-selector-bem-pattern@4.0.1(stylelint@17.12.0(typescript@6.0.3)):
+  stylelint-selector-bem-pattern@4.0.1(stylelint@17.13.0(typescript@6.0.3)):
     dependencies:
       lodash: 4.18.1
       postcss: 8.5.15
       postcss-bem-linter: 4.0.1(postcss@8.5.15)
-      stylelint: 17.12.0(typescript@6.0.3)
+      stylelint: 17.13.0(typescript@6.0.3)
 
   stylelint@15.11.0(typescript@6.0.3):
     dependencies:
@@ -19572,7 +19572,7 @@ snapshots:
       - supports-color
       - typescript
 
-  stylelint@17.12.0(typescript@6.0.3):
+  stylelint@17.13.0(typescript@6.0.3):
     dependencies:
       '@csstools/css-calc': 3.2.1(@csstools/css-parser-algorithms@4.0.0(@csstools/css-tokenizer@4.0.0))(@csstools/css-tokenizer@4.0.0)
       '@csstools/css-parser-algorithms': 4.0.0(@csstools/css-tokenizer@4.0.0)
