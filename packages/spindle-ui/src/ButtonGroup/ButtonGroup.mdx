@@ -1,7 +1,5 @@
 import { Meta, Story, Source } from '@storybook/addon-docs/blocks';
 import * as ButtonGroupStories from './ButtonGroup.stories';
-import buttonLayoutVertical from './button-layout-vertical.png';
-import buttonLayoutHorizontal from './button-layout-horizontal.png';
 
 <Meta of={ButtonGroupStories} />
 
@@ -240,13 +238,13 @@ ContainedボタンとOutlinedボタンを組み合わせる際は、以下の配
 
 Outlinedボタンを**下**に配置します。
 
-<img src={buttonLayoutVertical} alt="縦並びのボタン配置例：Containedが上、Outlinedが下" />
+<Story of={ButtonGroupStories.ColumnDirectionWithLargeButtons} />
 
 ### 横に並べる場合
 
 Outlinedボタンを**左**に配置します。
 
-<img src={buttonLayoutHorizontal} alt="横並びのボタン配置例：Outlinedが左、Containedが右" />
+<Story of={ButtonGroupStories.RowDirectionWithLargeButtons} />
 
 ## Baseline
 
