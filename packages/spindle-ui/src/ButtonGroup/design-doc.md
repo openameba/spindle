@@ -15,13 +15,13 @@ ButtonGroupは、複数のボタンを横並び（row）または縦並び（col
 
 ContainedボタンとOutlinedボタンを縦に並べる場合、Outlinedボタンを下に配置します。
 
-![縦並びのボタン配置例](./button-layout-vertical.png)
+![縦並びのボタン配置例](https://github.com/user-attachments/assets/dd5771bf-72ec-4c86-abdc-be9f08a18960)
 
 ### 横並びの例
 
 ContainedボタンとOutlinedボタンを横に並べる場合、Outlinedボタンを左に配置します。
 
-![横並びのボタン配置例](./button-layout-horizontal.png)
+![横並びのボタン配置例](https://github.com/user-attachments/assets/f4ded303-ff16-49c8-a3fc-a5924dc70311)
 
 ## 使用例
 
