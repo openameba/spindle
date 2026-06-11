@@ -6,6 +6,7 @@ import { LinkButton } from './LinkButton';
 
 const meta: Meta<typeof LinkButton> = {
   title: 'LinkButton',
+  component: LinkButton,
   args: {
     onClick: action('clicked'),
     onMouseOver: action('mouse-over'),
