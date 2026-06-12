@@ -1,12 +1,11 @@
-name: build icon via webhook
+name: build icon
 
 on:
   workflow_dispatch:
     inputs:
-      modified_components:
-        description: 'JSON array for modified components'
+      icon_names:
+        description: 'Figma component names (snake_case) as a JSON array, or ["ALL"] for all icons. e.g. ["align_left","album_fill"]'
         required: true
-        default: '["ALL"]'
 
 permissions:
   contents: write
@@ -23,15 +22,56 @@ jobs:
           node-version-file: package.json
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      - name: Generate figma.json
+        env:
+          FILE_KEY: ${{ secrets.FIGMA_ICON_FILE_KEY }}
+          NODE_ID: ${{ secrets.FIGMA_ICON_NODE_ID }}
+          ICON_NAMES: ${{ inputs.icon_names }}
+        run: |
+          node <<'EOF'
+          const fs = require('node:fs');
+
+          const raw = (process.env.ICON_NAMES ?? '').trim();
+          if (raw === '') {
+            console.error('`icon_names` is required. Provide a JSON array of Figma component names, e.g. ["align_left","album_fill"], or ["ALL"] for all icons.');
+            process.exit(1);
+          }
+
+          let iconNames;
+          try {
+            iconNames = JSON.parse(raw);
+          } catch {
+            console.error('`icon_names` must be a valid JSON array, e.g. ["align_left"] or ["ALL"].');
+            process.exit(1);
+          }
+
+          if (
+            !Array.isArray(iconNames) ||
+            iconNames.length === 0 ||
+            !iconNames.every((name) => typeof name === 'string')
+          ) {
+            console.error('`icon_names` must be a non-empty JSON array of strings.');
+            process.exit(1);
+          }
+
+          const config = {
+            fileKey: process.env.FILE_KEY,
+            nodeId: process.env.NODE_ID,
+            dest: 'dist',
+            iconNames:
+              iconNames.length === 1 && iconNames[0] === 'ALL' ? 'ALL' : iconNames,
+          };
+
+          fs.writeFileSync(
+            'packages/spindle-icons/figma.json',
+            JSON.stringify(config, null, 2),
+          );
+          EOF
       - name: Update Icons
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
           FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_TOKEN_CODE_CONNECT }} # This is for Figma Code Connect in spindle-ui
-          FILE_KEY: ${{ secrets.FIGMA_ICON_FILE_KEY }}
-          NODE_ID: ${{ secrets.FIGMA_ICON_NODE_ID }}
-          ICON_NAMES: ${{ github.event.inputs.modified_components }}
         run: |
-          node -p "JSON.stringify({ fileKey: '$FILE_KEY', nodeId: '$NODE_ID', dest: 'dist', iconNames: '$ICON_NAMES' })" > packages/spindle-icons/figma.json
           pnpm --filter @openameba/spindle-icons build
           pnpm --filter @openameba/spindle-ui icon
           pnpm fix
@@ -41,10 +81,10 @@ jobs:
           author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
           committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
           commit-message: 'feat(spindle-icons): update icons'
-          branch: feat/build-icon-via-webhook
+          branch: feat/build-icon
           delete-branch: true
           title: 'feat(spindle-icons): update icons'
-          body: ${{ github.event.inputs.modified_components }}
+          body: ''
           labels: |
             spindle-icons
             spindle-ui
