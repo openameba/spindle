@@ -11,8 +11,13 @@ const bundlewatchConfig = {
       compression: 'gzip',
     },
     {
-      path: './dist/!(Icon|Toast|DropdownMenu|Pagination|Modal|SnackBar|StackNotificationManager|SegmentedControl)/*.mjs',
+      path: './dist/!(Icon|Toast|DropdownMenu|Pagination|Modal|SnackBar|StackNotificationManager|SegmentedControl|Tooltip)/*.mjs',
       maxSize: '1.1 kB',
+      compression: 'gzip',
+    },
+    {
+      path: './dist/Tooltip/*.mjs',
+      maxSize: '2.7 kB',
       compression: 'gzip',
     },
     {
@@ -56,8 +61,13 @@ const bundlewatchConfig = {
       compression: 'gzip',
     },
     {
-      path: './dist/!(InlineNotification|Modal|SnackBar)/!(index).css',
+      path: './dist/!(InlineNotification|Modal|SnackBar|Tooltip)/!(index).css',
       maxSize: '1.5 kB',
+      compression: 'gzip',
+    },
+    {
+      path: './dist/Tooltip/!(index).css',
+      maxSize: '1.9 kB',
       compression: 'gzip',
     },
     {
