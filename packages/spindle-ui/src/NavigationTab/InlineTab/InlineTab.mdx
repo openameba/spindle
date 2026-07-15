@@ -1,0 +1,76 @@
+import { Meta, Story, Source } from '@storybook/addon-docs/blocks';
+import * as InlineTabStories from './InlineTab.stories';
+
+<Meta of={InlineTabStories} />
+
+# NavigationTab/InlineTab
+
+NavigationTabは表示内容を伝え、切り替える事を目的としたコンポーネントです。InlineTabはNavigationTabのいずれかと並列に何らかの要素を配置したい時に利用してください。ただし、横スクロールできないため項目数が少ない時のみ利用してください。
+
+<Source
+  language="javascript"
+  code={`
+import { InlineTab } from '@openameba/spindle-ui/NavigationTab';
+import '@openameba/spindle-ui/NavigationTab/index.css';
+  `}
+/>
+
+<Source
+  language="css"
+  code={`@import './node_modules/@openameba/spindle-ui/NavigationTab/InlineTab/InlineTab.css'`}
+/>
+
+<Source
+  language="html"
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/NavigationTab/InlineTab/InlineTab.css">`}
+/>
+
+## 指定できるプロパティ
+- `defaultSelectedId`(必須): 初期の選択状態にしたい項目の`id`を指定します。この`id`は`options`内のいずれかの`id`と一致している必要があります。
+- `options`(必須): 各項目の情報を指定します。`id`（必須）は各項目を識別するためのもので、配列内で一意である必要があります。`label`（必須）はInlineTabに表示されるラベルです。
+- `onClick`(任意): 各項目をクリックした際に追加で行いたい処理がある場合は指定します。第2引数の`id`には、選択された項目の`id`が渡されます。
+
+## アクセシビリティ
+InlineTab内の各項目は`tab`roleを持ち、`id`には`options`の`id`が設定されます。また、`aria-controls`には`options`の`id`に`-tabpanel`を付与したものが設定されます。（例：`id`が`all`の場合、`id`には`all`、`aria-controls`には`all-tabpanel`が設定されます）
+
+上記を用いて、各項目と表示内容を関連付けてください。
+
+<Source
+  code={`<InlineTab
+  defaultSelectedId={'all'}
+  options={[
+    { id: 'all', label: 'すべて' },
+    { id: 'follow', label: 'フォロー' },
+    { id: 'follower', label: 'フォロワー' },
+  ]}
+/>
+<div id="all-tabpanel" role="tabpanel" aria-labelledby="all">
+  <p>「すべて」選択時の表示内容</p>
+</div>
+<div id="follow-tabpanel" role="tabpanel" aria-labelledby="follow">
+  <p>「フォロー」選択時の表示内容</p>
+</div>
+<div id="follower-tabpanel" role="tabpanel" aria-labelledby="follower">
+  <p>「フォロワー」選択時の表示内容</p>
+</div>`}
+/>
+
+## Normal
+
+コンポーネントの幅は項目数に応じた内容幅になります（各項目の最小幅は80pxです）。NavigationTabのいずれかと並列に要素を配置する用途を想定しているため、親要素いっぱいには広がりません。親要素いっぱいに広げたい場合は、利用側でコンポーネントに`width: 100%`を指定してください。その場合、各項目は等分された幅で配置されます。
+
+<Story of={InlineTabStories.Normal} />
+
+## TwoItems
+
+<Story of={InlineTabStories.TwoItems} />
+
+## LongLabel
+
+各項目は最も長い項目名（`label`）に合わせた等幅になります。表示領域内に収まらない場合、項目名は1行内で省略されます。横スクロールはできないため、項目数が少なく項目名が短い場合のみ利用してください。
+
+<Story of={InlineTabStories.LongLabel} />
+
+## Baseline
+
+Widely available

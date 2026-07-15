@@ -1,0 +1,86 @@
+import { Meta, Story, Source } from '@storybook/addon-docs/blocks';
+import * as CapsuleTabStories from './CapsuleTab.stories';
+
+<Meta of={CapsuleTabStories} />
+
+# NavigationTab/CapsuleTab
+
+NavigationTabは表示内容を伝え、切り替える事を目的としたコンポーネントです。CapsuleTabはUnderlineTabより象徴的に使ったり、目立たせたい時に利用してください。UnderlineTabと併用してサブナビゲーション的に利用することも可能です。
+
+<Source
+  language="javascript"
+  code={`
+import { CapsuleTab } from '@openameba/spindle-ui/NavigationTab';
+import '@openameba/spindle-ui/NavigationTab/index.css';
+  `}
+/>
+
+<Source
+  language="css"
+  code={`@import './node_modules/@openameba/spindle-ui/NavigationTab/CapsuleTab/CapsuleTab.css'`}
+/>
+
+<Source
+  language="html"
+  code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/NavigationTab/CapsuleTab/CapsuleTab.css">`}
+/>
+
+## 指定できるプロパティ
+- `defaultSelectedId`(必須): 初期の選択状態にしたい項目の`id`を指定します。この`id`は`options`内のいずれかの`id`と一致している必要があります。
+- `options`(必須): 各項目の情報を指定します。`id`（必須）は各項目を識別するためのもので、配列内で一意である必要があります。`label`（必須）はCapsuleTabに表示されるラベルです。
+- `hasBorder`(任意): コンポーネント下に区切り線を表示するかどうかを指定します。デフォルトは`false`です。
+- `variant`(任意): CapsuleTabの種類を指定します。デフォルトは`fixed`で、その他に`scrollable`を指定することもできます。
+- `onClick`(任意): 各項目をクリックした際に追加で行いたい処理がある場合は指定します。第2引数の`id`には、選択された項目の`id`が渡されます。
+
+## アクセシビリティ
+CapsuleTab内の各項目は`tab`roleを持ち、`id`には`options`の`id`が設定されます。また、`aria-controls`には`options`の`id`に`-tabpanel`を付与したものが設定されます。（例：`id`が`all`の場合、`id`には`all`、`aria-controls`には`all-tabpanel`が設定されます）
+
+上記を用いて、各項目と表示内容を関連付けてください。
+
+<Source
+  code={`<CapsuleTab
+  defaultSelectedId={'all'}
+  options={[
+    { id: 'all', label: 'すべて' },
+    { id: 'follow', label: 'フォロー' },
+    { id: 'follower', label: 'フォロワー' },
+  ]}
+/>
+<div id="all-tabpanel" role="tabpanel" aria-labelledby="all">
+  <p>「すべて」選択時の表示内容</p>
+</div>
+<div id="follow-tabpanel" role="tabpanel" aria-labelledby="follow">
+  <p>「フォロー」選択時の表示内容</p>
+</div>
+<div id="follower-tabpanel" role="tabpanel" aria-labelledby="follower">
+  <p>「フォロワー」選択時の表示内容</p>
+</div>`}
+/>
+
+## Variant（fixed）
+
+`variant: fixed`を指定した場合、各項目はラベルの長さに応じた幅になり、全体が中央揃えで配置されます。`fixed`を指定している場合、長い項目名（`label`）や多数の項目が設定されることは期待していません。長い項目名や多数の項目を設定したい場合は`variant: scrollable`の利用を検討してください。
+
+<Story of={CapsuleTabStories.VariantFixed} />
+
+## Variant（scrollable）
+
+`variant: scrollable`を指定した場合、CapsuleTabの全体が表示領域内に収まらなくなった瞬間から、横スクロール可能になります。左右に見切れた項目がある場合には、スクロール操作用のボタンが表示されます。また、項目を選択すると、選択した項目が中央に来るようにスクロールされます。
+
+<Story of={CapsuleTabStories.VariantScrollable} />
+
+## Variant（scrollable with short label）
+
+CapsuleTabの全体が表示領域内に収まっている場合は、特にスクロールはしません。
+
+<Story of={CapsuleTabStories.VariantScrollableWithShortLabel} />
+
+## HasBorder（true）
+
+コンポーネント下に区切り線を表示するかどうかを指定します。デフォルトは`false`ですが、`true`を指定すれば表示できます。
+
+<Story of={CapsuleTabStories.HasBorderTrue} />
+
+## Baseline
+
+Widely available

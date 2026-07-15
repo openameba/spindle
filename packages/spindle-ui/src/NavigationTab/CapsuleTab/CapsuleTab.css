@@ -1,0 +1,167 @@
+.spui-CapsuleTab {
+  background-color: var(--color-surface-primary);
+}
+
+.spui-CapsuleTab--border {
+  border-bottom: 1px solid var(--color-border-low-emphasis);
+}
+
+.spui-CapsuleTab--scrollable {
+  position: relative;
+}
+
+.spui-CapsuleTab-container {
+  align-items: center;
+  column-gap: 8px;
+  display: flex;
+  padding: 12px 16px;
+}
+
+.spui-CapsuleTab--fixed .spui-CapsuleTab-container {
+  justify-content: center;
+}
+
+.spui-CapsuleTab--scrollable .spui-CapsuleTab-container {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.spui-CapsuleTab-button {
+  background-color: transparent;
+  border: none;
+  border-radius: 40px;
+  box-sizing: border-box;
+  min-width: 56px;
+  padding: 6px 14px;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.spui-CapsuleTab--scrollable .spui-CapsuleTab-button {
+  flex-shrink: 0;
+}
+
+.spui-CapsuleTab-button:hover {
+  background-color: var(--color-surface-secondary);
+}
+
+.spui-CapsuleTab-button[aria-selected="true"] {
+  background-color: var(--color-surface-accent-primary);
+}
+
+/* stylelint-disable-next-line  */
+.spui-CapsuleTab-button[aria-selected="true"]:hover {
+  background-color: var(--color-hover-contained-button);
+}
+
+.spui-CapsuleTab-button:focus {
+  outline: 2px solid var(--color-focus-clarity);
+  outline-offset: 1px;
+}
+
+.spui-CapsuleTab-button:not(:focus-visible) {
+  outline: none;
+}
+
+.spui-CapsuleTab-label {
+  color: var(--color-text-low-emphasis);
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: bold;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* stylelint-disable-next-line  */
+.spui-CapsuleTab-button[aria-selected="true"] .spui-CapsuleTab-label {
+  color: var(--color-text-high-emphasis-inverse);
+}
+
+.spui-CapsuleTab-arrow {
+  background-color: var(--color-surface-primary);
+  bottom: 0;
+  height: fit-content;
+  margin: auto;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transition:
+    opacity 0.35s ease-in-out,
+    visibility 0.35s ease-in-out;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.spui-CapsuleTab-arrow.is-showed {
+  opacity: 1;
+  visibility: visible;
+}
+
+.spui-CapsuleTab-arrow::before {
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 10px;
+  z-index: -1;
+}
+
+.spui-CapsuleTab-arrow--left {
+  left: 0;
+}
+
+.spui-CapsuleTab-arrow--left::before {
+  background: linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 0) 0,
+    var(--color-surface-primary) 100%
+  );
+  left: 44px; /* ボタンの横幅分 */
+}
+
+.spui-CapsuleTab-arrow--right {
+  right: 0;
+}
+
+.spui-CapsuleTab-arrow--right::before {
+  background: linear-gradient(
+    270deg,
+    var(--color-surface-primary) 0,
+    rgba(255, 255, 255, 0) 100%
+  );
+  right: 44px; /* ボタンの横幅分 */
+}
+
+.spui-CapsuleTab-arrowButton {
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--color-object-low-emphasis);
+  display: flex;
+  padding: 14px;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.spui-CapsuleTab-arrowButton:hover {
+  background-color: var(--color-surface-tertiary);
+}
+
+.spui-CapsuleTab-arrowButton:focus {
+  outline: 2px solid var(--color-focus-clarity);
+}
+
+.spui-CapsuleTab-arrowButton:not(:focus-visible) {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spui-CapsuleTab-button,
+  .spui-CapsuleTab-arrow,
+  .spui-CapsuleTab-arrowButton {
+    transition: 0.1ms;
+  }
+
+  .spui-CapsuleTab--scrollable .spui-CapsuleTab-container {
+    scroll-behavior: auto;
+  }
+}

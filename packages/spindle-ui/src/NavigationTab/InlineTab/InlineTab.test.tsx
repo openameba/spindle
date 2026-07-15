@@ -1,0 +1,117 @@
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import React from 'react';
+
+import { InlineTab } from './InlineTab';
+
+const options = [
+  { id: 'all', label: 'すべて' },
+  { id: 'follow', label: 'フォロー' },
+  { id: 'follower', label: 'フォロワー' },
+];
+
+describe('<InlineTab />', () => {
+  describe('defaultSelectedId Props', () => {
+    test('If defaultSelectedId is not included in options, nothing is selected.', () => {
+      render(
+        <InlineTab defaultSelectedId={'notIncludedId'} options={options} />,
+      );
+
+      const notSelectedButtons = screen.getAllByRole('tab', {
+        selected: false,
+      });
+      expect(notSelectedButtons.length).toEqual(options.length);
+    });
+
+    test('If defaultSelectedId is included in options, it must be selected.', () => {
+      const defaultSelectedId = options[0].id;
+      render(
+        <InlineTab defaultSelectedId={defaultSelectedId} options={options} />,
+      );
+
+      const notSelectedButtons = screen.getAllByRole('tab', {
+        selected: false,
+      });
+      expect(notSelectedButtons.length).toEqual(options.length - 1);
+
+      const selectedButton = screen.getByRole('tab', { selected: true });
+      expect(selectedButton.getAttribute('id')).toEqual(defaultSelectedId);
+    });
+  });
+
+  describe('options Props', () => {
+    test('Nothing is displayed when options is empty array.', () => {
+      const { container } = render(
+        <InlineTab defaultSelectedId={options[0].id} options={[]} />,
+      );
+
+      expect(container.firstChild).toBeNull();
+    });
+
+    test('If options are specified, they should be properly reflected.', () => {
+      const defaultSelectedId = options[1].id;
+      render(
+        <InlineTab defaultSelectedId={defaultSelectedId} options={options} />,
+      );
+
+      const buttons = screen.getAllByRole('tab');
+      buttons.forEach((button, i) => {
+        expect(button.getAttribute('aria-controls')).toEqual(
+          `${options[i].id}-tabpanel`,
+        );
+        expect(button.getAttribute('aria-selected')).toEqual(
+          defaultSelectedId === button.id ? 'true' : 'false',
+        );
+        expect(button.getAttribute('id')).toEqual(options[i].id);
+        expect(button.getAttribute('tabIndex')).toEqual(
+          defaultSelectedId === button.id ? '0' : '-1',
+        );
+      });
+    });
+  });
+
+  describe('onClick Props', () => {
+    test('The selected item should change when onClick is called.', async () => {
+      const defaultSelectedId = options[0].id;
+      const selectedId = options[1].id;
+      const onClick = vi.fn();
+      const user = userEvent.setup();
+
+      render(
+        <InlineTab
+          defaultSelectedId={defaultSelectedId}
+          options={options}
+          onClick={onClick}
+        />,
+      );
+
+      const defaultSelectedButton = screen.getByRole('tab', { selected: true });
+      expect(defaultSelectedButton.getAttribute('id')).toEqual(
+        defaultSelectedId,
+      );
+
+      if (defaultSelectedButton.nextElementSibling) {
+        await user.click(defaultSelectedButton.nextElementSibling);
+      }
+      expect(onClick).toHaveBeenCalled();
+      const selectedButton = screen.getByRole('tab', { selected: true });
+      expect(selectedButton.getAttribute('id')).toEqual(selectedId);
+    });
+
+    test('onClick must not be called when the selected item is clicked.', async () => {
+      const onClick = vi.fn();
+      const user = userEvent.setup();
+
+      render(
+        <InlineTab
+          defaultSelectedId={options[0].id}
+          options={options}
+          onClick={onClick}
+        />,
+      );
+
+      await user.click(screen.getByRole('tab', { selected: true }));
+      expect(onClick).not.toHaveBeenCalled();
+    });
+  });
+});

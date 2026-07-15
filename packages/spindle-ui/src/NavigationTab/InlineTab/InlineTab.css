@@ -1,0 +1,64 @@
+.spui-InlineTab {
+  background-color: var(--color-surface-secondary);
+  border-radius: 70px;
+  box-sizing: border-box;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+  padding: 4px;
+  width: fit-content;
+}
+
+.spui-InlineTab-button {
+  background-color: transparent;
+  border: none;
+  border-radius: 40px;
+  box-sizing: border-box;
+  min-width: 80px;
+  padding: 8px 16px;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.spui-InlineTab-button:hover {
+  background-color: var(--color-surface-secondary);
+}
+
+.spui-InlineTab-button[aria-selected="true"] {
+  background-color: var(--color-surface-accent-primary);
+}
+
+/* stylelint-disable-next-line  */
+.spui-InlineTab-button[aria-selected="true"]:hover {
+  background-color: var(--color-hover-contained-button);
+}
+
+.spui-InlineTab-button:focus {
+  outline: 2px solid var(--color-focus-clarity);
+  outline-offset: 1px;
+}
+
+.spui-InlineTab-button:not(:focus-visible) {
+  outline: none;
+}
+
+.spui-InlineTab-label {
+  color: var(--color-text-low-emphasis);
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: bold;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* stylelint-disable-next-line  */
+.spui-InlineTab-button[aria-selected="true"] .spui-InlineTab-label {
+  color: var(--color-text-high-emphasis-inverse);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spui-InlineTab-button {
+    transition: 0.1ms;
+  }
+}
