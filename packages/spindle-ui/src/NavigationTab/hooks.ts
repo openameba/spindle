@@ -32,6 +32,11 @@ export const useTabList = ({
   const [selectedId, setSelectedId] = useState(defaultSelectedId);
 
   const buttonsRef = useRef<RefObject<HTMLButtonElement | null>[]>([]);
+  // 初回レンダーからref属性に渡せるよう、レンダー中に遅延初期化する
+  // （useEffectで生成すると再レンダーまでrefがDOMに接続されず、初回のキーボード操作でフォーカス移動できない）
+  buttonsRef.current = options.map(
+    (_, index) => buttonsRef.current[index] ?? createRef<HTMLButtonElement>(),
+  );
 
   const handleClick = useCallback(
     (e: TabClickEvent, id: string, index: number) => {
@@ -86,12 +91,6 @@ export const useTabList = ({
     },
     [options, handleClick],
   );
-
-  useEffect(() => {
-    buttonsRef.current = options.map(
-      (_, index) => buttonsRef.current[index] ?? createRef<HTMLButtonElement>(),
-    );
-  }, [options]);
 
   return { selectedId, buttonsRef, handleClick, handleKeyDown };
 };

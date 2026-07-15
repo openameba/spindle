@@ -114,4 +114,81 @@ describe('<InlineTab />', () => {
       expect(onClick).not.toHaveBeenCalled();
     });
   });
+
+  describe('Keyboard interaction', () => {
+    test('Pressing ArrowRight moves focus to the next tab and selects it.', async () => {
+      const onClick = vi.fn();
+      const user = userEvent.setup();
+
+      render(
+        <InlineTab
+          defaultSelectedId={options[0].id}
+          options={options}
+          onClick={onClick}
+        />,
+      );
+
+      screen.getByRole('tab', { selected: true }).focus();
+      await user.keyboard('{ArrowRight}');
+
+      const selectedButton = screen.getByRole('tab', { selected: true });
+      expect(selectedButton.getAttribute('id')).toEqual(options[1].id);
+      expect(selectedButton).toHaveFocus();
+      expect(onClick).toHaveBeenCalled();
+    });
+
+    test('Pressing ArrowRight on the last tab moves to the first tab.', async () => {
+      const user = userEvent.setup();
+
+      render(
+        <InlineTab
+          defaultSelectedId={options[options.length - 1].id}
+          options={options}
+        />,
+      );
+
+      screen.getByRole('tab', { selected: true }).focus();
+      await user.keyboard('{ArrowRight}');
+
+      const selectedButton = screen.getByRole('tab', { selected: true });
+      expect(selectedButton.getAttribute('id')).toEqual(options[0].id);
+      expect(selectedButton).toHaveFocus();
+    });
+
+    test('Pressing ArrowLeft on the first tab moves to the last tab.', async () => {
+      const user = userEvent.setup();
+
+      render(<InlineTab defaultSelectedId={options[0].id} options={options} />);
+
+      screen.getByRole('tab', { selected: true }).focus();
+      await user.keyboard('{ArrowLeft}');
+
+      const selectedButton = screen.getByRole('tab', { selected: true });
+      expect(selectedButton.getAttribute('id')).toEqual(
+        options[options.length - 1].id,
+      );
+      expect(selectedButton).toHaveFocus();
+    });
+
+    test('Pressing Enter on the selected tab does not fire onClick.', async () => {
+      const onClick = vi.fn();
+      const user = userEvent.setup();
+
+      render(
+        <InlineTab
+          defaultSelectedId={options[0].id}
+          options={options}
+          onClick={onClick}
+        />,
+      );
+
+      screen.getByRole('tab', { selected: true }).focus();
+      await user.keyboard('{Enter}');
+
+      expect(onClick).not.toHaveBeenCalled();
+      expect(
+        screen.getByRole('tab', { selected: true }).getAttribute('id'),
+      ).toEqual(options[0].id);
+    });
+  });
 });

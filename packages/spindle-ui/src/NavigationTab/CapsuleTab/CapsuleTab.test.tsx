@@ -158,4 +158,150 @@ describe('<CapsuleTab />', () => {
       expect(onClick).not.toHaveBeenCalled();
     });
   });
+
+  describe('Keyboard interaction', () => {
+    test('Pressing ArrowRight moves focus to the next tab and selects it.', async () => {
+      const onClick = vi.fn();
+      const user = userEvent.setup();
+
+      render(
+        <CapsuleTab
+          defaultSelectedId={options[0].id}
+          options={options}
+          onClick={onClick}
+        />,
+      );
+
+      screen.getByRole('tab', { selected: true }).focus();
+      await user.keyboard('{ArrowRight}');
+
+      const selectedButton = screen.getByRole('tab', { selected: true });
+      expect(selectedButton.getAttribute('id')).toEqual(options[1].id);
+      expect(selectedButton).toHaveFocus();
+      expect(onClick).toHaveBeenCalled();
+    });
+
+    test('Pressing ArrowRight on the last tab moves to the first tab.', async () => {
+      const user = userEvent.setup();
+
+      render(
+        <CapsuleTab
+          defaultSelectedId={options[options.length - 1].id}
+          options={options}
+        />,
+      );
+
+      screen.getByRole('tab', { selected: true }).focus();
+      await user.keyboard('{ArrowRight}');
+
+      const selectedButton = screen.getByRole('tab', { selected: true });
+      expect(selectedButton.getAttribute('id')).toEqual(options[0].id);
+      expect(selectedButton).toHaveFocus();
+    });
+
+    test('Pressing ArrowLeft on the first tab moves to the last tab.', async () => {
+      const user = userEvent.setup();
+
+      render(
+        <CapsuleTab defaultSelectedId={options[0].id} options={options} />,
+      );
+
+      screen.getByRole('tab', { selected: true }).focus();
+      await user.keyboard('{ArrowLeft}');
+
+      const selectedButton = screen.getByRole('tab', { selected: true });
+      expect(selectedButton.getAttribute('id')).toEqual(
+        options[options.length - 1].id,
+      );
+      expect(selectedButton).toHaveFocus();
+    });
+
+    test('Pressing Enter on the selected tab does not fire onClick.', async () => {
+      const onClick = vi.fn();
+      const user = userEvent.setup();
+
+      render(
+        <CapsuleTab
+          defaultSelectedId={options[0].id}
+          options={options}
+          onClick={onClick}
+        />,
+      );
+
+      screen.getByRole('tab', { selected: true }).focus();
+      await user.keyboard('{Enter}');
+
+      expect(onClick).not.toHaveBeenCalled();
+      expect(
+        screen.getByRole('tab', { selected: true }).getAttribute('id'),
+      ).toEqual(options[0].id);
+    });
+  });
+
+  describe('Scroll behavior', () => {
+    const originalScrollIntoView = window.HTMLElement.prototype.scrollIntoView;
+    const scrollIntoViewMock = vi.fn();
+
+    beforeEach(() => {
+      window.HTMLElement.prototype.scrollIntoView = scrollIntoViewMock;
+    });
+
+    afterEach(() => {
+      scrollIntoViewMock.mockClear();
+      window.HTMLElement.prototype.scrollIntoView = originalScrollIntoView;
+    });
+
+    test('Arrow buttons must be displayed when variant is scrollable.', () => {
+      render(
+        <CapsuleTab
+          defaultSelectedId={options[0].id}
+          options={options}
+          variant={'scrollable'}
+        />,
+      );
+
+      expect(screen.getByLabelText('左に移動')).toBeInTheDocument();
+      expect(screen.getByLabelText('右に移動')).toBeInTheDocument();
+    });
+
+    test('Arrow buttons must not be displayed when variant is fixed.', () => {
+      render(
+        <CapsuleTab defaultSelectedId={options[0].id} options={options} />,
+      );
+
+      expect(screen.queryByLabelText('左に移動')).toBeNull();
+      expect(screen.queryByLabelText('右に移動')).toBeNull();
+    });
+
+    test('The selected item must be scrolled to the center when variant is scrollable.', async () => {
+      const user = userEvent.setup();
+
+      render(
+        <CapsuleTab
+          defaultSelectedId={options[0].id}
+          options={options}
+          variant={'scrollable'}
+        />,
+      );
+
+      await user.click(screen.getAllByRole('tab')[1]);
+
+      expect(scrollIntoViewMock).toHaveBeenCalledWith({
+        block: 'nearest',
+        inline: 'center',
+      });
+    });
+
+    test('Scroll centering must not happen when variant is fixed.', async () => {
+      const user = userEvent.setup();
+
+      render(
+        <CapsuleTab defaultSelectedId={options[0].id} options={options} />,
+      );
+
+      await user.click(screen.getAllByRole('tab')[1]);
+
+      expect(scrollIntoViewMock).not.toHaveBeenCalled();
+    });
+  });
 });
