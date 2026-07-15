@@ -1,13 +1,7 @@
-import React, {
-  createRef,
-  type RefObject,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import React from 'react';
 import ChevronLeftBold from '../../Icon/ChevronLeftBold';
 import ChevronRightBold from '../../Icon/ChevronRightBold';
+import { useScrollArrows, useTabList } from '../hooks';
 
 type Option = {
   label: string;
@@ -31,7 +25,6 @@ type Props = {
 };
 
 const BLOCK_NAME = 'spui-UnderlineTab';
-const SCROLL_DISTANCE = 150;
 
 export const UnderlineTab: React.FC<Props> = ({
   defaultSelectedId,
@@ -40,112 +33,13 @@ export const UnderlineTab: React.FC<Props> = ({
   variant = 'fixed',
   onClick,
 }) => {
-  const [selectedId, setSelectedId] = useState(defaultSelectedId);
-  const [showPrevButton, setShowPrevButton] = useState(false);
-  const [showNextButton, setShowNextButton] = useState(false);
-
-  const buttonsRef = useRef<RefObject<HTMLButtonElement | null>[]>([]);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  const handleScroll = useCallback((direction: 'prev' | 'next') => {
-    const containerElement = containerRef.current;
-    if (!containerElement) {
-      return;
-    }
-
-    const scrollDistance =
-      direction === 'next' ? SCROLL_DISTANCE : -SCROLL_DISTANCE;
-    containerElement.scrollLeft = containerElement.scrollLeft + scrollDistance;
-  }, []);
-
-  const handleClick = useCallback(
-    (
-      e:
-        | React.MouseEvent<HTMLButtonElement>
-        | React.KeyboardEvent<HTMLButtonElement>,
-      id: string,
-    ) => {
-      const targetButtonElement = document.querySelector(`#${id}`);
-      // 既に選択中の項目に対してクリックした場合は何もしない
-      if (targetButtonElement?.getAttribute('aria-selected') === 'true') {
-        return;
-      }
-
-      setSelectedId(id);
-
-      if (typeof onClick === 'function') {
-        onClick(e, id);
-      }
-    },
-    [onClick],
-  );
-
-  const handleKeyDown = useCallback(
-    (e: React.KeyboardEvent<HTMLButtonElement>, index: number) => {
-      const totalLength = options.length;
-
-      switch (e.key) {
-        case 'ArrowLeft': {
-          // 基本的には1つ前の要素に移動。ただし、既に先頭の要素にいる場合はリストの最後尾に移動
-          const prevButtonIndex = index - 1 < 0 ? totalLength - 1 : index - 1;
-          const prevButtonRef = buttonsRef.current[prevButtonIndex];
-          prevButtonRef.current?.focus();
-          handleClick(e, options[prevButtonIndex].id);
-          break;
-        }
-        case 'ArrowRight': {
-          // 基本的には1つ後の要素に移動。ただし、既に最後尾の要素にいる場合はリストの先頭に移動
-          const nextButtonIndex = index + 1 >= totalLength ? 0 : index + 1;
-          const nextButtonRef = buttonsRef.current[nextButtonIndex];
-          nextButtonRef.current?.focus();
-          handleClick(e, options[nextButtonIndex].id);
-          break;
-        }
-        case 'Enter': {
-          const targetButton = buttonsRef.current[index].current;
-          // 既に選択中の項目に対してEnterを押下した場合は無効にする
-          if (targetButton?.getAttribute('aria-selected') === 'true') {
-            e.preventDefault();
-          }
-          break;
-        }
-      }
-    },
-    [options, handleClick],
-  );
-
-  useEffect(() => {
-    buttonsRef.current = options.map(
-      (_, index) => buttonsRef.current[index] ?? createRef<HTMLButtonElement>(),
-    );
-  }, [options]);
-
-  useEffect(() => {
-    if (variant !== 'scrollable') {
-      return;
-    }
-    const containerElement = containerRef.current;
-    if (!containerElement) {
-      return;
-    }
-
-    const updateDisplayedButton = () => {
-      setShowPrevButton(containerElement.scrollLeft > 0);
-      setShowNextButton(
-        containerElement.scrollWidth >
-          Math.ceil(containerElement.clientWidth + containerElement.scrollLeft),
-      );
-    };
-
-    updateDisplayedButton();
-    window.addEventListener('resize', updateDisplayedButton);
-    containerElement.addEventListener('scroll', updateDisplayedButton);
-
-    return () => {
-      window.removeEventListener('resize', updateDisplayedButton);
-      containerElement.removeEventListener('scroll', updateDisplayedButton);
-    };
-  }, [variant]);
+  const { selectedId, buttonsRef, handleClick, handleKeyDown } = useTabList({
+    defaultSelectedId,
+    options,
+    onClick,
+  });
+  const { containerRef, showPrevButton, showNextButton, handleScroll } =
+    useScrollArrows(variant === 'scrollable');
 
   if (options.length === 0) {
     return null;
@@ -209,7 +103,7 @@ export const UnderlineTab: React.FC<Props> = ({
               type="button"
               ref={buttonsRef.current[index]}
               role="tab"
-              onClick={(e) => handleClick(e, id)}
+              onClick={(e) => handleClick(e, id, index)}
               onKeyDown={(e) => handleKeyDown(e, index)}
             >
               <span className={`${BLOCK_NAME}-labelWrapper`}>
