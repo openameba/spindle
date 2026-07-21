@@ -62,3 +62,37 @@ export const MediumWithError: Story = {
     />
   ),
 };
+
+export const MediumWithValue: Story = {
+  render: (args) => (
+    <TextField
+      {...args}
+      id="TextFieldWithValue"
+      variant="medium"
+      defaultValue="ameba-blog"
+    />
+  ),
+};
+
+export const MediumDisabled: Story = {
+  render: (args) => (
+    <TextField
+      {...args}
+      id="TextFieldDisabled"
+      placeholder="ameba-blog"
+      variant="medium"
+      disabled
+    />
+  ),
+};
+
+export const MediumWithLongText: Story = {
+  render: (args) => (
+    <TextField
+      {...args}
+      id="TextFieldWithLongText"
+      variant="medium"
+      defaultValue="これは非常に長いテキストの例です。TextFieldが長いテキストをどのように表示するかを確認するためのストーリーです。テキストが入力欄の幅を超えた場合、水平スクロールが発生し、テキストが見切れることなく表示されることを確認できます。"
+    />
+  ),
+};
