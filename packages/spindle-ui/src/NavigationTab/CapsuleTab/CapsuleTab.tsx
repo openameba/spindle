@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import ChevronLeftBold from '../../Icon/ChevronLeftBold';
 import ChevronRightBold from '../../Icon/ChevronRightBold';
 import { useScrollArrows, useTabList } from '../hooks';
@@ -6,7 +6,6 @@ import { useScrollArrows, useTabList } from '../hooks';
 type Option = {
   label: string;
   id: string;
-  countBadge?: string;
 };
 
 type Variant = 'fixed' | 'scrollable';
@@ -24,19 +23,34 @@ type Props = {
   ) => void;
 };
 
-const BLOCK_NAME = 'spui-UnderlineTab';
+const BLOCK_NAME = 'spui-CapsuleTab';
 
-export const UnderlineTab: React.FC<Props> = ({
+export const CapsuleTab: React.FC<Props> = ({
   defaultSelectedId,
   options,
   hasBorder = false,
   variant = 'fixed',
   onClick,
 }) => {
+  const handleSelect = useCallback(
+    (selectedButton: HTMLButtonElement | null) => {
+      if (variant !== 'scrollable') {
+        return;
+      }
+      // 選択した項目が中央に来るようにスクロールする
+      selectedButton?.scrollIntoView?.({
+        block: 'nearest',
+        inline: 'center',
+      });
+    },
+    [variant],
+  );
+
   const { selectedId, buttonsRef, handleClick, handleKeyDown } = useTabList({
     defaultSelectedId,
     options,
     onClick,
+    onSelect: handleSelect,
   });
   const { containerRef, showPrevButton, showNextButton, handleScroll } =
     useScrollArrows(variant === 'scrollable');
@@ -83,7 +97,7 @@ export const UnderlineTab: React.FC<Props> = ({
         ref={containerRef}
       >
         {options.map((option, index) => {
-          const { label, id, countBadge } = option;
+          const { label, id } = option;
           const isSelected = id === selectedId;
 
           return (
@@ -93,12 +107,6 @@ export const UnderlineTab: React.FC<Props> = ({
               className={`${BLOCK_NAME}-button`}
               key={id}
               id={id}
-              style={{
-                maxWidth:
-                  variant === 'fixed'
-                    ? `calc(${100 / options.length}%`
-                    : 'fit-content',
-              }}
               tabIndex={isSelected ? 0 : -1}
               type="button"
               ref={buttonsRef.current[index]}
@@ -106,15 +114,7 @@ export const UnderlineTab: React.FC<Props> = ({
               onClick={(e) => handleClick(e, id, index)}
               onKeyDown={(e) => handleKeyDown(e, index)}
             >
-              <span className={`${BLOCK_NAME}-labelWrapper`}>
-                <span className={`${BLOCK_NAME}-label`}>{label}</span>
-                {countBadge && (
-                  <>
-                    <span className={`${BLOCK_NAME}-badge`}>{countBadge}</span>
-                    <span className={`${BLOCK_NAME}-visuallyHidden`}>件</span>
-                  </>
-                )}
-              </span>
+              <span className={`${BLOCK_NAME}-label`}>{label}</span>
             </button>
           );
         })}

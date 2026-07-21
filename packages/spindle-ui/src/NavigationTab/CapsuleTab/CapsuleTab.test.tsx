@@ -2,19 +2,19 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
 
-import { UnderlineTab } from './UnderlineTab';
+import { CapsuleTab } from './CapsuleTab';
 
 const options = [
   { id: 'all', label: 'すべて' },
   { id: 'follow', label: 'フォロー' },
-  { id: 'follower', label: 'フォロワー', countBadge: '100' },
+  { id: 'follower', label: 'フォロワー' },
 ];
 
-describe('<UnderlineTab />', () => {
+describe('<CapsuleTab />', () => {
   describe('defaultSelectedId Props', () => {
     test('If defaultSelectedId is not included in options, nothing is selected.', () => {
       render(
-        <UnderlineTab defaultSelectedId={'notIncludedId'} options={options} />,
+        <CapsuleTab defaultSelectedId={'notIncludedId'} options={options} />,
       );
 
       const notSelectedButtons = screen.getAllByRole('tab', {
@@ -26,10 +26,7 @@ describe('<UnderlineTab />', () => {
     test('If defaultSelectedId is included in options, it must be selected.', () => {
       const defaultSelectedId = options[0].id;
       render(
-        <UnderlineTab
-          defaultSelectedId={defaultSelectedId}
-          options={options}
-        />,
+        <CapsuleTab defaultSelectedId={defaultSelectedId} options={options} />,
       );
 
       const notSelectedButtons = screen.getAllByRole('tab', {
@@ -45,7 +42,7 @@ describe('<UnderlineTab />', () => {
   describe('options Props', () => {
     test('Nothing is displayed when options is empty array.', () => {
       const { container } = render(
-        <UnderlineTab defaultSelectedId={options[0].id} options={[]} />,
+        <CapsuleTab defaultSelectedId={options[0].id} options={[]} />,
       );
 
       expect(container.firstChild).toBeNull();
@@ -54,10 +51,7 @@ describe('<UnderlineTab />', () => {
     test('If options are specified, they should be properly reflected.', () => {
       const defaultSelectedId = options[1].id;
       render(
-        <UnderlineTab
-          defaultSelectedId={defaultSelectedId}
-          options={options}
-        />,
+        <CapsuleTab defaultSelectedId={defaultSelectedId} options={options} />,
       );
 
       const buttons = screen.getAllByRole('tab');
@@ -72,13 +66,6 @@ describe('<UnderlineTab />', () => {
         expect(button.getAttribute('tabIndex')).toEqual(
           defaultSelectedId === button.id ? '0' : '-1',
         );
-        if (options[i].countBadge) {
-          expect(
-            (button.textContent || button.innerText).includes(
-              options[i].countBadge || '',
-            ),
-          ).toEqual(true);
-        }
       });
     });
   });
@@ -86,44 +73,44 @@ describe('<UnderlineTab />', () => {
   describe('hasBorder Props', () => {
     test('Border must be displayed when hasBorder is true.', () => {
       const { container } = render(
-        <UnderlineTab
+        <CapsuleTab
           defaultSelectedId={options[0].id}
           options={options}
           hasBorder={true}
         />,
       );
 
-      expect(container.firstChild).toHaveClass('spui-UnderlineTab--border');
+      expect(container.firstChild).toHaveClass('spui-CapsuleTab--border');
     });
 
     test('Border is not initially displayed.', () => {
       const { container } = render(
-        <UnderlineTab defaultSelectedId={options[0].id} options={options} />,
+        <CapsuleTab defaultSelectedId={options[0].id} options={options} />,
       );
 
-      expect(container.firstChild).not.toHaveClass('spui-UnderlineTab--border');
+      expect(container.firstChild).not.toHaveClass('spui-CapsuleTab--border');
     });
   });
 
   describe('variant Props', () => {
-    test('Border must be displayed when variant is fixed.', () => {
+    test('The fixed class must be applied by default.', () => {
       const { container } = render(
-        <UnderlineTab defaultSelectedId={options[0].id} options={options} />,
+        <CapsuleTab defaultSelectedId={options[0].id} options={options} />,
       );
 
-      expect(container.firstChild).toHaveClass('spui-UnderlineTab--fixed');
+      expect(container.firstChild).toHaveClass('spui-CapsuleTab--fixed');
     });
 
-    test('Border is not displayed when variant is scrollable.', () => {
+    test('The scrollable class must be applied when variant is scrollable.', () => {
       const { container } = render(
-        <UnderlineTab
+        <CapsuleTab
           defaultSelectedId={options[0].id}
           options={options}
           variant={'scrollable'}
         />,
       );
 
-      expect(container.firstChild).toHaveClass('spui-UnderlineTab--scrollable');
+      expect(container.firstChild).toHaveClass('spui-CapsuleTab--scrollable');
     });
   });
 
@@ -135,7 +122,7 @@ describe('<UnderlineTab />', () => {
       const user = userEvent.setup();
 
       render(
-        <UnderlineTab
+        <CapsuleTab
           defaultSelectedId={defaultSelectedId}
           options={options}
           onClick={onClick}
@@ -160,7 +147,7 @@ describe('<UnderlineTab />', () => {
       const user = userEvent.setup();
 
       render(
-        <UnderlineTab
+        <CapsuleTab
           defaultSelectedId={options[0].id}
           options={options}
           onClick={onClick}
@@ -178,7 +165,7 @@ describe('<UnderlineTab />', () => {
       const user = userEvent.setup();
 
       render(
-        <UnderlineTab
+        <CapsuleTab
           defaultSelectedId={options[0].id}
           options={options}
           onClick={onClick}
@@ -198,7 +185,7 @@ describe('<UnderlineTab />', () => {
       const user = userEvent.setup();
 
       render(
-        <UnderlineTab
+        <CapsuleTab
           defaultSelectedId={options[options.length - 1].id}
           options={options}
         />,
@@ -216,7 +203,7 @@ describe('<UnderlineTab />', () => {
       const user = userEvent.setup();
 
       render(
-        <UnderlineTab defaultSelectedId={options[0].id} options={options} />,
+        <CapsuleTab defaultSelectedId={options[0].id} options={options} />,
       );
 
       screen.getByRole('tab', { selected: true }).focus();
@@ -234,7 +221,7 @@ describe('<UnderlineTab />', () => {
       const user = userEvent.setup();
 
       render(
-        <UnderlineTab
+        <CapsuleTab
           defaultSelectedId={options[0].id}
           options={options}
           onClick={onClick}
@@ -248,6 +235,73 @@ describe('<UnderlineTab />', () => {
       expect(
         screen.getByRole('tab', { selected: true }).getAttribute('id'),
       ).toEqual(options[0].id);
+    });
+  });
+
+  describe('Scroll behavior', () => {
+    const originalScrollIntoView = window.HTMLElement.prototype.scrollIntoView;
+    const scrollIntoViewMock = vi.fn();
+
+    beforeEach(() => {
+      window.HTMLElement.prototype.scrollIntoView = scrollIntoViewMock;
+    });
+
+    afterEach(() => {
+      scrollIntoViewMock.mockClear();
+      window.HTMLElement.prototype.scrollIntoView = originalScrollIntoView;
+    });
+
+    test('Arrow buttons must be displayed when variant is scrollable.', () => {
+      render(
+        <CapsuleTab
+          defaultSelectedId={options[0].id}
+          options={options}
+          variant={'scrollable'}
+        />,
+      );
+
+      expect(screen.getByLabelText('左に移動')).toBeInTheDocument();
+      expect(screen.getByLabelText('右に移動')).toBeInTheDocument();
+    });
+
+    test('Arrow buttons must not be displayed when variant is fixed.', () => {
+      render(
+        <CapsuleTab defaultSelectedId={options[0].id} options={options} />,
+      );
+
+      expect(screen.queryByLabelText('左に移動')).toBeNull();
+      expect(screen.queryByLabelText('右に移動')).toBeNull();
+    });
+
+    test('The selected item must be scrolled to the center when variant is scrollable.', async () => {
+      const user = userEvent.setup();
+
+      render(
+        <CapsuleTab
+          defaultSelectedId={options[0].id}
+          options={options}
+          variant={'scrollable'}
+        />,
+      );
+
+      await user.click(screen.getAllByRole('tab')[1]);
+
+      expect(scrollIntoViewMock).toHaveBeenCalledWith({
+        block: 'nearest',
+        inline: 'center',
+      });
+    });
+
+    test('Scroll centering must not happen when variant is fixed.', async () => {
+      const user = userEvent.setup();
+
+      render(
+        <CapsuleTab defaultSelectedId={options[0].id} options={options} />,
+      );
+
+      await user.click(screen.getAllByRole('tab')[1]);
+
+      expect(scrollIntoViewMock).not.toHaveBeenCalled();
     });
   });
 });
