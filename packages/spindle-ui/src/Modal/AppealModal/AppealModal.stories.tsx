@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import type { AppealModal } from './AppealModal';
+import { AppealModal } from './AppealModal';
 import {
   AppealModalExample,
   StyleOnly,
@@ -11,6 +11,7 @@ import {
 
 const meta: Meta<typeof AppealModal.Frame> = {
   title: 'Modal/AppealModal',
+  component: AppealModal.Frame,
 };
 
 export default meta;
