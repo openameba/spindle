@@ -40,6 +40,11 @@ async function copyAssets() {
       ignore: ['**/Icon/**'], // アイコンは別途処理するため除外
     },
     {
+      name: 'Code Connect Templates',
+      source: '../spindle-ui/src/**/*.figma.ts',
+      dest: 'assets/spindle-ui/src',
+    },
+    {
       name: 'README',
       source: '../spindle-ui/README.md',
       dest: 'assets/spindle-ui',
