@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import MenuHorizontal from '../Icon/MenuHorizontal';
 import { getLinkRelAttribute } from './helpers/getLinkRelAttribute';
 import { useShowItem } from './hooks/useShowItem';
@@ -43,15 +43,19 @@ export const Pagination = (props: Props) => {
       ? window.matchMedia('(max-width: 360px)')
       : undefined;
 
-  const isMatchMedia = useRef(handleMatchMedia);
-  const [matches, setMatches] = useState(() =>
-    isMatchMedia.current ? isMatchMedia.current.matches : false,
-  );
+  // SSR では window がなく matchMedia を評価できないため、初期値を環境依存にすると
+  // サーバーが生成した HTML とクライアントの初回描画が食い違い hydration mismatch になる。
+  // 初期値は SSR と同じ false に固定し、ビューポート判定はマウント後の effect で反映する
+  const [matches, setMatches] = useState(false);
 
   const onChangeView = useCallback(() => {
     const isMatchMedia = handleMatchMedia;
     setMatches(isMatchMedia?.matches ? isMatchMedia.matches : false);
   }, [handleMatchMedia]);
+
+  useEffect(() => {
+    onChangeView();
+  }, [onChangeView]);
 
   const onOrientationchange = useCallback(() => {
     onChangeView();

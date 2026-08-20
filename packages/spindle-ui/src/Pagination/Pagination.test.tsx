@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
+import { renderToString } from 'react-dom/server';
 
 import { Pagination } from './Pagination';
 
@@ -267,6 +268,44 @@ describe('<Pagination />', () => {
     const numericLinks = screen.getAllByRole('link', {
       name: /ページ目$/,
     });
+    expect(numericLinks).toHaveLength(5);
+
+    // restore
+    Object.defineProperty(window, 'matchMedia', {
+      writable: true,
+      value: originalMatchMedia,
+    });
+  });
+
+  // 初回レンダーが matchMedia の結果に依存すると、window のないサーバーが生成した
+  // HTML とクライアントの初回描画が食い違い hydration mismatch になるため、
+  // 初回レンダー（effect 実行前）は matchMedia の結果によらず5件表示であることを保証する
+  test('renders 5 numeric items on initial render even when matchMedia=true (hydration safety)', () => {
+    const originalMatchMedia = window.matchMedia;
+    Object.defineProperty(window, 'matchMedia', {
+      writable: true,
+      value: (query: string) => ({
+        matches: true,
+        media: query,
+        onchange: null,
+        addListener: vi.fn(),
+        removeListener: vi.fn(),
+        addEventListener: vi.fn(),
+        removeEventListener: vi.fn(),
+        dispatchEvent: vi.fn(),
+      }),
+    });
+
+    const html = renderToString(
+      <Pagination
+        total={10}
+        current={5}
+        linkFollowType="all"
+        createUrl={(pageNumber) => `/detail/${pageNumber}.html`}
+      />,
+    );
+
+    const numericLinks = html.match(/ページ目/g) ?? [];
     expect(numericLinks).toHaveLength(5);
 
     // restore
