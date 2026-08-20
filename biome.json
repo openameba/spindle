@@ -73,6 +73,12 @@
       }
     },
     {
+      "includes": ["**/*.figma.ts", "**/*.figma.batch.ts"],
+      "linter": {
+        "enabled": false
+      }
+    },
+    {
       "includes": ["**/*.css"],
       "linter": {
         "rules": {

@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - packages/spindle-ui/src/**/*.figma.tsx
+      - packages/spindle-ui/src/**/*.figma.ts
+      - packages/spindle-ui/figma.config.json
     branches:
       - main
 
@@ -18,8 +20,8 @@ jobs:
         with:
           node-version-file: package.json
           cache: pnpm
-      - run: npm i -g @figma/code-connect
-      - run: figma connect publish
+      - run: pnpm install --frozen-lockfile --filter @openameba/spindle-ui
+      - run: pnpm exec figma connect publish
         env:
           FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_TOKEN_CODE_CONNECT }}
         working-directory: packages/spindle-ui
