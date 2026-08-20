@@ -18,6 +18,11 @@ const fileKey = 'G445fTskctZn7y3gkmSp8xaT';
 const nodeId = '991-0';
 const fileName = 'icon';
 
+// The shared template lives in src/icons.figma.batch.ts and is committed by hand.
+// This script only regenerates the per-icon entries it is applied to.
+const batchFilePath = 'src/icons.figma.batch.json';
+const templateFile = './icons.figma.batch.ts';
+
 async function connectIcons() {
   const result = await figma.getFileNodes(fileKey, [nodeId]);
   const components = Object.entries(
@@ -36,26 +41,23 @@ async function connectIcons() {
     };
   });
 
-  const uniqueNames = new Set([...components.map((c) => c.name)]);
+  const seen = new Set<string>();
+  const entries = components.flatMap((component) => {
+    if (seen.has(component.name)) return [];
+    seen.add(component.name);
+    return [
+      {
+        url: component.figmaUrl,
+        component: component.name,
+        id: component.name,
+        componentName: component.name,
+      },
+    ];
+  });
 
   fs.writeFileSync(
-    'src/icons.figma.tsx',
-    `\
-  import figma from '@figma/code-connect'
-
-  import {
-  ${Array.from(uniqueNames)
-    .map((iconName) => `${iconName},`)
-    .join('\n')}
-  } from './Icon'
-
-  ${components
-    .map(
-      (c) =>
-        `figma.connect(${c.name}, '${c.figmaUrl}', { imports: ["import { ${c.name} } from '@openameba/spindle-ui/Icon';"] })`,
-    )
-    .join('\n')}
-  `,
+    batchFilePath,
+    `${JSON.stringify({ templateFile, components: entries }, null, 2)}\n`,
   );
 }
 
