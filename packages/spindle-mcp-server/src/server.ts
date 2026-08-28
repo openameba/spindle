@@ -132,7 +132,7 @@ export function createServer(): McpServer {
 
   // コンポーネント作成用Design Docのテンプレートを取得するツール
   server.tool(
-    'get_component_design_doc_templete',
+    'get_component_design_doc_template',
     'Design Docのテンプレートを取得します',
     {},
     async () => ({

@@ -55,7 +55,7 @@ SpindleのMCPサーバーでは以下の機能が提供されています。
 - `get_icons`: アイコンの一覧を取得します。
 - `get_icon_info`: 指定したアイコンの詳細情報を取得します。アイコンを利用する際にはこのツールが呼び出される必要があります。LLMが自動的に呼び出さない場合は、明示的に呼び出してください
 - `get_accessibility_docs`: Spindleコンポーネントを作成する際に使うアクセシビリティチェックリストを取得します。チェックリストは[Ameba Accessibility Guidelines](https://a11y-guidelines.ameba.design/)をもとに作成されています
-- `get_component_design_doc_templete`: Spindleコンポーネントを作成する際のDesign Docテンプレートを取得します
+- `get_component_design_doc_template`: Spindleコンポーネントを作成する際のDesign Docテンプレートを取得します
 
 ### ユースケース
 
