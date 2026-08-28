@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import type { SemiModal } from './SemiModal';
+import { SemiModal } from './SemiModal';
 import {
   PopupModalExample,
   SheetModalExample,
@@ -14,6 +14,7 @@ import {
 
 const meta: Meta<typeof SemiModal.Frame> = {
   title: 'Modal/SemiModal',
+  component: SemiModal.Frame,
 };
 
 export default meta;
