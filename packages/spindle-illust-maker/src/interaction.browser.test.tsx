@@ -13,6 +13,8 @@ async function renderAndWait() {
 describe('UIインタラクション', () => {
   beforeEach(() => {
     cleanup();
+    // App は起動時にURLから状態を復元するため、前のテストの選択が漏れないようにリセットする
+    window.history.replaceState(null, '', window.location.pathname);
   });
 
   it('ポーズ切替でアクセサリがリセットされる', async () => {
