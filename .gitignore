@@ -132,4 +132,5 @@ __screenshots__/
 # Files in packages
 packages/spindle-tokens/lib/*.js
 packages/spindle-illust-maker/lib/
+packages/spindle-illust-maker/illust-images/
 packages/spindle-tokens/output-folder/
