@@ -50,7 +50,7 @@ This command creates a Design Doc for a Spindle UI component. It generates docum
      - **Figma Code Connect** (Optional): If Figma URL was provided, populate this section with:
        - The extracted node-id formatted as `node-id=X:Y`
        - Mapping design showing how Figma variants/properties map to React props
-       - Implementation example using `figma.connect()` with the proper URL and mappings
+       - Implementation example as a Code Connect template file (`{Component}.figma.ts`): a `// url=` directive plus an `export default` object with `id` / `imports` / `example`
      - **Accessibility** (Required): Checklist based on Ameba Accessibility Guidelines
      - **Testing Strategy** (Optional): Testing Library and Storybook test approach
      - **Links** (Optional): Reference documentation URLs

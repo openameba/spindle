@@ -54,8 +54,7 @@ export function getComponentInfo(
         entry.isFile() &&
         entry.name === `${actualComponentName}.tsx` &&
         !entry.name.endsWith('.test.tsx') &&
-        !entry.name.endsWith('.stories.tsx') &&
-        !entry.name.endsWith('.figma.tsx'),
+        !entry.name.endsWith('.stories.tsx'),
     );
 
     if (implFile) {
@@ -80,7 +79,7 @@ export function getComponentInfo(
         { key: 'styles', ext: '.css' },
         { key: 'documentation', ext: '.mdx' },
         { key: 'tests', ext: '.test.tsx' },
-        { key: 'figma', ext: '.figma.tsx' },
+        { key: 'figma', ext: '.figma.ts' },
       ] as const;
 
       for (const { key, ext } of fileTypes) {
@@ -94,6 +93,19 @@ export function getComponentInfo(
           info[key] = {
             name: relatedFile.name,
             content: fs.readFileSync(filePath, 'utf-8'),
+          };
+        }
+      }
+
+      if (!info.figma) {
+        const parentDir = path.dirname(dir);
+        const sharedFigmaName = `${path.basename(parentDir)}.figma.ts`;
+        const sharedFigmaPath = path.join(parentDir, sharedFigmaName);
+
+        if (parentDir.startsWith(baseDir) && fs.existsSync(sharedFigmaPath)) {
+          info.figma = {
+            name: sharedFigmaName,
+            content: fs.readFileSync(sharedFigmaPath, 'utf-8'),
           };
         }
       }
@@ -141,8 +153,7 @@ function getAllComponents(): ComponentInfo[] {
         entry.isFile() &&
         entry.name.endsWith('.tsx') &&
         !entry.name.endsWith('.test.tsx') &&
-        !entry.name.endsWith('.stories.tsx') &&
-        !entry.name.endsWith('.figma.tsx')
+        !entry.name.endsWith('.stories.tsx')
       ) {
         const componentName = entry.name.replace('.tsx', '');
         const directory = path.dirname(relativePath);

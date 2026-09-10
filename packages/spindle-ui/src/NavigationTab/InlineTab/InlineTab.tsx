@@ -1,3 +1,6 @@
+// Figma Code Connect: ../NavigationTab.figma.ts
+// UnderlineTab / InlineTab / CapsuleTab は Figma 上で Type variant を共有する
+// 単一コンポーネントセットなので、3つまとめて親ディレクトリの1ファイルで定義している。
 import React from 'react';
 import { useTabList } from '../hooks';
 

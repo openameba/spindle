@@ -1,0 +1,2285 @@
+{
+  "templateFile": "./icons.figma.batch.ts",
+  "components": [
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3344",
+      "component": "Youtube",
+      "id": "Youtube",
+      "componentName": "Youtube"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3325",
+      "component": "Twitter",
+      "id": "Twitter",
+      "componentName": "Twitter"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3330",
+      "component": "Requ",
+      "id": "Requ",
+      "componentName": "Requ"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3316",
+      "component": "Pigg",
+      "id": "Pigg",
+      "componentName": "Pigg"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4348-542",
+      "component": "Ownd",
+      "id": "Ownd",
+      "componentName": "Ownd"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3318",
+      "component": "LineSquare",
+      "id": "LineSquare",
+      "componentName": "LineSquare"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3319",
+      "component": "LineCircle",
+      "id": "LineCircle",
+      "componentName": "LineCircle"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3493",
+      "component": "Koeblog",
+      "id": "Koeblog",
+      "componentName": "Koeblog"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3328",
+      "component": "Instagram",
+      "id": "Instagram",
+      "componentName": "Instagram"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3326",
+      "component": "Hatenabookmark",
+      "id": "Hatenabookmark",
+      "componentName": "Hatenabookmark"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3331",
+      "component": "Facebook",
+      "id": "Facebook",
+      "componentName": "Facebook"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3317",
+      "component": "Dotmoney",
+      "id": "Dotmoney",
+      "componentName": "Dotmoney"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-975",
+      "component": "BottomnvavMypageInactive",
+      "id": "BottomnvavMypageInactive",
+      "componentName": "BottomnvavMypageInactive"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-972",
+      "component": "BottomnavSearchInactive",
+      "id": "BottomnavSearchInactive",
+      "componentName": "BottomnavSearchInactive"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-973",
+      "component": "BottomnavSearchActive",
+      "id": "BottomnavSearchActive",
+      "componentName": "BottomnavSearchActive"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-974",
+      "component": "BottomnavMypageActive",
+      "id": "BottomnavMypageActive",
+      "componentName": "BottomnavMypageActive"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-968",
+      "component": "BottomnavHomeInactive",
+      "id": "BottomnavHomeInactive",
+      "componentName": "BottomnavHomeInactive"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-969",
+      "component": "BottomnavHomeActive",
+      "id": "BottomnavHomeActive",
+      "componentName": "BottomnavHomeActive"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-971",
+      "component": "BottomnavFollowfeedInactive",
+      "id": "BottomnavFollowfeedInactive",
+      "componentName": "BottomnavFollowfeedInactive"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-970",
+      "component": "BottomnavFollowfeedActive",
+      "id": "BottomnavFollowfeedActive",
+      "componentName": "BottomnavFollowfeedActive"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3329",
+      "component": "Abematv",
+      "id": "Abematv",
+      "componentName": "Abematv"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3315",
+      "component": "Abemakun",
+      "id": "Abemakun",
+      "componentName": "Abemakun"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=7570-4287",
+      "component": "Amebapick",
+      "id": "Amebapick",
+      "componentName": "Amebapick"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=11174-461",
+      "component": "X",
+      "id": "X",
+      "componentName": "X"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=10060-4286",
+      "component": "FabPencilAdd",
+      "id": "FabPencilAdd",
+      "componentName": "FabPencilAdd"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-4751",
+      "component": "Accesslink",
+      "id": "Accesslink",
+      "componentName": "Accesslink"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2506-100",
+      "component": "Accesspage",
+      "id": "Accesspage",
+      "componentName": "Accesspage"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-3403",
+      "component": "AccesspageFill",
+      "id": "AccesspageFill",
+      "componentName": "AccesspageFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4504-3978",
+      "component": "AddressbookFill",
+      "id": "AddressbookFill",
+      "componentName": "AddressbookFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4293-98",
+      "component": "AlbumFill",
+      "id": "AlbumFill",
+      "componentName": "AlbumFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4293-103",
+      "component": "AlbumAddFill",
+      "id": "AlbumAddFill",
+      "componentName": "AlbumAddFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-4556",
+      "component": "AlignLeft",
+      "id": "AlignLeft",
+      "componentName": "AlignLeft"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-3841",
+      "component": "AllFill",
+      "id": "AllFill",
+      "componentName": "AllFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4303-54",
+      "component": "Amegold",
+      "id": "Amegold",
+      "componentName": "Amegold"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4301-1",
+      "component": "Amember",
+      "id": "Amember",
+      "componentName": "Amember"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4504-3910",
+      "component": "PersonTwoFill",
+      "id": "PersonTwoFill",
+      "componentName": "PersonTwoFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4504-3927",
+      "component": "PersonTwoAddFill",
+      "id": "PersonTwoAddFill",
+      "componentName": "PersonTwoAddFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4504-3944",
+      "component": "PersonTwoDeleteFill",
+      "id": "PersonTwoDeleteFill",
+      "componentName": "PersonTwoDeleteFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4504-3961",
+      "component": "PersonTwoDoneFill",
+      "id": "PersonTwoDoneFill",
+      "componentName": "PersonTwoDoneFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2484-36",
+      "component": "ArrowDown",
+      "id": "ArrowDown",
+      "componentName": "ArrowDown"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2484-58",
+      "component": "ArrowDownBold",
+      "id": "ArrowDownBold",
+      "componentName": "ArrowDownBold"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2484-34",
+      "component": "ArrowLeft",
+      "id": "ArrowLeft",
+      "componentName": "ArrowLeft"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2484-56",
+      "component": "ArrowLeftBold",
+      "id": "ArrowLeftBold",
+      "componentName": "ArrowLeftBold"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-930",
+      "component": "ArrowRight",
+      "id": "ArrowRight",
+      "componentName": "ArrowRight"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-931",
+      "component": "ArrowRightBold",
+      "id": "ArrowRightBold",
+      "componentName": "ArrowRightBold"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-4697",
+      "component": "ArrowRightCircle",
+      "id": "ArrowRightCircle",
+      "componentName": "ArrowRightCircle"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-965",
+      "component": "ArrowRightCircleFill",
+      "id": "ArrowRightCircleFill",
+      "componentName": "ArrowRightCircleFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2484-35",
+      "component": "ArrowUp",
+      "id": "ArrowUp",
+      "componentName": "ArrowUp"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2484-57",
+      "component": "ArrowUpBold",
+      "id": "ArrowUpBold",
+      "componentName": "ArrowUpBold"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2456-557",
+      "component": "ArrowpagingDown",
+      "id": "ArrowpagingDown",
+      "componentName": "ArrowpagingDown"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-3013",
+      "component": "ArrowpagingDownCircle",
+      "id": "ArrowpagingDownCircle",
+      "componentName": "ArrowpagingDownCircle"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2458-20",
+      "component": "ArrowpagingLeft",
+      "id": "ArrowpagingLeft",
+      "componentName": "ArrowpagingLeft"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-3119",
+      "component": "ArrowpagingLeftCircle",
+      "id": "ArrowpagingLeftCircle",
+      "componentName": "ArrowpagingLeftCircle"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2458-26",
+      "component": "ArrowpagingRight",
+      "id": "ArrowpagingRight",
+      "componentName": "ArrowpagingRight"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-3083",
+      "component": "ArrowpagingRightCircle",
+      "id": "ArrowpagingRightCircle",
+      "componentName": "ArrowpagingRightCircle"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2456-566",
+      "component": "ArrowpagingUp",
+      "id": "ArrowpagingUp",
+      "componentName": "ArrowpagingUp"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-3048",
+      "component": "ArrowpagingUpCircle",
+      "id": "ArrowpagingUpCircle",
+      "componentName": "ArrowpagingUpCircle"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4293-16",
+      "component": "Article",
+      "id": "Article",
+      "componentName": "Article"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-946",
+      "component": "Astrogy",
+      "id": "Astrogy",
+      "componentName": "Astrogy"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-947",
+      "component": "AstrogyFill",
+      "id": "AstrogyFill",
+      "componentName": "AstrogyFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4303-53",
+      "component": "Bbs",
+      "id": "Bbs",
+      "componentName": "Bbs"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4299-209",
+      "component": "Beginner",
+      "id": "Beginner",
+      "componentName": "Beginner"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-954",
+      "component": "Bell",
+      "id": "Bell",
+      "componentName": "Bell"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-955",
+      "component": "BellFill",
+      "id": "BellFill",
+      "componentName": "BellFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-956",
+      "component": "BellFillSlash",
+      "id": "BellFillSlash",
+      "componentName": "BellFillSlash"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-957",
+      "component": "BellSlash",
+      "id": "BellSlash",
+      "componentName": "BellSlash"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4293-9",
+      "component": "Blog",
+      "id": "Blog",
+      "componentName": "Blog"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4299-208",
+      "component": "Sprout",
+      "id": "Sprout",
+      "componentName": "Sprout"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-933",
+      "component": "Book",
+      "id": "Book",
+      "componentName": "Book"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-932",
+      "component": "BookFill",
+      "id": "BookFill",
+      "componentName": "BookFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=3299-4",
+      "component": "Bookmark",
+      "id": "Bookmark",
+      "componentName": "Bookmark"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=3067-0",
+      "component": "BookmarkFill",
+      "id": "BookmarkFill",
+      "componentName": "BookmarkFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-4382",
+      "component": "Bullets",
+      "id": "Bullets",
+      "componentName": "Bullets"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4293-28",
+      "component": "Calendar",
+      "id": "Calendar",
+      "componentName": "Calendar"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-3925",
+      "component": "CameraFill",
+      "id": "CameraFill",
+      "componentName": "CameraFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-4051",
+      "component": "SwitchingCamera",
+      "id": "SwitchingCamera",
+      "componentName": "SwitchingCamera"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2817-18",
+      "component": "CautionFill",
+      "id": "CautionFill",
+      "componentName": "CautionFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=1233-131",
+      "component": "Check",
+      "id": "Check",
+      "componentName": "Check"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=1233-130",
+      "component": "CheckBold",
+      "id": "CheckBold",
+      "componentName": "CheckBold"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=1089-12",
+      "component": "CheckCircle",
+      "id": "CheckCircle",
+      "componentName": "CheckCircle"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=1089-13",
+      "component": "CheckCircleFill",
+      "id": "CheckCircleFill",
+      "componentName": "CheckCircleFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4299-43",
+      "component": "Checklist",
+      "id": "Checklist",
+      "componentName": "Checklist"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2484-74",
+      "component": "ChevronDown",
+      "id": "ChevronDown",
+      "componentName": "ChevronDown"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2484-98",
+      "component": "ChevronDownBold",
+      "id": "ChevronDownBold",
+      "componentName": "ChevronDownBold"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2484-72",
+      "component": "ChevronLeft",
+      "id": "ChevronLeft",
+      "componentName": "ChevronLeft"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2484-100",
+      "component": "ChevronLeftBold",
+      "id": "ChevronLeftBold",
+      "componentName": "ChevronLeftBold"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=1190-18",
+      "component": "ChevronRight",
+      "id": "ChevronRight",
+      "componentName": "ChevronRight"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=1190-19",
+      "component": "ChevronRightBold",
+      "id": "ChevronRightBold",
+      "componentName": "ChevronRightBold"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2484-73",
+      "component": "ChevronUp",
+      "id": "ChevronUp",
+      "componentName": "ChevronUp"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2484-99",
+      "component": "ChevronUpBold",
+      "id": "ChevronUpBold",
+      "componentName": "ChevronUpBold"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4504-4012",
+      "component": "CircleFill",
+      "id": "CircleFill",
+      "componentName": "CircleFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-929",
+      "component": "Clock",
+      "id": "Clock",
+      "componentName": "Clock"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-928",
+      "component": "ClockFill",
+      "id": "ClockFill",
+      "componentName": "ClockFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4297-4",
+      "component": "Coin",
+      "id": "Coin",
+      "componentName": "Coin"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=3577-1805",
+      "component": "Comment",
+      "id": "Comment",
+      "componentName": "Comment"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2474-845",
+      "component": "CommentFill",
+      "id": "CommentFill",
+      "componentName": "CommentFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4303-51",
+      "component": "CommentPen",
+      "id": "CommentPen",
+      "componentName": "CommentPen"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4358-2858",
+      "component": "CommentTwoFill",
+      "id": "CommentTwoFill",
+      "componentName": "CommentTwoFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3576",
+      "component": "CommentTwoSlashFill",
+      "id": "CommentTwoSlashFill",
+      "componentName": "CommentTwoSlashFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4299-20",
+      "component": "Community",
+      "id": "Community",
+      "componentName": "Community"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-4658",
+      "component": "Coupon",
+      "id": "Coupon",
+      "componentName": "Coupon"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4299-53",
+      "component": "CropDin",
+      "id": "CropDin",
+      "componentName": "CropDin"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4299-56",
+      "component": "CropLandscape",
+      "id": "CropLandscape",
+      "componentName": "CropLandscape"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=1196-11",
+      "component": "Cross",
+      "id": "Cross",
+      "componentName": "Cross"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=1196-10",
+      "component": "CrossBold",
+      "id": "CrossBold",
+      "componentName": "CrossBold"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=1166-16",
+      "component": "CrossCircle",
+      "id": "CrossCircle",
+      "componentName": "CrossCircle"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=1166-17",
+      "component": "CrossCircleFill",
+      "id": "CrossCircleFill",
+      "componentName": "CrossCircleFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4299-48",
+      "component": "Dot",
+      "id": "Dot",
+      "componentName": "Dot"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-2856",
+      "component": "FolderTwo",
+      "id": "FolderTwo",
+      "componentName": "FolderTwo"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-2827",
+      "component": "FolderTwoFill",
+      "id": "FolderTwoFill",
+      "componentName": "FolderTwoFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4293-65",
+      "component": "Embed",
+      "id": "Embed",
+      "componentName": "Embed"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-4758",
+      "component": "EmotionFill",
+      "id": "EmotionFill",
+      "componentName": "EmotionFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-4870",
+      "component": "EntryLost",
+      "id": "EntryLost",
+      "componentName": "EntryLost"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-926",
+      "component": "Exclamationmark",
+      "id": "Exclamationmark",
+      "componentName": "Exclamationmark"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-927",
+      "component": "ExclamationmarkBold",
+      "id": "ExclamationmarkBold",
+      "componentName": "ExclamationmarkBold"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=1235-11",
+      "component": "ExclamationmarkCircle",
+      "id": "ExclamationmarkCircle",
+      "componentName": "ExclamationmarkCircle"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=1235-10",
+      "component": "ExclamationmarkCircleFill",
+      "id": "ExclamationmarkCircleFill",
+      "componentName": "ExclamationmarkCircleFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4293-70",
+      "component": "Expand",
+      "id": "Expand",
+      "componentName": "Expand"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-4659",
+      "component": "ExpandExit",
+      "id": "ExpandExit",
+      "componentName": "ExpandExit"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3564",
+      "component": "HandWaveFill",
+      "id": "HandWaveFill",
+      "componentName": "HandWaveFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-4776",
+      "component": "TagOfficialFill",
+      "id": "TagOfficialFill",
+      "componentName": "TagOfficialFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2569-135",
+      "component": "Heart",
+      "id": "Heart",
+      "componentName": "Heart"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2569-168",
+      "component": "HeartFill",
+      "id": "HeartFill",
+      "componentName": "HeartFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4299-30",
+      "component": "History",
+      "id": "History",
+      "componentName": "History"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=3043-206",
+      "component": "HomeFill",
+      "id": "HomeFill",
+      "componentName": "HomeFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4299-207",
+      "component": "Hot",
+      "id": "Hot",
+      "componentName": "Hot"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=3063-12",
+      "component": "Htmltag",
+      "id": "Htmltag",
+      "componentName": "Htmltag"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4293-93",
+      "component": "ImageFill",
+      "id": "ImageFill",
+      "componentName": "ImageFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4348-27",
+      "component": "ImageBanFill",
+      "id": "ImageBanFill",
+      "componentName": "ImageBanFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4348-20",
+      "component": "ImageQuestionFill",
+      "id": "ImageQuestionFill",
+      "componentName": "ImageQuestionFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-953",
+      "component": "File",
+      "id": "File",
+      "componentName": "File"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-958",
+      "component": "FileAdd",
+      "id": "FileAdd",
+      "componentName": "FileAdd"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-959",
+      "component": "FileAddFill",
+      "id": "FileAddFill",
+      "componentName": "FileAddFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-963",
+      "component": "FileCircle",
+      "id": "FileCircle",
+      "componentName": "FileCircle"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-962",
+      "component": "FileCircleFill",
+      "id": "FileCircleFill",
+      "componentName": "FileCircleFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-952",
+      "component": "FileFill",
+      "id": "FileFill",
+      "componentName": "FileFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-4506",
+      "component": "Filter",
+      "id": "Filter",
+      "componentName": "Filter"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=3066-61",
+      "component": "ArrowLeftright",
+      "id": "ArrowLeftright",
+      "componentName": "ArrowLeftright"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-3776",
+      "component": "FlagFill",
+      "id": "FlagFill",
+      "componentName": "FlagFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4358-2823",
+      "component": "FlagRanking",
+      "id": "FlagRanking",
+      "componentName": "FlagRanking"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4358-2828",
+      "component": "FlagRankingTrim",
+      "id": "FlagRankingTrim",
+      "componentName": "FlagRankingTrim"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-4614",
+      "component": "FlashAuto",
+      "id": "FlashAuto",
+      "componentName": "FlashAuto"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=3066-46",
+      "component": "FlashOff",
+      "id": "FlashOff",
+      "componentName": "FlashOff"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=3066-43",
+      "component": "Flash",
+      "id": "Flash",
+      "componentName": "Flash"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-937",
+      "component": "Folder",
+      "id": "Folder",
+      "componentName": "Folder"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-936",
+      "component": "FolderFill",
+      "id": "FolderFill",
+      "componentName": "FolderFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2964-166",
+      "component": "Font",
+      "id": "Font",
+      "componentName": "Font"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2965-13",
+      "component": "Fontstyle",
+      "id": "Fontstyle",
+      "componentName": "Fontstyle"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-949",
+      "component": "Game",
+      "id": "Game",
+      "componentName": "Game"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-948",
+      "component": "GameFill",
+      "id": "GameFill",
+      "componentName": "GameFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4303-48",
+      "component": "Genre",
+      "id": "Genre",
+      "componentName": "Genre"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4303-49",
+      "component": "GenreAdd",
+      "id": "GenreAdd",
+      "componentName": "GenreAdd"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3535",
+      "component": "GenreDone",
+      "id": "GenreDone",
+      "componentName": "GenreDone"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-3727",
+      "component": "GraphBar",
+      "id": "GraphBar",
+      "componentName": "GraphBar"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4299-38",
+      "component": "Gruppo",
+      "id": "Gruppo",
+      "componentName": "Gruppo"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2817-72",
+      "component": "Information",
+      "id": "Information",
+      "componentName": "Information"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-3551",
+      "component": "GameKantan",
+      "id": "GameKantan",
+      "componentName": "GameKantan"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4303-52",
+      "component": "Kaomoji",
+      "id": "Kaomoji",
+      "componentName": "Kaomoji"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3420",
+      "component": "Keyboard",
+      "id": "Keyboard",
+      "componentName": "Keyboard"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3425",
+      "component": "KeyboardFill",
+      "id": "KeyboardFill",
+      "componentName": "KeyboardFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4293-46",
+      "component": "Link",
+      "id": "Link",
+      "componentName": "Link"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-2461",
+      "component": "Loading",
+      "id": "Loading",
+      "componentName": "Loading"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-2451",
+      "component": "LockFill",
+      "id": "LockFill",
+      "componentName": "LockFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-2456",
+      "component": "Magicwand",
+      "id": "Magicwand",
+      "componentName": "Magicwand"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-938",
+      "component": "Mail",
+      "id": "Mail",
+      "componentName": "Mail"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-2901",
+      "component": "MailCheck",
+      "id": "MailCheck",
+      "componentName": "MailCheck"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-967",
+      "component": "MailCircle",
+      "id": "MailCircle",
+      "componentName": "MailCircle"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-966",
+      "component": "MailCircleFill",
+      "id": "MailCircleFill",
+      "componentName": "MailCircleFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-939",
+      "component": "MailFill",
+      "id": "MailFill",
+      "componentName": "MailFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-950",
+      "component": "MenuHamburger",
+      "id": "MenuHamburger",
+      "componentName": "MenuHamburger"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-951",
+      "component": "MenuHamburgerBold",
+      "id": "MenuHamburgerBold",
+      "componentName": "MenuHamburgerBold"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2817-105",
+      "component": "MenuHorizontal",
+      "id": "MenuHorizontal",
+      "componentName": "MenuHorizontal"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2817-100",
+      "component": "MenuVertical",
+      "id": "MenuVertical",
+      "componentName": "MenuVertical"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4303-55",
+      "component": "Messageboard",
+      "id": "Messageboard",
+      "componentName": "Messageboard"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3438",
+      "component": "Microphone",
+      "id": "Microphone",
+      "componentName": "Microphone"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3450",
+      "component": "MicrophoneFill",
+      "id": "MicrophoneFill",
+      "componentName": "MicrophoneFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=3032-7",
+      "component": "MovieCameraFill",
+      "id": "MovieCameraFill",
+      "componentName": "MovieCameraFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4303-47",
+      "component": "MoviePlay",
+      "id": "MoviePlay",
+      "componentName": "MoviePlay"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4303-5",
+      "component": "MoviePlayFill",
+      "id": "MoviePlayFill",
+      "componentName": "MoviePlayFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4303-46",
+      "component": "MovieStop",
+      "id": "MovieStop",
+      "componentName": "MovieStop"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4293-60",
+      "component": "MusicFill",
+      "id": "MusicFill",
+      "componentName": "MusicFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4299-206",
+      "component": "New",
+      "id": "New",
+      "componentName": "New"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4301-3",
+      "component": "News",
+      "id": "News",
+      "componentName": "News"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-3376",
+      "component": "Nice",
+      "id": "Nice",
+      "componentName": "Nice"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-3350",
+      "component": "NiceDone",
+      "id": "NiceDone",
+      "componentName": "NiceDone"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2506-95",
+      "component": "Nodate",
+      "id": "Nodate",
+      "componentName": "Nodate"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-4719",
+      "component": "Now",
+      "id": "Now",
+      "componentName": "Now"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-942",
+      "component": "Officialstar",
+      "id": "Officialstar",
+      "componentName": "Officialstar"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-943",
+      "component": "OfficialstarFill",
+      "id": "OfficialstarFill",
+      "componentName": "OfficialstarFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4301-0",
+      "component": "OnedariFill",
+      "id": "OnedariFill",
+      "componentName": "OnedariFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-4462",
+      "component": "OpenCl",
+      "id": "OpenCl",
+      "componentName": "OpenCl"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3478",
+      "component": "Openblank",
+      "id": "Openblank",
+      "componentName": "Openblank"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3483",
+      "component": "OpenblankFill",
+      "id": "OpenblankFill",
+      "componentName": "OpenblankFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4299-210",
+      "component": "PaletteFill",
+      "id": "PaletteFill",
+      "componentName": "PaletteFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-945",
+      "component": "Pencil",
+      "id": "Pencil",
+      "componentName": "Pencil"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4293-4",
+      "component": "PencilAdd",
+      "id": "PencilAdd",
+      "componentName": "PencilAdd"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-944",
+      "component": "PencilBold",
+      "id": "PencilBold",
+      "componentName": "PencilBold"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3503",
+      "component": "Person",
+      "id": "Person",
+      "componentName": "Person"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3502",
+      "component": "PersonFill",
+      "id": "PersonFill",
+      "componentName": "PersonFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4504-4029",
+      "component": "PersonThreeFill",
+      "id": "PersonThreeFill",
+      "componentName": "PersonThreeFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4299-33",
+      "component": "Peta",
+      "id": "Peta",
+      "componentName": "Peta"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-3616",
+      "component": "PlayCircle",
+      "id": "PlayCircle",
+      "componentName": "PlayCircle"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-934",
+      "component": "Plus",
+      "id": "Plus",
+      "componentName": "Plus"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-935",
+      "component": "PlusBold",
+      "id": "PlusBold",
+      "componentName": "PlusBold"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-960",
+      "component": "PlusCircle",
+      "id": "PlusCircle",
+      "componentName": "PlusCircle"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-961",
+      "component": "PlusCircleFill",
+      "id": "PlusCircleFill",
+      "componentName": "PlusCircleFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4303-50",
+      "component": "PremiumFill",
+      "id": "PremiumFill",
+      "componentName": "PremiumFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4293-21",
+      "component": "Present",
+      "id": "Present",
+      "componentName": "Present"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4504-3995",
+      "component": "Profilecard",
+      "id": "Profilecard",
+      "componentName": "Profilecard"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4299-15",
+      "component": "Qr",
+      "id": "Qr",
+      "componentName": "Qr"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-4587",
+      "component": "Question",
+      "id": "Question",
+      "componentName": "Question"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4366-16",
+      "component": "QuestionmarkCircle",
+      "id": "QuestionmarkCircle",
+      "componentName": "QuestionmarkCircle"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4366-21",
+      "component": "QuestionmarkCircleFill",
+      "id": "QuestionmarkCircleFill",
+      "componentName": "QuestionmarkCircleFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3473",
+      "component": "RankingCrown",
+      "id": "RankingCrown",
+      "componentName": "RankingCrown"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3365",
+      "component": "RankingCrownFill",
+      "id": "RankingCrownFill",
+      "componentName": "RankingCrownFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4299-14",
+      "component": "RankingPlatformFill",
+      "id": "RankingPlatformFill",
+      "componentName": "RankingPlatformFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-4138",
+      "component": "Reblog",
+      "id": "Reblog",
+      "componentName": "Reblog"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-4182",
+      "component": "ReblogSlash",
+      "id": "ReblogSlash",
+      "componentName": "ReblogSlash"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2951-1131",
+      "component": "Refresh",
+      "id": "Refresh",
+      "componentName": "Refresh"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=3567-1656",
+      "component": "ReplyFill",
+      "id": "ReplyFill",
+      "componentName": "ReplyFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=3567-1663",
+      "component": "ReplyCircleFill",
+      "id": "ReplyCircleFill",
+      "componentName": "ReplyCircleFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4301-2",
+      "component": "MenuHamburgerFourline",
+      "id": "MenuHamburgerFourline",
+      "componentName": "MenuHamburgerFourline"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-3289",
+      "component": "Sad",
+      "id": "Sad",
+      "componentName": "Sad"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-4732",
+      "component": "Saveblog",
+      "id": "Saveblog",
+      "componentName": "Saveblog"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-4270",
+      "component": "ScreenFull",
+      "id": "ScreenFull",
+      "componentName": "ScreenFull"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-4320",
+      "component": "ScreenInline",
+      "id": "ScreenInline",
+      "componentName": "ScreenInline"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=3043-188",
+      "component": "Search",
+      "id": "Search",
+      "componentName": "Search"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4299-25",
+      "component": "Service",
+      "id": "Service",
+      "componentName": "Service"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-3890",
+      "component": "Share",
+      "id": "Share",
+      "componentName": "Share"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-2431",
+      "component": "ShineFill",
+      "id": "ShineFill",
+      "componentName": "ShineFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3605",
+      "component": "SidefaceClose",
+      "id": "SidefaceClose",
+      "componentName": "SidefaceClose"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3600",
+      "component": "SidefaceOpen",
+      "id": "SidefaceOpen",
+      "componentName": "SidefaceOpen"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3463",
+      "component": "Smartphone",
+      "id": "Smartphone",
+      "componentName": "Smartphone"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3468",
+      "component": "SmartphoneFill",
+      "id": "SmartphoneFill",
+      "componentName": "SmartphoneFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-4220",
+      "component": "Sort",
+      "id": "Sort",
+      "componentName": "Sort"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4299-61",
+      "component": "SortFeed",
+      "id": "SortFeed",
+      "componentName": "SortFeed"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4299-66",
+      "component": "SortTile",
+      "id": "SortTile",
+      "componentName": "SortTile"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-4007",
+      "component": "SpeakerOffFill",
+      "id": "SpeakerOffFill",
+      "componentName": "SpeakerOffFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-3969",
+      "component": "SpeakerOnFill",
+      "id": "SpeakerOnFill",
+      "componentName": "SpeakerOnFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4299-13",
+      "component": "StarFaceFill",
+      "id": "StarFaceFill",
+      "componentName": "StarFaceFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4293-88",
+      "component": "Stampside",
+      "id": "Stampside",
+      "componentName": "Stampside"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-941",
+      "component": "Star",
+      "id": "Star",
+      "componentName": "Star"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=991-940",
+      "component": "StarFill",
+      "id": "StarFill",
+      "componentName": "StarFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2822-20",
+      "component": "StopFill",
+      "id": "StopFill",
+      "componentName": "StopFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-4100",
+      "component": "Switching",
+      "id": "Switching",
+      "componentName": "Switching"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2602-60",
+      "component": "StarCircleFill",
+      "id": "StarCircleFill",
+      "componentName": "StarCircleFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-2466",
+      "component": "TagFill",
+      "id": "TagFill",
+      "componentName": "TagFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-2441",
+      "component": "TranscriptOff",
+      "id": "TranscriptOff",
+      "componentName": "TranscriptOff"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-2446",
+      "component": "TranscriptOn",
+      "id": "TranscriptOn",
+      "componentName": "TranscriptOn"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4293-53",
+      "component": "Transmission",
+      "id": "Transmission",
+      "componentName": "Transmission"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-2436",
+      "component": "Trashcan",
+      "id": "Trashcan",
+      "componentName": "Trashcan"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4299-205",
+      "component": "TriangleDown",
+      "id": "TriangleDown",
+      "componentName": "TriangleDown"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4299-71",
+      "component": "TriangleLeft",
+      "id": "TriangleLeft",
+      "componentName": "TriangleLeft"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4299-204",
+      "component": "TriangleRight",
+      "id": "TriangleRight",
+      "componentName": "TriangleRight"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4299-203",
+      "component": "TriangleUp",
+      "id": "TriangleUp",
+      "componentName": "TriangleUp"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2484-128",
+      "component": "TrianglearrowDown",
+      "id": "TrianglearrowDown",
+      "componentName": "TrianglearrowDown"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2484-129",
+      "component": "TrianglearrowDownright",
+      "id": "TrianglearrowDownright",
+      "componentName": "TrianglearrowDownright"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2484-130",
+      "component": "TrianglearrowRight",
+      "id": "TrianglearrowRight",
+      "componentName": "TrianglearrowRight"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=3041-1351",
+      "component": "TrianglearrowUp",
+      "id": "TrianglearrowUp",
+      "componentName": "TrianglearrowUp"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2484-138",
+      "component": "TrianglearrowUpright",
+      "id": "TrianglearrowUpright",
+      "componentName": "TrianglearrowUpright"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-3452",
+      "component": "TriangleendLeft",
+      "id": "TriangleendLeft",
+      "componentName": "TriangleendLeft"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-3501",
+      "component": "TriangleendRight",
+      "id": "TriangleendRight",
+      "componentName": "TriangleendRight"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4293-83",
+      "component": "TrophyFill",
+      "id": "TrophyFill",
+      "componentName": "TrophyFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4327-3488",
+      "component": "TvFill",
+      "id": "TvFill",
+      "componentName": "TvFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2951-1104",
+      "component": "Webview",
+      "id": "Webview",
+      "componentName": "Webview"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-2978",
+      "component": "TopbloggerRibbon",
+      "id": "TopbloggerRibbon",
+      "componentName": "TopbloggerRibbon"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4934-0",
+      "component": "ImageAddFill",
+      "id": "ImageAddFill",
+      "componentName": "ImageAddFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=5187-3670",
+      "component": "RedoDeprecated",
+      "id": "RedoDeprecated",
+      "componentName": "RedoDeprecated"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=11762-471",
+      "component": "Undo",
+      "id": "Undo",
+      "componentName": "Undo"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=5187-3671",
+      "component": "UndoDeprecated",
+      "id": "UndoDeprecated",
+      "componentName": "UndoDeprecated"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=11762-469",
+      "component": "Redo",
+      "id": "Redo",
+      "componentName": "Redo"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=5187-3672",
+      "component": "RedoBoldDeprecated",
+      "id": "RedoBoldDeprecated",
+      "componentName": "RedoBoldDeprecated"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=11762-470",
+      "component": "UndoBold",
+      "id": "UndoBold",
+      "componentName": "UndoBold"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=5187-3673",
+      "component": "UndoBoldDeprecated",
+      "id": "UndoBoldDeprecated",
+      "componentName": "UndoBoldDeprecated"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=11762-468",
+      "component": "RedoBold",
+      "id": "RedoBold",
+      "componentName": "RedoBold"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=5187-3676",
+      "component": "Title",
+      "id": "Title",
+      "componentName": "Title"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=5187-3685",
+      "component": "Bold",
+      "id": "Bold",
+      "componentName": "Bold"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=5187-3686",
+      "component": "Italic",
+      "id": "Italic",
+      "componentName": "Italic"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=5187-3687",
+      "component": "Strikethrough",
+      "id": "Strikethrough",
+      "componentName": "Strikethrough"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=5187-3688",
+      "component": "Underline",
+      "id": "Underline",
+      "componentName": "Underline"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=5187-3699",
+      "component": "ListNumbered",
+      "id": "ListNumbered",
+      "componentName": "ListNumbered"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=5187-3700",
+      "component": "ListBulleted",
+      "id": "ListBulleted",
+      "componentName": "ListBulleted"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=5187-3701",
+      "component": "AlignCenter",
+      "id": "AlignCenter",
+      "componentName": "AlignCenter"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=5187-3702",
+      "component": "AlignRight",
+      "id": "AlignRight",
+      "componentName": "AlignRight"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=5187-3703",
+      "component": "Border",
+      "id": "Border",
+      "componentName": "Border"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=5538-35",
+      "component": "Thumbsup",
+      "id": "Thumbsup",
+      "componentName": "Thumbsup"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=5538-34",
+      "component": "ThumbsupFill",
+      "id": "ThumbsupFill",
+      "componentName": "ThumbsupFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=5648-0",
+      "component": "Amebacoin",
+      "id": "Amebacoin",
+      "componentName": "Amebacoin"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=6054-4008",
+      "component": "Baby",
+      "id": "Baby",
+      "componentName": "Baby"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=6054-4010",
+      "component": "Compass",
+      "id": "Compass",
+      "componentName": "Compass"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=6054-4012",
+      "component": "Dice",
+      "id": "Dice",
+      "componentName": "Dice"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=6054-4018",
+      "component": "Shirt",
+      "id": "Shirt",
+      "componentName": "Shirt"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=6054-4014",
+      "component": "Flowervase",
+      "id": "Flowervase",
+      "componentName": "Flowervase"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=6054-4020",
+      "component": "Cutlery",
+      "id": "Cutlery",
+      "componentName": "Cutlery"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=6054-4016",
+      "component": "Pawprint",
+      "id": "Pawprint",
+      "componentName": "Pawprint"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=6054-4022",
+      "component": "Wallet",
+      "id": "Wallet",
+      "componentName": "Wallet"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=5961-0",
+      "component": "ImageFillSlash",
+      "id": "ImageFillSlash",
+      "componentName": "ImageFillSlash"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=6178-4019",
+      "component": "Calendardaily",
+      "id": "Calendardaily",
+      "componentName": "Calendardaily"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=6178-4017",
+      "component": "Beginnermark",
+      "id": "Beginnermark",
+      "componentName": "Beginnermark"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=6409-9",
+      "component": "Circle",
+      "id": "Circle",
+      "componentName": "Circle"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=6409-4",
+      "component": "CircleBold",
+      "id": "CircleBold",
+      "componentName": "CircleBold"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=6409-14",
+      "component": "Minus",
+      "id": "Minus",
+      "componentName": "Minus"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=6409-21",
+      "component": "MinusBold",
+      "id": "MinusBold",
+      "componentName": "MinusBold"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=6409-31",
+      "component": "Sun",
+      "id": "Sun",
+      "componentName": "Sun"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=6409-26",
+      "component": "SunFill",
+      "id": "SunFill",
+      "componentName": "SunFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=6409-49",
+      "component": "Moon",
+      "id": "Moon",
+      "componentName": "Moon"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=6409-63",
+      "component": "MoonFill",
+      "id": "MoonFill",
+      "componentName": "MoonFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=6434-4039",
+      "component": "LockOpenFill",
+      "id": "LockOpenFill",
+      "componentName": "LockOpenFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=6600-4230",
+      "component": "Crop",
+      "id": "Crop",
+      "componentName": "Crop"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=6957-4181",
+      "component": "ArticleSlash",
+      "id": "ArticleSlash",
+      "componentName": "ArticleSlash"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=7030-4174",
+      "component": "Gear",
+      "id": "Gear",
+      "componentName": "Gear"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2602-125",
+      "component": "GearFill",
+      "id": "GearFill",
+      "componentName": "GearFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=7030-4184",
+      "component": "Download",
+      "id": "Download",
+      "componentName": "Download"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=7030-4189",
+      "component": "FilterCheck",
+      "id": "FilterCheck",
+      "componentName": "FilterCheck"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=2822-19",
+      "component": "PlayFill",
+      "id": "PlayFill",
+      "componentName": "PlayFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=6178-4018",
+      "component": "Bookshelf",
+      "id": "Bookshelf",
+      "componentName": "Bookshelf"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=7030-4284",
+      "component": "BookshelfFill",
+      "id": "BookshelfFill",
+      "componentName": "BookshelfFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=7030-4288",
+      "component": "Newbook",
+      "id": "Newbook",
+      "componentName": "Newbook"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=7030-4296",
+      "component": "NewbookFill",
+      "id": "NewbookFill",
+      "componentName": "NewbookFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=7100-4202",
+      "component": "ExclamationmarkBalloon",
+      "id": "ExclamationmarkBalloon",
+      "componentName": "ExclamationmarkBalloon"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=7180-4175",
+      "component": "ExclamationmarkBalloonFill",
+      "id": "ExclamationmarkBalloonFill",
+      "componentName": "ExclamationmarkBalloonFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=7160-4184",
+      "component": "CrossRectangle",
+      "id": "CrossRectangle",
+      "componentName": "CrossRectangle"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=7160-4171",
+      "component": "CheckRectangle",
+      "id": "CheckRectangle",
+      "componentName": "CheckRectangle"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=7206-4135",
+      "component": "PinFill",
+      "id": "PinFill",
+      "componentName": "PinFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=7215-4140",
+      "component": "CommentBan",
+      "id": "CommentBan",
+      "componentName": "CommentBan"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=7420-4144",
+      "component": "FaceUnhappy",
+      "id": "FaceUnhappy",
+      "componentName": "FaceUnhappy"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=7493-4146",
+      "component": "DiamondTwo",
+      "id": "DiamondTwo",
+      "componentName": "DiamondTwo"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=7537-4145",
+      "component": "Megaphone",
+      "id": "Megaphone",
+      "componentName": "Megaphone"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=7557-4184",
+      "component": "KeyboardDownFill",
+      "id": "KeyboardDownFill",
+      "componentName": "KeyboardDownFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=7557-4183",
+      "component": "Articledesign",
+      "id": "Articledesign",
+      "componentName": "Articledesign"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=7833-4168",
+      "component": "CircleSlash",
+      "id": "CircleSlash",
+      "componentName": "CircleSlash"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=6331-4030",
+      "component": "Pause",
+      "id": "Pause",
+      "componentName": "Pause"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=4357-3589",
+      "component": "PauseBold",
+      "id": "PauseBold",
+      "componentName": "PauseBold"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=8184-4151",
+      "component": "Cart",
+      "id": "Cart",
+      "componentName": "Cart"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=8131-4152",
+      "component": "Cards",
+      "id": "Cards",
+      "componentName": "Cards"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=8184-4152",
+      "component": "CartFill",
+      "id": "CartFill",
+      "componentName": "CartFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=6178-4020",
+      "component": "FreeCircle",
+      "id": "FreeCircle",
+      "componentName": "FreeCircle"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=8184-4146",
+      "component": "FreeCircleFill",
+      "id": "FreeCircleFill",
+      "componentName": "FreeCircleFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=8184-4149",
+      "component": "ChevronUpTwoBold",
+      "id": "ChevronUpTwoBold",
+      "componentName": "ChevronUpTwoBold"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=8304-4158",
+      "component": "ListBookmarkFill",
+      "id": "ListBookmarkFill",
+      "componentName": "ListBookmarkFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=8304-4163",
+      "component": "ArrowUpdown",
+      "id": "ArrowUpdown",
+      "componentName": "ArrowUpdown"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=8332-4185",
+      "component": "TriangleendLeftBold",
+      "id": "TriangleendLeftBold",
+      "componentName": "TriangleendLeftBold"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=8332-4186",
+      "component": "TriangleendRightBold",
+      "id": "TriangleendRightBold",
+      "componentName": "TriangleendRightBold"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=8332-4187",
+      "component": "PersonBan",
+      "id": "PersonBan",
+      "componentName": "PersonBan"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=8451-4199",
+      "component": "ArrowSubdirectory",
+      "id": "ArrowSubdirectory",
+      "componentName": "ArrowSubdirectory"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=8451-4198",
+      "component": "ArrowSubdirectoryBold",
+      "id": "ArrowSubdirectoryBold",
+      "componentName": "ArrowSubdirectoryBold"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=8737-4285",
+      "component": "Ad",
+      "id": "Ad",
+      "componentName": "Ad"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=9445-4997",
+      "component": "Bloggersshop",
+      "id": "Bloggersshop",
+      "componentName": "Bloggersshop"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=10172-4303",
+      "component": "Creditcard",
+      "id": "Creditcard",
+      "componentName": "Creditcard"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=10728-5590",
+      "component": "Paperplane",
+      "id": "Paperplane",
+      "componentName": "Paperplane"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=10728-5591",
+      "component": "PaperplaneFill",
+      "id": "PaperplaneFill",
+      "componentName": "PaperplaneFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=10945-453",
+      "component": "ShineTwo",
+      "id": "ShineTwo",
+      "componentName": "ShineTwo"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=11086-456",
+      "component": "Paidplan",
+      "id": "Paidplan",
+      "componentName": "Paidplan"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=11333-478",
+      "component": "DragIndicator",
+      "id": "DragIndicator",
+      "componentName": "DragIndicator"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=12122-483",
+      "component": "Eraser",
+      "id": "Eraser",
+      "componentName": "Eraser"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=12122-484",
+      "component": "EraserFill",
+      "id": "EraserFill",
+      "componentName": "EraserFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=12122-490",
+      "component": "HashtagBold",
+      "id": "HashtagBold",
+      "componentName": "HashtagBold"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=12122-489",
+      "component": "Hashtag",
+      "id": "Hashtag",
+      "componentName": "Hashtag"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=12190-478",
+      "component": "PlusMinus",
+      "id": "PlusMinus",
+      "componentName": "PlusMinus"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=12354-486",
+      "component": "StarHalf",
+      "id": "StarHalf",
+      "componentName": "StarHalf"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=12877-469",
+      "component": "TopbloggerMedal",
+      "id": "TopbloggerMedal",
+      "componentName": "TopbloggerMedal"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=12877-470",
+      "component": "Paidmember",
+      "id": "Paidmember",
+      "componentName": "Paidmember"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=13653-494",
+      "component": "AltFill",
+      "id": "AltFill",
+      "componentName": "AltFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=13653-493",
+      "component": "Alt",
+      "id": "Alt",
+      "componentName": "Alt"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=13653-495",
+      "component": "Table",
+      "id": "Table",
+      "componentName": "Table"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=13765-508",
+      "component": "StarPart90",
+      "id": "StarPart90",
+      "componentName": "StarPart90"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=13765-507",
+      "component": "StarPart80",
+      "id": "StarPart80",
+      "componentName": "StarPart80"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=13765-506",
+      "component": "StarPart70",
+      "id": "StarPart70",
+      "componentName": "StarPart70"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=13764-474",
+      "component": "StarPart60",
+      "id": "StarPart60",
+      "componentName": "StarPart60"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=13764-472",
+      "component": "StarPart40",
+      "id": "StarPart40",
+      "componentName": "StarPart40"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=13764-471",
+      "component": "StarPart30",
+      "id": "StarPart30",
+      "componentName": "StarPart30"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=13764-470",
+      "component": "StarPart20",
+      "id": "StarPart20",
+      "componentName": "StarPart20"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=13764-473",
+      "component": "StarPart10",
+      "id": "StarPart10",
+      "componentName": "StarPart10"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=14224-4633",
+      "component": "FilterNew",
+      "id": "FilterNew",
+      "componentName": "FilterNew"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=14224-4685",
+      "component": "FilterCheckNew",
+      "id": "FilterCheckNew",
+      "componentName": "FilterCheckNew"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=14224-4838",
+      "component": "FilterSearch",
+      "id": "FilterSearch",
+      "componentName": "FilterSearch"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=14546-565",
+      "component": "ArrowwaveupRectangle",
+      "id": "ArrowwaveupRectangle",
+      "componentName": "ArrowwaveupRectangle"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=14546-566",
+      "component": "ArrowwaveupRectangleFill",
+      "id": "ArrowwaveupRectangleFill",
+      "componentName": "ArrowwaveupRectangleFill"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=14546-568",
+      "component": "ArrowwaveupBold",
+      "id": "ArrowwaveupBold",
+      "componentName": "ArrowwaveupBold"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=14546-567",
+      "component": "Arrowwaveup",
+      "id": "Arrowwaveup",
+      "componentName": "Arrowwaveup"
+    }
+  ]
+}

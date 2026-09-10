@@ -15,6 +15,7 @@
   "exclude": [
     "src/**/*.test.*",
     "src/**/*.stories.*",
-    "src/**/*.figma.tsx"
+    "src/**/*.figma.ts",
+    "src/**/*.figma.batch.ts"
   ]
 }

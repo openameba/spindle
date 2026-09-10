@@ -72,23 +72,30 @@ Figmaのデザインデータと実装方針を踏まえ以下の項目を記載
 - Figmaバリアント "Active" (True/False) → React prop `active` (boolean)
 
 ### 実装例
-```tsx
-figma.connect(
-  'https://www.figma.com/design/FILE_KEY/FILE_NAME?node-id=NODE_ID',
-  {
-    props: {
-      size: figma.enum('Size', {
-        'Large': 'large',
-        'Medium': 'medium',
-        'Small': 'small',
-      }),
-      active: figma.boolean('Active'),
-    },
-    example: ({ size, active }) => (
-      <Component size={size} active={active} />
-    ),
-  }
-)
+`{Component}.figma.ts` としてテンプレートファイルを作成します。
+
+```ts
+// url=https://www.figma.com/design/FILE_KEY/FILE_NAME?node-id=NODE_ID
+// component=Component
+
+import figma from 'figma';
+
+const size = figma.selectedInstance.getEnum('Size', {
+  Large: 'large',
+  Medium: 'medium',
+  Small: 'small',
+});
+const active = figma.selectedInstance.getBoolean('Active');
+
+export default {
+  id: 'Component',
+  imports: ["import { Component } from '@openameba/spindle-ui';"],
+  example: figma.code`<Component${figma.helpers.react.renderProp(
+    'size',
+    size,
+  )}${figma.helpers.react.renderProp('active', active)} />`,
+  metadata: { nestable: true },
+};
 ```
 -->
 

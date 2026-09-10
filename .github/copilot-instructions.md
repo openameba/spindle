@@ -34,12 +34,13 @@ For ./packages/spindle-ui/ changes, review the following:
     - `.stories.tsx` (component examples)
     - `.mdx` (detailed docs)
     - `design-doc.md` (design documentation)
-    - `.figma.tsx` (Code Connect)
+    - `.figma.ts` (Code Connect template file)
   - Tests cover updated functionality
   - Stories cover updated functionality (key component variants, props combinations, and use cases)
   - Documentation reflects current behavior
   - Code Connect mapping is updated if component API changed
-- For new components, verify required files are created: index.ts, .tsx, .css, .test.tsx, .stories.tsx, .mdx, design-doc.md, .figma.tsx
+- For new components, verify required files are created: index.ts, .tsx, .css, .test.tsx, .stories.tsx, .mdx, design-doc.md, .figma.ts
+  - Exception: components sharing a single Figma node (variants of one component set) are defined together in one `.figma.ts` in their parent directory, e.g. `src/NavigationTab/NavigationTab.figma.ts`
   - If files are missing, point out which files need to be created
   - If files exist but are incomplete, suggest content or ask user how to proceed
 - For components wrapping a single interactive element (button, input, a, etc.), verify `forwardRef` is implemented to allow ref access
