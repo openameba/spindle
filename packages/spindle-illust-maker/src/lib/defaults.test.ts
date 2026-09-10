@@ -1,8 +1,8 @@
-import { describe, it, expect } from 'vitest';
-import { getDefaultState, getRandomParts } from './defaults';
+import { describe, expect, it } from 'vitest';
 import { PARTS_BY_CATEGORY } from '../constants/parts';
 import { POSE_MAP } from '../constants/poses';
 import type { PoseId } from '../types';
+import { getDefaultState, getRandomParts } from './defaults';
 
 describe('getDefaultState', () => {
   it('引数なしで adult-standing のデフォルトを返す', () => {
@@ -100,13 +100,19 @@ describe('getRandomParts', () => {
     const pose = POSE_MAP['adult-standing'];
     const headType = pose.headTypes[0] ?? 'man';
 
-    const headOptions = PARTS_BY_CATEGORY[`head/${headType}`]!.map((i) => i.path);
+    const headOptions = PARTS_BY_CATEGORY[`head/${headType}`]!.map(
+      (i) => i.path,
+    );
     expect(headOptions).toContain(result.head);
 
-    const bodyOptions = PARTS_BY_CATEGORY[pose.bodySubdir ?? 'body']!.map((i) => i.path);
+    const bodyOptions = PARTS_BY_CATEGORY[pose.bodySubdir ?? 'body']!.map(
+      (i) => i.path,
+    );
     expect(bodyOptions).toContain(result.body);
 
-    const legOptions = PARTS_BY_CATEGORY[pose.legSubdir ?? 'leg']!.map((i) => i.path);
+    const legOptions = PARTS_BY_CATEGORY[pose.legSubdir ?? 'leg']!.map(
+      (i) => i.path,
+    );
     expect(legOptions).toContain(result.leg);
   });
 
@@ -117,19 +123,29 @@ describe('getRandomParts', () => {
     for (let i = 0; i < 50; i++) {
       const result = getRandomParts('adult-standing');
       for (const part of accessories) {
-        const value = result[part as keyof typeof result] as string | null | undefined;
+        const value = result[part as keyof typeof result] as
+          | string
+          | null
+          | undefined;
         if (value != null) {
           seen.add('non-null');
           const options = PARTS_BY_CATEGORY[part]!.map((item) => item.path);
-          expect(options, `${part} のパスが候補に含まれるべき`).toContain(value);
+          expect(options, `${part} のパスが候補に含まれるべき`).toContain(
+            value,
+          );
         } else {
           seen.add('null');
         }
       }
     }
 
-    expect(seen.has('null'), 'アクセサリーが null になるケースがあるべき').toBe(true);
-    expect(seen.has('non-null'), 'アクセサリーが選択されるケースがあるべき').toBe(true);
+    expect(seen.has('null'), 'アクセサリーが null になるケースがあるべき').toBe(
+      true,
+    );
+    expect(
+      seen.has('non-null'),
+      'アクセサリーが選択されるケースがあるべき',
+    ).toBe(true);
   });
 
   it('複数回呼び出すと異なる結果を返すことがある', () => {
@@ -138,6 +154,9 @@ describe('getRandomParts', () => {
       const result = getRandomParts('adult-standing');
       results.add(result.head ?? '');
     }
-    expect(results.size, 'ランダムなので複数の異なる結果が返るべき').toBeGreaterThan(1);
+    expect(
+      results.size,
+      'ランダムなので複数の異なる結果が返るべき',
+    ).toBeGreaterThan(1);
   });
 });

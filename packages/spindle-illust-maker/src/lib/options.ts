@@ -1,8 +1,10 @@
-import { POSES } from '../constants/poses';
 import { PARTS_BY_CATEGORY } from '../constants/parts';
+import { POSES } from '../constants/poses';
 import type { IllustOptions, PartOptionInfo, PoseOptionInfo } from './types';
 
-function toPartOptionInfo(items: { id: string; label: string; path: string }[]): PartOptionInfo[] {
+function toPartOptionInfo(
+  items: { id: string; label: string; path: string }[],
+): PartOptionInfo[] {
   return items.map(({ id, label, path }) => ({ id, label, path }));
 }
 

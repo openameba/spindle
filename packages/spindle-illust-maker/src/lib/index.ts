@@ -1,10 +1,10 @@
+import type { IllustState, PoseId } from '../types';
+import { getDefaultState } from './defaults';
 import { createImageLoader } from './image-loader';
 import { getOptions } from './options';
-import { getDefaultState } from './defaults';
-import { paramsToState } from './url-state';
 import { renderToBlob } from './render';
 import type { IllustMaker, IllustMakerConfig, RenderOptions } from './types';
-import type { IllustState, PoseId } from '../types';
+import { paramsToState } from './url-state';
 
 const DEFAULT_ASSET_BASE_URL =
   'https://ameba-spindle-illustration-maker.web.app/illust';
@@ -37,22 +37,21 @@ export function createIllustMaker(config?: IllustMakerConfig): IllustMaker {
 }
 
 export type {
+  HeadType,
+  IllustState,
+  LayerEntry,
+  NeckTilt,
+  NeckTiltConfig,
+  PartCategory,
+  PartOption,
+  PoseConfig,
+  PoseId,
+} from '../types';
+export type {
   IllustMaker,
   IllustMakerConfig,
   IllustOptions,
-  PoseOptionInfo,
   PartOptionInfo,
+  PoseOptionInfo,
   RenderOptions,
 } from './types';
-
-export type {
-  IllustState,
-  PoseId,
-  HeadType,
-  NeckTilt,
-  PartCategory,
-  PoseConfig,
-  LayerEntry,
-  PartOption,
-  NeckTiltConfig,
-} from '../types';

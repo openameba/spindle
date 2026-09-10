@@ -35,4 +35,4 @@ export type IllustMaker = {
   render(state: IllustState, options?: RenderOptions): Promise<Blob>;
 };
 
-export type { IllustState, PoseId, HeadType, NeckTilt };
+export type { HeadType, IllustState, NeckTilt, PoseId };

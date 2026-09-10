@@ -1,6 +1,6 @@
-import { describe, it, expect } from 'vitest';
-import { stateToParams, paramsToState } from './url-state';
+import { describe, expect, it } from 'vitest';
 import { getDefaultState } from './defaults';
+import { paramsToState, stateToParams } from './url-state';
 
 describe('url-state', () => {
   describe('stateToParams', () => {

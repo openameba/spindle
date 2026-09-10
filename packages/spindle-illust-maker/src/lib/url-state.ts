@@ -1,6 +1,6 @@
-import type { IllustState, PartCategory, PoseId } from '../types';
-import { POSE_MAP } from '../constants/poses';
 import { PARTS_BY_CATEGORY } from '../constants/parts';
+import { POSE_MAP } from '../constants/poses';
+import type { IllustState, PartCategory, PoseId } from '../types';
 import { getDefaultState } from './defaults';
 
 const PART_KEYS: PartCategory[] = [
@@ -17,9 +17,7 @@ const PART_KEYS: PartCategory[] = [
 const VALID_POSES = new Set(Object.keys(POSE_MAP));
 
 const ALL_VALID_PATHS = new Set(
-  Object.values(PARTS_BY_CATEGORY).flatMap((items) =>
-    items.map((i) => i.path),
-  ),
+  Object.values(PARTS_BY_CATEGORY).flatMap((items) => items.map((i) => i.path)),
 );
 
 function shorten(path: string): string {

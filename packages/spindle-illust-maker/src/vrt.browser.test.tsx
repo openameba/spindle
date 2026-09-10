@@ -1,6 +1,6 @@
-import { describe, it, expect, beforeEach } from 'vitest';
-import { render, cleanup } from 'vitest-browser-react';
+import { beforeEach, describe, expect, it } from 'vitest';
 import { page, userEvent } from 'vitest/browser';
+import { cleanup, render } from 'vitest-browser-react';
 import { App } from './App';
 import { waitForCanvasRender } from './test-helpers';
 
@@ -24,7 +24,9 @@ describe('VRT: Canvas描画', () => {
 
   it('ポーズ: 座り', async () => {
     const { container } = await renderAndWait();
-    await userEvent.click(page.getByRole('button', { name: '座り', exact: true }));
+    await userEvent.click(
+      page.getByRole('button', { name: '座り', exact: true }),
+    );
     await waitForCanvasRender(container);
     await expect(page.getByRole('main')).toMatchScreenshot('pose-sitting.png');
   });
@@ -45,7 +47,9 @@ describe('VRT: Canvas描画', () => {
 
   it('ポーズ: お辞儀', async () => {
     const { container } = await renderAndWait();
-    await userEvent.click(page.getByRole('button', { name: 'お辞儀', exact: true }));
+    await userEvent.click(
+      page.getByRole('button', { name: 'お辞儀', exact: true }),
+    );
     await waitForCanvasRender(container);
     await expect(page.getByRole('main')).toMatchScreenshot('pose-bowing.png');
   });
@@ -100,7 +104,9 @@ describe('VRT: Canvas描画', () => {
 
   it('首の傾き: 上', async () => {
     const { container } = await renderAndWait();
-    const dropdown = container.querySelector('[aria-labelledby="neck-tilt-label"]') as HTMLSelectElement;
+    const dropdown = container.querySelector(
+      '[aria-labelledby="neck-tilt-label"]',
+    ) as HTMLSelectElement;
     if (dropdown) {
       dropdown.value = 'up';
       dropdown.dispatchEvent(new Event('change', { bubbles: true }));
@@ -111,28 +117,38 @@ describe('VRT: Canvas描画', () => {
 
   it('首の傾き: 下', async () => {
     const { container } = await renderAndWait();
-    const dropdown = container.querySelector('[aria-labelledby="neck-tilt-label"]') as HTMLSelectElement;
+    const dropdown = container.querySelector(
+      '[aria-labelledby="neck-tilt-label"]',
+    ) as HTMLSelectElement;
     if (dropdown) {
       dropdown.value = 'down';
       dropdown.dispatchEvent(new Event('change', { bubbles: true }));
       await waitForCanvasRender(container);
     }
-    await expect(page.getByRole('main')).toMatchScreenshot('neck-tilt-down.png');
+    await expect(page.getByRole('main')).toMatchScreenshot(
+      'neck-tilt-down.png',
+    );
   });
 
   it('Head↔Body スワップ', async () => {
     const { container } = await renderAndWait();
-    const label = container.querySelector('label[for="head-body-swap"]') as HTMLLabelElement;
+    const label = container.querySelector(
+      'label[for="head-body-swap"]',
+    ) as HTMLLabelElement;
     if (label) {
       await userEvent.click(label);
       await waitForCanvasRender(container);
     }
-    await expect(page.getByRole('main')).toMatchScreenshot('head-body-swap.png');
+    await expect(page.getByRole('main')).toMatchScreenshot(
+      'head-body-swap.png',
+    );
   });
 
   it('Body↔Leg スワップ', async () => {
     const { container } = await renderAndWait();
-    const label = container.querySelector('label[for="body-leg-swap"]') as HTMLLabelElement;
+    const label = container.querySelector(
+      'label[for="body-leg-swap"]',
+    ) as HTMLLabelElement;
     if (label) {
       await userEvent.click(label);
       await waitForCanvasRender(container);

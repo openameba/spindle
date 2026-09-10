@@ -4,19 +4,19 @@ export type {
   IllustMaker,
   IllustMakerConfig,
   IllustOptions,
-  PoseOptionInfo,
   PartOptionInfo,
+  PoseOptionInfo,
   RenderOptions,
 } from './lib/types';
 
 export type {
-  IllustState,
-  PoseId,
   HeadType,
-  NeckTilt,
-  PartCategory,
-  PoseConfig,
+  IllustState,
   LayerEntry,
-  PartOption,
+  NeckTilt,
   NeckTiltConfig,
+  PartCategory,
+  PartOption,
+  PoseConfig,
+  PoseId,
 } from './types';

@@ -1,6 +1,6 @@
-import { describe, it, expect, beforeEach } from 'vitest';
-import { render, cleanup } from 'vitest-browser-react';
+import { beforeEach, describe, expect, it } from 'vitest';
 import { page, userEvent } from 'vitest/browser';
+import { cleanup, render } from 'vitest-browser-react';
 import { App } from './App';
 import { waitForCanvasRender } from './test-helpers';
 
@@ -26,7 +26,9 @@ describe('UIインタラクション', () => {
       await userEvent.click(thumbs[0] as HTMLElement);
     }
     // ポーズを切り替え
-    await userEvent.click(page.getByRole('button', { name: '座り', exact: true }));
+    await userEvent.click(
+      page.getByRole('button', { name: '座り', exact: true }),
+    );
     // Hat タブに戻ると None が選択状態
     await userEvent.click(page.getByText('Hat'));
     const noneButton = page.getByText('None');
@@ -53,7 +55,9 @@ describe('UIインタラクション', () => {
 
   it('adult-bowing で首の傾きドロップダウンが非表示', async () => {
     const { container } = await renderAndWait();
-    await userEvent.click(page.getByRole('button', { name: 'お辞儀', exact: true }));
+    await userEvent.click(
+      page.getByRole('button', { name: 'お辞儀', exact: true }),
+    );
     const label = container.querySelector('#neck-tilt-label');
     expect(label).toBeNull();
   });
@@ -103,8 +107,12 @@ describe('UIインタラクション', () => {
     await renderAndWait();
     await userEvent.click(page.getByText('Copy'));
     // クリップボード API の成否に関わらずトーストが表示される
-    await expect.element(
-      page.getByText('クリップボードにコピーしました').or(page.getByText('コピーに失敗しました')),
-    ).toBeVisible();
+    await expect
+      .element(
+        page
+          .getByText('クリップボードにコピーしました')
+          .or(page.getByText('コピーに失敗しました')),
+      )
+      .toBeVisible();
   });
 });

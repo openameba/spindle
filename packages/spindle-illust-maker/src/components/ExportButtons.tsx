@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { Button, Toast } from '@openameba/spindle-ui';
+import { useState } from 'react';
 import '@openameba/spindle-ui/Button/Button.css';
 import '@openameba/spindle-ui/Toast/Toast.css';
 import '@openameba/spindle-ui/IconButton/IconButton.css';
@@ -32,7 +32,8 @@ export function ExportButtons({ exportToCanvas }: Props) {
         (canvas) =>
           new Promise<Blob>((resolve, reject) =>
             canvas.toBlob(
-              (blob) => (blob ? resolve(blob) : reject(new Error('toBlob failed'))),
+              (blob) =>
+                blob ? resolve(blob) : reject(new Error('toBlob failed')),
               'image/png',
             ),
           ),

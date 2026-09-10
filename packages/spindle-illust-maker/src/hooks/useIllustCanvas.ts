@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef } from 'react';
-import type { IllustState } from '../types';
 import { createImageLoader } from '../lib/image-loader';
 import { drawToCanvas } from '../lib/render';
+import type { IllustState } from '../types';
 
 const imageLoader = createImageLoader('/illust');
 

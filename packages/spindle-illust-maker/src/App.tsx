@@ -1,19 +1,21 @@
-import { useCallback, useEffect, useState } from 'react';
 import { IconButton } from '@openameba/spindle-ui/IconButton';
+import { useCallback, useEffect, useState } from 'react';
 import '@openameba/spindle-ui/IconButton/IconButton.css';
 import Dice from '@openameba/spindle-ui/Icon/Dice';
-import type { IllustState, NeckTilt, PartCategory, PoseId } from './types';
+import styles from './App.module.css';
+import { ExportButtons } from './components/ExportButtons';
+import { PartsPanel } from './components/PartsPanel';
+import { PoseSelector } from './components/PoseSelector';
+import { SizeControl } from './components/SizeControl';
+import { useIllustCanvas } from './hooks/useIllustCanvas';
 import { getDefaultState, getRandomParts } from './lib/defaults';
 import { getStateFromUrl, syncUrlToState } from './lib/url-state';
-import { useIllustCanvas } from './hooks/useIllustCanvas';
-import { PoseSelector } from './components/PoseSelector';
-import { PartsPanel } from './components/PartsPanel';
-import { SizeControl } from './components/SizeControl';
-import { ExportButtons } from './components/ExportButtons';
-import styles from './App.module.css';
+import type { IllustState, NeckTilt, PartCategory, PoseId } from './types';
 
 export function App() {
-  const [state, setState] = useState<IllustState>(() => getStateFromUrl() ?? getDefaultState());
+  const [state, setState] = useState<IllustState>(
+    () => getStateFromUrl() ?? getDefaultState(),
+  );
 
   useEffect(() => {
     syncUrlToState(state);
@@ -71,20 +73,35 @@ export function App() {
         <div className={styles['preview-area']}>
           <canvas ref={canvasRef} />
           <div className={styles['random-button']}>
-            <IconButton size="medium" variant="lighted" onClick={handleRandomize} aria-label="ランダム">
+            <IconButton
+              size="medium"
+              variant="lighted"
+              onClick={handleRandomize}
+              aria-label="ランダム"
+            >
               <Dice />
             </IconButton>
           </div>
         </div>
         <div className={styles.panel}>
           <PoseSelector value={state.pose} onChange={handlePoseChange} />
-          <PartsPanel state={state} onPartChange={handlePartChange} onNeckTiltChange={handleNeckTiltChange} onHeadBodySwapChange={handleHeadBodySwapChange} onBodyLegSwapChange={handleBodyLegSwapChange} />
+          <PartsPanel
+            state={state}
+            onPartChange={handlePartChange}
+            onNeckTiltChange={handleNeckTiltChange}
+            onHeadBodySwapChange={handleHeadBodySwapChange}
+            onBodyLegSwapChange={handleBodyLegSwapChange}
+          />
         </div>
       </main>
       <footer className={styles.footer}>
         <small>
           © Ameba -{' '}
-          <a href="https://spindle.ameba.design/styles/illustration/regulation/" target="_blank" rel="noreferrer">
+          <a
+            href="https://spindle.ameba.design/styles/illustration/regulation/"
+            target="_blank"
+            rel="noreferrer"
+          >
             Illustration Guidelines
           </a>
         </small>

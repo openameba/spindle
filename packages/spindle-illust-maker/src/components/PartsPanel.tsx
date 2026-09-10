@@ -1,8 +1,8 @@
-import { useMemo, useState } from 'react';
-import type { HeadType, IllustState, NeckTilt, PartCategory } from '../types';
-import { POSE_MAP } from '../constants/poses';
-import { PARTS_BY_CATEGORY } from '../constants/parts';
 import { Button, SegmentedControl } from '@openameba/spindle-ui';
+import { useMemo, useState } from 'react';
+import { PARTS_BY_CATEGORY } from '../constants/parts';
+import { POSE_MAP } from '../constants/poses';
+import type { HeadType, IllustState, NeckTilt, PartCategory } from '../types';
 import '@openameba/spindle-ui/Button/Button.css';
 import '@openameba/spindle-ui/SegmentedControl/SegmentedControl.css';
 import * as Form from '@openameba/spindle-ui/Form';
@@ -44,11 +44,26 @@ const NECK_TILT_OPTIONS = [
   { id: 'down' as const, label: '下向き' },
 ];
 
-const PART_ORDER: PartCategory[] = ['head', 'body', 'leg', 'hat', 'glasses', 'mask', 'beard', 'umbrella'];
+const PART_ORDER: PartCategory[] = [
+  'head',
+  'body',
+  'leg',
+  'hat',
+  'glasses',
+  'mask',
+  'beard',
+  'umbrella',
+];
 
 const BODY_LEG_POSES: string[] = ['adult-standing', 'adult-sitting'];
 
-export function PartsPanel({ state, onPartChange, onNeckTiltChange, onHeadBodySwapChange, onBodyLegSwapChange }: Props) {
+export function PartsPanel({
+  state,
+  onPartChange,
+  onNeckTiltChange,
+  onHeadBodySwapChange,
+  onBodyLegSwapChange,
+}: Props) {
   const pose = POSE_MAP[state.pose];
   const availableParts = useMemo(() => {
     if (!pose) return [];
@@ -66,7 +81,7 @@ export function PartsPanel({ state, onPartChange, onNeckTiltChange, onHeadBodySw
 
   const currentTab = availableParts.includes(activeTab)
     ? activeTab
-    : availableParts[0] ?? 'head';
+    : (availableParts[0] ?? 'head');
 
   const items = useMemo(() => {
     if (currentTab === 'head') {
@@ -138,7 +153,9 @@ export function PartsPanel({ state, onPartChange, onNeckTiltChange, onHeadBodySw
       )}
 
       <div className={styles['toggle-row']}>
-        <Form.InputLabel id="head-body-swap">Head↔Body 入れ替え</Form.InputLabel>
+        <Form.InputLabel id="head-body-swap">
+          Head↔Body 入れ替え
+        </Form.InputLabel>
         <Form.ToggleSwitch
           id="head-body-swap"
           checked={state.headBodySwap}
@@ -148,7 +165,9 @@ export function PartsPanel({ state, onPartChange, onNeckTiltChange, onHeadBodySw
 
       {BODY_LEG_POSES.includes(state.pose) && (
         <div className={styles['toggle-row']}>
-          <Form.InputLabel id="body-leg-swap">Body↔Leg 入れ替え</Form.InputLabel>
+          <Form.InputLabel id="body-leg-swap">
+            Body↔Leg 入れ替え
+          </Form.InputLabel>
           <Form.ToggleSwitch
             id="body-leg-swap"
             checked={state.bodyLegSwap}
@@ -160,6 +179,7 @@ export function PartsPanel({ state, onPartChange, onNeckTiltChange, onHeadBodySw
       <div className={styles.grid}>
         {isOptional && (
           <button
+            type="button"
             className={`${styles.thumb} ${selectedPath === null ? styles['thumb-selected'] : ''}`}
             onClick={() => onPartChange(currentTab, null)}
           >
@@ -169,6 +189,7 @@ export function PartsPanel({ state, onPartChange, onNeckTiltChange, onHeadBodySw
         {items.map((item) => (
           <button
             key={item.id}
+            type="button"
             title={item.label}
             className={`${styles.thumb} ${selectedPath === item.path ? styles['thumb-selected'] : ''}`}
             onClick={() => onPartChange(currentTab, item.path)}

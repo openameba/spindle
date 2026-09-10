@@ -1,5 +1,5 @@
-import type { IllustState } from '../types';
 import { useIllustCanvas } from '../hooks/useIllustCanvas';
+import type { IllustState } from '../types';
 import styles from './Preview.module.css';
 
 type Props = {

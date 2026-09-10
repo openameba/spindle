@@ -1,6 +1,6 @@
-import type { IllustState, LayerEntry, PartCategory } from '../types';
-import { POSE_MAP } from '../constants/poses';
 import partOffsets from '../constants/part-offsets.json';
+import { POSE_MAP } from '../constants/poses';
+import type { IllustState, LayerEntry, PartCategory } from '../types';
 import type { ImageLoader } from './image-loader';
 
 const PART_OFFSETS = partOffsets as Record<
@@ -33,17 +33,18 @@ function getOffsetKey(path: string): string {
   return path.replace(/^\/illust\//, '').replace(/\.svg$/, '');
 }
 
-function buildEffectiveLayers(state: IllustState, layers: LayerEntry[]): LayerEntry[] {
+function buildEffectiveLayers(
+  state: IllustState,
+  layers: LayerEntry[],
+): LayerEntry[] {
   const pose = POSE_MAP[state.pose];
   if (!pose) return layers;
 
   const tiltConfig =
-    state.neckTilt !== 'normal'
-      ? pose.neckTilts?.[state.neckTilt]
-      : undefined;
+    state.neckTilt !== 'normal' ? pose.neckTilts?.[state.neckTilt] : undefined;
   const tiltParts = new Set(tiltConfig?.layers.map((l) => l.part));
 
-  let effectiveLayers = layers.flatMap((layer) => {
+  const effectiveLayers = layers.flatMap((layer) => {
     if (tiltParts.has(layer.part)) {
       return tiltConfig!.layers.filter((l) => l.part === layer.part);
     }
@@ -104,8 +105,8 @@ function drawPart(
   const dy = layer.y - oy;
 
   if (layer.rotation) {
-    const cx = layer.pivotX ?? (layer.x + layer.width / 2);
-    const cy = layer.pivotY ?? (layer.y + layer.height / 2);
+    const cx = layer.pivotX ?? layer.x + layer.width / 2;
+    const cy = layer.pivotY ?? layer.y + layer.height / 2;
     ctx.save();
     ctx.translate(cx, cy);
     ctx.rotate((layer.rotation * Math.PI) / 180);

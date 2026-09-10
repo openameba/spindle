@@ -1,6 +1,6 @@
-import type { PoseId } from '../types';
-import { POSES } from '../constants/poses';
 import { Button } from '@openameba/spindle-ui';
+import { POSES } from '../constants/poses';
+import type { PoseId } from '../types';
 import '@openameba/spindle-ui/Button/Button.css';
 import styles from './PoseSelector.module.css';
 

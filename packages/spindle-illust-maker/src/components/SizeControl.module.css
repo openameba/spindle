@@ -9,12 +9,20 @@
   --Button--neutral-backgroundColor: var(--color-surface-primary);
   --Button--neutral-color: var(--color-text-high-emphasis);
   --Button--neutral-onHover-backgroundColor: var(--color-hover-neutral-button);
-  --Button--neutral-onActive-backgroundColor: var(--color-active-neutral-button);
+  --Button--neutral-onActive-backgroundColor: var(
+    --color-active-neutral-button
+  );
 }
 
 .active {
-  --Button--neutral-backgroundColor: var(--color-surface-accent-neutral-high-emphasis);
+  --Button--neutral-backgroundColor: var(
+    --color-surface-accent-neutral-high-emphasis
+  );
   --Button--neutral-color: var(--color-text-high-emphasis-inverse);
-  --Button--neutral-onHover-backgroundColor: var(--color-surface-accent-neutral-medium-emphasis);
-  --Button--neutral-onActive-backgroundColor: var(--color-surface-accent-neutral-medium-emphasis);
+  --Button--neutral-onHover-backgroundColor: var(
+    --color-surface-accent-neutral-medium-emphasis
+  );
+  --Button--neutral-onActive-backgroundColor: var(
+    --color-surface-accent-neutral-medium-emphasis
+  );
 }

@@ -1,8 +1,10 @@
-import type { IllustState, PoseId } from '../types';
-import { POSE_MAP } from '../constants/poses';
 import { PARTS_BY_CATEGORY } from '../constants/parts';
+import { POSE_MAP } from '../constants/poses';
+import type { IllustState, PoseId } from '../types';
 
-function findGreenDefault(items: { path: string }[] | undefined): string | null {
+function findGreenDefault(
+  items: { path: string }[] | undefined,
+): string | null {
   if (!items?.length) return null;
   return items.find((i) => i.path.includes('-green.'))?.path ?? items[0].path;
 }
@@ -36,7 +38,13 @@ function pickRandom(items: { path: string }[] | undefined): string | null {
   return items[Math.floor(Math.random() * items.length)].path;
 }
 
-const ACCESSORY_PARTS = new Set(['hat', 'glasses', 'mask', 'beard', 'umbrella']);
+const ACCESSORY_PARTS = new Set([
+  'hat',
+  'glasses',
+  'mask',
+  'beard',
+  'umbrella',
+]);
 
 export function getRandomParts(poseId: PoseId): Partial<IllustState> {
   const pose = POSE_MAP[poseId];
@@ -64,7 +72,9 @@ export function getRandomParts(poseId: PoseId): Partial<IllustState> {
   return result;
 }
 
-export function getDefaultState(poseId: PoseId = 'adult-standing'): IllustState {
+export function getDefaultState(
+  poseId: PoseId = 'adult-standing',
+): IllustState {
   const pose = POSE_MAP[poseId];
   return {
     pose: poseId,
