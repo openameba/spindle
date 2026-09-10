@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.5.5
+
+### Patch Changes
+
+- [#2192](https://github.com/openameba/spindle/pull/2192) [`f72a104`](https://github.com/openameba/spindle/commit/f72a1048b16747478732d4b85bacdf4e05da5013) Thanks [@herablog](https://github.com/herablog)! - Figma Code Connectがテンプレートファイル形式に移行したことに対応。コンポーネント情報の `figma` は `.figma.tsx` ではなく `.figma.ts` から取得するようになった。単一のFigmaコンポーネントセットのvariantとして定義されているコンポーネント (CapsuleTab / InlineTab / UnderlineTab) は、親ディレクトリの共有テンプレート (`NavigationTab.figma.ts`) を参照する。
+
 ## 1.5.4
 
 ### Patch Changes
