@@ -24,6 +24,7 @@
     "test": "vitest run",
     "test:unit": "vitest run --project unit",
     "test:browser": "BROWSER_TEST=true vitest run --project browser",
+    "test:interaction": "BROWSER_TEST=true vitest run --project browser src/interaction.browser.test.tsx",
     "test:browser:update": "BROWSER_TEST=true vitest run --project browser --update",
     "preview": "vite preview"
   },
