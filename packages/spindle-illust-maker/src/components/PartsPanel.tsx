@@ -2,7 +2,6 @@ import { Button, SegmentedControl } from '@openameba/spindle-ui';
 import { useMemo, useState } from 'react';
 import { PARTS_BY_CATEGORY } from '../constants/parts';
 import { POSE_MAP } from '../constants/poses';
-import { getHeadTypeFromPath } from '../lib/head-type';
 import type { HeadType, IllustState, NeckTilt, PartCategory } from '../types';
 import '@openameba/spindle-ui/Button/Button.css';
 import '@openameba/spindle-ui/SegmentedControl/SegmentedControl.css';
@@ -14,7 +13,10 @@ import styles from './PartsPanel.module.css';
 
 type Props = {
   state: IllustState;
+  /** 選択中のヘッドタイプ。App が state.head と合わせて管理する */
+  headType: HeadType;
   onPartChange: (part: PartCategory, path: string | null) => void;
+  onHeadTypeChange: (headType: HeadType) => void;
   onNeckTiltChange: (tilt: NeckTilt) => void;
   onHeadBodySwapChange: (swap: boolean) => void;
   onBodyLegSwapChange: (swap: boolean) => void;
@@ -58,16 +60,11 @@ const OPTIONAL_PARTS: PartCategory[] = ['hat', 'glasses', 'mask', 'beard'];
 
 const BODY_LEG_POSES: string[] = ['adult-standing', 'adult-sitting'];
 
-/**
- * ヘッドタイプの選択で、まだサムネイルを選んでいない間だけ有効な一時的な選択。
- * 対象の head パスを一緒に持ち、state.head が変わったら（ランダム・URL 復元・ポーズ切替）
- * 自動的に無効になるので、表示と描画がずれない
- */
-type PendingHeadType = { forHead: string | null; type: HeadType };
-
 export function PartsPanel({
   state,
+  headType,
   onPartChange,
+  onHeadTypeChange,
   onNeckTiltChange,
   onHeadBodySwapChange,
   onBodyLegSwapChange,
@@ -80,20 +77,12 @@ export function PartsPanel({
   }, [pose]);
 
   const [activeTab, setActiveTab] = useState<PartCategory>('head');
-  const [pendingHeadType, setPendingHeadType] =
-    useState<PendingHeadType | null>(null);
 
-  const effectiveHeadType = useMemo<HeadType>(() => {
-    const fallback = pose?.headTypes[0] ?? 'man';
-    const candidate =
-      pendingHeadType?.forHead === state.head
-        ? pendingHeadType.type
-        : getHeadTypeFromPath(state.head);
-    if (candidate && (!pose || pose.headTypes.includes(candidate))) {
-      return candidate;
-    }
-    return fallback;
-  }, [pose, pendingHeadType, state.head]);
+  // 選択中のヘッドタイプはポーズが対応するものに限る（ポーズ切替直後の不整合を防ぐ）
+  const effectiveHeadType: HeadType =
+    headType && (!pose || pose.headTypes.includes(headType))
+      ? headType
+      : (pose?.headTypes[0] ?? 'man');
 
   const currentTab = availableParts.includes(activeTab)
     ? activeTab
@@ -144,9 +133,7 @@ export function PartsPanel({
               label: HEAD_TYPE_LABELS[ht],
             }))}
             selectedId={effectiveHeadType}
-            onClick={(_e, id) =>
-              setPendingHeadType({ forHead: state.head, type: id as HeadType })
-            }
+            onClick={(_e, id) => onHeadTypeChange(id as HeadType)}
           />
         </div>
       )}
