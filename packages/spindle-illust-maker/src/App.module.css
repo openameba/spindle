@@ -1,0 +1,90 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family:
+    "Helvetica Neue", Helvetica, Arial, "Segoe UI", "Hiragino Sans",
+    "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN",
+    "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "Yu Gothic Medium",
+    sans-serif;
+  color: var(--color-text-high-emphasis);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--color-border-low-emphasis);
+  background: var(--color-surface-primary);
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.header-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.preview-area {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-background);
+  overflow: auto;
+}
+
+.random-button {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+}
+
+.preview-area canvas {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 20px;
+  border-top: 1px solid var(--color-border-low-emphasis);
+  background: var(--color-surface-primary);
+  color: var(--color-text-low-emphasis);
+}
+
+.footer a {
+  color: inherit;
+}
+
+.panel {
+  width: 360px;
+  border-left: 1px solid var(--color-border-low-emphasis);
+  background: var(--color-surface-primary);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+@media (width <= 425px) {
+  .panel {
+    width: 280px;
+  }
+}

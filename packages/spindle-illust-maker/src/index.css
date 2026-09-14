@@ -1,0 +1,16 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    "Helvetica Neue", Helvetica, Arial, "Segoe UI", "Hiragino Sans",
+    "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN",
+    "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "Yu Gothic Medium",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+}

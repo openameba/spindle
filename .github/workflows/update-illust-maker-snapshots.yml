@@ -1,0 +1,31 @@
+name: update-illust-maker-snapshots
+
+on:
+  workflow_dispatch:
+
+env:
+  TZ: Asia/Tokyo
+
+jobs:
+  update:
+    name: Update illust-maker VRT snapshots
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.58.2
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5.0.0
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: package.json
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @openameba/spindle-illust-maker test:browser:update
+        env:
+          BROWSER_TEST: 'true'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: illust-maker-snapshots
+          path: packages/spindle-illust-maker/src/__tests__/__screenshots__/

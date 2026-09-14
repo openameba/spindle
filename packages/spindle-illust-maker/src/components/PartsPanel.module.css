@@ -1,0 +1,102 @@
+/* stylelint-disable custom-property-pattern */
+.panel {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--color-border-low-emphasis);
+  overflow-x: auto;
+}
+
+.tab {
+  --Button--neutral-backgroundColor: transparent;
+  --Button--neutral-color: var(--color-text-medium-emphasis);
+  --Button--neutral-onHover-backgroundColor: var(--color-surface-secondary);
+  --Button--neutral-onActive-backgroundColor: var(--color-surface-tertiary);
+}
+
+.tab-active {
+  --Button--neutral-backgroundColor: var(--color-surface-tertiary);
+  --Button--neutral-color: var(--color-text-high-emphasis);
+  --Button--neutral-onHover-backgroundColor: var(--color-surface-quaternary);
+  --Button--neutral-onActive-backgroundColor: var(--color-surface-quaternary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  gap: 6px;
+  padding: 12px;
+  overflow-y: auto;
+  flex: 1;
+  align-content: start;
+}
+
+.thumb {
+  aspect-ratio: 1;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  background: var(--color-surface-secondary);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s;
+  position: relative;
+  box-shadow: inset 0 0 19px 0 rgb(0 0 0 / 4%);
+}
+
+.thumb:hover {
+  box-shadow: inset 0 0 19px 0 rgb(0 0 0 / 10%);
+}
+
+.thumb-selected {
+  border: 2px solid var(--color-border-strong-emphasis);
+  background: var(--color-surface-tertiary);
+}
+
+.thumb-img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.thumb-none {
+  font-size: 11px;
+  color: var(--color-text-low-emphasis);
+}
+
+.head-type-wrap {
+  padding: 16px 12px 8px;
+}
+
+.dropdown-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 12px;
+}
+
+/* stylelint-disable-next-line selector-pseudo-class-no-unknown, selector-class-pattern */
+.dropdown-row :global(.spui-InputLabel),
+/* stylelint-disable-next-line selector-pseudo-class-no-unknown, selector-class-pattern */
+.toggle-row :global(.spui-InputLabel) {
+  font-size: 0.8125rem;
+}
+
+.toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  font-size: 0.8125rem;
+  color: var(--color-text-high-emphasis);
+}
