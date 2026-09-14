@@ -1,5 +1,6 @@
 import { readFile, mkdir, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const FIGMA_TOKEN = process.env.FIGMA_TOKEN;
 if (!FIGMA_TOKEN) {
@@ -10,7 +11,8 @@ if (!FIGMA_TOKEN) {
 const FILE_KEY = 'ijAD7Lx6nPf0yh2lug3Q4y';
 const BATCH_SIZE = 50;
 const SLEEP_MS = 3000;
-const DEST_DIR = 'illust-images';
+// 実行ディレクトリに依存せず、常にパッケージ直下の illust-images/ に出力する（gitignore 済み）
+const DEST_DIR = fileURLToPath(new URL('../illust-images/', import.meta.url));
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
