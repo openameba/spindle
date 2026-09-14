@@ -2,6 +2,7 @@ import { Button, SegmentedControl } from '@openameba/spindle-ui';
 import { useMemo, useState } from 'react';
 import { PARTS_BY_CATEGORY } from '../constants/parts';
 import { POSE_MAP } from '../constants/poses';
+import { getHeadTypeFromPath } from '../lib/head-type';
 import type { HeadType, IllustState, NeckTilt, PartCategory } from '../types';
 import '@openameba/spindle-ui/Button/Button.css';
 import '@openameba/spindle-ui/SegmentedControl/SegmentedControl.css';
@@ -19,7 +20,7 @@ type Props = {
   onBodyLegSwapChange: (swap: boolean) => void;
 };
 
-const PART_LABELS: Record<string, string> = {
+const PART_LABELS: Record<PartCategory, string> = {
   head: 'Head',
   body: 'Body',
   leg: 'Leg',
@@ -27,7 +28,6 @@ const PART_LABELS: Record<string, string> = {
   glasses: 'Glasses',
   mask: 'Mask',
   beard: 'Beard',
-  umbrella: 'Umbrella',
 };
 
 const HEAD_TYPE_LABELS: Record<HeadType, string> = {
@@ -52,10 +52,18 @@ const PART_ORDER: PartCategory[] = [
   'glasses',
   'mask',
   'beard',
-  'umbrella',
 ];
 
+const OPTIONAL_PARTS: PartCategory[] = ['hat', 'glasses', 'mask', 'beard'];
+
 const BODY_LEG_POSES: string[] = ['adult-standing', 'adult-sitting'];
+
+/**
+ * ヘッドタイプの選択で、まだサムネイルを選んでいない間だけ有効な一時的な選択。
+ * 対象の head パスを一緒に持ち、state.head が変わったら（ランダム・URL 復元・ポーズ切替）
+ * 自動的に無効になるので、表示と描画がずれない
+ */
+type PendingHeadType = { forHead: string | null; type: HeadType };
 
 export function PartsPanel({
   state,
@@ -72,12 +80,20 @@ export function PartsPanel({
   }, [pose]);
 
   const [activeTab, setActiveTab] = useState<PartCategory>('head');
-  const [headType, setHeadType] = useState<HeadType>('man');
+  const [pendingHeadType, setPendingHeadType] =
+    useState<PendingHeadType | null>(null);
 
-  const effectiveHeadType = useMemo(() => {
-    if (!pose) return headType;
-    return pose.headTypes.includes(headType) ? headType : pose.headTypes[0];
-  }, [pose, headType]);
+  const effectiveHeadType = useMemo<HeadType>(() => {
+    const fallback = pose?.headTypes[0] ?? 'man';
+    const candidate =
+      pendingHeadType?.forHead === state.head
+        ? pendingHeadType.type
+        : getHeadTypeFromPath(state.head);
+    if (candidate && (!pose || pose.headTypes.includes(candidate))) {
+      return candidate;
+    }
+    return fallback;
+  }, [pose, pendingHeadType, state.head]);
 
   const currentTab = availableParts.includes(activeTab)
     ? activeTab
@@ -98,9 +114,7 @@ export function PartsPanel({
   }, [currentTab, effectiveHeadType, pose]);
 
   const selectedPath = state[currentTab];
-  const isOptional = ['hat', 'glasses', 'mask', 'beard', 'umbrella'].includes(
-    currentTab,
-  );
+  const isOptional = OPTIONAL_PARTS.includes(currentTab);
 
   return (
     <div className={styles.panel}>
@@ -115,7 +129,7 @@ export function PartsPanel({
               variant="neutral"
               onClick={() => setActiveTab(part)}
             >
-              {PART_LABELS[part] ?? part}
+              {PART_LABELS[part]}
             </Button>
           </div>
         ))}
@@ -130,16 +144,18 @@ export function PartsPanel({
               label: HEAD_TYPE_LABELS[ht],
             }))}
             selectedId={effectiveHeadType}
-            onClick={(_e, id) => setHeadType(id as HeadType)}
+            onClick={(_e, id) =>
+              setPendingHeadType({ forHead: state.head, type: id as HeadType })
+            }
           />
         </div>
       )}
 
       {pose?.neckTilts && (
         <div className={styles['dropdown-row']}>
-          <Form.InputLabel id="neck-tilt-label">首の傾き</Form.InputLabel>
+          <Form.InputLabel id="neck-tilt">首の傾き</Form.InputLabel>
           <Form.DropDown
-            aria-labelledby="neck-tilt-label"
+            id="neck-tilt"
             value={state.neckTilt}
             onChange={(e) => onNeckTiltChange(e.target.value as NeckTilt)}
           >

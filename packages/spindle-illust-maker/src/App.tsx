@@ -9,6 +9,7 @@ import { PoseSelector } from './components/PoseSelector';
 import { SizeControl } from './components/SizeControl';
 import { useIllustCanvas } from './hooks/useIllustCanvas';
 import { getDefaultState, getRandomParts } from './lib/defaults';
+import { getHeadTypeFromPath } from './lib/head-type';
 import { getStateFromUrl, syncUrlToState } from './lib/url-state';
 import type { IllustState, NeckTilt, PartCategory, PoseId } from './types';
 
@@ -52,9 +53,10 @@ export function App() {
   }, []);
 
   const handleRandomize = useCallback(() => {
+    // 選択中のヘッドタイプ（Man / Woman）を維持したままランダムにする
     setState((prev) => ({
       ...prev,
-      ...getRandomParts(prev.pose),
+      ...getRandomParts(prev.pose, getHeadTypeFromPath(prev.head)),
     }));
   }, []);
 

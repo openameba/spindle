@@ -17,10 +17,15 @@ const REFERENCE_SIZES: Record<string, { w: number; h: number }> = {
   glasses: { w: 86, h: 49 },
   mask: { w: 96, h: 65 },
   beard: { w: 75, h: 48 },
-  umbrella: { w: 160, h: 95 },
 };
 
 const CANVAS_PADDING = 200;
+
+export type LoadedLayer = {
+  layer: LayerEntry;
+  path: string;
+  img: HTMLImageElement;
+};
 
 function getSelectedPath(
   state: IllustState,
@@ -117,12 +122,46 @@ function drawPart(
   }
 }
 
-export async function drawToCanvas(
-  canvas: HTMLCanvasElement,
+/**
+ * state に必要な画像をすべて並列に読み込み、描画順に並べて返す。
+ * 読み込みに失敗したパーツは描画対象から外す。
+ */
+export async function loadLayers(
   state: IllustState,
   imageLoader: ImageLoader,
+): Promise<LoadedLayer[]> {
+  const pose = POSE_MAP[state.pose];
+  if (!pose) return [];
+
+  const targets = buildEffectiveLayers(state, pose.layers).flatMap((layer) => {
+    const path = getSelectedPath(state, layer.part);
+    return path ? [{ layer, path }] : [];
+  });
+
+  const loaded = await Promise.all(
+    targets.map(async ({ layer, path }) => {
+      try {
+        const img = await imageLoader.loadImage(path);
+        return { layer, path, img };
+      } catch {
+        return null;
+      }
+    }),
+  );
+
+  return loaded.filter((l): l is LoadedLayer => l !== null);
+}
+
+/**
+ * 読み込み済みのレイヤーを canvas に同期的に描く。
+ * 非同期処理を挟まないため、描画途中で別の描画に割り込まれることがない。
+ */
+export function paintLayers(
+  canvas: HTMLCanvasElement,
+  state: IllustState,
+  layers: LoadedLayer[],
   scale: number,
-): Promise<void> {
+): void {
   const pose = POSE_MAP[state.pose];
   if (!pose) return;
 
@@ -139,19 +178,19 @@ export async function drawToCanvas(
   ctx.translate(pad, pad);
   ctx.scale(scale, scale);
 
-  const effectiveLayers = buildEffectiveLayers(state, pose.layers);
-
-  for (const layer of effectiveLayers) {
-    const path = getSelectedPath(state, layer.part);
-    if (!path) continue;
-
-    try {
-      const img = await imageLoader.loadImage(path);
-      drawPart(ctx, img, layer, path);
-    } catch {
-      // Skip failed images
-    }
+  for (const { layer, path, img } of layers) {
+    drawPart(ctx, img, layer, path);
   }
+}
+
+export async function drawToCanvas(
+  canvas: HTMLCanvasElement,
+  state: IllustState,
+  imageLoader: ImageLoader,
+  scale: number,
+): Promise<void> {
+  const layers = await loadLayers(state, imageLoader);
+  paintLayers(canvas, state, layers, scale);
 }
 
 export async function renderToBlob(
