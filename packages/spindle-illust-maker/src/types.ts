@@ -15,8 +15,7 @@ export type PartCategory =
   | 'hat'
   | 'glasses'
   | 'mask'
-  | 'beard'
-  | 'umbrella';
+  | 'beard';
 
 export type HeadType = 'man' | 'woman' | 'child' | 'old' | 'baby';
 
@@ -70,6 +69,5 @@ export type IllustState = {
   glasses: string | null;
   mask: string | null;
   beard: string | null;
-  umbrella: string | null;
   scale: number;
 };
