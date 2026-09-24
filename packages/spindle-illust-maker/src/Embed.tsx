@@ -74,9 +74,13 @@ export function Embed() {
 
       const dataUrl = await renderToDataUrl(state);
       if (!dataUrl) return;
+      // sandbox iframe や file:// など opaque origin から呼ばれると e.origin は文字列 "null" になり、
+      // そのまま targetOrigin に渡すと postMessage が SyntaxError を投げて返信できない。
+      // 宛先は source で送信元 window に限定しているため、その場合だけ '*' に倒す
+      const targetOrigin = e.origin === 'null' ? '*' : e.origin;
       source.postMessage(
         { type: 'spindle-illust-maker:render', dataUrl },
-        e.origin,
+        targetOrigin,
       );
     };
 

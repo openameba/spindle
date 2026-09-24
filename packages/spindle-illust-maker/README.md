@@ -44,6 +44,7 @@ Spindleのイラストレーションパーツを組み合わせて、1枚の画
 
 - 読み込み完了時に、URLのクエリで指定した状態を描画し、埋め込み元へ `{ type: 'spindle-illust-maker:render', dataUrl }` を送ります。`dataUrl` はPNGのdata URLです。
 - 別の組み合わせを描画したいときは、iframeへ `{ type: 'spindle-illust-maker:request', url }` または `{ type: 'spindle-illust-maker:request', params }` を送ります。`url` は共有URL、`params` はクエリ文字列（`pose=...&head=...`）です。結果はリクエストを送ったwindowにだけ返ります。
+- 埋め込み元が `sandbox` 属性付きのiframeや `file://` など、originが `null` になる環境の場合、返信の `targetOrigin` は `'*'` になります。宛先はリクエストを送ったwindowに限定されるため、第三者のwindowに画像が届くことはありません。
 
 ```js
 const iframe = document.querySelector('iframe');
