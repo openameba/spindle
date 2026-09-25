@@ -58,15 +58,15 @@ describe('UIインタラクション', () => {
     await userEvent.click(
       page.getByRole('button', { name: 'お辞儀', exact: true }),
     );
-    const label = container.querySelector('#neck-tilt-label');
-    expect(label).toBeNull();
+    const dropdown = container.querySelector('#neck-tilt');
+    expect(dropdown).toBeNull();
   });
 
   it('adult-desk で首の傾きドロップダウンが非表示', async () => {
     const { container } = await renderAndWait();
     await userEvent.click(page.getByText('机座り'));
-    const label = container.querySelector('#neck-tilt-label');
-    expect(label).toBeNull();
+    const dropdown = container.querySelector('#neck-tilt');
+    expect(dropdown).toBeNull();
   });
 
   it('adult-standing で首の傾きドロップダウンが表示される', async () => {
@@ -101,6 +101,46 @@ describe('UIインタラクション', () => {
 
     // Man と Woman でパーツ数が異なることを確認（53 vs 55）
     expect(womanCount).not.toBe(manCount);
+  });
+
+  it('Woman を選んでランダム生成してもヘッドタイプが維持される', async () => {
+    const { container } = await renderAndWait();
+    await userEvent.click(page.getByText('Woman'));
+    await userEvent.click(page.getByRole('button', { name: 'ランダム' }));
+
+    // ランダムで woman の head が選ばれるので、表示中の Woman グリッド内に選択済みサムネイルがある
+    const selected = container.querySelector(
+      'button[title][class*="thumb-selected"] img',
+    ) as HTMLImageElement | null;
+    expect(selected).not.toBeNull();
+    expect(selected!.getAttribute('src')).toContain('/head/woman/');
+  });
+
+  it('URL から woman の head と首の傾きを復元し、UI に反映する', async () => {
+    window.history.replaceState(
+      null,
+      '',
+      `${window.location.pathname}?pose=adult-standing&head=head%2Fwoman%2F01-green&neckTilt=up`,
+    );
+    const { container } = await renderAndWait();
+
+    const dropdown = container.querySelector('#neck-tilt') as HTMLSelectElement;
+    expect(dropdown.value).toBe('up');
+
+    const selected = container.querySelector(
+      'button[title][class*="thumb-selected"] img',
+    ) as HTMLImageElement | null;
+    expect(selected).not.toBeNull();
+    expect(selected!.getAttribute('src')).toContain('/head/woman/01-green');
+  });
+
+  it('首の傾きのドロップダウンにラベルが関連付けられている', async () => {
+    const { container } = await renderAndWait();
+    const dropdown = container.querySelector('#neck-tilt') as HTMLSelectElement;
+    expect(dropdown).not.toBeNull();
+    expect(
+      Array.from(dropdown.labels ?? []).map((l) => l.textContent),
+    ).toContain('首の傾き');
   });
 
   it('Copy ボタンでトーストが表示される', async () => {

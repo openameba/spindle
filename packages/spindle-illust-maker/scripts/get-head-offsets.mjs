@@ -9,6 +9,13 @@ if (!FIGMA_TOKEN) {
 const FILE_KEY = 'ijAD7Lx6nPf0yh2lug3Q4y';
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+// どのディレクトリから実行しても同じ場所を読み書きできるよう、スクリプト位置を基準にする
+const NODES_PATH = new URL('./illust-nodes.json', import.meta.url);
+const OUTPUT_PATH = new URL(
+  '../src/constants/head-offsets.json',
+  import.meta.url,
+);
+
 async function getNodes(nodeIds) {
   const ids = nodeIds.join(',');
   const url = `https://api.figma.com/v1/files/${FILE_KEY}/nodes?ids=${encodeURIComponent(ids)}`;
@@ -20,7 +27,7 @@ async function getNodes(nodeIds) {
 }
 
 async function main() {
-  const nodesJson = JSON.parse(await readFile('scripts/illust-nodes.json', 'utf-8'));
+  const nodesJson = JSON.parse(await readFile(NODES_PATH, 'utf-8'));
   const headNodes = nodesJson.filter((n) => n.category.startsWith('head/'));
 
   console.log(`Fetching bounds for ${headNodes.length} head nodes...`);
@@ -67,11 +74,11 @@ async function main() {
 
   console.log(`\nHead nodes with non-zero offset: ${Object.keys(offsets).length}`);
 
-  await writeFile(
-    'packages/spindle-illust-maker/src/constants/head-offsets.json',
-    JSON.stringify(offsets, null, 2),
-  );
-  console.log('Saved to packages/spindle-illust-maker/src/constants/head-offsets.json');
+  await writeFile(OUTPUT_PATH, JSON.stringify(offsets, null, 2));
+  console.log(`Saved to ${OUTPUT_PATH.pathname}`);
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+main().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});

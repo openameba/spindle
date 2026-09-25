@@ -104,9 +104,7 @@ describe('VRT: Canvas描画', () => {
 
   it('首の傾き: 上', async () => {
     const { container } = await renderAndWait();
-    const dropdown = container.querySelector(
-      '[aria-labelledby="neck-tilt-label"]',
-    ) as HTMLSelectElement;
+    const dropdown = container.querySelector('#neck-tilt') as HTMLSelectElement;
     if (dropdown) {
       dropdown.value = 'up';
       dropdown.dispatchEvent(new Event('change', { bubbles: true }));
@@ -117,9 +115,7 @@ describe('VRT: Canvas描画', () => {
 
   it('首の傾き: 下', async () => {
     const { container } = await renderAndWait();
-    const dropdown = container.querySelector(
-      '[aria-labelledby="neck-tilt-label"]',
-    ) as HTMLSelectElement;
+    const dropdown = container.querySelector('#neck-tilt') as HTMLSelectElement;
     if (dropdown) {
       dropdown.value = 'down';
       dropdown.dispatchEvent(new Event('change', { bubbles: true }));

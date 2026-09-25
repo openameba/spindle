@@ -13,13 +13,16 @@ import styles from './PartsPanel.module.css';
 
 type Props = {
   state: IllustState;
+  /** 選択中のヘッドタイプ。App が state.head と合わせて管理する */
+  headType: HeadType;
   onPartChange: (part: PartCategory, path: string | null) => void;
+  onHeadTypeChange: (headType: HeadType) => void;
   onNeckTiltChange: (tilt: NeckTilt) => void;
   onHeadBodySwapChange: (swap: boolean) => void;
   onBodyLegSwapChange: (swap: boolean) => void;
 };
 
-const PART_LABELS: Record<string, string> = {
+const PART_LABELS: Record<PartCategory, string> = {
   head: 'Head',
   body: 'Body',
   leg: 'Leg',
@@ -27,7 +30,6 @@ const PART_LABELS: Record<string, string> = {
   glasses: 'Glasses',
   mask: 'Mask',
   beard: 'Beard',
-  umbrella: 'Umbrella',
 };
 
 const HEAD_TYPE_LABELS: Record<HeadType, string> = {
@@ -52,14 +54,17 @@ const PART_ORDER: PartCategory[] = [
   'glasses',
   'mask',
   'beard',
-  'umbrella',
 ];
+
+const OPTIONAL_PARTS: PartCategory[] = ['hat', 'glasses', 'mask', 'beard'];
 
 const BODY_LEG_POSES: string[] = ['adult-standing', 'adult-sitting'];
 
 export function PartsPanel({
   state,
+  headType,
   onPartChange,
+  onHeadTypeChange,
   onNeckTiltChange,
   onHeadBodySwapChange,
   onBodyLegSwapChange,
@@ -72,12 +77,12 @@ export function PartsPanel({
   }, [pose]);
 
   const [activeTab, setActiveTab] = useState<PartCategory>('head');
-  const [headType, setHeadType] = useState<HeadType>('man');
 
-  const effectiveHeadType = useMemo(() => {
-    if (!pose) return headType;
-    return pose.headTypes.includes(headType) ? headType : pose.headTypes[0];
-  }, [pose, headType]);
+  // 選択中のヘッドタイプはポーズが対応するものに限る（ポーズ切替直後の不整合を防ぐ）
+  const effectiveHeadType: HeadType =
+    headType && (!pose || pose.headTypes.includes(headType))
+      ? headType
+      : (pose?.headTypes[0] ?? 'man');
 
   const currentTab = availableParts.includes(activeTab)
     ? activeTab
@@ -98,9 +103,7 @@ export function PartsPanel({
   }, [currentTab, effectiveHeadType, pose]);
 
   const selectedPath = state[currentTab];
-  const isOptional = ['hat', 'glasses', 'mask', 'beard', 'umbrella'].includes(
-    currentTab,
-  );
+  const isOptional = OPTIONAL_PARTS.includes(currentTab);
 
   return (
     <div className={styles.panel}>
@@ -115,7 +118,7 @@ export function PartsPanel({
               variant="neutral"
               onClick={() => setActiveTab(part)}
             >
-              {PART_LABELS[part] ?? part}
+              {PART_LABELS[part]}
             </Button>
           </div>
         ))}
@@ -130,16 +133,16 @@ export function PartsPanel({
               label: HEAD_TYPE_LABELS[ht],
             }))}
             selectedId={effectiveHeadType}
-            onClick={(_e, id) => setHeadType(id as HeadType)}
+            onClick={(_e, id) => onHeadTypeChange(id as HeadType)}
           />
         </div>
       )}
 
       {pose?.neckTilts && (
         <div className={styles['dropdown-row']}>
-          <Form.InputLabel id="neck-tilt-label">首の傾き</Form.InputLabel>
+          <Form.InputLabel id="neck-tilt">首の傾き</Form.InputLabel>
           <Form.DropDown
-            aria-labelledby="neck-tilt-label"
+            id="neck-tilt"
             value={state.neckTilt}
             onChange={(e) => onNeckTiltChange(e.target.value as NeckTilt)}
           >

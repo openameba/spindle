@@ -24,7 +24,6 @@ describe('getDefaultState', () => {
     expect(state.glasses).toBeNull();
     expect(state.mask).toBeNull();
     expect(state.beard).toBeNull();
-    expect(state.umbrella).toBeNull();
   });
 
   it('adult-standing で head, body, leg に緑バリアントが選ばれる', () => {
@@ -114,6 +113,18 @@ describe('getRandomParts', () => {
       (i) => i.path,
     );
     expect(legOptions).toContain(result.leg);
+  });
+
+  it('指定したヘッドタイプの候補から head を選ぶ', () => {
+    for (let i = 0; i < 10; i++) {
+      const result = getRandomParts('adult-standing', 'woman');
+      expect(result.head).toContain('/head/woman/');
+    }
+  });
+
+  it('ポーズが対応しないヘッドタイプは先頭のタイプに倒す', () => {
+    const result = getRandomParts('old', 'woman');
+    expect(result.head).toContain('/head/old/');
   });
 
   it('アクセサリーは null または有効なパスを返す', () => {

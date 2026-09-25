@@ -9,19 +9,33 @@ import { PoseSelector } from './components/PoseSelector';
 import { SizeControl } from './components/SizeControl';
 import { useIllustCanvas } from './hooks/useIllustCanvas';
 import { getDefaultState, getRandomParts } from './lib/defaults';
+import { getHeadTypeFromPath } from './lib/head-type';
 import { getStateFromUrl, syncUrlToState } from './lib/url-state';
-import type { IllustState, NeckTilt, PartCategory, PoseId } from './types';
+import type {
+  HeadType,
+  IllustState,
+  NeckTilt,
+  PartCategory,
+  PoseId,
+} from './types';
 
 export function App() {
   const [state, setState] = useState<IllustState>(
     () => getStateFromUrl() ?? getDefaultState(),
   );
+  // Man / Woman を切り替えてからサムネイルを選ぶまでの間だけ、head パーツと独立して持つ。
+  // null のときは state.head のパスから導出するので、URL 復元やランダム生成と食い違わない
+  const [selectedHeadType, setSelectedHeadType] = useState<HeadType | null>(
+    null,
+  );
+  const headType = selectedHeadType ?? getHeadTypeFromPath(state.head) ?? 'man';
 
   useEffect(() => {
     syncUrlToState(state);
   }, [state]);
 
   const handlePoseChange = useCallback((poseId: PoseId) => {
+    setSelectedHeadType(null);
     setState((prev) => ({
       ...prev,
       ...getDefaultState(poseId),
@@ -30,6 +44,7 @@ export function App() {
 
   const handlePartChange = useCallback(
     (part: PartCategory, path: string | null) => {
+      if (part === 'head') setSelectedHeadType(null);
       setState((prev) => ({ ...prev, [part]: path }));
     },
     [],
@@ -52,11 +67,13 @@ export function App() {
   }, []);
 
   const handleRandomize = useCallback(() => {
+    // 選択中のヘッドタイプ（Man / Woman）を維持したままランダムにする
+    setSelectedHeadType(null);
     setState((prev) => ({
       ...prev,
-      ...getRandomParts(prev.pose),
+      ...getRandomParts(prev.pose, headType),
     }));
-  }, []);
+  }, [headType]);
 
   const { canvasRef, exportToCanvas } = useIllustCanvas(state);
 
@@ -87,7 +104,9 @@ export function App() {
           <PoseSelector value={state.pose} onChange={handlePoseChange} />
           <PartsPanel
             state={state}
+            headType={headType}
             onPartChange={handlePartChange}
+            onHeadTypeChange={setSelectedHeadType}
             onNeckTiltChange={handleNeckTiltChange}
             onHeadBodySwapChange={handleHeadBodySwapChange}
             onBodyLegSwapChange={handleBodyLegSwapChange}

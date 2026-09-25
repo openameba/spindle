@@ -26,7 +26,10 @@
     "test:browser": "BROWSER_TEST=true vitest run --project browser",
     "test:interaction": "BROWSER_TEST=true vitest run --project browser src/interaction.browser.test.tsx",
     "test:browser:update": "BROWSER_TEST=true vitest run --project browser --update",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "illust:download": "node scripts/download-illust-svgs.mjs",
+    "illust:offsets": "node scripts/get-all-offsets.mjs",
+    "illust:offsets:head": "node scripts/get-head-offsets.mjs"
   },
   "devDependencies": {
     "@openameba/spindle-ui": "3.1.4",
