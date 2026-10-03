@@ -6,6 +6,7 @@ import { VisiblePropsSample } from './InlineNotification.stories.example';
 
 const meta: Meta<typeof InlineNotification.Frame> = {
   title: 'InlineNotification',
+  component: InlineNotification.Frame,
 };
 
 export default meta;

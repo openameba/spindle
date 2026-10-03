@@ -5,6 +5,7 @@ import { BottomButton } from './BottomButton';
 
 const meta: Meta<typeof BottomButton> = {
   title: 'BottomButton',
+  component: BottomButton,
 };
 
 export default meta;

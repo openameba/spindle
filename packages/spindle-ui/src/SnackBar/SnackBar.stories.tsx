@@ -158,6 +158,7 @@ const MultiActivateButton: React.FC<MultiActivateButtonProps> = ({
 
 const meta: Meta<typeof SnackBar.Frame> = {
   title: 'SnackBar',
+  component: SnackBar.Frame,
 };
 
 export default meta;

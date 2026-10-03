@@ -6,6 +6,7 @@ import { IconButton } from './IconButton';
 
 const meta: Meta<typeof IconButton> = {
   title: 'IconButton',
+  component: IconButton,
   args: {
     onClick: action('clicked'),
     onMouseOver: action('mouse-over'),

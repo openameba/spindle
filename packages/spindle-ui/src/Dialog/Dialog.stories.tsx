@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import type { Dialog } from './Dialog';
+import { Dialog } from './Dialog';
 import {
   ButtonColumn as ButtonColumnComponent,
   ButtonColumnWithSubtleButton as ButtonColumnWithSubtleButtonComponent,
@@ -12,6 +12,7 @@ import {
 
 const meta: Meta<typeof Dialog.Frame> = {
   title: 'Dialog',
+  component: Dialog.Frame,
 };
 
 export default meta;
