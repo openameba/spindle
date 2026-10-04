@@ -9,7 +9,7 @@ overrides:
   axios: 1.17.0
   undici: 7.27.2
   undici-types: 7.27.2
-  semver: 7.8.3
+  semver: 7.8.5
   chokidar: 5.0.0
 
 importers:
@@ -78,7 +78,7 @@ importers:
         version: 6.0.3
       vitest:
         specifier: 4.1.8
-        version: 4.1.8(@opentelemetry/api@1.9.1)(@types/node@24.12.4)(@vitest/browser-playwright@4.1.8)(@vitest/ui@4.1.8)(jsdom@29.1.1)(vite@6.3.5(@types/node@24.13.1)(jiti@2.6.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0))
+        version: 4.1.8(@opentelemetry/api@1.9.1)(@types/node@24.12.4)(@vitest/browser-playwright@4.1.8)(@vitest/ui@4.1.8)(jiti@2.6.1)(jsdom@29.1.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0)
       yaml-lint:
         specifier: 1.7.0
         version: 1.7.0
@@ -141,7 +141,7 @@ importers:
         version: 10.4.2(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@testing-library/dom@10.4.1)(@types/react@19.2.17)(prettier@3.8.3)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       vitest:
         specifier: 4.1.8
-        version: 4.1.8(@opentelemetry/api@1.9.1)(@types/node@24.12.4)(@vitest/browser-playwright@4.1.8)(@vitest/ui@4.1.8)(jsdom@29.1.1)(vite@6.3.5(@types/node@24.13.1)(jiti@2.6.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0))
+        version: 4.1.8(@opentelemetry/api@1.9.1)(@types/node@24.12.4)(@vitest/browser-playwright@4.1.8)(@vitest/ui@4.1.8)(jiti@2.6.1)(jsdom@29.1.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0)
       webpack:
         specifier: 5.107.2
         version: 5.107.2(esbuild@0.28.0)
@@ -210,7 +210,7 @@ importers:
         version: 6.3.5(@types/node@24.13.1)(jiti@2.6.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0)
       vitest:
         specifier: 4.1.8
-        version: 4.1.8(@opentelemetry/api@1.9.1)(@types/node@24.13.1)(@vitest/browser-playwright@4.1.8)(@vitest/ui@4.1.8)(jsdom@29.1.1)(vite@6.3.5(@types/node@24.13.1)(jiti@2.6.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0))
+        version: 4.1.8(@opentelemetry/api@1.9.1)(@types/node@24.13.1)(@vitest/browser-playwright@4.1.8)(@vitest/ui@4.1.8)(jiti@2.6.1)(jsdom@29.1.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0)
       vitest-browser-react:
         specifier: 2.1.0
         version: 2.1.0(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(vitest@4.1.8)
@@ -241,7 +241,7 @@ importers:
         version: 9.0.0
       vitest:
         specifier: 4.1.8
-        version: 4.1.8(@opentelemetry/api@1.9.1)(@types/node@24.13.1)(@vitest/browser-playwright@4.1.8)(@vitest/ui@4.1.8)(jsdom@29.1.1)(vite@6.3.5(@types/node@24.13.1)(jiti@2.6.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0))
+        version: 4.1.8(@opentelemetry/api@1.9.1)(@types/node@24.13.1)(@vitest/browser-playwright@4.1.8)(@vitest/ui@4.1.8)(jiti@2.6.1)(jsdom@29.1.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0)
 
   packages/spindle-site: {}
 
@@ -307,7 +307,7 @@ importers:
         version: 4.22.4
       vitest:
         specifier: 4.1.8
-        version: 4.1.8(@opentelemetry/api@1.9.1)(@types/node@24.13.1)(@vitest/browser-playwright@4.1.8)(@vitest/ui@4.1.8)(jsdom@29.1.1)(vite@6.3.5(@types/node@24.13.1)(jiti@2.6.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0))
+        version: 4.1.8(@opentelemetry/api@1.9.1)(@types/node@24.13.1)(@vitest/browser-playwright@4.1.8)(@vitest/ui@4.1.8)(jiti@2.6.1)(jsdom@29.1.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0)
 
   packages/spindle-ui:
     dependencies:
@@ -440,7 +440,7 @@ importers:
         version: 4.22.4
       vitest:
         specifier: 4.1.8
-        version: 4.1.8(@opentelemetry/api@1.9.1)(@types/node@24.12.4)(@vitest/browser-playwright@4.1.8)(@vitest/ui@4.1.8)(jsdom@29.1.1)(vite@6.3.5(@types/node@24.13.1)(jiti@2.6.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0))
+        version: 4.1.8(@opentelemetry/api@1.9.1)(@types/node@24.12.4)(@vitest/browser-playwright@4.1.8)(@vitest/ui@4.1.8)(jiti@2.6.1)(jsdom@29.1.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0)
 
 packages:
 
@@ -4054,6 +4054,7 @@ packages:
   clone-buffer@1.0.0:
     resolution: {integrity: sha512-KLLTJWrvwIP+OPfMn0x2PheDEP20RPUcGXj/ERegTgdmPEZylALQldygiqrPPu8P45uNuPs7ckmReLY6v/iA5g==}
     engines: {node: '>= 0.10'}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   clone-deep@4.0.1:
     resolution: {integrity: sha512-neHB9xuzh/wk0dIHweyAXv2aPGZIVk3pLMe+/RNzINf17fe0OG96QroktYAUm7SM1PBnzTabaLboqqxDyMU+SQ==}
@@ -8268,8 +8269,8 @@ packages:
     resolution: {integrity: sha512-GX0Ix/CJcHyB8c4ykpHGIAvLyOwOobtM/8d+TQkAd81/bEjgPHrfba41Vpesr7jX/t8Uh+R3EX9eAS5be+jQYg==}
     engines: {node: '>=8'}
 
-  semver@7.8.3:
-    resolution: {integrity: sha512-wnilbGyMxzbY7dNOl7jpKbLSjcfeweJWU5j4+u5qW+6/wuGD9KzIGOyZnQVSBM9E7DtWaaH3CyHkppYrKYoxwg==}
+  semver@7.8.5:
+    resolution: {integrity: sha512-Y7/KDsb8LjooZpwaqGyulO6DQlksgCncchHGk+sZIY4SBvUocMBEFH5Ur1fI4dV+Jvl0w6cjvucaIi40puRioA==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -8955,8 +8956,8 @@ packages:
   third-party-web@0.26.7:
     resolution: {integrity: sha512-buUzX4sXC4efFX6xg2bw6/eZsCUh8qQwSavC4D9HpONMFlRbcHhD8Je5qwYdCpViR6q0qla2wPP+t91a2vgolg==}
 
-  third-party-web@0.29.2:
-    resolution: {integrity: sha512-fegtha91tq2DHphyoiBXVHjVi2YG9zFaRnboT9C28tO1en9Y3wJsfspuy40F+u5wl3hHVbw7cnd1b67kEGHb8g==}
+  third-party-web@0.30.0:
+    resolution: {integrity: sha512-p+PfyL5U0ediGzvwPzMSdD9MnC8rHW6nWJJVLIQvqN7RsSqfaZ+7n4c9GILqH36EYR0eXB9CzAeCRnKFr/9uJg==}
 
   through@2.3.8:
     resolution: {integrity: sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==}
@@ -9518,7 +9519,6 @@ packages:
       '@vitest/ui': 4.1.8
       happy-dom: '*'
       jsdom: '*'
-      vite: ^6.0.0 || ^7.0.0 || ^8.0.0
     peerDependenciesMeta:
       '@edge-runtime/vm':
         optional: true
@@ -9994,7 +9994,7 @@ snapshots:
       debug: 4.4.3
       gensync: 1.0.0-beta.2
       json5: 2.2.3
-      semver: 7.8.3
+      semver: 7.8.5
     transitivePeerDependencies:
       - supports-color
 
@@ -10016,7 +10016,7 @@ snapshots:
       '@babel/helper-validator-option': 7.27.1
       browserslist: 4.28.2
       lru-cache: 5.1.1
-      semver: 7.8.3
+      semver: 7.8.5
 
   '@babel/helper-create-class-features-plugin@7.29.3(@babel/core@7.29.0)':
     dependencies:
@@ -10027,7 +10027,7 @@ snapshots:
       '@babel/helper-replace-supers': 7.28.6(@babel/core@7.29.0)
       '@babel/helper-skip-transparent-expression-wrappers': 7.27.1
       '@babel/traverse': 7.29.0
-      semver: 7.8.3
+      semver: 7.8.5
     transitivePeerDependencies:
       - supports-color
 
@@ -10319,7 +10319,7 @@ snapshots:
       outdent: 0.5.0
       prettier: 2.8.8
       resolve-from: 5.0.0
-      semver: 7.8.3
+      semver: 7.8.5
 
   '@changesets/assemble-release-plan@6.0.10':
     dependencies:
@@ -10328,7 +10328,7 @@ snapshots:
       '@changesets/should-skip-package': 0.1.2
       '@changesets/types': 6.1.0
       '@manypkg/get-packages': 1.1.3
-      semver: 7.8.3
+      semver: 7.8.5
 
   '@changesets/changelog-git@0.2.1':
     dependencies:
@@ -10367,7 +10367,7 @@ snapshots:
       package-manager-detector: 0.2.11
       picocolors: 1.1.1
       resolve-from: 5.0.0
-      semver: 7.8.3
+      semver: 7.8.5
       spawndamnit: 3.0.1
       term-size: 2.2.1
     transitivePeerDependencies:
@@ -10393,7 +10393,7 @@ snapshots:
       '@changesets/types': 6.1.0
       '@manypkg/get-packages': 1.1.3
       picocolors: 1.1.1
-      semver: 7.8.3
+      semver: 7.8.5
 
   '@changesets/get-github-info@0.8.0':
     dependencies:
@@ -10515,7 +10515,7 @@ snapshots:
   '@commitlint/is-ignored@21.0.2':
     dependencies:
       '@commitlint/types': 21.0.1
-      semver: 7.8.3
+      semver: 7.8.5
 
   '@commitlint/lint@21.0.2':
     dependencies:
@@ -10587,7 +10587,7 @@ snapshots:
     dependencies:
       '@simple-libs/child-process-utils': 1.0.2
       '@simple-libs/stream-utils': 1.2.0
-      semver: 7.8.3
+      semver: 7.8.5
     optionalDependencies:
       conventional-commits-parser: 6.4.0
 
@@ -11754,7 +11754,7 @@ snapshots:
   '@paulirish/trace_engine@0.0.53':
     dependencies:
       legacy-javascript: 0.0.1
-      third-party-web: 0.29.2
+      third-party-web: 0.30.0
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
@@ -11842,7 +11842,7 @@ snapshots:
       extract-zip: 2.0.1
       progress: 2.0.3
       proxy-agent: 6.5.0
-      semver: 7.8.3
+      semver: 7.8.5
       tar-fs: 3.1.2
       yargs: 17.7.2
     transitivePeerDependencies:
@@ -12270,7 +12270,7 @@ snapshots:
       react-docgen: 7.1.1
       react-dom: 19.2.7(react@19.2.7)
       resolve: 1.22.12
-      semver: 7.8.3
+      semver: 7.8.5
       storybook: 10.4.2(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@testing-library/dom@10.4.1)(@types/react@19.2.17)(prettier@3.8.3)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       tsconfig-paths: 4.2.0
       webpack: 5.107.2(cssnano@8.0.1(postcss@8.5.15))(esbuild@0.28.0)(postcss@8.5.15)
@@ -12302,7 +12302,7 @@ snapshots:
       react-docgen: 7.1.1
       react-dom: 19.2.7(react@19.2.7)
       resolve: 1.22.12
-      semver: 7.8.3
+      semver: 7.8.5
       storybook: 10.4.2(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@testing-library/dom@10.4.1)(@types/react@19.2.17)(prettier@3.8.3)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       tsconfig-paths: 4.2.0
       webpack: 5.107.2(esbuild@0.28.0)
@@ -13010,7 +13010,7 @@ snapshots:
       '@vitest/mocker': 4.1.8(vite@6.3.5(@types/node@24.13.1)(jiti@2.6.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0))
       playwright: 1.58.2
       tinyrainbow: 3.1.0
-      vitest: 4.1.8(@opentelemetry/api@1.9.1)(@types/node@24.13.1)(@vitest/browser-playwright@4.1.8)(@vitest/ui@4.1.8)(jsdom@29.1.1)(vite@6.3.5(@types/node@24.13.1)(jiti@2.6.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0))
+      vitest: 4.1.8(@opentelemetry/api@1.9.1)(@types/node@24.12.4)(@vitest/browser-playwright@4.1.8)(@vitest/ui@4.1.8)(jiti@2.6.1)(jsdom@29.1.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0)
     transitivePeerDependencies:
       - bufferutil
       - msw
@@ -13026,7 +13026,7 @@ snapshots:
       pngjs: 7.0.0
       sirv: 3.0.2
       tinyrainbow: 3.1.0
-      vitest: 4.1.8(@opentelemetry/api@1.9.1)(@types/node@24.13.1)(@vitest/browser-playwright@4.1.8)(@vitest/ui@4.1.8)(jsdom@29.1.1)(vite@6.3.5(@types/node@24.13.1)(jiti@2.6.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0))
+      vitest: 4.1.8(@opentelemetry/api@1.9.1)(@types/node@24.12.4)(@vitest/browser-playwright@4.1.8)(@vitest/ui@4.1.8)(jiti@2.6.1)(jsdom@29.1.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0)
       ws: 8.21.0
     transitivePeerDependencies:
       - bufferutil
@@ -13094,7 +13094,7 @@ snapshots:
       sirv: 3.0.2
       tinyglobby: 0.2.16
       tinyrainbow: 3.1.0
-      vitest: 4.1.8(@opentelemetry/api@1.9.1)(@types/node@24.13.1)(@vitest/browser-playwright@4.1.8)(@vitest/ui@4.1.8)(jsdom@29.1.1)(vite@6.3.5(@types/node@24.13.1)(jiti@2.6.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0))
+      vitest: 4.1.8(@opentelemetry/api@1.9.1)(@types/node@24.12.4)(@vitest/browser-playwright@4.1.8)(@vitest/ui@4.1.8)(jiti@2.6.1)(jsdom@29.1.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0)
 
   '@vitest/utils@3.2.4':
     dependencies:
@@ -14207,7 +14207,7 @@ snapshots:
       postcss-modules-scope: 3.2.1(postcss@8.5.15)
       postcss-modules-values: 4.0.0(postcss@8.5.15)
       postcss-value-parser: 4.2.0
-      semver: 7.8.3
+      semver: 7.8.5
     optionalDependencies:
       webpack: 5.107.2(cssnano@8.0.1(postcss@8.5.15))(esbuild@0.28.0)(postcss@8.5.15)
 
@@ -14220,7 +14220,7 @@ snapshots:
       postcss-modules-scope: 3.2.1(postcss@8.5.15)
       postcss-modules-values: 4.0.0(postcss@8.5.15)
       postcss-value-parser: 4.2.0
-      semver: 7.8.3
+      semver: 7.8.5
     optionalDependencies:
       webpack: 5.107.2(esbuild@0.28.0)
 
@@ -14929,7 +14929,7 @@ snapshots:
       promise-breaker: 6.0.0
       qs: 6.15.2
       raw-body: 2.5.3
-      semver: 7.8.3
+      semver: 7.8.5
     transitivePeerDependencies:
       - supports-color
 
@@ -15268,7 +15268,7 @@ snapshots:
       progress: 2.0.3
       proxy-agent: 6.5.0
       retry: 0.13.1
-      semver: 7.8.3
+      semver: 7.8.5
       sql-formatter: 15.8.0
       stream-chain: 2.2.5
       stream-json: 1.9.1
@@ -15339,7 +15339,7 @@ snapshots:
       minimatch: 3.1.5
       node-abort-controller: 3.1.1
       schema-utils: 3.3.0
-      semver: 7.8.3
+      semver: 7.8.5
       tapable: 2.3.3
       typescript: 6.0.3
       webpack: 5.107.2(cssnano@8.0.1(postcss@8.5.15))(esbuild@0.28.0)(postcss@8.5.15)
@@ -15356,7 +15356,7 @@ snapshots:
       minimatch: 3.1.5
       node-abort-controller: 3.1.1
       schema-utils: 3.3.0
-      semver: 7.8.3
+      semver: 7.8.5
       tapable: 2.3.3
       typescript: 6.0.3
       webpack: 5.107.2(esbuild@0.28.0)
@@ -16507,7 +16507,7 @@ snapshots:
       lodash.isstring: 4.0.1
       lodash.once: 4.1.1
       ms: 2.1.3
-      semver: 7.8.3
+      semver: 7.8.5
 
   jwa@2.0.1:
     dependencies:
@@ -16630,7 +16630,7 @@ snapshots:
       parse-cache-control: 1.0.1
       puppeteer-core: 24.43.1
       robots-parser: 3.0.1
-      semver: 7.8.3
+      semver: 7.8.5
       speedline-core: 1.4.3
       third-party-web: 0.26.7
       tldts-icann: 6.1.86
@@ -16804,15 +16804,15 @@ snapshots:
   make-dir@2.1.0:
     dependencies:
       pify: 4.0.1
-      semver: 7.8.3
+      semver: 7.8.5
 
   make-dir@3.1.0:
     dependencies:
-      semver: 7.8.3
+      semver: 7.8.5
 
   make-dir@4.0.0:
     dependencies:
-      semver: 7.8.3
+      semver: 7.8.5
 
   make-error@1.3.6: {}
 
@@ -17419,7 +17419,7 @@ snapshots:
       graceful-fs: 4.2.11
       nopt: 9.0.0
       proc-log: 6.1.0
-      semver: 7.8.3
+      semver: 7.8.5
       tar: 7.5.15
       tinyglobby: 0.2.16
       undici: 7.27.2
@@ -17441,20 +17441,20 @@ snapshots:
     dependencies:
       hosted-git-info: 2.8.9
       resolve: 1.22.12
-      semver: 7.8.3
+      semver: 7.8.5
       validate-npm-package-license: 3.0.4
 
   normalize-package-data@3.0.3:
     dependencies:
       hosted-git-info: 4.1.0
       is-core-module: 2.16.2
-      semver: 7.8.3
+      semver: 7.8.5
       validate-npm-package-license: 3.0.4
 
   normalize-package-data@6.0.2:
     dependencies:
       hosted-git-info: 7.0.2
-      semver: 7.8.3
+      semver: 7.8.5
       validate-npm-package-license: 3.0.4
 
   normalize-path@3.0.0: {}
@@ -17725,7 +17725,7 @@ snapshots:
       ky: 1.14.3
       registry-auth-token: 5.1.1
       registry-url: 6.0.1
-      semver: 7.8.3
+      semver: 7.8.5
 
   package-manager-detector@0.2.11:
     dependencies:
@@ -18957,9 +18957,9 @@ snapshots:
 
   semver-diff@3.1.1:
     dependencies:
-      semver: 7.8.3
+      semver: 7.8.5
 
-  semver@7.8.3: {}
+  semver@7.8.5: {}
 
   send@0.19.2:
     dependencies:
@@ -19242,7 +19242,7 @@ snapshots:
       oxc-parser: 0.127.0
       oxc-resolver: 11.19.1(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)
       recast: 0.23.11
-      semver: 7.8.3
+      semver: 7.8.5
       use-sync-external-store: 1.6.0(react@19.2.7)
       ws: 8.21.0
     optionalDependencies:
@@ -19933,7 +19933,7 @@ snapshots:
 
   third-party-web@0.26.7: {}
 
-  third-party-web@0.29.2: {}
+  third-party-web@0.30.0: {}
 
   through@2.3.8: {}
 
@@ -20318,7 +20318,7 @@ snapshots:
       pupa: 2.1.1
       registry-auth-token: 5.1.1
       registry-url: 5.1.0
-      semver: 7.8.3
+      semver: 7.8.5
       semver-diff: 3.1.1
       xdg-basedir: 4.0.0
     transitivePeerDependencies:
@@ -20334,7 +20334,7 @@ snapshots:
       is-npm: 6.1.0
       latest-version: 9.0.0
       pupa: 3.3.0
-      semver: 7.8.3
+      semver: 7.8.5
       xdg-basedir: 5.1.0
 
   uri-js@4.4.1:
@@ -20475,6 +20475,22 @@ snapshots:
       remove-trailing-separator: 1.1.0
       replace-ext: 1.0.1
 
+  vite@6.3.5(@types/node@24.12.4)(jiti@2.6.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0):
+    dependencies:
+      esbuild: 0.25.12
+      fdir: 6.5.0(picomatch@4.0.4)
+      picomatch: 4.0.4
+      postcss: 8.5.15
+      rollup: 4.63.1
+      tinyglobby: 0.2.16
+    optionalDependencies:
+      '@types/node': 24.12.4
+      fsevents: 2.3.3
+      jiti: 2.6.1
+      terser: 5.47.1
+      tsx: 4.22.4
+      yaml: 2.9.0
+
   vite@6.3.5(@types/node@24.13.1)(jiti@2.6.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0):
     dependencies:
       esbuild: 0.25.12
@@ -20495,12 +20511,12 @@ snapshots:
     dependencies:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
-      vitest: 4.1.8(@opentelemetry/api@1.9.1)(@types/node@24.13.1)(@vitest/browser-playwright@4.1.8)(@vitest/ui@4.1.8)(jsdom@29.1.1)(vite@6.3.5(@types/node@24.13.1)(jiti@2.6.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0))
+      vitest: 4.1.8(@opentelemetry/api@1.9.1)(@types/node@24.13.1)(@vitest/browser-playwright@4.1.8)(@vitest/ui@4.1.8)(jiti@2.6.1)(jsdom@29.1.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0)
     optionalDependencies:
       '@types/react': 19.0.0
       '@types/react-dom': 19.0.0
 
-  vitest@4.1.8(@opentelemetry/api@1.9.1)(@types/node@24.12.4)(@vitest/browser-playwright@4.1.8)(@vitest/ui@4.1.8)(jsdom@29.1.1)(vite@6.3.5(@types/node@24.13.1)(jiti@2.6.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0)):
+  vitest@4.1.8(@opentelemetry/api@1.9.1)(@types/node@24.12.4)(@vitest/browser-playwright@4.1.8)(@vitest/ui@4.1.8)(jiti@2.6.1)(jsdom@29.1.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0):
     dependencies:
       '@vitest/expect': 4.1.8
       '@vitest/mocker': 4.1.8(vite@6.3.5(@types/node@24.13.1)(jiti@2.6.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0))
@@ -20520,7 +20536,7 @@ snapshots:
       tinyexec: 1.2.4
       tinyglobby: 0.2.16
       tinyrainbow: 3.1.0
-      vite: 6.3.5(@types/node@24.13.1)(jiti@2.6.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0)
+      vite: 6.3.5(@types/node@24.12.4)(jiti@2.6.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0)
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@opentelemetry/api': 1.9.1
@@ -20529,9 +20545,19 @@ snapshots:
       '@vitest/ui': 4.1.8(vitest@4.1.8)
       jsdom: 29.1.1
     transitivePeerDependencies:
+      - jiti
+      - less
+      - lightningcss
       - msw
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - terser
+      - tsx
+      - yaml
 
-  vitest@4.1.8(@opentelemetry/api@1.9.1)(@types/node@24.13.1)(@vitest/browser-playwright@4.1.8)(@vitest/ui@4.1.8)(jsdom@29.1.1)(vite@6.3.5(@types/node@24.13.1)(jiti@2.6.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0)):
+  vitest@4.1.8(@opentelemetry/api@1.9.1)(@types/node@24.13.1)(@vitest/browser-playwright@4.1.8)(@vitest/ui@4.1.8)(jiti@2.6.1)(jsdom@29.1.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0):
     dependencies:
       '@vitest/expect': 4.1.8
       '@vitest/mocker': 4.1.8(vite@6.3.5(@types/node@24.13.1)(jiti@2.6.1)(terser@5.47.1)(tsx@4.22.4)(yaml@2.9.0))
@@ -20560,7 +20586,17 @@ snapshots:
       '@vitest/ui': 4.1.8(vitest@4.1.8)
       jsdom: 29.1.1
     transitivePeerDependencies:
+      - jiti
+      - less
+      - lightningcss
       - msw
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - terser
+      - tsx
+      - yaml
 
   w3c-xmlserializer@5.0.0:
     dependencies:
