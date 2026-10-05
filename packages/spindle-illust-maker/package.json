@@ -32,7 +32,7 @@
     "illust:offsets:head": "node scripts/get-head-offsets.mjs"
   },
   "devDependencies": {
-    "@openameba/spindle-ui": "3.1.4",
+    "@openameba/spindle-ui": "3.3.0",
     "@types/react": "19.0.0",
     "@types/react-dom": "19.0.0",
     "@vitejs/plugin-react": "4.5.2",

@@ -176,8 +176,8 @@ importers:
   packages/spindle-illust-maker:
     devDependencies:
       '@openameba/spindle-ui':
-        specifier: 3.1.4
-        version: 3.1.4(@types/react@19.0.0)(react@19.0.0)
+        specifier: 3.3.0
+        version: 3.3.0(@types/react@19.0.0)(react@19.0.0)
       '@types/react':
         specifier: 19.0.0
         version: 19.0.0
@@ -1990,8 +1990,8 @@ packages:
       '@types/react':
         optional: true
 
-  '@openameba/spindle-ui@3.1.4':
-    resolution: {integrity: sha512-4mUnrXPhPv/kphiGwAYOY5RhP5TREgg39014ksyn3ywC+ilc5HKn6dH5Qk8SED6WFyvDJs1YwYyRyOcGiWr9Ew==}
+  '@openameba/spindle-ui@3.3.0':
+    resolution: {integrity: sha512-vtr6dCTssdldkxRRQvW16pdVNF2QSxQaLkKb69BxvwBaje2gn1wLIZlST9P+dHzVrOig0now11QMbJodCluxGg==}
     peerDependencies:
       '@types/react': ^16.8.6 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -11631,7 +11631,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.0.0
 
-  '@openameba/spindle-ui@3.1.4(@types/react@19.0.0)(react@19.0.0)':
+  '@openameba/spindle-ui@3.3.0(@types/react@19.0.0)(react@19.0.0)':
     dependencies:
       '@openameba/spindle-hooks': 1.11.1(@types/react@19.0.0)(react@19.0.0)
       ameba-color-palette.css: 4.17.0
