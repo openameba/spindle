@@ -254,8 +254,8 @@ importers:
         specifier: 4.0.2
         version: 4.0.2
       firebase-tools:
-        specifier: 15.31.0
-        version: 15.31.0(@cfworker/json-schema@4.1.1)(@types/node@24.19.0)
+        specifier: 15.32.0
+        version: 15.32.0(@cfworker/json-schema@4.1.1)(@types/node@24.19.0)
       puppeteer:
         specifier: 25.1.0
         version: 25.1.0
@@ -267,8 +267,8 @@ importers:
         version: 0.18.0
     devDependencies:
       firebase-tools:
-        specifier: 15.31.0
-        version: 15.31.0(@cfworker/json-schema@4.1.1)(@types/node@24.19.0)
+        specifier: 15.32.0
+        version: 15.32.0(@cfworker/json-schema@4.1.1)(@types/node@24.19.0)
 
   packages/spindle-tokens:
     devDependencies:
@@ -385,8 +385,8 @@ importers:
         specifier: 1.12.0
         version: 1.12.0
       firebase-tools:
-        specifier: 15.31.0
-        version: 15.31.0(@cfworker/json-schema@4.1.1)(@types/node@24.19.0)
+        specifier: 15.32.0
+        version: 15.32.0(@cfworker/json-schema@4.1.1)(@types/node@24.19.0)
       jsdom:
         specifier: 29.1.1
         version: 29.1.1
@@ -5176,8 +5176,8 @@ packages:
     resolution: {integrity: sha512-78/PXT1wlLLDgTzDs7sjq9hzz0vXD+zn+7wypEe4fXQxCmdmqfGsEPQxmiCSQI3ajFV91bVSsvNtrJRiW6nGng==}
     engines: {node: '>=10'}
 
-  firebase-tools@15.31.0:
-    resolution: {integrity: sha512-n0bsjrKsKxMweyGtuOtrZPe34JNrVZaD7iZTa3YhOSXwFSsCPZ6tV/Inn4CGM62at7773iT5visGbVbPKtG9jQ==}
+  firebase-tools@15.32.0:
+    resolution: {integrity: sha512-yp0SOQFALo3q2K2/pBmWTrAM4C0503zK3UJ5IDQzr4o7i+5RKh3ZPX4RTkumCFt3STtI7EuR61M8tDJjNZmTYg==}
     engines: {node: '>=20.0.0 || >=22.0.0 || >=24.0.0'}
     hasBin: true
 
@@ -9992,7 +9992,7 @@ snapshots:
       '@jsdevtools/ono': 7.1.3
       '@types/json-schema': 7.0.15
       call-me-maybe: 1.0.2
-      js-yaml: 4.1.1
+      js-yaml: 4.3.2
 
   '@apphosting/common@0.0.8': {}
 
@@ -10486,7 +10486,7 @@ snapshots:
   '@changesets/parse@0.4.3':
     dependencies:
       '@changesets/types': 6.1.0
-      js-yaml: 4.1.1
+      js-yaml: 4.3.2
 
   '@changesets/pre@2.0.2':
     dependencies:
@@ -14258,7 +14258,7 @@ snapshots:
   cosmiconfig@8.3.6(typescript@6.0.3):
     dependencies:
       import-fresh: 3.3.1
-      js-yaml: 4.1.1
+      js-yaml: 4.3.2
       parse-json: 5.2.0
       path-type: 4.0.0
     optionalDependencies:
@@ -15337,7 +15337,7 @@ snapshots:
       locate-path: 6.0.0
       path-exists: 4.0.0
 
-  firebase-tools@15.31.0(@cfworker/json-schema@4.1.1)(@types/node@24.19.0):
+  firebase-tools@15.32.0(@cfworker/json-schema@4.1.1)(@types/node@24.19.0):
     dependencies:
       '@apphosting/common': 0.0.8
       '@electric-sql/pglite': 0.3.16
@@ -15365,7 +15365,7 @@ snapshots:
       exegesis: 4.3.0
       exegesis-express: 4.0.0
       express: 4.22.2
-      form-data: 4.0.5
+      form-data: 4.0.6
       fs-extra: 10.1.0
       fuzzy: 0.1.3
       gaxios: 6.7.1
@@ -16536,7 +16536,7 @@ snapshots:
       cssstyle: 4.6.0
       data-urls: 5.0.0
       decimal.js: 10.6.0
-      form-data: 4.0.5
+      form-data: 4.0.6
       html-encoding-sniffer: 4.0.0
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.6
@@ -16552,7 +16552,7 @@ snapshots:
       whatwg-encoding: 3.1.1
       whatwg-mimetype: 4.0.0
       whatwg-url: 14.2.0
-      ws: 8.21.0
+      ws: 8.22.0
       xml-name-validator: 5.0.0
     transitivePeerDependencies:
       - bufferutil
@@ -18450,7 +18450,7 @@ snapshots:
       devtools-protocol: 0.0.1608973
       typed-query-selector: 2.12.2
       webdriver-bidi-protocol: 0.4.1
-      ws: 8.21.0
+      ws: 8.22.0
     transitivePeerDependencies:
       - bare-abort-controller
       - bare-buffer
@@ -18466,7 +18466,7 @@ snapshots:
       devtools-protocol: 0.0.1624250
       typed-query-selector: 2.12.2
       webdriver-bidi-protocol: 0.4.2
-      ws: 8.21.0
+      ws: 8.22.0
     transitivePeerDependencies:
       - bufferutil
       - proxy-agent
@@ -18644,7 +18644,7 @@ snapshots:
 
   read-yaml-file@2.1.0:
     dependencies:
-      js-yaml: 4.1.1
+      js-yaml: 4.3.2
       strip-bom: 4.0.0
 
   read-yaml-file@3.0.0:
@@ -21068,7 +21068,7 @@ snapshots:
 
   write-yaml-file@5.0.0:
     dependencies:
-      js-yaml: 4.1.1
+      js-yaml: 4.3.2
       write-file-atomic: 5.0.1
 
   ws@7.5.10: {}
@@ -21096,7 +21096,7 @@ snapshots:
       '@oozcitak/dom': 2.0.2
       '@oozcitak/infra': 2.0.2
       '@oozcitak/util': 10.0.0
-      js-yaml: 4.1.1
+      js-yaml: 4.3.2
 
   xmlchars@2.2.0: {}
 
