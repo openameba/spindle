@@ -31,6 +31,6 @@
     "@lhci/cli": "0.15.1",
     "csso-cli": "4.0.2",
     "firebase-tools": "15.32.0",
-    "puppeteer": "25.1.0"
+    "puppeteer": "25.12.0"
   }
 }
