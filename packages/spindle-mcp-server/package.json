@@ -46,7 +46,7 @@
     "@openameba/spindle-tokens": "workspace:*",
     "@openameba/spindle-ui": "workspace:*",
     "@types/node": "24.19.0",
-    "cpx2": "9.0.0",
+    "cpx2": "9.0.3",
     "vitest": "4.1.11"
   }
 }
