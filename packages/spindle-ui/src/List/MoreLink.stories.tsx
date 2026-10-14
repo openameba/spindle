@@ -5,6 +5,7 @@ import { MoreLink } from './MoreLink';
 
 const meta: Meta<typeof MoreLink> = {
   title: 'List/MoreLink',
+  component: MoreLink,
   args: {
     onClick: action('clicked'),
     onMouseOver: action('action'),
