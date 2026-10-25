@@ -15,11 +15,11 @@ export const RowDirectionWithLargeButtons: Story = {
   render: () => (
     <>
       <ButtonGroup direction="row" size="large">
-        <Button size="large" variant="contained">
-          新規登録
-        </Button>
         <Button size="large" variant="outlined">
           ログイン
+        </Button>
+        <Button size="large" variant="contained">
+          新規登録
         </Button>
       </ButtonGroup>
     </>
@@ -41,11 +41,11 @@ export const RowDirectionWithMediumButtons: Story = {
   render: () => (
     <>
       <ButtonGroup direction="row" size="medium">
-        <Button size="medium" variant="contained">
-          新規登録
-        </Button>
         <Button size="medium" variant="outlined">
           ログイン
+        </Button>
+        <Button size="medium" variant="contained">
+          新規登録
         </Button>
       </ButtonGroup>
     </>
@@ -71,11 +71,11 @@ export const RowDirectionWithSmallButtons: Story = {
   render: () => (
     <>
       <ButtonGroup direction="row" size="small">
-        <Button size="small" variant="contained">
-          新規登録
-        </Button>
         <Button size="small" variant="outlined">
           ログイン
+        </Button>
+        <Button size="small" variant="contained">
+          新規登録
         </Button>
       </ButtonGroup>
     </>
