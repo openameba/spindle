@@ -98,3 +98,60 @@ import '@openameba/spindle-ui/Form/TextField.css';
 - `:user-invalid` (Baseline 2023) - [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/:user-invalid)
   - フォームバリデーション時にエラー表示に使用しています
 
+## Medium With Value
+
+入力値がある状態です。
+
+<Story of={TextFieldStories.MediumWithValue} />
+
+<Source
+  code={`
+<TextField id="TextFieldWithValue" variant="medium" defaultValue="ameba-blog" />
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<input class="spui-TextField spui-TextField--medium" id="TextFieldWithValue" value="ameba-blog" />
+  `}
+/>
+
+## Medium Disabled
+
+無効化状態です。
+
+<Story of={TextFieldStories.MediumDisabled} />
+
+<Source
+  code={`
+<TextField id="TextFieldDisabled" placeholder="ameba-blog" variant="medium" disabled />
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<input placeholder="ameba-blog" class="spui-TextField spui-TextField--medium" id="TextFieldDisabled" disabled />
+  `}
+/>
+
+## Medium With Long Text
+
+長いテキストを含む状態です。
+
+<Story of={TextFieldStories.MediumWithLongText} />
+
+<Source
+  code={`
+<TextField id="TextFieldWithLongText" variant="medium" defaultValue="これは非常に長いテキストの例です。TextFieldが長いテキストをどのように表示するかを確認するためのストーリーです。テキストが入力欄の幅を超えた場合、水平スクロールが発生し、テキストが見切れることなく表示されることを確認できます。" />
+  `}
+/>
+
+<Source
+  language='html'
+  code={`
+<input class="spui-TextField spui-TextField--medium" id="TextFieldWithLongText" value="これは非常に長いテキストの例です。TextFieldが長いテキストをどのように表示するかを確認するためのストーリーです。テキストが入力欄の幅を超えた場合、水平スクロールが発生し、テキストが見切れることなく表示されることを確認できます。" />
+  `}
+/>
+
