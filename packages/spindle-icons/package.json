@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@types/cli-progress": "3.11.6",
+    "@types/node": "24.19.2",
     "axios": "1.20.0",
     "cli-progress": "3.12.0",
     "figma-api": "1.12.0",
