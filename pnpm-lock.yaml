@@ -151,6 +151,9 @@ importers:
       '@types/cli-progress':
         specifier: 3.11.6
         version: 3.11.6
+      '@types/node':
+        specifier: 24.19.2
+        version: 24.19.2
       axios:
         specifier: 1.20.0
         version: 1.20.0
@@ -171,7 +174,7 @@ importers:
         version: 4.0.1
       ts-node:
         specifier: 10.9.2
-        version: 10.9.2(@swc/core@1.15.33)(@types/node@24.12.4)(typescript@6.0.3)
+        version: 10.9.2(@swc/core@1.15.33)(@types/node@24.19.2)(typescript@6.0.3)
 
   packages/spindle-illust-maker:
     devDependencies:
@@ -20324,14 +20327,14 @@ snapshots:
       '@ts-morph/common': 0.28.1
       code-block-writer: 13.0.3
 
-  ts-node@10.9.2(@swc/core@1.15.33)(@types/node@24.12.4)(typescript@6.0.3):
+  ts-node@10.9.2(@swc/core@1.15.33)(@types/node@24.19.2)(typescript@6.0.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.12
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 24.12.4
+      '@types/node': 24.19.2
       acorn: 8.16.0
       acorn-walk: 8.3.5
       arg: 4.1.3
