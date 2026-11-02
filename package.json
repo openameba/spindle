@@ -22,7 +22,7 @@
     "build:package": "pnpm -r --parallel build",
     "build:extensionReplace": "jscodeshift -t ./bin/outputExtensionReplace.js packages/*/dist/** --extensions=mjs",
     "prepare": "is-ci || husky install",
-    "version-packages": "changeset version && pnpm install --lockfile-only --no-frozen-lockfile",
+    "version-packages": "bash bin/version-packages.sh",
     "release": "changeset publish"
   },
   "devDependencies": {
