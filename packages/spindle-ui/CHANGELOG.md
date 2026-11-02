@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.4.0
+
+### Minor Changes
+
+- [#2224](https://github.com/openameba/spindle/pull/2224) [`213c8e4`](https://github.com/openameba/spindle/commit/213c8e45c0f28ed49c7668a8b101b4580e6002fb) Thanks [@github-actions](https://github.com/apps/github-actions)! - Add new icons (heading2, heading3, heading4, quotation)
+
 ## 3.3.0
 
 ### Minor Changes
