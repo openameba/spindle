@@ -2280,6 +2280,30 @@
       "component": "Arrowwaveup",
       "id": "Arrowwaveup",
       "componentName": "Arrowwaveup"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=15178-635",
+      "component": "Heading2",
+      "id": "Heading2",
+      "componentName": "Heading2"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=15178-637",
+      "component": "Heading4",
+      "id": "Heading4",
+      "componentName": "Heading4"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=15178-636",
+      "component": "Heading3",
+      "id": "Heading3",
+      "componentName": "Heading3"
+    },
+    {
+      "url": "https://www.figma.com/design/G445fTskctZn7y3gkmSp8xaT/icon?node-id=15178-638",
+      "component": "Quotation",
+      "id": "Quotation",
+      "componentName": "Quotation"
     }
   ]
 }

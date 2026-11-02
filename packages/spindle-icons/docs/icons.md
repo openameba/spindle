@@ -187,6 +187,9 @@
 | hashtag | ![](../dist/svg/hashtag.svg) |
 | hashtag_bold | ![](../dist/svg/hashtag_bold.svg) |
 | hatenabookmark | ![](../dist/svg/hatenabookmark.svg) |
+| heading2 | ![](../dist/svg/heading2.svg) |
+| heading3 | ![](../dist/svg/heading3.svg) |
+| heading4 | ![](../dist/svg/heading4.svg) |
 | heart | ![](../dist/svg/heart.svg) |
 | heart_fill | ![](../dist/svg/heart_fill.svg) |
 | history | ![](../dist/svg/history.svg) |
@@ -290,6 +293,7 @@
 | question | ![](../dist/svg/question.svg) |
 | questionmark_circle | ![](../dist/svg/questionmark_circle.svg) |
 | questionmark_circle_fill | ![](../dist/svg/questionmark_circle_fill.svg) |
+| quotation | ![](../dist/svg/quotation.svg) |
 | ranking_crown | ![](../dist/svg/ranking_crown.svg) |
 | ranking_crown_fill | ![](../dist/svg/ranking_crown_fill.svg) |
 | ranking_platform_fill | ![](../dist/svg/ranking_platform_fill.svg) |
