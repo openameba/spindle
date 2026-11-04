@@ -15,6 +15,7 @@
 @import './TextButton/TextButton.css';
 @import './TextLink/TextLink.css';
 @import './Toast/Toast.css';
+@import './Tooltip/Tooltip.css';
 @import './SnackBar/SnackBar.css';
 @import './List/index.css';
 @import './DropdownMenu/DropdownMenu.css';
