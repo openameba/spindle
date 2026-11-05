@@ -6,6 +6,7 @@ import { ButtonGroup } from './ButtonGroup';
 
 const meta: Meta<typeof ButtonGroup> = {
   title: 'ButtonGroup',
+  component: ButtonGroup,
 };
 
 export default meta;

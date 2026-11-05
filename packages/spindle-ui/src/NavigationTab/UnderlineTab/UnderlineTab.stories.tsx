@@ -5,6 +5,7 @@ import { UnderlineTab } from './UnderlineTab';
 
 const meta: Meta<typeof UnderlineTab> = {
   title: 'NavigationTab/UnderlineTab',
+  component: UnderlineTab,
   args: {
     onClick: action('clicked'),
   },
