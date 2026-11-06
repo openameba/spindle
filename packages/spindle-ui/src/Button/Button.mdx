@@ -1,9 +1,11 @@
-import { Meta, Story, Source } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Source, ArgTypes, Description } from '@storybook/addon-docs/blocks';
 import * as ButtonStories from './Button.stories';
 
 <Meta of={ButtonStories} />
 
 # Button
+
+<Description of={ButtonStories} />
 
 <Source
   language='javascript'
@@ -23,7 +25,13 @@ import '@openameba/spindle-ui/Button/Button.css';
   code={`<link rel="stylesheet" href="https://unpkg.com/@openameba/spindle-ui/Button/Button.css">`}
 />
 
+## Props
+
+<ArgTypes of={ButtonStories} />
+
 ## Large
+
+<Description of={ButtonStories.Large} />
 
 <Story of={ButtonStories.Large} />
 
@@ -50,6 +58,8 @@ import '@openameba/spindle-ui/Button/Button.css';
 
 ## Large Full Width
 
+<Description of={ButtonStories.LargeFullWidth} />
+
 <Story of={ButtonStories.LargeFullWidth} />
 
 <Source
@@ -74,6 +84,8 @@ import '@openameba/spindle-ui/Button/Button.css';
 />
 
 ## Medium
+
+<Description of={ButtonStories.Medium} />
 
 <Story of={ButtonStories.Medium} />
 
@@ -100,6 +112,8 @@ import '@openameba/spindle-ui/Button/Button.css';
 
 ## Medium Full Width
 
+<Description of={ButtonStories.MediumFullWidth} />
+
 <Story of={ButtonStories.MediumFullWidth} />
 
 <Source
@@ -124,6 +138,8 @@ import '@openameba/spindle-ui/Button/Button.css';
 />
 
 ## Small
+
+<Description of={ButtonStories.Small} />
 
 <Story of={ButtonStories.Small} />
 
@@ -150,6 +166,8 @@ import '@openameba/spindle-ui/Button/Button.css';
 
 ## Small Full Width
 
+<Description of={ButtonStories.SmallFullWidth} />
+
 <Story of={ButtonStories.SmallFullWidth} />
 
 <Source
@@ -174,6 +192,8 @@ import '@openameba/spindle-ui/Button/Button.css';
 />
 
 ## Disabled
+
+<Description of={ButtonStories.Disabled} />
 
 <Story of={ButtonStories.Disabled} />
 
@@ -200,6 +220,8 @@ import '@openameba/spindle-ui/Button/Button.css';
 
 ## Disabled Full Width
 
+<Description of={ButtonStories.DisabledFullWidth} />
+
 <Story of={ButtonStories.DisabledFullWidth} />
 
 <Source
@@ -224,6 +246,8 @@ import '@openameba/spindle-ui/Button/Button.css';
 />
 
 ## With Icon
+
+<Description of={ButtonStories.WithIcon} />
 
 <Story of={ButtonStories.WithIcon} />
 
@@ -251,6 +275,8 @@ import '@openameba/spindle-ui/Button/Button.css';
 />
 
 ## Full Width With Icon
+
+<Description of={ButtonStories.FullWidthWithIcon} />
 
 <Story of={ButtonStories.FullWidthWithIcon} />
 
