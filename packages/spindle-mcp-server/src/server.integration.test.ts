@@ -37,7 +37,7 @@ describe('MCP Server Integration', () => {
     expect(toolNames).toContain('get_icons');
     expect(toolNames).toContain('get_icon_info');
     expect(toolNames).toContain('get_accessibility_docs');
-    expect(toolNames).toContain('get_component_design_doc_templete');
+    expect(toolNames).toContain('get_component_design_doc_template');
   });
 
   it('should call get_components', async () => {
@@ -96,9 +96,9 @@ describe('MCP Server Integration', () => {
     expect(result.isError).toBeFalsy();
   });
 
-  it('should call get_component_design_doc_templete', async () => {
+  it('should call get_component_design_doc_template', async () => {
     const result = await client.callTool({
-      name: 'get_component_design_doc_templete',
+      name: 'get_component_design_doc_template',
       arguments: {},
     });
     expect(result.isError).toBeFalsy();
