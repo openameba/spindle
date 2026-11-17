@@ -44,6 +44,33 @@ const computedButtonVariant = (
   }
 };
 
+// Text と Description を縦に並べるため、flex の子として1つにまとめる
+const groupTextWithDescription = (nodes: ReactNode[]): ReactNode[] => {
+  const isType = (node: ReactNode, type: unknown) =>
+    isValidElement(node) && node.type === type;
+  const textIndex = nodes.findIndex((node) => isType(node, Text));
+  const descriptionIndex = nodes.findIndex((node) => isType(node, Description));
+  if (textIndex === -1 || descriptionIndex === -1) {
+    return nodes;
+  }
+  return nodes.reduce<ReactNode[]>((acc, node, index) => {
+    if (index === descriptionIndex) {
+      return acc;
+    }
+    if (index === textIndex) {
+      acc.push(
+        <div className={`${BLOCK_NAME}-textGroup`} key="textGroup">
+          {node}
+          {nodes[descriptionIndex]}
+        </div>,
+      );
+      return acc;
+    }
+    acc.push(node);
+    return acc;
+  }, []);
+};
+
 const Frame: FC<Props> = ({
   children,
   variant = DEFAULT_VARIANT,
@@ -71,7 +98,7 @@ const Frame: FC<Props> = ({
   );
 
   const processedChildren = useMemo(
-    () => processChildren(children),
+    () => groupTextWithDescription(Children.toArray(processChildren(children))),
     [processChildren, children],
   );
 
@@ -132,18 +159,12 @@ const Avatar: FC<{ src: string; alt?: string }> = ({ src, alt = '' }) => (
 );
 const Text: FC<{
   children: ReactNode;
-  description?: ReactNode;
-}> = ({ children, description }) => {
-  if (!description) {
-    return <p className={`${BLOCK_NAME}-text`}>{children}</p>;
-  }
-  return (
-    <div className={`${BLOCK_NAME}-text`}>
-      <p className={`${BLOCK_NAME}-title`}>{children}</p>
-      <p className={`${BLOCK_NAME}-description`}>{description}</p>
-    </div>
-  );
-};
+}> = ({ children }) => <p className={`${BLOCK_NAME}-text`}>{children}</p>;
+const Description: FC<{
+  children: ReactNode;
+}> = ({ children }) => (
+  <p className={`${BLOCK_NAME}-description`}>{children}</p>
+);
 const Button: FC<
   { children: ReactNode } & HTMLAttributes<HTMLButtonElement>
 > = ({ children, ...rest }) => {
@@ -192,6 +213,7 @@ export const InlineNotification = {
   Icon,
   Avatar,
   Text,
+  Description,
   Button,
   TextButton,
   IconButton,

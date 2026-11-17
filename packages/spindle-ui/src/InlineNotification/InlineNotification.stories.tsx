@@ -135,16 +135,22 @@ export const InlineNotificationwithDescription: Story = {
         <InlineNotification.Icon>
           <Information aria-hidden="true" />
         </InlineNotification.Icon>
-        <InlineNotification.Text description="補足のメッセージが入ります">
+        <InlineNotification.Text>
           メッセージが届きました
         </InlineNotification.Text>
+        <InlineNotification.Description>
+          補足のメッセージが入ります
+        </InlineNotification.Description>
       </InlineNotification.Frame>
       <br />
       <InlineNotification.Frame variant="information" visible>
         <InlineNotification.Avatar src="/avatar.png" alt="" />
-        <InlineNotification.Text description="補足のメッセージが入ります">
+        <InlineNotification.Text>
           メッセージが届きました
         </InlineNotification.Text>
+        <InlineNotification.Description>
+          補足のメッセージが入ります
+        </InlineNotification.Description>
         <InlineNotification.Button>確認</InlineNotification.Button>
       </InlineNotification.Frame>
       <br />
@@ -152,9 +158,10 @@ export const InlineNotificationwithDescription: Story = {
         <InlineNotification.Icon>
           <ExclamationmarkCircleFill aria-hidden="true" />
         </InlineNotification.Icon>
-        <InlineNotification.Text description="時間をおいて、もう一度お試しください">
-          投稿に失敗しました
-        </InlineNotification.Text>
+        <InlineNotification.Text>投稿に失敗しました</InlineNotification.Text>
+        <InlineNotification.Description>
+          時間をおいて、もう一度お試しください
+        </InlineNotification.Description>
         <InlineNotification.IconButton>
           <CrossBold aria-label="とじる" />
         </InlineNotification.IconButton>
