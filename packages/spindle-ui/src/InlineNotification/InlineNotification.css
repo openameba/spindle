@@ -93,15 +93,6 @@
   overflow-wrap: break-word;
 }
 
-/* 2行表示の上下paddingは、アイコンのとき12px、アバターのとき14px */
-.spui-InlineNotification-icon ~ .spui-InlineNotification-text--multiline {
-  margin: 4px 0;
-}
-
-.spui-InlineNotification-avatar ~ .spui-InlineNotification-text--multiline {
-  margin: 6px 0;
-}
-
 .spui-InlineNotification-title,
 .spui-InlineNotification-description {
   margin: 0;
