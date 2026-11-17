@@ -93,6 +93,11 @@
   overflow-wrap: break-word;
 }
 
+/* Figmaに合わせ、アイコンと並ぶ2行表示のときだけ上下の余白を5px広げる */
+.spui-InlineNotification-icon ~ .spui-InlineNotification-text--multiline {
+  margin: 5px 0;
+}
+
 .spui-InlineNotification-title,
 .spui-InlineNotification-description {
   margin: 0;
