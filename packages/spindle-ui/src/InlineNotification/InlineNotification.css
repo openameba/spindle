@@ -93,9 +93,13 @@
   overflow-wrap: break-word;
 }
 
-/* Figmaに合わせ、アイコンと並ぶ2行表示のときだけ上下の余白を5px広げる */
+/* 2行表示の上下paddingは、アイコンのとき12px、アバターのとき14px */
 .spui-InlineNotification-icon ~ .spui-InlineNotification-text--multiline {
-  margin: 5px 0;
+  margin: 4px 0;
+}
+
+.spui-InlineNotification-avatar ~ .spui-InlineNotification-text--multiline {
+  margin: 6px 0;
 }
 
 .spui-InlineNotification-title,
