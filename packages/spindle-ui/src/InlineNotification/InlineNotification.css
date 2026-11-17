@@ -94,7 +94,10 @@
 }
 
 /* Title / Description は各自でfont-sizeを持つため、Textのfont-sizeによる相対値を打ち消す */
-.spui-InlineNotification-text:has(.spui-InlineNotification-title, .spui-InlineNotification-description) {
+.spui-InlineNotification-text:has(
+  .spui-InlineNotification-title,
+  .spui-InlineNotification-description
+) {
   font-size: 1em;
 }
 
