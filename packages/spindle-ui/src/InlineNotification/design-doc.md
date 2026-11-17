@@ -29,7 +29,7 @@ InlineNotification | 制限なし | あり | 消えない | ページに埋め�
 
 ## 使用例
 ### DO
-InlineNotificationコンポーネントは、`InlineNotification.Frame`内部に`InlineNotification.{Text|Icon|IconButton|Avatar|TextButton|Button}`を組み合わせて使用することを想定しています。
+InlineNotificationコンポーネントは、`InlineNotification.Frame`内部に`InlineNotification.{Text|Description|Icon|IconButton|Avatar|TextButton|Button}`を組み合わせて使用することを想定しています。
 
 #### テキストのみ表示
 ```tsx
@@ -48,11 +48,12 @@ InlineNotificationコンポーネントは、`InlineNotification.Frame`内部に
 ```
 
 #### 本文 + 補足を表示（2行）
-`InlineNotification.Text`の`description`に補足のメッセージを渡すと、本文の下に補足が表示されます。本文だけでは伝わらない理由や次のアクションを添えたいときに使用します。Icon, Avatar, IconButton, TextButton, Buttonとも組み合わせられます。
+`InlineNotification.Text`の次に`InlineNotification.Description`を置くと、本文の下に補足が表示されます。本文だけでは伝わらない理由や次のアクションを添えたいときに使用します。Icon, Avatar, IconButton, TextButton, Buttonとも組み合わせられます。
 ```tsx
 <InlineNotification.Frame visible>
   <InlineNotification.Icon><Information aria-hidden="true"/></InlineNotification.Icon>
-  <InlineNotification.Text description="補足のメッセージが入ります">メッセージが届きました</InlineNotification.Text>
+  <InlineNotification.Text>メッセージが届きました</InlineNotification.Text>
+  <InlineNotification.Description>補足のメッセージが入ります</InlineNotification.Description>
 </InlineNotification.Frame>
 ```
 
@@ -93,7 +94,7 @@ InlineNotificationコンポーネントは、`InlineNotification.Frame`内部に
 ```
 
 ### DO NOT
-`InlineNotification.Frame`内部に`InlineNotification.{Text|Icon|IconButton|Avatar|TextButton|Button}`以外のものを配置して使用することは想定していません。
+`InlineNotification.Frame`内部に`InlineNotification.{Text|Description|Icon|IconButton|Avatar|TextButton|Button}`以外のものを配置して使用することは想定していません。
 
 また、`InlineNotification.Frame`以外の何かで`InlineNotification.{Text|Icon|IconButton|Avatar|TextButton|Button}`をラップすることも想定していません。
 
@@ -155,18 +156,10 @@ type Props = {
 ##### Emphasis
 状況によって2種類の強弱を使い分けて使用してください。初期値は`false`です。
 
-#### `InlineNotification.{Icon|IconButton|TextButton|Button}`
+#### `InlineNotification.{Text|Description|Icon|IconButton|TextButton|Button}`
 ```typescript
 type Props = {
   children?: ReactNode;
-}
-```
-
-#### `InlineNotification.Text`
-```typescript
-type Props = {
-  children?: ReactNode;
-  description?: ReactNode; // 指定すると本文の下に補足が表示される（2行表示）
 }
 ```
 

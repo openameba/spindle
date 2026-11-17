@@ -93,15 +93,16 @@
   overflow-wrap: break-word;
 }
 
-.spui-InlineNotification-title,
-.spui-InlineNotification-description {
-  margin: 0;
+.spui-InlineNotification-textGroup {
+  flex: 1;
+  min-width: 0;
 }
 
 .spui-InlineNotification-description {
-  font-size: 0.857em;
-  font-weight: normal;
-  margin-top: 2px;
+  font-size: 0.75em;
+  line-height: 1.4;
+  margin: 2px 0 0;
+  overflow-wrap: break-word;
 }
 
 .spui-InlineNotification-iconButton {
@@ -135,7 +136,8 @@
   color: var(--color-object-medium-emphasis);
 }
 
-.spui-InlineNotification--information .spui-InlineNotification-text {
+.spui-InlineNotification--information .spui-InlineNotification-text,
+.spui-InlineNotification--information .spui-InlineNotification-description {
   color: var(--color-text-medium-emphasis);
 }
 
@@ -160,7 +162,9 @@
 }
 
 .spui-InlineNotification--information.spui-InlineNotification--emphasized
-  .spui-InlineNotification-text {
+  .spui-InlineNotification-text,
+.spui-InlineNotification--information.spui-InlineNotification--emphasized
+  .spui-InlineNotification-description {
   color: var(--color-text-high-emphasis-inverse);
 }
 
@@ -211,7 +215,8 @@
   color: var(--color-object-accent-primary);
 }
 
-.spui-InlineNotification--confirmation .spui-InlineNotification-text {
+.spui-InlineNotification--confirmation .spui-InlineNotification-text,
+.spui-InlineNotification--confirmation .spui-InlineNotification-description {
   color: var(--color-text-accent-primary);
 }
 
@@ -250,7 +255,9 @@
 }
 
 .spui-InlineNotification--confirmation.spui-InlineNotification--emphasized
-  .spui-InlineNotification-text {
+  .spui-InlineNotification-text,
+.spui-InlineNotification--confirmation.spui-InlineNotification--emphasized
+  .spui-InlineNotification-description {
   color: var(--color-text-high-emphasis-inverse);
 }
 
@@ -287,7 +294,8 @@
   color: var(--color-object-caution);
 }
 
-.spui-InlineNotification--error .spui-InlineNotification-text {
+.spui-InlineNotification--error .spui-InlineNotification-text,
+.spui-InlineNotification--error .spui-InlineNotification-description {
   color: var(--color-text-caution);
 }
 
@@ -312,7 +320,9 @@
 }
 
 .spui-InlineNotification--error.spui-InlineNotification--emphasized
-  .spui-InlineNotification-text {
+  .spui-InlineNotification-text,
+.spui-InlineNotification--error.spui-InlineNotification--emphasized
+  .spui-InlineNotification-description {
   color: var(--color-text-high-emphasis-inverse);
 }
 

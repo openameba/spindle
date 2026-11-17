@@ -38,7 +38,7 @@ const imports = [
   "import '@openameba/spindle-ui/InlineNotification/InlineNotification.css';",
 ];
 
-// Lines=2 のときだけ Text に description を渡す。1行がフォールバックを兼ねるため else に置いている。
+// Lines=2 のときだけ Text の次に Description を置く。1行がフォールバックを兼ねるため else に置いている。
 let template;
 if (figma.selectedInstance.getPropertyValue('Lines') === '2') {
   const description = figma.selectedInstance.getString('description');
@@ -53,7 +53,8 @@ if (figma.selectedInstance.getPropertyValue('Lines') === '2') {
       layout,
     )}${figma.helpers.react.renderProp('emphasis', emphasis)}>
         ${figma.helpers.react.renderChildren(leftIcon)}
-        <InlineNotification.Text description="${description}">${label}</InlineNotification.Text>
+        <InlineNotification.Text>${label}</InlineNotification.Text>
+        <InlineNotification.Description>${description}</InlineNotification.Description>
         ${figma.helpers.react.renderChildren(closeButton)}
       </InlineNotification.Frame>`,
     metadata: { nestable: true },
