@@ -44,33 +44,6 @@ const computedButtonVariant = (
   }
 };
 
-// Text と Description を縦に並べるため、flex の子として1つにまとめる
-const groupTextWithDescription = (nodes: ReactNode[]): ReactNode[] => {
-  const isType = (node: ReactNode, type: unknown) =>
-    isValidElement(node) && node.type === type;
-  const textIndex = nodes.findIndex((node) => isType(node, Text));
-  const descriptionIndex = nodes.findIndex((node) => isType(node, Description));
-  if (textIndex === -1 || descriptionIndex === -1) {
-    return nodes;
-  }
-  return nodes.reduce<ReactNode[]>((acc, node, index) => {
-    if (index === descriptionIndex) {
-      return acc;
-    }
-    if (index === textIndex) {
-      acc.push(
-        <div className={`${BLOCK_NAME}-textGroup`} key="textGroup">
-          {node}
-          {nodes[descriptionIndex]}
-        </div>,
-      );
-      return acc;
-    }
-    acc.push(node);
-    return acc;
-  }, []);
-};
-
 const Frame: FC<Props> = ({
   children,
   variant = DEFAULT_VARIANT,
@@ -98,7 +71,7 @@ const Frame: FC<Props> = ({
   );
 
   const processedChildren = useMemo(
-    () => groupTextWithDescription(Children.toArray(processChildren(children))),
+    () => processChildren(children),
     [processChildren, children],
   );
 
@@ -160,10 +133,15 @@ const Avatar: FC<{ src: string; alt?: string }> = ({ src, alt = '' }) => (
 const Text: FC<{
   children: ReactNode;
 }> = ({ children }) => <p className={`${BLOCK_NAME}-text`}>{children}</p>;
+const Title: FC<{
+  children: ReactNode;
+}> = ({ children }) => (
+  <span className={`${BLOCK_NAME}-title`}>{children}</span>
+);
 const Description: FC<{
   children: ReactNode;
 }> = ({ children }) => (
-  <p className={`${BLOCK_NAME}-description`}>{children}</p>
+  <span className={`${BLOCK_NAME}-description`}>{children}</span>
 );
 const Button: FC<
   { children: ReactNode } & HTMLAttributes<HTMLButtonElement>
@@ -213,6 +191,7 @@ export const InlineNotification = {
   Icon,
   Avatar,
   Text,
+  Title,
   Description,
   Button,
   TextButton,

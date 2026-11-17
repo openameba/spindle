@@ -136,21 +136,25 @@ export const InlineNotificationwithDescription: Story = {
           <Information aria-hidden="true" />
         </InlineNotification.Icon>
         <InlineNotification.Text>
-          メッセージが届きました
+          <InlineNotification.Title>
+            メッセージが届きました
+          </InlineNotification.Title>
+          <InlineNotification.Description>
+            補足のメッセージが入ります
+          </InlineNotification.Description>
         </InlineNotification.Text>
-        <InlineNotification.Description>
-          補足のメッセージが入ります
-        </InlineNotification.Description>
       </InlineNotification.Frame>
       <br />
       <InlineNotification.Frame variant="information" visible>
         <InlineNotification.Avatar src="/avatar.png" alt="" />
         <InlineNotification.Text>
-          メッセージが届きました
+          <InlineNotification.Title>
+            メッセージが届きました
+          </InlineNotification.Title>
+          <InlineNotification.Description>
+            補足のメッセージが入ります
+          </InlineNotification.Description>
         </InlineNotification.Text>
-        <InlineNotification.Description>
-          補足のメッセージが入ります
-        </InlineNotification.Description>
         <InlineNotification.Button>確認</InlineNotification.Button>
       </InlineNotification.Frame>
       <br />
@@ -158,10 +162,14 @@ export const InlineNotificationwithDescription: Story = {
         <InlineNotification.Icon>
           <ExclamationmarkCircleFill aria-hidden="true" />
         </InlineNotification.Icon>
-        <InlineNotification.Text>投稿に失敗しました</InlineNotification.Text>
-        <InlineNotification.Description>
-          時間をおいて、もう一度お試しください
-        </InlineNotification.Description>
+        <InlineNotification.Text>
+          <InlineNotification.Title>
+            投稿に失敗しました
+          </InlineNotification.Title>
+          <InlineNotification.Description>
+            時間をおいて、もう一度お試しください
+          </InlineNotification.Description>
+        </InlineNotification.Text>
         <InlineNotification.IconButton>
           <CrossBold aria-label="とじる" />
         </InlineNotification.IconButton>
