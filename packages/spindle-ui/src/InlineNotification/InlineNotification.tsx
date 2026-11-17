@@ -132,7 +132,18 @@ const Avatar: FC<{ src: string; alt?: string }> = ({ src, alt = '' }) => (
 );
 const Text: FC<{
   children: ReactNode;
-}> = ({ children }) => <p className={`${BLOCK_NAME}-text`}>{children}</p>;
+  description?: ReactNode;
+}> = ({ children, description }) => {
+  if (!description) {
+    return <p className={`${BLOCK_NAME}-text`}>{children}</p>;
+  }
+  return (
+    <div className={`${BLOCK_NAME}-text`}>
+      <p className={`${BLOCK_NAME}-title`}>{children}</p>
+      <p className={`${BLOCK_NAME}-description`}>{description}</p>
+    </div>
+  );
+};
 const Button: FC<
   { children: ReactNode } & HTMLAttributes<HTMLButtonElement>
 > = ({ children, ...rest }) => {

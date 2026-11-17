@@ -47,6 +47,15 @@ InlineNotificationコンポーネントは、`InlineNotification.Frame`内部に
 </InlineNotification.Frame>
 ```
 
+#### 本文 + 補足を表示（2行）
+`InlineNotification.Text`の`description`に補足のメッセージを渡すと、本文の下に補足が表示されます。本文だけでは伝わらない理由や次のアクションを添えたいときに使用します。Icon, Avatar, IconButton, TextButton, Buttonとも組み合わせられます。
+```tsx
+<InlineNotification.Frame visible>
+  <InlineNotification.Icon><Information aria-hidden="true"/></InlineNotification.Icon>
+  <InlineNotification.Text description="補足のメッセージが入ります">メッセージが届きました</InlineNotification.Text>
+</InlineNotification.Frame>
+```
+
 #### 画像 + テキストを表示
 本文に対して左側に表示される画像です。お知らせの種類をユーザーが把握しやすくするために使用してください。
 ```tsx
@@ -146,10 +155,18 @@ type Props = {
 ##### Emphasis
 状況によって2種類の強弱を使い分けて使用してください。初期値は`false`です。
 
-#### `InlineNotification.{Text|Icon|IconButton|TextButton|Button}`
+#### `InlineNotification.{Icon|IconButton|TextButton|Button}`
 ```typescript
 type Props = {
   children?: ReactNode;
+}
+```
+
+#### `InlineNotification.Text`
+```typescript
+type Props = {
+  children?: ReactNode;
+  description?: ReactNode; // 指定すると本文の下に補足が表示される（2行表示）
 }
 ```
 
