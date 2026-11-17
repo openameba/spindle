@@ -221,6 +221,20 @@ Avatar画像に関してはalt属性をPropsとして提供しているため、
   `}
 />
 
+## InlineNotification with Description
+`InlineNotification.Text`の`description`プロパティに補足のメッセージを渡すと、本文の下に補足を表示する2行のレイアウトになります。本文は太字、補足は通常の太さで表示されます。
+
+<Story of={InlineNotificationStories.InlineNotificationwithDescription} />
+
+<Source
+  code={`
+<InlineNotification.Frame variant='information' visible>
+  <InlineNotification.Icon><Information aria-hidden="true"/></InlineNotification.Icon>
+  <InlineNotification.Text description="補足のメッセージが入ります">メッセージが届きました</InlineNotification.Text>
+</InlineNotification.Frame>
+  `}
+/>
+
 ## InlineNotification with Avatar
 本文に対して左側に表示される画像です。お知らせの種類を、ユーザーが把握しやすくするために使用してください。
 

@@ -93,6 +93,17 @@
   overflow-wrap: break-word;
 }
 
+.spui-InlineNotification-title,
+.spui-InlineNotification-description {
+  margin: 0;
+}
+
+.spui-InlineNotification-description {
+  font-size: 0.857em;
+  font-weight: normal;
+  margin-top: 2px;
+}
+
 .spui-InlineNotification-iconButton {
   margin-left: 16px;
   padding: 5px 0;
