@@ -30,6 +30,9 @@ describe('<InlineNotification />', () => {
     expect(title).toHaveClass('spui-InlineNotification-title');
     expect(description).toHaveClass('spui-InlineNotification-description');
     expect(title.nextElementSibling).toBe(description);
-    expect(title.parentElement).toHaveClass('spui-InlineNotification-text');
+    expect(title.parentElement).toHaveClass(
+      'spui-InlineNotification-text',
+      'spui-InlineNotification-text--multiline',
+    );
   });
 });

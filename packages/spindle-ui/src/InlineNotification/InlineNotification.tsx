@@ -138,7 +138,7 @@ const Text: FC<{
     return <p className={`${BLOCK_NAME}-text`}>{children}</p>;
   }
   return (
-    <div className={`${BLOCK_NAME}-text`}>
+    <div className={`${BLOCK_NAME}-text ${BLOCK_NAME}-text--multiline`}>
       <p className={`${BLOCK_NAME}-title`}>{children}</p>
       <p className={`${BLOCK_NAME}-description`}>{description}</p>
     </div>
