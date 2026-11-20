@@ -13,7 +13,7 @@ const layout = figma.selectedInstance.getEnum('layout', {
   inset: 'inset',
 });
 const emphasis = figma.selectedInstance.getBoolean('emphasis');
-const label = figma.selectedInstance.getString('label');
+const label = figma.selectedInstance.findText('label').__render__();
 const leftIcon = figma.selectedInstance.getEnum('Left Icon', {
   Icon: figma.helpers.react.jsxElement('<Information aria-hidden="true" />'),
   Thumbnail: figma.helpers.react.jsxElement(
@@ -41,6 +41,8 @@ const imports = [
 // Lines=2 のときだけ Text の中を Title と Description にする。1行がフォールバックを兼ねるため else に置いている。
 let template;
 if (figma.selectedInstance.getPropertyValue('Lines') === '2') {
+  // Title と Description を別々に取るため、Text プロパティ（label / description）から取得する
+  const title = figma.selectedInstance.getString('label');
   const description = figma.selectedInstance.getString('description');
   template = {
     id: 'InlineNotification',
@@ -54,7 +56,7 @@ if (figma.selectedInstance.getPropertyValue('Lines') === '2') {
     )}${figma.helpers.react.renderProp('emphasis', emphasis)}>
         ${figma.helpers.react.renderChildren(leftIcon)}
         <InlineNotification.Text>
-          <InlineNotification.Title>${label}</InlineNotification.Title>
+          <InlineNotification.Title>${title}</InlineNotification.Title>
           <InlineNotification.Description>${description}</InlineNotification.Description>
         </InlineNotification.Text>
         ${figma.helpers.react.renderChildren(closeButton)}
@@ -73,7 +75,9 @@ if (figma.selectedInstance.getPropertyValue('Lines') === '2') {
       layout,
     )}${figma.helpers.react.renderProp('emphasis', emphasis)}>
         ${figma.helpers.react.renderChildren(leftIcon)}
-        <InlineNotification.Text>${label}</InlineNotification.Text>
+        <InlineNotification.Text>${figma.helpers.react.renderChildren(
+          label,
+        )}</InlineNotification.Text>
         ${figma.helpers.react.renderChildren(closeButton)}
       </InlineNotification.Frame>`,
     metadata: { nestable: true },
