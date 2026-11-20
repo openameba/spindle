@@ -93,6 +93,29 @@
   overflow-wrap: break-word;
 }
 
+/* Title / Description は各自でfont-sizeを持つため、Textのfont-sizeによる相対値を打ち消す */
+.spui-InlineNotification-text:has(
+  .spui-InlineNotification-title,
+  .spui-InlineNotification-description
+) {
+  font-size: 1em;
+}
+
+.spui-InlineNotification-title,
+.spui-InlineNotification-description {
+  display: block;
+}
+
+.spui-InlineNotification-title {
+  font-size: 0.875em;
+}
+
+.spui-InlineNotification-description {
+  font-size: 0.75em;
+  font-weight: normal;
+  margin-top: 2px;
+}
+
 .spui-InlineNotification-iconButton {
   margin-left: 16px;
   padding: 5px 0;

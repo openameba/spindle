@@ -98,6 +98,8 @@ import '@openameba/spindle-ui/InlineNotification/InlineNotification.css';
 - `<InlineNotification.Icon>`: 本文に対して左側に表示されるアイコンです
 - `<InlineNotification.Avatar>`: 本文に対して左側に表示される画像です
 - `<InlineNotification.Text>`: 本文です
+- `<InlineNotification.Title>`: `<InlineNotification.Text>`の中に置く、補足と合わせて2行表示するときの本文です
+- `<InlineNotification.Description>`: `<InlineNotification.Text>`の中に置く、本文の下に表示される補足です
 - `<InlineNotification.IconButton>`: 本文に対して右側に表示されるアイコンボタンです
 - `<InlineNotification.TextButton>`: 本文に対して右側に表示されるテキストボタンです
 - `<InlineNotification.Button>`: 本文に対して右側に表示されるボタンです
@@ -217,6 +219,23 @@ Avatar画像に関してはalt属性をPropsとして提供しているため、
 <InlineNotification.Frame variant='information' visible>
   <InlineNotification.Icon><Information aria-hidden="true"/></InlineNotification.Icon>
   <InlineNotification.Text>ブログの管理者が承認するまで、コメントが反映されない場合があります</InlineNotification.Text>
+</InlineNotification.Frame>
+  `}
+/>
+
+## InlineNotification with Description
+`InlineNotification.Text`の中に`InlineNotification.Title`と`InlineNotification.Description`を入れ子にすると、本文の下に補足を表示する2行のレイアウトになります。本文は太字、補足は通常の太さで表示されます。
+
+<Story of={InlineNotificationStories.InlineNotificationwithDescription} />
+
+<Source
+  code={`
+<InlineNotification.Frame variant='information' visible>
+  <InlineNotification.Icon><Information aria-hidden="true"/></InlineNotification.Icon>
+  <InlineNotification.Text>
+    <InlineNotification.Title>メッセージが届きました</InlineNotification.Title>
+    <InlineNotification.Description>補足のメッセージが入ります</InlineNotification.Description>
+  </InlineNotification.Text>
 </InlineNotification.Frame>
   `}
 />

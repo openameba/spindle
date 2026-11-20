@@ -33,24 +33,55 @@ const closeButton = figma.selectedInstance.getEnum('Close Button', {
   ),
 });
 
-export default {
-  id: 'InlineNotification',
-  imports: [
-    "import { InlineNotification } from '@openameba/spindle-ui';",
-    "import '@openameba/spindle-ui/InlineNotification/InlineNotification.css';",
-  ],
-  example: figma.code`<InlineNotification.Frame${figma.helpers.react.renderProp(
-    'variant',
-    variant,
-  )}${figma.helpers.react.renderProp(
-    'layout',
-    layout,
-  )}${figma.helpers.react.renderProp('emphasis', emphasis)}>
+const imports = [
+  "import { InlineNotification } from '@openameba/spindle-ui';",
+  "import '@openameba/spindle-ui/InlineNotification/InlineNotification.css';",
+];
+
+// Lines=2 のときだけ Text の中を Title と Description にする。1行がフォールバックを兼ねるため else に置いている。
+let template;
+if (figma.selectedInstance.getPropertyValue('Lines') === '2') {
+  // Title と Description を別々に取るため、Text プロパティ（label / description）から取得する
+  const title = figma.selectedInstance.getString('label');
+  const description = figma.selectedInstance.getString('description');
+  template = {
+    id: 'InlineNotification',
+    imports,
+    example: figma.code`<InlineNotification.Frame${figma.helpers.react.renderProp(
+      'variant',
+      variant,
+    )}${figma.helpers.react.renderProp(
+      'layout',
+      layout,
+    )}${figma.helpers.react.renderProp('emphasis', emphasis)}>
+        ${figma.helpers.react.renderChildren(leftIcon)}
+        <InlineNotification.Text>
+          <InlineNotification.Title>${title}</InlineNotification.Title>
+          <InlineNotification.Description>${description}</InlineNotification.Description>
+        </InlineNotification.Text>
+        ${figma.helpers.react.renderChildren(closeButton)}
+      </InlineNotification.Frame>`,
+    metadata: { nestable: true },
+  };
+} else {
+  template = {
+    id: 'InlineNotification',
+    imports,
+    example: figma.code`<InlineNotification.Frame${figma.helpers.react.renderProp(
+      'variant',
+      variant,
+    )}${figma.helpers.react.renderProp(
+      'layout',
+      layout,
+    )}${figma.helpers.react.renderProp('emphasis', emphasis)}>
         ${figma.helpers.react.renderChildren(leftIcon)}
         <InlineNotification.Text>${figma.helpers.react.renderChildren(
           label,
         )}</InlineNotification.Text>
         ${figma.helpers.react.renderChildren(closeButton)}
       </InlineNotification.Frame>`,
-  metadata: { nestable: true },
-};
+    metadata: { nestable: true },
+  };
+}
+
+export default template;

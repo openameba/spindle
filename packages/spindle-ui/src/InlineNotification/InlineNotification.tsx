@@ -133,6 +133,16 @@ const Avatar: FC<{ src: string; alt?: string }> = ({ src, alt = '' }) => (
 const Text: FC<{
   children: ReactNode;
 }> = ({ children }) => <p className={`${BLOCK_NAME}-text`}>{children}</p>;
+const Title: FC<{
+  children: ReactNode;
+}> = ({ children }) => (
+  <span className={`${BLOCK_NAME}-title`}>{children}</span>
+);
+const Description: FC<{
+  children: ReactNode;
+}> = ({ children }) => (
+  <span className={`${BLOCK_NAME}-description`}>{children}</span>
+);
 const Button: FC<
   { children: ReactNode } & HTMLAttributes<HTMLButtonElement>
 > = ({ children, ...rest }) => {
@@ -181,6 +191,8 @@ export const InlineNotification = {
   Icon,
   Avatar,
   Text,
+  Title,
+  Description,
   Button,
   TextButton,
   IconButton,

@@ -128,6 +128,56 @@ export const InlineNotificationwithIcon: Story = {
   ),
 };
 
+export const InlineNotificationwithDescription: Story = {
+  render: () => (
+    <>
+      <InlineNotification.Frame variant="information" visible>
+        <InlineNotification.Icon>
+          <Information aria-hidden="true" />
+        </InlineNotification.Icon>
+        <InlineNotification.Text>
+          <InlineNotification.Title>
+            メッセージが届きました
+          </InlineNotification.Title>
+          <InlineNotification.Description>
+            補足のメッセージが入ります
+          </InlineNotification.Description>
+        </InlineNotification.Text>
+      </InlineNotification.Frame>
+      <br />
+      <InlineNotification.Frame variant="information" visible>
+        <InlineNotification.Avatar src="/avatar.png" alt="" />
+        <InlineNotification.Text>
+          <InlineNotification.Title>
+            メッセージが届きました
+          </InlineNotification.Title>
+          <InlineNotification.Description>
+            補足のメッセージが入ります
+          </InlineNotification.Description>
+        </InlineNotification.Text>
+        <InlineNotification.Button>確認</InlineNotification.Button>
+      </InlineNotification.Frame>
+      <br />
+      <InlineNotification.Frame variant="error" emphasis visible>
+        <InlineNotification.Icon>
+          <ExclamationmarkCircleFill aria-hidden="true" />
+        </InlineNotification.Icon>
+        <InlineNotification.Text>
+          <InlineNotification.Title>
+            投稿に失敗しました
+          </InlineNotification.Title>
+          <InlineNotification.Description>
+            時間をおいて、もう一度お試しください
+          </InlineNotification.Description>
+        </InlineNotification.Text>
+        <InlineNotification.IconButton>
+          <CrossBold aria-label="とじる" />
+        </InlineNotification.IconButton>
+      </InlineNotification.Frame>
+    </>
+  ),
+};
+
 export const InlineNotificationwithAvatar: Story = {
   render: () => (
     <InlineNotification.Frame variant="information" visible>
