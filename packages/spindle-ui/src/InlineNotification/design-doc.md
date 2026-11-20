@@ -98,7 +98,9 @@ InlineNotificationコンポーネントは、`InlineNotification.Frame`内部に
 ### DO NOT
 `InlineNotification.Frame`内部に`InlineNotification.{Text|Title|Description|Icon|IconButton|Avatar|TextButton|Button}`以外のものを配置して使用することは想定していません。
 
-また、`InlineNotification.Frame`以外の何かで`InlineNotification.{Text|Icon|IconButton|Avatar|TextButton|Button}`をラップすることも想定していません。
+また、`InlineNotification.Frame`以外の何かで`InlineNotification.{Text|Title|Description|Icon|IconButton|Avatar|TextButton|Button}`をラップすることも想定していません。
+
+`InlineNotification.Title`と`InlineNotification.Description`は、必ず`InlineNotification.Text`の中に置いてください。`InlineNotification.Text`の外に置くと、フォントサイズが正しく適用されず表示が崩れます。
 
 ## 要素
 ### Design Tokens
