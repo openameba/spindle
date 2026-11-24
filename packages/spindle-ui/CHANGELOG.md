@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.5.0
+
+### Minor Changes
+
+- [#2228](https://github.com/openameba/spindle/pull/2228) [`0a3220b`](https://github.com/openameba/spindle/commit/0a3220b36e48ed11ed426d9096eb74b31e321953) Thanks [@MasatoHonda](https://github.com/MasatoHonda)! - feat(spindle-ui): add InlineNotification.Title and InlineNotification.Description for two-line display
+
 ## 3.4.0
 
 ### Minor Changes
