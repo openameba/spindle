@@ -4,6 +4,7 @@ import { Clock } from './index';
 
 const meta: Meta<typeof Clock> = {
   title: 'Icon',
+  component: Clock,
 };
 
 export default meta;

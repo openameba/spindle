@@ -21,6 +21,6 @@ module.exports = {
     name: '@storybook/react-webpack5',
   },
   typescript: {
-    reactDocgen: false,
+    reactDocgen: 'react-docgen-typescript',
   },
 };
